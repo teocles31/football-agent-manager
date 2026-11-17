@@ -624,6 +624,7 @@ html,body{touch-action:manipulation}
 .spb-k span{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink2);font-weight:700}.spb-k b{font-family:var(--f-d);font-size:17px;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.spb-k small{font-size:11px;color:var(--ink2)}
 .spb-l{display:flex;flex-direction:column}.spb-r{display:flex;align-items:center;gap:10px;padding:9px 0;border-top:1px solid var(--line)}.spb-r .grow{display:flex;flex-direction:column;gap:1px;min-width:0}.spb-r b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .spb-w{flex:none;font-family:var(--f-d);font-size:16px;text-align:right}.spb-w small{font-size:11px;color:var(--ink2);font-family:inherit}.spb-bon{color:var(--gold);font-weight:600}.spb-s{margin-top:6px}.spb-e{margin-top:4px}
+.spb-m{display:flex;flex-direction:column;gap:6px;margin-top:8px}.spb-m .btn{width:100%}p.spb-m{flex-direction:row;align-items:flex-start;gap:6px}p.spb-m svg{flex:none;margin-top:2px}
 .brs-g{margin-top:14px}.brs-g h3{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink2);margin:0 0 6px}
 .brs-r{display:flex;align-items:flex-start;gap:10px;padding:6px 0}.brs-r .bb{margin-top:4px}.brs>.acts{position:sticky;bottom:0;z-index:2;background:var(--surface);padding:10px 0 4px;margin-top:10px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:8px}.brs>.acts .btn{margin:0;width:100%}.brs>.acts .pri{grid-column:1/-1}.brs-r .grow{display:flex;flex-direction:column;gap:2px;min-width:0}
 .brs-r input{width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);font:inherit;font-size:16px}.brs-r input:focus{outline:none;border-color:var(--gold)}.brs-r small{font-size:11px;color:var(--ink2)}
@@ -2285,7 +2286,7 @@ const OFFICE=[
  {id:'reun',n:'Sala de reuniões',ic:'sign',m:1,lv:['Mesa da cozinha','Sala de reunião','Sala de assinatura','Lounge executivo'],d:'+4% de chance de assinar um cliente por nível.'},
  {id:'dados',n:'Central de dados',ic:'report',m:1,lv:['Caderno de anotações','Planilhas e vídeo','Plataforma de scout','Laboratório de dados'],d:'Viagens de olheiro 10% mais baratas por nível. Do nível 2 em diante, +1 garoto por viagem.'},
  {id:'perf',n:'Centro de performance',ic:'train',m:1.2,lv:['Sem estrutura','Convênio com academia','Fisioterapia própria','Centro de alto rendimento'],d:'Seus clientes evoluem mais rápido e voltam antes de lesão.'},
- {id:'midia',n:'Estúdio de mídia',ic:'talk',m:.8,lv:['Só o celular','Equipe de redes sociais','Estúdio de conteúdo','Produtora própria'],d:'+20% de fama para os clientes por nível.'}
+ {id:'midia',n:'Estúdio de mídia',ic:'talk',m:.8,lv:['Só o celular','Equipe de redes sociais','Estúdio de conteúdo','Produtora própria'],d:'+20% de fama para os clientes por nível. Do nível 1 em diante, você pode buscar patrocinador para um cliente; cada nível atrai marcas maiores e contratos melhores.'}
 ];
 const OFF_UP=[12000,300000,6000000],OFF_WK=[0,400,5000,45000];
 const newMe=()=>({neg:0,rel:0,car:0,olh:0,course:null,next:0,done:0});
@@ -4958,18 +4959,18 @@ const SCPA={scpos(d){ui.scPos=d.v||'';render();}};
 const BRC={chut:'Material esportivo',rel:'Relógios',beb:'Bebidas',ban:'Bancos',tel:'Telefonia e tecnologia',gam:'Games e apps',mod:'Moda e beleza',aut:'Automóveis',sup:'Suplementos',emp:'Empresas (só clubes)'};
 const BRT=['','Marca global','Marca grande','Marca nacional'];
 const BR=[
- ['rajada','Chuteiras Rajada','chut',1],['vortice','Vórtice Sports','chut',1],['orion','Órion Athletics','chut',1],['atlas','Atlas Esportes','chut',2],['kaizen','Kaizen Boots','chut',2],['falco','Falco Sport','chut',2],['tempest','Tempest Football','chut',2],['pampa','Pampa Sport','chut',3],['garra','Garra Esportiva','chut',3],['tupi','Tupi Calçados','chut',3],['marola','Marola Sports','chut',3],
- ['aurum','Relógios Aurum','rel',1],['solenne','Relógios Solenne','rel',1],['cronos','Relógios Cronos','rel',2],['ponteiro','Ponteiro Relógios','rel',3],
- ['brisa','Refrigerante Brisa','beb',1],['polar','Água Polar','beb',1],['voltz','Isotônico Voltz','beb',2],['trovao','Energético Trovão','beb',2],['serra','Cervejaria Serra Alta','beb',2],['garoa','Bebida Zero Garoa','beb',3],['caju','Sucos Caju Bom','beb',3],
- ['austral','Banco Austral','ban',1],['meridia','Banco Meridia','ban',1],['ponta','Banco Ponta','ban',2],['lastro','Fintech Lastro','ban',2],['cofre','Banco Cofre Digital','ban',2],['pix9','Carteira Pix9','ban',3],['cooper','Cooperativa Raiz','ban',3],
- ['nebula','Smartphones Nébula','tel',1],['quanta','Quanta Eletrônicos','tel',1],['sinal','Operadora Sinal+','tel',2],['fibra','Fibra Veloz Internet','tel',2],['pulso','Fones Pulso','tel',3],['onda','Operadora Onda','tel',3],
- ['arenax','Games Arena X','gam',1],['pixelr','Pixel Rush Games','gam',1],['streamy','Streamy','gam',2],['bolada','App Bolada Fit','gam',3],['palpite','Palpite Certo','gam',3],
- ['monarca','Grife Monarca','mod',1],['velluto','Velluto Moda','mod',1],['lince','Óculos Lince','mod',2],['ebano','Perfumes Ébano','mod',2],['corte','Barbearia Corte Fino','mod',3],['urbano','Urbano Jeans','mod',3],
- ['trilha','Montadora Trilha','aut',1],['astra','Astra Motors','aut',1],['pneus','Pneus Rodagem','aut',2],['vertice','Motos Vértice','aut',3],['locar','Locadora Locar','aut',3],
- ['forja','Suplementos Forja','sup',3],['titan','Titan Nutrition','sup',2],['pura','Pura Proteína','sup',3],
- ['alicerce','Construtora Alicerce','emp',2],['rumo','Aérea Rumo','emp',1],['escudo','Seguradora Escudo','emp',2],['cesta','Supermercados Cesta','emp',2],['petrovia','Petrovia Combustíveis','emp',1],['saude','Plano Saúde Vida','emp',2],['logix','Logix Transportes','emp',2],['farma','Farmácias Bem-Estar','emp',3],['casaluz','Casa & Luz Móveis','emp',3],['edu','Universidade Horizonte','emp',3],['agro','Agro Campo Verde','emp',2],['energia','Energia Solar Sol Nascente','emp',3],['magazine','Magazine Popular','emp',2],['bet','Loteria Palpite Federal','emp',2]
+ ['rajada','Nipe','chut',1],['vortice','Adides','chut',1],['orion','Pumba','chut',1],['atlas','Nova Balanço','chut',2],['kaizen','Mizuna','chut',2],['falco','Under Amor','chut',2],['tempest','Umbra','chut',2],['pampa','Penalte','chut',3],['garra','Tóper','chut',3],['tupi','Kapa','chut',3],['marola','Diadorra','chut',3],
+ ['aurum','Rolecs','rel',1],['solenne','Tag Hoyer','rel',1],['cronos','Cassio','rel',2],['ponteiro','Técnus Relógios','rel',3],
+ ['brisa','Coca-Cova','beb',1],['polar','Red Boi','beb',1],['voltz','Gatoreide','beb',2],['trovao','Monstrão Energy','beb',2],['serra','Brahmo','beb',2],['garoa','Guaraná Antártido','beb',3],['caju','Del Vale','beb',3],
+ ['austral','Santandé','ban',1],['meridia','Banco Itaí','ban',1],['ponta','Bradescu','ban',2],['lastro','Nubanco','ban',2],['cofre','Banco Interr','ban',2],['cooper','Banrisol','ban',2],['pix9','PicPey','ban',3],
+ ['nebula','Samsong','tel',1],['quanta','Xiaomy','tel',1],['sinal','Vivu','tel',2],['fibra','Claru','tel',2],['onda','Tin','tel',3],['pulso','Fones JBQ','tel',3],
+ ['arenax','PlayStação','gam',1],['pixelr','Konani','gam',1],['streamy','Twitchy','gam',2],['bolada','Betanu','gam',2],['palpite','Estrelinha Bet','gam',3],
+ ['monarca','Gucchi','mod',1],['velluto','Luis Vuiton','mod',1],['lince','Ray-Bam','mod',2],['ebano','Boticálio','mod',2],['lacosta','Lacosta','mod',2],['corte','Herinque','mod',3],['urbano','Levys','mod',3],
+ ['trilha','Volksvagem','aut',1],['astra','Toiota','aut',1],['pneus','Pirelly','aut',2],['vertice','Hunda Motos','aut',3],['locar','Localizza','aut',3],
+ ['titan','Max Titânio','sup',2],['forja','Growthe','sup',3],['pura','Integrálmédica','sup',3],
+ ['rumo','Fly Emirados','emp',1],['qatar','Catar Airways','emp',1],['petrovia','Petrobrasa','emp',1],['agro','Ambevi','emp',1],['alicerce','MRB Engenharia','emp',2],['escudo','Porto Segurado','emp',2],['cesta','Carrefur','emp',2],['saude','Unimédica','emp',2],['logix','Ipirangha','emp',2],['casaluz','Casas Bahiá','emp',2],['energia','Crefisu','emp',2],['magazine','Magazine Luíza','emp',2],['bet','Superbete','emp',2],['azull','Azull Linhas Aéreas','emp',2],['latan','Latan','emp',2],['sportbet','Sportingbete','emp',2],['farma','Drogasill','emp',3],['edu','Unopár','emp',3],['havan','Havã','emp',3]
 ].map(x=>({id:x[0],n0:x[1],cat:x[2],t:x[3]}));
-const BRI=Object.fromEntries(BR.map(b=>[b.id,b])),BRN0=Object.fromEntries(BR.map(b=>[b.n0,b.id]));
+const BRI=Object.fromEntries(BR.map(b=>[b.id,b])),BRN0=Object.assign({'Chuteiras Rajada':'rajada','Vórtice Sports':'vortice','Órion Athletics':'orion','Atlas Esportes':'atlas','Kaizen Boots':'kaizen','Falco Sport':'falco','Tempest Football':'tempest','Pampa Sport':'pampa','Garra Esportiva':'garra','Tupi Calçados':'tupi','Marola Sports':'marola','Relógios Aurum':'aurum','Relógios Solenne':'solenne','Relógios Cronos':'cronos','Ponteiro Relógios':'ponteiro','Refrigerante Brisa':'brisa','Água Polar':'polar','Isotônico Voltz':'voltz','Energético Trovão':'trovao','Cervejaria Serra Alta':'serra','Bebida Zero Garoa':'garoa','Sucos Caju Bom':'caju','Banco Austral':'austral','Banco Meridia':'meridia','Banco Ponta':'ponta','Fintech Lastro':'lastro','Banco Cofre Digital':'cofre','Carteira Pix9':'pix9','Cooperativa Raiz':'cooper','Smartphones Nébula':'nebula','Quanta Eletrônicos':'quanta','Operadora Sinal+':'sinal','Fibra Veloz Internet':'fibra','Fones Pulso':'pulso','Operadora Onda':'onda','Games Arena X':'arenax','Pixel Rush Games':'pixelr','Streamy':'streamy','App Bolada Fit':'bolada','Palpite Certo':'palpite','Grife Monarca':'monarca','Velluto Moda':'velluto','Óculos Lince':'lince','Perfumes Ébano':'ebano','Barbearia Corte Fino':'corte','Urbano Jeans':'urbano','Montadora Trilha':'trilha','Astra Motors':'astra','Pneus Rodagem':'pneus','Motos Vértice':'vertice','Locadora Locar':'locar','Suplementos Forja':'forja','Titan Nutrition':'titan','Pura Proteína':'pura','Construtora Alicerce':'alicerce','Aérea Rumo':'rumo','Seguradora Escudo':'escudo','Supermercados Cesta':'cesta','Petrovia Combustíveis':'petrovia','Plano Saúde Vida':'saude','Logix Transportes':'logix','Farmácias Bem-Estar':'farma','Casa & Luz Móveis':'casaluz','Universidade Horizonte':'edu','Agro Campo Verde':'agro','Energia Solar Sol Nascente':'energia','Magazine Popular':'magazine','Loteria Palpite Federal':'bet'},Object.fromEntries(BR.map(b=>[b.n0,b.id])));
 let BCUST={},BALIAS={};
 /* nomes fixos: sem edição pelo jogador */
 const bN=id=>(BCUST[id]||'').trim()||(BRI[id]?BRI[id].n0:id);
@@ -4990,7 +4991,7 @@ const spSlots=v=>v>=95?3:v>=65?2:v>=38?1:0;
 const spCat=s=>s.cat||(s.bid&&BRI[s.bid]?BRI[s.bid].cat:(bIdOf(s.b)&&BRI[bIdOf(s.b)].cat==='chut'?'chut':'x'));
 const spT=s=>s.t||(bIdOf(s.b)?BRI[bIdOf(s.b)].t:3);
 function spName(s){return s.bid?bN(s.bid):dispB(s.b);}
-function spGen(p,c,o,id){const v=mktV(p);o.sp=o.sp||[];if(v<22||(o.spCd||0)>G.d||G.events.some(e=>e.pid===id))return;
+function spGen0(p,c,o,id){const v=mktV(p);o.sp=o.sp||[];if(v<22||(o.spCd||0)>G.d||G.events.some(e=>e.pid===id))return;
   if(Math.random()>(.012+v/2600)*(mind('est')?1.4:1)*(1+.1*bizLv('mkt')))return;
   const tm=spTierMax(v),ch=o.sp.find(s=>spCat(s)==='chut'),oth=o.sp.filter(s=>spCat(s)!=='chut'),used=new Set(o.sp.map(s=>spCat(s)));let cat=null,swap=null;
   if(!ch)cat='chut';else if(spT(ch)>tm&&Math.random()<.45){cat='chut';swap=ch;}else if(oth.length<spSlots(v)){const cs=Object.keys(BRC).filter(k=>k!=='chut'&&k!=='emp'&&!used.has(k));if(cs.length)cat=pick(cs);}
@@ -5015,7 +5016,7 @@ function spBonWeek(){let inc=0;G.clients.forEach(id=>{const p=G.P[id];if(!p||!p.
   p.off.sp.forEach(s=>{if(!s.bon||s.until<=G.d)return;const k=s.bon.k==='gol'?lg.reduce((a,x)=>a+(x.ng||0),0):lg.filter(x=>x.rt>=7.5).length;if(!k)return;const amt=k*s.bon.v;s.got=(s.got||0)+amt;inc+=amt*SP_CUT;p.off.pat+=Math.round(amt*(1-SP_CUT)*.72);});});
   inc=Math.round(inc);if(inc){G.money+=inc;G.stats.earned+=inc;G.last.inc+=inc;}}
 function spLine(o){return'';}
-function spBlock(p,o){const v=mktV(p),L=(o.sp||[]).slice().sort((a,b)=>(spCat(a)==='chut'?-1:0)-(spCat(b)==='chut'?-1:0)),ch=L.find(s=>spCat(s)==='chut'),oth=L.length-(ch?1:0),sl=spSlots(v),tm=spTierMax(v);
+function spBlock0(p,o){const v=mktV(p),L=(o.sp||[]).slice().sort((a,b)=>(spCat(a)==='chut'?-1:0)-(spCat(b)==='chut'?-1:0)),ch=L.find(s=>spCat(s)==='chut'),oth=L.length-(ch?1:0),sl=spSlots(v),tm=Math.max(1,spTierMax(v)-(offL('midia')>=2?1:0));
   const tot=L.reduce((a,s)=>a+s.w,0);
   return'<div class="offb c-gold spb"><h3>'+icoS('star')+'Patrocínios</h3>'+
    '<div class="spb-k"><div><span>Imagem</span><b>'+v+'</b></div><div><span>Atrai</span><b>'+(v<22?'—':['','Globais','Grandes','Nacionais'][tm])+'</b></div><div><span>Contratos</span><b>'+fmt(tot)+'<small>/sem</small></b></div></div>'+
@@ -5033,6 +5034,33 @@ function brStore(next){for(const id in BCUST){if(BCUST[id]&&BCUST[id]!==next[id]
 const BRA={brands(){ui.stack=[];ui.modal={type:'brands'};render();},
   brsave(){const nx={};document.querySelectorAll('.brs [data-bid]').forEach(i=>{const v=String(i.value||'').replace(/\s+/g,' ').trim().slice(0,28);if(v)nx[i.dataset.bid]=v;});brStore(nx);ui.modal=null;toast('Nomes das marcas salvos neste aparelho.');render();},
   brreset(){brStore({});toast('Marcas de volta aos nomes originais.');render();}};
+
+/* ---- spmidia.js ---- */
+/* ================= MARCAS ATRÁS DOS JOGADORES + ESTÚDIO DE MÍDIA ABRINDO MARCAS MAIORES ================= */
+/* nível do estúdio: 1 libera buscar patrocinador; 2 sobe um degrau de marca; 3 sobe um degrau e melhora o contrato */
+const mdL=()=>offL('midia');
+const spBoost=()=>mdL()>=2?1:0;
+function spPick(p,c,o,v,tm,force){const ch=o.sp.find(s=>spCat(s)==='chut'),oth=o.sp.filter(s=>spCat(s)!=='chut'),used=new Set(o.sp.map(s=>spCat(s)));let cat=null,swap=null;
+  const sl=spSlots(v)+(force&&mdL()>=1?1:0);
+  if(!ch)cat='chut';else if(spT(ch)>tm&&Math.random()<(force?.7:.45)){cat='chut';swap=ch;}else if(oth.length<Math.max(sl,force?1:0)){const cs=Object.keys(BRC).filter(k=>k!=='chut'&&k!=='emp'&&!used.has(k));if(cs.length)cat=pick(cs);}
+  if(!cat)return null;let L=BR.filter(b=>b.cat===cat&&b.t>=tm&&(!swap||b.t<spT(swap))&&b.id!==(swap&&swap.bid));if(!L.length)return null;const best=Math.min(...L.map(b=>b.t));L=L.filter(b=>b.t===best);return{cat,swap,b:pick(L)};}
+function spOffer(p,c,o,id,force){const v=mktV(p),tm=Math.max(1,spTierMax(v)-spBoost()),r=spPick(p,c,o,v,tm,force);if(!r)return false;const {cat,swap,b}=r;
+  const w=nice(wageRef(p.ovr,c?c.lg:0)*(.022+v/1800)*[0,1.7,1.1,.7][b.t]*(cat==='chut'?1.35:1)*(c?1:.5)*rnd(.85,1.15)*(1+.05*bizLv('mkt'))*(mdL()>=3?1.15:1));
+  const m=cat==='chut'?ri(24,48):ri(12,30),bk=['ATA','MEI'].includes(p.pos)?'gol':'jogo',bon=b.t<=2?{k:bk,v:nice(w*(bk==='gol'?.15:.1))}:null;
+  o.spCd=G.d+(force?28:42);G.events.push({type:'spons2',pid:id,bid:b.id,cat,w,m,bon,swap:swap?spName(swap):null,v,md:force?1:0});return true;}
+/* propostas espontâneas: as marcas procuram quem tem imagem; o estúdio de mídia aumenta a frequência */
+function spGen(p,c,o,id){const v=mktV(p);o.sp=o.sp||[];if(v<22||(o.spCd||0)>G.d||G.events.some(e=>e.pid===id))return;
+  if(Math.random()>(.012+v/2600)*(mind('est')?1.4:1)*(1+.1*bizLv('mkt'))*(1+.2*mdL()))return;spOffer(p,c,o,id,false);}
+function spAskOk(p,o){return mdL()>=1&&mktV(p)>=15&&(o.spAsk||0)<=G.d;}
+function spBlock(p,o){const h=spBlock0(p,o),v=mktV(p),L=mdL();
+  const btn=L<1?'<p class="small muted spb-m">'+svgI('lock',14)+' Com o <b>Estúdio de mídia</b> no nível 1 (Agência › Escritório), você pode ir atrás de patrocinadores para '+esc(p.name.split(' ')[0])+'. Cada nível abre marcas maiores.</p>':
+   '<div class="spb-m"><button class="btn sm pri" data-a="spask" data-p="'+p.id+'"'+(spAskOk(p,o)&&G.ap>=1?'':' disabled')+'>Buscar patrocinador <small>1 ação</small></button><span class="small muted">'+((o.spAsk||0)>G.d?'Nova busca em '+fdate(o.spAsk,true)+'.':v<15?'Precisa de mais fama ou nível para atrair marcas.':'Estúdio nível '+L+': '+(L>=3?'marcas um degrau acima e contratos 15% melhores.':L>=2?'marcas um degrau acima do valor de imagem.':'marcas do tamanho do valor de imagem.'))+'</span></div>';
+  return h.replace(/<\/div>$/,btn+'</div>');}
+const SPMA={spask(d){const p=G.P[+d.p];if(!p||!isClient(p))return;const o=offOf(p);o.sp=o.sp||[];if(!spAskOk(p,o)){toast('Ainda não dá para buscar patrocinador para '+p.name+'.');return;}
+  if(G.events.some(e=>e.pid===p.id)){toast(p.name+' já tem uma decisão pendente.');return;}if(!useAP())return;o.spAsk=G.d+28;
+  const ok=Math.random()<clamp(.55+mdL()*.12+mktV(p)/400,.55,.95)&&spOffer(p,club(p),o,p.id,true);
+  if(!ok){news('O estúdio de mídia apresentou '+p.name+' a várias marcas, mas nenhuma fechou agora.','agencia');pop({k:'bad',ic:'no',ti:'Sem acordo',tx:'Nenhuma marca topou desta vez. Tente de novo em 4 semanas.'});}
+  save();render();}};
 
 /* ---- ui-views.js ---- */
 /* ================= COMPONENTES ================= */
@@ -5391,7 +5419,7 @@ const A={
   goA(){ui.comp='A';ui.tab='ligas';ui.stack=[];render();window.scrollTo(0,0);}
 };
 
-Object.assign(A,OFFA,EVOA,OWNA,MINDA,CALA,NAVA,CARDA,CMA,FINA,BIZA,NTCA,TIDYA,FLAGA,PROGA,BIZLA,OTRA,W2A,OLA,CLUB2A,PHA,TIEA,FACEA,RDA,NAVHA,HOFA,SCPA,BRA,{slots:SLOTA.slots,slotsave:SLOTA.slotsave,slotgo:SLOTA.slotgo,slotnew:SLOTA.slotnew,slotback:SLOTA.slotback,slotdel:SLOTA.slotdel,slotdelok:SLOTA.slotdelok});
+Object.assign(A,OFFA,EVOA,OWNA,MINDA,CALA,NAVA,CARDA,CMA,FINA,BIZA,NTCA,TIDYA,FLAGA,PROGA,BIZLA,OTRA,W2A,OLA,CLUB2A,PHA,TIEA,FACEA,RDA,NAVHA,HOFA,SCPA,BRA,SPMA,{slots:SLOTA.slots,slotsave:SLOTA.slotsave,slotgo:SLOTA.slotgo,slotnew:SLOTA.slotnew,slotback:SLOTA.slotback,slotdel:SLOTA.slotdel,slotdelok:SLOTA.slotdelok});
 
 /* ================= RENDER, CARREGAMENTO, ANIMAÇÕES ================= */
 const LOAD_MSG=['Rodada em andamento','Olheiros ligando','Diretorias fazendo contas','Imprensa apurando','Vestiários fervendo','Telefone tocando'];
