@@ -4207,7 +4207,7 @@ function slotCard(n,inGame){const m=slotMeta(n),cur=n===curSlot()&&!!G,del=ui.sl
   return top+'<div class="slot-a">'+(cur?'<span class="chip good">Jogando agora</span>':'<button class="btn pri" data-a="slotgo" data-n="'+n+'">'+(inGame?'Trocar para esta':'Continuar')+'</button>')+'<button class="btn ghost" data-a="slotdel" data-n="'+n+'">Apagar</button></div></div>';}
 function mSlots(inGame){return'<div class="sheet slots"><span class="eyebrow">Football Agent Manager</span><h2>Suas carreiras</h2><p class="small muted">Até 3 carreiras ao mesmo tempo. O jogo salva sozinho a cada ação; cada carreira fica guardada neste aparelho.</p>'+
   [1,2,3].map(n=>slotCard(n,inGame)).join('')+
-  (inGame?'<div class="acts"><button class="btn" data-a="faces">Pack de faces</button><button class="btn" data-a="brands">Marcas</button><button class="btn" data-a="slotsave">Salvar agora</button><button class="btn" data-a="close">Voltar ao jogo</button></div>':'')+'</div>';}
+  (inGame?'<div class="acts"><button class="btn" data-a="faces">Pack de faces</button><button class="btn" data-a="slotsave">Salvar agora</button><button class="btn" data-a="close">Voltar ao jogo</button></div>':'')+'</div>';}
 function mStartS(){const any=[1,2,3].some(n=>slotMeta(n));if(any&&!ui.newSlot)return mSlots(false);
   return mStart3().replace('<span class="eyebrow">Novo jogo · agosto de 2026</span>','<span class="eyebrow">Carreira '+curSlot()+' · novo jogo · agosto de 2026</span>').replace('Abrir a agência</button></div>','Abrir a agência</button>'+(any?'<button class="btn ghost" data-a="slotback">Voltar às carreiras</button>':'')+'</div>');}
 const SLOTA={
@@ -4957,21 +4957,28 @@ const SCPA={scpos(d){ui.scPos=d.v||'';render();}};
 /* ================= MARCAS: CATÁLOGO FICTÍCIO, COM NOMES QUE O JOGADOR PODE TROCAR (SALVOS SÓ NESTE APARELHO) ================= */
 const BRC={chut:'Material esportivo',rel:'Relógios',beb:'Bebidas',ban:'Bancos',tel:'Telefonia e tecnologia',gam:'Games e apps',mod:'Moda e beleza',aut:'Automóveis',sup:'Suplementos',emp:'Empresas (só clubes)'};
 const BRT=['','Marca global','Marca grande','Marca nacional'];
-const BR=[['rajada','Chuteiras Rajada','chut',1],['vortice','Vórtice Sports','chut',1],['atlas','Atlas Esportes','chut',2],['kaizen','Kaizen Boots','chut',2],['pampa','Pampa Sport','chut',3],['garra','Garra Esportiva','chut',3],
- ['aurum','Relógios Aurum','rel',1],['cronos','Relógios Cronos','rel',2],['brisa','Refrigerante Brisa','beb',1],['voltz','Isotônico Voltz','beb',2],['garoa','Bebida Zero Garoa','beb',3],
- ['austral','Banco Austral','ban',1],['ponta','Banco Ponta','ban',2],['lastro','Fintech Lastro','ban',2],['nebula','Smartphones Nébula','tel',1],['sinal','Operadora Sinal+','tel',2],['pulso','Fones Pulso','tel',3],
- ['arenax','Games Arena X','gam',1],['bolada','App Bolada Fit','gam',3],['monarca','Grife Monarca','mod',1],['lince','Óculos Lince','mod',2],['ebano','Perfumes Ébano','mod',2],
- ['trilha','Montadora Trilha','aut',1],['vertice','Motos Vértice','aut',3],['forja','Suplementos Forja','sup',3],
- ['alicerce','Construtora Alicerce','emp',2],['rumo','Aérea Rumo','emp',2],['escudo','Seguradora Escudo','emp',2],['cesta','Supermercados Cesta','emp',2]].map(x=>({id:x[0],n0:x[1],cat:x[2],t:x[3]}));
+const BR=[
+ ['rajada','Chuteiras Rajada','chut',1],['vortice','Vórtice Sports','chut',1],['orion','Órion Athletics','chut',1],['atlas','Atlas Esportes','chut',2],['kaizen','Kaizen Boots','chut',2],['falco','Falco Sport','chut',2],['tempest','Tempest Football','chut',2],['pampa','Pampa Sport','chut',3],['garra','Garra Esportiva','chut',3],['tupi','Tupi Calçados','chut',3],['marola','Marola Sports','chut',3],
+ ['aurum','Relógios Aurum','rel',1],['solenne','Relógios Solenne','rel',1],['cronos','Relógios Cronos','rel',2],['ponteiro','Ponteiro Relógios','rel',3],
+ ['brisa','Refrigerante Brisa','beb',1],['polar','Água Polar','beb',1],['voltz','Isotônico Voltz','beb',2],['trovao','Energético Trovão','beb',2],['serra','Cervejaria Serra Alta','beb',2],['garoa','Bebida Zero Garoa','beb',3],['caju','Sucos Caju Bom','beb',3],
+ ['austral','Banco Austral','ban',1],['meridia','Banco Meridia','ban',1],['ponta','Banco Ponta','ban',2],['lastro','Fintech Lastro','ban',2],['cofre','Banco Cofre Digital','ban',2],['pix9','Carteira Pix9','ban',3],['cooper','Cooperativa Raiz','ban',3],
+ ['nebula','Smartphones Nébula','tel',1],['quanta','Quanta Eletrônicos','tel',1],['sinal','Operadora Sinal+','tel',2],['fibra','Fibra Veloz Internet','tel',2],['pulso','Fones Pulso','tel',3],['onda','Operadora Onda','tel',3],
+ ['arenax','Games Arena X','gam',1],['pixelr','Pixel Rush Games','gam',1],['streamy','Streamy','gam',2],['bolada','App Bolada Fit','gam',3],['palpite','Palpite Certo','gam',3],
+ ['monarca','Grife Monarca','mod',1],['velluto','Velluto Moda','mod',1],['lince','Óculos Lince','mod',2],['ebano','Perfumes Ébano','mod',2],['corte','Barbearia Corte Fino','mod',3],['urbano','Urbano Jeans','mod',3],
+ ['trilha','Montadora Trilha','aut',1],['astra','Astra Motors','aut',1],['pneus','Pneus Rodagem','aut',2],['vertice','Motos Vértice','aut',3],['locar','Locadora Locar','aut',3],
+ ['forja','Suplementos Forja','sup',3],['titan','Titan Nutrition','sup',2],['pura','Pura Proteína','sup',3],
+ ['alicerce','Construtora Alicerce','emp',2],['rumo','Aérea Rumo','emp',1],['escudo','Seguradora Escudo','emp',2],['cesta','Supermercados Cesta','emp',2],['petrovia','Petrovia Combustíveis','emp',1],['saude','Plano Saúde Vida','emp',2],['logix','Logix Transportes','emp',2],['farma','Farmácias Bem-Estar','emp',3],['casaluz','Casa & Luz Móveis','emp',3],['edu','Universidade Horizonte','emp',3],['agro','Agro Campo Verde','emp',2],['energia','Energia Solar Sol Nascente','emp',3],['magazine','Magazine Popular','emp',2],['bet','Loteria Palpite Federal','emp',2]
+].map(x=>({id:x[0],n0:x[1],cat:x[2],t:x[3]}));
 const BRI=Object.fromEntries(BR.map(b=>[b.id,b])),BRN0=Object.fromEntries(BR.map(b=>[b.n0,b.id]));
 let BCUST={},BALIAS={};
-try{BCUST=JSON.parse(localStorage.getItem('fam-brands')||'{}')||{};BALIAS=JSON.parse(localStorage.getItem('fam-brands-old')||'{}')||{};}catch(e){}
+/* nomes fixos: sem edição pelo jogador */
 const bN=id=>(BCUST[id]||'').trim()||(BRI[id]?BRI[id].n0:id);
 function bIdOf(str){if(BRN0[str])return BRN0[str];for(const id in BCUST)if(BCUST[id]===str)return id;for(const id in BALIAS)if((BALIAS[id]||[]).includes(str))return id;return null;}
 const dispB=str=>{const id=bIdOf(str);return id?bN(id):str;};
 /* os nomes que o resto do jogo usa passam a sair do catálogo (patrocínio de atleta, eventos e patrocinador master) */
 const ORIG={SPB:SPB.slice(),SPM_B:SPM_B.slice(),BRANDS:BRANDS.slice()};
-function applyBrands(){[['SPB',SPB],['SPM_B',SPM_B],['BRANDS',BRANDS]].forEach(([k,a])=>ORIG[k].forEach((n,i)=>{const id=BRN0[n];a[i]=id?bN(id):n;}));}
+function applyBrands(){const ath=BR.filter(b=>b.cat!=='emp').map(b=>b.n0),mst=BR.filter(b=>['emp','ban','tel','aut','beb'].includes(b.cat)&&b.t<=2).map(b=>b.n0);
+  SPB.length=0;ath.forEach(n=>SPB.push(n));SPM_B.length=0;mst.forEach(n=>SPM_B.push(n));}
 applyBrands();
 const bInit=n=>String(n).replace(/^(Chuteiras|Relógios|Refrigerante|Isotônico|Bebida|Banco|Fintech|Smartphones|Operadora|Fones|Games|App|Grife|Óculos|Perfumes|Montadora|Motos|Suplementos|Construtora|Aérea|Seguradora|Supermercados)\s+/,'').split(/\s+/).map(w=>w[0]).join('').slice(0,2).toUpperCase();
 const bBadge=(n,cat)=>'<span class="bb bb-'+(cat||'x')+'">'+esc(bInit(n))+'</span>';
@@ -5014,7 +5021,7 @@ function spBlock(p,o){const v=mktV(p),L=(o.sp||[]).slice().sort((a,b)=>(spCat(a)
    '<div class="spb-k"><div><span>Imagem</span><b>'+v+'</b></div><div><span>Atrai</span><b>'+(v<22?'—':['','Globais','Grandes','Nacionais'][tm])+'</b></div><div><span>Contratos</span><b>'+fmt(tot)+'<small>/sem</small></b></div></div>'+
    (L.length?'<div class="spb-l">'+L.map(s=>{const n=spName(s),c=spCat(s);return'<div class="spb-r">'+bBadge(n,c)+'<div class="grow"><b>'+esc(n)+'</b><span class="small muted">'+(BRC[c]||'Patrocínio')+(s.t?' · '+BRT[s.t].toLowerCase():'')+' · até '+fmonth(monthIdx(s.until))+'</span>'+(s.bon?'<span class="small spb-bon">Bônus de '+esc(bonTxt(s.bon))+'</span>'+(s.got?'<span class="small muted">Bônus já pagos: '+fmt(s.got)+'</span>':''):'')+'</div><b class="spb-w">'+fmt(s.w)+'<small>/sem</small></b></div>';}).join('')+'</div>':'<p class="small muted">'+(v<22?'Nenhuma marca procura '+esc(p.name.split(' ')[0])+' ainda. Fama, nível alto, seleção e potencial (para quem tem até 21 anos) aumentam o valor de imagem.':'Nenhum contrato ainda. As marcas devem aparecer nas próximas semanas.')+'</p>')+
    '<p class="small muted spb-s">Vagas: '+(ch?'chuteira ocupada':v>=22?'chuteira livre':'chuteira a partir de 22 de valor')+' · outras marcas '+oth+' de '+sl+'. A agência fica com '+Math.round(SP_CUT*100)+'% de cada contrato.</p>'+
-   '<button class="btn sm ghost spb-e" data-a="brands">Editar nomes das marcas</button></div>';}
+   '</div>';}
 
 /* ================= EDITOR DE MARCAS ================= */
 function mBrands(){const cats=Object.keys(BRC);
@@ -5321,7 +5328,7 @@ function renderModal(){const el=$('#modal');let h='';
     if(G.events.length){const e=G.events[0],d=evDef(e),pp=G.P[e.pid];h='<div class="sheet"><span class="eyebrow">Decisão da semana'+(G.events.length>1?' · 1 de '+G.events.length:'')+'</span>'+(pp?'<div class="neg-h">'+avatar(pp,44)+'<h2>'+esc(d.title)+'</h2></div>':'<h2>'+esc(d.title)+'</h2>')+'<p>'+esc(d.text)+'</p><div class="choices">'+d.choices.map((c,i)=>'<button class="choice" data-a="ev" data-i="'+i+'"'+(c.can===false?' disabled':'')+'><b>'+esc(c.label)+'</b><span>'+esc(c.sub||'')+'</span></button>').join('')+'</div></div>';}}
   if(!h&&G&&ui.modal){const m=ui.modal;
     if(m.type==='info')h='<div class="sheet">'+(m.stamp?'<div class="stamp">'+esc(m.stamp)+'</div>':'')+'<h2>'+esc(m.title)+'</h2>'+m.html+'<div class="acts"><button class="btn pri" data-a="close">Continuar</button></div></div>';
-    else if(m.type==='pick')h=mPick();else if(m.type==='evo')h=mEvo();else if(m.type==='ag')h=mAgPop3(m.k);else if(m.type==='tryout')h=mTryout();else if(m.type==='fin')h=mFin();else if(m.type==='biz')h=mBiz();else if(m.type==='sign')h=mSign();else if(m.type==='slots')h=mSlots(true);else if(m.type==='faces')h=mFaces();else if(m.type==='brands')h=mBrands();else if(m.type==='ctr')h=inCur(curOf(ownC()),mCtr);else if(m.type==='inbox')h=mInbox();
+    else if(m.type==='pick')h=mPick();else if(m.type==='evo')h=mEvo();else if(m.type==='ag')h=mAgPop3(m.k);else if(m.type==='tryout')h=mTryout();else if(m.type==='fin')h=mFin();else if(m.type==='biz')h=mBiz();else if(m.type==='sign')h=mSign();else if(m.type==='slots')h=mSlots(true);else if(m.type==='faces')h=mFaces();else if(m.type==='ctr')h=inCur(curOf(ownC()),mCtr);else if(m.type==='inbox')h=mInbox();
     else if(m.type==='drop'){const p=G.P[m.pid];h='<div class="sheet"><h2>Dispensar '+esc(p.name)+'?</h2><p>Você deixa de representá-lo e perde as comissões. Sua reputação cai 1 ponto.</p><div class="acts"><button class="btn danger" data-a="dropok" data-p="'+p.id+'">Dispensar</button><button class="btn" data-a="close">Cancelar</button></div></div>';}
     else if(m.type==='sellclub'){const c=ownC();h='<div class="sheet"><h2>Vender o '+esc(c.n)+'?</h2><p>Você vende seus '+G.own.pct+'% e recebe <b>'+fmt(sellVal(c))+'</b>.</p><div class="acts"><button class="btn danger" data-a="sellok">Vender</button><button class="btn" data-a="close">Cancelar</button></div></div>';}}
   if(!h&&G&&ui.stack.length){const top=ui.stack[ui.stack.length-1];if(top.t==='p'&&G.P[top.id])h=inCur(curOfP(G.P[top.id]),()=>mPlayer(G.P[top.id]));else if(top.t==='c')h=inCur(curOf(G.clubs[top.id]),()=>mClub(G.clubs[top.id]));else if(top.t==='a'&&G.ags[top.id])h=mAgency(top.id);else if(top.t==='n'&&G.nt.sq[top.n])h=mNation(top.n);else ui.stack=[];}
