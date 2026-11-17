@@ -625,8 +625,12 @@ html,body{touch-action:manipulation}
 .spb-l{display:flex;flex-direction:column}.spb-r{display:flex;align-items:center;gap:10px;padding:9px 0;border-top:1px solid var(--line)}.spb-r .grow{display:flex;flex-direction:column;gap:1px;min-width:0}.spb-r b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .spb-w{flex:none;font-family:var(--f-d);font-size:16px;text-align:right}.spb-w small{font-size:11px;color:var(--ink2);font-family:inherit}.spb-bon{color:var(--gold);font-weight:600}.spb-s{margin-top:6px}.spb-e{margin-top:4px}
 .spb-m{display:flex;flex-direction:column;gap:6px;margin-top:8px}.spb-m .btn{width:100%}p.spb-m{flex-direction:row;align-items:flex-start;gap:6px}p.spb-m svg{flex:none;margin-top:2px}
+.edit .otabs{grid-template-columns:repeat(2,minmax(0,1fr))}.edit .otab small{font-size:10.5px;font-weight:500;opacity:.75}
+.sheet .card.ed-pack{display:flex;flex-direction:row;align-items:center;gap:10px;padding:12px;min-height:0;height:auto;text-align:left}.ed-pack>svg{flex:none;color:var(--ink2)}.ed-pack .grow{display:flex;flex-direction:column;gap:2px;min-width:0}.ed-pack .btn{flex:none}
+.ed-q{width:100%;box-sizing:border-box;padding:11px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);font:inherit;font-size:16px}.ed-q:focus{outline:none;border-color:var(--gold)}
+.ed-res{display:flex;flex-direction:column}.ed-r{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.ed-r:last-child{border-bottom:0}.ed-r .grow{display:flex;flex-direction:column;gap:3px;min-width:0}.ed-r .face-acts{margin-top:4px;justify-content:flex-start}
 .brs-g{margin-top:14px}.brs-g h3{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink2);margin:0 0 6px}
-.brs-r{display:flex;align-items:flex-start;gap:10px;padding:6px 0}.brs-r .bb{margin-top:4px}.brs>.acts{position:sticky;bottom:0;z-index:2;background:var(--surface);padding:10px 0 4px;margin-top:10px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:8px}.brs>.acts .btn{margin:0;width:100%}.brs>.acts .pri{grid-column:1/-1}.brs-r .grow{display:flex;flex-direction:column;gap:2px;min-width:0}
+.brs-r{display:flex;align-items:flex-start;gap:10px;padding:6px 0}.brs-r .bb{margin-top:4px}.brs>.acts,.edit .brs>.acts{position:sticky;bottom:0;z-index:2;background:var(--surface);padding:10px 0 4px;margin-top:10px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:8px}.brs>.acts .btn{margin:0;width:100%}.brs>.acts .pri{grid-column:1/-1}.brs-r .grow{display:flex;flex-direction:column;gap:2px;min-width:0}
 .brs-r input{width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);font:inherit;font-size:16px}.brs-r input:focus{outline:none;border-color:var(--gold)}.brs-r small{font-size:11px;color:var(--ink2)}
 /* ===== olheiro com posição ===== */
 .sc-pos{display:flex;flex-direction:column;gap:8px;margin-bottom:10px}.sc-pos .otabs{grid-template-columns:repeat(6,minmax(0,1fr))}.sc-pos .otab:first-child{grid-column:1/-1}.sc-pos .otab{padding-left:2px;padding-right:2px}.sc-pos .otab{min-height:44px}
@@ -4208,7 +4212,7 @@ function slotCard(n,inGame){const m=slotMeta(n),cur=n===curSlot()&&!!G,del=ui.sl
   return top+'<div class="slot-a">'+(cur?'<span class="chip good">Jogando agora</span>':'<button class="btn pri" data-a="slotgo" data-n="'+n+'">'+(inGame?'Trocar para esta':'Continuar')+'</button>')+'<button class="btn ghost" data-a="slotdel" data-n="'+n+'">Apagar</button></div></div>';}
 function mSlots(inGame){return'<div class="sheet slots"><span class="eyebrow">Football Agent Manager</span><h2>Suas carreiras</h2><p class="small muted">Até 3 carreiras ao mesmo tempo. O jogo salva sozinho a cada ação; cada carreira fica guardada neste aparelho.</p>'+
   [1,2,3].map(n=>slotCard(n,inGame)).join('')+
-  (inGame?'<div class="acts"><button class="btn" data-a="faces">Pack de faces</button><button class="btn" data-a="slotsave">Salvar agora</button><button class="btn" data-a="close">Voltar ao jogo</button></div>':'')+'</div>';}
+  (inGame?'<div class="acts"><button class="btn" data-a="edit">Editar fotos e patrocinadores</button><button class="btn" data-a="slotsave">Salvar agora</button><button class="btn" data-a="close">Voltar ao jogo</button></div>':'')+'</div>';}
 function mStartS(){const any=[1,2,3].some(n=>slotMeta(n));if(any&&!ui.newSlot)return mSlots(false);
   return mStart3().replace('<span class="eyebrow">Novo jogo · agosto de 2026</span>','<span class="eyebrow">Carreira '+curSlot()+' · novo jogo · agosto de 2026</span>').replace('Abrir a agência</button></div>','Abrir a agência</button>'+(any?'<button class="btn ghost" data-a="slotback">Voltar às carreiras</button>':'')+'</div>');}
 const SLOTA={
@@ -4972,13 +4976,13 @@ const BR=[
 ].map(x=>({id:x[0],n0:x[1],cat:x[2],t:x[3]}));
 const BRI=Object.fromEntries(BR.map(b=>[b.id,b])),BRN0=Object.assign({'Chuteiras Rajada':'rajada','Vórtice Sports':'vortice','Órion Athletics':'orion','Atlas Esportes':'atlas','Kaizen Boots':'kaizen','Falco Sport':'falco','Tempest Football':'tempest','Pampa Sport':'pampa','Garra Esportiva':'garra','Tupi Calçados':'tupi','Marola Sports':'marola','Relógios Aurum':'aurum','Relógios Solenne':'solenne','Relógios Cronos':'cronos','Ponteiro Relógios':'ponteiro','Refrigerante Brisa':'brisa','Água Polar':'polar','Isotônico Voltz':'voltz','Energético Trovão':'trovao','Cervejaria Serra Alta':'serra','Bebida Zero Garoa':'garoa','Sucos Caju Bom':'caju','Banco Austral':'austral','Banco Meridia':'meridia','Banco Ponta':'ponta','Fintech Lastro':'lastro','Banco Cofre Digital':'cofre','Carteira Pix9':'pix9','Cooperativa Raiz':'cooper','Smartphones Nébula':'nebula','Quanta Eletrônicos':'quanta','Operadora Sinal+':'sinal','Fibra Veloz Internet':'fibra','Fones Pulso':'pulso','Operadora Onda':'onda','Games Arena X':'arenax','Pixel Rush Games':'pixelr','Streamy':'streamy','App Bolada Fit':'bolada','Palpite Certo':'palpite','Grife Monarca':'monarca','Velluto Moda':'velluto','Óculos Lince':'lince','Perfumes Ébano':'ebano','Barbearia Corte Fino':'corte','Urbano Jeans':'urbano','Montadora Trilha':'trilha','Astra Motors':'astra','Pneus Rodagem':'pneus','Motos Vértice':'vertice','Locadora Locar':'locar','Suplementos Forja':'forja','Titan Nutrition':'titan','Pura Proteína':'pura','Construtora Alicerce':'alicerce','Aérea Rumo':'rumo','Seguradora Escudo':'escudo','Supermercados Cesta':'cesta','Petrovia Combustíveis':'petrovia','Plano Saúde Vida':'saude','Logix Transportes':'logix','Farmácias Bem-Estar':'farma','Casa & Luz Móveis':'casaluz','Universidade Horizonte':'edu','Agro Campo Verde':'agro','Energia Solar Sol Nascente':'energia','Magazine Popular':'magazine','Loteria Palpite Federal':'bet'},Object.fromEntries(BR.map(b=>[b.n0,b.id])));
 let BCUST={},BALIAS={};
-/* nomes fixos: sem edição pelo jogador */
+try{BCUST=JSON.parse(localStorage.getItem('fam-brands')||'{}')||{};BALIAS=JSON.parse(localStorage.getItem('fam-brands-old')||'{}')||{};}catch(e){}
 const bN=id=>(BCUST[id]||'').trim()||(BRI[id]?BRI[id].n0:id);
 function bIdOf(str){if(BRN0[str])return BRN0[str];for(const id in BCUST)if(BCUST[id]===str)return id;for(const id in BALIAS)if((BALIAS[id]||[]).includes(str))return id;return null;}
 const dispB=str=>{const id=bIdOf(str);return id?bN(id):str;};
 /* os nomes que o resto do jogo usa passam a sair do catálogo (patrocínio de atleta, eventos e patrocinador master) */
 const ORIG={SPB:SPB.slice(),SPM_B:SPM_B.slice(),BRANDS:BRANDS.slice()};
-function applyBrands(){const ath=BR.filter(b=>b.cat!=='emp').map(b=>b.n0),mst=BR.filter(b=>['emp','ban','tel','aut','beb'].includes(b.cat)&&b.t<=2).map(b=>b.n0);
+function applyBrands(){const ath=BR.filter(b=>b.cat!=='emp').map(b=>bN(b.id)),mst=BR.filter(b=>['emp','ban','tel','aut','beb'].includes(b.cat)&&b.t<=2).map(b=>bN(b.id));
   SPB.length=0;ath.forEach(n=>SPB.push(n));SPM_B.length=0;mst.forEach(n=>SPM_B.push(n));}
 applyBrands();
 const bInit=n=>String(n).replace(/^(Chuteiras|Relógios|Refrigerante|Isotônico|Bebida|Banco|Fintech|Smartphones|Operadora|Fones|Games|App|Grife|Óculos|Perfumes|Montadora|Motos|Suplementos|Construtora|Aérea|Seguradora|Supermercados)\s+/,'').split(/\s+/).map(w=>w[0]).join('').slice(0,2).toUpperCase();
@@ -5061,6 +5065,32 @@ const SPMA={spask(d){const p=G.P[+d.p];if(!p||!isClient(p))return;const o=offOf(
   const ok=Math.random()<clamp(.55+mdL()*.12+mktV(p)/400,.55,.95)&&spOffer(p,club(p),o,p.id,true);
   if(!ok){news('O estúdio de mídia apresentou '+p.name+' a várias marcas, mas nenhuma fechou agora.','agencia');pop({k:'bad',ic:'no',ti:'Sem acordo',tx:'Nenhuma marca topou desta vez. Tente de novo em 4 semanas.'});}
   save();render();}};
+
+/* ---- editar.js ---- */
+/* ================= MENU › EDITAR: FOTOS DOS JOGADORES E NOMES DOS PATROCINADORES (TUDO SÓ NESTE APARELHO) ================= */
+const edNorm=t=>String(t||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+function edResults(q){const k=edNorm(q).trim();let L;
+  if(k.length<2)L=G.clients.map(id=>G.P[id]).filter(Boolean);
+  else L=allP().filter(p=>edNorm(p.name).includes(k)).sort((a,b)=>(isClient(b)?1:0)-(isClient(a)?1:0)||b.ovr-a.ovr).slice(0,15);
+  if(!L.length)return'<p class="small muted">'+(k.length<2?'Digite pelo menos 2 letras do nome.':'Nenhum jogador com esse nome.')+'</p>';
+  return(k.length<2?'<p class="small muted">Seus clientes. Busque pelo nome para achar qualquer jogador.</p>':'')+L.map(p=>{const c=club(p);return'<div class="ed-r">'+avatar(p,44)+'<div class="grow"><div class="el-n">'+ovrB(p.ovr)+'<b>'+esc(p.name)+'</b></div><span class="small muted">'+p.pos+' · '+p.age+' anos · '+(c?esc(c.n):'sem clube')+'</span>'+faceActs(p)+'</div></div>';}).join('');}
+function edBrands(){return'<div class="brs"><p class="small muted">Troque o nome de qualquer patrocinador. Vale para os contratos de atletas, para o patrocinador master do clube e para todas as carreiras. Os nomes ficam salvos só neste aparelho.</p>'+
+  Object.keys(BRC).map(k=>'<div class="brs-g"><h3>'+esc(BRC[k])+'</h3>'+BR.filter(b=>b.cat===k).map(b=>'<label class="brs-r">'+bBadge(bN(b.id),k)+'<span class="grow"><input type="text" maxlength="28" data-bid="'+b.id+'" value="'+esc(BCUST[b.id]||'')+'" placeholder="'+esc(b.n0)+'"><small>'+BRT[b.t]+(BCUST[b.id]?' · original: '+esc(b.n0):'')+'</small></span></label>').join('')+'</div>').join('')+
+  '<div class="acts"><button class="btn pri" data-a="brsave">Salvar nomes</button><button class="btn" data-a="brreset">Voltar aos originais</button><button class="btn" data-a="close">Fechar</button></div></div>';}
+function mEdit(){const t=ui.edt==='br'?'br':'ft',n=Object.keys(FACES).length,nb=Object.keys(BCUST).length;
+  return'<div class="sheet edit"><span class="eyebrow">Menu</span><h2>Editar</h2>'+
+   '<div class="otabs">'+[['ft','Fotos dos jogadores','staff',n?n+' fotos':''],['br','Patrocinadores','star',nb?nb+' alterados':'']].map(o=>'<button class="otab" data-a="edtab" data-v="'+o[0]+'" aria-pressed="'+(t===o[0])+'">'+svgI(o[2],20)+'<span>'+o[1]+'</span>'+(o[3]?'<small>'+o[3]+'</small>':'')+'</button>').join('')+'</div>'+
+   (t==='br'?edBrands():
+    '<div class="card ed-pack">'+svgI('staff',20)+'<div class="grow"><b>Pack de faces</b><span class="small muted">Importe várias fotos de uma vez pelo nome do arquivo. '+n+' foto(s) no aparelho.</span></div><button class="btn sm" data-a="faces">Abrir</button></div>'+
+    '<input type="search" id="ed-q" class="ed-q" placeholder="Buscar jogador pelo nome" value="'+esc(ui.edq||'')+'" autocomplete="off">'+
+    '<div id="ed-res" class="ed-res">'+edResults(ui.edq||'')+'</div>'+
+    '<p class="small muted">As fotos ficam guardadas só neste aparelho. Nada é enviado para a internet.</p><div class="acts"><button class="btn" data-a="close">Fechar</button></div>')+'</div>';}
+if(typeof document!=='undefined'&&document.addEventListener)document.addEventListener('input',e=>{const t=e.target;if(!t||t.id!=='ed-q')return;ui.edq=t.value;const r=document.getElementById('ed-res');if(r)r.innerHTML=edResults(ui.edq);});
+const EDA={edit(){ui.stack=[];ui.edt=ui.edt||'ft';ui.modal={type:'edit'};render();},edtab(d){ui.edt=d.v;render();},
+/* salvar ou restaurar os nomes mantém a tela Editar aberta */
+brands(){ui.stack=[];ui.edt='br';ui.modal={type:'edit'};render();},
+brsave(){const nx={};document.querySelectorAll('.brs [data-bid]').forEach(i=>{const v=String(i.value||'').replace(/\s+/g,' ').trim().slice(0,28);if(v)nx[i.dataset.bid]=v;});brStore(nx);toast('Nomes dos patrocinadores salvos neste aparelho.');render();},
+brreset(){brStore({});toast('Patrocinadores de volta aos nomes originais.');render();}};
 
 /* ---- ui-views.js ---- */
 /* ================= COMPONENTES ================= */
@@ -5356,7 +5386,7 @@ function renderModal(){const el=$('#modal');let h='';
     if(G.events.length){const e=G.events[0],d=evDef(e),pp=G.P[e.pid];h='<div class="sheet"><span class="eyebrow">Decisão da semana'+(G.events.length>1?' · 1 de '+G.events.length:'')+'</span>'+(pp?'<div class="neg-h">'+avatar(pp,44)+'<h2>'+esc(d.title)+'</h2></div>':'<h2>'+esc(d.title)+'</h2>')+'<p>'+esc(d.text)+'</p><div class="choices">'+d.choices.map((c,i)=>'<button class="choice" data-a="ev" data-i="'+i+'"'+(c.can===false?' disabled':'')+'><b>'+esc(c.label)+'</b><span>'+esc(c.sub||'')+'</span></button>').join('')+'</div></div>';}}
   if(!h&&G&&ui.modal){const m=ui.modal;
     if(m.type==='info')h='<div class="sheet">'+(m.stamp?'<div class="stamp">'+esc(m.stamp)+'</div>':'')+'<h2>'+esc(m.title)+'</h2>'+m.html+'<div class="acts"><button class="btn pri" data-a="close">Continuar</button></div></div>';
-    else if(m.type==='pick')h=mPick();else if(m.type==='evo')h=mEvo();else if(m.type==='ag')h=mAgPop3(m.k);else if(m.type==='tryout')h=mTryout();else if(m.type==='fin')h=mFin();else if(m.type==='biz')h=mBiz();else if(m.type==='sign')h=mSign();else if(m.type==='slots')h=mSlots(true);else if(m.type==='faces')h=mFaces();else if(m.type==='ctr')h=inCur(curOf(ownC()),mCtr);else if(m.type==='inbox')h=mInbox();
+    else if(m.type==='pick')h=mPick();else if(m.type==='evo')h=mEvo();else if(m.type==='ag')h=mAgPop3(m.k);else if(m.type==='tryout')h=mTryout();else if(m.type==='fin')h=mFin();else if(m.type==='biz')h=mBiz();else if(m.type==='sign')h=mSign();else if(m.type==='slots')h=mSlots(true);else if(m.type==='faces')h=mFaces();else if(m.type==='edit')h=mEdit();else if(m.type==='ctr')h=inCur(curOf(ownC()),mCtr);else if(m.type==='inbox')h=mInbox();
     else if(m.type==='drop'){const p=G.P[m.pid];h='<div class="sheet"><h2>Dispensar '+esc(p.name)+'?</h2><p>Você deixa de representá-lo e perde as comissões. Sua reputação cai 1 ponto.</p><div class="acts"><button class="btn danger" data-a="dropok" data-p="'+p.id+'">Dispensar</button><button class="btn" data-a="close">Cancelar</button></div></div>';}
     else if(m.type==='sellclub'){const c=ownC();h='<div class="sheet"><h2>Vender o '+esc(c.n)+'?</h2><p>Você vende seus '+G.own.pct+'% e recebe <b>'+fmt(sellVal(c))+'</b>.</p><div class="acts"><button class="btn danger" data-a="sellok">Vender</button><button class="btn" data-a="close">Cancelar</button></div></div>';}}
   if(!h&&G&&ui.stack.length){const top=ui.stack[ui.stack.length-1];if(top.t==='p'&&G.P[top.id])h=inCur(curOfP(G.P[top.id]),()=>mPlayer(G.P[top.id]));else if(top.t==='c')h=inCur(curOf(G.clubs[top.id]),()=>mClub(G.clubs[top.id]));else if(top.t==='a'&&G.ags[top.id])h=mAgency(top.id);else if(top.t==='n'&&G.nt.sq[top.n])h=mNation(top.n);else ui.stack=[];}
@@ -5419,7 +5449,7 @@ const A={
   goA(){ui.comp='A';ui.tab='ligas';ui.stack=[];render();window.scrollTo(0,0);}
 };
 
-Object.assign(A,OFFA,EVOA,OWNA,MINDA,CALA,NAVA,CARDA,CMA,FINA,BIZA,NTCA,TIDYA,FLAGA,PROGA,BIZLA,OTRA,W2A,OLA,CLUB2A,PHA,TIEA,FACEA,RDA,NAVHA,HOFA,SCPA,BRA,SPMA,{slots:SLOTA.slots,slotsave:SLOTA.slotsave,slotgo:SLOTA.slotgo,slotnew:SLOTA.slotnew,slotback:SLOTA.slotback,slotdel:SLOTA.slotdel,slotdelok:SLOTA.slotdelok});
+Object.assign(A,OFFA,EVOA,OWNA,MINDA,CALA,NAVA,CARDA,CMA,FINA,BIZA,NTCA,TIDYA,FLAGA,PROGA,BIZLA,OTRA,W2A,OLA,CLUB2A,PHA,TIEA,FACEA,RDA,NAVHA,HOFA,SCPA,BRA,SPMA,EDA,{slots:SLOTA.slots,slotsave:SLOTA.slotsave,slotgo:SLOTA.slotgo,slotnew:SLOTA.slotnew,slotback:SLOTA.slotback,slotdel:SLOTA.slotdel,slotdelok:SLOTA.slotdelok});
 
 /* ================= RENDER, CARREGAMENTO, ANIMAÇÕES ================= */
 const LOAD_MSG=['Rodada em andamento','Olheiros ligando','Diretorias fazendo contas','Imprensa apurando','Vestiários fervendo','Telefone tocando'];
