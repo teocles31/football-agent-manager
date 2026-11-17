@@ -617,6 +617,16 @@ html,body{touch-action:manipulation}
 .pt-p .pt-o{position:absolute;top:-4px;right:12px;background:#f4c61f;color:#2b2200;font-weight:800;font-size:10.5px;border-radius:9px;padding:0 5px;line-height:16px}
 .pt-p .pt-pos{font-size:9.5px;opacity:.85;letter-spacing:.05em}
 .pt-p.mine .avatar,.pt-p.mine svg:first-child{outline:2px solid #f4c61f;border-radius:50%}
+/* ===== marcas e patrocínios ===== */
+.bb{width:34px;height:34px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;flex:none;font-family:var(--f-d);font-weight:700;font-size:14px;letter-spacing:.02em;color:#fff;background:#5b6770}
+.bb-chut{background:#1f2a33;box-shadow:inset 0 0 0 2px var(--gold);color:var(--gold)}.bb-rel{background:#7a5c1e}.bb-beb{background:#b2452f}.bb-ban{background:#1d5a8c}.bb-tel{background:#5b3f9c}.bb-gam{background:#2f7d4f}.bb-mod{background:#8c2f63}.bb-aut{background:#3d4a57}.bb-sup{background:#a3621d}.bb-emp{background:#44606f}
+.spb-k{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:6px 0 8px}.spb-k div{display:flex;flex-direction:column;gap:2px;padding:8px;border-radius:9px;background:var(--surface2);border:1px solid var(--line);min-width:0}
+.spb-k span{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink2);font-weight:700}.spb-k b{font-family:var(--f-d);font-size:17px;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.spb-k small{font-size:11px;color:var(--ink2)}
+.spb-l{display:flex;flex-direction:column}.spb-r{display:flex;align-items:center;gap:10px;padding:9px 0;border-top:1px solid var(--line)}.spb-r .grow{display:flex;flex-direction:column;gap:1px;min-width:0}.spb-r b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.spb-w{flex:none;font-family:var(--f-d);font-size:16px;text-align:right}.spb-w small{font-size:11px;color:var(--ink2);font-family:inherit}.spb-bon{color:var(--gold);font-weight:600}.spb-s{margin-top:6px}.spb-e{margin-top:4px}
+.brs-g{margin-top:14px}.brs-g h3{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink2);margin:0 0 6px}
+.brs-r{display:flex;align-items:center;gap:10px;padding:6px 0}.brs-r .grow{display:flex;flex-direction:column;gap:2px;min-width:0}
+.brs-r input{width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);font:inherit;font-size:16px}.brs-r input:focus{outline:none;border-color:var(--gold)}.brs-r small{font-size:11px;color:var(--ink2)}
 /* ===== olheiro com posição ===== */
 .sc-pos{display:flex;flex-direction:column;gap:8px;margin-bottom:10px}.sc-pos .otabs{grid-template-columns:repeat(6,minmax(0,1fr))}.sc-pos .otab:first-child{grid-column:1/-1}.sc-pos .otab{padding-left:2px;padding-right:2px}.sc-pos .otab{min-height:44px}
 .sc-pos.lock,.sc-done{flex-direction:row;align-items:center;gap:10px;margin-bottom:10px;display:flex}.sc-pos.lock svg,.sc-done svg{flex:none;color:var(--ink2)}.sc-pos p,.sc-done p{margin:0}
@@ -2206,7 +2216,7 @@ function nextWeek(){if(!G||G.over||G.ntc||G.paper||G.yrec||(G.phoneQ&&G.phoneQ.l
   fxWeek();let inc=0;G.clients.forEach(id=>{const p=G.P[id];if(p.club!=null)inc+=p.wage*(p.comm||0)/100*fxMul(club(p));});
   let exp=fixedCost();inc=Math.round(inc);G.money+=inc-exp;G.last={inc,exp};const mFx=G.money,i0=inc,e0=exp;G.stats.earned+=inc;
   for(let d=d0;d<d0+7;d++){G.d=d;dayTriggers(d);processDay(d,false);}G.d=d0+7;
-  weeklyHealth();u20Week(d0);develop();clientsWeekly();aiMarket();aiCoaches();genOffers();genMissions();ownWeek();careerWeek();pathWeek();offWeek();evoWeek();mindWeek();bizWeek();progWeek();bonWeek();inboxWeek();paperWeek(d0);rumWeek();repWeek();yearWeek();capWeek();
+  weeklyHealth();u20Week(d0);develop();clientsWeekly();aiMarket();aiCoaches();genOffers();genMissions();ownWeek();careerWeek();pathWeek();offWeek();evoWeek();mindWeek();bizWeek();progWeek();bonWeek();inboxWeek();paperWeek(d0);rumWeek();repWeek();yearWeek();capWeek();spBonWeek();
   G.ags.forEach((a,i)=>{if(i>0)a.rep=clamp(a.rep+rnd(-.12,.14),5,98);});
   decWeek();
   if(G.money<0){G.debt++;if(G.debt>=6)G.over=true;else news('A agência está no vermelho há '+G.debt+' semana'+(G.debt>1?'s':'')+'. Com 6 semanas seguidas, você quebra.','agencia');}else G.debt=0;
@@ -3041,7 +3051,7 @@ function offCard(p){const o=offOf(p),c=club(p),T=folTarget(p,o),pub=pubMonth(p,o
    spLine(o)+'<div class="meters one">'+meter('Saúde financeira',finHealth(o))+'</div>'+seg('offfp',Object.keys(FPLAN).map(k=>[k,FPLAN[k][0]]),o.fp)+
    '<p class="small muted">'+esc(FPLAN[o.fp][1])+(o.fp!=='no'?' A agência recebe '+fmt(Math.max(0,o.pat)*.00025)+' por semana de taxa de gestão.':' Montar um plano custa '+fmt(nice(Math.max(500,p.wage||1000)))+' e 1 ação.')+'</p>'+
    '<div class="acts"><button class="btn" data-a="offtalk" data-p="'+p.id+'"'+((o.aust||0)>G.d?' disabled':'')+'>'+((o.aust||0)>G.d?'Gastos contidos até '+fdate(o.aust):'Conversar sobre gastos <small>1 ação</small>')+'</button></div></div>';
-  h+='<div class="offb c-purple"><h3>'+icoS('road')+'Depois da carreira</h3>';
+  h+=spBlock(p,o);h+='<div class="offb c-purple"><h3>'+icoS('road')+'Depois da carreira</h3>';
   if(p.age<27)h+='<p class="small muted">Aos '+p.age+' anos ele ainda não pensa em parar. O plano de pós-carreira abre aos 27.</p>';
   else h+=(o.plan?'<b class="big2">'+PLANS[o.plan][0]+'</b><div class="repbar"><span class="lbl">'+(rdy?'Preparação concluída':'Preparação em '+Math.floor(o.planP)+'%')+'</span><div><i style="width:'+Math.floor(o.planP)+'%"></i></div></div>':'<p class="small">Sem plano. Quem para sem plano vive só do que guardou.</p>')+
    seg('offplan',Object.keys(PLANS).map(k=>[k,PLANS[k][0]]),o.plan)+'<p class="small muted">'+esc(o.plan?PLANS[o.plan][1]:'Escolher um caminho custa '+fmt(planCost(p))+' e 1 ação. A preparação leva cerca de um ano.')+(o.plan&&!rdy?' Trocar de caminho custa '+fmt(planCost(p))+' e aproveita só 30% do que ele já fez.':'')+'</p>';
@@ -3174,7 +3184,7 @@ const u20Line=p=>p.u20&&p.u20.ap&&p.u20.y===ymd(G.d).y?'<p class="small"><span c
 const SP_CUT=.15;
 const SPB=['Chuteiras Rajada','Isotônico Voltz','Relógios Aurum','Banco Ponta','Óculos Lince','Fones Pulso','Suplementos Forja','App Bolada Fit','Perfumes Ébano','Motos Vértice','Bebida Zero Garoa','Operadora Sinal+'];
 const spCh=()=>clamp(.4+G.staff.assessor*.08+G.me.neg*.03,.1,.85);
-const spLine=o=>o.sp&&o.sp.length?'<p class="small"><b>Patrocínios:</b> '+o.sp.map(s=>esc(s.b)+' · '+fmt(s.w)+'/sem até '+fdate(s.until)).join('; ')+'</p>':'';
+const spLine0=o=>o.sp&&o.sp.length?'<p class="small"><b>Patrocínios:</b> '+o.sp.map(s=>esc(s.b)+' · '+fmt(s.w)+'/sem até '+fdate(s.until)).join('; ')+'</p>':'';
 EV.spons=function(e){const p=G.P[e.pid],o=offOf(p),ag=Math.round(e.w*SP_CUT),m=Math.round(e.n/4.33);
   const sign=(w,txt,ok)=>{o.sp=o.sp||[];o.sp.push({b:e.b,w,until:G.d+e.n*7});news(p.name+' fechou patrocínio com a '+e.b+': '+fmt(w)+' por semana por '+m+' meses. A agência fica com '+Math.round(SP_CUT*100)+'%.','agencia');
     return{t:txt,chips:[['Agência +'+fmt(Math.round(w*SP_CUT))+'/sem','good'],['Por '+m+' meses','info']].concat(applyFx(p,null,{t:3,f:1},0)),ok};};
@@ -3191,7 +3201,7 @@ function evoWeek(){let inc=0;
     if(p.langC&&G.d>=p.langC.end){const l=p.langC.l;if(!langsOf(p).includes(l))p.langs.push(l);p.langC=null;p.trust=clamp(p.trust+2,0,100);news(p.name+' concluiu o curso de '+LANGN[l].toLowerCase()+'.','evolucao');}
     if(c&&!speaks(p)&&p.injury===0)p.morale=clamp(p.morale-1,0,100);
     o.sp=(o.sp||[]).filter(s=>{if(s.until<=G.d){news('Terminou o contrato de patrocínio de '+p.name+' com a '+s.b+'.','agencia');return false;}inc+=s.w*SP_CUT;o.pat+=Math.round(s.w*(1-SP_CUT)*.72);return true;});
-    if(p.fame>=12&&o.sp.length<2&&(o.spCd||0)<=G.d&&!G.events.some(e=>e.pid===id)&&Math.random()<(.007+p.fame/3000)*(mind('est')?1.4:1)*(1+.1*bizLv('mkt'))){o.spCd=G.d+63;const used=o.sp.map(s=>s.b);
+    spGen(p,c,o,id);if(false&&Math.random()<(.007+p.fame/3000)*(mind('est')?1.4:1)*(1+.1*bizLv('mkt'))){o.spCd=G.d+63;const used=o.sp.map(s=>s.b);
       G.events.push({type:'spons',pid:id,b:pick(SPB.filter(x=>!used.includes(x))),w:nice(wageRef(p.ovr,c?c.lg:0)*(.08+p.fame/220)*rnd(.85,1.15)*(1+.05*bizLv('mkt'))),n:ri(6,18)*4});}});
   inc=Math.round(inc);if(inc){G.money+=inc;G.stats.earned+=inc;G.last.inc+=inc;}}
 function evoMigrate(){const me=G.me;if(me.course)me.course.end=Math.min(me.course.end,me.course.start+91);else me.next=Math.min(me.next||0,G.d);G.cer=G.cer||[];}
@@ -3431,7 +3441,7 @@ function ownFinV(o,c,fin){const ri=[['Bilheteria'+(fin.homes?' ('+fin.homes+' jo
    '<span class="lbl">Plano de sócio-torcedor</span><div class="seg sm">'+PLAN.map((p,i)=>'<button data-a="oplan" data-v="'+i+'" aria-pressed="'+(o.plan===i)+'">'+p[0]+'</button>').join('')+'</div>'+
    '<p class="small muted"><b>'+o.mem.toLocaleString('pt-BR')+' sócios</b>. O número sobe com o humor da torcida e com o estádio. Plano popular atrai mais sócios pagando menos; premium o contrário.</p></section>';
   h+='<section class="card c-purple">'+cardH('deal','Patrocinador master');
-  if(o.spm&&o.spm.until>G.d)h+='<b class="big2">'+esc(o.spm.b)+'</b><p class="small">'+fmt(o.spm.w)+' por semana até '+fdate(o.spm.until,true)+(o.spm.bon?'. Bônus de '+fmt(o.spm.bon)+' por título.':'.')+'</p>';
+  if(o.spm&&o.spm.until>G.d)h+='<b class="big2">'+esc(dispB(o.spm.b))+'</b><p class="small">'+fmt(o.spm.w)+' por semana até '+fdate(o.spm.until,true)+(o.spm.bon?'. Bônus de '+fmt(o.spm.bon)+' por título.':'.')+'</p>';
   else{if(!o.spmOff)spmOffers();h+='<p class="small muted">A camisa está sem patrocinador master. Escolha uma proposta:</p><div class="list">'+o.spmOff.map((x,i)=>'<div><div class="grow"><b>'+esc(x.b)+'</b> <span class="chip">'+x.k+'</span><div class="small muted">'+fmt(x.w)+'/sem por '+Math.round(x.wk/52)+' ano'+(x.wk>52?'s':'')+(x.bon?' · bônus de '+fmt(x.bon)+' por título':'')+'</div></div><button class="btn pri sm" data-a="ospm" data-i="'+i+'">Assinar</button></div>').join('')+'</div>'+
     '<button class="btn sm" data-a="ospmnew"'+((o.spmCd||0)>G.d?' disabled':'')+'>'+((o.spmCd||0)>G.d?'Novas propostas em '+fdate(o.spmCd):'Ouvir outras propostas')+'</button>';}
   return h+'</section></div>';}
@@ -4197,7 +4207,7 @@ function slotCard(n,inGame){const m=slotMeta(n),cur=n===curSlot()&&!!G,del=ui.sl
   return top+'<div class="slot-a">'+(cur?'<span class="chip good">Jogando agora</span>':'<button class="btn pri" data-a="slotgo" data-n="'+n+'">'+(inGame?'Trocar para esta':'Continuar')+'</button>')+'<button class="btn ghost" data-a="slotdel" data-n="'+n+'">Apagar</button></div></div>';}
 function mSlots(inGame){return'<div class="sheet slots"><span class="eyebrow">Football Agent Manager</span><h2>Suas carreiras</h2><p class="small muted">Até 3 carreiras ao mesmo tempo. O jogo salva sozinho a cada ação; cada carreira fica guardada neste aparelho.</p>'+
   [1,2,3].map(n=>slotCard(n,inGame)).join('')+
-  (inGame?'<div class="acts"><button class="btn" data-a="faces">Pack de faces</button><button class="btn" data-a="slotsave">Salvar agora</button><button class="btn" data-a="close">Voltar ao jogo</button></div>':'')+'</div>';}
+  (inGame?'<div class="acts"><button class="btn" data-a="faces">Pack de faces</button><button class="btn" data-a="brands">Marcas</button><button class="btn" data-a="slotsave">Salvar agora</button><button class="btn" data-a="close">Voltar ao jogo</button></div>':'')+'</div>';}
 function mStartS(){const any=[1,2,3].some(n=>slotMeta(n));if(any&&!ui.newSlot)return mSlots(false);
   return mStart3().replace('<span class="eyebrow">Novo jogo · agosto de 2026</span>','<span class="eyebrow">Carreira '+curSlot()+' · novo jogo · agosto de 2026</span>').replace('Abrir a agência</button></div>','Abrir a agência</button>'+(any?'<button class="btn ghost" data-a="slotback">Voltar às carreiras</button>':'')+'</div>');}
 const SLOTA={
@@ -4943,6 +4953,80 @@ function scout(rid){if(G.tripD===G.d){toast('Seu olheiro já viajou nesta semana
   if(G.ap<ap0||G.prospects.length>n0){G.tripD=G.d;save();render();}}
 const SCPA={scpos(d){ui.scPos=d.v||'';render();}};
 
+/* ---- brands.js ---- */
+/* ================= MARCAS: CATÁLOGO FICTÍCIO, COM NOMES QUE O JOGADOR PODE TROCAR (SALVOS SÓ NESTE APARELHO) ================= */
+const BRC={chut:'Material esportivo',rel:'Relógios',beb:'Bebidas',ban:'Bancos',tel:'Telefonia e tecnologia',gam:'Games e apps',mod:'Moda e beleza',aut:'Automóveis',sup:'Suplementos',emp:'Empresas (só clubes)'};
+const BRT=['','Marca global','Marca grande','Marca nacional'];
+const BR=[['rajada','Chuteiras Rajada','chut',1],['vortice','Vórtice Sports','chut',1],['atlas','Atlas Esportes','chut',2],['kaizen','Kaizen Boots','chut',2],['pampa','Pampa Sport','chut',3],['garra','Garra Esportiva','chut',3],
+ ['aurum','Relógios Aurum','rel',1],['cronos','Relógios Cronos','rel',2],['brisa','Refrigerante Brisa','beb',1],['voltz','Isotônico Voltz','beb',2],['garoa','Bebida Zero Garoa','beb',3],
+ ['austral','Banco Austral','ban',1],['ponta','Banco Ponta','ban',2],['lastro','Fintech Lastro','ban',2],['nebula','Smartphones Nébula','tel',1],['sinal','Operadora Sinal+','tel',2],['pulso','Fones Pulso','tel',3],
+ ['arenax','Games Arena X','gam',1],['bolada','App Bolada Fit','gam',3],['monarca','Grife Monarca','mod',1],['lince','Óculos Lince','mod',2],['ebano','Perfumes Ébano','mod',2],
+ ['trilha','Montadora Trilha','aut',1],['vertice','Motos Vértice','aut',3],['forja','Suplementos Forja','sup',3],
+ ['alicerce','Construtora Alicerce','emp',2],['rumo','Aérea Rumo','emp',2],['escudo','Seguradora Escudo','emp',2],['cesta','Supermercados Cesta','emp',2]].map(x=>({id:x[0],n0:x[1],cat:x[2],t:x[3]}));
+const BRI=Object.fromEntries(BR.map(b=>[b.id,b])),BRN0=Object.fromEntries(BR.map(b=>[b.n0,b.id]));
+let BCUST={},BALIAS={};
+try{BCUST=JSON.parse(localStorage.getItem('fam-brands')||'{}')||{};BALIAS=JSON.parse(localStorage.getItem('fam-brands-old')||'{}')||{};}catch(e){}
+const bN=id=>(BCUST[id]||'').trim()||(BRI[id]?BRI[id].n0:id);
+function bIdOf(str){if(BRN0[str])return BRN0[str];for(const id in BCUST)if(BCUST[id]===str)return id;for(const id in BALIAS)if((BALIAS[id]||[]).includes(str))return id;return null;}
+const dispB=str=>{const id=bIdOf(str);return id?bN(id):str;};
+/* os nomes que o resto do jogo usa passam a sair do catálogo (patrocínio de atleta, eventos e patrocinador master) */
+const ORIG={SPB:SPB.slice(),SPM_B:SPM_B.slice(),BRANDS:BRANDS.slice()};
+function applyBrands(){[['SPB',SPB],['SPM_B',SPM_B],['BRANDS',BRANDS]].forEach(([k,a])=>ORIG[k].forEach((n,i)=>{const id=BRN0[n];a[i]=id?bN(id):n;}));}
+applyBrands();
+const bInit=n=>String(n).replace(/^(Chuteiras|Relógios|Refrigerante|Isotônico|Bebida|Banco|Fintech|Smartphones|Operadora|Fones|Games|App|Grife|Óculos|Perfumes|Montadora|Motos|Suplementos|Construtora|Aérea|Seguradora|Supermercados)\s+/,'').split(/\s+/).map(w=>w[0]).join('').slice(0,2).toUpperCase();
+const bBadge=(n,cat)=>'<span class="bb bb-'+(cat||'x')+'">'+esc(bInit(n))+'</span>';
+
+/* ================= PATROCÍNIO INDIVIDUAL COM CONTRATO ================= */
+function mktV(p){const c=club(p);return Math.round(p.fame*.9+Math.max(0,p.ovr-68)*2.2+(p.age<=21?Math.max(0,(p.pot||p.ovr)-76)*2.6:0)+(p.nt&&p.nt[0]?8+Math.min(10,p.nt[0]*.3):0)+(c?Math.max(0,prest(c)-72)*.4:0));}
+const spTierMax=v=>v>=90?1:v>=50?2:3;
+const spSlots=v=>v>=95?3:v>=65?2:v>=38?1:0;
+const spCat=s=>s.cat||(s.bid&&BRI[s.bid]?BRI[s.bid].cat:(bIdOf(s.b)&&BRI[bIdOf(s.b)].cat==='chut'?'chut':'x'));
+const spT=s=>s.t||(bIdOf(s.b)?BRI[bIdOf(s.b)].t:3);
+function spName(s){return s.bid?bN(s.bid):dispB(s.b);}
+function spGen(p,c,o,id){const v=mktV(p);o.sp=o.sp||[];if(v<22||(o.spCd||0)>G.d||G.events.some(e=>e.pid===id))return;
+  if(Math.random()>(.012+v/2600)*(mind('est')?1.4:1)*(1+.1*bizLv('mkt')))return;
+  const tm=spTierMax(v),ch=o.sp.find(s=>spCat(s)==='chut'),oth=o.sp.filter(s=>spCat(s)!=='chut'),used=new Set(o.sp.map(s=>spCat(s)));let cat=null,swap=null;
+  if(!ch)cat='chut';else if(spT(ch)>tm&&Math.random()<.45){cat='chut';swap=ch;}else if(oth.length<spSlots(v)){const cs=Object.keys(BRC).filter(k=>k!=='chut'&&k!=='emp'&&!used.has(k));if(cs.length)cat=pick(cs);}
+  if(!cat)return;let L=BR.filter(b=>b.cat===cat&&b.t>=tm&&(!swap||b.t<spT(swap))&&b.id!==(swap&&swap.bid));if(!L.length)return;const best=Math.min(...L.map(b=>b.t));L=L.filter(b=>b.t===best);const b=pick(L);
+  const w=nice(wageRef(p.ovr,c?c.lg:0)*(.022+v/1800)*[0,1.7,1.1,.7][b.t]*(c?1:.5)*(cat==='chut'?1.35:1)*rnd(.85,1.15)*(1+.05*bizLv('mkt')));
+  const m=cat==='chut'?ri(24,48):ri(12,30),bk=['ATA','MEI'].includes(p.pos)?'gol':'jogo',bon=b.t<=2?{k:bk,v:nice(w*(bk==='gol'?.15:.1))}:null;
+  o.spCd=G.d+42;G.events.push({type:'spons2',pid:id,bid:b.id,cat,w,m,bon,swap:swap?spName(swap):null,v});}
+const bonTxt=b=>b?(fmt(b.v)+(b.k==='gol'?' por gol':' por atuação de destaque (nota 7,5 ou mais)')):'';
+EV.spons2=function(e){const p=G.P[e.pid],b=BRI[e.bid];if(!p||!b||!isClient(p))return{title:'Patrocínio',text:'A proposta perdeu a validade.',choices:[{label:'Ok',run(){return{t:'Sem novidades.',chips:[]};}}]};
+  const o=offOf(p),n=bN(b.id),pct=Math.round(SP_CUT*100);
+  const sign=(w,m,bon,txt,ok)=>{o.sp=o.sp||[];if(e.swap)o.sp=o.sp.filter(s=>spCat(s)!=='chut');o.sp.push({bid:b.id,b:n,cat:e.cat,t:b.t,w,until:G.d+Math.round(m*30.4),bon,got:0,since:G.d});
+    news(p.name+' assinou com a '+n+': '+fmt(w)+' por semana por '+m+' meses'+(bon?' e bônus de '+bonTxt(bon):'')+'. A agência fica com '+pct+'%.','agencia');
+    return{t:txt,chips:[['Agência +'+fmt(Math.round(w*SP_CUT))+'/sem','good'],['Por '+m+' meses','info']].concat(bon?[['Bônus: '+bonTxt(bon),'info']]:[]).concat(applyFx(p,null,{t:3,f:b.t===1?3:1},0)),ok};};
+  const long=e.bon?{bon:{k:e.bon.k,v:nice(e.bon.v*2)},w:nice(e.w*.9),lbl:'Contrato 1 ano mais longo, bônus em dobro',sub:fmt(nice(e.w*.9))+'/sem e '+bonTxt({k:e.bon.k,v:nice(e.bon.v*2)})+'.'}:{bon:null,w:nice(e.w*.95),lbl:'Contrato 1 ano mais longo',sub:fmt(nice(e.w*.95))+'/sem, mais estabilidade.'};
+  return{title:e.cat==='chut'?(e.swap?'Troca de chuteira':'Contrato de chuteira'):'Proposta de patrocínio',
+   text:'A '+n+' ('+BRT[b.t].toLowerCase()+' · '+BRC[e.cat].toLowerCase()+') quer '+p.name+' como embaixador: '+fmt(e.w)+' por semana durante '+e.m+' meses'+(e.bon?', mais bônus de '+bonTxt(e.bon):'')+'.'+(e.swap?' O contrato atual com a '+e.swap+' seria encerrado; a '+n+' paga a rescisão.':'')+' Sua comissão é de '+pct+'%, ou '+fmt(Math.round(e.w*SP_CUT))+' por semana.',
+   choices:[{label:'Assinar',sub:'Dinheiro garantido toda semana.',run(){return sign(e.w,e.m,e.bon,'Contrato assinado. A '+n+' já anunciou '+p.name+' nas redes.');}},
+    {label:'Pedir 25% a mais',sub:'Chance de '+Math.round(spCh()*100)+'%. Se a marca recusar, ela procura outro atleta.',run(){if(Math.random()<spCh())return sign(nice(e.w*1.25),e.m,e.bon,'A '+n+' topou pagar mais.',true);return{t:'A '+n+' achou caro e fechou com outro jogador.',chips:[],ok:false};}},
+    {label:long.lbl,sub:long.sub,run(){return sign(long.w,e.m+12,long.bon,'Contrato longo assinado com a '+n+'.');}},
+    {label:'Recusar',sub:'Ele prefere não associar a imagem a essa marca.',run(){return{t:'Proposta recusada.',chips:[]};}}]};};
+function spBonWeek(){let inc=0;G.clients.forEach(id=>{const p=G.P[id];if(!p||!p.off||!p.off.sp)return;const lg=(G.wlog||[]).filter(x=>x.pid===id&&!x.own);if(!lg.length)return;
+  p.off.sp.forEach(s=>{if(!s.bon||s.until<=G.d)return;const k=s.bon.k==='gol'?lg.reduce((a,x)=>a+(x.ng||0),0):lg.filter(x=>x.rt>=7.5).length;if(!k)return;const amt=k*s.bon.v;s.got=(s.got||0)+amt;inc+=amt*SP_CUT;p.off.pat+=Math.round(amt*(1-SP_CUT)*.72);});});
+  inc=Math.round(inc);if(inc){G.money+=inc;G.stats.earned+=inc;G.last.inc+=inc;}}
+function spLine(o){return'';}
+function spBlock(p,o){const v=mktV(p),L=(o.sp||[]).slice().sort((a,b)=>(spCat(a)==='chut'?-1:0)-(spCat(b)==='chut'?-1:0)),ch=L.find(s=>spCat(s)==='chut'),oth=L.length-(ch?1:0),sl=spSlots(v),tm=spTierMax(v);
+  const tot=L.reduce((a,s)=>a+s.w,0);
+  return'<div class="offb c-gold spb"><h3>'+icoS('star')+'Patrocínios</h3>'+
+   '<div class="spb-k"><div><span>Imagem</span><b>'+v+'</b></div><div><span>Atrai</span><b>'+(v<22?'—':['','Globais','Grandes','Nacionais'][tm])+'</b></div><div><span>Contratos</span><b>'+fmt(tot)+'<small>/sem</small></b></div></div>'+
+   (L.length?'<div class="spb-l">'+L.map(s=>{const n=spName(s),c=spCat(s);return'<div class="spb-r">'+bBadge(n,c)+'<div class="grow"><b>'+esc(n)+'</b><span class="small muted">'+(BRC[c]||'Patrocínio')+(s.t?' · '+BRT[s.t].toLowerCase():'')+' · até '+fmonth(monthIdx(s.until))+'</span>'+(s.bon?'<span class="small spb-bon">Bônus de '+esc(bonTxt(s.bon))+(s.got?' · já rendeu '+fmt(s.got):'')+'</span>':'')+'</div><b class="spb-w">'+fmt(s.w)+'<small>/sem</small></b></div>';}).join('')+'</div>':'<p class="small muted">'+(v<22?'Nenhuma marca procura '+esc(p.name.split(' ')[0])+' ainda. Fama, nível alto, seleção e potencial (para quem tem até 21 anos) aumentam o valor de imagem.':'Nenhum contrato ainda. As marcas devem aparecer nas próximas semanas.')+'</p>')+
+   '<p class="small muted spb-s">Vagas: '+(ch?'chuteira ocupada':v>=22?'chuteira livre':'chuteira a partir de 22 de valor')+' · outras marcas '+oth+' de '+sl+'. A agência fica com '+Math.round(SP_CUT*100)+'% de cada contrato.</p>'+
+   '<button class="btn sm ghost spb-e" data-a="brands">Editar nomes das marcas</button></div>';}
+
+/* ================= EDITOR DE MARCAS ================= */
+function mBrands(){const cats=Object.keys(BRC);
+  return'<div class="sheet brs"><span class="eyebrow">Neste aparelho</span><h2>Marcas do jogo</h2><p class="small muted">As marcas do jogo são fictícias. Se quiser, troque qualquer nome (por exemplo, a sua marca de chuteira ou o banco do seu estado). Os nomes ficam salvos só neste aparelho, valem para todas as carreiras e não mudam o site para mais ninguém.</p>'+
+   cats.map(k=>'<div class="brs-g"><h3>'+esc(BRC[k])+'</h3>'+BR.filter(b=>b.cat===k).map(b=>'<label class="brs-r">'+bBadge(bN(b.id),k)+'<span class="grow"><input type="text" maxlength="28" data-bid="'+b.id+'" value="'+esc(BCUST[b.id]||'')+'" placeholder="'+esc(b.n0)+'"><small>'+BRT[b.t]+(BCUST[b.id]?' · original: '+esc(b.n0):'')+'</small></span></label>').join('')+'</div>').join('')+
+   '<div class="acts"><button class="btn pri" data-a="brsave">Salvar nomes</button><button class="btn" data-a="brreset">Voltar aos originais</button><button class="btn" data-a="close">Fechar</button></div></div>';}
+function brStore(next){for(const id in BCUST){if(BCUST[id]&&BCUST[id]!==next[id]){(BALIAS[id]=BALIAS[id]||[]).includes(BCUST[id])||BALIAS[id].push(BCUST[id]);}}
+  BCUST=next;try{localStorage.setItem('fam-brands',JSON.stringify(BCUST));localStorage.setItem('fam-brands-old',JSON.stringify(BALIAS));}catch(e){}applyBrands();}
+const BRA={brands(){ui.stack=[];ui.modal={type:'brands'};render();},
+  brsave(){const nx={};document.querySelectorAll('.brs [data-bid]').forEach(i=>{const v=String(i.value||'').replace(/\s+/g,' ').trim().slice(0,28);if(v)nx[i.dataset.bid]=v;});brStore(nx);ui.modal=null;toast('Nomes das marcas salvos neste aparelho.');render();},
+  brreset(){brStore({});toast('Marcas de volta aos nomes originais.');render();}};
+
 /* ---- ui-views.js ---- */
 /* ================= COMPONENTES ================= */
 const CAT={transf:['Transferência','info'],lesao:['Lesão','bad'],contrato:['Contrato','warn'],agencia:['Agência','good'],clube:['Clube','warn'],liga:['Competições','info'],evolucao:['Evolução','good'],selecao:['Seleção','good'],premio:['Prêmio','warn'],geral:['Geral','']};
@@ -5237,7 +5321,7 @@ function renderModal(){const el=$('#modal');let h='';
     if(G.events.length){const e=G.events[0],d=evDef(e),pp=G.P[e.pid];h='<div class="sheet"><span class="eyebrow">Decisão da semana'+(G.events.length>1?' · 1 de '+G.events.length:'')+'</span>'+(pp?'<div class="neg-h">'+avatar(pp,44)+'<h2>'+esc(d.title)+'</h2></div>':'<h2>'+esc(d.title)+'</h2>')+'<p>'+esc(d.text)+'</p><div class="choices">'+d.choices.map((c,i)=>'<button class="choice" data-a="ev" data-i="'+i+'"'+(c.can===false?' disabled':'')+'><b>'+esc(c.label)+'</b><span>'+esc(c.sub||'')+'</span></button>').join('')+'</div></div>';}}
   if(!h&&G&&ui.modal){const m=ui.modal;
     if(m.type==='info')h='<div class="sheet">'+(m.stamp?'<div class="stamp">'+esc(m.stamp)+'</div>':'')+'<h2>'+esc(m.title)+'</h2>'+m.html+'<div class="acts"><button class="btn pri" data-a="close">Continuar</button></div></div>';
-    else if(m.type==='pick')h=mPick();else if(m.type==='evo')h=mEvo();else if(m.type==='ag')h=mAgPop3(m.k);else if(m.type==='tryout')h=mTryout();else if(m.type==='fin')h=mFin();else if(m.type==='biz')h=mBiz();else if(m.type==='sign')h=mSign();else if(m.type==='slots')h=mSlots(true);else if(m.type==='faces')h=mFaces();else if(m.type==='ctr')h=inCur(curOf(ownC()),mCtr);else if(m.type==='inbox')h=mInbox();
+    else if(m.type==='pick')h=mPick();else if(m.type==='evo')h=mEvo();else if(m.type==='ag')h=mAgPop3(m.k);else if(m.type==='tryout')h=mTryout();else if(m.type==='fin')h=mFin();else if(m.type==='biz')h=mBiz();else if(m.type==='sign')h=mSign();else if(m.type==='slots')h=mSlots(true);else if(m.type==='faces')h=mFaces();else if(m.type==='brands')h=mBrands();else if(m.type==='ctr')h=inCur(curOf(ownC()),mCtr);else if(m.type==='inbox')h=mInbox();
     else if(m.type==='drop'){const p=G.P[m.pid];h='<div class="sheet"><h2>Dispensar '+esc(p.name)+'?</h2><p>Você deixa de representá-lo e perde as comissões. Sua reputação cai 1 ponto.</p><div class="acts"><button class="btn danger" data-a="dropok" data-p="'+p.id+'">Dispensar</button><button class="btn" data-a="close">Cancelar</button></div></div>';}
     else if(m.type==='sellclub'){const c=ownC();h='<div class="sheet"><h2>Vender o '+esc(c.n)+'?</h2><p>Você vende seus '+G.own.pct+'% e recebe <b>'+fmt(sellVal(c))+'</b>.</p><div class="acts"><button class="btn danger" data-a="sellok">Vender</button><button class="btn" data-a="close">Cancelar</button></div></div>';}}
   if(!h&&G&&ui.stack.length){const top=ui.stack[ui.stack.length-1];if(top.t==='p'&&G.P[top.id])h=inCur(curOfP(G.P[top.id]),()=>mPlayer(G.P[top.id]));else if(top.t==='c')h=inCur(curOf(G.clubs[top.id]),()=>mClub(G.clubs[top.id]));else if(top.t==='a'&&G.ags[top.id])h=mAgency(top.id);else if(top.t==='n'&&G.nt.sq[top.n])h=mNation(top.n);else ui.stack=[];}
@@ -5300,7 +5384,7 @@ const A={
   goA(){ui.comp='A';ui.tab='ligas';ui.stack=[];render();window.scrollTo(0,0);}
 };
 
-Object.assign(A,OFFA,EVOA,OWNA,MINDA,CALA,NAVA,CARDA,CMA,FINA,BIZA,NTCA,TIDYA,FLAGA,PROGA,BIZLA,OTRA,W2A,OLA,CLUB2A,PHA,TIEA,FACEA,RDA,NAVHA,HOFA,SCPA,{slots:SLOTA.slots,slotsave:SLOTA.slotsave,slotgo:SLOTA.slotgo,slotnew:SLOTA.slotnew,slotback:SLOTA.slotback,slotdel:SLOTA.slotdel,slotdelok:SLOTA.slotdelok});
+Object.assign(A,OFFA,EVOA,OWNA,MINDA,CALA,NAVA,CARDA,CMA,FINA,BIZA,NTCA,TIDYA,FLAGA,PROGA,BIZLA,OTRA,W2A,OLA,CLUB2A,PHA,TIEA,FACEA,RDA,NAVHA,HOFA,SCPA,BRA,{slots:SLOTA.slots,slotsave:SLOTA.slotsave,slotgo:SLOTA.slotgo,slotnew:SLOTA.slotnew,slotback:SLOTA.slotback,slotdel:SLOTA.slotdel,slotdelok:SLOTA.slotdelok});
 
 /* ================= RENDER, CARREGAMENTO, ANIMAÇÕES ================= */
 const LOAD_MSG=['Rodada em andamento','Olheiros ligando','Diretorias fazendo contas','Imprensa apurando','Vestiários fervendo','Telefone tocando'];
