@@ -564,6 +564,7 @@ html body .tie>.legs{justify-self:center;text-align:center;width:100%}
 .otabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:10px 0 14px}
 @media (min-width:900px){.otabs{grid-template-columns:repeat(6,minmax(0,1fr))}}
 .otab{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:10px 6px;min-height:64px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:12.5px;font-weight:700;cursor:pointer;text-align:center;line-height:1.15}
+.grp .kpis{grid-template-columns:repeat(3,minmax(0,1fr))}.grp .kpi b{font-size:17px;white-space:nowrap}.grp-t .otab[data-a="grpnew"]{grid-column:1/-1;flex-direction:row;min-height:46px;gap:8px}.grp-t .otab[data-a="grpnew"] small{margin-left:4px}.grp-t{margin:12px 0 2px}.grp-t .otab small{font-size:10.5px;font-weight:500;opacity:.75}.grp-t .otab span{overflow:hidden;text-overflow:ellipsis;max-width:100%;white-space:nowrap}.grp-t .otab:disabled{opacity:.45;cursor:default}.otab[aria-pressed="true"] small{opacity:.85}
 .otab svg{color:var(--ink2)}.otab[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--gold-ink)}.otab[aria-pressed="true"] svg{color:var(--gold-ink)}
 .el-r{display:flex;align-items:center;gap:10px}.el-r .grow{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .sale-l>div{flex-wrap:wrap}.sale-b{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;flex-basis:100%}
@@ -1792,7 +1793,7 @@ function lineup(cid){const av=squad(cid).filter(p=>!p.injury&&!(p.boost<0)&&!p.l
 function updTab(c,h,a,hg,ag){const H=c.tab[h],A=c.tab[a];if(!H||!A)return;H[0]++;A[0]++;H[4]+=hg;H[5]+=ag;A[4]+=ag;A[5]+=hg;
   if(hg>ag){H[1]++;A[3]++;H[6]+=3;}else if(hg<ag){A[1]++;H[3]++;A[6]+=3;}else{H[2]++;A[2]++;H[6]++;A[6]++;}}
 function play(comp,m,neutral,phase,day,pre){const H=G.clubs[m[0]],A=G.clubs[m[1]];const lh=lineup(H.id),la=lineup(A.id);
-  const moodB=c=>isOwn(c)?(G.own.mood-50)/40:0;
+  const moodB=c=>isOwn(c)?(ownOf(c).mood-50)/40:0;
   const sf=styleFx(H,A,lh,la,!phase);
   const d=lh.str-la.str+(neutral?0:1.8)+moodB(H)-moodB(A)+tmpB(H)-tmpB(A)+sf.d;
   const hg=poisson(1.4*Math.exp(d/18)*sf.h),ag=poisson(1.12*Math.exp(-d/18)*sf.a);m[2]=hg;m[3]=ag;
@@ -1802,7 +1803,7 @@ function play(comp,m,neutral,phase,day,pre){const H=G.clubs[m[0]],A=G.clubs[m[1]
   [[H,hg,ag],[A,ag,hg]].forEach(([c,f,a])=>{c.fm=(c.fm+(f>a?'V':f<a?'D':'E')).slice(-5);});
   coachAfter(H,hg,ag,d);coachAfter(A,ag,hg,-d);
   if(pre)return;
-  if(isOwn(H)||isOwn(A)){const me=isOwn(H)?H:A,f=me===H?hg:ag,a=me===H?ag:hg;G.own.mood=clamp(G.own.mood+(f>a?2:f<a?-1.5:0),0,100);
+  if(isOwn(H)||isOwn(A)){const me=isOwn(H)?H:A,f=me===H?hg:ag,a=me===H?ag:hg,oo=ownOf(me);oo.mood=clamp(oo.mood+(f>a?2:f<a?-1.5:0),0,100);
     G.wlog.push({own:1,d:day,cs:comp.sh,opp:me===H?A.id:H.id,home:me===H,gf:f,ga:a,pl:(me===H?r1:r2).map(x=>[x[0].id,x[1],x[2],x[3],x[4]?1:0])});}
   {const bst=r1.concat(r2).reduce((b,x)=>!b||x[1]>b[1]?x:b,null);if(bst){const ss=bst[0].st[comp.id];if(ss)ss[9]=(ss[9]||0)+1;}}
   [[r1,H,A,hg,ag,true],[r2,A,H,ag,hg,false]].forEach(([rs,c,o,f,a,home])=>rs.forEach(([p,rt,ng,na,sub])=>{
@@ -1833,7 +1834,7 @@ function resolveTie(t){let a=0,b=0;t.m.forEach(m=>{if(m[0]===t.a){a+=m[2];b+=m[3
   if(a!==b)t.w=a>b?t.a:t.b;else{t.w=Math.random()<.5?t.a:t.b;t.pen=1;}}
 function advance0(c,k){const st=c.ko[k];const w=st.ties.map(t=>t.w);c.pool=st.pre?(c.byes||[]).concat(w):w;
   if(k===c.ko.length-1){c.win=w[0];const cl=G.clubs[c.win];cl.tro.push(c.name+' '+c.lbl);news(cl.n+' é campeão '+compDe(c.name)+' '+c.name+' '+c.lbl+'.','liga');
-    if(isOwn(cl)){addRep(4);titleBonus(cl);G.own.mood=clamp(G.own.mood+20,0,100);}
+    if(isOwn(cl)){addRep(4);titleBonus(cl);const oo=ownOf(cl);oo.mood=clamp(oo.mood+20,0,100);}
     squad(cl.id).forEach(p=>{if(p.ag===0){G.stats.ctit=(G.stats.ctit||0)+1;p.fame=clamp(p.fame+6,0,100);addRep(1);news(p.name+' conquistou a '+c.name+' com o '+cl.n+'.','liga');}});}}
 function canDraw(c,k){if(k>0)return c.ko[k-1].ties&&c.ko[k-1].ties.every(t=>t.w!=null);if(c.rounds)return c.rounds.every(r=>r.done);return true;}
 function processDay(day,pre){G._pre=pre;
@@ -1850,7 +1851,7 @@ function weeklyHealth(){allP().forEach(p=>{if(p.injury>0){p.injury--;if(!p.injur
 function develop(){STR={};allP().forEach(p=>{const mine=p.ag===0,gap=p.pot-p.ovr,played=(p.wkg||0)>0;
   if(gap>0){const af=p.age<=19?1.25:p.age<=22?1:p.age<=25?.6:p.age<=29?.25:0;
     let pr=.03+(played?.05:(p.club!=null&&p.age<=20?.02:0))+((p.training||0)>0?.06:0)+(mine?G.staff.preparador*.015+offL('perf')*.008:.012)+(p.trait==='profissional'?.015:0)-(p.trait==='baladeiro'?.01:0);
-    pr*=af*clamp(gap/15,.2,1);if(mine)pr*=evoDev(p);if(G.own&&p.club===G.own.cid&&p.age<=21)pr*=1+.06*(G.own.base||0)+.04*(G.own.ct||0);if(p.age<=21&&p.club!=null&&G.clubs[p.club].coach.pe==='frm')pr*=1.3;if(Math.random()<pr){p.ovr++;if(p.ovr>(p.pk||0))p.pk=p.ovr;if(mine&&p.ovr%5===0)news(p.name+' evoluiu e chegou ao nível '+p.ovr+'.','evolucao');}}
+    pr*=af*clamp(gap/15,.2,1);if(mine)pr*=evoDev(p);{const oo=ownOfId(p.club);if(oo&&p.age<=21)pr*=1+.06*(oo.base||0)+.04*(oo.ct||0);}if(p.age<=21&&p.club!=null&&G.clubs[p.club].coach.pe==='frm')pr*=1.3;if(Math.random()<pr){p.ovr++;if(p.ovr>(p.pk||0))p.pk=p.ovr;if(mine&&p.ovr%5===0)news(p.name+' evoluiu e chegou ao nível '+p.ovr+'.','evolucao');}}
   if(p.age>=31&&Math.random()<.011*(p.age-30)){p.ovr--;if(p.pot>p.ovr+2)p.pot--;}
   if(mine&&p.training>0)p.training--;p.wkg=0;});}
 
@@ -1983,7 +1984,7 @@ function retireRegen(region){const Y=ymd(G.d).y;allP().forEach(p=>{const c=club(
       if(p.ovr>=82||(p.pk||0)>=86)news(p.name+' anunciou a aposentadoria aos '+p.age+' anos.','liga');
       retireP(p);}});
   intake(region,Y);
-  if(G.own&&regOf(G.clubs[G.own.cid])===region&&G.own.base){const c=G.clubs[G.own.cid];const nb=Math.min(Math.ceil(G.own.base/2),Math.max(0,34-squad(c.id).length));for(let i=0;i<nb;i++){const y=genFor(c,pick(POS),'youth');y.pot=clamp(y.pot+G.own.base*2,y.ovr+3,96);y.home=1;y.ag=-1;}
+  for(const oo of (G.owns||[]))if(regOf(G.clubs[oo.cid])===region&&oo.base){const c=G.clubs[oo.cid];const nb=Math.min(Math.ceil(oo.base/2),Math.max(0,34-squad(c.id).length));for(let i=0;i<nb;i++){const y=genFor(c,pick(POS),'youth');y.pot=clamp(y.pot+oo.base*2,y.ovr+3,96);y.home=1;y.ag=-1;}
     if(nb)news('A base do '+c.n+' subiu '+nb+' garoto'+(nb>1?'s':'')+' para o elenco. Eles aceitam você como empresário com mais facilidade.','clube');}}
 function budgets(region){coachSeasonEnd(region);G.clubs.forEach(c=>{if(regOf(c)!==region||isOwn(c))return;c.bud=nice(eurVal(teamStr(c.id))*6*rnd(1.2,2.5)*LG[c.lg].bud+c.bud*.3);c.arr=0;c.lo=0;c.li=0;});}
 function rolloverEU(Y){archive('eu');retireRegen('eu');budgets('eu');
@@ -2004,8 +2005,7 @@ function seasonSummary(region,lbl){recordPositions(region);const s={lbl,region,c
   for(const k in G.comps){const c=G.comps[k];if(c.reg!==region)continue;
     const w=c.win!=null?G.clubs[c.win].n:(c.t==='L'?G.clubs[sortedTab(c)[0]].n:null);if(w){s.champs.push(c.name+': '+w);(s.cc||(s.cc=[])).push({n:c.name,cid:c.win!=null?c.win:sortedTab(c)[0]});}
     if(c.t==='L'){const ps=allP().filter(p=>p.st[c.id]).sort((a,b)=>b.st[c.id][1]-a.st[c.id][1]);if(ps[0])s.tops.push(c.sh+': '+ps[0].name+' ('+ps[0].st[c.id][1]+' gols)');leagueAwards(c,s);
-      const own=G.own&&G.clubs[G.own.cid].lg===c.li?G.clubs[G.own.cid]:null;
-      if(own){const pos=sortedTab(c).indexOf(own.id)+1,prize=nice(eurVal(teamStr(own.id))*6*(pos===1?1:pos<=4?.6:pos<=10?.3:.1));own.bud+=prize;s.awards.push('Seu clube, o '+own.n+', terminou em '+pos+'º e recebeu '+fmt(prize)+' de premiação.');if(pos===1){addRep(3);G.own.mood=clamp(G.own.mood+20,0,100);}ownSeason(pos,s,c);}}}
+      (G.owns||[]).slice().forEach(oo=>{const own=G.clubs[oo.cid];if(own.lg!==c.li)return;withOwn(oo,()=>{const pos=sortedTab(c).indexOf(own.id)+1,prize=nice(eurVal(teamStr(own.id))*6*(pos===1?1:pos<=4?.6:pos<=10?.3:.1));own.bud+=prize;s.awards.push('Seu clube, o '+own.n+', terminou em '+pos+'º e recebeu '+fmt(prize)+' de premiação.');if(pos===1){addRep(3);G.own.mood=clamp(G.own.mood+20,0,100);}ownSeason(pos,s,c);});});}}
   G.clients.forEach(id=>{const p=G.P[id],c=club(p);if(!c||regOf(c)!==region)return;const t=seasonTot(p);
     s.lines.push(p.name+' ('+c.n+'): '+t.ap+' jogos, '+t.gl+' gols, '+t.as+' assist.'+(t.ap?', nota '+f1(t.avg):''));});
   if(region==='eu')goldCands();
@@ -2252,7 +2252,7 @@ function nextWeek(){if(!G||G.over||G.ntc||G.paper||G.yrec||(G.phoneQ&&G.phoneQ.l
   fxWeek();let inc=0;G.clients.forEach(id=>{const p=G.P[id];if(p.club!=null)inc+=p.wage*(p.comm||0)/100*fxMul(club(p));});
   let exp=fixedCost();inc=Math.round(inc);G.money+=inc-exp;G.last={inc,exp};const mFx=G.money,i0=inc,e0=exp;G.stats.earned+=inc;
   G._w0=d0;for(let d=d0;d<d0+7;d++){G.d=d;dayTriggers(d);processDay(d,false);}G.d=d0+7;
-  weeklyHealth();u20Week(d0);develop();clientsWeekly();aiMarket();aiCoaches();genOffers();genMissions();ownWeek();careerWeek();pathWeek();offWeek();evoWeek();mindWeek();bizWeek();progWeek();bonWeek();inboxWeek();paperWeek(d0);rumWeek();repWeek();yearWeek();capWeek();spBonWeek();
+  weeklyHealth();u20Week(d0);develop();clientsWeekly();aiMarket();aiCoaches();genOffers();genMissions();forEachOwn(ownWeek);careerWeek();pathWeek();offWeek();evoWeek();mindWeek();bizWeek();progWeek();bonWeek();inboxWeek();paperWeek(d0);rumWeek();repWeek();yearWeek();forEachOwn(capWeek);spBonWeek();
   G.ags.forEach((a,i)=>{if(i>0)a.rep=clamp(a.rep+rnd(-.12,.14),5,98);});
   decWeek();
   if(G.money<0){G.debt++;if(G.debt>=6)G.over=true;else news('A agência está no vermelho há '+G.debt+' semana'+(G.debt>1?'s':'')+'. Com 6 semanas seguidas, você quebra.','agencia');}else G.debt=0;
@@ -2276,11 +2276,13 @@ function ntWeekRes(d0){const H=G.ntH||{},want=new Set([HOME_NT]);G.clients.forEa
   want.forEach(n=>(H[n]||[]).forEach(x=>{if(x.d>=d0&&x.d<=d0+6&&!out.some(y=>y.d===x.d&&y.n===x.o&&y.o===n))out.push(Object.assign({n},x));}));return out.sort((a,b)=>a.d-b.d||(a.n===HOME_NT?-1:1));}
 
 /* ---------- clube próprio ---------- */
-const isOwn=c=>!!(G&&G.own&&c&&G.own.cid===c.id);
+const isOwn=c=>!!(G&&G.owns&&c&&G.owns.some(o=>o.cid===c.id));
+const ownOf=c=>c&&G&&G.owns?G.owns.find(o=>o.cid===c.id)||null:null;
+const ownOfId=id=>id!=null&&G&&G.owns?G.owns.find(o=>o.cid===id)||null:null;
 const ownC=()=>G.own?G.clubs[G.own.cid]:null;
 const wageBill=c=>squad(c.id).reduce((s,p)=>s+(p.loan&&p.loan.from!==c.id?0:p.wage),0);
 const coachWage=(c,r)=>nice(wageRef(r||c.coach.r,c.lg)*1.4);
-const clubPrice=c=>nice(squad(c.id).reduce((s,p)=>s+value(p),0)*.35+eurVal(teamStr(c.id))*6*2*(isOwn(c)?1+.08*G.own.est+.05*G.own.base:1));
+const clubPrice=c=>nice(squad(c.id).reduce((s,p)=>s+value(p),0)*.35+eurVal(teamStr(c.id))*6*2*(isOwn(c)?1+.08*ownOf(c).est+.05*ownOf(c).base:1));
 function ownRev(){const o=G.own,c=ownC();return nice(o.rev*(1+.25*o.est)*(.7+o.mood/170));}
 function ownProfit(){const c=ownC();return ownRev()-wageBill(c)-coachWage(c);}
 function ownWeek(){const o=G.own;if(!o)return;const c=ownC();ownWeek2();saleWeek();coachRepWeek();clubBidWeek();if(c.bud<0)o.mood=clamp(o.mood-2,0,100);
@@ -2336,7 +2338,7 @@ const offCost=(f,l)=>nice(OFF_UP[l]*f.m);
 const offUpkeep=()=>OFFICE.reduce((s,f)=>s+Math.round(OFF_WK[offL(f.id)]*f.m),0);
 function fixedCost(){let e=lvl().cost+offUpkeep();STAFF.forEach(s=>e+=STAFF_WAGE[G.staff[s.id]]);return Math.round(e*(mind('est')?1.1:1));}
 /* saves antigos ganham os campos novos sem perder a campanha */
-function migrate(){G.me=G.me||newMe();evoMigrate();G.office=G.office||newOffice();G.fc=G.fc||[];if(G.inv===undefined)G.inv=null;if(G.pol===undefined)G.pol=null;
+function migrate(){ownInstall();G.me=G.me||newMe();evoMigrate();G.office=G.office||newOffice();G.fc=G.fc||[];if(G.inv===undefined)G.inv=null;if(G.pol===undefined)G.pol=null;
   if(G.own){G.own.role=G.own.role||'dono';if(G.own.pct==null)G.own.pct=100;}
   G.clubs.forEach(c=>{c.cf=c.cf||newCf();c.sack=c.sack||0;});if(!G.rc)applyRealCoaches(true);
   if(!G.hfix)fixHomonyms();
@@ -2421,11 +2423,10 @@ function canRun(c,po){const ed=electionDay(c),win=ed-G.d<=56,crise=c.cf.t<35;ret
 function takeControl(c,role,pct){G.own={cid:c.id,role,pct,base:0,est:0,mood:clamp(Math.round(c.cf.t)+(role==='pres'?8:0),40,78),wd:0,rev:nice((wageBill(c)+coachWage(c))*1.08),cands:genCoaches(c),naming:false,evCool:G.d+28,term:role==='pres'?G.d+156*7:0};
   ownInit();spmOffers();ctrlCleanup(c);G.missions=G.missions.filter(m=>m.cid!==c.id);ui.modal=null;ui.tab='clube';addRep(role==='dono'?2:3);}
 /* ao assumir um clube, encerra os vínculos com outros clubes (sócio ou acionista), sem deixar cobrança escondida */
-function ctrlCleanup(c){const ch=[];const iv=G.inv;if(iv&&iv.cid!==c.id&&G.clubs[iv.cid]){const o=G.clubs[iv.cid],v=nice(clubPrice(o)/100*iv.pct*.97);G.money+=v;ch.push(['Ações do '+o.n+' vendidas: +'+fmt(v),'good']);news('Ao assumir o '+c.n+', você vendeu suas '+iv.pct+'% de ações do '+o.n+' por '+fmt(v)+'.','clube');}
-  G.inv=null;const po=G.pol;if(po){if(po.cid!==c.id&&G.clubs[po.cid]){const o=G.clubs[po.cid];ch.push(['Saiu do quadro de sócios do '+o.n,'info']);news('Ao assumir o '+c.n+', você deixou o quadro de sócios do '+o.n+'.','clube');}G.pol=null;}
-  if(ch.length)setTimeout(()=>{try{pop({k:'info',ic:'club',ti:'Vínculos encerrados',tx:'Para comandar o '+c.n+', você deixou os outros clubes.',ch});}catch(e){}},50);}
+/* ao assumir um clube: encerra só os vínculos com ele mesmo (os outros seguem como caminho para o próximo clube do grupo) */
+function ctrlCleanup(c){if(G.inv&&G.inv.cid===c.id)G.inv=null;if(G.pol&&G.pol.cid===c.id)G.pol=null;ui.grpNew=false;ui.osub='geral';}
 /* ---------- caminho das ações ---------- */
-function buyShares(cid,lot){const c=G.clubs[cid];let iv=G.inv;if(G.own){toast('Você já comanda um clube. Só dá para ter um.');return;}
+function buyShares(cid,lot){const c=G.clubs[cid];let iv=G.inv;{const w=grpBlock(c);if(w){toast(w);return;}}
   if(gov(c)==='assoc'){toast('O '+c.n+' é uma associação: não tem ações à venda. O caminho ali é a política do clube.');return;}
   if(iv&&iv.cid!==cid){toast('Você já é acionista do '+G.clubs[iv.cid].n+'. Venda essas ações antes de investir em outro clube.');return;}
   if(G.rep<15){toast('Você ainda precisa de reputação 15 para ser aceito como investidor.');return;}
@@ -2443,7 +2444,7 @@ function sellShares(lot){const iv=G.inv;if(!iv)return;const c=G.clubs[iv.cid];lo
   news('Você vendeu '+lot+'% das ações do '+c.n+' por '+fmt(v)+'.','clube');if(iv.pct<=0)G.inv=null;
   pop({k:'info',ic:'money',wait:1100,wt:'Enviando a ordem de venda…',ti:'Ações vendidas',tx:lot+'% do '+c.n+' por '+fmt(v)+'.',ch:[['+'+fmt(v),'good']]});save();render();}
 function opaCost(c){const have=G.inv&&G.inv.cid===c.id?G.inv.pct:0;return nice(clubPrice(c)/100*(51-have)*1.25);}
-function opa(cid){const c=G.clubs[cid];if(G.own||gov(c)!=='saf')return;if(G.inv&&G.inv.cid!==cid){toast('Venda antes as ações do '+G.clubs[G.inv.cid].n+'.');return;}
+function opa(cid){const c=G.clubs[cid];if(gov(c)!=='saf')return;{const w=grpBlock(c);if(w){toast(w);return;}}if(G.inv&&G.inv.cid!==cid){toast('Venda antes as ações do '+G.clubs[G.inv.cid].n+'.');return;}
   if(G.rep<30){toast('Uma oferta pelo controle ainda exige reputação 30.');return;}const cost=opaCost(c);if(G.money<cost){toast('Caixa insuficiente: a oferta pelo controle custa '+fmt(cost)+'.');return;}
   G.money-=cost;takeControl(c,'dono',51);news('Sua oferta pública pelo controle do '+c.n+' foi aceita: 51% das ações por '+fmt(cost)+'.','clube');
   pop({k:'good',ic:'club',wait:1800,wt:'Acionistas votando a oferta…',ti:'Oferta aceita!',tx:'Você comprou o controle do '+c.n+' com 51% das ações.',ch:[['-'+fmt(cost),'bad']]});save();render();}
@@ -2451,7 +2452,7 @@ function shVeto(){const iv=G.inv;if(!iv||iv.pct<25)return;const c=G.clubs[iv.cid
   if(coachScore(c)<50&&(G.d-c.coach.since)/7>=10){const old=c.coach.n;sackCoach(c,false);iv.vcool=G.d+84;pop({k:'good',ic:'coach',wait:1400,wt:'Reunião do conselho…',ti:'Técnico demitido',tx:'O conselho aceitou seu pedido: '+old+' saiu e '+c.coach.n+' assume o '+c.n+'.'});}
   else{iv.vcool=G.d+56;pop({k:'bad',ic:'no',wait:1400,wt:'Reunião do conselho…',ti:'Pedido negado',tx:'O conselho do '+c.n+' banca '+c.coach.n+'. A confiança nele ainda é alta.'});}save();render();}
 /* ---------- caminho político ---------- */
-function joinClub(cid){const c=G.clubs[cid];if(G.own||G.pol)return;if(gov(c)==='saf'){toast('O '+c.n+' é clube-empresa: não tem eleição de sócios. O caminho ali é comprar ações.');return;}
+function joinClub(cid){const c=G.clubs[cid];if(G.pol)return;{const w=grpBlock(c);if(w){toast(w);return;}}if(gov(c)==='saf'){toast('O '+c.n+' é clube-empresa: não tem eleição de sócios. O caminho ali é comprar ações.');return;}
   const fee=joinFee(c);if(G.money<fee){toast('Caixa insuficiente para a taxa de adesão.');return;}G.money-=fee;G.pol={cid,rk:1,since:G.d,infl:5,cool:0,lost:0};
   news('Você virou sócio do '+c.n+'. O caminho até a presidência passa pelo conselho e pela diretoria.','clube');
   pop({k:'good',ic:'sign',wait:1200,wt:'Preenchendo a ficha de sócio…',ti:'Carteirinha na mão',tx:'Você agora é sócio do '+c.n+'.',ch:[['-'+fmt(fee),'bad'],['Influência 5','info']]});save();render();}
@@ -2472,7 +2473,7 @@ function polUp(){const po=G.pol;if(!po||po.rk>=3)return;const c=G.clubs[po.cid],
   else{po.infl=clamp(po.infl-5,0,100);po.cool=G.d+56;pop({k:'bad',ic:'no',wait:1500,wt:po.rk===1?'Votação no conselho…':'Reunião com o presidente…',ti:'Não foi dessa vez',tx:'Faltou apoio para virar '+nx.n.toLowerCase()+'. Você pode tentar de novo em 8 semanas.',ch:[['Influência -5','bad']]});}
   save();render();}
 function elChance(c,po){return clamp(.15+po.infl/140+G.rep/250+(50-c.cf.t)/150+(po.rk===3?.1:0)+G.me.rel*.02,.05,.92);}
-function polRun(){const po=G.pol;if(!po)return;const c=G.clubs[po.cid],r=canRun(c,po);if(!r.ok)return;const cost=campCost(c);if(G.money<cost){toast('Caixa insuficiente para a campanha de '+fmt(cost)+'.');return;}
+function polRun(){const po=G.pol;if(!po)return;if((G.owns||[]).some(o=>o.role==='pres')){toast('Você já é presidente de um clube. Só dá para presidir um de cada vez.');return;}{const w=grpBlock(G.clubs[po.cid]);if(w){toast(w);return;}}const c=G.clubs[po.cid],r=canRun(c,po);if(!r.ok)return;const cost=campCost(c);if(G.money<cost){toast('Caixa insuficiente para a campanha de '+fmt(cost)+'.');return;}
   G.money-=cost;if(Math.random()<elChance(c,po)){takeControl(c,'pres',0);news('Você foi eleito presidente do '+c.n+' para um mandato de 3 anos.','clube');
     pop({k:'good',ic:'club',wait:2200,wt:'Apurando os votos dos sócios…',ti:'Presidente eleito!',tx:'Os sócios do '+c.n+' escolheram você. O mandato vai até '+fdate(G.own.term,true)+'.',ch:[['Campanha -'+fmt(cost),'bad']]});}
   else{po.infl=clamp(po.infl-15,0,100);po.lost=G.d+300;news('Você perdeu a eleição para presidente do '+c.n+'.','clube');
@@ -2490,13 +2491,14 @@ function safVote(){const o=G.own,c=ownC();if(!o||o.role!=='pres')return;if(gov(c
   save();render();}
 function buyMore(){const o=G.own,c=ownC();if(!o||o.role!=='dono'||o.pct>=100)return;const lot=Math.min(5,100-o.pct),cost=nice(clubPrice(c)/100*lot*1.1);if(G.money<cost){toast('Caixa insuficiente: '+lot+'% custa '+fmt(cost)+'.');return;}
   G.money-=cost;o.pct+=lot;pop({k:'good',ic:'money',wait:1100,wt:'Comprando dos minoritários…',ti:'Agora você tem '+o.pct+'%',tx:'Quanto maior a sua fatia, maior a parte dos dividendos.',ch:[['-'+fmt(cost),'bad']]});save();render();}
-function resign(){const o=G.own,c=ownC();if(!o||o.role!=='pres')return;G.own=null;G.pol={cid:c.id,rk:2,since:G.d,infl:35,cool:0,lost:G.d+300};G.events=G.events.filter(e=>e.pid!=null&&e.type!=='conflito');ui.modal=null;
+function resign(){const o=G.own,c=ownC();if(!o||o.role!=='pres')return;G.own=null;G.pol={cid:c.id,rk:2,since:G.d,infl:35,cool:0,lost:G.d+300};G.events=G.events.filter(e=>(e.pid!=null&&e.type!=='conflito')||(e.oc!=null&&e.oc!==c.id));ui.modal=null;
   news('Você renunciou à presidência do '+c.n+'.','clube');pop({k:'warn',ic:'bin',ti:'Renúncia',tx:'Você deixou a presidência do '+c.n+' e voltou ao conselho.'});save();render();}
 function pathWeek(){const iv=G.inv;if(iv){iv.wk=0;const c=G.clubs[iv.cid],dv=Math.round(wageBill(c)*.05*iv.pct/100);if(dv>0){G.money+=dv;G.stats.earned+=dv;iv.div=(iv.div||0)+dv;iv.last=dv;}}
   const po=G.pol;if(po){const c=G.clubs[po.cid],mine=G.clients.filter(id=>G.P[id]&&G.P[id].club===c.id).length;po.infl=clamp(po.infl+[0,.3,.5,.8][po.rk]+Math.min(.6,mine*.2),0,100);G.money+=po.rk===3?dirPay(c):-polDue(c);}
-  const o=G.own;if(o&&o.role==='pres'&&G.d>=o.term){const c=ownC();
+  (G.owns||[]).slice().forEach(o=>withOwn(o,()=>presTerm(o)));}
+function presTerm(o){if(o.role==='pres'&&G.d>=o.term){const c=ownC();
     if(o.mood>=50){o.term=G.d+156*7;addRep(1);news('Os sócios do '+c.n+' reelegeram você para mais 3 anos.','clube');pop({k:'good',ic:'club',ti:'Reeleito!',tx:'Mais um mandato de 3 anos à frente do '+c.n+'.'});}
-    else{G.own=null;G.pol={cid:c.id,rk:2,since:G.d,infl:30,cool:0,lost:G.d+300};G.events=G.events.filter(e=>e.pid!=null&&e.type!=='conflito');addRep(-2);news('Fim do mandato: os sócios do '+c.n+' elegeram a oposição. Você voltou ao conselho.','clube');pop({k:'bad',ic:'no',ti:'Perdeu a reeleição',tx:'Com a torcida insatisfeita, a oposição venceu no '+c.n+'.'});}}}
+    else{G.own=null;G.pol={cid:c.id,rk:2,since:G.d,infl:30,cool:0,lost:G.d+300};G.events=G.events.filter(e=>(e.pid!=null&&e.type!=='conflito')||(e.oc!=null&&e.oc!==c.id));addRep(-2);news('Fim do mandato: os sócios do '+c.n+' elegeram a oposição. Você voltou ao conselho.','clube');pop({k:'bad',ic:'no',ti:'Perdeu a reeleição',tx:'Com a torcida insatisfeita, a oposição venceu no '+c.n+'.'});}}}
 
 /* ================= ABA CLUBE ================= */
 function stepper(names,cur){return'<ol class="stepper">'+names.map((n,i)=>'<li class="'+(i<cur?'done':i===cur?'cur':'')+'"><i>'+(i<cur?'✓':i+1)+'</i><span>'+n+'</span></li>').join('')+'</ol>';}
@@ -3159,7 +3161,7 @@ const tabIco=k=>svgI(TABI[k],18);
 
 /* ---------- lesões: tipos e risco. ~1 semana fora por temporada para um titular, bem abaixo do que o calendário real tira ---------- */
 const INJ=[['Pancada',1,1,30],['Entorse no tornozelo',1,3,20],['Lesão muscular na coxa',2,5,18],['Estiramento na panturrilha',2,4,10],['Pubalgia',3,6,5],['Lesão no ombro',2,5,4],['Concussão',1,2,4],['Lesão no menisco',6,12,4],['Fratura no pé',8,14,2.5],['Ruptura do ligamento cruzado',26,38,1.2]];
-function injRisk(p,sub){return (G.own&&p.club===G.own.cid?1-.1*(G.own.ct||0):1)*.022*(sub?.5:1)*(1+(p.fat||0)*.05)*(p.age>=31?1.25:1)*(p.ag===0?1-.08*G.staff.preparador-.04*offL('perf'):1);}
+function injRisk(p,sub){return (ownOfId(p.club)?1-.1*(ownOfId(p.club).ct||0):1)*.022*(sub?.5:1)*(1+(p.fat||0)*.05)*(p.age>=31?1.25:1)*(p.ag===0?1-.08*G.staff.preparador-.04*offL('perf'):1);}
 function injure(p){const t=wpick(INJ,x=>x[3]);let w=ri(t[1],t[2]);if(p.ag===0)w=Math.max(1,Math.round(w*(1-.12*G.staff.preparador-.06*offL('perf'))));
   if(w<=p.injury)return;p.injury=w;p.injT=t[0];G.injN=(G.injN||0)+1;
   if(t[1]>=26){p.ovr=Math.max(40,p.ovr-(p.age>=28?2:1));if(p.pot>p.ovr+1)p.pot--;}
@@ -3354,7 +3356,7 @@ function vPainel2(){let h='';const t=G.tut,me=G.me;
   cs.forEach(p=>{const c=club(p),o=offOf(p);if(!c)pend.push(['warn','Sem clube',p.name+' está parado. Ofereça a um clube.','clientes']);else if(monthsLeft(p)<=6)pend.push(['bad','Contrato',p.name+': contrato acaba em '+monthsLeft(p)+' meses.','clientes']);
     if(p.promise)pend.push(['bad','Promessa','Transferir '+p.name+' até o fim da próxima janela.','clientes']);if(p.trust<40)pend.push(['bad','Confiança',p.name+' está perdendo a confiança em você.','clientes']);
     if(o.pat<0)pend.push(['bad','Dívida',p.name+' está endividado.','clientes']);if(c&&!speaks(p)&&!p.langC)pend.push(['warn','Idioma',p.name+' não fala '+LANGN[clubL(c)].toLowerCase()+'.','clientes']);});
-  if(G.own){const c=ownC();if(c.bud<0)pend.push(['bad','Clube','O caixa do '+c.n+' está negativo.','clube']);if(G.own.mood<30)pend.push(['bad','Torcida','A torcida do '+c.n+' está revoltada.','clube']);}
+  (G.owns||[]).forEach(o=>{const c=G.clubs[o.cid];if(c.bud<0)pend.push(['bad','Clube','O caixa do '+c.n+' está negativo.','clube']);if(o.mood<30)pend.push(['bad','Torcida','A torcida do '+c.n+' está revoltada.','clube']);});
   if(!me.course&&G.d>=me.next)pend.push(['good','Formação','Você pode começar um curso.','agencia']);
   if(G.pol){const c=G.clubs[G.pol.cid];if(canRun(c,G.pol).ok)pend.push(['good','Eleição','Você pode concorrer à presidência do '+c.n+'.','clube']);}
   h+='<div class="dcol"><section class="card c-bad">'+cardH('report','Pendências','<span class="chip '+(pend.length?'bad':'good')+'">'+(pend.length||'Tudo em dia')+'</span>')+'<div class="list">'+
@@ -3437,7 +3439,7 @@ function ownInit(){const o=G.own;if(!o)return;const c=ownC();if(o.price==null)o.
   if(!o.rev)o.rev=nice((wageBill(c)+coachWage(c))*1.08);
   if(!o.m0){o.m0=Math.round(Math.max(3000,(c.str-55)*1500*(LG[c.lg].fame/2.5)));o.mem=Math.round(o.m0*(.5+o.mood/100));}
   o.hist=o.hist||[];if(!o.goal)ownGoal();}
-const capOf=c=>Math.round((12000+Math.max(0,c.str-60)*1500)*(1+.3*(G.own?G.own.est:0))/500)*500;
+const capOf=c=>Math.round((12000+Math.max(0,c.str-60)*1500)*(1+.3*((ownOf(c)||{}).est||0))/500)*500;
 function expRank(c){const L=curLeague(c.lg);if(!L)return null;return Object.keys(L.tab).map(Number).sort((a,b)=>teamStr(b)-teamStr(a)).indexOf(c.id)+1;}
 function ownGoal(){const o=G.own,c=ownC(),L=curLeague(c.lg);if(!L)return;const e=expRank(c)||10,n=Object.keys(L.tab).length;
   o.goal={lid:L.id,lbl:L.name+' '+L.lbl,t:e<=1?1:e<=4?e:Math.min(e,n-4),n};}
@@ -3647,7 +3649,7 @@ function pendList(){const cs=G.clients.map(id=>G.P[id]).filter(Boolean),me=G.me,
     if(o.pat<0)pend.push(['bad','Dívida',p.name+' está endividado.','clientes']);});
   G.offers.forEach(o=>pend.push(['info','Proposta','O '+G.clubs[o.cid].n+' quer '+(G.P[o.pid]?G.P[o.pid].name:'')+'.','mercado']));
   G.missions.forEach(m=>pend.push(['info','Pedido',G.clubs[m.cid].n+' procura '+POSN[m.pos]+' nível '+m.min+'+.','mercado']));
-  if(G.own){const c=ownC();if(c.bud<0)pend.push(['bad','Clube','O caixa do '+c.n+' está negativo.','clube']);if(G.own.mood<30)pend.push(['bad','Torcida','A torcida do '+c.n+' está revoltada.','clube']);}
+  (G.owns||[]).forEach(o=>{const c=G.clubs[o.cid];if(c.bud<0)pend.push(['bad','Clube','O caixa do '+c.n+' está negativo.','clube']);if(o.mood<30)pend.push(['bad','Torcida','A torcida do '+c.n+' está revoltada.','clube']);});
   if(!me.course&&G.d>=me.next)pend.push(['good','Formação','Você pode começar um curso.','agencia']);
   if(G.pol){const c=G.clubs[G.pol.cid];if(canRun(c,G.pol).ok)pend.push(['good','Eleição','Você pode concorrer à presidência do '+c.n+'.','clube']);}
   return pend;}
@@ -4771,7 +4773,7 @@ function compPages(c){const P=[],nr=(c.rounds||[]).length;(c.rounds||[]).forEach
   (c.ko||[]).forEach(st=>st.d.forEach((dd,l)=>P.push({t:st.n+(st.d.length>1?(l?' · volta':' · ida'):''),d:dd,m:st.ties?st.ties.map(t=>t.m[l]).filter(Boolean):null,done:st.ties?st.ties.every(t=>!t.m[l]||t.m[l][2]>=0):false})));return P;}
 function roundsView(c){const rs=compPages(c);if(!rs.length)return'<div class="card"><p class="small muted">Sem jogos marcados nesta competição.</p></div>';
   const cur=rdCur(rs),i0=ui.rd!=null&&ui.rd>=0&&ui.rd<rs.length?ui.rd:cur;ui.rd=i0;
-  const mine=new Set(G.clients.map(id=>G.P[id]&&G.P[id].club).filter(x=>x!=null));if(G.own)mine.add(G.own.cid);
+  const mine=new Set(G.clients.map(id=>G.P[id]&&G.P[id].club).filter(x=>x!=null));(G.owns||[]).forEach(o=>mine.add(o.cid));
   return'<div class="rd-car" data-rd="'+i0+'">'+rs.map((r,i)=>'<section class="rd-pg card"><div class="rd-h">'+
      '<button class="rd-arr" data-a="rdgo" data-v="-1" aria-label="Rodada anterior"'+(i===0?' disabled':'')+'>‹</button>'+
      '<div class="rd-t"><b>'+esc(r.t)+'</b><span>'+fdate(r.d,true)+(i===cur&&!r.done?' · próxima':r.done?' · encerrada':'')+'</span></div>'+
@@ -4784,9 +4786,9 @@ const COMP_M=/^(Brasileir|Campeonato|Mundial|Paulist|Carioc|Gaúch|Mineir|Tornei
 const compDe=n=>COMP_M.test(String(n))?'do':'da';
 /* conserta notícias antigas que saíram com "campeão da Brasileirão" */
 function newsFix(){try{if(!G||!G.news||G._nfx)return;G.news.forEach(n=>{n.t=String(n.t).replace(/é campeão da (\S+)/g,(m,w)=>'é campeão '+compDe(w)+' '+w);});G._nfx=1;}catch(e){}}
-function polFix(){try{if(G&&G.own&&G.pol&&!G._pfx){const o=G.clubs[G.pol.cid];G._pfx=1;if(o)news('Você deixou o quadro de sócios do '+o.n+', que ainda cobrava mensalidade.','clube');G.pol=null;}}catch(e){}}
+function polFix(){try{if(G&&G.pol&&isOwn(G.clubs[G.pol.cid])&&!G._pfx){const o=G.clubs[G.pol.cid];G._pfx=1;if(o)news('Você deixou o quadro de sócios do '+o.n+', que ainda cobrava mensalidade.','clube');G.pol=null;}}catch(e){}}
 let _mk='';function mdlTop(){try{const t=ui.stack[ui.stack.length-1],M=ui.modal,k=JSON.stringify([t&&t.t,t&&t.id,M&&M.type,M&&(M.pid!=null?M.pid:M.k)]);if(k!==_mk){_mk=k;const m=document.querySelector('.modal');if(m)m.scrollTop=0;}}catch(e){}}
-function render(){polFix();newsFix();render0();rdInit();vpInit();apLock();mdlTop();}
+function render(){ownInstall();evOwnSel();polFix();newsFix();render0();rdInit();vpInit();apLock();mdlTop();}
 const RDA={rdgo(d){try{const el=document.querySelector('#view .rd-car');if(!el)return;const base=ui.rd!=null?ui.rd:Math.round(el.scrollLeft/el.clientWidth),i=base+(+d.v),n=el.children.length;const j=Math.max(0,Math.min(n-1,i));ui.rd=j;el.scrollTo({left:j*el.clientWidth,behavior:'smooth'});}catch(e){}}};
 
 /* ---- crep2.js ---- */
@@ -5247,6 +5249,44 @@ function mArticle(){const L=G.news||[],i=Math.max(0,Math.min(L.length-1,ui.artI|
    '<div class="acts"><button class="btn pri" data-a="close">Fechar o jornal</button></div></div>';}
 const ARTA={art(d){ui.artI=+d.i||0;ui.modal={type:'art'};render();const el=document.querySelector('.sheet.art');if(el&&el.scrollIntoView)el.scrollIntoView({block:'start'});}};
 
+/* ---- multiclube.js ---- */
+/* G.owns guarda todos os clubes do grupo; G.own aponta para o clube selecionado (não vai para o save) */
+const GRP_MAX=3,GRP_REP=[0,50,70];
+function ownInstall(){try{if(!G)return;const d=Object.getOwnPropertyDescriptor(G,'own');
+  if(d&&d.enumerable){const o=G.own;delete G.own;G.owns=G.owns||[];if(o&&!G.owns.includes(o))G.owns.push(o);}
+  if(!G.owns)G.owns=[];if(G.ownI==null||G.ownI>=G.owns.length)G.ownI=0;
+  if(!Object.getOwnPropertyDescriptor(G,'own'))Object.defineProperty(G,'own',{configurable:true,enumerable:false,
+    get(){return this.owns[this.ownI]||this.owns[0]||null;},
+    set(v){if(v==null){const cur=this.owns[this.ownI]||this.owns[0];this.owns=this.owns.filter(x=>x!==cur);this.ownI=0;}
+      else{const i=this.owns.indexOf(v);if(i<0){this.owns.push(v);this.ownI=this.owns.length-1;}else this.ownI=i;}}});}catch(e){}}
+initWorld=(f=>function(){const r=f.apply(this,arguments);ownInstall();return r;})(initWorld);
+function selOwn(cid){const i=(G.owns||[]).findIndex(o=>o.cid===cid);if(i>=0)G.ownI=i;}
+function withOwn(o,fn){const cur=G.own;const i=G.owns.indexOf(o);if(i<0)return;G.ownI=i;try{fn();}finally{const j=G.owns.indexOf(cur);G.ownI=j<0?0:j;}}
+/* roda uma rotina semanal em cada clube do grupo; eventos criados ficam marcados com o clube */
+function forEachOwn(fn){(G.owns||[]).slice().forEach(o=>withOwn(o,()=>{const n=G.events.length;fn();G.events.slice(n).forEach(e=>{if(e.oc==null)e.oc=o.cid;});}));}
+/* quando uma decisão de um clube aparece, ele vira o clube selecionado */
+function evOwnSel(){try{const e=G&&G.events&&G.events[0];if(e&&e.oc!=null&&G.own&&G.own.cid!==e.oc)selOwn(e.oc);}catch(x){}}
+titleBonus=(f=>function(cl){const o=ownOf(cl);if(!o)return f(cl);withOwn(o,()=>f(cl));})(titleBonus);
+advance=function(c,k){advance0(c,k);if(k>=c.ko.length-1)return;const st=c.ko[k];if(!st||!st.ties)return;
+  (G.owns||[]).slice().forEach(o=>{if(!st.ties.some(t=>t.w===o.cid)||Math.random()>=.18+k*.05)return;
+    withOwn(o,()=>{const n=G.events.length;capPush({type:'capbicho',cn:c.name,sn:(c.ko[k+1]&&c.ko[k+1].n)||'próxima fase',v:nice(wBillC(ownC())*(.45+k*.12))});G.events.slice(n).forEach(e=>{if(e.oc==null)e.oc=o.cid;});});});};
+/* pode entrar no grupo? '' = pode; senão o motivo */
+function grpBlock(c){if(!c)return'Clube não encontrado.';const n=(G.owns||[]).length;if(isOwn(c))return'O '+c.n+' já é do seu grupo.';
+  if(n>=GRP_MAX)return'Seu grupo já tem '+GRP_MAX+' clubes, o máximo.';
+  if(n&&G.rep<GRP_REP[n])return'Para ter o '+(n+1)+'º clube você precisa de reputação '+GRP_REP[n]+'.';
+  const same=G.owns.find(o=>G.clubs[o.cid].lg===c.lg);if(same)return'Você já tem o '+G.clubs[same.cid].n+' em '+LG[c.lg].n+'. Só pode um clube por liga.';return'';}
+function grpReq(){const n=(G.owns||[]).length;return n>=GRP_MAX?'Máximo de '+GRP_MAX+' clubes':G.rep<GRP_REP[n]?'Exige reputação '+GRP_REP[n]:'Liberado';}
+/* faixa do grupo no topo da aba Clube */
+function grpBar(){const os=G.owns||[];if(!os.length)return'';const tot=os.reduce((t,o)=>t+G.clubs[o.cid].bud,0),net=os.reduce((t,o)=>t+(o.lastFin?o.lastFin.net||0:0),0),md=Math.round(os.reduce((t,o)=>t+o.mood,0)/os.length);
+  const cur=ui.grpNew?-1:G.own.cid,full=os.length>=GRP_MAX;
+  return'<section class="card grp">'+cardH('club','Seu grupo','<span class="chip">'+os.length+' de '+GRP_MAX+' clubes</span>')+
+   '<div class="kpis">'+[['Caixa',fmt(tot)],['Semana',(net>=0?'+':'-')+fmt(Math.abs(net))],['Torcida',md+'/100']].map(k=>'<div class="kpi"><span>'+k[0]+'</span><b>'+k[1]+'</b></div>').join('')+'</div>'+
+   '<div class="otabs grp-t">'+os.map(o=>{const c=G.clubs[o.cid],pos=leaguePos(c.id);return'<button class="otab" data-a="grpsel" data-c="'+c.id+'" aria-pressed="'+(cur===c.id)+'">'+crest(c,24)+'<span>'+esc(c.n)+'</span><small>'+(pos?pos+'º · ':'')+(o.role==='pres'?'Presidente':'Dono '+o.pct+'%')+'</small></button>';}).join('')+
+   '<button class="otab" data-a="grpnew" aria-pressed="'+(cur===-1)+'"'+(full?' disabled':'')+'>'+svgI('sign',22)+'<span>Novo clube</span><small>'+esc(grpReq())+'</small></button></div></section>';}
+function vClubeG(){if(!G.own)return vClube2();ownInit();const bar=grpBar();
+  if(ui.grpNew)return bar+'<section class="card c-gold"><p class="small"><b>Regras do grupo:</b> até '+GRP_MAX+' clubes, um por liga. O 2º clube exige reputação '+GRP_REP[1]+' e o 3º, '+GRP_REP[2]+'. Você só preside um clube de cada vez; nos outros, entra como dono por ações ou SAF.'+(G.owns.length<GRP_MAX&&G.rep<GRP_REP[G.owns.length]?' Hoje você tem reputação '+Math.round(G.rep)+'.':'')+'</p></section>'+vClubePaths();
+  return bar+inCur(curOf(ownC()),vClube2);}
+const GRPA={grpsel(d){selOwn(+d.c);ui.grpNew=false;ui.osub='geral';render();window.scrollTo(0,0);},grpnew(){ui.grpNew=true;render();window.scrollTo(0,0);}};
 /* ---- ui-views.js ---- */
 /* ================= COMPONENTES ================= */
 const CAT={transf:['Transferência','info'],lesao:['Lesão','bad'],contrato:['Contrato','warn'],agencia:['Agência','good'],clube:['Clube','warn'],liga:['Competições','info'],evolucao:['Evolução','good'],selecao:['Seleção','good'],premio:['Prêmio','warn'],geral:['Geral','']};
@@ -5338,7 +5378,7 @@ function statsView(c){const played=c.rounds?c.rounds.filter(r=>r.done).length:4,
   if(c.t==='L'){const o=sortedTab(c).map(cid=>{const r=c.tab[cid],cl=G.clubs[cid];return{cl,pct:r[0]?r[6]/(r[0]*3):0,r};}).sort((a,b)=>b.pct-a.pct);
     h+='<div class="card lb"><h3>Técnicos (aproveitamento)</h3>'+o.slice(0,8).map((x,i)=>'<div class="lb-row"><span class="pos">'+(i+1)+'</span>'+crest(x.cl,24)+'<div class="grow"><b>'+esc(x.cl.coach.n)+'</b><div class="small muted">'+esc(x.cl.n)+' · nota '+x.cl.coach.r+' · '+coachLine(x.cl.coach)+'</div></div><b class="val">'+Math.round(x.pct*100)+'%</b></div>').join('')+'</div>';}
   return h+'</div>';}
-function tableView(c,ids,zones){const o=sortedTab(c,ids),mine=new Set(G.clients.map(id=>G.P[id].club));if(G.own)mine.add(G.own.cid);
+function tableView(c,ids,zones){const o=sortedTab(c,ids),mine=new Set(G.clients.map(id=>G.P[id].club));(G.owns||[]).forEach(o=>mine.add(o.cid));
   return'<div class="tbw"><table><thead><tr><th>#</th><th>Clube</th><th class="r">J</th><th class="r">V</th><th class="r">E</th><th class="r">D</th><th class="r">GP</th><th class="r">GC</th><th class="r">SG</th><th class="r">Pts</th><th>Forma</th></tr></thead><tbody>'+
    o.map((cid,i)=>{const r=c.tab[cid],cl=G.clubs[cid];const z=zones?zones(i,o.length):'';return'<tr class="'+(mine.has(cid)?'mine ':'')+z+'"><td>'+(i+1)+'</td><td>'+clubLink(cl)+'</td><td class="r">'+r[0]+'</td><td class="r">'+r[1]+'</td><td class="r">'+r[2]+'</td><td class="r">'+r[3]+'</td><td class="r">'+r[4]+'</td><td class="r">'+r[5]+'</td><td class="r">'+(r[4]-r[5])+'</td><td class="r"><b>'+r[6]+'</b></td><td><span class="form">'+cl.fm.split('').map(x=>'<i class="'+x+'">'+x+'</i>').join('')+'</span></td></tr>';}).join('')+'</tbody></table></div>';}
 function matchRow(m,d){return vsBox(m[0],m[1],m[2]<0?'x':vsSc(m[2],m[3]));}
@@ -5406,14 +5446,14 @@ function vPainel(){let h='';const t=G.tut;
    '<p class="small muted">Jogador com contrato só troca de clube com a janela aberta. '+(lockN?'<b>'+lockN+' cliente(s)</b> acabaram de assinar e só podem ser oferecidos na próxima janela.':'Quem acabou de assinar só pode ser oferecido de novo na janela seguinte.')+'</p></section>';
   // carreira
   const me=G.me,cz=me.course;let path='Você ainda não tem ligação com nenhum clube.';
-  if(G.own)path=(G.own.role==='pres'?'Presidente do ':'Dono do ')+ownC().n+(G.own.role==='pres'?'':' ('+G.own.pct+'%)')+'.';else if(G.inv||G.pol)path=[G.inv?G.inv.pct+'% das ações do '+G.clubs[G.inv.cid].n:'',G.pol?POL[G.pol.rk].n+' do '+G.clubs[G.pol.cid].n+' (influência '+Math.round(G.pol.infl)+')':''].filter(Boolean).join(' · ')+'.';
+  if(G.own)path=G.owns.map(o=>(o.role==='pres'?'Presidente do ':'Dono do ')+G.clubs[o.cid].n+(o.role==='pres'?'':' ('+o.pct+'%)')).join(' · ')+'.';else if(G.inv||G.pol)path=[G.inv?G.inv.pct+'% das ações do '+G.clubs[G.inv.cid].n:'',G.pol?POL[G.pol.rk].n+' do '+G.clubs[G.pol.cid].n+' (influência '+Math.round(G.pol.infl)+')':''].filter(Boolean).join(' · ')+'.';
   h+='<section class="card c-purple">'+cardH('report','Sua carreira','<button class="btn sm" data-a="tab" data-t="agencia">Formação</button>')+
    '<div class="sklist">'+SKILLS.map(s=>'<div><span class="small">'+esc(s.n)+'</span>'+pips(me[s.id],5)+'</div>').join('')+'</div>'+
    (cz?'<div class="repbar"><span class="lbl">Cursando '+esc(COURSE_N[cz.sk][me[cz.sk]])+' · termina em '+fdate(cz.end,true)+'</span><div><i style="width:'+clamp((G.d-cz.start)/(cz.end-cz.start)*100,0,100)+'%"></i></div></div>':'<p class="small">'+(G.d>=me.next?'<span class="chip good">Matrícula aberta</span> Você pode começar uma formação agora.':'Próxima matrícula em <b>'+fdate(me.next,true)+'</b>.')+'</p>')+
    '<p class="small muted">Clube: '+esc(path)+'</p></section>';
   // agenda
   const ag=[];const seen=new Set();G.clients.forEach(id=>{const p=G.P[id],c=club(p);if(!c)return;fixturesOf(c.id,G.d,G.d+6).forEach(f=>{const key=f.d+'-'+(f.m?f.m.join(','):f.c.id);if(seen.has(key+id))return;seen.add(key+id);ag.push({f,p,c});});});
-  if(G.own)fixturesOf(G.own.cid,G.d,G.d+6).forEach(f=>ag.push({f,p:null,c:ownC()}));ag.sort((a,b)=>a.f.d-b.f.d);
+  (G.owns||[]).forEach(o=>{const oc=G.clubs[o.cid];fixturesOf(o.cid,G.d,G.d+6).forEach(f=>ag.push({f,p:null,c:oc}));});ag.sort((a,b)=>a.f.d-b.f.d);
   h+='<section class="card c-good">'+cardH('ball','Jogos desta semana','<span class="muted small">'+fdate(G.d)+' a '+fdate(G.d+6)+'</span>')+'<div class="list">'+
    (ag.slice(0,8).map(({f,p,c})=>{const opp=f.m?G.clubs[f.m[0]===c.id?f.m[1]:f.m[0]]:null;return'<div class="fx-row"><span class="date">'+fdate(f.d,true).split(',')[0]+'<b>'+fdate(f.d)+'</b></span><div class="grow"><span class="chip">'+esc(f.c.sh)+(f.st?' · '+esc(f.st):'')+'</span><div>'+clubLink(c)+(opp?' <span class="muted">'+(f.m[0]===c.id?'x':'@')+'</span> '+clubLink(opp):' <span class="muted">adversário a definir</span>')+'</div></div>'+(p?avatar(p,32)+'<span class="small">'+esc(p.name.split(' ')[0])+'</span>':'<span class="chip warn">seu clube</span>')+'</div>';}).join('')||'<div class="muted">Nenhum cliente seu joga nesta semana.</div>')+'</div></section>';
   // última rodada
@@ -5424,14 +5464,14 @@ function vPainel(){let h='';const t=G.tut;
   G.missions.forEach(m=>pend.push(['info','Pedido',G.clubs[m.cid].n+' procura '+POSN[m.pos]+' nível '+m.min+'+.','mercado']));
   G.clients.forEach(id=>{const p=G.P[id],c=club(p);if(!c)pend.push(['warn','Sem clube',p.name+' está parado. Ofereça a um clube.','clientes']);else if(monthsLeft(p)<=6)pend.push(['bad','Contrato',p.name+': contrato acaba em '+monthsLeft(p)+' meses.','clientes']);
     if(p.promise)pend.push(['bad','Promessa','Transferir '+p.name+' até o fim da próxima janela.','clientes']);if(p.trust<40)pend.push(['bad','Confiança',p.name+' está perdendo a confiança em você.','clientes']);if(offOf(p).pat<0)pend.push(['bad','Dívida',p.name+' está endividado. Veja em Clientes, Fora de campo.','clientes']);});
-  if(G.own){const c=ownC();if(c.bud<0)pend.push(['bad','Clube','O caixa do '+c.n+' está negativo.','clube']);if(G.own.mood<30)pend.push(['bad','Torcida','A torcida do '+c.n+' está revoltada.','clube']);}
+  (G.owns||[]).forEach(o=>{const c=G.clubs[o.cid];if(c.bud<0)pend.push(['bad','Clube','O caixa do '+c.n+' está negativo.','clube']);if(o.mood<30)pend.push(['bad','Torcida','A torcida do '+c.n+' está revoltada.','clube']);});
   if(!me.course&&G.d>=me.next)pend.push(['good','Formação','Matrícula aberta: você pode começar um curso.','agencia']);
   if(G.pol){const c=G.clubs[G.pol.cid];if(canRun(c,G.pol).ok)pend.push(['good','Eleição','Você pode concorrer à presidência do '+c.n+'.','clube']);}
   h+='<section class="card c-bad">'+cardH('report','Decisões e pendências','<span class="chip '+(pend.length?'bad':'good')+'">'+(pend.length||'Tudo em dia')+'</span>')+'<div class="list">'+(pend.slice(0,9).map(x=>'<div class="pend '+x[0]+'"><span class="chip '+x[0]+'">'+x[1]+'</span><span class="grow small">'+esc(x[2])+'</span><button class="btn sm" data-a="tab" data-t="'+x[3]+'">Abrir</button></div>').join('')||'<div class="muted">Nada pendente. Use suas ações e avance a semana.</div>')+'</div></section>';
   h+=vPainelWorld()+vPainelOff();
   // tabela
   if(ui.dlg==null){const cl=G.clients.map(id=>club(G.P[id])).filter(c=>c&&c.lg<6);ui.dlg=cl.length?cl[0].lg:0;}
-  const L=curLeague(ui.dlg),mine=new Set(G.clients.map(id=>G.P[id].club));if(G.own)mine.add(G.own.cid);
+  const L=curLeague(ui.dlg),mine=new Set(G.clients.map(id=>G.P[id].club));(G.owns||[]).forEach(o=>mine.add(o.cid));
   h+='<section class="card c-teal">'+cardH('club','Classificação')+'<div class="seg sm">'+LG.slice(0,6).map((l,i)=>'<button data-a="dlg" data-i="'+i+'" aria-pressed="'+(ui.dlg===i)+'">'+l.s+'</button>').join('')+'</div>'+
    (L?'<div class="tbw"><table class="mini"><thead><tr><th>#</th><th>Clube</th><th class="r">J</th><th class="r">SG</th><th class="r">Pts</th></tr></thead><tbody>'+sortedTab(L).map((cid,i)=>{const r=L.tab[cid];return'<tr class="'+(mine.has(cid)?'mine':'')+'"><td>'+(i+1)+'</td><td>'+clubLink(G.clubs[cid],16)+'</td><td class="r">'+r[0]+'</td><td class="r">'+(r[4]-r[5])+'</td><td class="r"><b>'+r[6]+'</b></td></tr>';}).join('')+'</tbody></table></div><p class="small muted">'+esc(L.name+' '+L.lbl)+' · rodada '+L.rounds.filter(r=>r.done).length+' de '+L.rounds.length+'</p>':'')+'</section>';
   h+='</div>';
@@ -5589,7 +5629,7 @@ const A={
   join(d){joinClub(+d.c);},polwork(){polWork();},poldon(){polDonate();},polup(){polUp();},polrun(){polRun();},polleave(){polLeave();},
   saf(){safVote();},buymore(){buyMore();},resign(){resign();},
   sellclub(){ui.modal={type:'sellclub'};render();},
-  sellok(){const c=ownC();if(!c||G.own.role==='pres')return;const v=sellVal(c);G.money+=v;G.own=null;G.events=G.events.filter(e=>e.pid!=null&&e.type!=='conflito');ui.modal=null;news('Você vendeu o '+c.n+' por '+fmt(v)+'.','clube');pop({k:'good',ic:'money',wait:1200,wt:'Assinando a venda…',ti:'Clube vendido',tx:'O '+c.n+' foi vendido por '+fmt(v)+'.'});save();render();},
+  sellok(){const c=ownC();if(!c||G.own.role==='pres')return;const v=sellVal(c);G.money+=v;G.own=null;G.events=G.events.filter(e=>(e.pid!=null&&e.type!=='conflito')||(e.oc!=null&&e.oc!==c.id));ui.modal=null;news('Você vendeu o '+c.n+' por '+fmt(v)+'.','clube');pop({k:'good',ic:'money',wait:1200,wt:'Assinando a venda…',ti:'Clube vendido',tx:'O '+c.n+' foi vendido por '+fmt(v)+'.'});save();render();},
   aporte(){const c=ownC(),a=nice(G.money*.25);if(!c||a<=0)return;G.money-=a;c.bud+=a;G.own.mood=clamp(G.own.mood+2,0,100);pop({k:'good',ic:'money',ti:'Aporte feito',tx:'Você colocou '+fmt(a)+' no caixa do '+c.n+'.'});save();render();},
   retirar(){const o=G.own,c=ownC();if(!c||o.role==='pres'||(o.wd||0)>=2)return;const a=nice(c.bud*.25*o.pct/100);if(a<=0)return;c.bud-=a;G.money+=a;o.wd=(o.wd||0)+1;o.mood=clamp(o.mood-6,0,100);news('Você retirou '+fmt(a)+' de dividendos do '+c.n+'.','clube');pop({k:'good',ic:'money',ti:'Dividendos retirados',tx:'Você tirou '+fmt(a)+' do '+c.n+'. A torcida não gostou.',ch:[['Humor da torcida -6','bad']]});save();render();},
   coach(d){const o=G.own,c=ownC(),k=o.cands[+d.i];if(!k)return;const ind=coachWage(c)*10;if(c.bud<ind){toast('O caixa do clube não cobre a multa de '+fmt(ind)+'.');return;}if(!useAP())return;o.crel=60;o.crep=null;o.crepD=G.d;
@@ -5603,7 +5643,7 @@ const A={
   goA(){ui.comp='A';ui.tab='ligas';ui.stack=[];render();window.scrollTo(0,0);}
 };
 
-Object.assign(A,OFFA,EVOA,OWNA,MINDA,CALA,NAVA,CARDA,CMA,FINA,BIZA,NTCA,TIDYA,FLAGA,PROGA,BIZLA,OTRA,W2A,OLA,CLUB2A,PHA,TIEA,FACEA,RDA,NAVHA,HOFA,SCPA,BRA,SPMA,EDA,VPA,ARTA,{slots:SLOTA.slots,slotsave:SLOTA.slotsave,slotgo:SLOTA.slotgo,slotnew:SLOTA.slotnew,slotback:SLOTA.slotback,slotdel:SLOTA.slotdel,slotdelok:SLOTA.slotdelok});
+Object.assign(A,OFFA,EVOA,OWNA,MINDA,CALA,NAVA,CARDA,CMA,FINA,BIZA,NTCA,TIDYA,FLAGA,PROGA,BIZLA,OTRA,W2A,OLA,CLUB2A,PHA,TIEA,FACEA,RDA,NAVHA,HOFA,SCPA,BRA,SPMA,EDA,VPA,ARTA,GRPA,{slots:SLOTA.slots,slotsave:SLOTA.slotsave,slotgo:SLOTA.slotgo,slotnew:SLOTA.slotnew,slotback:SLOTA.slotback,slotdel:SLOTA.slotdel,slotdelok:SLOTA.slotdelok});
 /* ---- rolagem.js ---- */
 /* coloca o topo de um card logo abaixo do cabeçalho fixo */
 function toTopOf(el){try{const tp=document.querySelector('.topo'),hb=tp?tp.getBoundingClientRect().bottom:0;window.scrollTo(0,Math.max(0,window.scrollY+el.getBoundingClientRect().top-hb-8));}catch(e){}}
@@ -5620,7 +5660,7 @@ const CLUB_AP=['join','poldon','polrun','aporte','retirar','buymore','saf','shbu
 const apSig=()=>{try{const o=G.own;return JSON.stringify([G.money,G.pol,G.inv,o&&[o.pct,o.role,o.wd,o.safCool,o.mood]]);}catch(e){return'';}};
 CLUB_AP.forEach(k=>{const f=A[k];if(!f)return;A[k]=function(d){if(!G)return;if(G.ap<1){toast('Você já usou todas as ações desta semana. Avance a semana.');return;}
   const ap0=G.ap,s0=apSig();f(d);if(G.ap===ap0&&apSig()!==s0){G.ap--;save();render();}};});
-function apLock(){try{if(!G)return;document.querySelectorAll(CLUB_AP.concat(CLUB_AP2).map(k=>'button[data-a="'+k+'"]').join(',')).forEach(b=>{
+function apLock(){try{if(!G)return;if(G.owns&&G.owns.length)document.querySelectorAll('button[data-a="shbuy"][data-c],button[data-a="join"][data-c],button[data-a="opa"][data-c]').forEach(b=>{if(grpBlock(G.clubs[+b.dataset.c]))b.disabled=true;});document.querySelectorAll(CLUB_AP.concat(CLUB_AP2).map(k=>'button[data-a="'+k+'"]').join(',')).forEach(b=>{
   if(!b.dataset.apl&&CLUB_AP.includes(b.dataset.a)){const sm=b.querySelector('small');if(sm)sm.textContent+=' · 1 ação';else b.insertAdjacentHTML('beforeend',' <small>1 ação</small>');}
   b.dataset.apl=1;if(G.ap<1)b.disabled=true;});}catch(e){}}
 /* abrir/recolher um card: a tela vai para o topo do card clicado, em vez de ficar no meio de outro */
@@ -5637,7 +5677,7 @@ function startLoading(){const reduce=window.matchMedia&&matchMedia('(prefers-red
 function floatFx(sel,text,kind){const a=document.querySelector(sel),L=$('#fx');if(!a||!L||!a.getBoundingClientRect)return;const r=a.getBoundingClientRect();
   const d=document.createElement('span');d.className='float '+kind;d.textContent=text;d.style.left=(r.left+r.width/2)+'px';d.style.top=r.top+'px';L.appendChild(d);setTimeout(()=>d.remove(),1500);}
 function render0(){renderModal();renderHeader();if(!G){$('#view').innerHTML='';return;}
-  $('#view').innerHTML=({painel:vPainel3,clientes:vClientes,olheiros:vOlheiros,ligas:vLigas,mercado:vMercado,selecoes:vSelecoes,clube:()=>G.own?inCur(curOf(ownC()),vClube2):vClube2(),agencia:vAgencia3}[ui.tab]||vPainel)();
+  $('#view').innerHTML=({painel:vPainel3,clientes:vClientes,olheiros:vOlheiros,ligas:vLigas,mercado:vMercado,selecoes:vSelecoes,clube:vClubeG,agencia:vAgencia3}[ui.tab]||vPainel)();
   const v=$('#view');if(v.classList&&ui.lastTab!==ui.tab){v.classList.remove('enter');void v.offsetWidth;v.classList.add('enter');ui.lastTab=ui.tab;}
   if(ui.pm!=null&&Math.round(G.money)!==Math.round(ui.pm)){const d=G.money-ui.pm;floatFx('#st-money',(d>0?'+':'-')+fmt(Math.abs(d)),d>0?'good':'bad');}
   if(ui.pr!=null&&Math.floor(G.rep*10)!==Math.floor(ui.pr*10)){const d=G.rep-ui.pr;floatFx('#st-rep',(d>0?'+':'')+f1(d),d>0?'good':'bad');}
