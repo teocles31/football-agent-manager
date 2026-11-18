@@ -646,6 +646,10 @@ html,body{touch-action:manipulation}
 .wk-row .vsb{border-top:0}.wk-row .vsb+.vsb{border-top:1px solid var(--line)}
 .wk-team{display:block;margin-top:6px;padding-top:4px;border-top:1px dashed var(--line)}.wk-team>.small{display:block;text-align:center}
 .nt-hist .vsb{padding:9px 0}
+.two>*,.sheet>div,.nt-hist{min-width:0}.vp-car{width:100%;max-width:100%;min-width:0;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;align-items:flex-start;overscroll-behavior-x:contain}.vp-car::-webkit-scrollbar{display:none}
+.vp-pg{flex:0 0 100%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always}
+.vp-pg .rd-h{border-bottom:1px solid var(--line);padding-bottom:6px;margin-bottom:2px}
+.vp-pg .vsb.mine{margin:2px 0}
 .brs-g{margin-top:14px}.brs-g h3{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink2);margin:0 0 6px}
 .brs-r{display:flex;align-items:flex-start;gap:10px;padding:6px 0}.brs-r .bb{margin-top:4px}.brs>.acts,.edit .brs>.acts{position:sticky;bottom:0;z-index:2;background:var(--surface);padding:10px 0 4px;margin-top:10px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:8px}.brs>.acts .btn{margin:0;width:100%}.brs>.acts .pri{grid-column:1/-1}.brs-r .grow{display:flex;flex-direction:column;gap:2px;min-width:0}
 .brs-r input{width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);font:inherit;font-size:16px}.brs-r input:focus{outline:none;border-color:var(--gold)}.brs-r small{font-size:11px;color:var(--ink2)}
@@ -4271,7 +4275,7 @@ function pitchHTML(xi,lbl){const by={};xi.forEach(p=>(by[p.pos]||(by[p.pos]=[]))
 function ntRec(n,gf,ga,o,T,d){G.ntF=G.ntF||{};G.ntF[n]=((G.ntF[n]||'')+(gf>ga?'V':gf<ga?'D':'E')).slice(-8);
   if(o==null)return;G.ntH=G.ntH||{};const h=G.ntH[n]||(G.ntH[n]=[]);h.unshift({d:d||G.d,o,gf,ga,c:T?T.sh||T.name:'Amistoso / Data FIFA'});if(h.length>10)h.length=10;}
 function ntHist(n){const h=(G.ntH&&G.ntH[n])||[];if(!h.length)return'<p class="small muted">Os jogos aparecem aqui a partir da próxima data FIFA.</p>';
-  return'<div class="card nt-hist">'+h.map(x=>vsBox({nt:n},{nt:x.o},vsSc(x.gf,x.ga),fdate(x.d,true)+' · '+esc(x.c),'',vsRes(x.gf,x.ga))).join('')+'</div>';}
+  return'<div class="card nt-hist">'+vsPager(h.map(x=>vsBox({nt:n},{nt:x.o},vsSc(x.gf,x.ga),fdate(x.d,true)+' · '+esc(x.c),'',vsRes(x.gf,x.ga))),0,vpTit(h.map(x=>x.d)))+'</div>';}
 
 /* ---- bizlife.js ---- */
 /* empresas envelhecem (custo sobe com o desgaste), podem dar prejuízo e, no vermelho por muito tempo, fechar */
@@ -4743,7 +4747,7 @@ function roundsView(c){const rs=compPages(c);if(!rs.length)return'<div class="ca
    '<p class="small muted rd-tip">Toque nas setas ou arraste para o lado para trocar de rodada.</p>';}
 function rdInit(){try{const el=document.querySelector('#view .rd-car');if(!el||!el.clientWidth||el.dataset.ok)return;el.dataset.ok=1;const i=+el.dataset.rd||0;el.scrollLeft=i*el.clientWidth;
   let t=null;el.addEventListener('scroll',()=>{clearTimeout(t);t=setTimeout(()=>{ui.rd=Math.round(el.scrollLeft/el.clientWidth);},120);},{passive:true});}catch(e){}}
-function render(){render0();rdInit();}
+function render(){render0();rdInit();vpInit();}
 const RDA={rdgo(d){try{const el=document.querySelector('#view .rd-car');if(!el)return;const base=ui.rd!=null?ui.rd:Math.round(el.scrollLeft/el.clientWidth),i=base+(+d.v),n=el.children.length;const j=Math.max(0,Math.min(n-1,i));ui.rd=j;el.scrollTo({left:j*el.clientWidth,behavior:'smooth'});}catch(e){}}};
 
 /* ---- crep2.js ---- */
@@ -5135,6 +5139,31 @@ const calMt=(f,c,who)=>({H:f.m?f.m[0]:c.id,A:f.m?f.m[1]:'',s:f.m&&f.m[2]>=0?vsSc
 /* o mesmo jogo de vários clientes (ou do seu clube) aparece uma vez só no dia */
 function calMerge(se){const out=[],by={};se.forEach(e=>{if(!e.mt){out.push(e);return;}const k=e.mt.H+'|'+e.mt.A;if(by[k]){by[k].mt.who.push(...e.mt.who);return;}const x={k:e.k,t:e.t,mt:Object.assign({},e.mt,{who:e.mt.who.slice()})};by[k]=x;out.push(x);});return out;}
 
+/* ---- paginas.js ---- */
+/* ================= HISTÓRICO DE JOGOS EM PÁGINAS DE 5, ARRASTANDO PARA O LADO ================= */
+let _vpN=0;
+/* list: confrontos já montados; start: página inicial; tit: título de cada página */
+function vsPager(list,start,tit){if(!list.length)return'';const P=[];for(let i=0;i<list.length;i+=5)P.push(list.slice(i,i+5));
+  if(P.length===1)return'<div class="vs-list">'+P[0].join('')+'</div>';
+  const k='vp'+(++_vpN),s0=Math.max(0,Math.min(P.length-1,start||0));
+  return'<div class="vp-car" data-k="'+k+'" data-rd="'+s0+'">'+P.map((p,i)=>'<section class="vp-pg"><div class="rd-h">'+
+    '<button class="rd-arr" data-a="vpgo" data-k="'+k+'" data-v="-1" aria-label="Jogos anteriores"'+(i===0?' disabled':'')+'>‹</button>'+
+    '<div class="rd-t"><b>'+esc((tit&&tit[i])||'Jogos')+'</b><span>'+(i*5+1)+' a '+(i*5+p.length)+' de '+list.length+'</span></div>'+
+    '<button class="rd-arr" data-a="vpgo" data-k="'+k+'" data-v="1" aria-label="Próximos jogos"'+(i===P.length-1?' disabled':'')+'>›</button></div>'+
+    '<div class="vs-list">'+p.join('')+'</div></section>').join('')+'</div><p class="small muted rd-tip">Arraste para o lado ou toque nas setas para ver mais jogos.</p>';}
+const vpTit=(ds)=>{const T=[];for(let i=0;i<ds.length;i+=5){const a=ds[i],b=ds[Math.min(ds.length,i+5)-1],x=Math.min(a,b),y=Math.max(a,b);T.push(x===y?fdate(x):fdate(x)+' a '+fdate(y));}return T;};
+function vpInit(){try{document.querySelectorAll('.vp-car:not([data-ok])').forEach(el=>{if(!el.clientWidth)return;el.dataset.ok=1;el.scrollLeft=(+el.dataset.rd||0)*el.clientWidth;});}catch(e){}}
+const VPA={vpgo(d){try{const el=document.querySelector('.vp-car[data-k="'+d.k+'"]');if(!el)return;const i=Math.round(el.scrollLeft/el.clientWidth)+(+d.v);el.scrollTo({left:Math.max(0,Math.min(el.children.length-1,i))*el.clientWidth,behavior:'smooth'});}catch(e){}}};
+/* todos os jogos do clube na temporada, em ordem de data; abre na página do próximo jogo */
+function clubGamesH(c){const L=[];for(const k in G.comps){const cm=G.comps[k];
+    (cm.rounds||[]).forEach(r=>(r.m||[]).forEach(m=>{if(m[0]===c.id||m[1]===c.id)L.push({d:r.d,m,cs:cm.sh});}));
+    (cm.ko||[]).forEach(st=>(st.ties||[]).forEach(t=>(t.m||[]).forEach((m,i)=>{if(m&&(m[0]===c.id||m[1]===c.id))L.push({d:st.d[i],m,cs:cm.sh});})));}
+  if(!L.length)return'<p class="small muted">Nenhum jogo marcado.</p>';
+  L.sort((a,b)=>a.d-b.d);let nx=L.findIndex(x=>x.m[2]<0);const fin=nx<0;if(fin)nx=L.length-1;
+  const H=L.map((x,i)=>{const h=x.m[0]===c.id,pl=x.m[2]>=0;
+    return vsBox(x.m[0],x.m[1],pl?vsSc(x.m[2],x.m[3]):'x',fdate(x.d)+' · '+esc(x.cs)+(!fin&&i===nx?' · <b>próximo jogo</b>':''),'sm'+(!fin&&i===nx?' mine':''),pl?vsRes(h?x.m[2]:x.m[3],h?x.m[3]:x.m[2]):'');});
+  return vsPager(H,Math.floor(nx/5),vpTit(L.map(x=>x.d)));}
+
 /* ---- ui-views.js ---- */
 /* ================= COMPONENTES ================= */
 const CAT={transf:['Transferência','info'],lesao:['Lesão','bad'],contrato:['Contrato','warn'],agencia:['Agência','good'],clube:['Clube','warn'],liga:['Competições','info'],evolucao:['Evolução','good'],selecao:['Seleção','good'],premio:['Prêmio','warn'],geral:['Geral','']};
@@ -5354,8 +5383,7 @@ function mClub(c){const sq=squad(c.id).sort((a,b)=>POS.indexOf(a.pos)-POS.indexO
   return'<div class="sheet wide"><div class="pl-head">'+crest(c,64)+'<div class="grow"><span class="eyebrow">'+esc(LG[c.lg].ext?c.cn:LG[c.lg].n)+'</span><h2>'+esc(c.n)+'</h2><div class="small muted">'+GOV_N[gov(c)][0]+(isOwn(c)?' · <b>seu clube</b>':'')+'</div></div><div class="pl-ovr">'+ovrB(Math.round(teamStr(c.id)),'xl')+'<span class="small muted">nível do time</span></div></div>'+
    '<div class="kpis">'+[['Prestígio',prest(c)],['Valor do elenco',fmt(val)],['Idade média',f1(age)],['Caixa',fmt(c.bud)]].map(k=>'<div class="kpi"><span>'+k[0]+'</span><b>'+k[1]+'</b></div>').join('')+'</div>'+
    '<h3>Relação</h3>'+relCard(c)+'<h3>Técnico</h3>'+coachCard(c)+'<div class="two"><div><h3>Competições</h3><div class="list">'+(comps||'<div class="muted small">Nenhuma em andamento.</div>')+'</div>'+(c.tro.length?'<h3>Títulos no jogo</h3><p class="small">'+c.tro.map(esc).join(' · ')+'</p>':'')+'</div>'+
-   '<div><h3>Jogos</h3><div class="vs-list">'+nxt.map(f=>vsBox(f.m[0],f.m[1],'x',fdate(f.d)+' · '+esc(f.c.sh)+' · próximo','sm')).join('')+
-   prv.slice(0,5).map(x=>{const h=x.m[0]===c.id,gf=h?x.m[2]:x.m[3],ga=h?x.m[3]:x.m[2];return vsBox(x.m[0],x.m[1],vsSc(x.m[2],x.m[3]),fdate(x.d)+' · '+esc(x.cm.sh),'sm',vsRes(gf,ga));}).join('')+'</div></div></div>'+
+   '<div><h3>Jogos da temporada</h3>'+clubGamesH(c)+'</div></div>'+
    '<h3>Time titular</h3>'+pitchHTML(xiOf(c.id))+'<h3>Reservas e demais jogadores ('+(sq.length-xiOf(c.id).length)+')</h3><div class="tbw"><table class="squad"><thead><tr><th></th><th>Jogador</th><th>Pos</th><th class="r">Idade</th><th class="r">Nível</th><th class="r">Valor</th><th>Contrato</th><th class="r">J</th><th class="r">G</th><th class="r">A</th><th class="r">Nota</th></tr></thead><tbody>'+
    (XIS=new Set(xiOf(c.id).map(p=>p.id)),sq.filter(p=>!XIS.has(p.id))).map(p=>{const t=seasonTot(p);return'<tr class="'+(isClient(p)?'mine':'')+'"><td>'+avatar(p,28)+'</td><td>'+plLink(p)+(p.injury?' <span class="chip bad" title="'+esc(p.injT||'Lesionado')+'">DM</span>':'')+'</td><td>'+p.pos+'</td><td class="r">'+p.age+'</td><td class="r">'+ovrB(p.ovr)+'</td><td class="r">'+fmt(value(p))+'</td><td>'+fmonth(p.ce)+'</td><td class="r">'+t.ap+'</td><td class="r">'+t.gl+'</td><td class="r">'+t.as+'</td><td class="r">'+(t.ap?f1(t.avg):'–')+'</td></tr>';}).join('')+'</tbody></table></div>'+
    '<div class="acts">'+navBtns()+'</div></div>';}
@@ -5492,7 +5520,7 @@ const A={
   goA(){ui.comp='A';ui.tab='ligas';ui.stack=[];render();window.scrollTo(0,0);}
 };
 
-Object.assign(A,OFFA,EVOA,OWNA,MINDA,CALA,NAVA,CARDA,CMA,FINA,BIZA,NTCA,TIDYA,FLAGA,PROGA,BIZLA,OTRA,W2A,OLA,CLUB2A,PHA,TIEA,FACEA,RDA,NAVHA,HOFA,SCPA,BRA,SPMA,EDA,{slots:SLOTA.slots,slotsave:SLOTA.slotsave,slotgo:SLOTA.slotgo,slotnew:SLOTA.slotnew,slotback:SLOTA.slotback,slotdel:SLOTA.slotdel,slotdelok:SLOTA.slotdelok});
+Object.assign(A,OFFA,EVOA,OWNA,MINDA,CALA,NAVA,CARDA,CMA,FINA,BIZA,NTCA,TIDYA,FLAGA,PROGA,BIZLA,OTRA,W2A,OLA,CLUB2A,PHA,TIEA,FACEA,RDA,NAVHA,HOFA,SCPA,BRA,SPMA,EDA,VPA,{slots:SLOTA.slots,slotsave:SLOTA.slotsave,slotgo:SLOTA.slotgo,slotnew:SLOTA.slotnew,slotback:SLOTA.slotback,slotdel:SLOTA.slotdel,slotdelok:SLOTA.slotdelok});
 
 /* ================= RENDER, CARREGAMENTO, ANIMAÇÕES ================= */
 const LOAD_MSG=['Rodada em andamento','Olheiros ligando','Diretorias fazendo contas','Imprensa apurando','Vestiários fervendo','Telefone tocando'];
