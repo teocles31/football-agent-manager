@@ -2165,7 +2165,28 @@ function rank(){return 1+G.ags.filter(a=>!a.me&&a.rep>G.rep).length;}
 function addRep(x){if(x>0)x*=Math.max(.1,1-G.rep/112);G.rep=clamp(G.rep+x,0,100);G.ags[0].rep=G.rep;
   if(!G.won&&rank()===1){G.won=true;news('Você é a agência número 1 do ranking mundial.','agencia');}}
 function news(t,cat){if(!G)return;G.news.unshift({d:G.d,t,cat:cat||'geral'});if(G.news.length>80)G.news.length=80;}
-function save(){try{localStorage.setItem(KEY,JSON.stringify(G));if(G)localStorage.setItem(KEY+'-meta',JSON.stringify(slotMetaOf(G)));}catch(e){}}
+/* o save fica no IndexedDB, compactado: cabe um mundo bem maior que os ~5 MB do localStorage no iPhone.
+   Só o resumo da carreira (nome, data, caixa) fica no localStorage, para a tela de carreiras abrir na hora. */
+const HAS_IDB=typeof indexedDB!=='undefined'&&typeof window!=='undefined'&&!window.__noIDB;
+const SDB={db:null,
+  open(){if(this.db)return Promise.resolve(this.db);return new Promise(res=>{try{const r=indexedDB.open('fam-saves',1);r.onupgradeneeded=()=>r.result.createObjectStore('s');r.onsuccess=()=>{this.db=r.result;res(this.db);};r.onerror=()=>res(null);r.onblocked=()=>res(null);}catch(e){res(null);}});},
+  async op(mode,fn){const db=await this.open();if(!db)throw new Error('sem IndexedDB');return new Promise((res,rej)=>{try{const t=db.transaction('s',mode),st=t.objectStore('s'),rq=fn(st);t.oncomplete=()=>res(rq&&rq.result);t.onerror=()=>rej(t.error);t.onabort=()=>rej(t.error);}catch(e){rej(e);}});},
+  get(k){return this.op('readonly',st=>st.get(k));},put(k,v){return this.op('readwrite',st=>st.put(v,k));},del(k){return this.op('readwrite',st=>st.delete(k));}};
+async function gz(str){if(typeof CompressionStream==='undefined')return str;return await new Response(new Blob([str]).stream().pipeThrough(new CompressionStream('gzip'))).blob();}
+async function ungz(v){if(typeof v==='string')return v;return await new Response(v.stream().pipeThrough(new DecompressionStream('gzip'))).text();}
+let _svT=null,_svBusy=null,_svAgain=false;
+function saveMeta(){try{if(G)localStorage.setItem(KEY+'-meta',JSON.stringify(slotMetaOf(G)));}catch(e){}}
+function save(){if(!G)return;saveMeta();if(!HAS_IDB){try{localStorage.setItem(KEY,JSON.stringify(G));}catch(e){}return;}clearTimeout(_svT);_svT=setTimeout(saveNow,300);}
+async function saveNow(){clearTimeout(_svT);_svT=null;if(!G||!HAS_IDB)return;if(_svBusy){_svAgain=true;return _svBusy;}
+  const k=KEY,str=JSON.stringify(G);
+  _svBusy=(async()=>{try{await SDB.put(k,await gz(str));try{localStorage.removeItem(k);}catch(e){}}
+    catch(e){try{localStorage.setItem(k,str);}catch(e2){toast('Não foi possível salvar: o aparelho está sem espaço.');}}})();
+  await _svBusy;_svBusy=null;if(_svAgain){_svAgain=false;return saveNow();}}
+if(typeof document!=='undefined'&&document.addEventListener){document.addEventListener('visibilitychange',()=>{if(document.hidden&&_svT)saveNow();});
+  window.addEventListener&&window.addEventListener('pagehide',()=>{if(_svT)saveNow();});}
+async function loadA(){if(HAS_IDB){try{const v=await SDB.get(KEY);if(v!=null){const g=JSON.parse(await ungz(v));if(g&&g.v===3){G=g;migrate();return g;}}}catch(e){}}
+  const g=load();if(g&&HAS_IDB){saveMeta();await saveNow();}return g;}
+async function delSave(k){try{localStorage.removeItem(k);localStorage.removeItem(k+'-meta');}catch(e){}if(HAS_IDB){try{await SDB.del(k);}catch(e){}}}
 function load(){try{const s=localStorage.getItem(KEY);if(s){const g=JSON.parse(s);if(g&&g.v===3){G=g;migrate();return g;}}}catch(e){}return null;}
 function seasonTot(p){let ap=0,gl=0,as=0,rs=0,cs=0,mv=0;for(const k in p.st){const s=p.st[k];ap+=s[0];gl+=s[1];as+=s[2];rs+=s[3];cs+=s[4];mv+=s[5];}return{ap,gl,as,avg:ap?rs/ap/10:0,cs,mv};}
 function potRange(p){const e=p.ag===0||p.potErr==null?(p.potErr||1):p.potErr;const err=p.ag===0?(p.potErr||1):(G.prospects.includes(p.id)?p.potErr:3);
@@ -4360,12 +4381,12 @@ function mStartS(){const any=[1,2,3].some(n=>slotMeta(n));if(any&&!ui.newSlot)re
   return mStart3().replace('<span class="eyebrow">Novo jogo · agosto de 2026</span>','<span class="eyebrow">Carreira '+curSlot()+' · novo jogo · agosto de 2026</span>').replace('Abrir a agência</button></div>','Abrir a agência</button>'+(any?'<button class="btn ghost" data-a="slotback">Voltar às carreiras</button>':'')+'</div>');}
 const SLOTA={
   slots(){ui.slotDel=null;ui.stack=[];ui.modal={type:'slots'};render();},
-  slotsave(){save();toast('Carreira salva.');},
-  slotgo(d){const n=+d.n;if(G)save();setSlot(n);uiFresh();G=load();ui.newSlot=null;render();window.scrollTo(0,0);},
-  slotnew(d){const n=+d.n;if(G)save();setSlot(n);uiFresh();G=null;ui.newSlot=n;ui.agn=null;render();window.scrollTo(0,0);},
+  async slotsave(){save();await saveNow();toast('Carreira salva.');},
+  async slotgo(d){const n=+d.n;if(G){save();await saveNow();}setSlot(n);uiFresh();G=null;G=await loadA();ui.newSlot=null;render();window.scrollTo(0,0);},
+  async slotnew(d){const n=+d.n;if(G){save();await saveNow();}setSlot(n);uiFresh();G=null;ui.newSlot=n;ui.agn=null;render();window.scrollTo(0,0);},
   slotback(){ui.newSlot=null;render();},
   slotdel(d){ui.slotDel=+d.n||null;render();},
-  slotdelok(d){const n=+d.n,k=slotKey(n);try{localStorage.removeItem(k);localStorage.removeItem(k+'-meta');}catch(e){}ui.slotDel=null;
+  slotdelok(d){const n=+d.n,k=slotKey(n);if(G&&n===curSlot()){clearTimeout(_svT);_svT=null;}delSave(k);ui.slotDel=null;
     if(G&&n===curSlot()){G=null;uiFresh();ui.newSlot=null;}render();},
   start(){const el=$('#ag-name');initWorld(((el&&el.value)||'').trim().slice(0,40)||'Camisa 10 Assessoria',0);G.money=25000;ui.newSlot=null;save();render();}
 };
@@ -5754,7 +5775,7 @@ const A={
   hire(d){const k=d.s,l=G.staff[k];if(l>=3)return;const cost=STAFF_UP[l];if(G.money<cost){toast('Caixa insuficiente.');return;}G.money-=cost;G.staff[k]++;news('Você '+(l?'promoveu':'contratou')+' seu '+STAFF.find(x=>x.id===k).n.toLowerCase()+'.','agencia');pop({k:'good',ic:'staff',ti:l?'Funcionário promovido':'Funcionário contratado',tx:STAFF.find(x=>x.id===k).n+' agora no nível '+G.staff[k]+'.'});save();render();},
   tuthide(){G.tut.hide=true;save();render();},
   reset(){ui.modal={type:'reset'};render();},
-  resetok(){try{localStorage.removeItem(KEY);}catch(e){}G=null;ui.modal=null;ui.stack=[];ui.pm=ui.pr=ui.lastTab=null;ui.tab='painel';ui.dlg=null;ui.comp=null;render();},
+  resetok(){clearTimeout(_svT);_svT=null;delSave(KEY);G=null;ui.modal=null;ui.stack=[];ui.pm=ui.pr=ui.lastTab=null;ui.tab='painel';ui.dlg=null;ui.comp=null;render();},
   start(d){const el=$('#ag-name');initWorld(el&&el.value.trim().slice(0,40),+d.m);if(+d.m===0)G.money=25000;save();render();},
   enroll(d){enroll(d.s);},upoffice(d){upOffice(d.f);},
   shbuy(d){buyShares(+d.c,+d.l);},shsell(d){sellShares(+d.l);},opa(d){opa(+d.c);},shveto(){shVeto();},
@@ -5819,8 +5840,8 @@ document.addEventListener('input',e=>{if(e.target.id==='q'){ui.q=e.target.value;
   const k=e.target.dataset&&e.target.dataset.n;if(!k||!G||!G.neg)return;const t=G.neg.my,v=+e.target.value;t[k]=v;
   const o=$('#o-'+k);if(o)o.textContent=k==='wage'||k==='luvas'?inCur(negCur(),()=>fmt(v)):k==='years'?durTxt(v*12):k==='cm'?String(v).replace('.',',')+'x o valor':v+'%';inCur(negCur(),negGain);});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&G&&ui.stack.length&&!ui.modal){ui.stack.pop();render();}});
-themeInit();G=load();window.__ja={get G(){return G;},A,nextWeek,initWorld,ui,render,evDef,RE};
-render();
+themeInit();window.__ja={get G(){return G;},A,nextWeek,initWorld,ui,render,evDef,RE,saveNow};
+if(HAS_IDB){loadA().then(()=>render(),()=>{G=load();render();});}else{G=load();render();}
 
 })();
 </script>
