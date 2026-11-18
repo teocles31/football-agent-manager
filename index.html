@@ -1662,6 +1662,8 @@ const isClient=p=>p&&p.ag===0;
 const regOf=c=>LG[c.lg].reg;
 const curMonth=()=>monthIdx(G.d);
 const monthsLeft=p=>Math.max(0,p.ce-curMonth()+1);
+function durTxt(m){m=Math.max(0,Math.round(m));const y=Math.floor(m/12),r=m%12,ys=y?y+(y>1?' anos':' ano'):'';if(!y)return m+(m===1?' mês':' meses');if(!r)return ys;if(r===6)return ys+' e meio';return ys+' e '+r+(r===1?' mês':' meses');}
+const leftTxt=p=>durTxt(monthsLeft(p));
 
 /* ================= DINHEIRO ================= */
 const eurVal=o=>500000*Math.pow(1.2,o-60);
@@ -2160,7 +2162,7 @@ function negCollapse(){const n=G.neg,p=G.P[n.pid],c=G.clubs[n.cid];p.cool[c.id]=
   ui.modal={type:'info',title:'Negociação encerrada',html:'<p>A diretoria do '+esc(c.n)+' perdeu a paciência e encerrou a conversa. Eles não atendem você sobre '+esc(p.name)+' pelas próximas 8 semanas.</p>'};}
 function negPropose(){return inCur(negCur(),negPropose0);}
 function negPropose0(){const n=G.neg,t=n.my,k=negCost(t);
-  n.log.push({w:'m',t:'Pedi '+fmt(t.wage)+'/sem, luvas de '+fmt(t.luvas)+', '+t.years+' ano'+(t.years>1?'s':'')+(t.cm?', multa '+String(t.cm).replace('.',',')+'x e ':', sem multa rescisória e ')+t.comm+'% de comissão.'});
+  n.log.push({w:'m',t:'Pedi '+fmt(t.wage)+'/sem, luvas de '+fmt(t.luvas)+', '+durTxt(t.years*12)+(t.cm?', multa '+String(t.cm).replace('.',',')+'x e ':', sem multa rescisória e ')+t.comm+'% de comissão.'});
   if(k.total<=n.limit){closeDeal(Object.assign({},t));return;}
   const over=k.total-n.limit;n.pat-=over>.35?2:1;const worst=Object.entries(k.parts).sort((a,b)=>b[1]-a[1])[0][0];
   const hint={bon:'Bônus por metas desse tamanho não cabem no nosso orçamento.',so:'Não aceitamos dividir uma venda futura com o empresário.',wage:'O salário está acima do que pagamos para esse nível.',luvas:'Essas luvas pesam demais no nosso caixa.',comm:'Sua comissão está alta. Não vamos bancar isso.',cm:'Com uma multa tão baixa, perdemos o jogador de graça.',years:'Não damos contrato tão longo para a idade dele.'}[worst];
@@ -2188,7 +2190,7 @@ function closeDeal0(t){const n=G.neg,p=G.P[n.pid],c=G.clubs[n.cid],old=club(p),m
   G.offers=G.offers.filter(o=>o.pid!==p.id);
   news((move?(n.fee?'Transferência fechada: '+p.name+' troca o '+old.n+' pelo '+c.n+' por '+fmt(n.fee):p.name+' assinou com o '+c.n):p.name+' renovou com o '+c.n)+'. Contrato até '+fmonth(p.ce)+'. Você embolsou '+fmt(gain+feeC)+'.','transf');
   relAdd(c,move?8:5);if(old&&old!==c&&n.fee>0)relAdd(old,3);G.tut.deal=true;G.neg=null;
-  ui.modal={type:'info',stamp:'Fechado',title:'Negócio fechado',html:'<p>'+esc(p.name)+(move?' é jogador do ':' renovou com o ')+esc(c.n)+'.</p><p>Salário: <b>'+fmt(t.wage)+'</b> por semana, contrato até <b>'+fmonth(p.ce)+'</b> ('+monthsLeft(p)+' meses).</p><p>Você recebe agora <b>'+fmt(gain+feeC)+'</b>'+(feeC?' (luvas '+fmt(gain)+' + comissão da venda '+fmt(feeC)+')':'')+' e <b>'+fmt(t.wage*t.comm/100)+'</b> por semana.</p>'};
+  ui.modal={type:'info',stamp:'Fechado',title:'Negócio fechado',html:'<p>'+esc(p.name)+(move?' é jogador do ':' renovou com o ')+esc(c.n)+'.</p><p>Salário: <b>'+fmt(t.wage)+'</b> por semana, contrato até <b>'+fmonth(p.ce)+'</b> ('+leftTxt(p)+').</p><p>Você recebe agora <b>'+fmt(gain+feeC)+'</b>'+(feeC?' (luvas '+fmt(gain)+' + comissão da venda '+fmt(feeC)+')':'')+' e <b>'+fmt(t.wage*t.comm/100)+'</b> por semana.</p>'};
   addRep(rg);save();render();}
 function loan(pid,cid){const p=G.P[pid],c=G.clubs[cid],cur=club(p);if(!cur||p.loan)return;
   if(!winOpen(regOf(c))){toast('A janela de '+LG[c.lg].cn+' está fechada.');return;}
@@ -3245,9 +3247,9 @@ const SPB=['Chuteiras Rajada','Isotônico Voltz','Relógios Aurum','Banco Ponta'
 const spCh=()=>clamp(.4+G.staff.assessor*.08+G.me.neg*.03,.1,.85);
 const spLine0=o=>o.sp&&o.sp.length?'<p class="small"><b>Patrocínios:</b> '+o.sp.map(s=>esc(s.b)+' · '+fmt(s.w)+'/sem até '+fdate(s.until)).join('; ')+'</p>':'';
 EV.spons=function(e){const p=G.P[e.pid],o=offOf(p),ag=Math.round(e.w*SP_CUT),m=Math.round(e.n/4.33);
-  const sign=(w,txt,ok)=>{o.sp=o.sp||[];o.sp.push({b:e.b,w,until:G.d+e.n*7});news(p.name+' fechou patrocínio com a '+e.b+': '+fmt(w)+' por semana por '+m+' meses. A agência fica com '+Math.round(SP_CUT*100)+'%.','agencia');
-    return{t:txt,chips:[['Agência +'+fmt(Math.round(w*SP_CUT))+'/sem','good'],['Por '+m+' meses','info']].concat(applyFx(p,null,{t:3,f:1},0)),ok};};
-  return{title:'Proposta de patrocínio',text:'A '+e.b+' quer '+p.name+' como embaixador da marca: '+fmt(e.w)+' por semana durante '+m+' meses. Sua comissão é de '+Math.round(SP_CUT*100)+'%, ou '+fmt(ag)+' por semana.',choices:[
+  const sign=(w,txt,ok)=>{o.sp=o.sp||[];o.sp.push({b:e.b,w,until:G.d+e.n*7});news(p.name+' fechou patrocínio com a '+e.b+': '+fmt(w)+' por semana por '+durTxt(m)+'. A agência fica com '+Math.round(SP_CUT*100)+'%.','agencia');
+    return{t:txt,chips:[['Agência +'+fmt(Math.round(w*SP_CUT))+'/sem','good'],['Por '+durTxt(m),'info']].concat(applyFx(p,null,{t:3,f:1},0)),ok};};
+  return{title:'Proposta de patrocínio',text:'A '+e.b+' quer '+p.name+' como embaixador da marca: '+fmt(e.w)+' por semana durante '+durTxt(m)+'. Sua comissão é de '+Math.round(SP_CUT*100)+'%, ou '+fmt(ag)+' por semana.',choices:[
    {label:'Assinar',sub:'Dinheiro garantido toda semana.',run(){return sign(e.w,'Contrato assinado. A '+e.b+' já postou a foto de '+p.name+' com o produto.');}},
    {label:'Pedir 30% a mais',sub:'Chance de '+Math.round(spCh()*100)+'%. Se a marca recusar, ela procura outro atleta.',run(){if(Math.random()<spCh())return sign(nice(e.w*1.3),'A '+e.b+' topou pagar mais.',true);return{t:'A '+e.b+' achou caro e fechou com outro jogador.',chips:[],ok:false};}},
    {label:'Recusar',sub:'Ele prefere não associar a imagem a essa marca.',run(){return{t:'Proposta recusada.',chips:[]};}}]};};
@@ -3501,7 +3503,7 @@ function ownFinV(o,c,fin){const ri=[['Bilheteria'+(fin.homes?' ('+fin.homes+' jo
    '<p class="small muted"><b>'+o.mem.toLocaleString('pt-BR')+' sócios</b>. O número sobe com o humor da torcida e com o estádio. Plano popular atrai mais sócios pagando menos; premium o contrário.</p></section>';
   h+='<section class="card c-purple">'+cardH('deal','Patrocinador master');
   if(o.spm&&o.spm.until>G.d)h+='<b class="big2">'+esc(dispB(o.spm.b))+'</b><p class="small">'+fmt(o.spm.w)+' por semana até '+fdate(o.spm.until,true)+(o.spm.bon?'. Bônus de '+fmt(o.spm.bon)+' por título.':'.')+'</p>';
-  else{if(!o.spmOff)spmOffers();h+='<p class="small muted">A camisa está sem patrocinador master. Escolha uma proposta:</p><div class="list">'+o.spmOff.map((x,i)=>'<div><div class="grow"><b>'+esc(x.b)+'</b> <span class="chip">'+x.k+'</span><div class="small muted">'+fmt(x.w)+'/sem por '+Math.round(x.wk/52)+' ano'+(x.wk>52?'s':'')+(x.bon?' · bônus de '+fmt(x.bon)+' por título':'')+'</div></div><button class="btn pri sm" data-a="ospm" data-i="'+i+'">Assinar</button></div>').join('')+'</div>'+
+  else{if(!o.spmOff)spmOffers();h+='<p class="small muted">A camisa está sem patrocinador master. Escolha uma proposta:</p><div class="list">'+o.spmOff.map((x,i)=>'<div><div class="grow"><b>'+esc(x.b)+'</b> <span class="chip">'+x.k+'</span><div class="small muted">'+fmt(x.w)+'/sem por '+durTxt(x.wk/52*12)+(x.bon?' · bônus de '+fmt(x.bon)+' por título':'')+'</div></div><button class="btn pri sm" data-a="ospm" data-i="'+i+'">Assinar</button></div>').join('')+'</div>'+
     '<button class="btn sm" data-a="ospmnew"'+((o.spmCd||0)>G.d?' disabled':'')+'>'+((o.spmCd||0)>G.d?'Novas propostas em '+fdate(o.spmCd):'Ouvir outras propostas')+'</button>';}
   return h+'</section></div>';}
 function ownElenco0(o,c){const sq=squad(c.id).sort((a,b)=>POS.indexOf(a.pos)-POS.indexOf(b.pos)||b.ovr-a.ovr),cnt={},yb={};sq.forEach(p=>{if(p.age>20)cnt[p.pos]=(cnt[p.pos]||0)+1;else yb[p.pos]=(yb[p.pos]||0)+1;});
@@ -3626,7 +3628,7 @@ function vMind(){const m=mindOf(),can=!m||G.d>=(G.mindCd||0);
   return h+'</section>';}
 function vAch(){G.ach=G.ach||{};const got=ACH.filter(a=>G.ach[a[0]]),yrs=Math.max(0,(G.d-START)/365),lead=G.ags.filter(a=>!a.me).sort((a,b)=>b.rep-a.rep)[0];
   return'<section><div class="sec-h"><h2>Conquistas e carreira</h2><p>'+got.length+' de '+ACH.length+' conquistas.</p></div>'+
-   '<div class="kpis tint">'+[['Negócios fechados',G.stats.deals],['Ganhos na carreira',fmt(G.stats.earned)],['Maior transferência',G.stats.bigFee?fmt(G.stats.bigFee):'—'],['Melhor posição',(G.stats.best&&G.stats.best<99?G.stats.best:rank())+'º no ranking'],['Clientes assinados',(G.stats.signed||0)+G.clients.filter(id=>!G.P[id].ovr0).length],['Tempo de carreira',yrs<1?Math.round(yrs*12)+' meses':f1(yrs)+' anos']].map(k=>'<div class="kpi"><span>'+k[0]+'</span><b>'+k[1]+'</b></div>').join('')+'</div>'+
+   '<div class="kpis tint">'+[['Negócios fechados',G.stats.deals],['Ganhos na carreira',fmt(G.stats.earned)],['Maior transferência',G.stats.bigFee?fmt(G.stats.bigFee):'—'],['Melhor posição',(G.stats.best&&G.stats.best<99?G.stats.best:rank())+'º no ranking'],['Clientes assinados',(G.stats.signed||0)+G.clients.filter(id=>!G.P[id].ovr0).length],['Tempo de carreira',durTxt(yrs*12)]].map(k=>'<div class="kpi"><span>'+k[0]+'</span><b>'+k[1]+'</b></div>').join('')+'</div>'+
    (lead?'<div class="card"><span class="lbl">Você x a líder do ranking</span><div class="cmp"><span>'+esc(G.agency)+'</span><div><i style="width:'+Math.round(G.rep)+'%"></i></div><b>'+Math.floor(G.rep)+'</b><span>'+esc(lead.n)+'</span><div><i class="ld" style="width:'+Math.round(lead.rep)+'%"></i></div><b>'+Math.floor(lead.rep)+'</b></div></div>':'')+
    '<div class="achs">'+ACH.map(a=>{const d=G.ach[a[0]];return'<div class="ach'+(d?' on':'')+'"><span class="ico">'+svgI(a[3],18)+'</span><div class="grow"><b>'+a[1]+'</b><span class="small muted">'+a[2]+'</span>'+(d?'<span class="small okk">Desbloqueada em '+fdate(d,true)+'</span>':'')+'</div></div>';}).join('')+'</div></section>';}
 function vRel(){const rs=Object.keys(G.rel||{}).map(Number).map(id=>({c:G.clubs[id],v:G.rel[id]})).filter(x=>x.c&&Math.abs(x.v-50)>=3).sort((a,b)=>b.v-a.v);
@@ -4509,7 +4511,7 @@ function mCtr(){const m=ui.modal,p=G.P[m.pid],c=ownC(),o=m.off,a=m.ask;
   return'<div class="sheet"><span class="eyebrow">Contrato · '+(m.kind==='free'?'jogador livre':'transferência de '+fmt(m.fee))+'</span><div class="neg-h">'+avatar(p,48)+'<h2>'+esc(p.name)+' × '+esc(c.n)+'</h2></div>'+
    '<p class="small muted">'+p.pos+' · '+p.age+' anos · nível '+p.ovr+' · paciência: <span class="pat">'+'●'.repeat(Math.max(0,m.pat))+'</span></p>'+
    '<div class="log">'+m.log.map((l,i)=>'<p class="'+(i%2?'me':'')+'">'+esc(l)+'</p>').join('')+'</div>'+
-   row('w','Salário por semana',fmt(o.w),'O empresário dele pede '+fmt(a.w)+'.')+row('l','Luvas',fmt(o.l),'Pedido: '+fmt(a.l)+'. Sai do caixa do clube.')+row('y','Duração',o.y+' ano'+(o.y>1?'s':''),'Ele prefere '+a.y+' ano'+(a.y>1?'s':'')+'.')+
+   row('w','Salário por semana',fmt(o.w),'O empresário dele pede '+fmt(a.w)+'.')+row('l','Luvas',fmt(o.l),'Pedido: '+fmt(a.l)+'. Sai do caixa do clube.')+row('y','Duração',durTxt(o.y*12),'Ele prefere '+durTxt(a.y*12)+'.')+
    '<p class="small">Custo total na assinatura: <b>'+fmt(m.fee+o.l)+'</b> · caixa do clube: '+fmt(c.bud)+'</p>'+
    '<div class="acts"><button class="btn pri" data-a="ctrsend"'+(c.bud<m.fee+o.l?' disabled':'')+'>Enviar proposta</button><button class="btn" data-a="ctrquit">Desistir</button></div></div>';}
 function ctrSend(){const m=ui.modal,p=G.P[m.pid],c=ownC(),o=m.off,a=m.ask;if(c.bud<m.fee+o.l){toast('Caixa do clube insuficiente.');return;}
@@ -4979,7 +4981,7 @@ Object.assign(MSG,{
  jorn:{q:p=>p.fame>=30,m:p=>({from:V(['Repórter do Diário da Bola','Setorista da Rádio Gol','Blog Bastidores FC','Colunista do Lance Final']),t:V(['É verdade que tem clube grande de olho no '+p.name+'?','Vi o '+p.name+' saindo de um restaurante com dirigentes. Tem negociação?','Pode confirmar uma proposta pelo '+p.name+'?','Os torcedores querem saber: o '+p.name+' renova ou sai?']),r:[['Sem comentários',{}],['Tem gente interessada, sim',{f:2,r:-2}]],pid:p.id})},
  rival:{q:p=>p.ovr>=70&&p.trust<70,m:p=>({from:'Empresário da '+pick(G.ags.slice(1,12)).n,t:V(['Seu garoto '+p.name+' joga muito, hein. Se um dia ele quiser mudar de ares...','Tô sabendo que o '+p.name+' anda insatisfeito. Fica a dica kkk','Se o '+p.name+' quiser uma agência maior, minha porta tá aberta.','Bom dia! Só passando pra dizer que admiro muito o '+p.name+'.']),r:[['Ele está feliz comigo',{}],['Tira o olho do meu jogador',{R:.1}]],pid:p.id})},
  preparador:{q:p=>(p.fat||0)>=4,m:p=>({from:V(['Preparador físico do ','Departamento médico do ','Fisiologista do '])+clN(p),t:V([p.name+' está no limite físico. Recomendo poupá-lo uma semana.','Os números do GPS do '+p.name+' caíram muito. Ele precisa descansar.','O risco de lesão do '+p.name+' está alto. Sugerimos uma semana de folga.']),r:[['Concordo, poupa ele',{m:-1,b:-1}],['Ele aguenta, deixa jogar',Math.random()<.3?{i:1}:{}]]})},
- contrato:{q:p=>club(p)&&monthsLeft(p)<=6&&monthsLeft(p)>0,m:p=>({from:p.name,pid:p.id,t:V(['Chefe, meu contrato com o '+clN(p)+' tá acabando e ninguém me procurou ainda.','Faltam '+monthsLeft(p)+' meses pro fim do contrato. Renovo ou a gente olha o mercado?','O '+clN(p)+' ainda não falou de renovação. Tô ficando ansioso.']),r:[['Já estou conversando com eles',{t:2}],['Calma, vamos ouvir o mercado',p.trait==='ambicioso'?{m:2}:{m:-1,t:1}]]})},
+ contrato:{q:p=>club(p)&&monthsLeft(p)<=6&&monthsLeft(p)>0,m:p=>({from:p.name,pid:p.id,t:V(['Chefe, meu contrato com o '+clN(p)+' tá acabando e ninguém me procurou ainda.','Faltam '+leftTxt(p)+' pro fim do contrato. Renovo ou a gente olha o mercado?','O '+clN(p)+' ainda não falou de renovação. Tô ficando ansioso.']),r:[['Já estou conversando com eles',{t:2}],['Calma, vamos ouvir o mercado',p.trait==='ambicioso'?{m:2}:{m:-1,t:1}]]})},
  saudade:{q:p=>{const c=club(p);return c&&regOf(c)==='eu'&&natName(p)==='Brasil';},m:p=>({from:p.name,pid:p.id,t:V(['Tô com saudade de casa, chefe. O frio aqui não é brincadeira.','Sinto falta do arroz e feijão da minha mãe kkk','A língua ainda é difícil. Às vezes me sinto sozinho no vestiário.','Primeiro inverno na Europa... nunca vi tanta neve!']),r:[['Vou ver se a família te visita',{m:3,t:1}],['Logo você se adapta, foco',{m:-1,t:1}]]})},
  niver:{q:p=>Math.random()<.4,m:p=>({from:p.name,pid:p.id,t:V(['Hoje é meu aniversário! Vai ter bolo no vestiário kkk','Mais um ano de vida, chefe! Obrigado por fazer parte.','Aniversário hoje! O grupo me deu um trote no treino kkk']),r:[['Parabéns, craque! Muitos anos de vida',{t:2}],[p.trait==='baladeiro'?'Parabéns! Juízo na festa, hein':'Parabéns! Comemora com a família',{m:1,t:1}]]})},
  marca:{q:p=>p.fame>=40,m:p=>({from:p.name,pid:p.id,t:V(['Uma marca de chuteira me mandou mensagem direto. Você cuida disso?','Me chamaram pra uma campanha de perfume kkk. Topo?','Uma empresa de energético quer meu rosto numa lata. Vale a pena?']),r:[['Deixa comigo, eu negocio',{t:2,f:1}],['Só se não atrapalhar os treinos',{f:2,m:-1}]]})},
@@ -5074,11 +5076,11 @@ const bonTxt=b=>b?(fmt(b.v)+(b.k==='gol'?' por gol':' por atuação de destaque 
 EV.spons2=function(e){const p=G.P[e.pid],b=BRI[e.bid];if(!p||!b||!isClient(p))return{title:'Patrocínio',text:'A proposta perdeu a validade.',choices:[{label:'Ok',run(){return{t:'Sem novidades.',chips:[]};}}]};
   const o=offOf(p),n=bN(b.id),pct=Math.round(SP_CUT*100);
   const sign=(w,m,bon,txt,ok)=>{o.sp=o.sp||[];if(e.swap)o.sp=o.sp.filter(s=>spCat(s)!=='chut');o.sp.push({bid:b.id,b:n,cat:e.cat,t:b.t,w,until:G.d+Math.round(m*30.4),bon,got:0,since:G.d});
-    news(p.name+' assinou com a '+n+': '+fmt(w)+' por semana por '+m+' meses'+(bon?' e bônus de '+bonTxt(bon):'')+'. A agência fica com '+pct+'%.','agencia');
-    return{t:txt,chips:[['Agência +'+fmt(Math.round(w*SP_CUT))+'/sem','good'],['Por '+m+' meses','info']].concat(bon?[['Bônus: '+bonTxt(bon),'info']]:[]).concat(applyFx(p,null,{t:3,f:b.t===1?3:1},0)),ok};};
+    news(p.name+' assinou com a '+n+': '+fmt(w)+' por semana por '+durTxt(m)+''+(bon?' e bônus de '+bonTxt(bon):'')+'. A agência fica com '+pct+'%.','agencia');
+    return{t:txt,chips:[['Agência +'+fmt(Math.round(w*SP_CUT))+'/sem','good'],['Por '+durTxt(m),'info']].concat(bon?[['Bônus: '+bonTxt(bon),'info']]:[]).concat(applyFx(p,null,{t:3,f:b.t===1?3:1},0)),ok};};
   const long=e.bon?{bon:{k:e.bon.k,v:nice(e.bon.v*2)},w:nice(e.w*.9),lbl:'Contrato 1 ano mais longo, bônus em dobro',sub:fmt(nice(e.w*.9))+'/sem e '+bonTxt({k:e.bon.k,v:nice(e.bon.v*2)})+'.'}:{bon:null,w:nice(e.w*.95),lbl:'Contrato 1 ano mais longo',sub:fmt(nice(e.w*.95))+'/sem, mais estabilidade.'};
   return{title:e.cat==='chut'?(e.swap?'Troca de chuteira':'Contrato de chuteira'):'Proposta de patrocínio',
-   text:'A '+n+' ('+BRT[b.t].toLowerCase()+' · '+BRC[e.cat].toLowerCase()+') quer '+p.name+' como embaixador: '+fmt(e.w)+' por semana durante '+e.m+' meses'+(e.bon?', mais bônus de '+bonTxt(e.bon):'')+'.'+(e.swap?' O contrato atual com a '+e.swap+' seria encerrado; a '+n+' paga a rescisão.':'')+' Sua comissão é de '+pct+'%, ou '+fmt(Math.round(e.w*SP_CUT))+' por semana.',
+   text:'A '+n+' ('+BRT[b.t].toLowerCase()+' · '+BRC[e.cat].toLowerCase()+') quer '+p.name+' como embaixador: '+fmt(e.w)+' por semana durante '+durTxt(e.m)+(e.bon?', mais bônus de '+bonTxt(e.bon):'')+'.'+(e.swap?' O contrato atual com a '+e.swap+' seria encerrado; a '+n+' paga a rescisão.':'')+' Sua comissão é de '+pct+'%, ou '+fmt(Math.round(e.w*SP_CUT))+' por semana.',
    choices:[{label:'Assinar',sub:'Dinheiro garantido toda semana.',run(){return sign(e.w,e.m,e.bon,'Contrato assinado. A '+n+' já anunciou '+p.name+' nas redes.');}},
     {label:'Pedir 25% a mais',sub:'Chance de '+Math.round(spCh()*100)+'%. Se a marca recusar, ela procura outro atleta.',run(){if(Math.random()<spCh())return sign(nice(e.w*1.25),e.m,e.bon,'A '+n+' topou pagar mais.',true);return{t:'A '+n+' achou caro e fechou com outro jogador.',chips:[],ok:false};}},
     {label:long.lbl,sub:long.sub,run(){return sign(long.w,e.m+12,long.bon,'Contrato longo assinado com a '+n+'.');}},
@@ -5377,7 +5379,7 @@ function figCard(p){const c=club(p),t=seasonTot(p),tcost=nice(Math.max(300,wageR
   const lk=locked(p),canOffer=!p.loan&&!lk&&(!c||anyWin()),canLoan=c&&!p.loan&&anyWin();
   return'<article class="fig"><div class="fig-n">'+avatar(p,58)+'<b>'+p.ovr+'</b><span>'+p.pos+'</span><small>pot. '+potTxt(p)+'</small></div><div class="fig-b">'+
    '<h3>'+plLink(p)+'<small>'+p.age+' anos · '+natTag(p)+TRAIT[p.trait][0]+'</small></h3>'+
-   '<p class="small">'+(c?clubLink(c,16)+' · '+fmt(p.wage)+'/sem · contrato até <b>'+fmonth(p.ce)+'</b> ('+monthsLeft(p)+' meses) · você leva '+p.comm+'%':'<b>Sem clube</b> · aguardando você achar um contrato')+'</p>'+
+   '<p class="small">'+(c?clubLink(c,16)+' · '+fmt(p.wage)+'/sem · contrato até <b>'+fmonth(p.ce)+'</b> ('+leftTxt(p)+') · você leva '+p.comm+'%':'<b>Sem clube</b> · aguardando você achar um contrato')+'</p>'+
    '<div class="meters">'+meter('Moral',p.morale)+meter('Confiança',p.trust)+meter('Fama',p.fame)+'</div>'+
    '<p class="small muted">Valor '+fmt(value(p))+' · '+fmtN(offOf(p).fol)+' seguidores</p>'+statSheet(p)+
    (tags.length?'<div class="acts">'+tags.join('')+'</div>':'')+
@@ -5574,7 +5576,7 @@ function mNeg(){const n=G.neg,p=G.P[n.pid],c=G.clubs[n.cid],t=n.my,old=club(p);
    '<p class="small muted">'+p.pos+', '+p.age+' anos, nível '+p.ovr+' (time: '+Math.round(teamStr(c.id))+')'+(n.fee?' · taxa de '+fmt(n.fee)+' ao '+esc(old.n):'')+' · paciência: <span class="pat">'+'●'.repeat(Math.max(0,n.pat))+'</span></p>'+
    '<div class="log" id="neg-log">'+n.log.map(l=>'<p class="'+(l.w==='m'?'me':'')+'"><b>'+(l.w==='m'?'Você':(isOwn(c)?'Seu diretor':'Diretoria'))+':</b> '+esc(l.t)+'</p>').join('')+'</div>'+
    F('wage','Salário por semana',n.minWage,n.maxW,stepW,t.wage,fmt(t.wage),'Oferta do clube: '+fmt(n.st.wage)+'. '+esc(p.name)+' não aceita menos que '+fmt(n.minWage)+'.')+
-   F('luvas','Luvas na assinatura',0,nice(n.W*20),stepL,t.luvas,fmt(t.luvas),'Oferta do clube: '+fmt(n.st.luvas)+'.')+F('years','Duração',1,5,1,t.years,t.years+' ano(s)','')+
+   F('luvas','Luvas na assinatura',0,nice(n.W*20),stepL,t.luvas,fmt(t.luvas),'Oferta do clube: '+fmt(n.st.luvas)+'.')+F('years','Duração',1,5,1,t.years,durTxt(t.years*12),'')+
    (t.cm===0?'<div class="field"><label>Multa rescisória</label><output id="o-cm">Sem multa</output><small>Sem multa, só o clube decide se ele sai. A diretoria gosta e cede um pouco em outros pontos, mas vender o jogador depois fica mais caro.</small></div>':F('cm','Multa rescisória',1.5,5,.5,t.cm,String(t.cm).replace('.',',')+'x o valor','Multa baixa facilita a próxima venda, mas o clube resiste.'))+
    (clMust(c)?'<p class="small muted">No '+(c.cn==='Brasil'?'Brasil a Lei Pelé':'futebol espanhol a lei')+' obriga todo contrato a ter multa rescisória.</p>':'<div class="acts"><button class="btn sm'+(t.cm===0?' pri':'')+'" data-a="nocm" aria-pressed="'+(t.cm===0)+'">'+(t.cm===0?'Incluir multa rescisória':'Contrato sem multa rescisória')+'</button></div>')+F('comm','Sua comissão',5,15,1,t.comm,t.comm+'%','Acima de 10%, o jogador acha que você está levando demais.')+(n.kind==='renew'||!isOwn(c)?negClauses(t):'')+
    '<div class="gain" id="neg-gain"></div><div class="acts"><button class="btn pri" data-a="nprop">Enviar proposta</button><button class="btn" data-a="naccept">Aceitar oferta do clube</button><button class="btn" data-a="nbluff"'+(n.bluff?' disabled':'')+'>Blefar: "tenho outra proposta"</button><button class="btn" data-a="nleave">Sair da mesa</button></div></div>';}
@@ -5729,7 +5731,7 @@ function render0(){renderModal();renderHeader();if(!G){$('#view').innerHTML='';r
 document.addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b||b.disabled)return;const f=A[b.dataset.a];if(f)f(b.dataset);});
 document.addEventListener('input',e=>{if(e.target.id==='q'){ui.q=e.target.value;const r=$('#qres');if(r)r.innerHTML=searchRes();return;}
   const k=e.target.dataset&&e.target.dataset.n;if(!k||!G||!G.neg)return;const t=G.neg.my,v=+e.target.value;t[k]=v;
-  const o=$('#o-'+k);if(o)o.textContent=k==='wage'||k==='luvas'?inCur(negCur(),()=>fmt(v)):k==='years'?v+' ano(s)':k==='cm'?String(v).replace('.',',')+'x o valor':v+'%';inCur(negCur(),negGain);});
+  const o=$('#o-'+k);if(o)o.textContent=k==='wage'||k==='luvas'?inCur(negCur(),()=>fmt(v)):k==='years'?durTxt(v*12):k==='cm'?String(v).replace('.',',')+'x o valor':v+'%';inCur(negCur(),negGain);});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&G&&ui.stack.length&&!ui.modal){ui.stack.pop();render();}});
 themeInit();G=load();window.__ja={get G(){return G;},A,nextWeek,initWorld,ui,render,evDef,RE};
 render();
