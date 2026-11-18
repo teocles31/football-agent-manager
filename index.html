@@ -2420,7 +2420,11 @@ function clubPull(c){return(G.inv&&G.inv.cid===c.id&&G.inv.pct>=10?.15:0)+(G.pol
 function electionDay(c){const sa=regOf(c)==='sa';for(let y=2026;y<2110;y++){if((y+c.id)%3)continue;const d=dayOf(y,sa?12:6,10);if(d>=G.d)return d;}return G.d+999;}
 function canRun(c,po){const ed=electionDay(c),win=ed-G.d<=56,crise=c.cf.t<35;return{ed,win,crise,ok:(win||crise)&&(po.lost||0)<G.d&&(po.rk>=3||po.infl>=60)&&G.rep>=35};}
 function takeControl(c,role,pct){G.own={cid:c.id,role,pct,base:0,est:0,mood:clamp(Math.round(c.cf.t)+(role==='pres'?8:0),40,78),wd:0,rev:nice((wageBill(c)+coachWage(c))*1.08),cands:genCoaches(c),naming:false,evCool:G.d+28,term:role==='pres'?G.d+156*7:0};
-  ownInit();spmOffers();G.inv=null;if(G.pol&&G.pol.cid===c.id)G.pol=null;G.missions=G.missions.filter(m=>m.cid!==c.id);ui.modal=null;ui.tab='clube';addRep(role==='dono'?2:3);}
+  ownInit();spmOffers();ctrlCleanup(c);G.missions=G.missions.filter(m=>m.cid!==c.id);ui.modal=null;ui.tab='clube';addRep(role==='dono'?2:3);}
+/* ao assumir um clube, encerra os vínculos com outros clubes (sócio ou acionista), sem deixar cobrança escondida */
+function ctrlCleanup(c){const ch=[];const iv=G.inv;if(iv&&iv.cid!==c.id&&G.clubs[iv.cid]){const o=G.clubs[iv.cid],v=nice(clubPrice(o)/100*iv.pct*.97);G.money+=v;ch.push(['Ações do '+o.n+' vendidas: +'+fmt(v),'good']);news('Ao assumir o '+c.n+', você vendeu suas '+iv.pct+'% de ações do '+o.n+' por '+fmt(v)+'.','clube');}
+  G.inv=null;const po=G.pol;if(po){if(po.cid!==c.id&&G.clubs[po.cid]){const o=G.clubs[po.cid];ch.push(['Saiu do quadro de sócios do '+o.n,'info']);news('Ao assumir o '+c.n+', você deixou o quadro de sócios do '+o.n+'.','clube');}G.pol=null;}
+  if(ch.length)setTimeout(()=>{try{pop({k:'info',ic:'club',ti:'Vínculos encerrados',tx:'Para comandar o '+c.n+', você deixou os outros clubes.',ch});}catch(e){}},50);}
 /* ---------- caminho das ações ---------- */
 function buyShares(cid,lot){const c=G.clubs[cid];let iv=G.inv;if(G.own){toast('Você já comanda um clube. Só dá para ter um.');return;}
   if(gov(c)==='assoc'){toast('O '+c.n+' é uma associação: não tem ações à venda. O caminho ali é a política do clube.');return;}
@@ -4781,7 +4785,8 @@ const COMP_M=/^(Brasileir|Campeonato|Mundial|Paulist|Carioc|Gaúch|Mineir|Tornei
 const compDe=n=>COMP_M.test(String(n))?'do':'da';
 /* conserta notícias antigas que saíram com "campeão da Brasileirão" */
 function newsFix(){try{if(!G||!G.news||G._nfx)return;G.news.forEach(n=>{n.t=String(n.t).replace(/é campeão da (\S+)/g,(m,w)=>'é campeão '+compDe(w)+' '+w);});G._nfx=1;}catch(e){}}
-function render(){newsFix();render0();rdInit();vpInit();apLock();}
+function polFix(){try{if(G&&G.own&&G.pol&&!G._pfx){const o=G.clubs[G.pol.cid];G._pfx=1;if(o)news('Você deixou o quadro de sócios do '+o.n+', que ainda cobrava mensalidade.','clube');G.pol=null;}}catch(e){}}
+function render(){polFix();newsFix();render0();rdInit();vpInit();apLock();}
 const RDA={rdgo(d){try{const el=document.querySelector('#view .rd-car');if(!el)return;const base=ui.rd!=null?ui.rd:Math.round(el.scrollLeft/el.clientWidth),i=base+(+d.v),n=el.children.length;const j=Math.max(0,Math.min(n-1,i));ui.rd=j;el.scrollTo({left:j*el.clientWidth,behavior:'smooth'});}catch(e){}}};
 
 /* ---- crep2.js ---- */
