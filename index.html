@@ -3210,12 +3210,15 @@ function u20Week(d0){const played=new Set();for(const k in G.comps){const c=G.co
     if(c.rounds)c.rounds.forEach(r=>{if(r.d>=d0&&r.d<d0+7&&r.done)r.m.forEach(m=>{played.add(m[0]);played.add(m[1]);});});
     if(c.ko)c.ko.forEach(s=>{if(s.ties)s.d.forEach((dd,l)=>{if(dd>=d0&&dd<d0+7)s.ties.forEach(t=>{if(t.m[l]){played.add(t.m[l][0]);played.add(t.m[l][1]);}});});});}
   const y=ymd(G.d).y,GR={ATA:.42,MEI:.22,VOL:.08,LAT:.06,ZAG:.05,GOL:0},AR={MEI:.3,ATA:.2,LAT:.15,VOL:.1,ZAG:.03,GOL:0};
+  const U20M={},u20m=c=>{if(U20M[c.id])return U20M[c.id];const all=clubsOf(c.lg).filter(x=>x.id!==c.id),free=all.filter(x=>!U20M[x.id]),opp=pick(free.length?free:all)||c;
+      const k=clamp(((c.str||70)-(opp.str||70))/12,-1.2,1.2),gf=poisson(1.35*Math.exp(k/2)),ga=poisson(1.35*Math.exp(-k/2)),home=Math.random()<.5;
+      U20M[c.id]={opp,home,gf,ga,gl:gf,as:gf};if(opp!==c&&!U20M[opp.id])U20M[opp.id]={opp:c,home:!home,gf:ga,ga:gf,gl:ga,as:ga};return U20M[c.id];};
   allP().forEach(p=>{if(p.age>20||p.club==null||p.injury>0||(p.wkg||0)>0||!played.has(p.club))return;const c=G.clubs[p.club],df=p.ovr-(c.str-13);
-    const gf=poisson(1.4*Math.exp(df/30)),ga=poisson(1.2*Math.exp(-df/30)),g=Math.min(gf,poisson(GR[p.pos]*Math.exp(df/14))),a=Math.min(gf-g,poisson(AR[p.pos]*Math.exp(df/14)));
+    const M=u20m(c),gf=M.gf,ga=M.ga,g=Math.min(M.gl,poisson(GR[p.pos]*Math.exp(df/14)));M.gl-=g;const a=Math.min(gf-g,M.as,poisson(AR[p.pos]*Math.exp(df/14)));M.as-=a;
     let rt=6.3+df*.06+rnd(-.8,.8)+g*.8+a*.4+(gf>ga?.2:gf<ga?-.2:0);if(ga===0&&(p.pos==='GOL'||p.pos==='ZAG'))rt+=.4;rt=clamp(Math.round(rt*10)/10,4,10);
     let u=p.u20;if(!u||u.y!==y)u=p.u20={y,ap:0,gl:0,as:0,rs:0,lr:[]};u.ap++;u.gl+=g;u.as+=a;u.rs+=Math.round(rt*10);u.lr.push(Math.round(rt*10));if(u.lr.length>5)u.lr.shift();p.wkg=1;
-    if(p.ag!==0)return;const opp=pick(clubsOf(c.lg).filter(x=>x.id!==c.id))||c;
-    G.wlog.push({pid:p.id,d:d0+5,cs:'Sub-20',oppN:'Sub-20 do '+opp.n,home:Math.random()<.5,gf,ga,rt,ng:g,na:a,sub:false,u20:1});
+    if(p.ag!==0)return;const opp=M.opp;
+    G.wlog.push({pid:p.id,d:d0+5,cs:'Sub-20',oppN:'Sub-20 do '+opp.n,home:M.home,gf,ga,rt,ng:g,na:a,sub:false,u20:1});
     const av=u.lr.reduce((s,x)=>s+x,0)/u.lr.length/10;
     if(u.lr.length>=4&&av>=7.3&&!(p.boost>0)&&p.ovr>=teamStr(c.id)-14&&Math.random()<.15){p.boost=3;news('O técnico do '+c.n+' gostou do que viu no sub-20 e chamou '+p.name+' para o time principal.','evolucao');
       pop({k:'good',ic:'train',ti:'Subiu para o profissional!',tx:p.name+' foi chamado do sub-20 do '+c.n+' para o time principal.',ch:[['Titular por 3 semanas','good']]});}});}
