@@ -1832,14 +1832,14 @@ function drawStage(c,k){const st=c.ko[k];let pool=c.pool.slice();
 function resolveTie(t){let a=0,b=0;t.m.forEach(m=>{if(m[0]===t.a){a+=m[2];b+=m[3];}else{a+=m[3];b+=m[2];}});t.ga=a;t.gb=b;
   if(a!==b)t.w=a>b?t.a:t.b;else{t.w=Math.random()<.5?t.a:t.b;t.pen=1;}}
 function advance0(c,k){const st=c.ko[k];const w=st.ties.map(t=>t.w);c.pool=st.pre?(c.byes||[]).concat(w):w;
-  if(k===c.ko.length-1){c.win=w[0];const cl=G.clubs[c.win];cl.tro.push(c.name+' '+c.lbl);news(cl.n+' é campeão da '+c.name+' '+c.lbl+'.','liga');
+  if(k===c.ko.length-1){c.win=w[0];const cl=G.clubs[c.win];cl.tro.push(c.name+' '+c.lbl);news(cl.n+' é campeão '+compDe(c.name)+' '+c.name+' '+c.lbl+'.','liga');
     if(isOwn(cl)){addRep(4);titleBonus(cl);G.own.mood=clamp(G.own.mood+20,0,100);}
     squad(cl.id).forEach(p=>{if(p.ag===0){G.stats.ctit=(G.stats.ctit||0)+1;p.fame=clamp(p.fame+6,0,100);addRep(1);news(p.name+' conquistou a '+c.name+' com o '+cl.n+'.','liga');}});}}
 function canDraw(c,k){if(k>0)return c.ko[k-1].ties&&c.ko[k-1].ties.every(t=>t.w!=null);if(c.rounds)return c.rounds.every(r=>r.done);return true;}
 function processDay(day,pre){G._pre=pre;
   for(const key in G.comps){const c=G.comps[key];
     if(c.rounds)c.rounds.forEach(r=>{if(r.d===day&&!r.done){r.m.forEach(m=>play(c,m,false,true,day,pre));r.done=1;
-      if(c.t==='L'&&r===c.rounds[c.rounds.length-1]){const ch=G.clubs[sortedTab(c)[0]];ch.tro.push(c.name+' '+c.lbl);c.win=ch.id;if(isOwn(ch))titleBonus(ch);if(!pre)squad(ch.id).forEach(p=>{if(p.ag===0)G.stats.ctit=(G.stats.ctit||0)+1;});news(ch.n+' é campeão da '+c.name+' '+c.lbl+'.','liga');}}});
+      if(c.t==='L'&&r===c.rounds[c.rounds.length-1]){const ch=G.clubs[sortedTab(c)[0]];ch.tro.push(c.name+' '+c.lbl);c.win=ch.id;if(isOwn(ch))titleBonus(ch);if(!pre)squad(ch.id).forEach(p=>{if(p.ag===0)G.stats.ctit=(G.stats.ctit||0)+1;});news(ch.n+' é campeão '+compDe(c.name)+' '+c.name+' '+c.lbl+'.','liga');}}});
     if(c.ko)c.ko.forEach((s,k)=>s.d.forEach((dd,leg)=>{if(dd!==day)return;if(!s.ties){if(!canDraw(c,k))return;drawStage(c,k);}
       s.ties.forEach(t=>{if(t.m[leg]&&t.m[leg][2]<0)play(c,t.m[leg],s.d.length===1&&s.n==='Final',false,day,pre);});
       if(leg===s.d.length-1){s.ties.forEach(resolveTie);advance(c,k);}}));}
@@ -4437,7 +4437,7 @@ function paperWeek(d0){if(G._pre)return;const L=[],d1=d0+7,mine=new Set(G.client
   const mv=G.moves.filter(m=>m.d>=d0-1&&m.d<=d1&&m.fee>0);mv.filter(m=>mine.has(m.pid)&&m.fee>=15e6).forEach(m=>L.push({s:6,kick:'Mercado da bola',head:m.n+' é do '+G.clubs[m.to].n,sub:'Negócio de '+fmt(m.fee)+' fechado pela '+G.agency+'.',img:{p:m.pid}}));
   ['eu','sa'].forEach(r=>{if(winOpen(r,d0)&&!winOpen(r,d1)){const w=G.moves.filter(m=>m.fee>0&&m.d>=d1-120&&G.clubs[m.to]&&regOf(G.clubs[m.to])===r).sort((a,b)=>b.fee-a.fee)[0];
     if(w)L.push({s:4,kick:'Fim da janela '+(r==='eu'?'na Europa':'no Brasil'),head:'A maior contratação da janela: '+w.n,sub:'O '+G.clubs[w.to].n+' pagou '+fmt(w.fee)+(w.from>=0&&G.clubs[w.from]?' ao '+G.clubs[w.from].n:'')+'.',img:{p:w.pid}});}});
-  nw.filter(n=>/é campeão da/.test(n.t)).slice(0,1).forEach(n=>{const nm=n.t.split(' é campeão')[0],c=G.clubs.find(x=>x.n===nm);L.push({s:4+(c&&squad(c.id).some(p=>mine.has(p.id))?2:0),kick:'Título',head:n.t.replace(/\.$/,'').replace(/campeão da (Brasileirão|Premier|Serie|Bundesliga|Ligue|DFB|FA)/,'campeão do $1'),sub:'Festa nas ruas e taça no museu.',img:c?{c:c.id}:null});});
+  nw.filter(n=>/é campeão d[ao] /.test(n.t)).slice(0,1).forEach(n=>{const nm=n.t.split(' é campeão')[0],c=G.clubs.find(x=>x.n===nm);L.push({s:4+(c&&squad(c.id).some(p=>mine.has(p.id))?2:0),kick:'Título',head:n.t.replace(/\.$/,'').replace(/campeão da (Brasileirão|Premier|Serie|Bundesliga|Ligue|DFB|FA)/,'campeão do $1'),sub:'Festa nas ruas e taça no museu.',img:c?{c:c.id}:null});});
   nw.filter(n=>/^Escândalo|Bola de Ouro \d{4}:/.test(n.t)).slice(0,1).forEach(n=>L.push({s:5,kick:/^Escândalo/.test(n.t)?'Escândalo':'Gala',head:n.t.split(':')[0],sub:n.t.split(':').slice(1).join(':').trim(),img:null}));
   if(Math.random()<.1){const p=pick(allP().filter(x=>x.ovr>=85&&x.club!=null&&!mine.has(x.id))),c=p&&pick(G.clubs.filter(x=>x.id!==p.club&&prest(x)>=prest(club(p))-2&&teamStr(x.id)>=80));
     if(p&&c){(G.rum=G.rum||[]).push({pid:p.id,cid:c.id,d:G.d});L.push({s:3,kick:'Exclusivo',head:'Rumor: '+c.n+' quer '+p.name,sub:'Dirigentes do '+c.n+' teriam sondado o '+club(p).n+'. Ninguém confirma.',img:{p:p.id},rumor:1});}}
@@ -4773,7 +4773,11 @@ function roundsView(c){const rs=compPages(c);if(!rs.length)return'<div class="ca
    '<p class="small muted rd-tip">Toque nas setas ou arraste para o lado para trocar de rodada.</p>';}
 function rdInit(){try{const el=document.querySelector('#view .rd-car');if(!el||!el.clientWidth||el.dataset.ok)return;el.dataset.ok=1;const i=+el.dataset.rd||0;el.scrollLeft=i*el.clientWidth;
   let t=null;el.addEventListener('scroll',()=>{clearTimeout(t);t=setTimeout(()=>{ui.rd=Math.round(el.scrollLeft/el.clientWidth);},120);},{passive:true});}catch(e){}}
-function render(){render0();rdInit();vpInit();}
+const COMP_M=/^(Brasileir|Campeonato|Mundial|Paulist|Carioc|Gaúch|Mineir|Torneio|Troféu|Estadual)/;
+const compDe=n=>COMP_M.test(String(n))?'do':'da';
+/* conserta notícias antigas que saíram com "campeão da Brasileirão" */
+function newsFix(){try{if(!G||!G.news||G._nfx)return;G.news.forEach(n=>{n.t=String(n.t).replace(/é campeão da (\S+)/g,(m,w)=>'é campeão '+compDe(w)+' '+w);});G._nfx=1;}catch(e){}}
+function render(){newsFix();render0();rdInit();vpInit();}
 const RDA={rdgo(d){try{const el=document.querySelector('#view .rd-car');if(!el)return;const base=ui.rd!=null?ui.rd:Math.round(el.scrollLeft/el.clientWidth),i=base+(+d.v),n=el.children.length;const j=Math.max(0,Math.min(n-1,i));ui.rd=j;el.scrollTo({left:j*el.clientWidth,behavior:'smooth'});}catch(e){}}};
 
 /* ---- crep2.js ---- */
@@ -5218,18 +5222,18 @@ function artClub(c){const bits=[],pos=leaguePos(c.id);
   if(nx){const o=G.clubs[nx.m[0]===c.id?nx.m[1]:nx.m[0]];if(o)bits.push('O próximo compromisso é contra o '+o.n+', '+fdate(nx.d,true).split(',')[0]+', '+fdate(nx.d)+' ('+nx.c.sh+').');}
   return bits.join(' ');}
 const ART_FECHO={transf:'A negociação movimenta o mercado e pode mudar o planejamento dos clubes envolvidos.',lesao:'O clube não deve buscar reposição imediata e aposta nas opções do elenco.',contrato:'Nos bastidores, o assunto segue sendo acompanhado de perto por dirigentes e empresários.',
-  agencia:'No mercado, o movimento é visto como mais um passo no crescimento da agência.',clube:'A diretoria evita comentar publicamente, mas o tema domina os corredores do clube.',liga:'A competição segue aberta e a próxima rodada promete.',
+  agencia:'No mercado, o movimento é visto como mais um passo no crescimento da agência.',clube:'A diretoria evita comentar publicamente, mas o tema domina os corredores do clube.',liga:'O resultado mexe com o ambiente do clube e com a torcida.',
   evolucao:'Comissão técnica e torcida acompanham a evolução de perto.',selecao:'A comissão técnica da seleção segue observando os jogadores até a próxima lista.',premio:'A premiação coroa uma temporada de destaque.',geral:'O assunto segue repercutindo entre torcedores e imprensa.'};
 const ART_SUB={transf:(p,c)=>p?'O que muda para '+p.name+(c?' e para o '+c.n:'')+' no mercado.':'Os bastidores de mais um capítulo do mercado.',lesao:(p)=>p?'O desfalque e o prazo de recuperação de '+p.name+'.':'Mais um desfalque no departamento médico.',
   contrato:(p)=>p?'Os detalhes da situação contratual de '+p.name+'.':'Os detalhes por trás do contrato.',agencia:()=>'Os bastidores dos negócios da '+G.agency+'.',clube:(p,c)=>c?'Os bastidores do '+c.n+'.':'Os bastidores do clube.',
-  liga:(p,c)=>c?'Como fica o '+c.n+' na disputa.':'Como fica a disputa.',evolucao:(p)=>p?'A boa fase de '+p.name+' em números.':'Um destaque em evolução.',selecao:(p)=>p?'A situação de '+p.name+' com a seleção.':'As novidades das seleções.',premio:(p)=>p?'A temporada que levou '+p.name+' ao prêmio.':'Os premiados da temporada.',geral:()=>'O assunto que movimentou a semana no futebol.'};
+  liga:(p,c)=>c?'O momento do '+c.n+' na temporada.':'O que mudou na disputa.',evolucao:(p)=>p?'A boa fase de '+p.name+' em números.':'Um destaque em evolução.',selecao:(p)=>p?'A situação de '+p.name+' com a seleção.':'As novidades das seleções.',premio:(p)=>p?'A temporada que levou '+p.name+' ao prêmio.':'Os premiados da temporada.',geral:()=>'O assunto que movimentou a semana no futebol.'};
 function mArticle(){const L=G.news||[],i=Math.max(0,Math.min(L.length-1,ui.artI|0)),n=L[i];if(!n)return'<div class="sheet"><p>Notícia indisponível.</p><div class="acts"><button class="btn" data-a="close">Fechar</button></div></div>';
-  const {p,c}=artFind(n.t),hd=artHead(n.t),cat=n.cat||'geral';
+  const {p,c}=artFind(n.t),hd=artHead(n.t),cat=n.cat||'geral',tit=/é campeão d[ao] /.test(n.t);
   const img=p?'<div class="np-img">'+avatar(p,120)+'</div>':c?'<div class="np-img">'+crest(c,110)+'</div>':'';
-  const body=[hd.rest?'':esc(n.t),p?esc(artPlayer(p)):'',c&&(!p||club(p)===c||!club(p))?esc(artClub(c)):'',esc(ART_FECHO[cat]||ART_FECHO.geral)].filter(Boolean);
+  const body=[hd.rest?'':esc(n.t),p?esc(artPlayer(p)):'',c&&(!p||club(p)===c||!club(p))?esc(artClub(c)):'',esc(tit?'Taça garantida: agora é festa para a torcida e planejamento para a próxima temporada.':ART_FECHO[cat]||ART_FECHO.geral)].filter(Boolean);
   const more=L.slice(0,6).map((x,j)=>({x,j})).filter(o=>o.j!==i).slice(0,2);
   return'<div class="sheet np art"><div class="np-mast"><span>'+fdate(n.d,true).split(',')[0]+'<br>'+fdate(n.d)+'</span><b>Diário da Bola</b><span>Esportes</span></div><span class="np-kick">'+esc(ART_K[cat]||'Geral')+'</span><h2 class="np-head">'+esc(hd.h)+'</h2>'+img+
-   '<p class="np-sub">'+esc(hd.rest?n.t:(ART_SUB[cat]||ART_SUB.geral)(p,c))+'</p><div class="np-body">'+body.map(b=>'<p>'+b+'</p>').join('')+'</div>'+
+   '<p class="np-sub">'+esc(tit&&c?'A campanha do título do '+c.n+'.':hd.rest?n.t:(ART_SUB[cat]||ART_SUB.geral)(p,c))+'</p><div class="np-body">'+body.map(b=>'<p>'+b+'</p>').join('')+'</div>'+
    (more.length?'<div class="np-more"><span>Também nesta edição</span>'+more.map(o=>'<button class="np-lnk" data-a="art" data-i="'+o.j+'">'+esc(artHead(o.x.t).h)+' ›</button>').join('')+'</div>':'')+
    '<div class="acts"><button class="btn pri" data-a="close">Fechar o jornal</button></div></div>';}
 const ARTA={art(d){ui.artI=+d.i||0;ui.modal={type:'art'};render();const el=document.querySelector('.sheet.art');if(el&&el.scrollIntoView)el.scrollIntoView({block:'start'});}};
