@@ -1581,9 +1581,9 @@ E('s',1,'Programa de entrevistas','Um programa famoso quer {n} no sofá do apres
 E('',0,'Curso de idiomas','{n} quer aprender inglês para jogar na Europa um dia.',[
  {l:'Pagar o curso',c:.5,e:{t:6,f:1},o:'Já está estudando três vezes por semana.'},
  {l:'Dizer que dá para aprender depois',e:{t:-2},o:'Fica para depois.'}]),
-E('c',0,'Clássico decisivo','O {c} tem um clássico e o técnico pergunta se {n} aguenta jogar no sacrifício.',[
- {l:'Dizer que sim',e:{b:3,f:3},p:.65,f:{i:3},o:'Foi o melhor em campo.',x:'Sentiu no aquecimento.'},
- {l:'Dizer que precisa descansar',e:{r:-2,m:2},o:'Assistiu do banco.'}]),
+E('c d',0,'Clássico decisivo','O {c} enfrenta o {o} {od}. {n} está no limite físico e o técnico pergunta se ele aguenta jogar no sacrifício.',[
+ {l:'Dizer que sim',e:{b:3,f:2},p:.65,f:{i:3},o:'Ele vai para o jogo contra o {o}. O técnico elogiou a entrega e a torcida abraçou a decisão.',x:'Sentiu a coxa no último treino antes do jogo contra o {o} e vai desfalcar o time.'},
+ {l:'Dizer que precisa descansar',e:{r:-2,m:2},o:'Ele fica fora contra o {o} e recupera o fôlego.'}]),
 E('g',0,'Prêmio da rodada','{n} foi eleito o craque da rodada. A imprensa quer exclusiva.',[
  {l:'Liberar a entrevista',e:{f:5},o:'Entrevista na TV aberta.'},
  {l:'Pedir foco',e:{m:2},o:'Ele seguiu quieto e trabalhando.'}]),
@@ -2552,8 +2552,14 @@ const sellVal=c=>nice(clubPrice(c)*.7*(G.own?G.own.pct:100)/100);
 /* ================= EVENTOS ================= */
 RE.forEach((d,i)=>d.id=i);
 function reqOk(q,p){if(!q)return true;const t=seasonTot(p);
-  return q.split(' ').every(k=>({c:p.club!=null,f:p.club==null,y:p.age<=21,v:p.age>=29,n:!p.real,s:p.fame>=25,b:p.trait==='baladeiro',a:p.trait==='ambicioso',i:p.injury>0,h:p.injury===0,l:p.morale<50,g:t.ap>=3&&t.avg>=7,p:t.ap>=3&&t.avg<6.3}[k]));}
-function fillT(t,p,c,v){return String(t).replace(/\{n\}/g,p.name).replace(/\{c\}/g,c?c.n:'clube').replace(/\{(\d*\.?\d*)v\}/g,(m,k)=>fmt(v*(k?+k:1)));}
+  return q.split(' ').every(k=>({c:p.club!=null,f:p.club==null,y:p.age<=21,v:p.age>=29,n:!p.real,s:p.fame>=25,b:p.trait==='baladeiro',a:p.trait==='ambicioso',i:p.injury>0,h:p.injury===0,l:p.morale<50,d:!!derbyOf(p),g:t.ap>=3&&t.avg>=7,p:t.ap>=3&&t.avg<6.3}[k]));}
+/* clássico: os dois clubes entre os 8 mais tradicionais da mesma liga, jogo nos próximos 7 dias, cliente titular */
+function derbyOf(p){try{const c=club(p);if(!c||p.injury>0||!xiOf(c.id).includes(p))return null;
+  const top=clubsOf(c.lg).slice().sort((a,b)=>prest(b)-prest(a)).slice(0,8).map(x=>x.id);if(!top.includes(c.id))return null;
+  const f=fixturesOf(c.id,G.d,G.d+7).find(f=>f.m&&f.m[2]<0&&top.includes(f.m[0]===c.id?f.m[1]:f.m[0]));if(!f)return null;
+  const o=G.clubs[f.m[0]===c.id?f.m[1]:f.m[0]];return o?{o:o.n,d:f.d}:null;}catch(e){return null;}}
+function fillT(t,p,c,v){if(/\{o/.test(t)){const dv=derbyOf(p)||p._dby;if(dv){p._dby=dv;t=String(t).replace(/\{o\}/g,dv.o).replace(/\{od\}/g,'('+fdate(dv.d,true).split(',')[0]+', '+fdate(dv.d)+')');}else t=String(t).replace(/ ?\{od\}/g,'').replace(/\{o\}/g,'rival');}
+  return String(t).replace(/\{n\}/g,p.name).replace(/\{c\}/g,c?c.n:'clube').replace(/\{(\d*\.?\d*)v\}/g,(m,k)=>fmt(v*(k?+k:1)));}
 function applyFx(p,c,fx,v){const ch=[],sg=x=>(x>0?'+':'')+x,cl=x=>x>0?'good':'bad';
   if(fx.$){const a=Math.round(v*fx.$);G.money+=a;if(a>0)G.stats.earned+=a;ch.push([(a>0?'+':'-')+fmt(Math.abs(a))+' no caixa',cl(a)]);}
   if(fx.t){p.trust=clamp(p.trust+fx.t,0,100);ch.push(['Confiança '+sg(fx.t),cl(fx.t)]);}
