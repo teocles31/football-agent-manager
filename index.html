@@ -2246,7 +2246,7 @@ function nextWeek(){if(!G||G.over||G.ntc||G.paper||G.yrec||(G.phoneQ&&G.phoneQ.l
   const snap={},rep0=G.rep,off0=G.offers.length,d0=G.d;G.clients.forEach(id=>{const p=G.P[id];snap[id]={ovr:p.ovr,inj:p.injury,m:p.morale,t:p.trust};});G.wlog=[];
   fxWeek();let inc=0;G.clients.forEach(id=>{const p=G.P[id];if(p.club!=null)inc+=p.wage*(p.comm||0)/100*fxMul(club(p));});
   let exp=fixedCost();inc=Math.round(inc);G.money+=inc-exp;G.last={inc,exp};const mFx=G.money,i0=inc,e0=exp;G.stats.earned+=inc;
-  for(let d=d0;d<d0+7;d++){G.d=d;dayTriggers(d);processDay(d,false);}G.d=d0+7;
+  G._w0=d0;for(let d=d0;d<d0+7;d++){G.d=d;dayTriggers(d);processDay(d,false);}G.d=d0+7;
   weeklyHealth();u20Week(d0);develop();clientsWeekly();aiMarket();aiCoaches();genOffers();genMissions();ownWeek();careerWeek();pathWeek();offWeek();evoWeek();mindWeek();bizWeek();progWeek();bonWeek();inboxWeek();paperWeek(d0);rumWeek();repWeek();yearWeek();capWeek();spBonWeek();
   G.ags.forEach((a,i)=>{if(i>0)a.rep=clamp(a.rep+rnd(-.12,.14),5,98);});
   decWeek();
@@ -2268,7 +2268,7 @@ function weekReport(snap,rep0,off0,d0){
   const own=G.wlog.filter(x=>x.own).map(g=>({cs:g.cs,oid:g.opp,opp:G.clubs[g.opp].n,home:g.home,gf:g.gf,ga:g.ga,pl:g.pl,d:g.d}));
   return{d0,inc:G.last.inc,exp:G.last.exp,dr:G.rep-rep0,offers:Math.max(0,G.offers.length-off0),items,own:G.own?{n:G.clubs[G.own.cid].n,games:own}:null,nt:ntWeekRes(d0)};}
 function ntWeekRes(d0){const H=G.ntH||{},want=new Set([HOME_NT]);G.clients.forEach(id=>{const p=G.P[id];if(p&&isIntl(p))want.add(natName(p));});const out=[];
-  want.forEach(n=>(H[n]||[]).forEach(x=>{if(x.d>=d0&&x.d<=d0+6)out.push(Object.assign({n},x));}));return out.sort((a,b)=>a.d-b.d||(a.n===HOME_NT?-1:1));}
+  want.forEach(n=>(H[n]||[]).forEach(x=>{if(x.d>=d0&&x.d<=d0+6&&!out.some(y=>y.d===x.d&&y.n===x.o&&y.o===n))out.push(Object.assign({n},x));}));return out.sort((a,b)=>a.d-b.d||(a.n===HOME_NT?-1:1));}
 
 /* ---------- clube próprio ---------- */
 const isOwn=c=>!!(G&&G.own&&c&&G.own.cid===c.id);
@@ -2761,8 +2761,9 @@ function fifaDate(d){const nt=G.nt,prev=new Set();Object.values(nt.sq).forEach(a
         pop({k:'good',ic:'flag',ti:'Convocado!',tx:p.name+' recebeu a primeira convocação para a seleção ('+n+').',ch:[['Fama +6','good'],['Moral +4','good']]});}
       else if(!prev.has(id))news(p.name+' voltou à lista da seleção ('+n+').','selecao');}
     else if(prev.has(id)){p.morale=clamp(p.morale-6,0,100);news(p.name+' ficou fora da lista da seleção ('+n+').','selecao');}});
-  ntCallSet('Data FIFA');const pools={EU:[],RS:[]};ntList().forEach(n=>pools[confOf(n)==='EU'?'EU':'RS'].push(n));const p2=[];
-  for(let k=0;k<2;k++)Object.values(pools).forEach(g=>{const a=shuffle(g.slice());for(let i=0;i+1<a.length;i+=2){if(k===0)ntPlay(a[i],a[i+1],nt.sq[a[i]],nt.sq[a[i+1]],null,d);else p2.push([a[i],a[i+1]]);}});nt.p2={d:d+3,pairs:p2};}
+  ntCallSet('Data FIFA');const pools={EU:[],RS:[]};ntList().forEach(n=>pools[confOf(n)==='EU'?'EU':'RS'].push(n));const p1=[],p2=[];
+  for(let k=0;k<2;k++)Object.values(pools).forEach(g=>{const a=shuffle(g.slice());for(let i=0;i+1<a.length;i+=2)(k===0?p1:p2).push([a[i],a[i+1]]);});
+  const nw=(G._w0!=null&&G._w0<=d&&d<G._w0+7?G._w0:d)+7;nt.p1={d:nw+1,pairs:p1};nt.p2={d:nw+4,pairs:p2};}
 /* ---------- torneios ---------- */
 const TOURS=Y=>Y%4===2?[{k:'WC',n:'Copa do Mundo',conf:null,max:32}]:Y%4===0?[{k:'EU',n:'Eurocopa',conf:'EU',max:16},{k:'CA',n:'Copa América',conf:'SA',max:8}]:[];
 function mkTour(def,Y){let ns=ntList().filter(n=>!def.conf||confOf(n)===def.conf);
@@ -2850,7 +2851,7 @@ function gala0(Y){const A=G.aw,y=String(Y),bonus=A.bonus||{};
     else if(best){A.hist.unshift({y,k:'Agente do ano',n:best.a.n,cl:''});news('A '+best.a.n+' foi eleita a agência do ano de '+y+'.','premio');}}
   A.y0={deals:G.stats.deals,rep:G.rep};A.cand=null;A.bonus={};A.coach=null;if(A.hist.length>1500)A.hist.length=1500;}
 function worldDay(d,t){const md=t.m*100+t.dd;
-  if(FIFA_D.some(x=>x[0]*100+x[1]===md))fifaDate(d);fifaG2(d);
+  if(FIFA_D.some(x=>x[0]*100+x[1]===md))fifaDate(d);fifaG1(d);fifaG2(d);
   if(md===601)toursStart(t.y);
   toursDay(d);
   if(md===1026)galaShow(t.y);}
@@ -3673,7 +3674,7 @@ function calData(d1,d2){const m={},add=(d,k,t,mt)=>{if(d<d1||d>d2)return;(m[d]||
   if(G.own){const c=ownC();fixturesOf(c.id,d1,d2).forEach(f=>{const o=f.m?G.clubs[f.m[0]===c.id?f.m[1]:f.m[0]]:null;add(f.d,'own',c.n+(o?(f.m[0]===c.id?' x ':' @ ')+o.n:'')+' · '+f.c.sh+(f.m&&f.m[2]>=0?' · '+f.m[2]+'–'+f.m[3]:''),calMt(f,c,'seu clube'));});}
   if(G.me.course)add(G.me.course.end,'cur','Termina o seu curso: '+COURSE_N[G.me.course.sk][G.me[G.me.course.sk]]);
   for(let d=d1;d<=d2;d++){const t=ymd(d),md=t.m*100+t.dd;
-    if(FIFA_D.some(x=>x[0]*100+x[1]===md))add(d,'fifa','Data FIFA: convocações e dois jogos das seleções');
+    if(FIFA_D.some(x=>x[0]*100+x[1]===md))add(d,'fifa','Data FIFA: convocações. Os dois jogos das seleções são na semana seguinte');
     const tn=TOURS(t.y).map(x=>x.n).join(' e ');if(tn){if(md===601)add(d,'tour','Saem as listas de convocados para '+tn);if(md===614)add(d,'tour','Começa a '+tn);if(md===712)add(d,'tour','Final da '+tn);}
     if(md===1026)add(d,'gala','Gala da Bola de Ouro');
     [['eu','Europa'],['sa','Brasil']].forEach(([r,n])=>{const a=winOpen(r,d),b=winOpen(r,d-1);if(a&&!b)add(d,'win','Abre a janela de transferências: '+n);if(a&&!winOpen(r,d+1))add(d,'win','Último dia da janela de transferências: '+n);});}
@@ -4084,6 +4085,7 @@ function mNtCall(){const x=G.ntc,n=x.n,ids=(G.nt.sq[n]||[]).filter(id=>G.P[id]),
    (others.length?'<p class="small"><b>Seus clientes em outras seleções:</b> '+others.map(p=>flagOf(natName(p))+' '+esc(p.name)+' ('+esc(natName(p))+')').join(', ')+'</p>':'')+
    '<div class="acts"><button class="btn pri" data-a="ntcok">Continuar</button></div></div>';}
 /* segundo jogo da data FIFA só acontece no dia dele */
+function fifaG1(d){const p=G.nt&&G.nt.p1;if(!p||p.d!==d)return;G.nt.p1=null;p.pairs.forEach(([a,b])=>{if(G.nt.sq[a]&&G.nt.sq[b])ntPlay(a,b,G.nt.sq[a],G.nt.sq[b],null,d);});}
 function fifaG2(d){const p=G.nt&&G.nt.p2;if(!p||p.d!==d)return;G.nt.p2=null;p.pairs.forEach(([a,b])=>{if(G.nt.sq[a]&&G.nt.sq[b])ntPlay(a,b,G.nt.sq[a],G.nt.sq[b],null,d);});ntReview();}
 const FLAGA={ntcok(){G.ntc=null;save();render();}};
 
