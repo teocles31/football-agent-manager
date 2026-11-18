@@ -566,7 +566,7 @@ html body .tie>.legs{justify-self:center;text-align:center;width:100%}
 .otab{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:10px 6px;min-height:64px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:12.5px;font-weight:700;cursor:pointer;text-align:center;line-height:1.15}
 .grp .kpis{grid-template-columns:repeat(3,minmax(0,1fr))}.grp .kpi b{font-size:17px;white-space:nowrap}.grp-t .otab[data-a="grpnew"]{grid-column:1/-1;flex-direction:row;min-height:46px;gap:8px}.grp-t .otab[data-a="grpnew"] small{margin-left:4px}.mus-on{color:var(--gold)}
 .grp-mv{margin-top:8px;width:100%;display:flex;align-items:center;justify-content:center;gap:6px}.gmv-t{margin:6px 0 12px}.gmv-t.n1{grid-template-columns:1fr}.gmv-t.n1 .otab{flex-direction:row;gap:10px;min-height:52px}.gmv-t.n2{grid-template-columns:repeat(2,minmax(0,1fr))}.gmv-acts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.gmv-acts .btn{margin:0;width:100%}.gmv-why{display:flex;align-items:center;gap:6px;color:var(--bad,#e5484d);font-weight:600}.gmv-t .otab small{font-size:10.5px;font-weight:500;opacity:.8}.gmv-t .otab span{overflow:hidden;text-overflow:ellipsis;max-width:100%;white-space:nowrap}
-.grp-t{margin:12px 0 2px}.grp-t .otab small{font-size:10.5px;font-weight:500;opacity:.75}.grp-t .otab span{overflow:hidden;text-overflow:ellipsis;max-width:100%;white-space:nowrap}.grp-t .otab:disabled{opacity:.45;cursor:default}.otab[aria-pressed="true"] small{opacity:.85}
+.grp-t{margin:12px 0 2px}.grp-t.n1{grid-template-columns:1fr}.grp-t.n1 .otab{flex-direction:row;gap:10px;min-height:52px}.grp-t.n2{grid-template-columns:repeat(2,minmax(0,1fr))}.grp-t .otab small{font-size:10.5px;font-weight:500;opacity:.75}.grp-t .otab span{overflow:hidden;text-overflow:ellipsis;max-width:100%;white-space:nowrap}.grp-t .otab:disabled{opacity:.45;cursor:default}.otab[aria-pressed="true"] small{opacity:.85}
 .otab svg{color:var(--ink2)}.otab[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--gold-ink)}.otab[aria-pressed="true"] svg{color:var(--gold-ink)}
 .el-r{display:flex;align-items:center;gap:10px}.el-r .grow{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .sale-l>div{flex-wrap:wrap}.sale-b{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;flex-basis:100%}
@@ -733,6 +733,7 @@ html body .seg:has(>button:nth-of-type(3):last-of-type){grid-template-columns:re
 html body .seg:has(>button:nth-of-type(4):last-of-type){grid-template-columns:repeat(4,minmax(0,1fr))}
 html body .seg:has(>button:nth-of-type(5):last-of-type){grid-template-columns:repeat(3,minmax(0,1fr))}
 html body .seg:has(>button:nth-of-type(6):last-of-type){grid-template-columns:repeat(3,minmax(0,1fr))}
+.seg.seg:has(>button:nth-of-type(7):last-of-type){grid-template-columns:repeat(12,minmax(0,1fr))}.seg.seg:has(>button:nth-of-type(7):last-of-type)>button{grid-column:span 3}.seg.seg:has(>button:nth-of-type(7):last-of-type)>button:nth-of-type(n+5){grid-column:span 4}
 html body .seg:has(>button:nth-of-type(7):last-of-type){grid-template-columns:repeat(4,minmax(0,1fr))}
 html body .seg:has(>button:nth-of-type(8):last-of-type){grid-template-columns:repeat(4,minmax(0,1fr))}
 html body .seg:has(>button:nth-of-type(9):last-of-type){grid-template-columns:repeat(4,minmax(0,1fr))}
@@ -859,7 +860,8 @@ const LG=[
  {id:'ger',n:'Bundesliga',s:'Bundesliga',cn:'Alemanha',reg:'eu',cup:'DFB-Pokal',wm:.85,rep:6,fame:3.2,nat:'DE',pb:4,bud:1},
  {id:'fra',n:'Ligue 1',s:'Ligue 1',cn:'França',reg:'eu',cup:'Coupe de France',wm:.7,rep:5,fame:3,nat:'FR',pb:3,bud:1},
  {id:'xeu',n:'Outros clubes da Europa',s:'Europa (outros)',cn:'Europa',reg:'eu',ext:1,wm:.45,rep:4,fame:2.4,nat:'PT',pb:1,bud:.6},
- {id:'xsa',n:'Outros clubes da América do Sul',s:'América do Sul (outros)',cn:'América do Sul',reg:'sa',ext:1,wm:.25,rep:2,fame:1.5,nat:'AR',pb:-2,bud:.5}
+ {id:'xsa',n:'Outros clubes da América do Sul',s:'América do Sul (outros)',cn:'América do Sul',reg:'sa',ext:1,wm:.25,rep:2,fame:1.5,nat:'AR',pb:-2,bud:.5},
+  {id:'por',n:'Liga Portugal',s:'Liga Portugal',cn:'Portugal',reg:'eu',cup:'Taça de Portugal',wm:.5,rep:5,fame:2.8,nat:'PT',pb:2,bud:.7}
 ];
 /* nome:força:cor1:cor2[:país] */
 const CLUBS={
@@ -869,7 +871,8 @@ const CLUBS={
  ita:'Inter de Milão:86:05b:111,Napoli:85:19d:fff,Juventus:83:111:fff,Milan:83:c11:111,Roma:83:812:fb0,Atalanta:82:05a:111,Bologna:80:812:14a,Lazio:79:8ce:fff,Fiorentina:79:529:fff,Como:79:07c:fff,Torino:76:712:fff,Udinese:76:111:fff,Genoa:75:a12:125,Sassuolo:75:083:111,Cagliari:74:912:14a,Parma:74:fd0:14a,Lecce:73:fd0:d11,Venezia:72:111:f80,Monza:72:d11:fff,Frosinone:71:fd0:14a',
  ger:'Bayern de Munique:88:d03:fff,Borussia Dortmund:83:fe0:111,Bayer Leverkusen:82:e12:111,RB Leipzig:82:fff:d03,Stuttgart:81:fff:d11,Eintracht Frankfurt:80:111:e11,Freiburg:78:d11:111,Hoffenheim:78:15b:fff,Mainz 05:76:c11:fff,Borussia Mönchengladbach:76:fff:111,Werder Bremen:76:084:fff,Augsburg:75:c11:083,Union Berlin:75:d11:fe0,Colônia:75:fff:d11,Hamburgo:75:15a:fff,Schalke 04:73:04a:fff,Elversberg:71:111:fff,Paderborn:71:04a:111',
  fra:'Paris Saint-Germain:88:014:d11,Olympique de Marseille:82:fff:2ad,Monaco:81:d11:fff,Lille:80:c11:014,Lyon:80:fff:14a,Lens:79:fd0:d11,Strasbourg:78:05b:fff,Rennes:78:d11:111,Nice:77:d11:111,Toulouse:75:527:fff,Brest:75:d11:fff,Paris FC:75:014:fff,Auxerre:73:fff:15b,Lorient:73:f70:111,Angers:72:111:fff,Le Havre:72:6bf:014,Troyes:71:05b:fff,Le Mans:70:d11:fd0',
- xeu:'Benfica:81:d11:fff:Portugal,Porto:80:15b:fff:Portugal,Sporting CP:81:083:fff:Portugal,PSV:79:d11:fff:Holanda,Ajax:77:fff:d11:Holanda,Feyenoord:77:d11:fff:Holanda,Celtic:75:083:fff:Escócia,Club Brugge:76:15b:111:Bélgica,Galatasaray:79:a12:fb0:Turquia,Fenerbahçe:78:fd0:014:Turquia,RB Salzburg:74:fff:d11:Áustria,Shakhtar Donetsk:74:f80:111:Ucrânia,Olympiacos:75:d11:fff:Grécia,Slavia Praga:73:d11:fff:Tchéquia,Estrela Vermelha:72:d11:fff:Sérvia,Copenhague:72:fff:15b:Dinamarca,Union Saint-Gilloise:72:fd0:15b:Bélgica,Young Boys:71:fd0:111:Suíça,Bodø/Glimt:74:fd0:111:Noruega,Dínamo Zagreb:72:15b:fff:Croácia',
+ por:'Benfica:81:d11:fff,Porto:80:15b:fff,Sporting CP:81:083:fff,Braga:76:d11:fff,Vitória SC:72:fff:111,Famalicão:71:15b:fff,Gil Vicente:70:d11:15b,Santa Clara:70:d11:fff,Moreirense:69:083:fff,Estoril:69:fd0:15b,Casa Pia:68:111:fff,Rio Ave:68:083:fff,Arouca:68:fd0:15b,Nacional da Madeira:67:111:fff,Estrela da Amadora:67:d11:083,Alverca:66:d11:fff,Tondela:66:fd0:083,AVS:65:d11:fd0',
+ xeu:'PSV:79:d11:fff:Holanda,Ajax:77:fff:d11:Holanda,Feyenoord:77:d11:fff:Holanda,Celtic:75:083:fff:Escócia,Club Brugge:76:15b:111:Bélgica,Galatasaray:79:a12:fb0:Turquia,Fenerbahçe:78:fd0:014:Turquia,RB Salzburg:74:fff:d11:Áustria,Shakhtar Donetsk:74:f80:111:Ucrânia,Olympiacos:75:d11:fff:Grécia,Slavia Praga:73:d11:fff:Tchéquia,Estrela Vermelha:72:d11:fff:Sérvia,Copenhague:72:fff:15b:Dinamarca,Union Saint-Gilloise:72:fd0:15b:Bélgica,Young Boys:71:fd0:111:Suíça,Bodø/Glimt:74:fd0:111:Noruega,Dínamo Zagreb:72:15b:fff:Croácia',
  xsa:'River Plate:77:fff:d11:Argentina,Boca Juniors:76:14a:fd0:Argentina,Racing:75:6bf:fff:Argentina,Estudiantes:74:d11:fff:Argentina,Vélez Sarsfield:73:fff:14a:Argentina,Talleres:72:14a:fff:Argentina,Rosario Central:71:14a:fd0:Argentina,Huracán:69:fff:d11:Argentina,Independiente del Valle:73:14a:111:Equador,LDU Quito:72:fff:14a:Equador,Barcelona SC:68:fd0:111:Equador,Peñarol:72:fd0:111:Uruguai,Nacional:71:fff:14a:Uruguai,Olimpia:70:111:fff:Paraguai,Cerro Porteño:70:14a:d11:Paraguai,Libertad:69:111:fff:Paraguai,Universitario:70:fee:a12:Peru,Sporting Cristal:69:6bf:fff:Peru,Colo-Colo:70:fff:111:Chile,Universidad de Chile:70:14a:d11:Chile,Atlético Nacional:71:083:fff:Colômbia,Junior:69:d11:fff:Colômbia,Deportes Tolima:67:d11:fd0:Colômbia,Bolívar:68:6bf:fff:Bolívia,Always Ready:66:d11:fff:Bolívia'
 };
 const NAT_OF={Portugal:'PT',Holanda:'NL',Escócia:'EN',Bélgica:'FR',Turquia:'XX',Áustria:'DE',Ucrânia:'XX',Grécia:'XX',Tchéquia:'XX',Sérvia:'XX',Dinamarca:'NL',Suíça:'DE',Noruega:'NL',Croácia:'XX',Argentina:'AR',Equador:'AR',Uruguai:'AR',Paraguai:'AR',Peru:'AR',Chile:'AR',Colômbia:'AR',Bolívia:'AR'};
@@ -895,6 +898,7 @@ const CAL={
  ita:{st:[8,22,0],en:[5,30,1],wb:[[[12,31,0],[1,2,1]]],cup:[['Fase preliminar',[[8,15,0]]],['Oitavas de final',[[12,3,0]]],['Quartas de final',[[2,4,1]]],['Semifinal',[[2,25,1],[4,22,1]]],['Final',[[5,13,1]]]]},
  ger:{st:[8,28,0],en:[5,22,1],wb:[[[12,21,0],[1,8,1]]],cup:[['Fase preliminar',[[8,15,0]]],['Oitavas de final',[[10,28,0]]],['Quartas de final',[[2,3,1]]],['Semifinal',[[4,21,1]]],['Final',[[5,22,1]]]]},
  fra:{st:[8,22,0],en:[5,22,1],wb:[[[12,21,0],[1,2,1]]],cup:[['Fase preliminar',[[12,20,0]]],['Oitavas de final',[[1,17,1]]],['Quartas de final',[[2,7,1]]],['Semifinal',[[4,22,1]]],['Final',[[5,16,1]]]]},
+ por:{st:[8,8,0],en:[5,17,1],wb:[[[12,24,0],[1,2,1]]],cup:[['Fase preliminar',[[10,17,0]]],['Oitavas de final',[[12,17,0]]],['Quartas de final',[[1,14,1]]],['Semifinal',[[2,4,1],[4,22,1]]],['Final',[[5,24,1]]]]},
  bra:{st:[1,27,0],en:[12,5,0],wb:[],cup:[['Fase preliminar',[[4,22,0],[4,29,0]]],['Oitavas de final',[[5,20,0],[5,27,0]]],['Quartas de final',[[7,29,0],[8,5,0]]],['Semifinal',[[9,2,0],[9,16,0]]],['Final',[[11,22,0]]]]}
 };
 const UCL_CAL={lp:[[9,15,0],[9,29,0],[10,20,0],[11,3,0],[11,24,0],[12,8,0],[1,19,1],[1,26,1]],ko:[['Playoff',[[2,16,1],[2,23,1]]],['Oitavas de final',[[3,9,1],[3,16,1]]],['Quartas de final',[[4,6,1],[4,13,1]]],['Semifinal',[[4,27,1],[5,4,1]]],['Final',[[5,29,1]]]]};
@@ -1711,6 +1715,15 @@ function ntReflow(){try{if(!G||G._ntb)return;G._ntb=1;const ko=new Set();for(con
     c.rounds.forEach(r=>{if(r.d<=G.d||!inR(r.d,brk)||r.m.some(x=>x[2]>=0))return;
       for(let d=G.d+1;d<=en+21;d++){const w=ymd(d).w;if((w===3||w===6)&&!inR(d,brk)&&!used.has(d)&&!ko.has(d)&&!used.has(d-1)&&!used.has(d+1)){used.delete(r.d);r.d=d;used.add(d);break;}}});
     c.rounds.sort((a,b)=>a.d-b.d);}}catch(e){}}
+function porAdd(){try{const pi=LGI('por');if(!G||pi<0||G.clubs.some(c=>c.lg===pi))return;const have={},xi=LGI('xeu');G.clubs.forEach(c=>{if(c.lg===xi)have[c.n]=c;});
+  CLUBS.por.split(',').forEach(s=>{const [n,st,c1,c2]=s.split(':');let c=have[n];
+    if(c){c.lg=pi;c.cn='Portugal';return;}
+    c={id:G.clubs.length,n,lg:pi,str:+st,c1:'#'+c1,c2:'#'+c2,cn:'Portugal',coach:newCoach(+st),cf:newCf(),sack:0,fm:'',arr:0,tro:[],bud:0};G.clubs.push(c);
+    POS.forEach(pos=>{for(let k=0;k<TEMPLATE[pos];k++)genFor(c,pos,k<FORM[pos]?'starter':'backup');});});
+  dirty();G.clubs.filter(c=>c.lg===pi).forEach(c=>{c.str=Math.round(teamStr(c.id));if(!c.bud)c.bud=nice(eurVal(c.str)*6*rnd(1.2,2.5)*LG[pi].bud);});
+  const P1=curLeague(1),Y=P1?P1.Y:2026,L=mkLeague(pi,Y);G.comps[L.id]=L;
+  L.rounds.forEach(r=>{if(r.d<G.d){r.m.forEach(m=>play(L,m,false,true,r.d,true));r.done=1;}});G._pre=false;
+  news('A Liga Portugal chegou: Benfica, Porto, Sporting, Braga e mais 14 clubes agora disputam o campeonato português. A Taça de Portugal começa na próxima temporada.','liga');}catch(e){G._pre=false;}}
 function mkLeague(li,Y){const L=LG[li],cf=CAL[L.id],ids=clubsOf(li).map(c=>c.id);
   let brk=ntBreaks(L,Y).concat(cf.wb.map(r=>[cd(Y,r[0]),cd(Y,r[1])]));
   const st=L.id==='bra'&&Y===2026?dayOf(2026,1,28):cd(Y,cf.st);
@@ -1731,6 +1744,8 @@ function mkLIB(Y,teams,fromKO){if(fromKO){return mkKO('LIB'+Y,'B','Libertadores'
   for(let g=0;g<8;g++)c.groups.push(pots.map(p=>p[g]));
   c.rounds=LIB_CAL.gp.map(dd=>({d:cd(Y,dd),m:[]}));c.groups.forEach(gr=>{robin(gr).forEach((ms,i)=>ms.forEach(([a,b])=>c.rounds[i].m.push([a,b,-1,-1])));});return c;}
 function compsOfClub(cid){return Object.values(G.comps).filter(c=>(c.tab&&c.tab[cid])||(c.pool&&c.pool.includes(cid))||(c.ko&&c.ko.some(s=>s.ties&&s.ties.some(t=>t.a===cid||t.b===cid))));}
+const RLG=()=>LG.map((l,i)=>i).filter(i=>!LG[i].ext);
+const LGI=id=>LG.findIndex(l=>l.id===id);
 function curLeague(li){let best=null;for(const k in G.comps){const c=G.comps[k];if(c.t==='L'&&c.li===li&&(!best||c.Y>best.Y))best=c;}return best;}
 function curComp(t,li){let best=null;for(const k in G.comps){const c=G.comps[k];if(c.t===t&&(li==null||c.li===li)&&(!best||c.Y>best.Y))best=c;}return best;}
 function sortedTab(c,ids){ids=ids||Object.keys(c.tab).map(Number);return ids.slice().sort((a,b)=>{const x=c.tab[a],y=c.tab[b];return y[6]-x[6]||(y[4]-y[5])-(x[4]-x[5])||y[4]-x[4]||teamStr(b)-teamStr(a);});}
@@ -1761,9 +1776,9 @@ function initWorld(name,mode){
   G.clubs.forEach(c=>{c.str=Math.round(teamStr(c.id));});
   applyRealCoaches(false);
   /* competições em andamento em ago/2026 */
-  for(let li=0;li<6;li++){const lg=mkLeague(li,2026);G.comps[lg.id]=lg;if(li>0){const cup=mkCup(li,2026,clubsOf(li).map(c=>c.id));G.comps[cup.id]=cup;}}
+  for(const li of RLG()){const lg=mkLeague(li,2026);G.comps[lg.id]=lg;if(li>0){const cup=mkCup(li,2026,clubsOf(li).map(c=>c.id));G.comps[cup.id]=cup;}}
   const top=(li,n)=>clubsOf(li).sort((a,b)=>teamStr(b.id)-teamStr(a.id)).slice(0,n).map(c=>c.id);
-  const ucl=top(1,5).concat(top(2,5),top(3,4),top(4,4),top(5,3),top(6,15));const u=mkUCL(2026,ucl);G.comps[u.id]=u;
+  const ucl=top(1,5).concat(top(2,5),top(3,4),top(4,4),top(5,3),top(LGI('por'),3),top(6,12));const u=mkUCL(2026,ucl);G.comps[u.id]=u;
   const bra16=shuffle(clubsOf(0).map(c=>c.id)).slice(0,16);
   const cdb=mkCup(0,2026,bra16,[['Oitavas de final',[[8,5,0],[8,12,0]]],['Quartas de final',[[8,26,0],[9,16,0]]],['Semifinal',[[10,14,0],[10,21,0]]],['Final',[[11,29,0]]]]);G.comps[cdb.id]=cdb;
   const lib=mkLIB(2026,top(0,7).concat(top(7,9)),true);G.comps[lib.id]=lib;
@@ -1898,7 +1913,7 @@ function endLoan(p){const L=p.loan,dest=club(p),par=G.clubs[L.from];p.loan=null;
    - França compra muitos africanos (31%); Portugal/Holanda/Bélgica são vitrines de sul-americanos;
    - taxa paga ≈ 1,0–1,3× o valor de mercado; uma contratação raramente passa de 12% do valor do elenco do comprador;
    - ~30% das chegadas são empréstimos (jovens sem espaço indo para clubes menores do mesmo país). */
-const ZONE={bra:'BR',eng:'T5',esp:'T5',ita:'T5',ger:'T5',fra:'T5',xeu:'EU',xsa:'SA'};
+const ZONE={bra:'BR',eng:'T5',esp:'T5',ita:'T5',ger:'T5',fra:'T5',xeu:'EU',xsa:'SA',por:'EU'};
 const zoneOf=c=>ZONE[LG[c.lg].id];
 const NG_SA=['Argentina','Uruguai','Colômbia','Paraguai','Chile','Equador','Peru','Bolívia','Venezuela'];
 const NG_AF=['Senegal','Costa do Marfim','Gana','Nigéria','Camarões','Mali','Marrocos','Argélia','Tunísia','Guiné','Burkina Faso','RD Congo','Gâmbia','The Gambia','Gabão','Egito','Cabo Verde','Angola','Moçambique','Benin','Togo','Zâmbia','Guiné-Bissau','Mauritania','Comoros','Central African Republic','Congo','Niger','Equatorial Guinea','Sierra Leone','Burundi','Tanzania','Chad','Sudão','Quênia','África do Sul'];
@@ -2003,9 +2018,9 @@ function retireRegen(region){const Y=ymd(G.d).y;allP().forEach(p=>{const c=club(
 function budgets(region){coachSeasonEnd(region);G.clubs.forEach(c=>{if(regOf(c)!==region||isOwn(c))return;c.bud=nice(eurVal(teamStr(c.id))*6*rnd(1.2,2.5)*LG[c.lg].bud+c.bud*.3);c.arr=0;c.lo=0;c.li=0;});}
 function rolloverEU(Y){archive('eu');retireRegen('eu');budgets('eu');
   const q=(li,n)=>clubsOf(li).map(c=>c.id).sort((a,b)=>(G.clubs[a].lp||99)-(G.clubs[b].lp||99)||teamStr(b)-teamStr(a)).slice(0,n);
-  for(let li=1;li<6;li++){const lg=mkLeague(li,Y);G.comps[lg.id]=lg;const cup=mkCup(li,Y,clubsOf(li).map(c=>c.id));G.comps[cup.id]=cup;}
-  const ext=clubsOf(6).sort((a,b)=>teamStr(b.id)-teamStr(a.id)).slice(0,15).map(c=>c.id);
-  const u=mkUCL(Y,q(1,5).concat(q(2,5),q(3,4),q(4,4),q(5,3),ext));G.comps[u.id]=u;
+  for(const li of RLG().filter(i=>LG[i].reg==='eu')){const lg=mkLeague(li,Y);G.comps[lg.id]=lg;const cup=mkCup(li,Y,clubsOf(li).map(c=>c.id));G.comps[cup.id]=cup;}
+  const ext=clubsOf(6).sort((a,b)=>teamStr(b.id)-teamStr(a.id)).slice(0,12).map(c=>c.id);
+  const u=mkUCL(Y,q(1,5).concat(q(2,5),q(3,4),q(4,4),q(5,3),q(LGI('por'),3),ext));G.comps[u.id]=u;
   G.clubs.forEach(c=>{if(regOf(c)==='eu')c.lastPos=null;});
   news('Começa a temporada europeia '+Y+'/'+String(Y+1).slice(2)+'.','liga');}
 function recordPositions(region){for(const k in G.comps){const c=G.comps[k];if(c.t!=='L'||c.reg!==region)continue;sortedTab(c).forEach((cid,i)=>G.clubs[cid].lp=i+1);}}
@@ -2082,7 +2097,7 @@ function sackCoach(c,endSeason){const cf=c.cf,old=c.coach,pct=coachPct(old),g=ol
   if(k.ex&&!G._pre){addRep(1);news('Seu ex-cliente '+k.n+' é o novo técnico do '+c.n+'. A porta desse clube ficou mais aberta para você.','agencia');}}
 function aiCoaches(){
   /* uma vez por mês a diretoria olha a tabela: posição contra o que o elenco deveria entregar */
-  if(ymd(G.d).dd<=7)for(let li=0;li<6;li++){const L=curLeague(li);if(!L)continue;const played=L.rounds.filter(r=>r.done).length;if(played<6||played>=L.rounds.length)continue;
+  if(ymd(G.d).dd<=7)for(const li of RLG()){const L=curLeague(li);if(!L)continue;const played=L.rounds.filter(r=>r.done).length;if(played<6||played>=L.rounds.length)continue;
     const ids=Object.keys(L.tab).map(Number),exp=ids.slice().sort((a,b)=>teamStr(b)-teamStr(a)),tab=sortedTab(L);
     ids.forEach(id=>{const c=G.clubs[id],df=clamp((tab.indexOf(id)-exp.indexOf(id)),-8,8);c.cf.d=clamp(c.cf.d-df*.7,0,100);c.cf.t=clamp(c.cf.t-df*.35,0,100);});}
   G.clubs.forEach(c=>{const f=c.cf||(c.cf=newCf());f.d+=(58-f.d)*.02;f.t+=(58-f.t)*.02;f.e+=(60-f.e)*.02;
@@ -2374,7 +2389,7 @@ const offCost=(f,l)=>nice(OFF_UP[l]*f.m);
 const offUpkeep=()=>OFFICE.reduce((s,f)=>s+Math.round(OFF_WK[offL(f.id)]*f.m),0);
 function fixedCost(){let e=lvl().cost+offUpkeep();STAFF.forEach(s=>e+=STAFF_WAGE[G.staff[s.id]]);return Math.round(e*(mind('est')?1.1:1));}
 /* saves antigos ganham os campos novos sem perder a campanha */
-function migrate(){ownInstall();ntReflow();G.me=G.me||newMe();evoMigrate();G.office=G.office||newOffice();G.fc=G.fc||[];if(G.inv===undefined)G.inv=null;if(G.pol===undefined)G.pol=null;
+function migrate(){ownInstall();ntReflow();porAdd();G.me=G.me||newMe();evoMigrate();G.office=G.office||newOffice();G.fc=G.fc||[];if(G.inv===undefined)G.inv=null;if(G.pol===undefined)G.pol=null;
   if(G.own){G.own.role=G.own.role||'dono';if(G.own.pct==null)G.own.pct=100;}
   G.clubs.forEach(c=>{c.cf=c.cf||newCf();c.sack=c.sack||0;});if(!G.rc)applyRealCoaches(true);
   if(!G.hfix)fixHomonyms();
@@ -2569,7 +2584,7 @@ function vClubePaths(){const cs=clubsOf(ui.clg).sort((a,b)=>teamStr(a.id)-teamSt
    '<article class="card c-info"><div class="card-h"><h2>'+icoS('money')+'Compra de ações</h2><span class="chip info">Clubes-empresa</span></div><p class="small">Em clube-empresa (SAF) o capital é dividido em ações. Você compra aos poucos, até 10% por semana, e recebe dividendos desde o primeiro 1%. Com 51% você é o dono majoritário.</p>'+shareBar(G.inv?G.inv.pct:0,100)+
    '<p class="small muted">Quanto mais você acumula, mais caro fica cada 1% (ágio de controle). Com reputação 30 dá para fazer uma oferta pública direto pelos 51%, pagando 25% a mais.</p></article></div></section>';
   if(G.pol)h+=vPolCard();if(G.inv)h+=vInvCard();
-  h+='<section><div class="sec-h"><h2>Clubes</h2><p>Associação: só pela política. Clube-empresa: só por ações. Alemanha (50+1): ações até 49% e comando pela eleição.</p></div><div class="seg">'+LG.slice(0,6).map((l,i)=>'<button data-a="clg" data-i="'+i+'" aria-pressed="'+(ui.clg===i)+'">'+l.s+'</button>').join('')+'</div><div class="card list">'+
+  h+='<section><div class="sec-h"><h2>Clubes</h2><p>Associação: só pela política. Clube-empresa: só por ações. Alemanha (50+1): ações até 49% e comando pela eleição.</p></div><div class="seg">'+RLG().map(i=>'<button data-a="clg" data-i="'+i+'" aria-pressed="'+(ui.clg===i)+'">'+LG[i].s+'</button>').join('')+'</div><div class="card list">'+
    cs.map(c=>{const g=gov(c),pr=clubPrice(c),mine=G.inv&&G.inv.cid===c.id,mem=G.pol&&G.pol.cid===c.id;
      return'<div>'+crest(c,28)+'<div class="grow"><button class="lnk club" data-a="club" data-c="'+c.id+'"><span>'+esc(c.n)+'</span></button> <span class="chip '+GOV_N[g][1]+'">'+GOV_N[g][0]+'</span><div class="small muted">Nível '+Math.round(teamStr(c.id))+' · vale '+fmt(pr)+(g!=='assoc'?' · 1% = '+fmt(sharePx(c,0)):' · próxima eleição em '+fdate(electionDay(c),true))+'</div></div>'+
       (mine?'<span class="chip info">Você tem '+G.inv.pct+'%</span>':g!=='assoc'?'<button class="btn pri" data-a="shbuy" data-c="'+c.id+'" data-l="1"'+(G.inv||G.rep<15||G.money<sharePx(c,0)?' disabled':'')+'>Comprar 1%</button>':'')+
@@ -5317,7 +5332,7 @@ function grpBar(){const os=G.owns||[];if(!os.length)return'';const tot=os.reduce
   const cur=ui.grpNew?-1:G.own.cid,full=os.length>=GRP_MAX;
   return'<section class="card grp">'+cardH('club','Seu grupo','<span class="chip">'+os.length+' de '+GRP_MAX+' clubes</span>')+
    '<div class="kpis">'+[['Caixa',fmt(tot)],['Semana',(net>=0?'+':'-')+fmt(Math.abs(net))],['Torcida',md+'/100']].map(k=>'<div class="kpi"><span>'+k[0]+'</span><b>'+k[1]+'</b></div>').join('')+'</div>'+
-   '<div class="otabs grp-t">'+os.map(o=>{const c=G.clubs[o.cid],pos=leaguePos(c.id);return'<button class="otab" data-a="grpsel" data-c="'+c.id+'" aria-pressed="'+(cur===c.id)+'">'+crest(c,24)+'<span>'+esc(c.n)+'</span><small>'+(pos?pos+'º · ':'')+(o.role==='pres'?'Presidente':'Dono '+o.pct+'%')+'</small></button>';}).join('')+
+   '<div class="otabs grp-t n'+os.length+'">'+os.map(o=>{const c=G.clubs[o.cid],pos=leaguePos(c.id);return'<button class="otab" data-a="grpsel" data-c="'+c.id+'" aria-pressed="'+(cur===c.id)+'">'+crest(c,24)+'<span>'+esc(c.n)+'</span><small>'+(pos?pos+'º · ':'')+(o.role==='pres'?'Presidente':'Dono '+o.pct+'%')+'</small></button>';}).join('')+
    '<button class="otab" data-a="grpnew" aria-pressed="'+(cur===-1)+'"'+(full?' disabled':'')+'>'+svgI('sign',22)+'<span>Novo clube</span><small>'+esc(grpReq())+'</small></button></div></section>';}
 function vClubeG(){if(!G.own)return vClube2();ownInit();const bar=grpBar();
   if(ui.grpNew)return bar+'<section class="card c-gold"><p class="small"><b>Regras do grupo:</b> até '+GRP_MAX+' clubes, um por liga. O 2º clube exige reputação '+GRP_REP[1]+' e o 3º, '+GRP_REP[2]+'. Você só preside um clube de cada vez; nos outros, entra como dono por ações ou SAF.'+(G.owns.length<GRP_MAX&&G.rep<GRP_REP[G.owns.length]?' Hoje você tem reputação '+Math.round(G.rep)+'.':'')+'</p></section>'+vClubePaths();
@@ -5442,7 +5457,7 @@ function vOlheiros(){const done=G.tripD===G.d,lv=G.staff.olheiro,sp=lv>=2&&POS.i
   return h;}
 
 /* ================= LIGAS ================= */
-const COMPKEYS=()=>{const k=[];for(let li=0;li<6;li++){k.push(['L'+li,LG[li].s,LG[li].cn]);k.push(['K'+li,LG[li].cup,LG[li].cn]);}k.push(['U','Champions League','Continentais']);k.push(['B','Libertadores','Continentais']);
+const COMPKEYS=()=>{const k=[];for(const li of RLG()){k.push(['L'+li,LG[li].s,LG[li].cn]);k.push(['K'+li,LG[li].cup,LG[li].cn]);}k.push(['U','Champions League','Continentais']);k.push(['B','Libertadores','Continentais']);
   return k;};
 function compByKey(key){const t=key[0],li=key.length>1?+key.slice(1):null;return t==='L'?curLeague(li):t==='K'?curComp('K',li):t==='U'?curComp('U'):curComp('B');}
 function leaders(cid,ids,stat,min){const ps=allP().filter(p=>p.st[cid]&&(!ids||ids.has(p.club)));
@@ -5489,10 +5504,10 @@ function vMercado(){const winTxt=reg=>(winOpen(reg)?'aberta até ':'fechada · a
    (G.offers.map(o=>{const p=G.P[o.pid],c=G.clubs[o.cid],cur=club(p),f=fitHint(p,c);return'<div>'+avatar(p,36)+'<div class="grow">'+clubLink(c)+' quer <b>'+plLink(p)+'</b> <span class="chip '+f[1]+'">'+f[0]+'</span><div class="small muted">'+esc(LG[c.lg].n)+(o.fee?' · '+(o.cl?'pagou a multa de ':o.acc?'o '+esc(cur?cur.n:'')+' aceitou ':'paga ')+fmtC(o.fee,c)+(o.acc||o.cl?'':' ao '+esc(cur?cur.n:''))+' · sua comissão '+fmt(o.fee*feePct()*fxMul(c)):' · jogador livre, sem taxa')+' · expira em '+fdate(o.exp)+'</div></div><button class="btn pri" data-a="offer" data-o="'+o.id+'">Negociar</button><button class="btn" data-a="refuse" data-o="'+o.id+'">Descartar</button></div>';}).join('')||'<div class="muted">Nenhuma proposta no momento.</div>')+'</div></section>';
   h+='<section><div class="sec-h"><h2>Pedidos de clubes</h2><p>Coloque um cliente que cumpra o pedido e receba honorários.</p></div><div class="card list">'+
    (G.missions.map(m=>{const c=G.clubs[m.cid];return'<div><div class="grow">'+clubLink(c)+' procura <b>'+POSN[m.pos]+'</b> nível '+m.min+'+<div class="small muted">'+esc(LG[c.lg].n)+' · honorários '+fmt(m.fee)+' · prazo '+fdate(m.exp)+'</div></div><button class="btn" data-a="dismiss" data-m="'+m.id+'">Descartar</button></div>';}).join('')||'<div class="muted">'+(G.rep<6?'Clubes pedem ajuda quando sua reputação chega a 6.':'Nenhum pedido aberto.')+'</div>')+'</div></section>';
-  const countries=['Todos'].concat(LG.slice(0,6).map(l=>l.cn),['Outros']);
-  const mv=G.moves.filter(m=>{const c=G.clubs[m.to];const cn=c.lg<6?LG[c.lg].cn:'Outros';return ui.mc==='Todos'||ui.mc===cn;}).filter(m=>ui.mt==='lo'?m.k==='empréstimo':ui.mt==='tr'?m.k!=='empréstimo':true).sort((a,b)=>b.fee-a.fee||b.d-a.d);
+  const countries=['Todos'].concat(RLG().map(i=>LG[i].cn),['Outros']);
+  const mv=G.moves.filter(m=>{const c=G.clubs[m.to];const cn=!LG[c.lg].ext?LG[c.lg].cn:'Outros';return ui.mc==='Todos'||ui.mc===cn;}).filter(m=>ui.mt==='lo'?m.k==='empréstimo':ui.mt==='tr'?m.k!=='empréstimo':true).sort((a,b)=>b.fee-a.fee||b.d-a.d);
   const tot=mv.reduce((s,m)=>s+m.fee,0),big=mv.slice().sort((a,b)=>b.fee-a.fee)[0];
-  const byC={};G.moves.forEach(m=>{const c=G.clubs[m.to],cn=c.lg<6?LG[c.lg].cn:'Outros';byC[cn]=(byC[cn]||0)+m.fee;});const mx=Math.max(1,...Object.values(byC));
+  const byC={};G.moves.forEach(m=>{const c=G.clubs[m.to],cn=!LG[c.lg].ext?LG[c.lg].cn:'Outros';byC[cn]=(byC[cn]||0)+m.fee;});const mx=Math.max(1,...Object.values(byC));
   h+='<section><div class="sec-h"><h2>Mercado da bola</h2><p>Negócios entre clubes, por país de destino.</p></div><div class="seg">'+countries.map(c=>'<button data-a="mc" data-v="'+c+'" aria-pressed="'+(ui.mc===c)+'">'+c+'</button>').join('')+'</div>'+'<div class="seg sm">'+[['all','Tudo'],['tr','Transferências'],['lo','Empréstimos']].map(x=>'<button data-a="mt" data-v="'+x[0]+'" aria-pressed="'+((ui.mt||'all')===x[0])+'">'+x[1]+'</button>').join('')+'<span class="small muted">do mais caro para o mais barato</span></div>'+
    '<div class="mk-top"><div class="kpis">'+[['Transferências',mv.length],['Movimentado',fmt(tot)]].map(k=>'<div class="kpi"><span>'+k[0]+'</span><b>'+k[1]+'</b></div>').join('')+'<div class="kpi mk-big"><span>Maior negócio</span><b>'+(big?esc(big.n):'—')+'</b>'+(big?'<small>'+fmt(big.fee)+(G.clubs[big.to]?' · para o '+esc(G.clubs[big.to].n):'')+'</small>':'')+'</div>'+'</div>'+
    '<div class="card bars"><h3>Gasto por país</h3>'+Object.entries(byC).sort((a,b)=>b[1]-a[1]).map(([cn,v])=>'<div class="bar"><span>'+cn+'</span><div><i style="width:'+Math.round(v/mx*100)+'%"></i></div><b>'+fmt(v)+'</b></div>').join('')+'</div></div>'+
@@ -5548,9 +5563,9 @@ function vPainel(){let h='';const t=G.tut;
   h+='<section class="card c-bad">'+cardH('report','Decisões e pendências','<span class="chip '+(pend.length?'bad':'good')+'">'+(pend.length||'Tudo em dia')+'</span>')+'<div class="list">'+(pend.slice(0,9).map(x=>'<div class="pend '+x[0]+'"><span class="chip '+x[0]+'">'+x[1]+'</span><span class="grow small">'+esc(x[2])+'</span><button class="btn sm" data-a="tab" data-t="'+x[3]+'">Abrir</button></div>').join('')||'<div class="muted">Nada pendente. Use suas ações e avance a semana.</div>')+'</div></section>';
   h+=vPainelWorld()+vPainelOff();
   // tabela
-  if(ui.dlg==null){const cl=G.clients.map(id=>club(G.P[id])).filter(c=>c&&c.lg<6);ui.dlg=cl.length?cl[0].lg:0;}
+  if(ui.dlg==null){const cl=G.clients.map(id=>club(G.P[id])).filter(c=>c&&!LG[c.lg].ext);ui.dlg=cl.length?cl[0].lg:0;}
   const L=curLeague(ui.dlg),mine=new Set(G.clients.map(id=>G.P[id].club));(G.owns||[]).forEach(o=>mine.add(o.cid));
-  h+='<section class="card c-teal">'+cardH('club','Classificação')+'<div class="seg sm">'+LG.slice(0,6).map((l,i)=>'<button data-a="dlg" data-i="'+i+'" aria-pressed="'+(ui.dlg===i)+'">'+l.s+'</button>').join('')+'</div>'+
+  h+='<section class="card c-teal">'+cardH('club','Classificação')+'<div class="seg sm">'+RLG().map(i=>'<button data-a="dlg" data-i="'+i+'" aria-pressed="'+(ui.dlg===i)+'">'+LG[i].s+'</button>').join('')+'</div>'+
    (L?'<div class="tbw"><table class="mini"><thead><tr><th>#</th><th>Clube</th><th class="r">J</th><th class="r">SG</th><th class="r">Pts</th></tr></thead><tbody>'+sortedTab(L).map((cid,i)=>{const r=L.tab[cid];return'<tr class="'+(mine.has(cid)?'mine':'')+'"><td>'+(i+1)+'</td><td>'+clubLink(G.clubs[cid],16)+'</td><td class="r">'+r[0]+'</td><td class="r">'+(r[4]-r[5])+'</td><td class="r"><b>'+r[6]+'</b></td></tr>';}).join('')+'</tbody></table></div><p class="small muted">'+esc(L.name+' '+L.lbl)+' · rodada '+L.rounds.filter(r=>r.done).length+' de '+L.rounds.length+'</p>':'')+'</section>';
   h+='</div>';
   // notícias
