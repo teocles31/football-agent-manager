@@ -656,7 +656,9 @@ html,body{touch-action:manipulation}
 .vp-pg .vsb.mine{margin:2px 0}
 .nr.nrb{display:block;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--line);padding:8px 0;color:inherit;font:inherit;cursor:pointer}.nr.nrb p{margin:4px 0 2px}
 .nr-go{font-size:11.5px;font-weight:600;color:var(--gold)}.nr.nrb:active{opacity:.7}
-.np-body p{font-size:15px;line-height:1.55;margin:0 0 10px;color:#1b1a17}.np-body p:first-child::first-letter{font-size:2.6em;float:left;line-height:.9;margin:4px 6px 0 0;font-weight:700}
+.np-body p{font-size:15px;line-height:1.55;margin:0 0 10px;color:#1b1a17}.np-body p,.np-sub,.np-more p{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.np .np-mast{flex-wrap:wrap;justify-content:space-between;align-items:center}.np .np-mast b{order:-1;flex:1 0 100%;text-align:center;margin-bottom:4px}
+.mk-top .kpi.mk-big{grid-column:1/-1}.mk-top .kpi.mk-big b{white-space:normal;overflow:visible;text-overflow:clip}.mk-top .kpi.mk-big small{display:block;font-size:12.5px;color:var(--ink2);margin-top:2px}
 .np-lnk{display:block;width:100%;text-align:left;background:none;border:0;padding:6px 0;font:inherit;font-size:14px;color:#1b1a17;cursor:pointer;border-bottom:1px dotted #b9ae95}.np-lnk:last-child{border-bottom:0}
 .brs-g{margin-top:14px}.brs-g h3{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink2);margin:0 0 6px}
 .brs-r{display:flex;align-items:flex-start;gap:10px;padding:6px 0}.brs-r .bb{margin-top:4px}.brs>.acts,.edit .brs>.acts{position:sticky;bottom:0;z-index:2;background:var(--surface);padding:10px 0 4px;margin-top:10px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:8px}.brs>.acts .btn{margin:0;width:100%}.brs>.acts .pri{grid-column:1/-1}.brs-r .grow{display:flex;flex-direction:column;gap:2px;min-width:0}
@@ -2746,7 +2748,7 @@ const isIntl=p=>{const s=G.nt.sq[natName(p)];return!!(s&&s.includes(p.id));};
 const liveTours=()=>(G.nt.tours||[]).filter(T=>!T.win);
 function inTour(p){const n=natName(p);return liveTours().some(T=>T.sq[n]&&T.sq[n].includes(p.id));}
 /* ---------- partida de seleções ---------- */
-function ntStats(n,opp,xi,gf,ga,T,day){const ng=new Map();for(let k=0;k<gf;k++){const s=wpick(xi,p=>(GW[p.pos]+.4)*p.ovr/70);if(s)ng.set(s,(ng.get(s)||0)+1);}
+function ntStats(n,opp,xi,gf,ga,T,day){const ng=new Map();for(let k=0;k<gf;k++){const s=wpick(xi,p=>(p.pos==='GOL'?0:GW[p.pos]+.4)*p.ovr/70);if(s)ng.set(s,(ng.get(s)||0)+1);}
   xi.forEach(p=>{const g=ng.get(p)||0;let rt=6.4+(gf-ga)*.25+rnd(-.75,.75)+g*.9;if(ga===0&&(p.pos==='GOL'||p.pos==='ZAG'||p.pos==='LAT'))rt+=.5;rt=clamp(Math.round(rt*10)/10,3,10);
     const s=p.nt||(p.nt=[0,0]);s[0]++;s[1]+=g;
     if(T){const t=T.st[p.id]||(T.st[p.id]=[0,0,0]);t[0]++;t[1]+=g;t[2]+=Math.round(rt*10);}
@@ -5197,23 +5199,23 @@ const ART_K={transf:'Mercado da bola',lesao:'Departamento médico',contrato:'Bas
 /* acha no texto o jogador e o clube citados (nome mais longo primeiro; clientes têm preferência) */
 function artFind(t){const T=String(t);let p=null,c=null;
   const cl=G.clients.map(id=>G.P[id]).filter(x=>x&&T.includes(x.name)).sort((a,b)=>b.name.length-a.name.length);
-  p=cl[0]||allP().filter(x=>x.name&&x.name.length>5&&T.includes(x.name)).sort((a,b)=>b.name.length-a.name.length||b.ovr-a.ovr)[0]||null;
-  const cs=Object.values(G.clubs).filter(x=>x&&x.n&&T.includes(x.n)).sort((a,b)=>b.n.length-a.n.length);
+  p=cl[0]||allP().filter(x=>x.name&&x.name.length>5&&T.includes(x.name)).sort((a,b)=>T.indexOf(a.name)-T.indexOf(b.name)||b.name.length-a.name.length)[0]||null;
+  const cs=Object.values(G.clubs).filter(x=>x&&x.n&&T.includes(x.n)).sort((a,b)=>T.indexOf(a.n)-T.indexOf(b.n)||b.n.length-a.n.length);
   c=cs[0]||(p&&club(p))||null;return{p,c};}
-function artHead(t){const T=String(t).trim(),m=T.match(/^(.+?[.!?:])(\s|$)/);let h=(m?m[1]:T).replace(/[.:]$/,'');if(h.length>110)h=h.slice(0,107).replace(/\s+\S*$/,'')+'…';const rest=m?T.slice(m[0].length).trim():'';return{h,rest};}
+function artHead(t){const T=String(t).trim();let m=T.match(/^(.+?[.!?:])(\s|$)/);if(m&&/:$/.test(m[1])&&m[1].length<14){const r=T.slice(m[0].length).trim(),m2=r.match(/^(.+?[.!?])(\s|$)/);return{h:(m2?m2[1]:r).replace(/[.]$/,''),rest:''};}let h=(m?m[1]:T).replace(/[.:]$/,'');if(h.length>110)h=h.slice(0,107).replace(/\s+\S*$/,'')+'…';const rest=m?T.slice(m[0].length).trim():'';return{h,rest};}
 function artPlayer(p){const c=club(p),t=seasonTot(p),bits=[];
   bits.push(p.name+', '+p.age+' anos, '+(POSN[p.pos]||p.pos).toLowerCase()+(c?' do '+c.n:' sem clube no momento')+', tem nível '+p.ovr+'.');
   if(t.ap)bits.push('Na temporada são '+t.ap+' jogo'+(t.ap>1?'s':'')+(t.gl?', '+t.gl+' gol'+(t.gl>1?'s':''):'')+(t.as?' e '+t.as+' assistência'+(t.as>1?'s':''):'')+', com nota média '+f1(t.avg)+'.');
   else bits.push('Ele ainda não entrou em campo nesta temporada.');
   if(p.injury>0)bits.push('Está no departamento médico e a previsão é de '+p.injury+' semana'+(p.injury>1?'s':'')+' de recuperação.');
-  if(p.nt&&p.nt[0])bits.push('Pela seleção, soma '+p.nt[0]+' jogo'+(p.nt[0]>1?'s':'')+' e '+p.nt[1]+' gol'+(p.nt[1]===1?'':'s')+'.');
+  if(p.nt&&p.nt[0])bits.push('Pela seleção, soma '+p.nt[0]+' jogo'+(p.nt[0]>1?'s':'')+(p.pos!=='GOL'&&p.nt[1]?' e '+p.nt[1]+' gol'+(p.nt[1]===1?'':'s'):'')+'.');
   if(isClient(p))bits.push('O jogador é representado pela '+G.agency+'.');
   return bits.join(' ');}
 function artClub(c){const bits=[],pos=leaguePos(c.id);
   bits.push('O '+c.n+' tem nível '+Math.round(teamStr(c.id))+(c.coach?' e é comandado por '+c.coach.n:'')+'.');
   if(pos)bits.push('Na liga, o time aparece em '+pos+'º lugar.');
   const nx=fixturesOf(c.id,G.d,G.d+14).find(f=>f.m&&f.m[2]<0);
-  if(nx){const o=G.clubs[nx.m[0]===c.id?nx.m[1]:nx.m[0]];if(o)bits.push('O próximo compromisso é contra o '+o.n+', '+fdate(nx.d,true).split(',')[0]+', '+fdate(nx.d)+', pelo '+nx.c.sh+'.');}
+  if(nx){const o=G.clubs[nx.m[0]===c.id?nx.m[1]:nx.m[0]];if(o)bits.push('O próximo compromisso é contra o '+o.n+', '+fdate(nx.d,true).split(',')[0]+', '+fdate(nx.d)+' ('+nx.c.sh+').');}
   return bits.join(' ');}
 const ART_FECHO={transf:'A negociação movimenta o mercado e pode mudar o planejamento dos clubes envolvidos.',lesao:'O clube não deve buscar reposição imediata e aposta nas opções do elenco.',contrato:'Nos bastidores, o assunto segue sendo acompanhado de perto por dirigentes e empresários.',
   agencia:'No mercado, o movimento é visto como mais um passo no crescimento da agência.',clube:'A diretoria evita comentar publicamente, mas o tema domina os corredores do clube.',liga:'A competição segue aberta e a próxima rodada promete.',
@@ -5361,7 +5363,7 @@ function vMercado(){const winTxt=reg=>(winOpen(reg)?'aberta até ':'fechada · a
   const tot=mv.reduce((s,m)=>s+m.fee,0),big=mv.slice().sort((a,b)=>b.fee-a.fee)[0];
   const byC={};G.moves.forEach(m=>{const c=G.clubs[m.to],cn=c.lg<6?LG[c.lg].cn:'Outros';byC[cn]=(byC[cn]||0)+m.fee;});const mx=Math.max(1,...Object.values(byC));
   h+='<section><div class="sec-h"><h2>Mercado da bola</h2><p>Negócios entre clubes, por país de destino.</p></div><div class="seg">'+countries.map(c=>'<button data-a="mc" data-v="'+c+'" aria-pressed="'+(ui.mc===c)+'">'+c+'</button>').join('')+'</div>'+'<div class="seg sm">'+[['all','Tudo'],['tr','Transferências'],['lo','Empréstimos']].map(x=>'<button data-a="mt" data-v="'+x[0]+'" aria-pressed="'+((ui.mt||'all')===x[0])+'">'+x[1]+'</button>').join('')+'<span class="small muted">do mais caro para o mais barato</span></div>'+
-   '<div class="mk-top"><div class="kpis">'+[['Transferências',mv.length],['Movimentado',fmt(tot)],['Maior negócio',big?esc(big.n)+' · '+fmt(big.fee):'—']].map(k=>'<div class="kpi"><span>'+k[0]+'</span><b>'+k[1]+'</b></div>').join('')+'</div>'+
+   '<div class="mk-top"><div class="kpis">'+[['Transferências',mv.length],['Movimentado',fmt(tot)]].map(k=>'<div class="kpi"><span>'+k[0]+'</span><b>'+k[1]+'</b></div>').join('')+'<div class="kpi mk-big"><span>Maior negócio</span><b>'+(big?esc(big.n):'—')+'</b>'+(big?'<small>'+fmt(big.fee)+(G.clubs[big.to]?' · para o '+esc(G.clubs[big.to].n):'')+'</small>':'')+'</div>'+'</div>'+
    '<div class="card bars"><h3>Gasto por país</h3>'+Object.entries(byC).sort((a,b)=>b[1]-a[1]).map(([cn,v])=>'<div class="bar"><span>'+cn+'</span><div><i style="width:'+Math.round(v/mx*100)+'%"></i></div><b>'+fmt(v)+'</b></div>').join('')+'</div></div>'+
    '<div class="mvgrid">'+(mv.slice(0,40).map(m=>{const p=G.P[m.pid],to=G.clubs[m.to],fr=m.from>=0?G.clubs[m.from]:null;return'<article class="mv">'+(p?avatar(p,44):'')+'<div class="grow"><b>'+(p?plLink(p):esc(m.n))+'</b><div class="small muted">'+m.pos+' · '+m.age+' anos · nível '+m.ovr+'</div>'+
      '<div class="route">'+(fr?crest(fr,18)+'<span>'+esc(fr.n)+'</span>':'<span class="muted">Livre</span>')+'<i>→</i>'+crest(to,18)+'<span>'+esc(to.n)+'</span></div></div><div class="fee"><b>'+(m.fee?fmtC(m.fee,to):m.k==='empréstimo'?'Empréstimo':'Grátis')+'</b><span class="small muted">'+fdate(m.d)+'</span></div></article>';}).join('')||'<div class="muted">Nenhuma transferência ainda.</div>')+'</div></section>';
