@@ -153,6 +153,7 @@ table.squad td{padding:4px 8px}
 .choice:hover:not(:disabled){border-color:var(--ink)}.choice:disabled{opacity:.45;cursor:not-allowed}.choice b{font-weight:600}.choice span{font-size:13px;color:var(--ink2)}
 .field{display:grid;grid-template-columns:1fr auto;gap:0 10px;align-items:center}.field label{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink2);font-weight:600}
 .field output{font-family:var(--f-d);font-weight:600;font-size:18px}.field input[type=range]{grid-column:1/-1;width:100%;accent-color:var(--pitch)}.field small{grid-column:1/-1;color:var(--ink2);font-size:12px}
+.sg-ch{font-size:15px;margin:10px 0 0}.sg-ch b{font-family:var(--f-d);font-size:22px}
 .field input[type=text]{grid-column:1/-1;font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
 .log{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:8px 12px;max-height:150px;overflow-y:auto;display:flex;flex-direction:column;gap:6px;font-size:14px}.log p.me{color:var(--ink2)}
 .gain{background:var(--surface2);border-radius:var(--r);padding:8px 12px;font-size:13.5px}.pat{letter-spacing:3px;color:var(--warn)}
@@ -2734,15 +2735,45 @@ function signChance(p,opt){const b=[0,.13,.27][opt];
   const need=clamp((Math.max(p.ovr,p.pot-6)-58)*2.6,0,95);if(G.rep<need-22)return 0;
   let ch=.45+(G.rep-need)/50+b+(p.home?.35:0)+signBonus()+mindSign(p);if(p.ag>0)ch-=Math.max(0,G.ags[p.ag].rep-G.rep)/150;else ch+=.15;return clamp(ch,0,.9);}
 function signCost(p,opt){return opt===0?0:nice(wageRef(p.ovr,club(p)?club(p).lg:0)*(p.real?[0,2,8][opt]:[0,1,4][opt]));}
-function trySign(pid,opt){const p=G.P[pid];if(G.clients.length>=cap()){toast('Carteira cheia. Suba de patamar ou dispense alguém.');return;}
-  const cost=signCost(p,opt);if(G.money<cost){toast('Caixa insuficiente.');return;}if(!useAP())return;G.money-=cost;ui.modal=null;
-  if(Math.random()<signChance(p,opt)){const wasPros=G.prospects.includes(pid);G.prospects=G.prospects.filter(i=>i!==pid);G.clients.push(pid);
-    const prev=p.ag;initClient(p);p.trust=clamp(55+opt*8,0,100);p.morale=Math.max(p.morale,60);G.stats.signed=(G.stats.signed||0)+1;p.ovr0=p.ovr;if(!wasPros){p.potErr=1;p.potOff=0;}else G.stats.pros=(G.stats.pros||0)+1;
-    if(p.real)addRep(clamp((p.ovr-60)/8,.5,5));else addRep(.5);if(G.clients.length>=2)G.tut.sign=true;
-    news(p.name+' assinou com a '+G.agency+(prev>0?', deixando a '+G.ags[prev].n:'')+'. Você o representa pelos próximos 3 anos.','agencia');pop({k:'good',ic:'sign',wait:1400,wt:'Reunião com '+p.name+'…',ti:'Novo cliente!',tx:p.name+' assinou com a '+G.agency+'.'});}
-  else{if(G.prospects.includes(pid)&&Math.random()<.3){G.prospects=G.prospects.filter(i=>i!==pid);delete G.P[pid];dirty();news('O garoto ouviu sua proposta e fechou com outro empresário.','agencia');pop({k:'bad',ic:'no',wait:1400,wt:'Reunião com o garoto…',ti:'Perdeu o garoto',tx:'Ele fechou com outro empresário.'});}
-    else{p.signCool=G.d+(p.real?56:14);G.money+=Math.round(cost/2);news(p.name+' recusou sua proposta de representação.','agencia');pop({k:'bad',ic:'no',wait:1400,wt:'Reunião com '+p.name+'…',ti:'Recusou',tx:p.name+' não aceitou sua proposta. Tente de novo mais tarde.'});}}
+/* ---------- contrato de representação: negociado com o atleta ----------
+   O atleta tem um pedido (comissão máxima, duração preferida, bônus esperado). Você ajusta comissão, duração e bônus e vê a chance.
+   Se ele recusar, faz uma contraproposta; recusou de novo, pede um tempo. O bônus só sai do caixa se ele assinar. */
+function signRef(p){return wageRef(p.ovr,club(p)?club(p).lg:0);}
+function signWish(p){const pros=G.prospects.includes(p.id),star=p.real&&p.ovr>=80;
+  const comm=pros||!p.real?12:clamp(Math.round(13-(p.ovr-62)/4),6,12);
+  const yrs=p.age<=21?4:(star||p.age>=30)?2:3;
+  const bonus=nice(signRef(p)*(p.real?clamp((p.ovr-58)/5,1,7):1.5));
+  return{comm,yrs,bonus,max:nice(Math.max(bonus*2.5,signRef(p)*2))};}
+function signChanceT(p,t){const base=signChance(p,0);if(base<=0)return 0;const W=signWish(p);
+  const be=.3*Math.sqrt(Math.min(t.bonus,W.bonus*2)/(W.bonus*2));
+  const ce=clamp((W.comm-t.comm)*.045,-.45,.12);
+  const ye=-Math.abs(t.yrs-W.yrs)*.05;
+  return clamp(base+be+ce+ye,.02,.95);}
+function signDone(p,t){const pid=p.id;if(t.bonus>G.money){toast('Caixa insuficiente para o bônus.');return;}G.money-=t.bonus;
+  const wasPros=G.prospects.includes(pid);G.prospects=G.prospects.filter(i=>i!==pid);G.clients.push(pid);
+  const W=signWish(p),prev=p.ag;initClient(p);p.comm=t.comm;p.repEnd=curMonth()+12*t.yrs;
+  p.trust=clamp(58+(W.comm-t.comm)*3+Math.min(t.bonus/W.bonus,2)*6,40,92);p.morale=Math.max(p.morale,60);G.stats.signed=(G.stats.signed||0)+1;p.ovr0=p.ovr;if(!wasPros){p.potErr=1;p.potOff=0;}else G.stats.pros=(G.stats.pros||0)+1;
+  if(p.real)addRep(clamp((p.ovr-60)/8,.5,5));else addRep(.5);if(G.clients.length>=2)G.tut.sign=true;
+  const yt=t.yrs+(t.yrs>1?' anos':' ano');
+  news(p.name+' assinou com a '+G.agency+(prev>0?', deixando a '+G.ags[prev].n:'')+'. Contrato de '+yt+', comissão de '+t.comm+'%'+(t.bonus?', bônus de '+fmt(t.bonus):'')+'.','agencia');
+  ui.modal=null;pop({k:'good',ic:'sign',wait:1400,wt:'Reunião com '+p.name+'…',ti:'Novo cliente!',tx:p.name+' assinou com a '+G.agency+': '+yt+', '+t.comm+'% de comissão.'});save();render();}
+function signFail(p){const pid=p.id;ui.modal=null;
+  if(G.prospects.includes(pid)&&Math.random()<.3){G.prospects=G.prospects.filter(i=>i!==pid);delete G.P[pid];dirty();news('O garoto ouviu sua proposta e fechou com outro empresário.','agencia');pop({k:'bad',ic:'no',wait:1400,wt:'Reunião com o garoto…',ti:'Perdeu o garoto',tx:'Ele fechou com outro empresário.'});}
+  else{p.signCool=G.d+(p.real?56:14);news(p.name+' recusou sua proposta de representação.','agencia');pop({k:'bad',ic:'no',wait:1400,wt:'Reunião com '+p.name+'…',ti:'Sem acordo',tx:p.name+' não aceitou e pediu um tempo. Tente de novo mais tarde.'});}
   save();render();}
+/* contraproposta: o que ele pede para assinar (o bônus sobe até a chance passar de 75%) */
+function signCounter(p){const W=signWish(p),t={comm:W.comm,yrs:W.yrs,bonus:W.bonus};
+  while(signChanceT(p,t)<.75&&t.bonus<W.max)t.bonus=nice(Math.min(W.max,t.bonus+signRef(p)*.5));
+  return signChanceT(p,t)>=.4&&t.bonus<=G.money?t:null;}
+function signGo(){const m=ui.modal;if(!m||m.type!=='sign')return;const p=G.P[m.pid];if(!p)return;
+  if(G.clients.length>=cap()){toast('Carteira cheia. Suba de patamar ou dispense alguém.');return;}
+  const t=m.t;if(t.bonus>G.money){toast('Caixa insuficiente para o bônus.');return;}
+  if(!m.ap){if(!useAP())return;m.ap=1;}
+  if(Math.random()<signChanceT(p,t)){signDone(p,t);return;}
+  if(m.round>=1){signFail(p);return;}
+  m.round=1;m.ctr=signCounter(p);
+  if(!m.ctr){signFail(p);return;}
+  m.msg=p.name+' não aceitou esses termos e fez uma contraproposta.';render();}
 function scout0(rid){const r=REGIONS.find(x=>x.id===rid);if(G.rep<r.rep){toast('Sua reputação ainda não abre portas nessa região.');return;}
   const rc=scoutCost(r);if(G.money<rc){toast('Caixa insuficiente para a viagem.');return;}if(!useAP())return;G.money-=rc;G.tut.scout=true;
   const n=G._scPos?2:scoutN(),names=[];
@@ -5951,7 +5982,7 @@ function signRow(p){const c=club(p),cool=(p.signCool||0)>G.d,ch=signChance(p,0),
   return'<div>'+avatar(p,38)+ovrB(p.ovr)+'<div class="grow"><b>'+plLink(p)+'</b> <span class="chip">'+p.pos+'</span> <span class="muted small">'+p.age+' anos · '+natTag(p)+TRAIT[p.trait][0]+'</span>'+
    (!pros&&p.u20&&p.u20.ap&&p.u20.y===ymd(G.d).y?'<div class="small">Sub-20: '+u20Txt(p)+'</div>':'')+'<div class="small muted">'+(pros?'Potencial estimado '+potTxt(p)+' · '+esc(p.region||'')+(p.rival?' · <b class="nok">disputado pela '+esc(G.ags[p.rival].n)+'</b>':'')+' · sai da lista em '+Math.max(0,Math.ceil((p.found+(p.rival?28:42)-G.d)/7))+' sem':(c?esc(c.n):'Sem clube')+' · valor '+fmt(value(p))+' · '+(p.ag>0?esc(G.ags[p.ag].n):'sem empresário'))+'</div></div>'+
    (pros?'<button class="btn sm danger" data-a="pdrop" data-p="'+p.id+'">Descartar</button>':'')+(pros?'<button class="btn" data-a="observe" data-p="'+p.id+'"'+(p.potErr<=1?' disabled':'')+'>Observar</button>':'')+
-   (isClient(p)?'<span class="chip good">Seu cliente</span>':'<button class="btn pri" data-a="sign" data-p="'+p.id+'"'+(cool||ch===0?' disabled':'')+'>'+(cool?'Pediu um tempo':ch===0?'Não atende você':'Abordar · '+Math.round(ch*100)+'%')+'</button>')+'</div>';}
+   (isClient(p)?'<span class="chip good">Seu cliente</span>':'<button class="btn pri" data-a="sign" data-p="'+p.id+'"'+(cool||ch===0?' disabled':'')+'>'+(cool?'Pediu um tempo':ch===0?'Não atende você':'Negociar representação')+'</button>')+'</div>';}
 function vOlheiros(){const done=G.tripD===G.d,lv=G.staff.olheiro,sp=lv>=2&&POS.includes(ui.scPos)?ui.scPos:'';
   let h='<section><div class="sec-h"><h2>Enviar olheiro</h2><p>Uma viagem por semana. Cada viagem gasta 1 ação e traz '+(sp?'2 '+POSPL[sp]:scoutN()+' nomes')+', que ficam 6 semanas na lista.</p></div>'+
    (lv>=2?'<div class="card sc-pos"><span class="cr-tt">'+svgI('scout',15)+'Posição procurada</span><div class="otabs">'+[['','Qualquer']].concat(POS.map(k=>[k,k])).map(o=>'<button class="otab" data-a="scpos" data-v="'+o[0]+'" aria-pressed="'+(sp===o[0])+'"><span>'+o[1]+'</span></button>').join('')+'</div>'+
@@ -6090,7 +6121,7 @@ function mPlayer(p){const c=club(p),t=seasonTot(p),own=ownC();
   const rows=Object.keys(p.st).map(k=>{const s=p.st[k],cm=G.comps[k];return'<tr><td>'+esc(cm?cm.sh:k)+'</td><td class="r">'+s[0]+'</td><td class="r">'+s[1]+'</td><td class="r">'+s[2]+'</td><td class="r">'+(s[0]?f1(s[3]/s[0]/10):'–')+'</td><td class="r">'+s[4]+'</td><td class="r">'+s[5]+'</td></tr>';}).join('');
   let acts='';
   if(isClient(p))acts+='<button class="btn" data-a="tab" data-t="clientes">Ver na carteira</button>';
-  else if(!G.prospects.includes(p.id)){const ch=signChance(p,0),cool=(p.signCool||0)>G.d;acts+='<button class="btn pri" data-a="sign" data-p="'+p.id+'"'+(cool||ch===0?' disabled':'')+'>'+(cool?'Pediu um tempo':ch===0?'Não atende você (reputação baixa)':'Abordar para a agência · '+Math.round(ch*100)+'%')+'</button>';}
+  else if(!G.prospects.includes(p.id)){const ch=signChance(p,0),cool=(p.signCool||0)>G.d;acts+='<button class="btn pri" data-a="sign" data-p="'+p.id+'"'+(cool||ch===0?' disabled':'')+'>'+(cool?'Pediu um tempo':ch===0?'Não atende você (reputação baixa)':'Negociar representação')+'</button>';}
   if(own&&c&&c.id!==own.id&&!isClient(p))acts+='<button class="btn" data-a="hireclub" data-p="'+p.id+'"'+(winOpen(regOf(own))&&settled(p)?'':' disabled')+'>Contratar para o '+esc(own.n)+' <small>'+fmt(nice(value(p)*1.15))+'</small></button>';
   return'<div class="sheet wide"><div class="pl-head">'+avatar(p,88)+'<div class="grow"><span class="eyebrow">'+POSN[p.pos]+' · '+p.age+' anos'+(natName(p)?' · '+flagS(natName(p))+esc(natName(p)):'')+'</span><h2>'+esc(p.name)+'</h2>'+
    '<div class="small">'+(c?clubLink(c,18):'<b>Sem clube</b>')+(p.loan?' <span class="chip info">emprestado pelo '+esc(G.clubs[p.loan.from].n)+'</span>':'')+'</div>'+
@@ -6148,9 +6179,22 @@ function mPick(){const m=ui.modal,p=G.P[m.pid],cur=club(p),loan=!!m.loan;
    (loan?'<div class="seg sm"><button data-a="loanopt" data-v="0" aria-pressed="'+(!ui.loanOpt)+'">Empréstimo simples</button><button data-a="loanopt" data-v="1" aria-pressed="'+(!!ui.loanOpt)+'">Com opção de compra de '+fmt(nice(value(p)*1.1))+'</button></div>':'')+
    '<div class="list scroll">'+(cs.map(c=>{const f=fitHint(p,c),cool=(p.cool[c.id]||0)>G.d;return'<div>'+crest(c,24)+'<span class="ovr">'+Math.round(teamStr(c.id))+'</span><div class="grow"><b>'+esc(c.n)+'</b> <span class="chip '+f[1]+'">'+f[0]+'</span>'+relChip(c)+(c.need===p.pos?' <span class="chip info">procura '+p.pos+'</span>':'')+(!clientRoom(c,p)?' <span class="chip bad">Elenco cheio na posição</span>':'')+(cool?'<div class="small muted">Não atende até '+fdate(p.cool[c.id])+'</div>':'')+'</div><button class="btn pri" data-a="'+(loan?'loan':'pitch')+'" data-p="'+p.id+'" data-c="'+c.id+'"'+(cool?' disabled':'')+'>'+(loan?'Emprestar':'Oferecer')+'</button></div>';}).join('')||'<div class="muted">Nenhum clube desta liga serve.</div>')+'</div>'+
    '<div class="acts"><button class="btn" data-a="close">Cancelar</button></div></div>';}
-function mSign(){const p=G.P[ui.modal.pid],L=p.real?['Só a conversa','Bônus de assinatura','Bônus de assinatura alto']:['Só a conversa','Ajuda de custo para a família','Ajuda de custo generosa'];
-  return'<div class="sheet"><span class="eyebrow">Abordagem · 1 ação</span><div class="neg-h">'+avatar(p,48)+'<h2>'+esc(p.name)+'</h2></div><p class="small muted">'+p.pos+', '+p.age+' anos, nível '+p.ovr+'. '+(p.ag>0?'Hoje é representado pela '+esc(G.ags[p.ag].n)+'.':'Não tem empresário.')+' Se aceitar, você o representa por 3 anos.</p>'+
-   '<div class="choices">'+[0,1,2].map(o=>{const cost=signCost(p,o);return'<button class="choice" data-a="signok" data-p="'+p.id+'" data-o="'+o+'"'+(G.money<cost?' disabled':'')+'><b>'+L[o]+(cost?' · '+fmt(cost):'')+'</b><span>Chance: '+Math.round(signChance(p,o)*100)+'%'+(cost?'. Se recusar, metade volta.':'')+'</span></button>';}).join('')+'</div><div class="acts"><button class="btn" data-a="close">Cancelar</button></div></div>';}
+function mSign(){const m=ui.modal,p=G.P[m.pid],W=signWish(p);if(!m.t)m.t={comm:10,yrs:3,bonus:0};const t=m.t,mx=Math.min(W.max,Math.max(0,Math.floor(G.money)));
+  if(t.bonus>mx)t.bonus=mx;
+  const st=nice(Math.max(1,signRef(p)*.25)),ch=signChanceT(p,t),yt=y=>y+(y>1?' anos':' ano'),c=m.ctr;
+  const fld=(k,lbl,min,max,step,val,txt,hint)=>'<div class="field"><label for="sg-'+k+'">'+lbl+'</label><output id="sgo-'+k+'">'+txt+'</output><input type="range" id="sg-'+k+'" data-sn="'+k+'" min="'+min+'" max="'+max+'" step="'+step+'" value="'+val+'"><small>'+hint+'</small></div>';
+  return'<div class="sheet"><span class="eyebrow">Contrato de representação'+(m.ap?'':' · 1 ação')+'</span><div class="neg-h">'+avatar(p,48)+'<div class="grow"><h2>'+esc(p.name)+'</h2><div class="small muted">'+p.pos+', '+p.age+' anos, nível '+p.ovr+'. '+(p.ag>0?'Hoje é representado pela '+esc(G.ags[p.ag].n)+'.':'Não tem empresário.')+'</div></div></div>'+
+   '<div class="card tint"><p class="small"><b>O que ele pede:</b> comissão de até '+W.comm+'%, contrato de '+yt(W.yrs)+' e bônus de assinatura perto de '+fmt(W.bonus)+'.</p></div>'+
+   (m.msg?'<p class="small"><b>'+esc(m.msg)+'</b></p>':'')+
+   (c?'<button class="choice" data-a="signctr"'+(c.bonus>G.money?' disabled':'')+'><b>Aceitar a contraproposta</b><span>'+c.comm+'% de comissão · '+yt(c.yrs)+' · bônus de '+fmt(c.bonus)+'. Ele assina na hora.</span></button><p class="small muted">Ou ajuste os termos e mande outra proposta. Se ele recusar de novo, pede um tempo.</p>':'')+
+   fld('comm','Sua comissão',5,20,1,t.comm,t.comm+'%','Quanto você fica do salário dele. Acima do que ele pede, a chance cai rápido.')+
+   fld('yrs','Duração',1,4,1,t.yrs,yt(t.yrs),'Garotos gostam de contrato longo; estrelas e veteranos, de curto.')+
+   fld('bonus','Bônus de assinatura',0,mx,st,t.bonus,fmt(t.bonus),'Pago por você só se ele assinar. Seu caixa: '+fmt(G.money)+'.')+
+   '<p class="sg-ch">Chance de ele aceitar: <b id="sg-ch">'+Math.round(ch*100)+'%</b></p>'+
+   '<div class="acts"><button class="btn pri" data-a="signgo"'+(ch<=0?' disabled':'')+'>'+(m.round?'Mandar nova proposta':'Fazer proposta')+'</button><button class="btn" data-a="close">'+(m.ap?'Desistir':'Cancelar')+'</button></div></div>';}
+if(typeof document!=='undefined'&&document.addEventListener)document.addEventListener('input',e=>{const el=e.target,k=el&&el.dataset&&el.dataset.sn;if(!k||!ui.modal||ui.modal.type!=='sign')return;
+  const m=ui.modal,p=G.P[m.pid];m.t[k]=+el.value;const yt=y=>y+(y>1?' anos':' ano'),o=document.getElementById('sgo-'+k);if(o)o.textContent=k==='comm'?m.t.comm+'%':k==='yrs'?yt(m.t.yrs):fmt(m.t.bonus);
+  const c=document.getElementById('sg-ch');if(c)c.textContent=Math.round(signChanceT(p,m.t)*100)+'%';});
 function mWeek(){const w=G.wk,net=w.inc-w.exp;
   let h='<div class="sheet week"><span class="eyebrow">Resumo · '+fdate(w.d0)+' a '+fdate(w.d0+6)+'</span><h2>Sua semana</h2>'+
    '<div class="wk-top"><div><span>Entrou</span><b class="up">+'+fmt(w.inc)+'</b></div><div><span>Saiu</span><b class="dn">-'+fmt(w.exp)+'</b></div><div><span>Saldo</span><b class="'+(net>=0?'up':'dn')+'">'+(net>=0?'+':'')+fmt(net)+'</b></div><div><span>Reputação</span><b class="'+(w.dr>=0?'up':'dn')+'">'+(w.dr>=0?'+':'')+f1(w.dr)+'</b></div></div>'+(w.br?'<p class="small muted wk-br">Comissões '+fmt(w.br.com)+(w.br.oth?' · publis, patrocínios e outros '+sgn(w.br.oth):'')+(w.br.bz?' · empresas '+sgn(w.br.bz):'')+' · custos fixos -'+fmt(w.br.fx)+'</p>':'');
@@ -6211,7 +6255,7 @@ const A={
   scout(d){scout(d.r);},
   observe(d){const p=G.P[d.p];if(!useAP())return;p.obs=(p.obs||0)+1;p.potErr=Math.max(1,p.potErr*(.55-.06*G.me.olh));pop({k:'info',ic:'report',wait:1100,wt:'Observando '+p.name+'…',ti:'Relatório pronto',tx:'Potencial de '+p.name+': '+potTxt(p)+'.'});save();render();},
   sign(d){const p=G.P[d.p];if((p.signCool||0)>G.d){toast('Ele pediu um tempo.');return;}ui.stack=[];ui.modal={type:'sign',pid:p.id};render();},
-  signok(d){trySign(+d.p,+d.o);},
+  signgo(){signGo();},signctr(){const m=ui.modal;if(m&&m.ctr){const p=G.P[m.pid];if(G.clients.length>=cap()){toast('Carteira cheia. Suba de patamar ou dispense alguém.');return;}signDone(p,m.ctr);}},
   offer(d){const o=G.offers.find(x=>x.id===+d.o);if(!o)return;openNeg(G.P[o.pid],G.clubs[o.cid],o.fee,'offer',o.id,o.tries);},
   refuse(d){const o=G.offers.find(x=>x.id===+d.o);if(!o)return;const p=G.P[o.pid],c=G.clubs[o.cid],cur=club(p);G.offers=G.offers.filter(x=>x!==o);relAdd(c,-3);
     if(cur&&prest(c)>prest(cur)+2){p.trust=clamp(p.trust-6,0,100);news(p.name+' soube que você recusou o '+c.n+' sem consultá-lo e não gostou.','agencia');}pop({k:'info',ic:'bin',ti:'Proposta descartada',tx:'A proposta do '+c.n+' por '+p.name+' foi recusada.'});save();render();},
