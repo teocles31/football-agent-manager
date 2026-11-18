@@ -1,0 +1,486 @@
+clube,nome_original,nome,overall,potencial,posicao,idade,pais
+Paris Saint-Germain,Matvey Safonov,Matvey Safonov,78,82,GOL,27,Rússia
+Paris Saint-Germain,Lucas Chevalier,Lucas Chevalier,83,88,GOL,25,França
+Paris Saint-Germain,Alessandro Longoni,Alessandro Longoni,56,68,GOL,18,Itália
+Paris Saint-Germain,Willian Pacho,Willian Pacho,86,89,ZAG,25,Equador
+Paris Saint-Germain,Ilya Zabarnyi,Ilya Zabarnyi,79,84,ZAG,24,Ucrânia
+Paris Saint-Germain,Marquinhos,Marquinhos,87,87,ZAG,32,Brasil
+Paris Saint-Germain,Lucas Beraldo,Lucas Beraldo,78,84,ZAG,22,Brasil
+Paris Saint-Germain,Nuno Mendes,Nuno Mendes,86,89,LAT,24,Portugal
+Paris Saint-Germain,Lucas Hernández,Lucas Hernández,81,81,LAT,30,França
+Paris Saint-Germain,Lucas Digne,Lucas Digne,80,80,LAT,33,França
+Paris Saint-Germain,Achraf Hakimi,Achraf Hakimi,89,90,LAT,28,Marrocos
+Paris Saint-Germain,David Boly,David Boly,55,69,LAT,17,França
+Paris Saint-Germain,João Neves,João Neves,87,90,MEI,22,Portugal
+Paris Saint-Germain,Warren Zaïre-Emery,Warren Zaïre-Emery,83,87,MEI,20,França
+Paris Saint-Germain,Senny Mayulu,Senny Mayulu,77,85,MEI,20,França
+Paris Saint-Germain,Fabián Ruiz,Fabián Ruiz,85,85,MEI,30,Espanha
+Paris Saint-Germain,Dro Fernández,Dro Fernández,71,84,MEI,18,Espanha
+Paris Saint-Germain,Vitinha,Vitinha,89,91,MEI,26,Portugal
+Paris Saint-Germain,Khvicha Kvaratskhelia,Khvicha Kvaratskhelia,87,90,ATA,25,Geórgia
+Paris Saint-Germain,Mika Godts,Mika Godts,79,84,ATA,21,Bélgica
+Paris Saint-Germain,Quentin Ndjantou,Quentin Ndjantou,68,80,ATA,19,França
+Paris Saint-Germain,Désiré Doué,Désiré Doué,87,91,ATA,21,França
+Paris Saint-Germain,Maghnes Akliouche,Maghnes Akliouche,80,86,ATA,24,França
+Paris Saint-Germain,Ousmane Dembélé,Ousmane Dembélé,90,90,ATA,29,França
+Paris Saint-Germain,Ferran Torres,Ferran Torres,83,86,ATA,26,Espanha
+Olympique de Marseille,Jeffrey de Lange,Jeffrey de Lange,73,76,GOL,28,Holanda
+Olympique de Marseille,Théo Vermot,Théo Vermot,59,61,GOL,29,França
+Olympique de Marseille,Jelle Van Neck,Jelle Van Neck,61,74,GOL,22,Bélgica
+Olympique de Marseille,Nayef Aguerd,Nayef Aguerd,81,82,ZAG,30,Marrocos
+Olympique de Marseille,CJ Egan-Riley,CJ Egan-Riley,77,78,ZAG,23,Inglaterra
+Olympique de Marseille,Bamo Meïté,Bamo Meïté,77,80,ZAG,24,Costa do Marfim
+Olympique de Marseille,Derek Cornelius,Derek Cornelius,71,71,ZAG,28,Canadá
+Olympique de Marseille,Emerson,Emerson,77,77,LAT,32,Itália
+Olympique de Marseille,Ulisses Garcia,Ulisses Garcia,75,75,LAT,30,Suíça
+Olympique de Marseille,Alexi Koum,Alexi Koum,59,68,LAT,20,Camarões
+Olympique de Marseille,Timothy Weah,Timothy Weah,77,78,LAT,26,EUA
+Olympique de Marseille,Kelyann Bezahaf,Kelyann Bezahaf,64,72,LAT,20,Argélia
+Olympique de Marseille,Pierre-Emile Højbjerg,Pierre-Emile Højbjerg,82,82,VOL,31,Dinamarca
+Olympique de Marseille,Tochukwu Nnadi,Tochukwu Nnadi,63,63,VOL,23,Nigéria
+Olympique de Marseille,Geoffrey Kondogbia,Geoffrey Kondogbia,78,78,VOL,33,Central African Republic
+Olympique de Marseille,Nouhoum Kamissoko,Nouhoum Kamissoko,59,63,VOL,21,Mali
+Olympique de Marseille,Angel Gomes,Angel Gomes,76,81,MEI,26,Inglaterra
+Olympique de Marseille,Himad Abdelli,Himad Abdelli,76,80,MEI,26,Argélia
+Olympique de Marseille,Igor Paixão,Igor Paixão,80,83,ATA,26,Brasil
+Olympique de Marseille,Tadjidine Mmadi,Tadjidine Mmadi,62,73,ATA,19,França
+Olympique de Marseille,Keyliane Abdallah,Keyliane Abdallah,69,74,ATA,20,França
+Olympique de Marseille,Amine Harit,Amine Harit,75,75,ATA,29,Marrocos
+Olympique de Marseille,Amine Gouiri,Amine Gouiri,79,84,ATA,26,Argélia
+Olympique de Marseille,Neal Maupay,Neal Maupay,75,75,ATA,30,França
+Olympique de Marseille,Faris Moumbagna,Faris Moumbagna,73,74,ATA,26,Camarões
+Monaco,Philipp Köhn,Philipp Köhn,77,80,GOL,28,Suíça
+Monaco,Lukas Hradecky,Lukas Hradecky,81,81,GOL,36,Finlândia
+Monaco,Jules Stawiecki,Jules Stawiecki,60,77,GOL,19,França
+Monaco,Christian Mawissa,Christian Mawissa,75,84,ZAG,21,França
+Monaco,Sadibou Sané,Sadibou Sané,77,81,ZAG,22,Senegal
+Monaco,Mohammed Salisu,Mohammed Salisu,76,81,ZAG,27,Gana
+Monaco,Eric Dier,Eric Dier,79,79,ZAG,32,Inglaterra
+Monaco,Samuel Nibombe,Samuel Nibombe,63,73,ZAG,19,Bélgica
+Monaco,Nazinho,Nazinho,76,78,LAT,23,Portugal
+Monaco,Vanderson,Vanderson,77,83,LAT,25,Brasil
+Monaco,Jordan Teze,Jordan Teze,76,80,LAT,27,Holanda
+Monaco,Denis Zakaria,Denis Zakaria,82,83,VOL,29,Suíça
+Monaco,Lamine Camara,Lamine Camara,81,85,MEI,22,Senegal
+Monaco,Mamadou Coulibaly,Mamadou Coulibaly,77,77,MEI,22,França
+Monaco,Pape Cabral,Pape Cabral,67,79,MEI,19,França
+Monaco,Edan Diop,Edan Diop,71,78,MEI,22,França
+Monaco,Anis Soubeir,Anis Soubeir,65,75,MEI,19,Marrocos
+Monaco,Aleksandr Golovin,Aleksandr Golovin,79,79,MEI,30,Rússia
+Monaco,Stanis Idumbo,Stanis Idumbo,74,82,MEI,21,RD Congo
+Monaco,Mathys Detourbet,Mathys Detourbet,73,80,ATA,19,França
+Monaco,Ansu Fati,Ansu Fati,75,82,ATA,24,Espanha
+Monaco,Takumi Minamino,Takumi Minamino,78,78,ATA,31,Japão
+Monaco,Folarin Balogun,Folarin Balogun,77,82,ATA,25,EUA
+Monaco,Matthis Abline,Matthis Abline,82,82,ATA,23,França
+Monaco,Mika Biereth,Mika Biereth,78,85,ATA,23,Dinamarca
+Monaco,Paris Brunner,Paris Brunner,75,79,ATA,20,Alemanha
+Lille,Berke Özer,Berke Özer,77,80,GOL,26,Turquia
+Lille,Orlando Gill,Orlando Gill,75,76,GOL,26,Paraguai
+Lille,Nathan Ngoy,Nathan Ngoy,78,78,ZAG,23,Bélgica
+Lille,Alexsandro,Alexsandro,80,84,ZAG,27,Brasil
+Lille,Isaac Cossier,Isaac Cossier,66,77,ZAG,19,França
+Lille,Tanguy Nianzou,Tanguy Nianzou,69,72,ZAG,24,França
+Lille,Romain Perraud,Romain Perraud,74,75,LAT,29,França
+Lille,Calvin Verdonk,Calvin Verdonk,71,71,LAT,29,Indonesia
+Lille,Tiago Santos,Tiago Santos,77,83,LAT,24,Portugal
+Lille,Loun Srdanovic,Loun Srdanovic,68,74,LAT,20,Suíça
+Lille,Maxima Goffi,Maxima Goffi,62,76,LAT,18,França
+Lille,Ngal'ayel Mukau,Ngal'ayel Mukau,77,83,VOL,22,RD Congo
+Lille,Nabil Bentaleb,Nabil Bentaleb,77,77,VOL,31,Argélia
+Lille,Benjamin André,Benjamin André,80,80,VOL,36,França
+Lille,Maurits Kjærgaard,Maurits Kjærgaard,75,82,MEI,23,Dinamarca
+Lille,Hákon Arnar Haraldsson,Hákon Arnar Haraldsson,80,84,MEI,23,Islândia
+Lille,Başar Önal,Başar Önal,77,78,ATA,22,Turquia
+Lille,Osame Sahraoui,Osame Sahraoui,76,82,ATA,25,Marrocos
+Lille,Soriba Diaoune,Soriba Diaoune,68,78,ATA,19,França
+Lille,Tiago Morais,Tiago Morais,70,78,ATA,23,Portugal
+Lille,Dilane Bakwa,Dilane Bakwa,78,84,ATA,24,França
+Lille,Ethan Mbappé,Ethan Mbappé,71,80,ATA,19,França
+Lille,Gaëtan Perrin,Gaëtan Perrin,76,76,ATA,30,França
+Lille,Ayase Ueda,Ayase Ueda,74,75,ATA,28,Japão
+Lille,Hamza Igamane,Hamza Igamane,73,82,ATA,24,Marrocos
+Lille,Olivier Giroud,Olivier Giroud,79,79,ATA,40,França
+Lyon,Dominik Greif,Dominik Greif,78,81,GOL,29,Eslováquia
+Lyon,Rémy Descamps,Rémy Descamps,74,75,GOL,30,França
+Lyon,Justin Bengui,Justin Bengui,61,64,GOL,21,França
+Lyon,Lassine Diarra,Lassine Diarra,64,74,GOL,24,Mali
+Lyon,Moussa Niakhaté,Moussa Niakhaté,77,77,ZAG,30,Senegal
+Lyon,Ruben Kluivert,Ruben Kluivert,76,78,ZAG,25,Holanda
+Lyon,Felix Bacher,Felix Bacher,69,73,ZAG,26,Áustria
+Lyon,Noham Kamara,Noham Kamara,65,80,ZAG,19,França
+Lyon,Clinton Mata,Clinton Mata,77,77,ZAG,34,Angola
+Lyon,Abner,Abner,78,79,LAT,26,Brasil
+Lyon,Nicolás Tagliafico,Nicolás Tagliafico,77,77,LAT,34,Argentina
+Lyon,Mohamed Ouédraogo,Mohamed Ouédraogo,70,75,LAT,23,Burkina Faso
+Lyon,Zachary Athekame,Zachary Athekame,75,78,LAT,21,Suíça
+Lyon,Steeve Kango,Steeve Kango,62,73,LAT,19,França
+Lyon,Tyler Morton,Tyler Morton,82,85,VOL,24,Inglaterra
+Lyon,Tanner Tessmann,Tanner Tessmann,78,80,VOL,25,EUA
+Lyon,Paul Akouokou,Paul Akouokou,64,64,VOL,28,Costa do Marfim
+Lyon,Mads Bidstrup,Mads Bidstrup,73,79,MEI,25,Dinamarca
+Lyon,Khalis Merah,Khalis Merah,73,80,MEI,19,França
+Lyon,Noah Nartey,Noah Nartey,76,80,MEI,21,Dinamarca
+Lyon,Corentin Tolisso,Corentin Tolisso,81,81,MEI,32,França
+Lyon,Pavel Sulc,Pavel Sulc,77,80,MEI,25,Tchéquia
+Lyon,Keito Nakamura,Keito Nakamura,76,79,ATA,26,Japão
+Lyon,Rémi Himbert,Rémi Himbert,69,81,ATA,18,França
+Lyon,Julien Duranville,Julien Duranville,71,79,ATA,20,Bélgica
+Lyon,Ernest Nuamah,Ernest Nuamah,79,79,ATA,23,Gana
+Lyon,Kaïl Boudache,Kaïl Boudache,71,80,ATA,20,Argélia
+Lyon,Loïs Openda,Loïs Openda,81,82,ATA,26,Bélgica
+Lyon,Alejandro Gomes Rodríguez,Alejandro Gomes Rodríguez,60,72,ATA,18,Inglaterra
+Lens,Robin Risser,Robin Risser,78,82,GOL,21,França
+Lens,Mathieu Gorgelin,Mathieu Gorgelin,67,67,GOL,36,França
+Lens,Régis Gurtner,Régis Gurtner,69,69,GOL,39,França
+Lens,Ilan Jourdren,Ilan Jourdren,60,78,GOL,18,França
+Lens,Ismaëlo Ganiou,Ismaëlo Ganiou,77,77,ZAG,21,França
+Lens,Samson Baidoo,Samson Baidoo,80,81,ZAG,22,Áustria
+Lens,Jean-Clair Todibo,Jean-Clair Todibo,80,81,ZAG,26,França
+Lens,Kyllian Antonio,Kyllian Antonio,69,79,ZAG,18,França
+Lens,Nidal Celik,Nidal Celik,72,78,ZAG,20,Bósnia
+Lens,Souleymane Sagnan,Souleymane Sagnan,68,74,ZAG,21,Mali
+Lens,Maik Nawrocki,Maik Nawrocki,69,77,ZAG,25,Polônia
+Lens,Jonathan Gradit,Jonathan Gradit,77,77,ZAG,33,França
+Lens,Matthieu Udol,Matthieu Udol,74,74,LAT,30,França
+Lens,Jhoanner Chávez,Jhoanner Chávez,72,78,LAT,24,Equador
+Lens,Saud Abdulhamid,Saud Abdulhamid,75,78,LAT,27,Saudi Arabia
+Lens,Ruben Aguilar,Ruben Aguilar,76,76,LAT,33,França
+Lens,Yacine Titraoui,Yacine Titraoui,76,78,MEI,23,Argélia
+Lens,Andrija Bulatovic,Andrija Bulatovic,71,78,MEI,19,Montenegro
+Lens,Michaël Cuisance,Michaël Cuisance,74,74,MEI,27,França
+Lens,Amadou Haidara,Amadou Haidara,77,78,MEI,28,Mali
+Lens,Mezian Mesloub,Mezian Mesloub,67,82,MEI,17,Portugal
+Lens,Thorgan Hazard,Thorgan Hazard,74,74,MEI,33,Bélgica
+Lens,Abdallah Sima,Abdallah Sima,74,79,ATA,25,Senegal
+Lens,Michał Skóraś,Michał Skóraś,75,76,ATA,26,Polônia
+Lens,Junior Kadile,Junior Kadile,73,75,ATA,23,RD Congo
+Lens,Florian Thauvin,Florian Thauvin,76,76,ATA,33,França
+Lens,Franjo Ivanović,Franjo Ivanović,78,83,ATA,23,Croácia
+Lens,Odsonne Édouard,Odsonne Édouard,72,73,ATA,28,França
+Lens,Florian Sotoca,Florian Sotoca,75,75,ATA,36,França
+Strasbourg,Filip Jørgensen,Filip Jørgensen,77,83,GOL,24,Dinamarca
+Strasbourg,Milosz Piekutowski,Milosz Piekutowski,62,70,GOL,20,Polônia
+Strasbourg,Karim Coulibaly,Karim Coulibaly,76,86,ZAG,19,Alemanha
+Strasbourg,Ismaël Doukouré,Ismaël Doukouré,81,82,ZAG,23,França
+Strasbourg,Lucas Høgsberg,Lucas Høgsberg,74,82,ZAG,20,Dinamarca
+Strasbourg,Jeyland Mitchell,Jeyland Mitchell,74,77,ZAG,22,Costa Rica
+Strasbourg,Hermann Malonga,Hermann Malonga,50,63,ZAG,18,França
+Strasbourg,Oso,Oso,78,78,LAT,23,Espanha
+Strasbourg,Mateo Del Blanco,Mateo Del Blanco,75,82,LAT,23,Argentina
+Strasbourg,Genesis Antwi,Genesis Antwi,67,77,LAT,19,Suécia
+Strasbourg,Dário Essugo,Dário Essugo,77,85,VOL,21,Portugal
+Strasbourg,Diogo Sousa,Diogo Sousa,69,69,VOL,20,Portugal
+Strasbourg,Maxi Oyedele,Maxi Oyedele,74,79,VOL,22,Polônia
+Strasbourg,Samir El Mourabet,Samir El Mourabet,77,77,MEI,21,Marrocos
+Strasbourg,Pape Demba Diop,Pape Demba Diop,77,78,MEI,23,Senegal
+Strasbourg,Tyrese Noubissie,Tyrese Noubissie,59,74,MEI,17,Inglaterra
+Strasbourg,Giovanni Reyna,Giovanni Reyna,77,80,MEI,24,EUA
+Strasbourg,Omari Kellyman,Omari Kellyman,71,79,MEI,21,Inglaterra
+Strasbourg,Benjamin Brantlind,Benjamin Brantlind,64,76,MEI,18,Suécia
+Strasbourg,Martial Godo,Martial Godo,75,75,ATA,23,Costa do Marfim
+Strasbourg,Sebastian Nanasi,Sebastian Nanasi,76,83,ATA,24,Suécia
+Strasbourg,Fábio Baldé,Fábio Baldé,70,76,ATA,21,Portugal
+Strasbourg,Gessime Yassine,Gessime Yassine,76,77,ATA,20,Marrocos
+Strasbourg,Samuel Amo-Ameyaw,Samuel Amo-Ameyaw,72,79,ATA,20,Inglaterra
+Strasbourg,Yaya Diémé,Yaya Diémé,57,68,ATA,19,Senegal
+Strasbourg,Joaquín Panichelli,Joaquín Panichelli,74,83,ATA,24,Argentina
+Strasbourg,Conrad Harder,Conrad Harder,77,81,ATA,21,Dinamarca
+Strasbourg,Jacobo Ortega,Jacobo Ortega,70,80,ATA,20,Espanha
+Strasbourg,Deivid Washington,Deivid Washington,70,76,ATA,21,Brasil
+Strasbourg,Sékou Mara,Sékou Mara,70,77,ATA,24,França
+Rennes,Brice Samba,Brice Samba,77,77,GOL,32,França
+Rennes,Nicolas Lemaître,Nicolas Lemaître,70,72,GOL,29,França
+Rennes,Kilian Belazzoug,Kilian Belazzoug,51,60,GOL,20,Argélia
+Rennes,Charlie Cresswell,Charlie Cresswell,82,85,ZAG,24,Inglaterra
+Rennes,Abdelhamid Ait Boudlal,Abdelhamid Ait Boudlal,76,81,ZAG,20,Marrocos
+Rennes,Anthony Rouault,Anthony Rouault,76,81,ZAG,25,França
+Rennes,Gonçalo Oliveira,Gonçalo Oliveira,69,79,ZAG,20,Portugal
+Rennes,Quentin Merlin,Quentin Merlin,76,82,LAT,24,França
+Rennes,Mahamadou Nagida,Mahamadou Nagida,74,79,LAT,21,Camarões
+Rennes,Przemyslaw Frankowski,Przemyslaw Frankowski,76,76,LAT,31,Polônia
+Rennes,Bryan Reynolds,Bryan Reynolds,74,76,LAT,25,EUA
+Rennes,Valentin Rongier,Valentin Rongier,79,79,VOL,31,França
+Rennes,Mahdi Camara,Mahdi Camara,78,79,MEI,28,França
+Rennes,Djaoui Cissé,Djaoui Cissé,77,84,MEI,22,França
+Rennes,Adrien Thomasson,Adrien Thomasson,77,77,MEI,32,França
+Rennes,Ludovic Blas,Ludovic Blas,77,77,MEI,28,Martinique
+Rennes,Sebastian Szymański,Sebastian Szymański,78,80,MEI,27,Polônia
+Rennes,Ayanda Sishuba,Ayanda Sishuba,64,78,MEI,21,Bélgica
+Rennes,Henrick Do Marcolino,Henrick Do Marcolino,59,67,MEI,20,Gabão
+Rennes,Issa Soumaré,Issa Soumaré,72,76,ATA,26,Senegal
+Rennes,Mousa Al-Tamari,Mousa Al-Tamari,76,76,ATA,29,Jordan
+Rennes,Arnaud Nordin,Arnaud Nordin,74,74,ATA,28,França
+Rennes,Elías Legendre Quiñónez,Elías Legendre Quiñónez,62,73,ATA,18,Equador
+Rennes,Estéban Lepaul,Estéban Lepaul,75,80,ATA,26,França
+Rennes,Eliezer Mayenda,Eliezer Mayenda,76,81,ATA,21,Espanha
+Rennes,Boulaye Dia,Boulaye Dia,80,80,ATA,29,Senegal
+Nice,Yehvann Diouf,Yehvann Diouf,78,83,GOL,26,Senegal
+Nice,Teddy Boulhendi,Teddy Boulhendi,62,64,GOL,25,Argélia
+Nice,Martin Ponsot,Martin Ponsot,50,64,GOL,17,França
+Nice,Antoine Mendy,Antoine Mendy,77,80,ZAG,22,Senegal
+Nice,Youssouf Ndayishimiye,Youssouf Ndayishimiye,77,82,ZAG,28,Burundi
+Nice,Moïse Bombito,Moïse Bombito,76,83,ZAG,26,Canadá
+Nice,Alidu Seidu,Alidu Seidu,74,80,ZAG,26,Gana
+Nice,Mohamed Abdelmonem,Mohamed Abdelmonem,74,79,ZAG,27,Egito
+Nice,Niels Nkounkou,Niels Nkounkou,71,72,LAT,26,França
+Nice,Ali Abdi,Ali Abdi,76,76,LAT,32,Tunísia
+Nice,Jonathan Clauss,Jonathan Clauss,80,80,LAT,34,França
+Nice,Hamza Koutoune,Hamza Koutoune,60,76,LAT,20,Marrocos
+Nice,Xavier Mandza,Xavier Mandza,66,80,VOL,17,França
+Nice,Salis Abdul Samed,Salis Abdul Samed,73,75,VOL,26,Gana
+Nice,Everton,Everton,65,75,VOL,19,França
+Nice,Laurent Abergel,Laurent Abergel,75,75,VOL,33,França
+Nice,Axel Witsel,Axel Witsel,75,75,VOL,37,Bélgica
+Nice,Nassim Laarej,Nassim Laarej,49,64,MEI,17,Marrocos
+Nice,Hicham Boudaoui,Hicham Boudaoui,77,80,MEI,27,Argélia
+Nice,Djibril Coulibaly,Djibril Coulibaly,67,82,MEI,17,França
+Nice,Morgan Sanson,Morgan Sanson,76,76,MEI,32,França
+Nice,Issiaga Camara,Issiaga Camara,64,77,MEI,21,Guiné
+Nice,Mohamed Amoura,Mohamed Amoura,79,80,ATA,26,Argélia
+Nice,Sofiane Diop,Sofiane Diop,76,79,ATA,26,Marrocos
+Nice,Isak Jansson,Isak Jansson,71,78,ATA,24,Suécia
+Nice,Gauthier Hein,Gauthier Hein,76,76,ATA,30,França
+Nice,Nathan Ngoumou,Nathan Ngoumou,73,74,ATA,26,Camarões
+Nice,Elye Wahi,Elye Wahi,79,80,ATA,23,Costa do Marfim
+Nice,Zoumana Diallo,Zoumana Diallo,65,69,ATA,21,Mali
+Toulouse,Guillaume Restes,Guillaume Restes,78,86,GOL,21,França
+Toulouse,Mathys Niflore,Mathys Niflore,65,76,GOL,19,França
+Toulouse,Mark McKenzie,Mark McKenzie,74,79,ZAG,27,EUA
+Toulouse,Rasmus Nicolaisen,Rasmus Nicolaisen,76,78,ZAG,29,Dinamarca
+Toulouse,Seny Koumbassa,Seny Koumbassa,67,75,ZAG,19,França
+Toulouse,David Odogu,David Odogu,70,78,ZAG,20,Alemanha
+Toulouse,Christ Tapé,Christ Tapé,67,77,LAT,20,Costa do Marfim
+Toulouse,Rafik Messali,Rafik Messali,71,75,LAT,23,Argélia
+Toulouse,Ismaïl Diallo,Ismaïl Diallo,68,69,LAT,23,França
+Toulouse,Niko Sigur,Niko Sigur,73,74,VOL,23,Canadá
+Toulouse,Alexis Vossah,Alexis Vossah,71,76,MEI,18,França
+Toulouse,Cristian Cásseres Jr.,Cristian Cásseres Jr.,78,79,MEI,26,Venezuela
+Toulouse,Mathis Amougou,Mathis Amougou,72,82,MEI,20,França
+Toulouse,Thomas Jørgensen,Thomas Jørgensen,74,82,MEI,21,Dinamarca
+Toulouse,Abu Francis,Abu Francis,68,74,MEI,25,Gana
+Toulouse,Niklas Schmidt,Niklas Schmidt,72,73,MEI,28,Alemanha
+Toulouse,Aron Dønnum,Aron Dønnum,75,75,MEI,28,Noruega
+Toulouse,Sion Oppong,Sion Oppong,67,77,ATA,19,Suécia
+Toulouse,Ilyas Azizi,Ilyas Azizi,62,77,ATA,18,França
+Toulouse,Santiago Hidalgo,Santiago Hidalgo,72,80,ATA,21,Argentina
+Toulouse,Casper Tengstedt,Casper Tengstedt,74,79,ATA,26,Dinamarca
+Toulouse,Jacen Russell-Rowe,Jacen Russell-Rowe,72,75,ATA,24,Canadá
+Toulouse,Julián Vignolo,Julián Vignolo,65,77,ATA,19,Argentina
+Brest,Egil Selvik,Egil Selvik,70,73,GOL,29,Noruega
+Brest,Mathieu Patouillet,Mathieu Patouillet,65,77,GOL,22,França
+Brest,Romain Cagnon,Romain Cagnon,56,56,GOL,29,França
+Brest,Noé Poillion,Noé Poillion,52,63,GOL,19,França
+Brest,Raphaël Le Guen,Raphaël Le Guen,74,74,ZAG,20,França
+Brest,Brendan Chardonnet,Brendan Chardonnet,77,77,ZAG,31,França
+Brest,Gautier Lloris,Gautier Lloris,74,74,ZAG,31,França
+Brest,Bradley Locko,Bradley Locko,75,78,LAT,24,França
+Brest,Justin Bourgault,Justin Bourgault,65,76,LAT,21,França
+Brest,Kenny Lala,Kenny Lala,76,76,LAT,35,Martinique
+Brest,Luck Zogbé,Luck Zogbé,66,70,LAT,21,Costa do Marfim
+Brest,Joris Chotard,Joris Chotard,74,79,VOL,25,França
+Brest,Mamady Diambou,Mamady Diambou,66,75,VOL,24,Mali
+Brest,Hugo Magnetti,Hugo Magnetti,76,78,MEI,28,França
+Brest,Joseph Nonge,Joseph Nonge,67,72,MEI,21,Bélgica
+Brest,Lucas Tousart,Lucas Tousart,72,72,MEI,29,França
+Brest,Kamory Doumbia,Kamory Doumbia,78,80,MEI,23,Mali
+Brest,Pathé Mboup,Pathé Mboup,72,79,ATA,23,Senegal
+Brest,Giovani Versini,Giovani Versini,69,69,ATA,22,França
+Brest,Noah Edjouma,Noah Edjouma,70,79,ATA,21,França
+Brest,Djylian N'Guessan,Djylian N'Guessan,67,80,ATA,18,França
+Brest,Mama Baldé,Mama Baldé,73,73,ATA,31,Guiné-Bissau
+Brest,Ludovic Ajorque,Ludovic Ajorque,77,77,ATA,32,França
+Brest,Mathis Lainé,Mathis Lainé,53,64,ATA,19,França
+Paris FC,Obed Nkambadio,Obed Nkambadio,73,81,GOL,23,França
+Paris FC,Kevin Trapp,Kevin Trapp,75,75,GOL,36,Alemanha
+Paris FC,Diego Coppola,Diego Coppola,79,81,ZAG,22,Itália
+Paris FC,Moustapha Mbow,Moustapha Mbow,77,78,ZAG,26,Senegal
+Paris FC,Otávio,Otávio,77,80,ZAG,24,Brasil
+Paris FC,Samir Chergui,Samir Chergui,73,73,ZAG,27,Argélia
+Paris FC,Yoan Koré,Yoan Koré,62,68,ZAG,21,França
+Paris FC,Nhoa Sangui,Nhoa Sangui,73,81,LAT,20,França
+Paris FC,Emmanuel Mbemba,Emmanuel Mbemba,64,76,LAT,18,França
+Paris FC,Thibault De Smet,Thibault De Smet,72,73,LAT,28,Bélgica
+Paris FC,Adama Camara,Adama Camara,74,74,LAT,30,Mali
+Paris FC,Hamari Traoré,Hamari Traoré,79,79,LAT,34,Mali
+Paris FC,Maxime Lopez,Maxime Lopez,73,73,VOL,28,França
+Paris FC,Pierre Lees-Melou,Pierre Lees-Melou,78,78,VOL,33,França
+Paris FC,Patrick Zabi,Patrick Zabi,74,84,MEI,20,Costa do Marfim
+Paris FC,Rudy Matondo,Rudy Matondo,71,85,MEI,18,França
+Paris FC,Vincent Marchetti,Vincent Marchetti,70,70,MEI,29,França
+Paris FC,Pablo Pagis,Pablo Pagis,79,79,MEI,23,França
+Paris FC,Luca Koleosho,Luca Koleosho,75,78,ATA,22,Itália
+Paris FC,Moses Simon,Moses Simon,78,78,ATA,31,Nigéria
+Paris FC,Ilan Kebbal,Ilan Kebbal,79,79,ATA,28,Argélia
+Paris FC,Jonathan Ikoné,Jonathan Ikoné,74,74,ATA,28,França
+Paris FC,Lassine Sinayoko,Lassine Sinayoko,74,77,ATA,26,Mali
+Paris FC,Jean-Philippe Krasso,Jean-Philippe Krasso,74,74,ATA,29,Costa do Marfim
+Paris FC,Omar Sissoko,Omar Sissoko,64,74,ATA,20,França
+Auxerre,Mamadou Diop,Mamadou Diop,69,75,GOL,26,Mauritania
+Auxerre,Paul Nardi,Paul Nardi,73,73,GOL,32,França
+Auxerre,Louis Mezerette,Louis Mezerette,58,74,GOL,20,França
+Auxerre,Clément Akpa,Clément Akpa,74,80,ZAG,24,Costa do Marfim
+Auxerre,Sinaly Diomandé,Sinaly Diomandé,73,77,ZAG,25,Costa do Marfim
+Auxerre,Axel Tuanzebe,Axel Tuanzebe,73,74,ZAG,29,RD Congo
+Auxerre,Bryan Okoh,Bryan Okoh,74,74,ZAG,23,Suíça
+Auxerre,Christ Makosso,Christ Makosso,68,72,ZAG,22,Congo
+Auxerre,Elikya Legros,Elikya Legros,64,74,ZAG,18,França
+Auxerre,Telli Siwe,Telli Siwe,64,75,ZAG,21,França
+Auxerre,Alvin Petit Dol,Alvin Petit Dol,51,60,ZAG,20,França
+Auxerre,Mohamed Coulibaly,Mohamed Coulibaly,52,63,ZAG,18,França
+Auxerre,Fredrik Oppegård,Fredrik Oppegård,67,76,LAT,24,Noruega
+Auxerre,Sékou Fofana,Sékou Fofana,68,68,LAT,23,França
+Auxerre,Ackah-Tidiane Zoukrou,Ackah-Tidiane Zoukrou,50,63,LAT,18,França
+Auxerre,Marvin Senaya,Marvin Senaya,69,74,LAT,25,Gana
+Auxerre,Lamine Sy,Lamine Sy,66,75,LAT,24,Senegal
+Auxerre,Arthur Piedfort,Arthur Piedfort,70,78,VOL,21,Bélgica
+Auxerre,Pierre Ekwah,Pierre Ekwah,71,74,VOL,24,França
+Auxerre,Assane Dioussé,Assane Dioussé,69,70,VOL,29,Senegal
+Auxerre,Lamfia Dioubaté,Lamfia Dioubaté,57,68,VOL,19,França
+Auxerre,Yvan Zaddy,Yvan Zaddy,51,60,VOL,20,Costa do Marfim
+Auxerre,Kévin Danois,Kévin Danois,78,82,MEI,22,França
+Auxerre,Naouirou Ahamada,Naouirou Ahamada,72,75,MEI,24,França
+Auxerre,Tidiane Devernois,Tidiane Devernois,58,75,MEI,19,França
+Auxerre,Romain Faivre,Romain Faivre,76,76,MEI,28,França
+Auxerre,Danny Namaso,Danny Namaso,73,78,ATA,26,Camarões
+Auxerre,Aristide Zossou,Aristide Zossou,70,76,ATA,21,Costa do Marfim
+Auxerre,Rayan Mandengue,Rayan Mandengue,60,72,ATA,20,Camarões
+Auxerre,Mamoudou Cissokho,Mamoudou Cissokho,53,67,ATA,18,França
+Auxerre,Cameron Archer,Cameron Archer,77,80,ATA,24,Inglaterra
+Auxerre,Rémy Labeau Lascary,Rémy Labeau Lascary,74,79,ATA,23,França
+Auxerre,Ryan Rodin,Ryan Rodin,59,71,ATA,20,França
+Auxerre,Xiangxin Wei,Xiangxin Wei,55,68,ATA,18,China
+Lorient,Yvon Mvogo,Yvon Mvogo,76,76,GOL,32,Suíça
+Lorient,Bingourou Kamara,Bingourou Kamara,70,71,GOL,30,Senegal
+Lorient,Benjamin Leroy,Benjamin Leroy,68,68,GOL,37,França
+Lorient,Montassar Talbi,Montassar Talbi,73,76,ZAG,28,Tunísia
+Lorient,Formose Mendy,Formose Mendy,71,79,ZAG,25,Senegal
+Lorient,Nathaniel Adjei,Nathaniel Adjei,67,76,ZAG,24,Gana
+Lorient,Nosa Edward Obaretin,Nosa Edward Obaretin,70,74,ZAG,23,Itália
+Lorient,Isaak Touré,Isaak Touré,71,79,ZAG,23,França
+Lorient,Arsène Kouassi,Arsène Kouassi,77,77,LAT,22,Burkina Faso
+Lorient,Srdjan Kuzmic,Srdjan Kuzmic,71,73,LAT,22,Eslovênia
+Lorient,Alec Georgen,Alec Georgen,70,71,LAT,28,França
+Lorient,Dembo Sylla,Dembo Sylla,64,75,LAT,24,Guiné
+Lorient,Arthur Avom,Arthur Avom,76,81,MEI,21,Camarões
+Lorient,Noah Cadiou,Noah Cadiou,70,75,MEI,28,Guadeloupe
+Lorient,Noah Mbamba,Noah Mbamba,68,72,MEI,21,RD Congo
+Lorient,Théo Le Bris,Théo Le Bris,69,79,MEI,24,França
+Lorient,Panos Katseris,Panos Katseris,70,75,MEI,25,Grécia
+Lorient,Jean-Victor Makengo,Jean-Victor Makengo,69,70,MEI,28,França
+Lorient,Gabin Bernardeau,Gabin Bernardeau,66,78,MEI,20,França
+Lorient,Bandiougou Fadiga,Bandiougou Fadiga,63,69,MEI,25,França
+Lorient,Isak Jensen,Isak Jensen,72,75,ATA,22,Dinamarca
+Lorient,Souleymane Faye,Souleymane Faye,72,72,ATA,23,Senegal
+Lorient,Ibrahima Baldé,Ibrahima Baldé,71,72,ATA,23,França
+Lorient,Mohamed Bamba,Mohamed Bamba,70,75,ATA,24,Costa do Marfim
+Lorient,Mamadou Koné,Mamadou Koné,64,75,ATA,19,Costa do Marfim
+Lorient,Aiyegun Tosin,Aiyegun Tosin,71,72,ATA,28,Benin
+Angers,Anthony Lopes,Anthony Lopes,76,76,GOL,36,Portugal
+Angers,Melvin Zinga,Melvin Zinga,65,73,GOL,24,Congo
+Angers,Oumar Pona,Oumar Pona,57,72,GOL,20,Mali
+Angers,Ousmane Camara,Ousmane Camara,76,77,ZAG,23,Mali
+Angers,Emmanuel Biumla,Emmanuel Biumla,70,80,ZAG,21,França
+Angers,Jordan Lefort,Jordan Lefort,73,73,ZAG,33,Mauritania
+Angers,Maël Gernigon,Maël Gernigon,53,69,ZAG,17,França
+Angers,Joseph Kalulu,Joseph Kalulu,67,72,LAT,21,França
+Angers,Lilian Raolisoa,Lilian Raolisoa,70,75,LAT,26,França
+Angers,Marius Louër,Marius Louër,64,72,LAT,19,França
+Angers,Carlens Arcus,Carlens Arcus,71,71,LAT,30,Haiti
+Angers,Yassin Belkhdim,Yassin Belkhdim,70,78,MEI,24,Marrocos
+Angers,Branco van den Boomen,Branco van den Boomen,73,73,MEI,31,Holanda
+Angers,Haris Belkebla,Haris Belkebla,74,74,MEI,32,Argélia
+Angers,Louis Mouton,Louis Mouton,70,78,MEI,24,França
+Angers,Bané Diatta,Bané Diatta,61,72,MEI,18,França
+Angers,Amine Sbaï,Amine Sbaï,75,76,ATA,26,Marrocos
+Angers,Anthony Bermont,Anthony Bermont,70,78,ATA,21,França
+Angers,Harouna Djibirin,Harouna Djibirin,66,74,ATA,20,Camarões
+Angers,Jim Allevinah,Jim Allevinah,72,72,ATA,31,Gabão
+Angers,Prosper Peter,Prosper Peter,71,78,ATA,19,França
+Angers,Amine El Ouazzani,Amine El Ouazzani,71,78,ATA,25,Marrocos
+Angers,Usman Simbakoli,Usman Simbakoli,67,70,ATA,24,Central African Republic
+Le Havre,Arnaud Bodart,Arnaud Bodart,73,77,GOL,28,Bélgica
+Le Havre,Lionel Mpasi-Nzau,Lionel Mpasi-Nzau,68,68,GOL,32,RD Congo
+Le Havre,Gauthier Gallon,Gauthier Gallon,73,73,GOL,33,França
+Le Havre,Ayumu Seko,Ayumu Seko,69,74,ZAG,26,Japão
+Le Havre,Stephan Zagadou,Stephan Zagadou,65,78,ZAG,18,França
+Le Havre,Ahmed Touba,Ahmed Touba,70,70,ZAG,28,Argélia
+Le Havre,Lamine N'Diaye,Lamine N'Diaye,62,67,ZAG,21,Senegal
+Le Havre,Vincent Sasso,Vincent Sasso,66,66,ZAG,35,França
+Le Havre,Enzo Koffi,Enzo Koffi,67,74,LAT,20,França
+Le Havre,Elias Jelert,Elias Jelert,74,75,LAT,23,Dinamarca
+Le Havre,Timothée Pembélé,Timothée Pembélé,71,74,LAT,24,França
+Le Havre,Djibril Ouziad,Djibril Ouziad,56,71,LAT,17,França
+Le Havre,Junior Mwanga,Junior Mwanga,76,78,VOL,23,França
+Le Havre,Mathéo Bodmer,Mathéo Bodmer,62,64,VOL,22,França
+Le Havre,Daren Mosengo,Daren Mosengo,63,76,VOL,20,França
+Le Havre,Rassoul Ndiaye,Rassoul Ndiaye,70,75,MEI,24,Senegal
+Le Havre,Simon Ebonog,Simon Ebonog,72,76,MEI,22,França
+Le Havre,Amir Richardson,Amir Richardson,73,76,MEI,24,Marrocos
+Le Havre,Guy-Noël Zohouri,Guy-Noël Zohouri,61,76,MEI,19,Costa do Marfim
+Le Havre,Kaito Mizuta,Kaito Mizuta,64,69,MEI,26,Japão
+Le Havre,Ismaïl Bouneb,Ismaïl Bouneb,60,68,MEI,20,França
+Le Havre,Felix Mambimbi,Felix Mambimbi,66,72,ATA,25,Suíça
+Le Havre,Rayan Fofana,Rayan Fofana,71,78,ATA,20,Costa do Marfim
+Le Havre,Josh Maja,Josh Maja,75,75,ATA,27,Nigéria
+Le Havre,Sota Nakamura,Sota Nakamura,69,72,ATA,24,Japão
+Le Havre,Mbwana Samatta,Mbwana Samatta,72,72,ATA,33,Tanzania
+Le Havre,Elysée Logbo,Elysée Logbo,65,75,ATA,22,França
+Le Havre,Joan Tincrès,Joan Tincrès,56,63,ATA,20,França
+Troyes,Patrick Beach,Patrick Beach,71,72,GOL,23,Austrália
+Troyes,Hillel Konaté,Hillel Konaté,62,63,GOL,31,Burkina Faso
+Troyes,Zacharie Boucher,Zacharie Boucher,65,65,GOL,34,França
+Troyes,Junior Diaz,Junior Diaz,75,76,ZAG,23,Costa do Marfim
+Troyes,Paolo Gozzi,Paolo Gozzi,64,71,ZAG,25,Itália
+Troyes,Adrien Monfray,Adrien Monfray,69,69,ZAG,35,França
+Troyes,Ismaël Boura,Ismaël Boura,68,73,LAT,26,Comoros
+Troyes,Anis Ouzenadji,Anis Ouzenadji,68,72,LAT,20,Argélia
+Troyes,Yvann Titi,Yvann Titi,68,78,LAT,20,França
+Troyes,Lucas Maronnier,Lucas Maronnier,65,70,LAT,26,França
+Troyes,Noah Donkor,Noah Donkor,57,68,LAT,19,França
+Troyes,Alexandre Phliponeau,Alexandre Phliponeau,64,69,VOL,26,França
+Troyes,Roman Murcy,Roman Murcy,57,68,VOL,20,França
+Troyes,Mouhamed Diop,Mouhamed Diop,64,71,MEI,26,Senegal
+Troyes,Antoine Mille,Antoine Mille,69,69,MEI,29,França
+Troyes,Iron Gomis,Iron Gomis,70,70,MEI,27,França
+Troyes,Hugo Picard,Hugo Picard,71,79,MEI,23,França
+Troyes,Dermane Karim,Dermane Karim,70,80,MEI,22,Togo
+Troyes,Idrissa Soukouna,Idrissa Soukouna,51,64,MEI,18,França
+Troyes,Kandet Diawara,Kandet Diawara,65,68,ATA,26,Guiné
+Troyes,Merwan Ifnaoui,Merwan Ifnaoui,67,70,ATA,28,França
+Troyes,Amadou Diakité,Amadou Diakité,57,69,ATA,21,França
+Troyes,Jérémy Le Douaron,Jérémy Le Douaron,74,74,ATA,28,França
+Troyes,Timothé Nkada,Timothé Nkada,71,71,ATA,27,França
+Troyes,Christ Batola,Christ Batola,60,74,ATA,17,França
+Troyes,Renaud Ripart,Renaud Ripart,67,67,ATA,33,França
+Troyes,Yacouba Koné,Yacouba Koné,58,68,ATA,19,Costa do Marfim
+Troyes,Ibrahim Traoré,Ibrahim Traoré,59,72,ATA,20,França
+Le Mans,Nicolas Kocik,Nicolas Kocik,65,68,GOL,28,França
+Le Mans,Ewan Hatfout,Ewan Hatfout,60,63,GOL,26,França
+Le Mans,Augustin Delbecque,Augustin Delbecque,57,61,GOL,24,França
+Le Mans,Noa Boissé,Noa Boissé,65,65,ZAG,20,França
+Le Mans,Raúl Torrente,Raúl Torrente,73,75,ZAG,25,Espanha
+Le Mans,Théo Eyoum,Théo Eyoum,64,71,ZAG,24,França
+Le Mans,Harold Voyer,Harold Voyer,67,68,ZAG,29,Martinique
+Le Mans,Samuel Yohou,Samuel Yohou,65,65,ZAG,35,França
+Le Mans,Lucas Calodat,Lucas Calodat,63,72,LAT,24,França
+Le Mans,Yasser Larouci,Yasser Larouci,68,74,LAT,25,Argélia
+Le Mans,João Almeida,João Almeida,61,68,LAT,20,Brasil
+Le Mans,Lucas Buades,Lucas Buades,65,66,LAT,28,França
+Le Mans,Rayan Bamba,Rayan Bamba,69,76,LAT,22,França
+Le Mans,Djibril Sidibé,Djibril Sidibé,74,74,LAT,34,França
+Le Mans,Lucas Bretelle,Lucas Bretelle,58,62,VOL,24,França
+Le Mans,Alexandre Lauray,Alexandre Lauray,63,63,VOL,29,França
+Le Mans,Adil Bourabaa,Adil Bourabaa,71,74,MEI,21,Argélia
+Le Mans,Jean Vercruysse,Jean Vercruysse,63,67,MEI,26,França
+Le Mans,Edwin Quarshie,Edwin Quarshie,66,66,MEI,31,Central African Republic
+Le Mans,Daouda Traoré,Daouda Traoré,59,68,MEI,20,França
+Le Mans,Martin Rossignol,Martin Rossignol,65,70,MEI,23,França
+Le Mans,Erwan Colas,Erwan Colas,62,62,ATA,29,França
+Le Mans,Billal Brahimi,Billal Brahimi,67,68,ATA,26,Argélia
+Le Mans,Habib Diallo,Habib Diallo,74,74,ATA,31,Senegal
+Le Mans,Louis Mafouta,Louis Mafouta,70,70,ATA,32,Central African Republic
+Le Mans,Dame Gueye,Dame Gueye,66,66,ATA,31,Senegal
+Le Mans,Antoine Rabillard,Antoine Rabillard,65,65,ATA,31,França
+Le Mans,William Harhouz,William Harhouz,57,60,ATA,26,França
+Le Mans,Enzo Vagner,Enzo Vagner,51,60,ATA,20,Brasil

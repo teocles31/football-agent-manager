@@ -1,0 +1,580 @@
+clube,nome_original,nome,overall,potencial,posicao,idade,pais
+Inter de Milão,Josep Martínez,Josep Martínez,75,77,GOL,28,Espanha
+Inter de Milão,Ivan Provedel,Ivan Provedel,82,82,GOL,32,Itália
+Inter de Milão,Raffaele Di Gennaro,Raffaele Di Gennaro,68,68,GOL,33,Itália
+Inter de Milão,Alessandro Bastoni,Alessandro Bastoni,87,89,ZAG,27,Itália
+Inter de Milão,Yann Bisseck,Yann Bisseck,76,80,ZAG,25,Alemanha
+Inter de Milão,Manuel Akanji,Manuel Akanji,82,82,ZAG,31,Suíça
+Inter de Milão,John Stones,John Stones,82,82,ZAG,32,Inglaterra
+Inter de Milão,Benjamin Pavard,Benjamin Pavard,84,84,ZAG,30,França
+Inter de Milão,Federico Dimarco,Federico Dimarco,85,85,LAT,29,Itália
+Inter de Milão,Carlos Augusto,Carlos Augusto,81,82,LAT,27,Brasil
+Inter de Milão,Djed Spence,Djed Spence,82,83,LAT,26,Inglaterra
+Inter de Milão,Aleksandar Stanković,Aleksandar Stanković,79,79,VOL,21,Sérvia
+Inter de Milão,Hakan Çalhanoğlu,Hakan Çalhanoğlu,86,86,VOL,32,Turquia
+Inter de Milão,Nicolò Barella,Nicolò Barella,87,87,MEI,29,Itália
+Inter de Milão,Petar Sučić,Petar Sučić,82,83,MEI,23,Croácia
+Inter de Milão,Curtis Jones,Curtis Jones,80,83,MEI,25,Inglaterra
+Inter de Milão,Andy Diouf,Andy Diouf,81,81,MEI,23,França
+Inter de Milão,Piotr Zieliński,Piotr Zieliński,80,80,MEI,32,Polônia
+Inter de Milão,Henrikh Mkhitaryan,Henrikh Mkhitaryan,83,83,MEI,37,Armênia
+Inter de Milão,Luis Henrique,Luis Henrique,78,83,MEI,24,Brasil
+Inter de Milão,Lautaro Martínez,Lautaro Martínez,88,88,ATA,29,Argentina
+Inter de Milão,Marcus Thuram,Marcus Thuram,85,85,ATA,29,França
+Inter de Milão,Pio Esposito,Pio Esposito,78,84,ATA,21,Itália
+Inter de Milão,Ange-Yoan Bonny,Ange-Yoan Bonny,82,86,ATA,23,Costa do Marfim
+Napoli,Vanja Milinković-Savić,Vanja Milinković-Savić,79,81,GOL,29,Sérvia
+Napoli,Alex Meret,Alex Meret,82,84,GOL,29,Itália
+Napoli,Nikita Contini,Nikita Contini,67,69,GOL,30,Itália
+Napoli,Claudio Pugliese,Claudio Pugliese,52,64,GOL,18,Itália
+Napoli,Alessandro Buongiorno,Alessandro Buongiorno,82,86,ZAG,27,Itália
+Napoli,Sam Beukema,Sam Beukema,78,81,ZAG,27,Holanda
+Napoli,Rafa Marín,Rafa Marín,70,81,ZAG,24,Espanha
+Napoli,Benoît Badiashile,Benoît Badiashile,80,82,ZAG,25,França
+Napoli,Amir Rrahmani,Amir Rrahmani,83,83,ZAG,32,Kosovo
+Napoli,Luca Marianucci,Luca Marianucci,74,79,ZAG,22,Itália
+Napoli,Mathías Olivera,Mathías Olivera,78,78,LAT,29,Uruguai
+Napoli,Leonardo Spinazzola,Leonardo Spinazzola,78,78,LAT,33,Itália
+Napoli,Costantino Favasuli,Costantino Favasuli,76,76,LAT,22,Itália
+Napoli,Giovanni Di Lorenzo,Giovanni Di Lorenzo,83,83,LAT,33,Itália
+Napoli,Billy Gilmour,Billy Gilmour,74,79,VOL,25,Escócia
+Napoli,Stanislav Lobotka,Stanislav Lobotka,83,83,VOL,31,Eslováquia
+Napoli,Scott McTominay,Scott McTominay,85,85,MEI,29,Escócia
+Napoli,Frank Anguissa,Frank Anguissa,82,82,MEI,30,Camarões
+Napoli,Antonio Vergara,Antonio Vergara,74,74,MEI,23,Itália
+Napoli,Kevin De Bruyne,Kevin De Bruyne,87,87,MEI,35,Bélgica
+Napoli,Alisson Santos,Alisson Santos,80,83,ATA,24,Brasil
+Napoli,Noa Lang,Noa Lang,80,81,ATA,27,Holanda
+Napoli,David Neres,David Neres,81,81,ATA,29,Brasil
+Napoli,Matteo Politano,Matteo Politano,81,81,ATA,33,Itália
+Napoli,Rasmus Højlund,Rasmus Højlund,81,83,ATA,23,Dinamarca
+Napoli,Lorenzo Lucca,Lorenzo Lucca,76,80,ATA,26,Itália
+Napoli,Giovane,Giovane,77,79,ATA,22,Brasil
+Juventus,Kamil Grabara,Kamil Grabara,77,77,GOL,27,Polônia
+Juventus,Guglielmo Vicario,Guglielmo Vicario,82,84,GOL,30,Itália
+Juventus,Neto,Neto,75,75,GOL,37,Brasil
+Juventus,Carlo Pinsoglio,Carlo Pinsoglio,69,69,GOL,36,Itália
+Juventus,Bremer,Bremer,85,86,ZAG,29,Brasil
+Juventus,Pierre Kalulu,Pierre Kalulu,80,85,ZAG,26,França
+Juventus,Lloyd Kelly,Lloyd Kelly,74,77,ZAG,28,Inglaterra
+Juventus,Jhon Lucumí,Jhon Lucumí,80,80,ZAG,28,Colômbia
+Juventus,Federico Gatti,Federico Gatti,80,83,ZAG,28,Itália
+Juventus,Daniele Rugani,Daniele Rugani,75,75,ZAG,32,Itália
+Juventus,Andrea Cambiaso,Andrea Cambiaso,79,82,LAT,26,Itália
+Juventus,Juan Cabal,Juan Cabal,74,79,LAT,25,Colômbia
+Juventus,Zeki Çelik,Zeki Çelik,77,77,LAT,29,Turquia
+Juventus,Manuel Locatelli,Manuel Locatelli,84,85,VOL,28,Itália
+Juventus,Khéphren Thuram,Khéphren Thuram,81,85,MEI,25,França
+Juventus,Weston McKennie,Weston McKennie,78,79,MEI,28,EUA
+Juventus,Pape Matar Sarr,Pape Matar Sarr,79,84,MEI,24,Senegal
+Juventus,Douglas Luiz,Douglas Luiz,80,80,MEI,28,Brasil
+Juventus,Teun Koopmeiners,Teun Koopmeiners,81,81,MEI,28,Holanda
+Juventus,Kenan Yıldız,Kenan Yıldız,85,89,ATA,21,Turquia
+Juventus,Kerim Alajbegovic,Kerim Alajbegovic,77,86,ATA,19,Bósnia
+Juventus,Nico González,Nico González,81,81,ATA,28,Argentina
+Juventus,Jérémie Boga,Jérémie Boga,76,76,ATA,29,Costa do Marfim
+Juventus,Francisco Conceição,Francisco Conceição,81,86,ATA,23,Portugal
+Juventus,Edon Zhegrova,Edon Zhegrova,79,80,ATA,27,Kosovo
+Juventus,Nick Woltemade,Nick Woltemade,79,84,ATA,24,Alemanha
+Juventus,Randal Kolo Muani,Randal Kolo Muani,81,82,ATA,27,França
+Juventus,Jeff Ekhator,Jeff Ekhator,75,83,ATA,20,Itália
+Juventus,Arkadiusz Milik,Arkadiusz Milik,79,79,ATA,32,Polônia
+Milan,Mike Maignan,Mike Maignan,87,88,GOL,31,França
+Milan,Lorenzo Torriani,Lorenzo Torriani,68,76,GOL,21,Itália
+Milan,Pietro Terracciano,Pietro Terracciano,78,78,GOL,36,Itália
+Milan,Strahinja Pavlović,Strahinja Pavlović,76,83,ZAG,25,Sérvia
+Milan,Mario Gila,Mario Gila,79,84,ZAG,26,Espanha
+Milan,Koni De Winter,Koni De Winter,74,84,ZAG,24,Bélgica
+Milan,Matteo Gabbia,Matteo Gabbia,78,83,ZAG,27,Itália
+Milan,Fikayo Tomori,Fikayo Tomori,81,84,ZAG,28,Inglaterra
+Milan,Filippo Terracciano,Filippo Terracciano,74,80,ZAG,23,Itália
+Milan,Sankhoun Diawara,Sankhoun Diawara,65,75,ZAG,20,França
+Milan,Valeri Vladimirov,Valeri Vladimirov,60,72,ZAG,18,Bulgária
+Milan,Davide Bartesaghi,Davide Bartesaghi,76,78,LAT,20,Itália
+Milan,Pervis Estupiñán,Pervis Estupiñán,79,80,LAT,28,Equador
+Milan,Ardon Jashari,Ardon Jashari,77,86,VOL,24,Suíça
+Milan,Adrien Rabiot,Adrien Rabiot,83,83,MEI,31,França
+Milan,Yunus Musah,Yunus Musah,79,80,MEI,23,EUA
+Milan,Christian Comotto,Christian Comotto,69,83,MEI,18,Itália
+Milan,Ruben Loftus-Cheek,Ruben Loftus-Cheek,80,80,MEI,30,Inglaterra
+Milan,Warren Bondo,Warren Bondo,72,74,MEI,23,França
+Milan,Luka Modrić,Luka Modrić,83,83,MEI,41,Croácia
+Milan,Alexis Saelemaekers,Alexis Saelemaekers,79,80,MEI,27,Bélgica
+Milan,Diego Moreira,Diego Moreira,81,83,MEI,22,Bélgica
+Milan,Alphadjo Cisse,Alphadjo Cisse,74,78,MEI,20,Itália
+Milan,Christian Pulisic,Christian Pulisic,84,84,ATA,28,EUA
+Milan,Omari Hutchinson,Omari Hutchinson,81,82,ATA,23,Inglaterra
+Milan,Samuel Chukwueze,Samuel Chukwueze,80,80,ATA,27,Nigéria
+Milan,Gonçalo Ramos,Gonçalo Ramos,80,84,ATA,25,Portugal
+Milan,Francesco Camarda,Francesco Camarda,71,87,ATA,18,Itália
+Roma,Mile Svilar,Mile Svilar,82,86,GOL,27,Sérvia
+Roma,Devis Vásquez,Devis Vásquez,72,75,GOL,28,Colômbia
+Roma,Pierluigi Gollini,Pierluigi Gollini,74,74,GOL,31,Itália
+Roma,Giorgio De Marzi,Giorgio De Marzi,52,64,GOL,19,EUA
+Roma,Evan Ndicka,Evan Ndicka,81,83,ZAG,27,Costa do Marfim
+Roma,Konstantinos Koulierakis,Konstantinos Koulierakis,78,86,ZAG,22,Grécia
+Roma,Leonardo Balerdi,Leonardo Balerdi,81,82,ZAG,27,Argentina
+Roma,Daniele Ghilardi,Daniele Ghilardi,79,80,ZAG,23,Itália
+Roma,Gianluca Mancini,Gianluca Mancini,83,83,ZAG,30,Itália
+Roma,Mario Hermoso,Mario Hermoso,80,80,ZAG,31,Espanha
+Roma,Wesley,Wesley,79,85,LAT,23,Brasil
+Roma,Nahuel Molina,Nahuel Molina,78,78,LAT,28,Argentina
+Roma,Devyne Rensch,Devyne Rensch,77,80,LAT,23,Holanda
+Roma,Emanuele Lulli,Emanuele Lulli,71,81,LAT,19,Itália
+Roma,Bryan Cristante,Bryan Cristante,80,80,VOL,31,Itália
+Roma,Marten de Roon,Marten de Roon,79,79,VOL,35,Holanda
+Roma,Manu Koné,Manu Koné,83,86,MEI,25,França
+Roma,Niccolò Pisilli,Niccolò Pisilli,79,84,MEI,22,Itália
+Roma,Rodrigo Mora,Rodrigo Mora,76,89,MEI,19,Portugal
+Roma,Lorenzo Pellegrini,Lorenzo Pellegrini,80,80,MEI,30,Itália
+Roma,Matías Soulé,Matías Soulé,81,85,ATA,23,Argentina
+Roma,Paulo Dybala,Paulo Dybala,86,86,ATA,33,Argentina
+Roma,Donyell Malen,Donyell Malen,79,80,ATA,27,Holanda
+Roma,Santiago Castro,Santiago Castro,79,85,ATA,22,Argentina
+Roma,Antonio Arena,Antonio Arena,66,79,ATA,17,Itália
+Atalanta,Marco Carnesecchi,Marco Carnesecchi,84,88,GOL,26,Itália
+Atalanta,Marco Sportiello,Marco Sportiello,76,76,GOL,34,Itália
+Atalanta,Thomas Pompei,Thomas Pompei,58,67,GOL,20,Itália
+Atalanta,Giorgio Scalvini,Giorgio Scalvini,81,86,ZAG,22,Itália
+Atalanta,Isak Hien,Isak Hien,78,81,ZAG,27,Suécia
+Atalanta,Thomas Kristensen,Thomas Kristensen,79,82,ZAG,24,Dinamarca
+Atalanta,Odilon Kossounou,Odilon Kossounou,80,85,ZAG,25,Costa do Marfim
+Atalanta,Sead Kolasinac,Sead Kolasinac,79,79,ZAG,33,Bósnia
+Atalanta,Relja Obrić,Relja Obrić,66,74,ZAG,20,Eslovênia
+Atalanta,Lorenzo Bernasconi,Lorenzo Bernasconi,76,76,LAT,22,Itália
+Atalanta,Raoul Bellanova,Raoul Bellanova,78,79,LAT,26,Itália
+Atalanta,Davide Zappacosta,Davide Zappacosta,79,79,LAT,34,Itália
+Atalanta,Gianluca Gaetano,Gianluca Gaetano,74,77,VOL,26,Itália
+Atalanta,Éderson,Éderson,82,85,MEI,27,Brasil
+Atalanta,Franck Kessié,Franck Kessié,78,78,MEI,29,Costa do Marfim
+Atalanta,Mario Pašalić,Mario Pašalić,80,80,MEI,31,Croácia
+Atalanta,Nicola Zalewski,Nicola Zalewski,76,79,MEI,24,Polônia
+Atalanta,Charles De Ketelaere,Charles De Ketelaere,82,86,MEI,25,Bélgica
+Atalanta,Lazar Samardžić,Lazar Samardžić,75,82,MEI,24,Sérvia
+Atalanta,Eljif Elmas,Eljif Elmas,77,77,MEI,27,Macedônia do Norte
+Atalanta,Jonathan Rowe,Jonathan Rowe,81,83,ATA,23,Inglaterra
+Atalanta,Kamaldeen Sulemana,Kamaldeen Sulemana,71,76,ATA,24,Gana
+Atalanta,Giacomo Raspadori,Giacomo Raspadori,78,81,ATA,26,Itália
+Atalanta,Nikola Krstović,Nikola Krstović,75,80,ATA,26,Montenegro
+Atalanta,Gianluca Scamacca,Gianluca Scamacca,79,80,ATA,27,Itália
+Bologna,Massimo Pessina,Massimo Pessina,67,74,GOL,18,Itália
+Bologna,Lukasz Skorupski,Lukasz Skorupski,75,75,GOL,35,Polônia
+Bologna,Ukko Happonen,Ukko Happonen,50,61,GOL,19,Finlândia
+Bologna,Arthur Theate,Arthur Theate,78,79,ZAG,26,Bélgica
+Bologna,Torbjørn Heggem,Torbjørn Heggem,73,76,ZAG,27,Noruega
+Bologna,Martin Vitík,Martin Vitík,77,80,ZAG,23,Tchéquia
+Bologna,Eivind Helland,Eivind Helland,73,78,ZAG,21,Noruega
+Bologna,Nicolò Casale,Nicolò Casale,75,77,ZAG,28,Itália
+Bologna,Juan Miranda,Juan Miranda,76,79,LAT,26,Espanha
+Bologna,Rahim Alhassane,Rahim Alhassane,74,77,LAT,24,Niger
+Bologna,Emil Holm,Emil Holm,74,78,LAT,26,Suécia
+Bologna,Nadir Zortea,Nadir Zortea,74,75,LAT,27,Itália
+Bologna,Matteo Darmian,Matteo Darmian,81,81,LAT,36,Itália
+Bologna,Lorenzo De Silvestri,Lorenzo De Silvestri,71,71,LAT,38,Itália
+Bologna,Nikola Moro,Nikola Moro,75,76,VOL,28,Croácia
+Bologna,Oussama El Azzouzi,Oussama El Azzouzi,68,73,VOL,25,Marrocos
+Bologna,Lewis Ferguson,Lewis Ferguson,78,81,MEI,27,Escócia
+Bologna,Mikel Amondarain,Mikel Amondarain,74,75,MEI,21,Argentina
+Bologna,Tommaso Pobega,Tommaso Pobega,74,77,MEI,27,Itália
+Bologna,Marco Libra,Marco Libra,61,75,MEI,18,Venezuela
+Bologna,Jens Odgaard,Jens Odgaard,76,77,MEI,27,Dinamarca
+Bologna,Nicolò Cambiaghi,Nicolò Cambiaghi,73,76,ATA,25,Itália
+Bologna,Samuel Mbangula,Samuel Mbangula,74,77,ATA,22,Bélgica
+Bologna,Riccardo Orsolini,Riccardo Orsolini,82,82,ATA,29,Itália
+Bologna,Federico Bernardeschi,Federico Bernardeschi,77,77,ATA,32,Itália
+Bologna,Roberto Piccoli,Roberto Piccoli,75,80,ATA,25,Itália
+Bologna,Artem Dovbyk,Artem Dovbyk,83,83,ATA,29,Ucrânia
+Bologna,Jay Enem,Jay Enem,74,76,ATA,23,Holanda
+Lazio,Christos Mandas,Christos Mandas,74,80,GOL,25,Grécia
+Lazio,Edoardo Motta,Edoardo Motta,72,72,GOL,21,Itália
+Lazio,Alessio Furlanetto,Alessio Furlanetto,61,66,GOL,24,Itália
+Lazio,Davide Renzetti,Davide Renzetti,56,65,GOL,20,Itália
+Lazio,Oliver Provstgaard,Oliver Provstgaard,75,75,ZAG,23,Dinamarca
+Lazio,Danilho Doekhi,Danilho Doekhi,77,77,ZAG,28,Holanda
+Lazio,Diogo Leite,Diogo Leite,78,81,ZAG,27,Portugal
+Lazio,Josip Sutalo,Josip Sutalo,78,82,ZAG,26,Croácia
+Lazio,Filipe Bordon,Filipe Bordon,64,75,ZAG,21,Brasil
+Lazio,Ricardo Bordon,Ricardo Bordon,57,66,ZAG,20,Brasil
+Lazio,Nuno Tavares,Nuno Tavares,78,81,LAT,26,Portugal
+Lazio,Luca Pellegrini,Luca Pellegrini,74,75,LAT,27,Itália
+Lazio,Alfonso Pedraza,Alfonso Pedraza,72,72,LAT,30,Espanha
+Lazio,Mohamed Fares,Mohamed Fares,71,71,LAT,30,Argélia
+Lazio,Romano Floriani Mussolini,Romano Floriani Mussolini,73,77,LAT,23,Itália
+Lazio,Adam Marusic,Adam Marusic,78,78,LAT,34,Montenegro
+Lazio,Manuel Lazzari,Manuel Lazzari,78,78,LAT,32,Itália
+Lazio,Nicolò Rovella,Nicolò Rovella,79,84,VOL,24,Itália
+Lazio,Reda Belahyane,Reda Belahyane,74,77,VOL,22,Marrocos
+Lazio,Danilo Cataldi,Danilo Cataldi,77,77,VOL,32,Itália
+Lazio,Bruno Galassi,Bruno Galassi,52,64,VOL,19,Argentina
+Lazio,Kenneth Taylor,Kenneth Taylor,81,84,MEI,24,Holanda
+Lazio,Davide Frattesi,Davide Frattesi,81,83,MEI,27,Itália
+Lazio,Fisayo Dele-Bashiru,Fisayo Dele-Bashiru,75,77,MEI,25,Nigéria
+Lazio,Valerio Farcomeni,Valerio Farcomeni,55,63,MEI,20,Itália
+Lazio,Adrian Przyborek,Adrian Przyborek,70,78,MEI,19,Polônia
+Lazio,Tijjani Noslin,Tijjani Noslin,74,77,ATA,27,Holanda
+Lazio,Mattia Zaccagni,Mattia Zaccagni,84,84,ATA,31,Itália
+Lazio,Gustav Isaksen,Gustav Isaksen,76,79,ATA,25,Dinamarca
+Lazio,Matteo Cancellieri,Matteo Cancellieri,72,79,ATA,24,Itália
+Lazio,Albert Gudmundsson,Albert Gudmundsson,77,77,ATA,29,Islândia
+Lazio,Andrea Pinamonti,Andrea Pinamonti,75,78,ATA,27,Itália
+Lazio,Federico Serra,Federico Serra,59,68,ATA,20,Itália
+Fiorentina,David de Gea,David de Gea,85,85,GOL,36,Espanha
+Fiorentina,Oliver Christensen,Oliver Christensen,71,74,GOL,27,Dinamarca
+Fiorentina,Luca Lezzerini,Luca Lezzerini,69,69,GOL,31,Itália
+Fiorentina,Radu Drăgușin,Radu Drăgușin,78,81,ZAG,24,Romênia
+Fiorentina,Víctor Valdepeñas,Víctor Valdepeñas,72,82,ZAG,20,Espanha
+Fiorentina,Viery,Viery,76,79,ZAG,21,Brasil
+Fiorentina,Marin Pongracic,Marin Pongracic,74,76,ZAG,29,Croácia
+Fiorentina,Luca Ranieri,Luca Ranieri,76,79,ZAG,27,Itália
+Fiorentina,Fabiano Parisi,Fabiano Parisi,75,80,LAT,26,Itália
+Fiorentina,Álex Jiménez,Álex Jiménez,76,80,LAT,21,Espanha
+Fiorentina,Dodô,Dodô,78,79,LAT,27,Brasil
+Fiorentina,João Mário,João Mário,77,81,LAT,26,Portugal
+Fiorentina,Christ Inao Oulaï,Christ Inao Oulaï,78,85,MEI,20,Costa do Marfim
+Fiorentina,Arthur Atta,Arthur Atta,76,78,MEI,23,França
+Fiorentina,Cher Ndour,Cher Ndour,78,83,MEI,22,Itália
+Fiorentina,Nicolò Fagioli,Nicolò Fagioli,77,82,MEI,25,Itália
+Fiorentina,Marco Brescianini,Marco Brescianini,71,74,MEI,26,Itália
+Fiorentina,Pedro Gonçalves,Pedro Gonçalves,83,83,ATA,28,Portugal
+Fiorentina,Alieu Njie,Alieu Njie,75,80,ATA,21,Suécia
+Fiorentina,Riccardo Sottil,Riccardo Sottil,75,76,ATA,27,Itália
+Fiorentina,Franco Mastantuono,Franco Mastantuono,79,88,ATA,19,Argentina
+Fiorentina,Wilfried Gnonto,Wilfried Gnonto,78,80,ATA,23,Itália
+Fiorentina,Federico Croci,Federico Croci,63,78,ATA,16,Itália
+Fiorentina,Mateo Pellegrino,Mateo Pellegrino,81,83,ATA,25,Argentina
+Fiorentina,Beto,Beto,79,79,ATA,28,Guiné-Bissau
+Como,Robert Sánchez,Robert Sánchez,78,78,GOL,28,Espanha
+Como,Jean Butez,Jean Butez,76,76,GOL,31,França
+Como,Mauro Vigorito,Mauro Vigorito,64,64,GOL,36,Itália
+Como,Jacobo Ramón,Jacobo Ramón,78,78,ZAG,21,Espanha
+Como,Trevoh Chalobah,Trevoh Chalobah,81,81,ZAG,27,Inglaterra
+Como,Alberto Dossena,Alberto Dossena,73,76,ZAG,28,Itália
+Como,Marc Oliver Kempf,Marc Oliver Kempf,73,73,ZAG,31,Alemanha
+Como,Willy Kambwala,Willy Kambwala,71,73,ZAG,22,RD Congo
+Como,Edoardo Goldaniga,Edoardo Goldaniga,72,72,ZAG,33,Itália
+Como,Kaiki,Kaiki,77,79,LAT,23,Brasil
+Como,Álex Valle,Álex Valle,77,82,LAT,22,Espanha
+Como,Yan Couto,Yan Couto,77,82,LAT,24,Brasil
+Como,Ivan Smolcic,Ivan Smolcic,72,77,LAT,26,Croácia
+Como,Máximo Perrone,Máximo Perrone,82,83,VOL,23,Argentina
+Como,Samuele Ricci,Samuele Ricci,78,85,VOL,25,Itália
+Como,Lucas Da Cunha,Lucas Da Cunha,74,79,MEI,25,França
+Como,Maxence Caqueret,Maxence Caqueret,77,80,MEI,26,França
+Como,Adrian Lahdo,Adrian Lahdo,69,75,MEI,18,Suécia
+Como,Luis Milla,Luis Milla,79,79,MEI,32,Espanha
+Como,Nico Paz,Nico Paz,83,89,MEI,22,Argentina
+Como,Martin Baturina,Martin Baturina,83,83,MEI,23,Croácia
+Como,Mattia Liberali,Mattia Liberali,72,84,MEI,19,Itália
+Como,Assane Diao,Assane Diao,78,87,ATA,21,Senegal
+Como,Jesús Rodríguez,Jesús Rodríguez,77,85,ATA,20,Espanha
+Como,Jayden Addai,Jayden Addai,77,84,ATA,21,Holanda
+Como,Moise Kean,Moise Kean,83,84,ATA,26,Itália
+Como,Anastasios Douvikas,Anastasios Douvikas,73,76,ATA,27,Grécia
+Torino,Lucas Perri,Lucas Perri,81,85,GOL,28,Brasil
+Torino,Franco Israel,Franco Israel,75,80,GOL,26,Uruguai
+Torino,Diego Mascardi,Diego Mascardi,66,69,GOL,20,Itália
+Torino,Lapo Siviero,Lapo Siviero,59,70,GOL,19,Itália
+Torino,Pietro Comuzzo,Pietro Comuzzo,77,86,ZAG,21,Itália
+Torino,Saúl Coco,Saúl Coco,76,79,ZAG,27,Equatorial Guinea
+Torino,Ardian Ismajli,Ardian Ismajli,74,74,ZAG,30,Albânia
+Torino,Eray Cömert,Eray Cömert,72,72,ZAG,28,Suíça
+Torino,Niccolò Fortini,Niccolò Fortini,73,80,LAT,20,Itália
+Torino,Ricardo Rodríguez,Ricardo Rodríguez,73,73,LAT,34,Suíça
+Torino,Cristiano Biraghi,Cristiano Biraghi,78,78,LAT,34,Itália
+Torino,Rafik Belghali,Rafik Belghali,66,73,LAT,24,Argélia
+Torino,Nathan Patterson,Nathan Patterson,75,77,LAT,25,Escócia
+Torino,Rolando Mandragora,Rolando Mandragora,77,77,VOL,29,Itália
+Torino,Emirhan İlkhan,Emirhan İlkhan,73,74,VOL,22,Turquia
+Torino,Cesare Casadei,Cesare Casadei,80,83,MEI,23,Itália
+Torino,Gvidas Gineitis,Gvidas Gineitis,75,79,MEI,22,Lituânia
+Torino,Daniel Bragança,Daniel Bragança,78,81,MEI,27,Portugal
+Torino,Kian Fitz-Jim,Kian Fitz-Jim,74,82,MEI,23,Holanda
+Torino,Andrea Luongo,Andrea Luongo,61,73,MEI,18,Itália
+Torino,Alessio Cacciamani,Alessio Cacciamani,71,71,MEI,19,Itália
+Torino,Nikola Vlašić,Nikola Vlašić,79,79,MEI,29,Croácia
+Torino,Gaetano Oristanio,Gaetano Oristanio,75,78,MEI,24,Itália
+Torino,Zakaria Aboukhlal,Zakaria Aboukhlal,74,79,ATA,26,Marrocos
+Torino,Giovanni Simeone,Giovanni Simeone,75,75,ATA,31,Argentina
+Torino,Ché Adams,Ché Adams,77,77,ATA,30,Escócia
+Torino,Sandro Kulenović,Sandro Kulenović,69,72,ATA,26,Croácia
+Torino,Duván Zapata,Duván Zapata,82,82,ATA,35,Colômbia
+Torino,Pietro Pellegri,Pietro Pellegri,68,73,ATA,25,Itália
+Udinese,Maduka Okoye,Maduka Okoye,74,78,GOL,27,Nigéria
+Udinese,Bartosz Mrozek,Bartosz Mrozek,72,77,GOL,26,Polônia
+Udinese,Daniele Padelli,Daniele Padelli,65,65,GOL,41,Itália
+Udinese,Oumar Solet,Oumar Solet,78,83,ZAG,26,Costa do Marfim
+Udinese,James Abankwah,James Abankwah,75,77,ZAG,22,Irlanda
+Udinese,Matteo Palma,Matteo Palma,68,82,ZAG,18,Itália
+Udinese,Nicolò Bertola,Nicolò Bertola,75,76,ZAG,23,Itália
+Udinese,David Alaba,David Alaba,77,77,ZAG,34,Áustria
+Udinese,Enzo Ebosse,Enzo Ebosse,73,73,ZAG,27,Camarões
+Udinese,Christian Kabasele,Christian Kabasele,72,72,ZAG,35,Bélgica
+Udinese,Hassane Kamara,Hassane Kamara,72,72,LAT,32,Costa do Marfim
+Udinese,Alessandro Zanoli,Alessandro Zanoli,72,79,LAT,26,Itália
+Udinese,Mërgim Vojvoda,Mërgim Vojvoda,75,75,LAT,31,Kosovo
+Udinese,Jesper Karlström,Jesper Karlström,75,75,VOL,31,Suécia
+Udinese,Jurgen Ekkelenkamp,Jurgen Ekkelenkamp,74,77,MEI,26,Holanda
+Udinese,Lennon Miller,Lennon Miller,74,85,MEI,20,Escócia
+Udinese,Jakub Piotrowski,Jakub Piotrowski,69,70,MEI,29,Polônia
+Udinese,Sandi Lovrić,Sandi Lovrić,75,75,MEI,28,Eslovênia
+Udinese,Oier Zarraga,Oier Zarraga,71,72,MEI,27,Espanha
+Udinese,Juan Arizala,Juan Arizala,71,74,MEI,21,Colômbia
+Udinese,Unai Gómez,Unai Gómez,73,82,MEI,23,Espanha
+Udinese,Giorgi Chakvetadze,Giorgi Chakvetadze,74,75,MEI,27,Geórgia
+Udinese,Lazar Jovanovic,Lazar Jovanovic,68,82,ATA,19,Sérvia
+Udinese,Nicolò Zaniolo,Nicolò Zaniolo,76,77,ATA,27,Itália
+Udinese,Keinan Davis,Keinan Davis,72,72,ATA,28,Inglaterra
+Udinese,Idrissa Gueye,Idrissa Gueye,72,83,ATA,20,Senegal
+Udinese,Vakoun Bayo,Vakoun Bayo,69,69,ATA,29,Costa do Marfim
+Udinese,Giulio Vinciati,Giulio Vinciati,52,64,ATA,19,Itália
+Genoa,Justin Bijlow,Justin Bijlow,75,76,GOL,28,Holanda
+Genoa,Franz Stolz,Franz Stolz,67,69,GOL,25,Áustria
+Genoa,Daniele Sommariva,Daniele Sommariva,62,65,GOL,29,Itália
+Genoa,Rendijs Mihelsons,Rendijs Mihelsons,53,64,GOL,18,Letônia
+Genoa,Johan Vásquez,Johan Vásquez,75,78,ZAG,28,México
+Genoa,Alessandro Marcandalli,Alessandro Marcandalli,66,75,ZAG,24,Itália
+Genoa,Leo Østigård,Leo Østigård,73,80,ZAG,26,Noruega
+Genoa,Sebastian Otoa,Sebastian Otoa,69,74,ZAG,22,Dinamarca
+Genoa,Mamedi Doucouré,Mamedi Doucouré,59,69,ZAG,19,França
+Genoa,Lukas Klišys,Lukas Klišys,52,64,ZAG,19,Lituânia
+Genoa,Mario Mitaj,Mario Mitaj,76,76,LAT,23,Albânia
+Genoa,David Puczka,David Puczka,69,74,LAT,21,Áustria
+Genoa,Marcelo Vaz,Marcelo Vaz,58,69,LAT,19,Guiné-Bissau
+Genoa,Cody Drameh,Cody Drameh,73,76,LAT,24,Inglaterra
+Genoa,Kingsley Ehizibue,Kingsley Ehizibue,72,72,LAT,31,Holanda
+Genoa,Stefano Sabelli,Stefano Sabelli,71,71,LAT,33,Itália
+Genoa,Morten Frendrup,Morten Frendrup,76,80,VOL,25,Dinamarca
+Genoa,Hamed Traoré,Hamed Traoré,76,77,MEI,26,Costa do Marfim
+Genoa,Amorim,Amorim,73,78,MEI,21,Brasil
+Genoa,Djibril Sow,Djibril Sow,75,75,MEI,29,Suíça
+Genoa,Mikael Egill Ellertsson,Mikael Egill Ellertsson,69,76,MEI,24,Islândia
+Genoa,Franz-Ethan Meichtry,Franz-Ethan Meichtry,70,70,MEI,21,Suíça
+Genoa,Samuel Wiafe,Samuel Wiafe,63,77,MEI,18,Itália
+Genoa,Tommaso Baldanzi,Tommaso Baldanzi,77,81,MEI,23,Itália
+Genoa,Stephan El Shaarawy,Stephan El Shaarawy,74,74,ATA,34,Itália
+Genoa,Robinho Junior,Robinho Junior,67,79,ATA,18,Brasil
+Genoa,Lorenzo Venturino,Lorenzo Venturino,71,71,ATA,20,Itália
+Genoa,Junior Messias,Junior Messias,72,72,ATA,35,Brasil
+Genoa,Lorenzo Colombo,Lorenzo Colombo,73,80,ATA,24,Itália
+Genoa,Vitinha,Vitinha,75,79,ATA,26,Portugal
+Genoa,Milutin Osmajic,Milutin Osmajic,70,73,ATA,27,Montenegro
+Genoa,Elias Havel,Elias Havel,72,73,ATA,23,Áustria
+Genoa,Joi Nuredini,Joi Nuredini,63,73,ATA,19,Albânia
+Sassuolo,Arijanet Murić,Arijanet Murić,72,75,GOL,28,Kosovo
+Sassuolo,Stefano Turati,Stefano Turati,74,82,GOL,25,Itália
+Sassuolo,Giacomo Satalino,Giacomo Satalino,66,69,GOL,27,Itália
+Sassuolo,Jay Idzes,Jay Idzes,72,77,ZAG,26,Indonesia
+Sassuolo,Fedde Leysen,Fedde Leysen,75,76,ZAG,23,Bélgica
+Sassuolo,Fali Candé,Fali Candé,71,73,ZAG,28,Guiné-Bissau
+Sassuolo,Duje Caleta-Car,Duje Caleta-Car,74,74,ZAG,30,Croácia
+Sassuolo,Cas Odenthal,Cas Odenthal,69,74,ZAG,26,Holanda
+Sassuolo,Rafa Obrador,Rafa Obrador,72,75,LAT,22,Espanha
+Sassuolo,Josh Doig,Josh Doig,73,78,LAT,24,Escócia
+Sassuolo,Edoardo Pieragnolo,Edoardo Pieragnolo,70,71,LAT,23,Itália
+Sassuolo,Sebastian Walukiewicz,Sebastian Walukiewicz,71,76,LAT,26,Polônia
+Sassuolo,Ignace Van der Brempt,Ignace Van der Brempt,71,78,LAT,24,Bélgica
+Sassuolo,Simone Cinquegrano,Simone Cinquegrano,70,73,LAT,22,Itália
+Sassuolo,Yeferson Paz,Yeferson Paz,68,74,LAT,24,Colômbia
+Sassuolo,Luca Lipani,Luca Lipani,73,77,VOL,21,Itália
+Sassuolo,Ibrahim Sulemana,Ibrahim Sulemana,76,76,VOL,23,Gana
+Sassuolo,Daniel Boloca,Daniel Boloca,74,74,VOL,27,Itália
+Sassuolo,Nemanja Matić,Nemanja Matić,77,77,VOL,38,Sérvia
+Sassuolo,Andrea Ghion,Andrea Ghion,69,72,VOL,26,Itália
+Sassuolo,Ismaël Koné,Ismaël Koné,72,79,MEI,24,Canadá
+Sassuolo,Darryl Bakola,Darryl Bakola,72,80,MEI,18,França
+Sassuolo,Kristian Thorstvedt,Kristian Thorstvedt,75,76,MEI,27,Noruega
+Sassuolo,Vasilije Adžić,Vasilije Adžić,74,79,MEI,20,Montenegro
+Sassuolo,Armand Laurienté,Armand Laurienté,80,80,ATA,27,França
+Sassuolo,Benja Domínguez,Benja Domínguez,77,78,ATA,23,Argentina
+Sassuolo,Cristian Volpato,Cristian Volpato,78,78,ATA,23,Austrália
+Sassuolo,Domenico Berardi,Domenico Berardi,82,82,ATA,32,Itália
+Sassuolo,Nicholas Pierini,Nicholas Pierini,71,71,ATA,28,Itália
+Sassuolo,Sebastiano Esposito,Sebastiano Esposito,75,82,ATA,24,Itália
+Sassuolo,Kieron Bowie,Kieron Bowie,76,79,ATA,24,Escócia
+Sassuolo,Laurs Skjellerup,Laurs Skjellerup,65,72,ATA,24,Dinamarca
+Cagliari,Elia Caprile,Elia Caprile,76,83,GOL,25,Itália
+Cagliari,Alen Sherri,Alen Sherri,68,71,GOL,28,Albânia
+Cagliari,Boris Radunović,Boris Radunović,70,70,GOL,30,Sérvia
+Cagliari,Juan Rodríguez,Juan Rodríguez,74,74,ZAG,21,Uruguai
+Cagliari,Raphael Kofler,Raphael Kofler,73,75,ZAG,21,Itália
+Cagliari,Zé Pedro,Zé Pedro,75,77,ZAG,29,Portugal
+Cagliari,Yerry Mina,Yerry Mina,77,77,ZAG,32,Colômbia
+Cagliari,Adam Obert,Adam Obert,70,78,LAT,24,Eslováquia
+Cagliari,Riyad Idrissi,Riyad Idrissi,70,75,LAT,21,Itália
+Cagliari,Giuseppe Aurelio,Giuseppe Aurelio,68,71,LAT,26,Itália
+Cagliari,Nicola Grandu,Nicola Grandu,58,67,LAT,20,Itália
+Cagliari,Yukinari Sugawara,Yukinari Sugawara,74,78,LAT,26,Japão
+Cagliari,Alessandro Romano,Alessandro Romano,74,83,VOL,20,Itália
+Cagliari,Harry Winks,Harry Winks,71,71,VOL,30,Inglaterra
+Cagliari,Michel Adopo,Michel Adopo,72,76,MEI,26,França
+Cagliari,Jacopo Fazzini,Jacopo Fazzini,77,81,MEI,23,Itália
+Cagliari,Joseph Liteta,Joseph Liteta,68,77,MEI,20,Zâmbia
+Cagliari,Alessandro Deiola,Alessandro Deiola,68,68,MEI,31,Itália
+Cagliari,Roberto Gagliardini,Roberto Gagliardini,72,72,MEI,32,Itália
+Cagliari,Demi Akarakiri,Demi Akarakiri,60,69,MEI,19,Inglaterra
+Cagliari,Ivan Sulev,Ivan Sulev,58,66,MEI,20,Bulgária
+Cagliari,Daniel Maldini,Daniel Maldini,74,81,MEI,25,Itália
+Cagliari,Yanis Massolin,Yanis Massolin,65,74,MEI,24,França
+Cagliari,Alieu Fadera,Alieu Fadera,71,77,ATA,25,The Gambia
+Cagliari,Mattia Felici,Mattia Felici,71,76,ATA,25,Itália
+Cagliari,Riccardo Ciervo,Riccardo Ciervo,66,72,ATA,24,Itália
+Cagliari,Paul Mendy,Paul Mendy,73,82,ATA,19,Senegal
+Cagliari,Kevin Carlos,Kevin Carlos,72,79,ATA,25,Espanha
+Cagliari,M'Bala Nzola,M'Bala Nzola,71,71,ATA,30,Angola
+Cagliari,Yael Trepy,Yael Trepy,66,75,ATA,20,França
+Parma,Giovanni Daffara,Giovanni Daffara,70,74,GOL,21,Itália
+Parma,Edoardo Corvi,Edoardo Corvi,65,71,GOL,25,Itália
+Parma,Simone Ghidotti,Simone Ghidotti,69,75,GOL,26,Itália
+Parma,Mariano Troilo,Mariano Troilo,78,79,ZAG,23,Argentina
+Parma,Abdoulaye Ndiaye,Abdoulaye Ndiaye,75,81,ZAG,24,Senegal
+Parma,Diego Carlos,Diego Carlos,78,78,ZAG,33,Brasil
+Parma,Lautaro Valenti,Lautaro Valenti,68,71,ZAG,27,Argentina
+Parma,Dominik Drobnic,Dominik Drobnic,65,75,ZAG,19,Eslovênia
+Parma,Emanuele Valeri,Emanuele Valeri,75,76,LAT,27,Itália
+Parma,Franco Carboni,Franco Carboni,69,71,LAT,23,Argentina
+Parma,Sascha Britschgi,Sascha Britschgi,70,70,LAT,20,Suíça
+Parma,Enrico Delprato,Enrico Delprato,75,78,LAT,27,Itália
+Parma,Mandela Keita,Mandela Keita,73,80,VOL,24,Bélgica
+Parma,Hans Nicolussi Caviglia,Hans Nicolussi Caviglia,75,80,VOL,26,Itália
+Parma,Adrián Bernabé,Adrián Bernabé,74,81,MEI,25,Espanha
+Parma,Christian Ordóñez,Christian Ordóñez,74,83,MEI,22,Argentina
+Parma,Benja Cremaschi,Benja Cremaschi,70,80,MEI,21,EUA
+Parma,Vincent Sierro,Vincent Sierro,74,74,MEI,31,Suíça
+Parma,Abdou-Salam Konate,Abdou-Salam Konate,63,74,MEI,19,Senegal
+Parma,Giovanni Fabbian,Giovanni Fabbian,77,83,MEI,23,Itália
+Parma,Ousmane Diallo,Ousmane Diallo,65,74,ATA,19,Espanha
+Parma,Pontus Almqvist,Pontus Almqvist,72,73,ATA,27,Suécia
+Parma,Simone Lontani,Simone Lontani,67,80,ATA,18,Itália
+Parma,El Bilal Touré,El Bilal Touré,73,81,ATA,25,Mali
+Parma,David Romero,David Romero,75,77,ATA,23,Argentina
+Parma,Matija Frigan,Matija Frigan,76,83,ATA,23,Croácia
+Parma,Nesta Elphege,Nesta Elphege,62,68,ATA,25,França
+Parma,Thomás De Martis,Thomás De Martis,53,65,ATA,18,Argentina
+Lecce,Wladimiro Falcone,Wladimiro Falcone,81,81,GOL,31,Itália
+Lecce,Marco Bleve,Marco Bleve,66,67,GOL,31,Itália
+Lecce,Alexandru Borbei,Alexandru Borbei,60,62,GOL,23,Romênia
+Lecce,Plamen Penev,Plamen Penev,53,66,GOL,18,Bulgária
+Lecce,Tiago Gabriel,Tiago Gabriel,76,77,ZAG,21,Portugal
+Lecce,Jamil Siebert,Jamil Siebert,70,78,ZAG,24,Alemanha
+Lecce,Gaspar,Gaspar,74,76,ZAG,29,Angola
+Lecce,Gaby Jean,Gaby Jean,68,75,ZAG,26,França
+Lecce,Sebastian Esposito,Sebastian Esposito,64,67,ZAG,21,Austrália
+Lecce,Elijah Scott,Elijah Scott,60,68,ZAG,20,EUA
+Lecce,Antonino Gallo,Antonino Gallo,75,78,LAT,26,Itália
+Lecce,Corrie Ndaba,Corrie Ndaba,65,70,LAT,26,Irlanda
+Lecce,Vernon Addo,Vernon Addo,58,63,LAT,21,Holanda
+Lecce,Danilo Veiga,Danilo Veiga,69,78,LAT,24,Portugal
+Lecce,Ali Dembélé,Ali Dembélé,67,70,LAT,22,França
+Lecce,Marlon Ubani,Marlon Ubani,57,63,LAT,21,Alemanha
+Lecce,Oumar Ngom,Oumar Ngom,71,74,VOL,22,Mauritania
+Lecce,Sadik Fofana,Sadik Fofana,67,72,VOL,23,Togo
+Lecce,Olaf Gorter,Olaf Gorter,65,69,VOL,21,Holanda
+Lecce,Niko Kovač,Niko Kovač,61,65,VOL,21,Bósnia
+Lecce,Ivan Ilić,Ivan Ilić,76,81,MEI,25,Sérvia
+Lecce,Medon Berisha,Medon Berisha,75,78,MEI,23,Albânia
+Lecce,Mohamed Kaba,Mohamed Kaba,68,76,MEI,25,Guiné
+Lecce,Lassana Coulibaly,Lassana Coulibaly,74,74,MEI,30,Mali
+Lecce,Youssef Maleh,Youssef Maleh,71,72,MEI,28,Marrocos
+Lecce,Omri Gandelman,Omri Gandelman,71,75,MEI,26,Israel
+Lecce,Joël Monteiro,Joël Monteiro,72,72,ATA,27,Suíça
+Lecce,Amar Fatah,Amar Fatah,66,68,ATA,22,Suécia
+Lecce,Santiago Pierotti,Santiago Pierotti,70,76,ATA,25,Argentina
+Lecce,Konan N’Dri,Konan N’Dri,70,71,ATA,26,Niger
+Lecce,Willem Geubbels,Willem Geubbels,74,76,ATA,25,França
+Lecce,Nikola Stulic,Nikola Stulic,72,78,ATA,25,Sérvia
+Lecce,Paco Esteban,Paco Esteban,61,69,ATA,20,Espanha
+Venezia,Filip Stanković,Filip Stanković,74,82,GOL,24,Sérvia
+Venezia,Lorenzo Montipò,Lorenzo Montipò,76,77,GOL,30,Itália
+Venezia,Alessio Pozzi,Alessio Pozzi,64,66,GOL,25,Itália
+Venezia,Matteo Grandi,Matteo Grandi,60,60,GOL,34,Itália
+Venezia,Armel Bella-Kotchap,Armel Bella-Kotchap,72,78,ZAG,24,Alemanha
+Venezia,Matías Moreno,Matías Moreno,74,76,ZAG,23,Argentina
+Venezia,Joël Schingtienne,Joël Schingtienne,67,76,ZAG,24,Bélgica
+Venezia,Redouane Halhal,Redouane Halhal,73,73,ZAG,23,Marrocos
+Venezia,Marin Šverko,Marin Šverko,67,69,ZAG,28,Croácia
+Venezia,Ale Gomes,Ale Gomes,61,75,ZAG,18,Espanha
+Venezia,Bartol Franjic,Bartol Franjic,70,73,ZAG,26,Croácia
+Venezia,Juan Jesus,Juan Jesus,74,74,ZAG,35,Brasil
+Venezia,Rufai Mohammed,Rufai Mohammed,62,74,ZAG,20,Gana
+Venezia,Pasquale Mazzocchi,Pasquale Mazzocchi,72,72,LAT,31,Itália
+Venezia,Gianluca Busio,Gianluca Busio,74,81,VOL,24,EUA
+Venezia,Simone Panada,Simone Panada,67,70,VOL,24,Itália
+Venezia,Simon Sohm,Simon Sohm,77,79,MEI,25,Suíça
+Venezia,Matteo Dagasso,Matteo Dagasso,72,78,MEI,22,Itália
+Venezia,Toma Bašić,Toma Bašić,71,71,MEI,29,Croácia
+Venezia,Kike Pérez,Kike Pérez,74,74,MEI,29,Espanha
+Venezia,Thórir Jóhann Helgason,Thórir Jóhann Helgason,69,70,MEI,26,Islândia
+Venezia,Lamine Fanne,Lamine Fanne,69,78,MEI,22,Espanha
+Venezia,Alfred Duncan,Alfred Duncan,72,72,MEI,33,Gana
+Venezia,Antoine Hainaut,Antoine Hainaut,68,72,MEI,24,França
+Venezia,Thierry Correia,Thierry Correia,76,79,MEI,27,Portugal
+Venezia,Richie Sagrado,Richie Sagrado,67,77,MEI,22,Bélgica
+Venezia,Lorenzo Berardi,Lorenzo Berardi,64,66,MEI,20,Itália
+Venezia,Ridgeciano Haps,Ridgeciano Haps,68,68,MEI,33,Suriname
+Venezia,Toni Fernández,Toni Fernández,67,83,MEI,18,Espanha
+Venezia,Kornel Lisman,Kornel Lisman,65,73,ATA,20,Polônia
+Venezia,John Yeboah,John Yeboah,70,75,ATA,26,Equador
+Venezia,Akor Adams,Akor Adams,80,81,ATA,26,Nigéria
+Venezia,Albion Rrahmani,Albion Rrahmani,73,78,ATA,26,Kosovo
+Venezia,Andrea Adorante,Andrea Adorante,71,74,ATA,26,Itália
+Venezia,Lion Lauberbach,Lion Lauberbach,71,71,ATA,28,Alemanha
+Monza,Noel Törnqvist,Noel Törnqvist,70,79,GOL,24,Suécia
+Monza,Demba Thiam,Demba Thiam,70,73,GOL,28,Senegal
+Monza,Aljaz Strajnar,Aljaz Strajnar,57,66,GOL,19,Eslovênia
+Monza,Jan Ziolkowski,Jan Ziolkowski,74,79,ZAG,21,Polônia
+Monza,Eddy Kouadio,Eddy Kouadio,72,76,ZAG,20,Itália
+Monza,Saba Goglichidze,Saba Goglichidze,71,79,ZAG,22,Geórgia
+Monza,Lorenzo Lucchesi,Lorenzo Lucchesi,72,76,ZAG,23,Itália
+Monza,Andrea Carboni,Andrea Carboni,70,76,ZAG,25,Itália
+Monza,Yvan Maye,Yvan Maye,66,74,ZAG,20,França
+Monza,Valentin Antov,Valentin Antov,68,75,ZAG,26,Bulgária
+Monza,Ricardo Mangas,Ricardo Mangas,74,74,LAT,28,Portugal
+Monza,Samuele Birindelli,Samuele Birindelli,74,77,LAT,27,Itália
+Monza,Adam Bakoune,Adam Bakoune,65,75,LAT,20,Marrocos
+Monza,Leonardo Colombo,Leonardo Colombo,69,74,VOL,21,Itália
+Monza,Ebenezer Akinsanmiro,Ebenezer Akinsanmiro,72,80,MEI,21,Nigéria
+Monza,Matteo Pessina,Matteo Pessina,76,76,MEI,29,Itália
+Monza,Michael Folorunsho,Michael Folorunsho,75,75,MEI,28,Itália
+Monza,Mathis Mout,Mathis Mout,66,75,MEI,19,Itália
+Monza,Foe Ondoa,Foe Ondoa,64,74,MEI,20,França
+Monza,Idrissa Touré,Idrissa Touré,71,71,MEI,28,Alemanha
+Monza,Patrick Ciurria,Patrick Ciurria,72,72,MEI,31,Itália
+Monza,Andrea Colpani,Andrea Colpani,78,78,MEI,27,Itália
+Monza,Jay Robinson,Jay Robinson,69,80,ATA,19,Inglaterra
+Monza,Keita Baldé,Keita Baldé,70,70,ATA,31,Senegal
+Monza,Cyril Ngonge,Cyril Ngonge,72,75,ATA,26,Bélgica
+Monza,Exequiel Zeballos,Exequiel Zeballos,75,78,ATA,24,Argentina
+Monza,Omari Forson,Omari Forson,70,77,ATA,22,Inglaterra
+Monza,Kevin Martins,Kevin Martins,62,74,ATA,21,Itália
+Monza,Gustavo Varela,Gustavo Varela,71,79,ATA,21,Portugal
+Monza,Patrick Cutrone,Patrick Cutrone,75,75,ATA,28,Itália
+Monza,Dany Mota,Dany Mota,75,75,ATA,28,Portugal
+Frosinone,Lorenzo Palmisani,Lorenzo Palmisani,67,67,GOL,22,Itália
+Frosinone,Sebastiano Desplanches,Sebastiano Desplanches,71,81,GOL,23,Itália
+Frosinone,Matteo Pisseri,Matteo Pisseri,66,66,GOL,34,Itália
+Frosinone,Gabriele Calvani,Gabriele Calvani,69,69,ZAG,22,Itália
+Frosinone,Ilario Monterisi,Ilario Monterisi,67,76,ZAG,24,Itália
+Frosinone,Giorgio Cittadini,Giorgio Cittadini,66,75,ZAG,24,Itália
+Frosinone,Kevin Akpoguma,Kevin Akpoguma,71,71,ZAG,31,Nigéria
+Frosinone,Wisdom Amey,Wisdom Amey,63,69,ZAG,21,Itália
+Frosinone,Omar Fayed,Omar Fayed,65,75,ZAG,23,Egito
+Frosinone,Gabriele Bracaglia,Gabriele Bracaglia,72,72,LAT,23,Itália
+Frosinone,Aleksa Terzić,Aleksa Terzić,72,75,LAT,27,Sérvia
+Frosinone,Anthony Oyono,Anthony Oyono,66,71,LAT,25,Gabão
+Frosinone,Enzo Tchato,Enzo Tchato,70,71,LAT,23,Camarões
+Frosinone,Matteo Cichella,Matteo Cichella,72,76,VOL,21,Itália
+Frosinone,Giacomo Calò,Giacomo Calò,69,69,VOL,29,Itália
+Frosinone,Florian Grillitsch,Florian Grillitsch,75,75,VOL,31,Áustria
+Frosinone,Luis Hasa,Luis Hasa,73,74,MEI,22,Albânia
+Frosinone,Patrizio Masini,Patrizio Masini,65,69,MEI,25,Itália
+Frosinone,Anouar El Azzouzi,Anouar El Azzouzi,67,75,MEI,25,Marrocos
+Frosinone,Ben Lhassine Kone,Ben Lhassine Kone,66,69,MEI,26,Costa do Marfim
+Frosinone,Francesco Gelli,Francesco Gelli,67,67,MEI,30,Itália
+Frosinone,Romano Schmid,Romano Schmid,78,80,MEI,26,Áustria
+Frosinone,Giorgi Kvernadze,Giorgi Kvernadze,74,74,ATA,23,Geórgia
+Frosinone,Alessio Zerbin,Alessio Zerbin,73,73,ATA,27,Itália
+Frosinone,Farès Ghedjemis,Farès Ghedjemis,63,70,ATA,24,Argélia
+Frosinone,Seydou Fini,Seydou Fini,69,82,ATA,20,Itália
+Frosinone,Tomas Bobcek,Tomas Bobcek,66,71,ATA,25,Eslováquia
+Frosinone,Antonio Raimondo,Antonio Raimondo,75,81,ATA,22,Itália
+Frosinone,Daniel Bîrligea,Daniel Bîrligea,73,74,ATA,26,Romênia

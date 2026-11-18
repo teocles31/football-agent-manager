@@ -1,0 +1,547 @@
+clube,nome_original,nome,overall,potencial,posicao,idade,pais
+Arsenal,David Raya,David Raya,87,87,GOL,31,Espanha
+Arsenal,Illan Meslier,Illan Meslier,72,73,GOL,26,França
+Arsenal,Kepa Arrizabalaga,Kepa Arrizabalaga,79,79,GOL,32,Espanha
+Arsenal,William Saliba,William Saliba,87,89,ZAG,25,França
+Arsenal,Gabriel,Gabriel,88,88,ZAG,28,Brasil
+Arsenal,Piero Hincapié,Piero Hincapié,83,89,ZAG,24,Equador
+Arsenal,Ezri Konsa,Ezri Konsa,83,83,ZAG,29,Inglaterra
+Arsenal,Cristhian Mosquera,Cristhian Mosquera,78,85,ZAG,22,Espanha
+Arsenal,Riccardo Calafiori,Riccardo Calafiori,78,84,LAT,24,Itália
+Arsenal,Jurriën Timber,Jurriën Timber,82,85,LAT,25,Holanda
+Arsenal,Ben White,Ben White,83,83,LAT,29,Inglaterra
+Arsenal,Martín Zubimendi,Martín Zubimendi,83,87,VOL,27,Espanha
+Arsenal,Myles Lewis-Skelly,Myles Lewis-Skelly,78,87,VOL,20,Inglaterra
+Arsenal,Declan Rice,Declan Rice,87,88,MEI,27,Inglaterra
+Arsenal,Bruno Guimarães,Bruno Guimarães,86,87,MEI,28,Brasil
+Arsenal,Mikel Merino,Mikel Merino,83,83,MEI,30,Espanha
+Arsenal,Martin Ødegaard,Martin Ødegaard,87,89,MEI,27,Noruega
+Arsenal,Eberechi Eze,Eberechi Eze,83,84,MEI,28,Inglaterra
+Arsenal,Christos Tzolis,Christos Tzolis,80,87,ATA,24,Grécia
+Arsenal,Bukayo Saka,Bukayo Saka,88,90,ATA,25,Inglaterra
+Arsenal,Max Dowman,Max Dowman,68,90,ATA,16,Inglaterra
+Arsenal,Noni Madueke,Noni Madueke,80,84,ATA,24,Inglaterra
+Arsenal,Kai Havertz,Kai Havertz,82,84,ATA,27,Alemanha
+Arsenal,Viktor Gyökeres,Viktor Gyökeres,87,88,ATA,28,Suécia
+Manchester City,Gianluigi Donnarumma,Gianluigi Donnarumma,89,91,GOL,27,Itália
+Manchester City,Gerónimo Rulli,Gerónimo Rulli,82,82,GOL,34,Argentina
+Manchester City,Marcus Bettinelli,Marcus Bettinelli,70,70,GOL,34,Inglaterra
+Manchester City,Marc Guéhi,Marc Guéhi,85,86,ZAG,26,Inglaterra
+Manchester City,Rúben Dias,Rúben Dias,86,87,ZAG,29,Portugal
+Manchester City,Abdukodir Khusanov,Abdukodir Khusanov,79,85,ZAG,22,Uzbequistão
+Manchester City,Vitor Reis,Vitor Reis,74,84,ZAG,20,Brasil
+Manchester City,Josko Gvardiol,Josko Gvardiol,84,87,LAT,24,Croácia
+Manchester City,Nico O'Reilly,Nico O'Reilly,79,83,LAT,21,Inglaterra
+Manchester City,Rayan Aït-Nouri,Rayan Aït-Nouri,81,85,LAT,25,Argélia
+Manchester City,Matheus Nunes,Matheus Nunes,79,80,LAT,28,Portugal
+Manchester City,Rico Lewis,Rico Lewis,77,84,LAT,21,Inglaterra
+Manchester City,Elliot Anderson,Elliot Anderson,84,87,VOL,24,Inglaterra
+Manchester City,Ayyoub Bouaddi,Ayyoub Bouaddi,80,86,VOL,19,Marrocos
+Manchester City,Enzo Fernández,Enzo Fernández,86,88,MEI,25,Argentina
+Manchester City,Mateo Kovacic,Mateo Kovacic,83,83,MEI,32,Croácia
+Manchester City,Rayan Cherki,Rayan Cherki,84,88,MEI,23,França
+Manchester City,Phil Foden,Phil Foden,85,88,MEI,26,Inglaterra
+Manchester City,Jérémy Doku,Jérémy Doku,80,85,ATA,24,Bélgica
+Manchester City,Iliman Ndiaye,Iliman Ndiaye,81,83,ATA,26,Senegal
+Manchester City,Antoine Semenyo,Antoine Semenyo,84,85,ATA,26,Gana
+Manchester City,Allan,Allan,75,83,ATA,22,Brasil
+Manchester City,Ryan McAidoo,Ryan McAidoo,68,79,ATA,18,Inglaterra
+Manchester City,Erling Haaland,Erling Haaland,90,92,ATA,26,Noruega
+Liverpool,Giorgi Mamardashvili,Giorgi Mamardashvili,84,87,GOL,26,Geórgia
+Liverpool,Alisson,Alisson,89,89,GOL,34,Brasil
+Liverpool,Vítězslav Jaroš,Vítězslav Jaroš,70,78,GOL,25,Tchéquia
+Liverpool,Freddie Woodman,Freddie Woodman,71,71,GOL,29,Inglaterra
+Liverpool,Harvey Davies,Harvey Davies,64,64,GOL,23,Inglaterra
+Liverpool,Jérémy Jacquet,Jérémy Jacquet,78,84,ZAG,21,França
+Liverpool,Giovanni Leoni,Giovanni Leoni,72,82,ZAG,19,Itália
+Liverpool,Ronald Araújo,Ronald Araújo,82,83,ZAG,27,Uruguai
+Liverpool,Virgil van Dijk,Virgil van Dijk,90,90,ZAG,35,Holanda
+Liverpool,Joe Gomez,Joe Gomez,79,80,ZAG,29,Inglaterra
+Liverpool,Milos Kerkez,Milos Kerkez,82,86,LAT,23,Hungria
+Liverpool,Konstantinos Tsimikas,Konstantinos Tsimikas,77,77,LAT,30,Grécia
+Liverpool,Luke Chambers,Luke Chambers,65,67,LAT,22,Inglaterra
+Liverpool,Jeremie Frimpong,Jeremie Frimpong,83,85,LAT,25,Holanda
+Liverpool,Conor Bradley,Conor Bradley,79,84,LAT,23,Irlanda do Norte
+Liverpool,Ryan Gravenberch,Ryan Gravenberch,85,88,VOL,24,Holanda
+Liverpool,Wataru Endo,Wataru Endo,79,79,VOL,33,Japão
+Liverpool,Alexis Mac Allister,Alexis Mac Allister,87,88,MEI,27,Argentina
+Liverpool,Trey Nyoni,Trey Nyoni,70,84,MEI,19,Inglaterra
+Liverpool,James McConnell,James McConnell,68,79,MEI,22,Inglaterra
+Liverpool,Dominik Szoboszlai,Dominik Szoboszlai,83,86,MEI,26,Hungria
+Liverpool,Florian Wirtz,Florian Wirtz,89,93,MEI,23,Alemanha
+Liverpool,Bradley Barcola,Bradley Barcola,84,88,ATA,24,França
+Liverpool,Cody Gakpo,Cody Gakpo,84,85,ATA,27,Holanda
+Liverpool,Rio Ngumoha,Rio Ngumoha,72,88,ATA,18,Inglaterra
+Liverpool,Víctor Muñoz,Víctor Muñoz,77,77,ATA,23,Espanha
+Liverpool,Federico Chiesa,Federico Chiesa,81,81,ATA,29,Itália
+Liverpool,Alexander Isak,Alexander Isak,88,89,ATA,27,Suécia
+Liverpool,Hugo Ekitiké,Hugo Ekitiké,83,88,ATA,24,França
+Liverpool,Lewis Koumas,Lewis Koumas,70,83,ATA,21,País de Gales
+Liverpool,Jayden Danns,Jayden Danns,61,69,ATA,20,Inglaterra
+Chelsea,Mike Penders,Mike Penders,76,80,GOL,21,Bélgica
+Chelsea,Emiliano Martínez,Emiliano Martínez,86,86,GOL,34,Argentina
+Chelsea,Gabriel Slonina,Gabriel Slonina,69,80,GOL,22,EUA
+Chelsea,Teddy Sharman-Lowe,Teddy Sharman-Lowe,62,64,GOL,23,Inglaterra
+Chelsea,Maxence Lacroix,Maxence Lacroix,82,83,ZAG,26,França
+Chelsea,Levi Colwill,Levi Colwill,82,84,ZAG,23,Inglaterra
+Chelsea,Wesley Fofana,Wesley Fofana,79,82,ZAG,25,França
+Chelsea,Josh Acheampong,Josh Acheampong,74,85,ZAG,20,Inglaterra
+Chelsea,Aarón Anselmino,Aarón Anselmino,73,82,ZAG,21,Argentina
+Chelsea,Jorrel Hato,Jorrel Hato,78,89,LAT,20,Holanda
+Chelsea,Pep Chavarría,Pep Chavarría,77,78,LAT,28,Espanha
+Chelsea,Reece James,Reece James,81,84,LAT,26,Inglaterra
+Chelsea,Marco Palestra,Marco Palestra,79,80,LAT,21,Itália
+Chelsea,Malo Gusto,Malo Gusto,81,84,LAT,23,França
+Chelsea,Moisés Caicedo,Moisés Caicedo,87,89,VOL,25,Equador
+Chelsea,Roméo Lavia,Roméo Lavia,78,85,VOL,22,Bélgica
+Chelsea,Valentín Barco,Valentín Barco,78,83,MEI,22,Argentina
+Chelsea,Mahdi Nicoll-Jazuli,Mahdi Nicoll-Jazuli,57,75,MEI,16,Inglaterra
+Chelsea,Jordan Henderson,Jordan Henderson,73,73,MEI,36,Inglaterra
+Chelsea,Cole Palmer,Cole Palmer,87,90,MEI,24,Inglaterra
+Chelsea,Morgan Rogers,Morgan Rogers,85,88,ATA,24,Inglaterra
+Chelsea,Jamie Gittens,Jamie Gittens,78,85,ATA,22,Inglaterra
+Chelsea,Estêvão,Estêvão,82,89,ATA,19,Brasil
+Chelsea,Pedro Neto,Pedro Neto,80,82,ATA,26,Portugal
+Chelsea,Geovany Quenda,Geovany Quenda,76,88,ATA,19,Portugal
+Chelsea,João Pedro,João Pedro,79,84,ATA,25,Brasil
+Chelsea,Emmanuel Emegha,Emmanuel Emegha,79,79,ATA,23,Holanda
+Chelsea,Danny Welbeck,Danny Welbeck,75,75,ATA,35,Inglaterra
+Manchester United,Senne Lammens,Senne Lammens,78,87,GOL,24,Bélgica
+Manchester United,Karl Darlow,Karl Darlow,72,72,GOL,36,País de Gales
+Manchester United,Tom Heaton,Tom Heaton,67,67,GOL,40,Inglaterra
+Manchester United,Dermot Mee,Dermot Mee,55,55,GOL,23,Irlanda do Norte
+Manchester United,Lisandro Martínez,Lisandro Martínez,81,82,ZAG,28,Argentina
+Manchester United,Leny Yoro,Leny Yoro,80,86,ZAG,21,França
+Manchester United,Ayden Heaven,Ayden Heaven,76,84,ZAG,20,Inglaterra
+Manchester United,Matthijs de Ligt,Matthijs de Ligt,82,84,ZAG,27,Holanda
+Manchester United,Harry Maguire,Harry Maguire,80,80,ZAG,33,Inglaterra
+Manchester United,Luke Shaw,Luke Shaw,79,79,LAT,31,Inglaterra
+Manchester United,Harry Amass,Harry Amass,66,77,LAT,19,Inglaterra
+Manchester United,Diogo Dalot,Diogo Dalot,79,81,LAT,27,Portugal
+Manchester United,Noussair Mazraoui,Noussair Mazraoui,80,81,LAT,29,Marrocos
+Manchester United,Carlos Baleba,Carlos Baleba,81,88,VOL,22,Camarões
+Manchester United,Andrey Santos,Andrey Santos,80,87,VOL,22,Brasil
+Manchester United,Manuel Ugarte,Manuel Ugarte,79,83,VOL,25,Uruguai
+Manchester United,Kobbie Mainoo,Kobbie Mainoo,80,85,MEI,21,Inglaterra
+Manchester United,Youri Tielemans,Youri Tielemans,85,85,MEI,29,Bélgica
+Manchester United,Tyler Fletcher,Tyler Fletcher,64,74,MEI,19,Escócia
+Manchester United,Bruno Fernandes,Bruno Fernandes,87,87,MEI,32,Portugal
+Manchester United,Mason Mount,Mason Mount,77,78,MEI,27,Inglaterra
+Manchester United,Marcus Rashford,Marcus Rashford,80,80,ATA,29,Inglaterra
+Manchester United,Patrick Dorgu,Patrick Dorgu,79,84,ATA,22,Dinamarca
+Manchester United,Bryan Mbeumo,Bryan Mbeumo,85,86,ATA,27,Camarões
+Manchester United,Amad Diallo,Amad Diallo,79,85,ATA,24,Costa do Marfim
+Manchester United,Shea Lacey,Shea Lacey,71,80,ATA,19,Inglaterra
+Manchester United,Matheus Cunha,Matheus Cunha,83,85,ATA,27,Brasil
+Manchester United,Benjamin Šeško,Benjamin Šeško,82,88,ATA,23,Eslovênia
+Manchester United,Joshua Zirkzee,Joshua Zirkzee,77,83,ATA,25,Holanda
+Newcastle,Lukas Hornicek,Lukas Hornicek,73,83,GOL,24,Tchéquia
+Newcastle,Ewen Jaouen,Ewen Jaouen,72,82,GOL,20,França
+Newcastle,Nick Pope,Nick Pope,81,81,GOL,34,Inglaterra
+Newcastle,Mark Gillespie,Mark Gillespie,62,62,GOL,34,Inglaterra
+Newcastle,Malick Thiaw,Malick Thiaw,78,84,ZAG,25,Alemanha
+Newcastle,Sven Botman,Sven Botman,82,85,ZAG,26,Holanda
+Newcastle,Dan Burn,Dan Burn,79,79,ZAG,34,Inglaterra
+Newcastle,Fabian Schär,Fabian Schär,82,82,ZAG,34,Suíça
+Newcastle,Lewis Hall,Lewis Hall,80,86,LAT,22,Inglaterra
+Newcastle,Tino Livramento,Tino Livramento,80,86,LAT,24,Inglaterra
+Newcastle,Amar Dedic,Amar Dedic,74,79,LAT,24,Bósnia
+Newcastle,Nico González,Nico González,79,85,VOL,24,Espanha
+Newcastle,Aladji Bamba,Aladji Bamba,74,79,VOL,20,França
+Newcastle,Jacob Ramsey,Jacob Ramsey,78,82,MEI,25,Inglaterra
+Newcastle,Lewis Miley,Lewis Miley,76,86,MEI,20,Inglaterra
+Newcastle,Sean Steur,Sean Steur,70,83,MEI,18,Holanda
+Newcastle,Joelinton,Joelinton,82,82,MEI,30,Brasil
+Newcastle,Joe Willock,Joe Willock,76,78,MEI,27,Inglaterra
+Newcastle,Bazoumana Touré,Bazoumana Touré,77,85,ATA,20,Costa do Marfim
+Newcastle,Harvey Barnes,Harvey Barnes,80,80,ATA,28,Inglaterra
+Newcastle,Anthony Elanga,Anthony Elanga,81,84,ATA,24,Suécia
+Newcastle,Jacob Murphy,Jacob Murphy,81,81,ATA,31,Inglaterra
+Newcastle,Matias Fernandez-Pardo,Matias Fernandez-Pardo,79,84,ATA,21,Bélgica
+Newcastle,William Osula,William Osula,78,78,ATA,23,Dinamarca
+Newcastle,Yoane Wissa,Yoane Wissa,82,82,ATA,30,RD Congo
+Aston Villa,Zion Suzuki,Zion Suzuki,74,82,GOL,24,Japão
+Aston Villa,Marco Bizot,Marco Bizot,78,78,GOL,35,Holanda
+Aston Villa,James Wright,James Wright,57,61,GOL,21,Inglaterra
+Aston Villa,Taylor Harwood-Bellis,Taylor Harwood-Bellis,80,83,ZAG,24,Inglaterra
+Aston Villa,Pau Torres,Pau Torres,80,80,ZAG,29,Espanha
+Aston Villa,Modou Kéba Cissé,Modou Kéba Cissé,71,80,ZAG,21,Senegal
+Aston Villa,Victor Lindelöf,Victor Lindelöf,75,75,ZAG,32,Suécia
+Aston Villa,Tyrone Mings,Tyrone Mings,78,78,ZAG,33,Inglaterra
+Aston Villa,Ian Maatsen,Ian Maatsen,79,84,LAT,24,Holanda
+Aston Villa,Matteo Ruggeri,Matteo Ruggeri,75,83,LAT,24,Itália
+Aston Villa,Matty Cash,Matty Cash,79,79,LAT,29,Polônia
+Aston Villa,Aaron Wan-Bissaka,Aaron Wan-Bissaka,80,81,LAT,28,RD Congo
+Aston Villa,Boubacar Kamara,Boubacar Kamara,83,85,VOL,26,França
+Aston Villa,Amadou Onana,Amadou Onana,79,83,VOL,25,Bélgica
+Aston Villa,Lamare Bogarde,Lamare Bogarde,77,78,VOL,22,Holanda
+Aston Villa,João Gomes,João Gomes,78,83,MEI,25,Brasil
+Aston Villa,Leon Goretzka,Leon Goretzka,76,76,MEI,31,Alemanha
+Aston Villa,Ross Barkley,Ross Barkley,77,77,MEI,32,Inglaterra
+Aston Villa,John McGinn,John McGinn,81,81,MEI,32,Escócia
+Aston Villa,Johan Manzambi,Johan Manzambi,80,84,MEI,21,Suíça
+Aston Villa,Emiliano Buendía,Emiliano Buendía,77,77,MEI,29,Argentina
+Aston Villa,Alejandro Garnacho,Alejandro Garnacho,77,79,ATA,22,Argentina
+Aston Villa,George Hemmings,George Hemmings,72,81,ATA,19,Inglaterra
+Aston Villa,Ibrahim Mbaye,Ibrahim Mbaye,75,83,ATA,18,Senegal
+Aston Villa,Alysson,Alysson,73,81,ATA,20,Brasil
+Aston Villa,Nicolas Jackson,Nicolas Jackson,80,84,ATA,25,Senegal
+Aston Villa,Brian Madjo,Brian Madjo,69,84,ATA,17,Inglaterra
+Aston Villa,Tammy Abraham,Tammy Abraham,78,78,ATA,29,Inglaterra
+Tottenham,Antonín Kinský,Antonín Kinský,77,81,GOL,23,Tchéquia
+Tottenham,Martin Dúbravka,Martin Dúbravka,77,77,GOL,37,Eslováquia
+Tottenham,Brandon Austin,Brandon Austin,67,71,GOL,27,Inglaterra
+Tottenham,Jan Paul van Hecke,Jan Paul van Hecke,80,83,ZAG,26,Holanda
+Tottenham,Micky van de Ven,Micky van de Ven,82,85,ZAG,25,Holanda
+Tottenham,Marcos Senesi,Marcos Senesi,78,78,ZAG,29,Argentina
+Tottenham,Tosin Adarabioyo,Tosin Adarabioyo,77,77,ZAG,29,Inglaterra
+Tottenham,Ben Davies,Ben Davies,75,75,ZAG,33,País de Gales
+Tottenham,Destiny Udogie,Destiny Udogie,80,84,LAT,23,Itália
+Tottenham,Andrew Robertson,Andrew Robertson,77,77,LAT,32,Escócia
+Tottenham,Pedro Porro,Pedro Porro,82,85,LAT,27,Espanha
+Tottenham,Archie Gray,Archie Gray,77,86,LAT,20,Inglaterra
+Tottenham,Sandro Tonali,Sandro Tonali,86,88,VOL,26,Itália
+Tottenham,Rodrigo Bentancur,Rodrigo Bentancur,80,81,VOL,29,Uruguai
+Tottenham,Mateus Fernandes,Mateus Fernandes,82,85,MEI,22,Portugal
+Tottenham,Lucas Bergvall,Lucas Bergvall,79,87,MEI,20,Suécia
+Tottenham,Conor Gallagher,Conor Gallagher,81,85,MEI,26,Inglaterra
+Tottenham,Xavi Simons,Xavi Simons,84,87,MEI,23,Holanda
+Tottenham,James Maddison,James Maddison,84,84,MEI,29,Inglaterra
+Tottenham,Dejan Kulusevski,Dejan Kulusevski,83,86,MEI,26,Suécia
+Tottenham,Sávio,Sávio,79,82,ATA,22,Brasil
+Tottenham,Mathys Tel,Mathys Tel,77,86,ATA,21,França
+Tottenham,Wilson Odobert,Wilson Odobert,75,83,ATA,21,França
+Tottenham,Mykhaylo Mudryk,Mykhaylo Mudryk,76,78,ATA,25,Ucrânia
+Tottenham,Mohammed Kudus,Mohammed Kudus,80,83,ATA,26,Gana
+Tottenham,Omar Marmoush,Omar Marmoush,84,84,ATA,27,Egito
+Tottenham,Dominic Solanke,Dominic Solanke,80,80,ATA,29,Inglaterra
+Tottenham,Richarlison,Richarlison,78,78,ATA,29,Brasil
+Brighton,Bart Verbruggen,Bart Verbruggen,78,84,GOL,24,Holanda
+Brighton,Jason Steele,Jason Steele,73,73,GOL,36,Inglaterra
+Brighton,Tom McGill,Tom McGill,62,67,GOL,26,Canadá
+Brighton,Luka Vuskovic,Luka Vuskovic,75,87,ZAG,19,Croácia
+Brighton,Pascal Struijk,Pascal Struijk,77,77,ZAG,27,Holanda
+Brighton,Olivier Boscagli,Olivier Boscagli,79,81,ZAG,28,França
+Brighton,Michael Svoboda,Michael Svoboda,68,71,ZAG,28,Áustria
+Brighton,Lewis Dunk,Lewis Dunk,77,77,ZAG,34,Inglaterra
+Brighton,Ferdi Kadıoğlu,Ferdi Kadıoğlu,79,81,LAT,27,Turquia
+Brighton,Maxim De Cuyper,Maxim De Cuyper,80,86,LAT,25,Bélgica
+Brighton,Jaouen Hadjam,Jaouen Hadjam,75,77,LAT,23,Argélia
+Brighton,Mats Wieffer,Mats Wieffer,78,82,LAT,26,Holanda
+Brighton,Costinha,Costinha,75,76,LAT,26,Portugal
+Brighton,Jack Hinshelwood,Jack Hinshelwood,78,83,VOL,21,Inglaterra
+Brighton,Chema Andrés,Chema Andrés,74,78,VOL,21,Espanha
+Brighton,Yasin Ayari,Yasin Ayari,82,82,MEI,23,Suécia
+Brighton,Diego Gómez,Diego Gómez,79,80,MEI,23,Paraguai
+Brighton,Malick Yalcouyé,Malick Yalcouyé,75,82,MEI,20,Costa do Marfim
+Brighton,Matt O'Riley,Matt O'Riley,78,80,MEI,25,Dinamarca
+Brighton,Pascal Groß,Pascal Groß,80,80,MEI,35,Alemanha
+Brighton,Kaoru Mitoma,Kaoru Mitoma,82,82,ATA,29,Japão
+Brighton,Ibrahim Osman,Ibrahim Osman,72,77,ATA,21,Gana
+Brighton,Yankuba Minteh,Yankuba Minteh,79,85,ATA,22,The Gambia
+Brighton,Zadok Yohanna,Zadok Yohanna,72,76,ATA,19,Nigéria
+Brighton,Femi Azeez,Femi Azeez,76,78,ATA,25,Nigéria
+Brighton,Charalampos Kostoulas,Charalampos Kostoulas,74,85,ATA,19,Grécia
+Brighton,Georginio Rutter,Georginio Rutter,77,83,ATA,24,França
+Brighton,Promise David,Promise David,77,79,ATA,25,Canadá
+Brighton,Stefanos Tzimas,Stefanos Tzimas,73,81,ATA,20,Grécia
+Brighton,Evan Ferguson,Evan Ferguson,75,82,ATA,22,Irlanda
+Nottingham Forest,John Victor,John Victor,71,71,GOL,30,Brasil
+Nottingham Forest,Matz Sels,Matz Sels,83,83,GOL,34,Bélgica
+Nottingham Forest,Steven Benda,Steven Benda,66,66,GOL,28,Alemanha
+Nottingham Forest,Murillo,Murillo,83,87,ZAG,24,Brasil
+Nottingham Forest,Ousmane Diomande,Ousmane Diomande,80,87,ZAG,22,Costa do Marfim
+Nottingham Forest,Nikola Milenković,Nikola Milenković,83,84,ZAG,29,Sérvia
+Nottingham Forest,Jair Cunha,Jair Cunha,75,81,ZAG,21,Brasil
+Nottingham Forest,Neco Williams,Neco Williams,78,81,LAT,25,País de Gales
+Nottingham Forest,Luca Netz,Luca Netz,73,77,LAT,23,Alemanha
+Nottingham Forest,Daniel Muñoz,Daniel Muñoz,81,81,LAT,30,Colômbia
+Nottingham Forest,Ola Aina,Ola Aina,80,80,LAT,30,Nigéria
+Nottingham Forest,Nicolò Savona,Nicolò Savona,76,80,LAT,23,Itália
+Nottingham Forest,Ibrahim Sangaré,Ibrahim Sangaré,77,79,VOL,28,Costa do Marfim
+Nottingham Forest,James McAtee,James McAtee,73,81,MEI,24,Inglaterra
+Nottingham Forest,Xaver Schlager,Xaver Schlager,80,82,MEI,29,Áustria
+Nottingham Forest,Nicolás Domínguez,Nicolás Domínguez,79,80,MEI,28,Argentina
+Nottingham Forest,Ryan Yates,Ryan Yates,77,78,MEI,28,Inglaterra
+Nottingham Forest,Morgan Gibbs-White,Morgan Gibbs-White,82,84,MEI,26,Inglaterra
+Nottingham Forest,Callum Hudson-Odoi,Callum Hudson-Odoi,78,82,ATA,26,Inglaterra
+Nottingham Forest,Dan Ndoye,Dan Ndoye,79,82,ATA,26,Suíça
+Nottingham Forest,Liam Delap,Liam Delap,79,81,ATA,23,Inglaterra
+Nottingham Forest,Igor Jesus,Igor Jesus,77,81,ATA,25,Brasil
+Nottingham Forest,Arnaud Kalimuendo,Arnaud Kalimuendo,78,82,ATA,24,França
+Nottingham Forest,Chris Wood,Chris Wood,82,82,ATA,34,Nova Zelândia
+Bournemouth,Djordje Petrović,Djordje Petrović,79,79,GOL,27,Sérvia
+Bournemouth,Michele Di Gregorio,Michele Di Gregorio,81,84,GOL,29,Itália
+Bournemouth,Fraser Forster,Fraser Forster,69,69,GOL,38,Inglaterra
+Bournemouth,James Hill,James Hill,71,77,ZAG,24,Inglaterra
+Bournemouth,António Silva,António Silva,80,86,ZAG,23,Portugal
+Bournemouth,Bafodé Diakité,Bafodé Diakité,79,84,ZAG,25,França
+Bournemouth,Veljko Milosavljević,Veljko Milosavljević,73,84,ZAG,19,Sérvia
+Bournemouth,Adrien Truffert,Adrien Truffert,77,81,LAT,24,França
+Bournemouth,Julio Soler,Julio Soler,71,79,LAT,21,Argentina
+Bournemouth,Juanlu Sánchez,Juanlu Sánchez,76,83,LAT,23,Espanha
+Bournemouth,Julián Araujo,Julián Araujo,74,81,LAT,25,México
+Bournemouth,Max Aarons,Max Aarons,71,72,LAT,26,Inglaterra
+Bournemouth,Adam Smith,Adam Smith,73,73,LAT,35,Inglaterra
+Bournemouth,Tyler Adams,Tyler Adams,79,81,VOL,27,EUA
+Bournemouth,Alex Scott,Alex Scott,83,83,MEI,23,Inglaterra
+Bournemouth,Alex Tóth,Alex Tóth,72,77,MEI,21,Hungria
+Bournemouth,Lewis Cook,Lewis Cook,79,80,MEI,29,Inglaterra
+Bournemouth,Ryan Christie,Ryan Christie,79,79,MEI,31,Escócia
+Bournemouth,Marcus Tavernier,Marcus Tavernier,76,77,MEI,27,Inglaterra
+Bournemouth,Justin Kluivert,Justin Kluivert,79,81,MEI,27,Holanda
+Bournemouth,Amine Adli,Amine Adli,78,82,ATA,26,Marrocos
+Bournemouth,Rayan,Rayan,78,87,ATA,20,Brasil
+Bournemouth,Ben Gannon-Doak,Ben Gannon-Doak,74,85,ATA,21,Escócia
+Bournemouth,David Brooks,David Brooks,75,75,ATA,29,País de Gales
+Bournemouth,Junior Kroupi,Junior Kroupi,77,85,ATA,20,França
+Bournemouth,Evanilson,Evanilson,80,83,ATA,27,Brasil
+Bournemouth,Álvaro Rodríguez,Álvaro Rodríguez,75,82,ATA,22,Uruguai
+Bournemouth,Daniel Jebbison,Daniel Jebbison,75,75,ATA,23,Canadá
+Crystal Palace,Dean Henderson,Dean Henderson,81,82,GOL,29,Inglaterra
+Crystal Palace,Walter Benítez,Walter Benítez,79,79,GOL,33,Argentina
+Crystal Palace,Remi Matthews,Remi Matthews,63,63,GOL,32,Inglaterra
+Crystal Palace,Honest Ahanor,Honest Ahanor,73,81,ZAG,18,Itália
+Crystal Palace,Jaydee Canvot,Jaydee Canvot,75,82,ZAG,20,França
+Crystal Palace,Chris Richards,Chris Richards,77,80,ZAG,26,EUA
+Crystal Palace,Chadi Riad,Chadi Riad,77,81,ZAG,23,Marrocos
+Crystal Palace,Axel Disasi,Axel Disasi,76,76,ZAG,28,França
+Crystal Palace,Takehiro Tomiyasu,Takehiro Tomiyasu,72,72,ZAG,28,Japão
+Crystal Palace,Tyrick Mitchell,Tyrick Mitchell,78,80,LAT,27,Inglaterra
+Crystal Palace,Ben Chilwell,Ben Chilwell,76,76,LAT,29,Inglaterra
+Crystal Palace,Anan Khalaili,Anan Khalaili,78,84,LAT,22,Israel
+Crystal Palace,Óscar Mingueza,Óscar Mingueza,76,76,LAT,27,Espanha
+Crystal Palace,Adam Wharton,Adam Wharton,82,86,VOL,22,Inglaterra
+Crystal Palace,Cheick Doucouré,Cheick Doucouré,77,80,VOL,26,Mali
+Crystal Palace,Jefferson Lerma,Jefferson Lerma,77,77,VOL,32,Colômbia
+Crystal Palace,Quinten Timber,Quinten Timber,78,80,MEI,25,Holanda
+Crystal Palace,Daichi Kamada,Daichi Kamada,77,77,MEI,30,Japão
+Crystal Palace,Will Hughes,Will Hughes,77,77,MEI,31,Inglaterra
+Crystal Palace,Yéremy Pino,Yéremy Pino,80,88,ATA,24,Espanha
+Crystal Palace,Dwight McNeil,Dwight McNeil,79,80,ATA,26,Inglaterra
+Crystal Palace,Ismaïla Sarr,Ismaïla Sarr,79,79,ATA,28,Senegal
+Crystal Palace,Darío Osorio,Darío Osorio,77,79,ATA,22,Chile
+Crystal Palace,Evann Guessand,Evann Guessand,79,84,ATA,25,Costa do Marfim
+Crystal Palace,Zavier Gozo,Zavier Gozo,70,79,ATA,19,EUA
+Crystal Palace,Jørgen Strand Larsen,Jørgen Strand Larsen,78,83,ATA,26,Noruega
+Crystal Palace,Jean-Philippe Mateta,Jean-Philippe Mateta,82,82,ATA,29,França
+Crystal Palace,Eddie Nketiah,Eddie Nketiah,74,77,ATA,27,Inglaterra
+Brentford,Caoimhín Kelleher,Caoimhín Kelleher,79,82,GOL,27,Irlanda
+Brentford,Hákon Valdimarsson,Hákon Valdimarsson,68,76,GOL,25,Islândia
+Brentford,Ellery Balcombe,Ellery Balcombe,63,68,GOL,27,Inglaterra
+Brentford,Sepp van den Berg,Sepp van den Berg,77,83,ZAG,24,Holanda
+Brentford,Nathan Collins,Nathan Collins,79,82,ZAG,25,Irlanda
+Brentford,Kristoffer Ajer,Kristoffer Ajer,75,76,ZAG,28,Noruega
+Brentford,Jannik Schuster,Jannik Schuster,73,77,ZAG,20,Áustria
+Brentford,Benjamin Fredrick,Benjamin Fredrick,60,66,ZAG,21,Nigéria
+Brentford,El Hadji Malick Diouf,El Hadji Malick Diouf,77,82,LAT,21,Senegal
+Brentford,Keane Lewis-Potter,Keane Lewis-Potter,76,79,LAT,25,Inglaterra
+Brentford,Rico Henry,Rico Henry,76,76,LAT,29,Jamaica
+Brentford,Michael Kayode,Michael Kayode,79,81,LAT,22,Itália
+Brentford,Aaron Hickey,Aaron Hickey,74,79,LAT,24,Escócia
+Brentford,Vitaly Janelt,Vitaly Janelt,76,77,VOL,28,Alemanha
+Brentford,Mamadou Sangaré,Mamadou Sangaré,72,81,MEI,24,Mali
+Brentford,Yegor Yarmolyuk,Yegor Yarmolyuk,79,81,MEI,22,Ucrânia
+Brentford,Mathias Jensen,Mathias Jensen,77,77,MEI,30,Dinamarca
+Brentford,Josh Dasilva,Josh Dasilva,67,67,MEI,28,Inglaterra
+Brentford,Mikkel Damsgaard,Mikkel Damsgaard,80,83,MEI,26,Dinamarca
+Brentford,Antoni Milambo,Antoni Milambo,74,85,MEI,21,Holanda
+Brentford,Fábio Carvalho,Fábio Carvalho,74,82,MEI,24,Portugal
+Brentford,Kevin Schade,Kevin Schade,78,83,ATA,24,Alemanha
+Brentford,Jaidon Anthony,Jaidon Anthony,79,80,ATA,26,Inglaterra
+Brentford,Gustavo Nunes,Gustavo Nunes,70,81,ATA,20,Brasil
+Brentford,Dango Ouattara,Dango Ouattara,77,81,ATA,24,Burkina Faso
+Brentford,Igor Thiago,Igor Thiago,75,79,ATA,25,Brasil
+Brentford,Kaye Furo,Kaye Furo,68,83,ATA,19,Bélgica
+Brentford,Callum Wilson,Callum Wilson,76,76,ATA,34,Inglaterra
+Fulham,Bernd Leno,Bernd Leno,80,80,GOL,34,Alemanha
+Fulham,Benjamin Lecomte,Benjamin Lecomte,74,74,GOL,35,França
+Fulham,Alex Borto,Alex Borto,53,55,GOL,23,EUA
+Fulham,Calvin Bassey,Calvin Bassey,78,81,ZAG,26,Nigéria
+Fulham,David Affengruber,David Affengruber,77,79,ZAG,25,Áustria
+Fulham,Joachim Andersen,Joachim Andersen,78,78,ZAG,30,Dinamarca
+Fulham,Jorge Cuenca,Jorge Cuenca,74,78,ZAG,26,Espanha
+Fulham,Ryan Sessegnon,Ryan Sessegnon,75,79,LAT,26,Inglaterra
+Fulham,Antonee Robinson,Antonee Robinson,82,82,LAT,29,EUA
+Fulham,Timothy Castagne,Timothy Castagne,76,76,LAT,30,Bélgica
+Fulham,Kenny Tete,Kenny Tete,77,77,LAT,31,Holanda
+Fulham,Sander Berge,Sander Berge,79,80,VOL,28,Noruega
+Fulham,Shea Charles,Shea Charles,80,80,VOL,23,Irlanda do Norte
+Fulham,Alex Iwobi,Alex Iwobi,80,80,VOL,30,Nigéria
+Fulham,Hugo Larsson,Hugo Larsson,76,79,MEI,22,Suécia
+Fulham,Manuel Ángel,Manuel Ángel,71,73,MEI,22,Espanha
+Fulham,Harrison Reed,Harrison Reed,72,72,MEI,31,Inglaterra
+Fulham,Tom Cairney,Tom Cairney,74,74,MEI,35,Escócia
+Fulham,Josh King,Josh King,73,83,MEI,19,Inglaterra
+Fulham,Emile Smith Rowe,Emile Smith Rowe,77,81,MEI,26,Inglaterra
+Fulham,César Palacios,César Palacios,73,77,MEI,22,Espanha
+Fulham,Kevin,Kevin,80,81,ATA,23,Brasil
+Fulham,Oscar Bobb,Oscar Bobb,78,82,ATA,23,Noruega
+Fulham,Gonzalo García,Gonzalo García,77,81,ATA,22,Espanha
+Fulham,Rodrigo Muniz,Rodrigo Muniz,75,81,ATA,25,Brasil
+Fulham,Jonah Kusi-Asare,Jonah Kusi-Asare,67,82,ATA,19,Suécia
+Everton,Jordan Pickford,Jordan Pickford,84,84,GOL,32,Inglaterra
+Everton,Mark Travers,Mark Travers,72,75,GOL,27,Irlanda
+Everton,Tom King,Tom King,64,64,GOL,31,País de Gales
+Everton,Jarrad Branthwaite,Jarrad Branthwaite,79,85,ZAG,24,Inglaterra
+Everton,James Tarkowski,James Tarkowski,80,80,ZAG,33,Inglaterra
+Everton,Michael Keane,Michael Keane,73,73,ZAG,33,Inglaterra
+Everton,Vitaliy Mykolenko,Vitaliy Mykolenko,78,79,LAT,27,Ucrânia
+Everton,Jake O'Brien,Jake O'Brien,76,81,LAT,25,Irlanda
+Everton,Ainsley Maitland-Niles,Ainsley Maitland-Niles,75,75,LAT,29,Inglaterra
+Everton,James Garner,James Garner,76,81,VOL,25,Inglaterra
+Everton,Hayden Hackney,Hayden Hackney,81,84,VOL,24,Inglaterra
+Everton,Christian Nørgaard,Christian Nørgaard,75,75,VOL,32,Dinamarca
+Everton,Harrison Armstrong,Harrison Armstrong,73,83,MEI,19,Inglaterra
+Everton,Merlin Röhl,Merlin Röhl,74,82,MEI,24,Alemanha
+Everton,Charly Alcaraz,Charly Alcaraz,76,82,MEI,23,Argentina
+Everton,Kiernan Dewsbury-Hall,Kiernan Dewsbury-Hall,77,78,MEI,28,Inglaterra
+Everton,Tyrique George,Tyrique George,75,84,ATA,20,Inglaterra
+Everton,Jack Grealish,Jack Grealish,80,80,ATA,31,Inglaterra
+Everton,Brennan Johnson,Brennan Johnson,79,81,ATA,25,País de Gales
+Everton,Tyler Dibling,Tyler Dibling,74,85,ATA,20,Inglaterra
+Everton,Thierno Barry,Thierno Barry,77,85,ATA,24,França
+Everton,Braiden Graham,Braiden Graham,59,69,ATA,19,Irlanda do Norte
+Sunderland,Robin Roefs,Robin Roefs,80,84,GOL,23,Holanda
+Sunderland,Melker Ellborg,Melker Ellborg,70,73,GOL,23,Suécia
+Sunderland,Simon Moore,Simon Moore,66,66,GOL,36,Inglaterra
+Sunderland,Dan Ballard,Dan Ballard,73,78,ZAG,27,Irlanda do Norte
+Sunderland,Kevin Danso,Kevin Danso,79,82,ZAG,28,Áustria
+Sunderland,Omar Alderete,Omar Alderete,78,79,ZAG,29,Paraguai
+Sunderland,Luke O'Nien,Luke O'Nien,72,72,ZAG,31,Inglaterra
+Sunderland,Aji Alese,Aji Alese,66,73,ZAG,25,Inglaterra
+Sunderland,Dayann Méthalie,Dayann Méthalie,75,80,LAT,20,França
+Sunderland,Reinildo Mandava,Reinildo Mandava,79,79,LAT,32,Moçambique
+Sunderland,Trai Hume,Trai Hume,74,79,LAT,24,Irlanda do Norte
+Sunderland,Nordi Mukiele,Nordi Mukiele,79,80,LAT,29,França
+Sunderland,Thomas Meunier,Thomas Meunier,73,73,LAT,35,Bélgica
+Sunderland,Granit Xhaka,Granit Xhaka,85,85,VOL,34,Suíça
+Sunderland,Jules Ahoka,Jules Ahoka,68,78,VOL,20,RD Congo
+Sunderland,Noah Sadiki,Noah Sadiki,77,83,MEI,21,RD Congo
+Sunderland,Habib Diarra,Habib Diarra,78,83,MEI,22,Senegal
+Sunderland,Enzo Le Fée,Enzo Le Fée,76,80,MEI,26,França
+Sunderland,Alan Browne,Alan Browne,68,68,MEI,31,Irlanda
+Sunderland,Chris Rigg,Chris Rigg,73,84,MEI,19,Inglaterra
+Sunderland,Malick Fofana,Malick Fofana,81,87,ATA,21,Bélgica
+Sunderland,Nilson Angulo,Nilson Angulo,78,79,ATA,23,Equador
+Sunderland,Romaine Mundle,Romaine Mundle,71,79,ATA,23,Inglaterra
+Sunderland,Timur Tuterov,Timur Tuterov,59,63,ATA,21,Ucrânia
+Sunderland,Chemsdine Talbi,Chemsdine Talbi,77,86,ATA,21,Marrocos
+Sunderland,Jocelin Ta Bi,Jocelin Ta Bi,68,71,ATA,21,Costa do Marfim
+Sunderland,Abdoullah Ba,Abdoullah Ba,68,70,ATA,23,Mauritania
+Sunderland,Brian Brobbey,Brian Brobbey,77,83,ATA,24,Holanda
+Sunderland,Wilson Isidor,Wilson Isidor,72,77,ATA,26,Haiti
+Leeds United,James Trafford,James Trafford,81,84,GOL,24,Inglaterra
+Leeds United,Michael Zetterer,Michael Zetterer,76,77,GOL,31,Alemanha
+Leeds United,Alex Cairns,Alex Cairns,63,63,GOL,33,Inglaterra
+Leeds United,Tarik Muharemović,Tarik Muharemović,79,79,ZAG,23,Bósnia
+Leeds United,Jaka Bijol,Jaka Bijol,77,79,ZAG,27,Eslovênia
+Leeds United,Joe Rodon,Joe Rodon,76,78,ZAG,29,País de Gales
+Leeds United,Nico Elvedi,Nico Elvedi,77,77,ZAG,30,Suíça
+Leeds United,Gabriel Gudmundsson,Gabriel Gudmundsson,77,78,LAT,27,Suécia
+Leeds United,Melvin Bard,Melvin Bard,75,76,LAT,26,França
+Leeds United,Jayden Bogle,Jayden Bogle,75,79,LAT,26,Inglaterra
+Leeds United,James Justin,James Justin,74,75,LAT,28,Inglaterra
+Leeds United,Ethan Ampadu,Ethan Ampadu,76,79,VOL,26,País de Gales
+Leeds United,Anton Stach,Anton Stach,79,82,VOL,28,Alemanha
+Leeds United,Ilia Gruev,Ilia Gruev,74,77,VOL,26,Bulgária
+Leeds United,Ao Tanaka,Ao Tanaka,76,79,MEI,28,Japão
+Leeds United,Sean Longstaff,Sean Longstaff,75,76,MEI,29,Inglaterra
+Leeds United,Brenden Aaronson,Brenden Aaronson,74,78,MEI,26,EUA
+Leeds United,Noah Okafor,Noah Okafor,76,79,ATA,26,Suíça
+Leeds United,Jean-Mattéo Bahoya,Jean-Mattéo Bahoya,77,80,ATA,21,França
+Leeds United,Harry Wilson,Harry Wilson,76,76,ATA,29,País de Gales
+Leeds United,Daniel James,Daniel James,76,76,ATA,29,País de Gales
+Leeds United,Dominic Calvert-Lewin,Dominic Calvert-Lewin,74,74,ATA,29,Inglaterra
+Leeds United,Lukas Nmecha,Lukas Nmecha,76,77,ATA,27,Alemanha
+Leeds United,Mateo Joseph,Mateo Joseph,70,81,ATA,23,Espanha
+Ipswich Town,Kjell Scherpen,Kjell Scherpen,73,78,GOL,26,Holanda
+Ipswich Town,Christian Walton,Christian Walton,69,71,GOL,31,Inglaterra
+Ipswich Town,Alex Palmer,Alex Palmer,73,75,GOL,30,Inglaterra
+Ipswich Town,David Button,David Button,62,62,GOL,37,Inglaterra
+Ipswich Town,Dara O'Shea,Dara O'Shea,75,78,ZAG,27,Irlanda
+Ipswich Town,Jacob Greaves,Jacob Greaves,74,79,ZAG,26,Inglaterra
+Ipswich Town,Issa Diop,Issa Diop,75,75,ZAG,29,Marrocos
+Ipswich Town,Cédric Kipré,Cédric Kipré,74,76,ZAG,29,Costa do Marfim
+Ipswich Town,Leif Davis,Leif Davis,76,79,LAT,26,Inglaterra
+Ipswich Town,Abdoul Ouattara,Abdoul Ouattara,74,79,LAT,21,Costa do Marfim
+Ipswich Town,Darnell Furlong,Darnell Furlong,72,72,LAT,31,Inglaterra
+Ipswich Town,Florentino,Florentino,77,77,VOL,27,Portugal
+Ipswich Town,Azor Matusiwa,Azor Matusiwa,76,78,VOL,28,Holanda
+Ipswich Town,Exequiel Palacios,Exequiel Palacios,82,82,MEI,28,Argentina
+Ipswich Town,Marcelino Núñez,Marcelino Núñez,73,76,MEI,26,Chile
+Ipswich Town,Saša Lukić,Saša Lukić,78,78,MEI,30,Sérvia
+Ipswich Town,Jack Taylor,Jack Taylor,70,73,MEI,28,Irlanda
+Ipswich Town,Julio Enciso,Julio Enciso,78,80,MEI,22,Paraguai
+Ipswich Town,Anis Mehmeti,Anis Mehmeti,72,77,MEI,25,Albânia
+Ipswich Town,Jaden Philogene,Jaden Philogene,75,81,ATA,24,Inglaterra
+Ipswich Town,Jack Clarke,Jack Clarke,74,80,ATA,25,Inglaterra
+Ipswich Town,Daizen Maeda,Daizen Maeda,79,79,ATA,29,Japão
+Ipswich Town,Abdul Fatawu,Abdul Fatawu,78,79,ATA,22,Gana
+Ipswich Town,Sindre Walle Egeli,Sindre Walle Egeli,72,82,ATA,20,Noruega
+Ipswich Town,Kasey McAteer,Kasey McAteer,71,76,ATA,24,Irlanda
+Ipswich Town,Emersonn,Emersonn,78,80,ATA,22,Brasil
+Ipswich Town,Zian Flemming,Zian Flemming,73,74,ATA,28,Holanda
+Ipswich Town,Chuba Akpom,Chuba Akpom,76,76,ATA,31,Inglaterra
+Coventry City,Carl Rushworth,Carl Rushworth,72,80,GOL,25,Inglaterra
+Coventry City,Dan Bentley,Dan Bentley,70,70,GOL,33,Inglaterra
+Coventry City,Ben Wilson,Ben Wilson,68,68,GOL,34,Inglaterra
+Coventry City,Bobby Thomas,Bobby Thomas,71,77,ZAG,25,Inglaterra
+Coventry City,Aurèle Amenda,Aurèle Amenda,76,78,ZAG,23,Suíça
+Coventry City,Ethan Pinnock,Ethan Pinnock,73,73,ZAG,33,Jamaica
+Coventry City,Stephen Mfuni,Stephen Mfuni,63,75,ZAG,18,Inglaterra
+Coventry City,Joel Latibeaudiere,Joel Latibeaudiere,69,74,ZAG,26,Jamaica
+Coventry City,Luke Woolfenden,Luke Woolfenden,73,75,ZAG,28,Inglaterra
+Coventry City,Jay Dasilva,Jay Dasilva,69,70,LAT,28,País de Gales
+Coventry City,Jake Bidwell,Jake Bidwell,68,68,LAT,33,Inglaterra
+Coventry City,Milan van Ewijk,Milan van Ewijk,74,79,LAT,26,Holanda
+Coventry City,Kaine Kesler-Hayden,Kaine Kesler-Hayden,72,79,LAT,24,Inglaterra
+Coventry City,Matt Grimes,Matt Grimes,74,74,VOL,31,Inglaterra
+Coventry City,Caleb Yirenkyi,Caleb Yirenkyi,74,82,MEI,20,Gana
+Coventry City,Victor Torp,Victor Torp,70,73,MEI,27,Dinamarca
+Coventry City,Gustavo Hamer,Gustavo Hamer,75,75,MEI,29,Holanda
+Coventry City,Josh Eccles,Josh Eccles,70,76,MEI,26,Inglaterra
+Coventry City,Frank Onyeka,Frank Onyeka,73,73,MEI,28,Nigéria
+Coventry City,Jack Rudoni,Jack Rudoni,74,80,MEI,25,Inglaterra
+Coventry City,Ephron Mason-Clark,Ephron Mason-Clark,71,72,ATA,27,Jamaica
+Coventry City,Yann Gboho,Yann Gboho,77,79,ATA,25,Costa do Marfim
+Coventry City,Loum Tchaouna,Loum Tchaouna,76,78,ATA,23,França
+Coventry City,Tatsuhiro Sakamoto,Tatsuhiro Sakamoto,72,72,ATA,30,Japão
+Coventry City,Sidiki Chérif,Sidiki Chérif,72,79,ATA,19,França
+Coventry City,Haji Wright,Haji Wright,73,74,ATA,28,EUA
+Coventry City,Brandon Thomas-Asante,Brandon Thomas-Asante,69,71,ATA,27,Gana
+Coventry City,Ellis Simms,Ellis Simms,70,77,ATA,25,Inglaterra
+Coventry City,Taiwo Awoniyi,Taiwo Awoniyi,75,75,ATA,29,Nigéria
+Hull City,Konstantinos Tzolakis,Konstantinos Tzolakis,79,86,GOL,24,Grécia
+Hull City,Jack Butland,Jack Butland,75,75,GOL,33,Inglaterra
+Hull City,Dillon Phillips,Dillon Phillips,66,67,GOL,31,Inglaterra
+Hull City,Nobel Mendy,Nobel Mendy,74,74,ZAG,22,Senegal
+Hull City,Lucas Herrington,Lucas Herrington,70,81,ZAG,19,Austrália
+Hull City,Charlie Hughes,Charlie Hughes,75,80,ZAG,23,Inglaterra
+Hull City,John Egan,John Egan,72,72,ZAG,34,Irlanda
+Hull City,Paddy McNair,Paddy McNair,70,70,ZAG,31,Irlanda do Norte
+Hull City,Semi Ajayi,Semi Ajayi,70,70,ZAG,33,Nigéria
+Hull City,Ryan Giles,Ryan Giles,71,75,LAT,26,Inglaterra
+Hull City,Matt Targett,Matt Targett,72,72,LAT,31,Inglaterra
+Hull City,Brooke Norton-Cuffy,Brooke Norton-Cuffy,74,78,LAT,22,Inglaterra
+Hull City,Lewie Coyle,Lewie Coyle,70,70,LAT,31,Inglaterra
+Hull City,Regan Slater,Regan Slater,70,73,VOL,27,Inglaterra
+Hull City,Lucas Gourna-Douath,Lucas Gourna-Douath,75,81,VOL,23,França
+Hull City,Óscar Zambrano,Óscar Zambrano,67,69,VOL,22,Equador
+Hull City,Christos Mouzakitis,Christos Mouzakitis,72,86,MEI,19,Grécia
+Hull City,Tim Iroegbunam,Tim Iroegbunam,78,78,MEI,23,Inglaterra
+Hull City,Jens Hjertø-Dahl,Jens Hjertø-Dahl,73,79,MEI,21,Noruega
+Hull City,Hidemasa Morita,Hidemasa Morita,79,79,MEI,31,Japão
+Hull City,Darko Gyabi,Darko Gyabi,66,77,MEI,22,Inglaterra
+Hull City,Eliot Matazo,Eliot Matazo,71,77,MEI,24,Bélgica
+Hull City,Matt Crooks,Matt Crooks,69,69,MEI,32,Inglaterra
+Hull City,Kieran Dowell,Kieran Dowell,65,65,MEI,29,Inglaterra
+Hull City,Sorba Thomas,Sorba Thomas,76,76,ATA,27,País de Gales
+Hull City,Elliot Stroud,Elliot Stroud,71,77,ATA,24,Suécia
+Hull City,Mohamed Belloumi,Mohamed Belloumi,73,79,ATA,24,Argélia
+Hull City,Mohamed-Ali Cho,Mohamed-Ali Cho,76,83,ATA,22,França
+Hull City,Abdülkadir Ömür,Abdülkadir Ömür,73,74,ATA,27,Turquia
+Hull City,Robinio Vaz,Robinio Vaz,72,82,ATA,19,França
+Hull City,Ilyas Ansah,Ilyas Ansah,76,80,ATA,22,Alemanha
+Hull City,Joe Gelhardt,Joe Gelhardt,70,77,ATA,24,Inglaterra
+Hull City,Oli McBurnie,Oli McBurnie,74,74,ATA,30,Escócia

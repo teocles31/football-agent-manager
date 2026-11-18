@@ -1,0 +1,529 @@
+clube,nome_original,nome,overall,potencial,posicao,idade,pais
+PSV,Matej Kovar,Matej Kovar,75,80,GOL,26,Tchéquia
+PSV,Nick Olij,Nick Olij,77,78,GOL,31,Holanda
+PSV,Tijn Smolenaars,Tijn Smolenaars,58,63,GOL,21,Holanda
+PSV,Lutsharel Geertruida,Lutsharel Geertruida,78,82,ZAG,26,Holanda
+PSV,Yarek Gasiorowski,Yarek Gasiorowski,76,85,ZAG,21,Espanha
+PSV,Ryan Flamingo,Ryan Flamingo,78,83,ZAG,23,Holanda
+PSV,Armando Obispo,Armando Obispo,73,76,ZAG,27,Curaçao
+PSV,Adamo Nagalo,Adamo Nagalo,71,82,ZAG,24,Burkina Faso
+PSV,Fabian Merién,Fabian Merién,59,72,ZAG,18,Holanda
+PSV,Mauro Júnior,Mauro Júnior,79,82,LAT,27,Brasil
+PSV,Filip Kostic,Filip Kostic,81,81,LAT,34,Sérvia
+PSV,Sergiño Dest,Sergiño Dest,79,83,LAT,26,EUA
+PSV,Kiliann Sildillia,Kiliann Sildillia,73,78,LAT,24,França
+PSV,Kodai Sano,Kodai Sano,79,82,VOL,23,Japão
+PSV,Jerdy Schouten,Jerdy Schouten,80,81,VOL,29,Holanda
+PSV,Paul Wanner,Paul Wanner,75,86,MEI,20,Áustria
+PSV,Noah Fernandez,Noah Fernandez,71,81,MEI,18,Bélgica
+PSV,Guus Til,Guus Til,77,77,MEI,28,Holanda
+PSV,Sven Mijnans,Sven Mijnans,75,80,MEI,26,Holanda
+PSV,Shuryjano Cornecion,Shuryjano Cornecion,56,68,MEI,18,Holanda
+PSV,Ruben van Bommel,Ruben van Bommel,79,84,ATA,22,Holanda
+PSV,Ayoni Santos,Ayoni Santos,69,75,ATA,21,Cabo Verde
+PSV,Amir Bouhamdi,Amir Bouhamdi,64,76,ATA,18,Marrocos
+PSV,Dennis Man,Dennis Man,76,76,ATA,28,Romênia
+PSV,Esmir Bajraktarevic,Esmir Bajraktarevic,75,84,ATA,21,Bósnia
+PSV,Sami Ouaissa,Sami Ouaissa,76,78,ATA,22,Holanda
+PSV,Ivan Perisic,Ivan Perisic,81,81,ATA,37,Croácia
+PSV,Ricardo Pepi,Ricardo Pepi,81,84,ATA,23,EUA
+PSV,Mikkel Bro Hansen,Mikkel Bro Hansen,62,78,ATA,17,Dinamarca
+PSV,Sam Lammers,Sam Lammers,72,72,ATA,29,Holanda
+PSV,Alassane Pléa,Alassane Pléa,78,78,ATA,33,França
+Feyenoord,Tjark Ernst,Tjark Ernst,76,79,GOL,23,Alemanha
+Feyenoord,Florian Kastenmeier,Florian Kastenmeier,72,74,GOL,29,Alemanha
+Feyenoord,Liam Bossin,Liam Bossin,65,67,GOL,30,Irlanda
+Feyenoord,Mannou Berger,Mannou Berger,59,73,GOL,22,Suriname
+Feyenoord,Mika Mármol,Mika Mármol,75,82,ZAG,25,Espanha
+Feyenoord,Tsuyoshi Watanabe,Tsuyoshi Watanabe,75,75,ZAG,29,Japão
+Feyenoord,Thijs Kraaijeveld,Thijs Kraaijeveld,69,79,ZAG,19,Holanda
+Feyenoord,Jeremiah St. Juste,Jeremiah St. Juste,75,75,ZAG,30,Holanda
+Feyenoord,Thomas Beelen,Thomas Beelen,74,82,ZAG,25,Holanda
+Feyenoord,Tijme Wessels,Tijme Wessels,59,71,ZAG,19,Holanda
+Feyenoord,Jordan Bos,Jordan Bos,69,78,LAT,24,Austrália
+Feyenoord,Gijs Smal,Gijs Smal,74,74,LAT,29,Holanda
+Feyenoord,Javi López,Javi López,73,80,LAT,24,Espanha
+Feyenoord,Givairo Read,Givairo Read,76,88,LAT,20,Holanda
+Feyenoord,Mats Deijl,Mats Deijl,72,72,LAT,29,Holanda
+Feyenoord,Bart Nieuwkoop,Bart Nieuwkoop,74,74,LAT,30,Holanda
+Feyenoord,Charles Vanhoutte,Charles Vanhoutte,77,80,VOL,28,Bélgica
+Feyenoord,Oussama Targhalline,Oussama Targhalline,73,80,MEI,24,Marrocos
+Feyenoord,Jakub Moder,Jakub Moder,75,77,MEI,27,Polônia
+Feyenoord,Gjivai Zechiël,Gjivai Zechiël,77,81,MEI,22,Holanda
+Feyenoord,Sem Steijn,Sem Steijn,78,83,MEI,25,Holanda
+Feyenoord,Tobias van den Elshout,Tobias van den Elshout,64,75,MEI,19,Holanda
+Feyenoord,Luciano Valente,Luciano Valente,81,82,ATA,23,Holanda
+Feyenoord,Reiss Nelson,Reiss Nelson,76,77,ATA,26,Inglaterra
+Feyenoord,Gaoussou Diarra,Gaoussou Diarra,72,83,ATA,23,Mali
+Feyenoord,Jivayno Zinhagel,Jivayno Zinhagel,61,75,ATA,17,Holanda
+Feyenoord,Anis Hadj Moussa,Anis Hadj Moussa,76,82,ATA,24,Argélia
+Feyenoord,Gonçalo Borges,Gonçalo Borges,72,77,ATA,25,Portugal
+Feyenoord,Jerayno Schaken,Jerayno Schaken,63,76,ATA,17,Holanda
+Feyenoord,Nacho Ferri,Nacho Ferri,76,82,ATA,22,Espanha
+Feyenoord,Shaqueel van Persie,Shaqueel van Persie,68,79,ATA,19,Holanda
+Feyenoord,Theodoros Delianidis,Theodoros Delianidis,53,60,ATA,20,Grécia
+Ajax,Marc ter Stegen,Marc ter Stegen,76,76,GOL,34,Alemanha
+Ajax,Maarten Paes,Maarten Paes,71,71,GOL,28,Indonesia
+Ajax,Joeri Heerkens,Joeri Heerkens,64,80,GOL,20,Holanda
+Ajax,Youri Baas,Youri Baas,80,83,ZAG,23,Holanda
+Ajax,Thilo Kehrer,Thilo Kehrer,77,77,ZAG,30,Alemanha
+Ajax,Aaron Bouwman,Aaron Bouwman,71,83,ZAG,19,Holanda
+Ajax,Dies Janse,Dies Janse,71,81,ZAG,20,Holanda
+Ajax,Daley Blind,Daley Blind,77,77,ZAG,36,Holanda
+Ajax,Caio Henrique,Caio Henrique,77,77,LAT,29,Brasil
+Ajax,Owen Wijndal,Owen Wijndal,72,76,LAT,26,Holanda
+Ajax,Jofre Torrents,Jofre Torrents,61,79,LAT,19,Espanha
+Ajax,Lucas Rosa,Lucas Rosa,71,74,LAT,26,Brasil
+Ajax,Anton Gaaei,Anton Gaaei,73,79,LAT,23,Dinamarca
+Ajax,Jorthy Mokio,Jorthy Mokio,71,89,VOL,18,RD Congo
+Ajax,Yves Bissouma,Yves Bissouma,78,78,VOL,30,Mali
+Ajax,Sofyan Amrabat,Sofyan Amrabat,78,78,VOL,30,Marrocos
+Ajax,Davy Klaassen,Davy Klaassen,77,77,MEI,33,Holanda
+Ajax,Mohamed Abdalla,Mohamed Abdalla,63,76,MEI,17,Holanda
+Ajax,Oscar Gloukh,Oscar Gloukh,76,85,MEI,22,Israel
+Ajax,Julian Brandt,Julian Brandt,83,83,MEI,30,Alemanha
+Ajax,Abdellah Ouazane,Abdellah Ouazane,68,82,MEI,17,Marrocos
+Ajax,Rayane Bounida,Rayane Bounida,69,84,MEI,20,Marrocos
+Ajax,Simon Adingra,Simon Adingra,76,83,ATA,24,Costa do Marfim
+Ajax,Oliver Edvardsen,Oliver Edvardsen,73,74,ATA,27,Noruega
+Ajax,Viktor Tsygankov,Viktor Tsygankov,79,79,ATA,29,Ucrânia
+Ajax,Steven Berghuis,Steven Berghuis,78,78,ATA,34,Holanda
+Ajax,Tolu Arokodare,Tolu Arokodare,80,82,ATA,25,Nigéria
+Ajax,Marcos Leonardo,Marcos Leonardo,79,85,ATA,23,Brasil
+Ajax,Kasper Dolberg,Kasper Dolberg,77,77,ATA,29,Dinamarca
+Utrecht,Dani de Wit,Dani de Wit,72,73,MEI,28,Holanda
+Utrecht,Souffian El Karouani,Souffian El Karouani,75,79,LAT,25,Marrocos
+Utrecht,Can Bozdoğan,Can Bozdoğan,67,73,MEI,25,Alemanha
+Utrecht,Dave van den Berg,Dave van den Berg,67,72,MEI,26,Holanda
+Utrecht,Sébastien Haller,Sébastien Haller,77,77,ATA,32,Costa do Marfim
+Utrecht,Miguel Rodríguez,Miguel Rodríguez,73,83,ATA,23,Espanha
+Utrecht,Gjivai Zechiël,Gjivai Zechiël,69,81,MEI,22,Holanda
+Utrecht,Yoann Cathline,Yoann Cathline,75,84,ATA,24,França
+Utrecht,Victor Jensen,Victor Jensen,69,74,MEI,26,Dinamarca
+Utrecht,Alonzo Engwanda,Alonzo Engwanda,70,79,VOL,23,Bélgica
+Utrecht,Nick Viergever,Nick Viergever,73,73,ZAG,36,Holanda
+Utrecht,Zidane Iqbal,Zidane Iqbal,68,78,VOL,23,Iraque
+Utrecht,Derry Murkin,Derry Murkin,68,71,LAT,27,Inglaterra
+Utrecht,Kolbeinn Finnsson,Kolbeinn Finnsson,66,69,LAT,26,Islândia
+Utrecht,Siebe Horemans,Siebe Horemans,71,72,LAT,28,Bélgica
+Utrecht,Niklas Vesterlund,Niklas Vesterlund,67,70,LAT,27,Dinamarca
+Utrecht,Ivar Jenner,Ivar Jenner,61,73,VOL,22,Indonésia
+Utrecht,Noah Ohio,Noah Ohio,67,78,ATA,23,Holanda
+Utrecht,Miliano Jonathans,Miliano Jonathans,66,78,ATA,22,Indonésia
+Utrecht,Jaygo van Ommeren,Jaygo van Ommeren,62,79,VOL,18,Holanda
+Utrecht,David Min,David Min,67,70,ATA,27,Holanda
+Utrecht,Mike van der Hoorn,Mike van der Hoorn,75,75,ZAG,33,Holanda
+Utrecht,Adrian Blake,Adrian Blake,66,80,ATA,21,Inglaterra
+Utrecht,Rafik El Arguioui,Rafik El Arguioui,60,75,MEI,21,Marrocos
+Utrecht,Emirhan Demircan,Emirhan Demircan,62,77,ATA,21,Turquia
+Utrecht,Matisse Didden,Matisse Didden,68,77,ZAG,24,Bélgica
+Utrecht,Mike Eerdhuijzen,Mike Eerdhuijzen,73,79,ZAG,26,Holanda
+Utrecht,Markus Jensen,Markus Jensen,62,78,ATA,21,Dinamarca
+Utrecht,Jesse van de Haar,Jesse van de Haar,63,76,ATA,21,Holanda
+Utrecht,Vasilis Barkas,Vasilis Barkas,74,74,GOL,32,Grécia
+Utrecht,Mees Eppink,Mees Eppink,56,68,GOL,20,Holanda
+Utrecht,Michael Brouwer,Michael Brouwer,68,68,GOL,33,Holanda
+Utrecht,Kevin Gadellaa,Kevin Gadellaa,60,70,GOL,23,Holanda
+Sparta Rotterdam,Patrick van Aanholt,Patrick van Aanholt,72,72,LAT,35,Holanda
+Sparta Rotterdam,Jens Toornstra,Jens Toornstra,69,69,MEI,37,Holanda
+Sparta Rotterdam,Joshua Kitolano,Joshua Kitolano,69,76,MEI,24,Noruega
+Sparta Rotterdam,Pelle Clement,Pelle Clement,67,67,MEI,30,Holanda
+Sparta Rotterdam,Saïd Bakari,Saïd Bakari,67,67,LAT,31,Comores
+Sparta Rotterdam,Jonathan de Guzmán,Jonathan de Guzmán,66,66,MEI,38,Holanda
+Sparta Rotterdam,Julian Baas,Julian Baas,67,73,MEI,24,Holanda
+Sparta Rotterdam,Shurandy Sambo,Shurandy Sambo,68,75,LAT,24,Curacao
+Sparta Rotterdam,Mike Kleijn,Mike Kleijn,63,74,LAT,21,Holanda
+Sparta Rotterdam,Lance Duijvestijn,Lance Duijvestijn,67,69,MEI,27,Holanda
+Sparta Rotterdam,Tobias Lauritsen,Tobias Lauritsen,72,72,ATA,28,Noruega
+Sparta Rotterdam,Sayfallah Ltaief,Sayfallah Ltaief,68,71,MEI,26,Tunísia
+Sparta Rotterdam,Mitchell van Bergen,Mitchell van Bergen,69,70,MEI,26,Holanda
+Sparta Rotterdam,Marvin Young,Marvin Young,69,83,ZAG,20,Holanda
+Sparta Rotterdam,Ayoni Santos,Ayoni Santos,62,75,MEI,21,Holanda
+Sparta Rotterdam,Shunsuke Mito,Shunsuke Mito,68,77,MEI,23,Japão
+Sparta Rotterdam,Ayoub Oufkir,Ayoub Oufkir,63,78,MEI,20,Holanda
+Sparta Rotterdam,B. Martins Indi,B. Martins Indi,68,68,ZAG,34,Holanda
+Sparta Rotterdam,Nökkvi Þórisson,Nökkvi Þórisson,65,67,ATA,26,Islândia
+Sparta Rotterdam,Giannino Vianello,Giannino Vianello,58,71,LAT,19,Holanda
+Sparta Rotterdam,Teo Quintero,Teo Quintero,65,69,ZAG,27,Venezuela
+Sparta Rotterdam,Tijs Velthuis,Tijs Velthuis,65,73,ZAG,24,Holanda
+Sparta Rotterdam,Max de Ligt,Max de Ligt,57,70,ZAG,22,Holanda
+Sparta Rotterdam,Joël Drommel,Joël Drommel,72,74,GOL,29,Holanda
+Sparta Rotterdam,Filip Bednarek,Filip Bednarek,65,65,GOL,33,Polônia
+Sparta Rotterdam,Pascal Kuiper,Pascal Kuiper,59,68,GOL,22,Holanda
+AZ Alkmaar,Sven Mijnans,Sven Mijnans,75,80,MEI,26,Holanda
+AZ Alkmaar,Jordy Clasie,Jordy Clasie,79,79,VOL,35,Holanda
+AZ Alkmaar,Seiya Maikuma,Seiya Maikuma,74,75,LAT,28,Japão
+AZ Alkmaar,Troy Parrott,Troy Parrott,74,80,ATA,24,Irlanda
+AZ Alkmaar,Peer Koopmeiners,Peer Koopmeiners,74,79,VOL,26,Holanda
+AZ Alkmaar,Matěj Šín,Matěj Šín,74,83,MEI,22,Tchéquia
+AZ Alkmaar,Kees Smit,Kees Smit,72,87,MEI,20,Holanda
+AZ Alkmaar,Mees de Wit,Mees de Wit,69,70,LAT,28,Holanda
+AZ Alkmaar,Mexx Meerdink,Mexx Meerdink,73,83,ATA,23,Holanda
+AZ Alkmaar,Ibrahim Sadiq,Ibrahim Sadiq,72,75,MEI,26,Gana
+AZ Alkmaar,Denso Kasius,Denso Kasius,70,78,LAT,23,Holanda
+AZ Alkmaar,Patati,Patati,72,83,MEI,22,Brasil
+AZ Alkmaar,Mateo Chávez,Mateo Chávez,72,79,LAT,22,México
+AZ Alkmaar,Dave Kwakman,Dave Kwakman,66,78,MEI,21,Holanda
+AZ Alkmaar,Wouter Goes,Wouter Goes,77,85,ZAG,22,Holanda
+AZ Alkmaar,Isak Jensen,Isak Jensen,70,83,MEI,22,Dinamarca
+AZ Alkmaar,Alexandre Penetra,Alexandre Penetra,74,82,ZAG,24,Portugal
+AZ Alkmaar,Ro-Zangelo Daal,Ro-Zangelo Daal,68,79,MEI,22,Holanda
+AZ Alkmaar,Elijah Dijkstra,Elijah Dijkstra,64,82,LAT,19,Holanda
+AZ Alkmaar,Lequincio Zeefuik,Lequincio Zeefuik,64,74,ATA,21,Holanda
+AZ Alkmaar,Maxim Dekker,Maxim Dekker,67,76,ZAG,22,Holanda
+AZ Alkmaar,Sem van Duijn,Sem van Duijn,61,74,MEI,22,Holanda
+AZ Alkmaar,Jasper Hartog,Jasper Hartog,60,78,MEI,20,Holanda
+AZ Alkmaar,Andrea Natali,Andrea Natali,60,82,ZAG,18,Itália
+AZ Alkmaar,Billy van Duijl,Billy van Duijl,62,78,ZAG,20,Holanda
+AZ Alkmaar,Jeroen Zoet,Jeroen Zoet,69,69,GOL,35,Holanda
+AZ Alkmaar,Hobie Verhulst,Hobie Verhulst,65,65,GOL,33,Holanda
+AZ Alkmaar,Rome Owusu-Oduro,Rome Owusu-Oduro,71,84,GOL,22,Holanda
+AZ Alkmaar,Daniël Virginio Deen,Daniël Virginio Deen,60,70,GOL,23,Holanda
+Go Ahead Eagles,Melle Meulensteen,Melle Meulensteen,72,75,VOL,27,Holanda
+Go Ahead Eagles,Mats Deijl,Mats Deijl,72,72,LAT,29,Holanda
+Go Ahead Eagles,Dean James,Dean James,70,74,LAT,26,Indonésia
+Go Ahead Eagles,Kenzo Goudmijn,Kenzo Goudmijn,68,74,MEI,24,Holanda
+Go Ahead Eagles,E. Linthorst,E. Linthorst,69,74,VOL,26,Holanda
+Go Ahead Eagles,Victor Edvardsen,Victor Edvardsen,72,72,ATA,30,Suécia
+Go Ahead Eagles,Jakob Breum,Jakob Breum,74,82,MEI,22,Dinamarca
+Go Ahead Eagles,Calvin Twigt,Calvin Twigt,66,73,VOL,23,Holanda
+Go Ahead Eagles,Oscar Pettersson,Oscar Pettersson,66,69,MEI,26,Suécia
+Go Ahead Eagles,Mathis Suray,Mathis Suray,68,73,MEI,25,Bélgica
+Go Ahead Eagles,Richonell Margaret,Richonell Margaret,67,70,MEI,25,Suriname
+Go Ahead Eagles,Søren Tengstedt,Søren Tengstedt,65,70,MEI,26,Dinamarca
+Go Ahead Eagles,Milan Smit,Milan Smit,66,74,ATA,23,Holanda
+Go Ahead Eagles,Thibo Baeten,Thibo Baeten,64,71,ATA,24,Bélgica
+Go Ahead Eagles,Joris Kramer,Joris Kramer,72,73,ZAG,29,Holanda
+Go Ahead Eagles,Robbin Weijenberg,Robbin Weijenberg,61,72,MEI,21,Holanda
+Go Ahead Eagles,Xander Blomme,Xander Blomme,63,72,VOL,24,Bélgica
+Go Ahead Eagles,Aske Adelgaard,Aske Adelgaard,65,75,LAT,22,Dinamarca
+Go Ahead Eagles,Finn Stokkers,Finn Stokkers,65,65,ATA,30,Holanda
+Go Ahead Eagles,Oskar Sivertsen,Oskar Sivertsen,63,76,MEI,22,Noruega
+Go Ahead Eagles,Pim Saathof,Pim Saathof,57,69,ZAG,22,Holanda
+Go Ahead Eagles,Gerrit Nauber,Gerrit Nauber,70,70,ZAG,34,Alemanha
+Go Ahead Eagles,Yassir Rahmouni,Yassir Rahmouni,57,72,MEI,20,Holanda
+Go Ahead Eagles,Ofosu Boakye,Ofosu Boakye,57,73,ATA,19,Gana
+Go Ahead Eagles,Julius Dirksen,Julius Dirksen,62,71,LAT,23,Holanda
+Go Ahead Eagles,Giovanni van Zwam,Giovanni van Zwam,62,74,ZAG,22,Holanda
+Go Ahead Eagles,Luca Plogmann,Luca Plogmann,67,72,GOL,26,Alemanha
+Go Ahead Eagles,Jari De Busser,Jari De Busser,72,76,GOL,26,Bélgica
+Go Ahead Eagles,Sven Jansen,Sven Jansen,56,69,GOL,21,Holanda
+Go Ahead Eagles,Nando Verdoni,Nando Verdoni,58,67,GOL,23,Holanda
+Twente,Ramiz Zerrouki,Ramiz Zerrouki,73,75,VOL,28,Argélia
+Twente,Ricky van Wolfswinkel,Ricky van Wolfswinkel,73,73,ATA,37,Holanda
+Twente,Arno Verschueren,Arno Verschueren,70,70,MEI,29,Bélgica
+Twente,Thomas van den Belt,Thomas van den Belt,70,77,MEI,25,Holanda
+Twente,Marko Pjaca,Marko Pjaca,71,71,MEI,31,Croácia
+Twente,Sam Lammers,Sam Lammers,73,73,ATA,29,Holanda
+Twente,Daan Rots,Daan Rots,74,80,MEI,25,Holanda
+Twente,Taylor Booth,Taylor Booth,70,76,MEI,25,Estados Unidos
+Twente,Bas Kuipers,Bas Kuipers,70,70,LAT,31,Holanda
+Twente,Mathias Kjølø,Mathias Kjølø,71,76,VOL,25,Noruega
+Twente,Bart van Rooij,Bart van Rooij,74,78,LAT,25,Holanda
+Twente,Robin Pröpper,Robin Pröpper,73,73,ZAG,32,Holanda
+Twente,Max Bruns,Max Bruns,69,78,ZAG,23,Holanda
+Twente,Mats Rots,Mats Rots,68,79,LAT,20,Holanda
+Twente,Mees Hilgers,Mees Hilgers,72,78,ZAG,25,Indonésia
+Twente,Naci Ünüvar,Naci Ünüvar,69,76,MEI,23,Turquia
+Twente,Kristian Hlynsson,Kristian Hlynsson,68,79,MEI,22,Islândia
+Twente,Daouda Weidmann,Daouda Weidmann,64,74,MEI,23,França
+Twente,Sondre Ørjasæter,Sondre Ørjasæter,67,78,MEI,22,Noruega
+Twente,Ruud Nijstad,Ruud Nijstad,59,80,ZAG,18,Holanda
+Twente,Stav Lemkin,Stav Lemkin,68,77,ZAG,23,Israel
+Twente,Guilherme Peixoto,Guilherme Peixoto,62,77,LAT,20,Portugal
+Twente,Lucas Vennegoor of Hess.,Lucas Vennegoor of Hess.,61,79,ATA,20,Holanda
+Twente,Przemysław Tytoń,Przemysław Tytoń,66,66,GOL,39,Polônia
+Twente,Lars Unnerstall,Lars Unnerstall,78,78,GOL,36,Alemanha
+Twente,Issam El Maach,Issam El Maach,63,68,GOL,26,Marrocos
+Twente,Yannick Gerritsen,Yannick Gerritsen,57,71,GOL,20,Holanda
+Twente,Sam Karssies,Sam Karssies,59,70,GOL,23,Holanda
+Fortuna Sittard,Daley Sinkgraven,Daley Sinkgraven,69,69,LAT,31,Holanda
+Fortuna Sittard,Samuel Bastien,Samuel Bastien,67,67,MEI,29,RD Congo
+Fortuna Sittard,Justin Lonwijk,Justin Lonwijk,66,71,MEI,26,Suriname
+Fortuna Sittard,É. Michut,É. Michut,68,75,VOL,23,França
+Fortuna Sittard,Mohamed Ihattaren,Mohamed Ihattaren,71,78,MEI,24,Marrocos
+Fortuna Sittard,Kristoffer Peterson,Kristoffer Peterson,69,69,MEI,31,Suécia
+Fortuna Sittard,Ivo Pinto,Ivo Pinto,69,69,LAT,36,Portugal
+Fortuna Sittard,Dimitris Limnios,Dimitris Limnios,69,69,MEI,28,Grécia
+Fortuna Sittard,Philip Brittijn,Philip Brittijn,66,76,MEI,22,Holanda
+Fortuna Sittard,Alen Halilović,Alen Halilović,71,71,MEI,30,Croácia
+Fortuna Sittard,Jasper Dahlhaus,Jasper Dahlhaus,66,73,LAT,24,Holanda
+Fortuna Sittard,Houboulang Mendes,Houboulang Mendes,69,70,LAT,28,Guiné-Bissau
+Fortuna Sittard,Ryan Fosso,Ryan Fosso,68,75,VOL,24,Suíça
+Fortuna Sittard,Kaj Sierhuis,Kaj Sierhuis,69,70,ATA,28,Holanda
+Fortuna Sittard,Syb van Ottele,Syb van Ottele,67,75,ZAG,24,Holanda
+Fortuna Sittard,Marko Kerkez,Marko Kerkez,65,68,LAT,26,Sérvia
+Fortuna Sittard,Paul Gladon,Paul Gladon,64,64,ATA,34,Holanda
+Fortuna Sittard,Iván Márquez,Iván Márquez,69,69,ZAG,32,Espanha
+Fortuna Sittard,Justin Hubner,Justin Hubner,64,74,ZAG,22,Indonésia
+Fortuna Sittard,Makan Aïko,Makan Aïko,63,69,ATA,25,França
+Fortuna Sittard,Luka Tunjić,Luka Tunjić,64,76,MEI,20,Croácia
+Fortuna Sittard,Hasip Korkmazyürek,Hasip Korkmazyürek,59,66,MEI,23,Turquia
+Fortuna Sittard,Tristan Schenkhuizen,Tristan Schenkhuizen,58,68,VOL,22,Holanda
+Fortuna Sittard,Moussa Gbemou,Moussa Gbemou,57,74,MEI,18,Bélgica
+Fortuna Sittard,Shawn Adewoye,Shawn Adewoye,67,73,ZAG,26,Bélgica
+Fortuna Sittard,Owen Johnson,Owen Johnson,59,72,ATA,20,Holanda
+Fortuna Sittard,Daan Bisschops,Daan Bisschops,58,67,ZAG,21,Holanda
+Fortuna Sittard,Mattijs Branderhorst,Mattijs Branderhorst,71,71,GOL,32,Holanda
+Fortuna Sittard,Luuk Koopmans,Luuk Koopmans,65,65,GOL,32,Holanda
+Fortuna Sittard,Niels Martens,Niels Martens,57,68,GOL,22,Holanda
+Fortuna Sittard,Boaz Broekmans,Boaz Broekmans,56,71,GOL,19,Holanda
+NEC Nijmegen,Thomas Ouwejan,Thomas Ouwejan,69,69,LAT,29,Holanda
+NEC Nijmegen,Kodai Sano,Kodai Sano,71,82,VOL,22,Japão
+NEC Nijmegen,Tjaronn Chery,Tjaronn Chery,74,74,MEI,38,Suriname
+NEC Nijmegen,Bryan Linssen,Bryan Linssen,69,69,ATA,35,Holanda
+NEC Nijmegen,Vito van Crooij,Vito van Crooij,69,69,MEI,30,Holanda
+NEC Nijmegen,Philippe Sandler,Philippe Sandler,74,74,ZAG,29,Holanda
+NEC Nijmegen,Jetro Willems,Jetro Willems,66,66,ZAG,32,Holanda
+NEC Nijmegen,Dirk Proper,Dirk Proper,71,78,VOL,24,Holanda
+NEC Nijmegen,Virgil Misidjan,Virgil Misidjan,70,70,MEI,33,Suriname
+NEC Nijmegen,Youssef El Kachati,Youssef El Kachati,69,74,ATA,26,Marrocos
+NEC Nijmegen,Noé Lebreton,Noé Lebreton,65,75,MEI,22,França
+NEC Nijmegen,Argyris Darelas,Argyris Darelas,60,72,MEI,22,Grécia
+NEC Nijmegen,Başar Önal,Başar Önal,68,78,MEI,22,Turquia
+NEC Nijmegen,Sami Ouaissa,Sami Ouaissa,68,78,MEI,21,Holanda
+NEC Nijmegen,Darko Nejašmić,Darko Nejašmić,70,72,VOL,27,Croácia
+NEC Nijmegen,Rober,Rober,67,73,MEI,25,Espanha
+NEC Nijmegen,Brayann Pereira,Brayann Pereira,67,76,LAT,23,França
+NEC Nijmegen,Kento Shiogai,Kento Shiogai,66,81,ATA,21,Japão
+NEC Nijmegen,Koki Ogawa,Koki Ogawa,68,68,ATA,28,Japão
+NEC Nijmegen,Ahmetcan Kaplan,Ahmetcan Kaplan,71,80,ZAG,23,Turquia
+NEC Nijmegen,Sam de Laat,Sam de Laat,59,74,MEI,20,Holanda
+NEC Nijmegen,Bram Nuytinck,Bram Nuytinck,69,69,ZAG,36,Holanda
+NEC Nijmegen,Yousri Sbai,Yousri Sbai,60,70,LAT,21,Holanda
+NEC Nijmegen,Deveron Fonville,Deveron Fonville,63,70,LAT,23,Holanda
+NEC Nijmegen,Luc Nieuwenhuijs,Luc Nieuwenhuijs,59,74,MEI,19,Holanda
+NEC Nijmegen,Yassin Moslih,Yassin Moslih,58,73,ZAG,19,Holanda
+NEC Nijmegen,Jacobus Cillessen,Jacobus Cillessen,79,79,GOL,37,Holanda
+NEC Nijmegen,Gonzalo Crettaz,Gonzalo Crettaz,70,76,GOL,26,Argentina
+NEC Nijmegen,Rijk Janse,Rijk Janse,59,67,GOL,24,Holanda
+NEC Nijmegen,Martijn Overmars,Martijn Overmars,56,70,GOL,20,Holanda
+NEC Nijmegen,Freek Entius,Freek Entius,58,72,GOL,20,Holanda
+NAC Breda,Lewis Holtby,Lewis Holtby,70,70,MEI,35,Alemanha
+NAC Breda,Clint Leemans,Clint Leemans,68,68,MEI,30,Holanda
+NAC Breda,Kamal Sowah,Kamal Sowah,67,72,ATA,26,Gana
+NAC Breda,Maximilien Balard,Maximilien Balard,67,72,MEI,25,Austrália
+NAC Breda,Fredrik Jensen,Fredrik Jensen,65,65,VOL,33,Noruega
+NAC Breda,Sydney van Hooijdonk,Sydney van Hooijdonk,68,72,ATA,26,Holanda
+NAC Breda,Raul Paula,Raul Paula,66,74,MEI,22,Alemanha
+NAC Breda,Mohamed Nassoh,Mohamed Nassoh,67,76,MEI,23,Marrocos
+NAC Breda,Terence Kongolo,Terence Kongolo,66,66,ZAG,32,Holanda
+NAC Breda,Charles-Andreas Brym,Charles-Andreas Brym,66,67,ATA,27,Canadá
+NAC Breda,Cherrion Valerius,Cherrion Valerius,66,78,LAT,20,Holanda
+NAC Breda,Boy Kemper,Boy Kemper,66,69,LAT,27,Holanda
+NAC Breda,Casper Staring,Casper Staring,64,70,VOL,25,Holanda
+NAC Breda,Boyd Lucassen,Boyd Lucassen,64,65,LAT,28,Holanda
+NAC Breda,Moussa Soumano,Moussa Soumano,66,76,ATA,21,França
+NAC Breda,Juho Talvitie,Juho Talvitie,66,78,MEI,21,Finlândia
+NAC Breda,Leo Greiml,Leo Greiml,69,75,ZAG,25,Áustria
+NAC Breda,Pepijn Reulen,Pepijn Reulen,58,78,ATA,18,Holanda
+NAC Breda,Rio Hillen,Rio Hillen,65,71,ZAG,23,Holanda
+NAC Breda,Christian Chiza,Christian Chiza,59,73,LAT,18,Holanda
+NAC Breda,Jayden Candelaria,Jayden Candelaria,59,68,LAT,22,Holanda
+NAC Breda,Dion Versluis,Dion Versluis,59,67,ATA,23,Holanda
+NAC Breda,Daan van Reeuwijk,Daan van Reeuwijk,57,76,ZAG,19,Holanda
+NAC Breda,Jemuel Erat,Jemuel Erat,57,73,ZAG,18,Holanda
+NAC Breda,Enes Mahmutović,Enes Mahmutović,64,65,ZAG,29,Luxemburgo
+NAC Breda,Brahim Ghalidi,Brahim Ghalidi,59,73,MEI,21,Marrocos
+NAC Breda,Konstantinos Lamprou,Konstantinos Lamprou,66,66,GOL,34,Grécia
+NAC Breda,Daniel Bielica,Daniel Bielica,68,73,GOL,27,Polônia
+NAC Breda,Roy Kortsmit,Roy Kortsmit,65,65,GOL,33,Holanda
+NAC Breda,Thomas Goos,Thomas Goos,55,72,GOL,18,Holanda
+Heerenveen,Joris van Overeem,Joris van Overeem,70,70,MEI,32,Holanda
+Heerenveen,Luuk Brouwers,Luuk Brouwers,67,68,MEI,28,Holanda
+Heerenveen,Ringo Meerveld,Ringo Meerveld,71,80,MEI,23,Holanda
+Heerenveen,Oliver Braude,Oliver Braude,68,78,LAT,22,Noruega
+Heerenveen,Jacob Trenskow,Jacob Trenskow,69,74,MEI,25,Dinamarca
+Heerenveen,Marcus Linday,Marcus Linday,68,78,MEI,23,Suécia
+Heerenveen,Maxence Rivera,Maxence Rivera,67,74,MEI,24,França
+Heerenveen,Levi Smans,Levi Smans,67,77,MEI,23,Holanda
+Heerenveen,Vasilios Zagaritis,Vasilios Zagaritis,66,73,LAT,25,Grécia
+Heerenveen,Nikolai Hopland,Nikolai Hopland,67,79,ZAG,22,Noruega
+Heerenveen,Dylan Vente,Dylan Vente,69,72,ATA,27,Suriname
+Heerenveen,Amourricho van Axel Dongen,Amourricho van Axel Dongen,65,78,MEI,21,Holanda
+Heerenveen,Václav Sejk,Václav Sejk,66,72,ATA,24,Tchéquia
+Heerenveen,Sam Kersten,Sam Kersten,66,68,ZAG,28,Holanda
+Heerenveen,Isaiah Ahmed,Isaiah Ahmed,58,75,VOL,20,Curacao
+Heerenveen,Kai Jansen,Kai Jansen,56,74,MEI,19,Holanda
+Heerenveen,Hristiyan Petrov,Hristiyan Petrov,66,72,ZAG,24,Bulgária
+Heerenveen,Mats Egbring,Mats Egbring,61,78,LAT,19,Holanda
+Heerenveen,Nolhan Courtens,Nolhan Courtens,58,78,MEI,19,RD Congo
+Heerenveen,Jermaine Rijssel,Jermaine Rijssel,58,72,MEI,21,Suriname
+Heerenveen,Maas Willemsen,Maas Willemsen,62,71,ZAG,23,Holanda
+Heerenveen,Eser Gürbüz,Eser Gürbüz,60,78,MEI,19,Holanda
+Heerenveen,Paweł Bochniewicz,Paweł Bochniewicz,68,68,ZAG,30,Polônia
+Heerenveen,Robin Bouw,Robin Bouw,58,76,LAT,20,Holanda
+Heerenveen,Andries Noppert,Andries Noppert,68,68,GOL,32,Holanda
+Heerenveen,Nordin Bakker,Nordin Bakker,66,69,GOL,28,Holanda
+Heerenveen,Bernt Klaverboer,Bernt Klaverboer,64,78,GOL,20,Holanda
+PEC Zwolle,Jamiro Monteiro,Jamiro Monteiro,69,69,MEI,32,Cabo Verde
+PEC Zwolle,Zico Buurmeester,Zico Buurmeester,69,78,MEI,24,Holanda
+PEC Zwolle,Thijs Oosting,Thijs Oosting,66,70,MEI,26,Holanda
+PEC Zwolle,Ryan Thomas,Ryan Thomas,66,66,MEI,31,Nova Zelândia
+PEC Zwolle,Odysseus Velanas,Odysseus Velanas,66,66,MEI,28,Holanda
+PEC Zwolle,Braydon Manu,Braydon Manu,67,67,MEI,29,Gana
+PEC Zwolle,Sherel Floranus,Sherel Floranus,66,67,LAT,27,Curacao
+PEC Zwolle,Thomas Buitink,Thomas Buitink,65,69,ATA,26,Holanda
+PEC Zwolle,Nick Fichtinger,Nick Fichtinger,65,75,VOL,22,Holanda
+PEC Zwolle,Koen Kostons,Koen Kostons,67,70,ATA,26,Holanda
+PEC Zwolle,Simon Graves,Simon Graves,68,72,ZAG,27,Dinamarca
+PEC Zwolle,Shola Shoretire,Shola Shoretire,66,77,MEI,22,Inglaterra
+PEC Zwolle,Dylan Mbayo,Dylan Mbayo,68,74,MEI,24,Bélgica
+PEC Zwolle,Anselmo García MacNulty,Anselmo García MacNulty,68,81,ZAG,23,Irlanda
+PEC Zwolle,Tristan Gooijer,Tristan Gooijer,64,76,LAT,21,Holanda
+PEC Zwolle,Samir Lagsir,Samir Lagsir,60,67,MEI,23,Holanda
+PEC Zwolle,Givaro Rahajaän,Givaro Rahajaän,59,79,MEI,18,Holanda
+PEC Zwolle,Olivier Aertssen,Olivier Aertssen,65,76,LAT,21,Holanda
+PEC Zwolle,Gabriël Reiziger,Gabriël Reiziger,60,77,MEI,20,Holanda
+PEC Zwolle,Damian van der Haar,Damian van der Haar,65,77,LAT,22,Holanda
+PEC Zwolle,Kaj de Rooij,Kaj de Rooij,63,68,MEI,25,Holanda
+PEC Zwolle,David Voute,David Voute,58,71,LAT,20,Estados Unidos
+PEC Zwolle,Jan Faberski,Jan Faberski,60,80,MEI,20,Polônia
+PEC Zwolle,Dylan Ruward,Dylan Ruward,57,67,ZAG,21,Holanda
+PEC Zwolle,Jasper Schendelaar,Jasper Schendelaar,72,78,GOL,25,Holanda
+PEC Zwolle,Tom de Graaff,Tom de Graaff,61,75,GOL,21,Holanda
+PEC Zwolle,Len Bakker,Len Bakker,55,67,GOL,20,Holanda
+PEC Zwolle,Duke Verduin,Duke Verduin,57,67,GOL,22,Holanda
+PEC Zwolle,Nick Dobben,Nick Dobben,55,71,GOL,18,Holanda
+Heracles,Jeff Reine-Adélaïde,Jeff Reine-Adélaïde,70,71,MEI,28,França
+Heracles,Ajdin Hrustić,Ajdin Hrustić,67,67,MEI,30,Austrália
+Heracles,Walid Ould-Chikh,Walid Ould-Chikh,66,69,MEI,26,Holanda
+Heracles,Thomas Bruns,Thomas Bruns,67,67,MEI,34,Holanda
+Heracles,Jizz Hornkamp,Jizz Hornkamp,68,69,ATA,28,Holanda
+Heracles,Jan Žambůrek,Jan Žambůrek,66,70,VOL,25,Tchéquia
+Heracles,Yvandro Borges Sanches,Yvandro Borges Sanches,63,75,ATA,22,Luxemburgo
+Heracles,Sem Scheperman,Sem Scheperman,65,72,VOL,24,Holanda
+Heracles,Mimeirhel Benita,Mimeirhel Benita,64,78,LAT,22,Holanda
+Heracles,Mario Engels,Mario Engels,66,66,ATA,32,Alemanha
+Heracles,Ivan Mesík,Ivan Mesík,66,74,ZAG,25,Eslováquia
+Heracles,Djevencio van der Kust,Djevencio van der Kust,67,71,LAT,25,Suriname
+Heracles,Mike te Wierik,Mike te Wierik,65,65,ZAG,34,Holanda
+Heracles,Bryan Limbombe,Bryan Limbombe,65,71,ATA,25,Bélgica
+Heracles,Jannes Wieckhoff,Jannes Wieckhoff,65,69,LAT,25,Alemanha
+Heracles,Tristan van Gilst,Tristan van Gilst,63,70,MEI,23,Holanda
+Heracles,Alec Van Hoorenbeeck,Alec Van Hoorenbeeck,68,73,ZAG,27,Bélgica
+Heracles,Luka Kulenović,Luka Kulenović,69,73,ATA,26,Bósnia
+Heracles,Damon Mirani,Damon Mirani,67,68,ZAG,30,Holanda
+Heracles,Lorenzo Milani,Lorenzo Milani,63,70,LAT,25,Itália
+Heracles,Giandro Sambo,Giandro Sambo,57,74,ATA,19,Curacao
+Heracles,Sava-Arangel Čestić,Sava-Arangel Čestić,64,68,ZAG,25,Sérvia
+Heracles,Jop Tijink,Jop Tijink,57,73,ZAG,21,Holanda
+Heracles,Fabian de Keijzer,Fabian de Keijzer,68,71,GOL,26,Holanda
+Heracles,Leco Zeevalkink,Leco Zeevalkink,56,68,GOL,20,Holanda
+Heracles,Robin Mantel,Robin Mantel,59,66,GOL,25,Bélgica
+Heracles,Timo Jansink,Timo Jansink,57,67,GOL,23,Holanda
+Groningen,Stije Resink,Stije Resink,69,80,VOL,23,Holanda
+Groningen,Mats Seuntjens,Mats Seuntjens,67,67,MEI,34,Holanda
+Groningen,Tygo Land,Tygo Land,68,86,MEI,20,Holanda
+Groningen,Tika de Jonge,Tika de Jonge,66,75,MEI,23,Holanda
+Groningen,Marvin Peersman,Marvin Peersman,68,68,ZAG,35,Bélgica
+Groningen,Jorg Schreuders,Jorg Schreuders,66,77,MEI,21,Holanda
+Groningen,Thom van Bergen,Thom van Bergen,67,77,ATA,22,Holanda
+Groningen,Younes Taha,Younes Taha,67,77,MEI,23,Marrocos
+Groningen,Oskar Zawada,Oskar Zawada,68,68,ATA,30,Polônia
+Groningen,Brynjólfur Willumsson,Brynjólfur Willumsson,66,70,ATA,25,Islândia
+Groningen,Travis Hernes,Travis Hernes,61,79,MEI,20,Noruega
+Groningen,Tyrique Mercera,Tyrique Mercera,64,73,LAT,22,Curacao
+Groningen,Rui Mendes,Rui Mendes,65,67,MEI,26,Portugal
+Groningen,Noam Emeran,Noam Emeran,61,72,MEI,23,França
+Groningen,Dies Janse,Dies Janse,66,81,ZAG,20,Holanda
+Groningen,Marco Rente,Marco Rente,68,68,LAT,29,Alemanha
+Groningen,Jismerai Dillema,Jismerai Dillema,58,78,VOL,19,Holanda
+Groningen,David van der Werff,David van der Werff,62,74,MEI,21,Holanda
+Groningen,Thijmen Blokzijl,Thijmen Blokzijl,67,79,ZAG,21,Holanda
+Groningen,Wouter Prins,Wouter Prins,64,74,LAT,22,Holanda
+Groningen,Yénio Holder,Yénio Holder,59,80,MEI,19,Holanda
+Groningen,Sven Bouland,Sven Bouland,61,74,ZAG,20,Holanda
+Groningen,Mark Hoekstra,Mark Hoekstra,57,72,MEI,20,Holanda
+Groningen,Robin Kelder,Robin Kelder,57,71,ZAG,21,Holanda
+Groningen,Elvis van der Laan,Elvis van der Laan,57,74,ZAG,18,Suécia
+Groningen,Hidde Jurjus,Hidde Jurjus,66,66,GOL,32,Holanda
+Groningen,Etienne Vaessen,Etienne Vaessen,70,71,GOL,31,Suriname
+Groningen,Lovro Štubljar,Lovro Štubljar,62,71,GOL,21,Eslovênia
+Groningen,Dirk Baron,Dirk Baron,57,67,GOL,23,Holanda
+Groningen,Stijn Petiet,Stijn Petiet,55,65,GOL,22,Holanda
+Excelsior,Chris-Kévin Nadje,Chris-Kévin Nadje,68,75,MEI,24,Costa do Marfim
+Excelsior,Mathijs Tielemans,Mathijs Tielemans,68,74,MEI,24,Holanda
+Excelsior,Noah Naujoks,Noah Naujoks,65,74,MEI,24,Holanda
+Excelsior,Arthur Zagré,Arthur Zagré,67,74,LAT,24,França
+Excelsior,Stefan Mitrović,Stefan Mitrović,68,77,MEI,23,Sérvia
+Excelsior,Simon Janssen,Simon Janssen,64,69,LAT,25,Holanda
+Excelsior,Lennard Hartjes,Lennard Hartjes,64,74,MEI,23,Holanda
+Excelsior,Zachary Booth,Zachary Booth,63,75,MEI,22,Estados Unidos
+Excelsior,Derensili Sanches Fernandes,Derensili Sanches Fernandes,68,73,MEI,25,Holanda
+Excelsior,Mike van Duinen,Mike van Duinen,63,63,ATA,34,Holanda
+Excelsior,Gyan de Regt,Gyan de Regt,65,74,MEI,22,Holanda
+Excelsior,Ilias Bronkhorst,Ilias Bronkhorst,66,66,LAT,29,Holanda
+Excelsior,Adam Carlén,Adam Carlén,65,72,VOL,26,Suécia
+Excelsior,Lewis Schouten,Lewis Schouten,62,74,ZAG,22,Holanda
+Excelsior,Szymon Włodarczyk,Szymon Włodarczyk,67,75,ATA,23,Polônia
+Excelsior,Irakli Yegoian,Irakli Yegoian,63,74,MEI,22,Geórgia
+Excelsior,Yoon Do Young,Yoon Do Young,63,77,MEI,19,Coreia do Sul
+Excelsior,Stijn Middendorp,Stijn Middendorp,58,70,MEI,21,Holanda
+Excelsior,Rayvien Rosario,Rayvien Rosario,60,72,MEI,22,Curacao
+Excelsior,Casper Widell,Casper Widell,68,76,ZAG,23,Suécia
+Excelsior,Jerolldino Bergraaf,Jerolldino Bergraaf,61,72,ATA,20,Holanda
+Excelsior,Nesto Groen,Nesto Groen,59,67,ATA,22,Holanda
+Excelsior,Stan Henderikx,Stan Henderikx,64,71,ZAG,23,Holanda
+Excelsior,Nolan Martens,Nolan Martens,60,68,LAT,22,Bélgica
+Excelsior,Rick Meissen,Rick Meissen,65,71,ZAG,24,Holanda
+Excelsior,Giuliano Cairo,Giuliano Cairo,58,70,ZAG,20,Holanda
+Excelsior,Calvin Raatsie,Calvin Raatsie,67,76,GOL,24,Holanda
+Excelsior,Stijn van Gassel,Stijn van Gassel,68,70,GOL,29,Holanda
+Excelsior,Tijmen Holla,Tijmen Holla,56,67,GOL,20,Holanda
+Telstar,Jeff Hardeveld,Jeff Hardeveld,66,66,MEI,31,Holanda
+Telstar,Danny Bakker,Danny Bakker,67,67,ZAG,31,Holanda
+Telstar,Jochem van de Kamp,Jochem van de Kamp,66,77,MEI,22,Holanda
+Telstar,Dylan Mertens,Dylan Mertens,65,65,MEI,31,Holanda
+Telstar,Tyrese Noslin,Tyrese Noslin,66,73,MEI,23,Curacao
+Telstar,Tyrone Owusu,Tyrone Owusu,62,65,MEI,27,Holanda
+Telstar,Nils Rossen,Nils Rossen,63,74,MEI,21,Holanda
+Telstar,Patrick Brouwer,Patrick Brouwer,62,66,MEI,25,Holanda
+Telstar,Kay Tejan,Kay Tejan,65,65,MEI,29,Holanda
+Telstar,Nigel Ogidi Nwankwo,Nigel Ogidi Nwankwo,61,61,MEI,27,Holanda
+Telstar,Mohamed Hamdaoui,Mohamed Hamdaoui,65,65,MEI,33,Holanda
+Telstar,Dion Malone,Dion Malone,63,63,ZAG,37,Suriname
+Telstar,Rojendro Oudsten,Rojendro Oudsten,59,77,MEI,18,Suriname
+Telstar,Soufiane Hetli,Soufiane Hetli,64,69,ATA,25,Holanda
+Telstar,Rayyan Koubini,Rayyan Koubini,58,69,MEI,21,Holanda
+Telstar,Adil Lechkar,Adil Lechkar,58,64,MEI,24,Holanda
+Telstar,Milan Zonneveld,Milan Zonneveld,63,74,ATA,22,Holanda
+Telstar,Neville Ogidi Nwankwo,Neville Ogidi Nwankwo,61,69,ZAG,23,Holanda
+Telstar,Guus Offerhaus,Guus Offerhaus,64,68,ZAG,25,Holanda
+Telstar,Sebastiaan Hagedoorn,Sebastiaan Hagedoorn,60,68,ATA,21,Holanda
+Telstar,Devon Koswal,Devon Koswal,63,71,ZAG,22,Suriname
+Telstar,Abdelraffie Benzzine,Abdelraffie Benzzine,58,70,ZAG,20,Holanda
+Telstar,Yamano Olfers,Yamano Olfers,59,70,ZAG,19,Suriname
+Telstar,Jaylan van Schooneveld,Jaylan van Schooneveld,57,66,ZAG,21,Holanda
+Telstar,Ronald Koeman Jr.,Ronald Koeman Jr.,67,67,GOL,31,Holanda
+Telstar,Daan Reiziger,Daan Reiziger,63,70,GOL,25,Holanda
+Telstar,Tyrick Bodak,Tyrick Bodak,60,69,GOL,24,Curacao
+Volendam,Aaron Meijers,Aaron Meijers,64,64,LAT,38,Holanda
+Volendam,Gibson Yah,Gibson Yah,63,73,MEI,22,Holanda
+Volendam,Brandley Kuwas,Brandley Kuwas,67,67,MEI,33,Curacao
+Volendam,Robert Mühren,Robert Mühren,67,67,ATA,37,Holanda
+Volendam,Kiano Dyer,Kiano Dyer,63,83,MEI,19,Inglaterra
+Volendam,Nordin Bukala,Nordin Bukala,64,74,MEI,20,Holanda
+Volendam,Ozan Kökçü,Ozan Kökçü,64,65,MEI,27,Azerbaijão
+Volendam,Yannick Leliendal,Yannick Leliendal,67,76,LAT,24,Suriname
+Volendam,Mawouna Amevor,Mawouna Amevor,67,67,ZAG,34,Togo
+Volendam,Anthony Descotte,Anthony Descotte,64,74,ATA,22,Bélgica
+Volendam,Alex Plat,Alex Plat,65,68,VOL,28,Holanda
+Volendam,Joel Ideho,Joel Ideho,64,75,MEI,23,Holanda
+Volendam,Precious Ugwu,Precious Ugwu,62,81,ZAG,20,Holanda
+Volendam,Deron Payne,Deron Payne,65,73,LAT,23,Holanda
+Volendam,Robin van Cruijsen,Robin van Cruijsen,58,72,MEI,20,Holanda
+Volendam,Aurelio Oehlers,Aurelio Oehlers,63,72,MEI,22,Holanda
+Volendam,Hendrik Veerman,Hendrik Veerman,68,68,ATA,35,Holanda
+Volendam,Xavier Mbuyamba,Xavier Mbuyamba,70,78,ZAG,24,Holanda
+Volendam,Key-Shawn Wong-A-Soij,Key-Shawn Wong-A-Soij,58,72,MEI,19,Holanda
+Volendam,Anass Bouziane,Anass Bouziane,57,70,MEI,19,Holanda
+Volendam,Mauro Zijlstra,Mauro Zijlstra,58,68,ATA,21,Indonésia
+Volendam,Myron Mau-Asam,Myron Mau-Asam,58,70,LAT,22,Holanda
+Volendam,Nick Verschuren,Nick Verschuren,61,76,ZAG,21,Holanda
+Volendam,Jesper Tielemans,Jesper Tielemans,58,69,ATA,20,Holanda
+Volendam,Silvinho Esajas,Silvinho Esajas,61,72,ZAG,24,Suriname
+Volendam,Luca Blondeau,Luca Blondeau,56,69,ZAG,20,Holanda
+Volendam,Kayne van Oevelen,Kayne van Oevelen,66,78,GOL,22,Holanda
+Volendam,Roy Steur,Roy Steur,59,75,GOL,21,Holanda
+Volendam,Dion Vlak,Dion Vlak,55,62,GOL,25,Holanda

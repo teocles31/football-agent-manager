@@ -1,0 +1,603 @@
+clube,nome_original,nome,overall,potencial,posicao,idade,pais
+Girona,Thomas Lemar,Thomas Lemar,77,77,MEI,30,França
+Girona,Portu,Portu,76,76,MEI,34,Espanha
+Girona,Daley Blind,Daley Blind,77,77,ZAG,36,Holanda
+Girona,Donny van de Beek,Donny van de Beek,76,76,MEI,29,Holanda
+Girona,Iván Martín,Iván Martín,77,80,MEI,27,Espanha
+Girona,Álex Moreno,Álex Moreno,77,77,LAT,33,Espanha
+Girona,Viktor Tsygankov,Viktor Tsygankov,79,79,MEI,28,Ucrânia
+Girona,Arnau Martínez,Arnau Martínez,79,84,LAT,23,Espanha
+Girona,Cristhian Stuani,Cristhian Stuani,77,77,ATA,39,Uruguai
+Girona,Axel Witsel,Axel Witsel,77,77,ZAG,37,Bélgica
+Girona,Azzedine Ounahi,Azzedine Ounahi,76,81,MEI,26,Marrocos
+Girona,Yaser Asprilla,Yaser Asprilla,75,82,MEI,22,Colômbia
+Girona,Hugo Rincón,Hugo Rincón,73,81,LAT,23,Espanha
+Girona,Francés,Francés,75,82,ZAG,24,Espanha
+Girona,Abel Ruiz,Abel Ruiz,73,76,ATA,26,Espanha
+Girona,David López,David López,77,77,ZAG,36,Espanha
+Girona,Bryan Gil,Bryan Gil,78,82,MEI,25,Espanha
+Girona,Jhon Solís,Jhon Solís,71,81,VOL,21,Colômbia
+Girona,Vladyslav Vanat,Vladyslav Vanat,76,81,ATA,24,Ucrânia
+Girona,Joel Roca,Joel Roca,69,81,ATA,21,Espanha
+Girona,Vitor Reis,Vitor Reis,70,84,ZAG,20,Brasil
+Girona,Papa Ba,Papa Ba,61,70,MEI,22,Senegal
+Girona,Gibi,Gibi,61,78,LAT,19,Espanha
+Girona,Paulo Gazzaniga,Paulo Gazzaniga,79,79,GOL,34,Argentina
+Girona,Dominik Livaković,Dominik Livaković,80,80,GOL,31,Croácia
+Girona,Juan Carlos,Juan Carlos,73,73,GOL,38,Espanha
+Girona,Vladyslav Krapyvtsov,Vladyslav Krapyvtsov,64,79,GOL,21,Ucrânia
+Mallorca,Sergi Darder,Sergi Darder,81,81,MEI,32,Espanha
+Mallorca,Johan Mojica,Johan Mojica,78,78,LAT,33,Colômbia
+Mallorca,Manu Morlanes,Manu Morlanes,77,80,MEI,27,Espanha
+Mallorca,Dani Rodríguez,Dani Rodríguez,76,76,MEI,38,Espanha
+Mallorca,Antonio Sánchez,Antonio Sánchez,73,73,MEI,29,Espanha
+Mallorca,Samú Costa,Samú Costa,78,86,VOL,25,Portugal
+Mallorca,Maffeo,Maffeo,78,78,LAT,29,Argentina
+Mallorca,Omar Mascarell,Omar Mascarell,75,75,MEI,33,Guiné Equatorial
+Mallorca,Toni Lato,Toni Lato,73,74,LAT,28,Espanha
+Mallorca,Takuma Asano,Takuma Asano,75,75,MEI,31,Japão
+Mallorca,Pablo Torre,Pablo Torre,74,84,MEI,23,Espanha
+Mallorca,Mateu Morey,Mateu Morey,73,78,LAT,26,Espanha
+Mallorca,Martin Valjent,Martin Valjent,77,78,ZAG,30,Eslováquia
+Mallorca,Vedat Muriqi,Vedat Muriqi,79,79,ATA,32,Kosovo
+Mallorca,Abdón Prats,Abdón Prats,73,73,ATA,33,Espanha
+Mallorca,Raíllo,Raíllo,81,81,ZAG,34,Espanha
+Mallorca,Mateo Joseph,Mateo Joseph,70,81,ATA,22,Espanha
+Mallorca,Marash Kumbulla,Marash Kumbulla,77,80,ZAG,26,Albânia
+Mallorca,Jan Virgili,Jan Virgili,68,82,ATA,20,Espanha
+Mallorca,Javi Llabrés,Javi Llabrés,69,78,MEI,23,Espanha
+Mallorca,Iliesse Salhi,Iliesse Salhi,60,80,LAT,19,França
+Mallorca,David López,David López,68,78,ZAG,23,Espanha
+Mallorca,Marc Domènech,Marc Domènech,62,80,ATA,19,Espanha
+Mallorca,Leo Román,Leo Román,77,83,GOL,26,Espanha
+Mallorca,Pichu Cuéllar,Pichu Cuéllar,67,67,GOL,42,Espanha
+Mallorca,Lucas Bergström,Lucas Bergström,63,73,GOL,23,Finlândia
+Real Oviedo,Santiago Colombatto,Santiago Colombatto,73,74,VOL,29,Argentina
+Real Oviedo,Leander Dendoncker,Leander Dendoncker,75,75,MEI,31,Bélgica
+Real Oviedo,Santi Cazorla,Santi Cazorla,75,75,MEI,41,Espanha
+Real Oviedo,Alberto Reina,Alberto Reina,73,73,MEI,28,Espanha
+Real Oviedo,Álvaro Lemos,Álvaro Lemos,67,67,LAT,33,Espanha
+Real Oviedo,Josip Brekalo,Josip Brekalo,75,75,MEI,28,Croácia
+Real Oviedo,Nacho Vidal,Nacho Vidal,73,73,LAT,31,Espanha
+Real Oviedo,Ilyas Chaira,Ilyas Chaira,72,77,MEI,25,Marrocos
+Real Oviedo,Oviemuno Ejaria,Oviemuno Ejaria,67,68,MEI,28,Inglaterra
+Real Oviedo,Lucas Ahijado,Lucas Ahijado,67,67,LAT,31,Espanha
+Real Oviedo,David Costas,David Costas,72,72,ZAG,31,Espanha
+Real Oviedo,Javi López,Javi López,73,80,LAT,24,Espanha
+Real Oviedo,Salomón Rondón,Salomón Rondón,74,74,ATA,36,Venezuela
+Real Oviedo,Kwasi Sibo,Kwasi Sibo,69,72,VOL,28,Gana
+Real Oviedo,Luka Ilić,Luka Ilić,70,73,MEI,27,Sérvia
+Real Oviedo,Federico Viñas,Federico Viñas,72,73,ATA,28,Uruguai
+Real Oviedo,Rahim Alhassane,Rahim Alhassane,69,75,LAT,24,Níger
+Real Oviedo,Brandon Domingues,Brandon Domingues,70,73,MEI,26,França
+Real Oviedo,Eric Bailly,Eric Bailly,74,74,ZAG,32,Costa do Marfim
+Real Oviedo,Cheli,Cheli,61,74,MEI,21,Espanha
+Real Oviedo,Alex Forés,Alex Forés,71,78,ATA,25,Espanha
+Real Oviedo,Haissem Hassan,Haissem Hassan,72,79,MEI,24,França
+Real Oviedo,Dani Calvo,Dani Calvo,73,73,ZAG,32,Espanha
+Real Oviedo,David Carmo,David Carmo,76,80,ZAG,27,Angola
+Real Oviedo,Mouhamed Gueye,Mouhamed Gueye,61,74,MEI,21,Senegal
+Real Oviedo,Oier Luengo,Oier Luengo,69,72,ZAG,28,Espanha
+Real Oviedo,Adri Lopes,Adri Lopes,60,67,LAT,20,Espanha
+Real Oviedo,Omar Falah,Omar Falah,60,71,LAT,22,Espanha
+Real Oviedo,Marco Esteban,Marco Esteban,63,76,ZAG,19,Espanha
+Real Oviedo,Aarón,Aarón,75,77,GOL,30,Espanha
+Real Oviedo,Horațiu Moldovan,Horațiu Moldovan,71,73,GOL,28,Romênia
+Real Oviedo,Miguel Narváez,Miguel Narváez,63,70,GOL,24,Espanha
+Almería,Lucas Robertone,Lucas Robertone,72,72,MEI,29,Argentina
+Almería,André Horta,André Horta,75,75,MEI,29,Portugal
+Almería,Álex Muñoz,Álex Muñoz,73,73,LAT,32,Espanha
+Almería,Dion Lopy,Dion Lopy,73,79,VOL,24,Senegal
+Almería,Embarba,Embarba,74,74,MEI,34,Espanha
+Almería,Álex Centelles,Álex Centelles,72,75,LAT,26,Espanha
+Almería,Nico Melamed,Nico Melamed,73,79,MEI,25,Espanha
+Almería,Patrick Soko,Patrick Soko,73,73,ATA,28,Camarões
+Almería,Léo Baptistão,Léo Baptistão,73,73,MEI,33,Brasil
+Almería,Arnau Puigmal,Arnau Puigmal,72,78,MEI,25,Espanha
+Almería,Iddrisu Baba,Iddrisu Baba,71,71,VOL,30,Gana
+Almería,Arribas,Arribas,74,79,MEI,24,Espanha
+Almería,Luna,Luna,70,81,LAT,23,Espanha
+Almería,Daijiro Chirino,Daijiro Chirino,69,79,ZAG,24,Curacao
+Almería,Gui Guedes,Gui Guedes,67,76,MEI,24,Portugal
+Almería,Thalys,Thalys,68,83,ATA,21,Brasil
+Almería,Nélson Monte,Nélson Monte,70,70,ZAG,31,Portugal
+Almería,Ibrahima Koné,Ibrahima Koné,67,70,ATA,27,Mali
+Almería,Selvi,Selvi,65,77,VOL,21,Espanha
+Almería,Marko Perovic,Marko Perovic,62,81,ATA,20,Montenegro
+Almería,Chumi,Chumi,70,75,ZAG,27,Espanha
+Almería,Aridane,Aridane,71,71,ZAG,37,Espanha
+Almería,Stefan Džodić,Stefan Džodić,63,77,VOL,21,Sérvia
+Almería,Marciano,Marciano,62,76,ATA,22,Guiné-Bissau
+Almería,Federico Bonini,Federico Bonini,67,76,ZAG,24,Itália
+Almería,Pedro Cedillo,Pedro Cedillo,59,79,ZAG,19,Espanha
+Almería,Andrés Fernández,Andrés Fernández,74,74,GOL,39,Espanha
+Almería,Fernando,Fernando,72,72,GOL,36,Espanha
+Almería,Jesús López,Jesús López,60,70,GOL,24,Espanha
+Las Palmas,Kirian,Kirian,76,76,MEI,30,Espanha
+Las Palmas,Jonathan Viera,Jonathan Viera,72,72,MEI,36,Espanha
+Las Palmas,Jeremía Recoba,Jeremía Recoba,71,82,ATA,22,Uruguai
+Las Palmas,Manu Fuster,Manu Fuster,74,74,MEI,28,Espanha
+Las Palmas,Enzo Loiodice,Enzo Loiodice,72,77,MEI,25,França
+Las Palmas,Sandro,Sandro,75,75,MEI,31,Espanha
+Las Palmas,Viti Rozada,Viti Rozada,73,73,LAT,28,Espanha
+Las Palmas,Cristian Gutiérrez,Cristian Gutiérrez,70,77,LAT,25,Espanha
+Las Palmas,Iván Gil,Iván Gil,71,76,MEI,26,Espanha
+Las Palmas,Mika Mármol,Mika Mármol,75,82,LAT,25,Espanha
+Las Palmas,Marvin,Marvin,68,69,LAT,26,Espanha
+Las Palmas,Edward Cedeño,Edward Cedeño,66,77,MEI,23,Panamá
+Las Palmas,Iñaki González,Iñaki González,68,81,VOL,22,Espanha
+Las Palmas,Pejiño,Pejiño,68,68,MEI,30,Espanha
+Las Palmas,Lorenzo Amatucci,Lorenzo Amatucci,68,81,VOL,22,Itália
+Las Palmas,Álex Suárez,Álex Suárez,73,73,ZAG,33,Espanha
+Las Palmas,Jesé,Jesé,68,68,ATA,33,Espanha
+Las Palmas,Ale García,Ale García,67,78,ATA,23,Espanha
+Las Palmas,Diego Martín,Diego Martín,63,74,LAT,22,Espanha
+Las Palmas,Marc Cardona,Marc Cardona,68,68,ATA,31,Espanha
+Las Palmas,Sergio Viera,Sergio Viera,62,76,VOL,21,Espanha
+Las Palmas,Mata,Mata,65,65,ATA,37,Espanha
+Las Palmas,Herzog,Herzog,71,81,ZAG,22,Espanha
+Las Palmas,Clemente,Clemente,67,70,LAT,27,Espanha
+Las Palmas,Valentín Pezzolesi,Valentín Pezzolesi,64,80,LAT,19,Espanha
+Las Palmas,Adam Arvelo,Adam Arvelo,62,76,ATA,21,Espanha
+Las Palmas,Arturo,Arturo,63,83,ATA,19,Espanha
+Las Palmas,Miloš Luković,Miloš Luković,67,81,ATA,20,Sérvia
+Las Palmas,Sergio Barcia,Sergio Barcia,68,76,ZAG,25,Espanha
+Las Palmas,Sergio Ruiz,Sergio Ruiz,62,79,ATA,20,Espanha
+Las Palmas,Caro,Caro,72,72,GOL,32,Espanha
+Las Palmas,Dinko Horkaš,Dinko Horkaš,73,78,GOL,27,Croácia
+Las Palmas,Nicolau,Nicolau,61,72,GOL,23,Espanha
+Las Palmas,Adri Suárez,Adri Suárez,63,76,GOL,21,Espanha
+Las Palmas,Killane,Killane,62,79,GOL,21,Argentina
+Real Zaragoza,Francho Serrano,Francho Serrano,72,81,MEI,24,Espanha
+Real Zaragoza,Dani Tasende,Dani Tasende,70,75,LAT,26,Espanha
+Real Zaragoza,Raúl Guti,Raúl Guti,70,70,MEI,29,Espanha
+Real Zaragoza,Valery,Valery,73,76,MEI,26,Espanha
+Real Zaragoza,Keidi Bare,Keidi Bare,73,74,VOL,28,Albânia
+Real Zaragoza,Soberón,Soberón,71,71,ATA,29,Espanha
+Real Zaragoza,Dani Gómez,Dani Gómez,70,71,ATA,28,Espanha
+Real Zaragoza,Paulino,Paulino,70,70,MEI,29,Espanha
+Real Zaragoza,Paul Akouokou,Paul Akouokou,71,72,VOL,28,Costa do Marfim
+Real Zaragoza,Yussif Saidu,Yussif Saidu,65,82,MEI,21,Gana
+Real Zaragoza,Samed Baždar,Samed Baždar,69,80,ATA,22,Bósnia
+Real Zaragoza,Toni Moya,Toni Moya,67,68,MEI,28,Espanha
+Real Zaragoza,Sebas Moyano,Sebas Moyano,70,70,MEI,29,Espanha
+Real Zaragoza,Pau Sans,Pau Sans,70,84,MEI,21,Espanha
+Real Zaragoza,Pomares,Pomares,67,67,LAT,33,Espanha
+Real Zaragoza,Cuenca,Cuenca,64,74,MEI,23,Espanha
+Real Zaragoza,Aguirregabiria,Aguirregabiria,68,68,LAT,30,Espanha
+Real Zaragoza,Kodro,Kodro,70,70,ATA,32,Bósnia
+Real Zaragoza,Juan Sebastián,Juan Sebastián,68,77,LAT,24,Espanha
+Real Zaragoza,Lucas Terrer,Lucas Terrer,61,78,MEI,21,Espanha
+Real Zaragoza,Tachi,Tachi,69,71,ZAG,28,Espanha
+Real Zaragoza,Hugo Pinilla,Hugo Pinilla,62,83,MEI,20,Espanha
+Real Zaragoza,Insua,Insua,70,70,ZAG,32,Espanha
+Real Zaragoza,Luis Carbonell,Luis Carbonell,61,69,ATA,23,Espanha
+Real Zaragoza,Sinan Bakış,Sinan Bakış,64,64,ATA,32,Turquia
+Real Zaragoza,Sebastián Kóša,Sebastián Kóša,65,78,ZAG,22,Eslováquia
+Real Zaragoza,Barrachina,Barrachina,61,81,ZAG,19,Espanha
+Real Zaragoza,Aleksandar Radovanović,Aleksandar Radovanović,69,69,ZAG,32,Sérvia
+Real Zaragoza,Jaime Sánchez-Rubio,Jaime Sánchez-Rubio,58,73,LAT,20,Espanha
+Real Zaragoza,Esteban Andrada,Esteban Andrada,72,72,GOL,35,Argentina
+Real Zaragoza,Adrián,Adrián,66,72,GOL,25,Argentina
+Real Zaragoza,Calavia,Calavia,59,71,GOL,23,Espanha
+Real Zaragoza,Manu Obón,Manu Obón,59,69,GOL,23,Espanha
+Leganés,Melero,Melero,72,72,MEI,32,Espanha
+Leganés,Rubén Peña,Rubén Peña,72,72,LAT,35,Espanha
+Leganés,Óscar Plano,Óscar Plano,70,70,ATA,35,Espanha
+Leganés,Seydouba Cisse,Seydouba Cisse,73,80,MEI,25,Guiné
+Leganés,Duk,Duk,68,71,MEI,26,Cabo Verde
+Leganés,Juan Cruz,Juan Cruz,76,79,MEI,26,Espanha
+Leganés,Franquesa,Franquesa,72,72,LAT,29,Espanha
+Leganés,Roberto López,Roberto López,69,74,MEI,26,Espanha
+Leganés,Amadou Diawara,Amadou Diawara,68,68,VOL,29,Guiné
+Leganés,Alex Millán,Alex Millán,68,72,ATA,26,Espanha
+Leganés,Miguel,Miguel,70,73,ATA,26,Espanha
+Leganés,Jorge Sáenz,Jorge Sáenz,71,73,ZAG,29,Espanha
+Leganés,Guirao,Guirao,65,73,VOL,23,Espanha
+Leganés,Rubén Pulido,Rubén Pulido,67,71,ZAG,25,Espanha
+Leganés,Sebastián Figueredo,Sebastián Figueredo,63,70,LAT,24,Uruguai
+Leganés,Andrés Campos,Andrés Campos,63,72,ATA,24,Espanha
+Leganés,Diego García,Diego García,69,74,ATA,26,Espanha
+Leganés,Naim García,Naim García,67,71,MEI,24,Espanha
+Leganés,Lalo Aguilar,Lalo Aguilar,70,74,ZAG,24,Espanha
+Leganés,Marvel,Marvel,63,73,ZAG,23,Espanha
+Leganés,Ignasi Miquel,Ignasi Miquel,68,68,ZAG,33,Espanha
+Leganés,Benjamin Pauwels,Benjamin Pauwels,61,76,ATA,21,Bélgica
+Leganés,João Urbáez,João Urbáez,57,68,ZAG,24,República Dominicana
+Leganés,Saïd Imigene,Saïd Imigene,53,63,ZAG,21,Mauritânia
+Leganés,Juan Soriano,Juan Soriano,75,77,GOL,28,Espanha
+Leganés,San Román,San Román,69,72,GOL,29,Espanha
+Leganés,Javi Garrido,Javi Garrido,57,66,GOL,22,Espanha
+Burgos,Iñigo Córdoba,Iñigo Córdoba,71,71,MEI,29,Espanha
+Burgos,Kévin Appin,Kévin Appin,68,69,MEI,28,França
+Burgos,Mollejo,Mollejo,70,77,ATA,25,Espanha
+Burgos,Curro Sánchez,Curro Sánchez,70,70,MEI,30,Espanha
+Burgos,Florian Miguel,Florian Miguel,70,70,LAT,29,França
+Burgos,Iván Morante,Iván Morante,68,77,VOL,25,Espanha
+Burgos,Sergio González,Sergio González,68,69,ZAG,29,Espanha
+Burgos,David González,David González,65,74,MEI,24,Espanha
+Burgos,Fer Niño,Fer Niño,70,75,ATA,25,Espanha
+Burgos,Atienza,Atienza,70,73,VOL,27,Espanha
+Burgos,Mario Cantero,Mario Cantero,63,72,MEI,24,Espanha
+Burgos,Chapela,Chapela,69,70,MEI,27,Espanha
+Burgos,Aitor Buñuel,Aitor Buñuel,66,67,LAT,28,Espanha
+Burgos,Mario González,Mario González,69,69,ATA,30,Espanha
+Burgos,Marcelo,Marcelo,61,69,VOL,23,Espanha
+Burgos,Ethan,Ethan,58,67,MEI,22,Espanha
+Burgos,Brais Martínez,Brais Martínez,66,72,LAT,24,Espanha
+Burgos,del Cerro,del Cerro,63,73,MEI,22,Espanha
+Burgos,Aitor Córdoba,Aitor Córdoba,72,72,ZAG,31,Espanha
+Burgos,Gregorio Sierra,Gregorio Sierra,67,67,ZAG,33,Espanha
+Burgos,Alex Lizancos,Alex Lizancos,63,72,LAT,22,Espanha
+Burgos,Mateo Mejía,Mateo Mejía,61,73,ATA,23,Colômbia
+Burgos,Fermín García,Fermín García,59,66,ATA,22,Espanha
+Burgos,Cantero,Cantero,70,71,GOL,31,Espanha
+Burgos,Jesús Ruiz,Jesús Ruiz,71,73,GOL,29,Espanha
+Burgos,Monedero,Monedero,62,79,GOL,21,Espanha
+Burgos,Diego González,Diego González,57,75,GOL,20,Espanha
+Sporting Gijón,Àlex Corredera,Àlex Corredera,71,71,MEI,30,Espanha
+Sporting Gijón,Juan Otero,Juan Otero,73,73,ATA,31,Colômbia
+Sporting Gijón,Gaspar Campos,Gaspar Campos,69,72,MEI,26,Espanha
+Sporting Gijón,Guille Rosas,Guille Rosas,70,75,LAT,26,Espanha
+Sporting Gijón,Jonathan Dubasin,Jonathan Dubasin,73,75,MEI,26,Bélgica
+Sporting Gijón,César Gelabert,César Gelabert,72,77,MEI,25,Espanha
+Sporting Gijón,Ó. Cortés,Ó. Cortés,70,81,MEI,22,Colômbia
+Sporting Gijón,Eric Curbelo,Eric Curbelo,70,70,ZAG,32,Espanha
+Sporting Gijón,Kevin,Kevin,69,69,LAT,33,Espanha
+Sporting Gijón,Nacho Martín,Nacho Martín,68,78,VOL,24,Espanha
+Sporting Gijón,Pablo García,Pablo García,69,73,LAT,26,Espanha
+Sporting Gijón,Diego Sánchez,Diego Sánchez,68,77,ZAG,23,Espanha
+Sporting Gijón,Jesús Bernal,Jesús Bernal,68,69,VOL,29,Espanha
+Sporting Gijón,Mamadou Loum,Mamadou Loum,66,66,ZAG,29,Senegal
+Sporting Gijón,Daniel Queipo,Daniel Queipo,68,77,MEI,24,Espanha
+Sporting Gijón,Enol Prendes,Enol Prendes,63,74,MEI,22,Espanha
+Sporting Gijón,Justin Smith,Justin Smith,65,76,VOL,23,Canadá
+Sporting Gijón,Álex Lozano,Álex Lozano,61,74,MEI,21,Espanha
+Sporting Gijón,Jordy Caicedo,Jordy Caicedo,66,67,ATA,28,Equador
+Sporting Gijón,Amadou Coundoul,Amadou Coundoul,65,73,ATA,24,Senegal
+Sporting Gijón,Álex Oyón,Álex Oyón,62,73,ATA,23,Espanha
+Sporting Gijón,Lucas Perrin,Lucas Perrin,69,72,ZAG,27,França
+Sporting Gijón,Pablo Vázquez,Pablo Vázquez,70,70,ZAG,31,Espanha
+Sporting Gijón,Iker Martínez,Iker Martínez,62,72,LAT,22,Espanha
+Sporting Gijón,Pierre Mbemba,Pierre Mbemba,59,69,ZAG,22,França
+Sporting Gijón,Yann Kembo Diantela,Yann Kembo Diantela,60,71,ZAG,24,França
+Sporting Gijón,Rubén Yáñez,Rubén Yáñez,73,73,GOL,32,Espanha
+Sporting Gijón,Christian Sánchez,Christian Sánchez,66,71,GOL,27,Cuba
+Sporting Gijón,Iker Venteo,Iker Venteo,61,72,GOL,23,Espanha
+Sporting Gijón,Gerard Moreno,Gerard Moreno,58,72,GOL,21,Espanha
+Eibar,Olaetxea,Olaetxea,71,71,MEI,33,Espanha
+Eibar,Corpas,Corpas,72,72,MEI,35,Espanha
+Eibar,Sergio Álvarez,Sergio Álvarez,70,70,VOL,34,Espanha
+Eibar,Javi Martínez,Javi Martínez,68,72,MEI,26,Espanha
+Eibar,Nolaskoain,Nolaskoain,72,74,VOL,27,Espanha
+Eibar,Arbilla,Arbilla,70,70,ZAG,39,Espanha
+Eibar,Toni Villa,Toni Villa,67,67,MEI,31,Espanha
+Eibar,Magunazelaia,Magunazelaia,66,72,MEI,25,Espanha
+Eibar,Leonardo Buta,Leonardo Buta,69,74,LAT,24,Portugal
+Eibar,Mada,Mada,67,73,MEI,24,Espanha
+Eibar,Alkain,Alkain,70,70,MEI,29,Espanha
+Eibar,Jon Bautista,Jon Bautista,71,71,ATA,31,Espanha
+Eibar,Adu Ares,Adu Ares,68,77,MEI,24,Espanha
+Eibar,Alvaro Rodríguez,Alvaro Rodríguez,66,66,LAT,32,Espanha
+Eibar,Hodei,Hodei,67,72,LAT,22,Espanha
+Eibar,Aleix Garrido,Aleix Garrido,66,78,MEI,22,Espanha
+Eibar,Guruzeta,Guruzeta,68,71,MEI,26,Espanha
+Eibar,Cubero,Cubero,68,71,LAT,26,Espanha
+Eibar,Marc Delgado,Marc Delgado,59,73,MEI,21,Espanha
+Eibar,Javi Martón,Javi Martón,68,71,ATA,27,Espanha
+Eibar,Jair Amador,Jair Amador,68,68,ZAG,36,Portugal
+Eibar,Marco Moreno,Marco Moreno,68,74,ZAG,25,Espanha
+Eibar,Markel Arana,Markel Arana,60,67,LAT,24,Espanha
+Eibar,Ekaitz Redondo,Ekaitz Redondo,60,69,ATA,21,Espanha
+Eibar,Arambarri,Arambarri,68,70,ZAG,28,Espanha
+Eibar,Sarasketa,Sarasketa,57,78,MEI,19,Espanha
+Eibar,Hugo García,Hugo García,59,68,MEI,20,Espanha
+Eibar,Oier Llorente,Oier Llorente,58,70,ZAG,21,Espanha
+Eibar,Magunagoitia,Magunagoitia,70,74,GOL,25,Espanha
+Eibar,Luis López,Luis López,63,69,GOL,25,Espanha
+Eibar,Unai Ayala,Unai Ayala,55,66,GOL,22,Espanha
+Cádiz,Álex Fernández,Álex Fernández,72,72,MEI,33,Espanha
+Cádiz,Iza Carcelén,Iza Carcelén,70,70,LAT,33,Espanha
+Cádiz,Brian Ocampo,Brian Ocampo,70,71,MEI,27,Uruguai
+Cádiz,Youssouf Diarra,Youssouf Diarra,68,69,MEI,27,Mali
+Cádiz,Suso,Suso,77,77,MEI,32,Espanha
+Cádiz,Luís Hernández,Luís Hernández,73,73,ZAG,37,Espanha
+Cádiz,Roger Martí,Roger Martí,68,68,ATA,35,Espanha
+Cádiz,Climent,Climent,68,76,LAT,24,Espanha
+Cádiz,Ontiveros,Ontiveros,73,73,MEI,28,Espanha
+Cádiz,Iuri Tabatadze,Iuri Tabatadze,66,69,MEI,26,Geórgia
+Cádiz,Sergio Ortuño,Sergio Ortuño,68,71,MEI,27,Espanha
+Cádiz,Fali,Fali,69,69,ZAG,32,Espanha
+Cádiz,Joaquín González,Joaquín González,64,71,MEI,25,Espanha
+Cádiz,Moussa Diakité,Moussa Diakité,65,80,VOL,22,Mali
+Cádiz,Dawda Camara,Dawda Camara,65,73,ATA,23,Mauritânia
+Cádiz,De la Rosa,De la Rosa,66,76,MEI,22,Espanha
+Cádiz,Efe Ugiagbe,Efe Ugiagbe,63,71,MEI,22,Nigéria
+Cádiz,Iker Recio,Iker Recio,63,72,ZAG,25,Espanha
+Cádiz,Bojan Kovačević,Bojan Kovačević,68,83,ZAG,22,Sérvia
+Cádiz,Jorge Moreno,Jorge Moreno,67,76,ZAG,25,Espanha
+Cádiz,Pelayo,Pelayo,65,72,ZAG,23,Espanha
+Cádiz,Á. García Pascual,Á. García Pascual,65,74,ATA,24,Espanha
+Cádiz,Raúl Pereira,Raúl Pereira,62,71,LAT,21,Espanha
+Cádiz,Alfred Caicedo,Alfred Caicedo,61,73,LAT,21,Equador
+Cádiz,David Gil,David Gil,70,70,GOL,32,Espanha
+Cádiz,Víctor Aznar,Víctor Aznar,64,73,GOL,23,Brasil
+Real Valladolid,Mathis Lachuer,Mathis Lachuer,70,74,MEI,25,França
+Real Valladolid,Sergi Canós,Sergi Canós,71,71,MEI,29,Espanha
+Real Valladolid,Amath Ndiaye,Amath Ndiaye,72,72,MEI,30,Senegal
+Real Valladolid,Julien Ponceau,Julien Ponceau,74,78,MEI,25,França
+Real Valladolid,Meseguer,Meseguer,70,73,MEI,27,Espanha
+Real Valladolid,Iván Alejo,Iván Alejo,68,68,MEI,31,Espanha
+Real Valladolid,Pablo Tomeo,Pablo Tomeo,71,76,ZAG,26,Espanha
+Real Valladolid,Stanko Jurić,Stanko Jurić,70,70,VOL,29,Croácia
+Real Valladolid,Javi Sánchez,Javi Sánchez,72,74,ZAG,29,Espanha
+Real Valladolid,Marcos André,Marcos André,69,69,ATA,29,Brasil
+Real Valladolid,Stipe Biuk,Stipe Biuk,67,75,MEI,23,Croácia
+Real Valladolid,Guille Bueno,Guille Bueno,68,77,LAT,23,Espanha
+Real Valladolid,Ibrahim Akintunde Alani,Ibrahim Akintunde Alani,62,78,MEI,20,Nigéria
+Real Valladolid,Peter,Peter,71,80,MEI,24,República Dominicana
+Real Valladolid,Latasa,Latasa,70,76,ATA,25,Espanha
+Real Valladolid,Chuki,Chuki,68,80,MEI,22,Espanha
+Real Valladolid,Jesús Martínez,Jesús Martínez,59,69,MEI,22,Espanha
+Real Valladolid,Iván Garriel,Iván Garriel,64,77,LAT,21,Espanha
+Real Valladolid,Jorge Delgado,Jorge Delgado,62,71,ATA,23,Espanha
+Real Valladolid,Hugo San,Hugo San,61,78,LAT,20,Espanha
+Real Valladolid,Mario Maroto,Mario Maroto,60,74,MEI,22,Espanha
+Real Valladolid,Arnu,Arnu,62,80,ATA,19,Espanha
+Real Valladolid,Koke,Koke,62,77,LAT,21,Espanha
+Real Valladolid,David Torres,David Torres,67,76,ZAG,23,Espanha
+Real Valladolid,Trilli,Trilli,64,75,LAT,23,Espanha
+Real Valladolid,Xavi Moreno,Xavi Moreno,61,71,ATA,21,Espanha
+Real Valladolid,Iago Parente,Iago Parente,59,74,ZAG,20,Espanha
+Real Valladolid,Mohamed Jaouab,Mohamed Jaouab,65,76,ZAG,24,Marrocos
+Real Valladolid,Aranda,Aranda,61,74,ZAG,20,Espanha
+Real Valladolid,Guilherme Fernandes,Guilherme Fernandes,67,75,GOL,25,Portugal
+Real Valladolid,Aceves,Aceves,66,78,GOL,23,Espanha
+Albacete,Agus Medina,Agus Medina,70,70,MEI,31,Espanha
+Albacete,Morci,Morci,71,71,MEI,27,Espanha
+Albacete,Riki,Riki,70,71,MEI,28,Espanha
+Albacete,Puertas,Puertas,72,72,MEI,34,Espanha
+Albacete,Carlos Neva,Carlos Neva,71,71,LAT,30,Espanha
+Albacete,Jefté,Jefté,71,71,ATA,33,Espanha
+Albacete,Fran Gámez,Fran Gámez,69,69,LAT,35,Espanha
+Albacete,Pepe Sánchez,Pepe Sánchez,68,74,ZAG,26,Espanha
+Albacete,Javi Villar,Javi Villar,66,76,MEI,23,Espanha
+Albacete,Pacheco,Pacheco,64,73,MEI,24,Espanha
+Albacete,Lazo,Lazo,68,68,MEI,30,Espanha
+Albacete,Higinio,Higinio,71,71,ATA,32,Espanha
+Albacete,Capi,Capi,60,73,VOL,19,Espanha
+Albacete,Meléndez,Meléndez,65,68,MEI,27,Espanha
+Albacete,Vallejo,Vallejo,72,73,ZAG,29,Espanha
+Albacete,Dani Escriche,Dani Escriche,66,67,ATA,28,Espanha
+Albacete,Jon García,Jon García,68,68,ZAG,35,Espanha
+Albacete,Javi Moreno,Javi Moreno,65,71,ZAG,26,Espanha
+Albacete,Víctor Valverde,Víctor Valverde,64,73,MEI,24,Espanha
+Albacete,Dani Bernabéu,Dani Bernabéu,59,73,LAT,19,Espanha
+Albacete,Jonathan Gómez,Jonathan Gómez,64,75,LAT,22,México
+Albacete,Jota,Jota,59,71,LAT,20,Espanha
+Albacete,Lorenzo,Lorenzo,61,70,LAT,23,Espanha
+Albacete,Diego Mariño,Diego Mariño,68,68,GOL,36,Espanha
+Albacete,Raúl Lizoain,Raúl Lizoain,69,69,GOL,35,Espanha
+Albacete,Mario Ramos,Mario Ramos,58,71,GOL,22,Espanha
+Granada,Rubén Alcaraz,Rubén Alcaraz,71,71,MEI,35,Espanha
+Granada,Martin Hongla,Martin Hongla,71,72,MEI,28,Camarões
+Granada,Manu Trigueros,Manu Trigueros,71,71,MEI,34,Espanha
+Granada,José Arnáiz,José Arnáiz,70,70,MEI,31,Espanha
+Granada,Álex Sola,Álex Sola,72,73,MEI,27,Espanha
+Granada,Sergio Ruiz,Sergio Ruiz,71,71,VOL,31,Espanha
+Granada,Jorge Pascual,Jorge Pascual,68,74,ATA,23,Espanha
+Granada,Souleymane Faye,Souleymane Faye,64,72,MEI,23,Senegal
+Granada,Mohamed Bouldini,Mohamed Bouldini,66,66,ATA,30,Marrocos
+Granada,Dominique Moubeke,Dominique Moubeke,60,70,MEI,20,Camarões
+Granada,Manu Lama,Manu Lama,68,77,ZAG,25,Espanha
+Granada,Gael Joel,Gael Joel,59,69,MEI,22,Guiné Equatorial
+Granada,Loïc Williams,Loïc Williams,70,77,ZAG,24,Espanha
+Granada,Pau Casadesús,Pau Casadesús,64,71,LAT,23,Espanha
+Granada,Pablo Sáenz,Pablo Sáenz,66,72,MEI,25,Espanha
+Granada,Mario Gambín,Mario Gambín,61,81,MEI,19,Espanha
+Granada,Pedro Alemañ,Pedro Alemañ,62,73,MEI,23,Espanha
+Granada,Sergio Rodelas,Sergio Rodelas,66,80,ATA,21,Espanha
+Granada,Luka Gagnidze,Luka Gagnidze,60,71,MEI,23,Geórgia
+Granada,Pere Haro,Pere Haro,61,72,LAT,22,Espanha
+Granada,Baïla Diallo,Baïla Diallo,64,67,LAT,25,Senegal
+Granada,Oscar Naasei Oppong,Oscar Naasei Oppong,61,75,ZAG,21,Gana
+Granada,Samu Cortés,Samu Cortés,61,75,ATA,20,Espanha
+Granada,Hormigo,Hormigo,64,75,LAT,23,Espanha
+Granada,Seydou,Seydou,59,69,ZAG,21,Mauritânia
+Granada,Luca Zidane,Luca Zidane,71,75,GOL,28,França
+Granada,Astralaga,Astralaga,62,74,GOL,22,Espanha
+Huesca,Óscar Sielva,Óscar Sielva,72,72,MEI,34,Espanha
+Huesca,Javi Mier,Javi Mier,67,70,MEI,27,Espanha
+Huesca,Portillo,Portillo,68,68,MEI,36,Espanha
+Huesca,Kortajarena,Kortajarena,69,74,MEI,25,Espanha
+Huesca,Sergi Enrich,Sergi Enrich,69,69,ATA,36,Espanha
+Huesca,Dani Ojeda,Dani Ojeda,68,68,MEI,31,Espanha
+Huesca,Gustavo Albarracín,Gustavo Albarracín,64,78,MEI,20,Argentina
+Huesca,Toni Abad,Toni Abad,68,68,LAT,29,Espanha
+Huesca,Julio Alonso,Julio Alonso,68,70,LAT,27,Espanha
+Huesca,Jesús Alvarez,Jesús Alvarez,64,69,MEI,26,Espanha
+Huesca,Manu Rico,Manu Rico,63,75,MEI,23,Espanha
+Huesca,Liberto Beltrán,Liberto Beltrán,68,68,MEI,29,Espanha
+Huesca,Carrillo,Carrillo,67,72,ZAG,24,Espanha
+Huesca,Pulido,Pulido,72,72,ZAG,35,Espanha
+Huesca,Enol Rodríguez,Enol Rodríguez,65,72,ATA,25,Espanha
+Huesca,Ángel Pérez,Ángel Pérez,62,71,LAT,23,Espanha
+Huesca,Jordi Martín,Jordi Martín,66,72,MEI,25,Espanha
+Huesca,Samuel Ntamack,Samuel Ntamack,65,72,ATA,25,França
+Huesca,Sergio Arribas,Sergio Arribas,66,75,ZAG,23,Espanha
+Huesca,Daniel Luna,Daniel Luna,66,77,MEI,23,Colômbia
+Huesca,Hugo Pérez,Hugo Pérez,63,75,ZAG,23,Espanha
+Huesca,Willy Chatiliez,Willy Chatiliez,60,75,MEI,21,Chile
+Huesca,Diego Aznar,Diego Aznar,61,72,ATA,23,Espanha
+Huesca,Iñigo Piña,Iñigo Piña,67,67,ZAG,31,Espanha
+Huesca,Ro Abajas,Ro Abajas,62,73,LAT,23,Espanha
+Huesca,Dani Jiménez,Dani Jiménez,72,72,GOL,36,Espanha
+Huesca,Juan Pérez,Juan Pérez,67,69,GOL,30,Espanha
+Huesca,Dani Martín,Dani Martín,58,69,GOL,20,Espanha
+Córdoba,Isma Ruiz,Isma Ruiz,70,74,MEI,25,Espanha
+Córdoba,Vilarrasa,Vilarrasa,69,72,LAT,26,Espanha
+Córdoba,Pedro Ortiz,Pedro Ortiz,70,74,MEI,25,Espanha
+Córdoba,Théo,Théo,66,72,MEI,24,França
+Córdoba,Alberto del Moral,Alberto del Moral,66,70,MEI,26,Espanha
+Córdoba,Carracedo,Carracedo,72,72,ATA,30,Espanha
+Córdoba,Sergi Guardiola,Sergi Guardiola,70,70,ATA,35,Espanha
+Córdoba,Albarrán,Albarrán,68,68,LAT,32,Espanha
+Córdoba,Jacobo González,Jacobo González,70,70,ATA,29,Espanha
+Córdoba,Dani Requena,Dani Requena,64,76,MEI,22,Espanha
+Córdoba,Rubén Alves,Rubén Alves,70,70,ZAG,31,Espanha
+Córdoba,Dalisson,Dalisson,64,69,MEI,26,Espanha
+Córdoba,Carlos Isaac,Carlos Isaac,68,69,LAT,28,Espanha
+Córdoba,Kevin Medina,Kevin Medina,68,73,ATA,25,Espanha
+Córdoba,Adilson,Adilson,68,68,ATA,29,Portugal
+Córdoba,Alcedo,Alcedo,66,70,LAT,25,Espanha
+Córdoba,Adri Fuentes,Adri Fuentes,66,66,ATA,30,Espanha
+Córdoba,Xavi Sintes,Xavi Sintes,68,73,ZAG,24,Espanha
+Córdoba,Nikolay Obolskii,Nikolay Obolskii,67,67,ATA,29,Rússia
+Córdoba,Jan Salas,Jan Salas,60,77,MEI,20,Espanha
+Córdoba,Franck Fomeyem,Franck Fomeyem,66,72,ZAG,26,Camarões
+Córdoba,Álex Martín,Álex Martín,64,67,ZAG,28,Espanha
+Córdoba,Diego Bri,Diego Bri,62,71,ATA,23,Espanha
+Córdoba,Iker Álvarez,Iker Álvarez,67,72,GOL,25,Andorra
+Córdoba,Carlos Marín,Carlos Marín,70,73,GOL,29,Espanha
+Córdoba,Alejandro Arévalo,Alejandro Arévalo,55,70,GOL,18,Espanha
+Castellón,Álex Calatrava,Álex Calatrava,71,74,MEI,26,Espanha
+Castellón,Kenneth Mamah,Kenneth Mamah,68,68,MEI,28,Nigéria
+Castellón,Douglas Aurélio,Douglas Aurélio,67,70,ATA,27,Brasil
+Castellón,Israel Suero,Israel Suero,69,69,ATA,32,Espanha
+Castellón,Awer Mabil,Awer Mabil,67,67,MEI,30,Austrália
+Castellón,Gerenabarrena,Gerenabarrena,65,73,MEI,23,Espanha
+Castellón,Jérémy Mellot,Jérémy Mellot,69,69,LAT,32,França
+Castellón,Alberto Jiménez,Alberto Jiménez,67,67,ZAG,33,Espanha
+Castellón,Adam Jakobsen,Adam Jakobsen,68,69,MEI,27,Dinamarca
+Castellón,Michał Willmann,Michał Willmann,65,73,LAT,22,Polônia
+Castellón,Serpeta,Serpeta,65,68,ATA,26,Espanha
+Castellón,Óscar Gil,Óscar Gil,66,66,ZAG,31,Espanha
+Castellón,Brian Cipenga,Brian Cipenga,66,66,MEI,28,RD Congo
+Castellón,Marc-Olivier Doué,Marc-Olivier Doué,64,73,VOL,25,França
+Castellón,Agustín Sienra,Agustín Sienra,63,68,ZAG,27,Argentina
+Castellón,Lucas Alcázar,Lucas Alcázar,64,72,LAT,24,Espanha
+Castellón,Diego Barri,Diego Barri,65,65,VOL,30,Espanha
+Castellón,Salva Ruíz,Salva Ruíz,64,64,ZAG,31,Espanha
+Castellón,Charbel Wehbe,Charbel Wehbe,62,73,LAT,21,República Dominicana
+Castellón,Fabrizio Brignani,Fabrizio Brignani,69,71,ZAG,28,Itália
+Castellón,Pablo Santiago,Pablo Santiago,61,65,ATA,25,Espanha
+Castellón,Tincho,Tincho,60,71,LAT,23,Espanha
+Castellón,Ousmane Camara,Ousmane Camara,65,72,ATA,24,Guiné
+Castellón,Nicholas Markanich,Nicholas Markanich,65,70,ATA,26,Estados Unidos
+Castellón,Tommaso De Nipoti,Tommaso De Nipoti,59,70,MEI,23,Itália
+Castellón,Amir Abedzadeh,Amir Abedzadeh,68,68,GOL,33,Irã
+Castellón,Romain Matthys,Romain Matthys,63,67,GOL,28,Bélgica
+Castellón,Sergi Torner,Sergi Torner,57,68,GOL,22,Espanha
+Ceuta,Anuar,Anuar,69,69,MEI,31,Marrocos
+Ceuta,Cristian,Cristian,66,66,MEI,30,Espanha
+Ceuta,Rubén Díez,Rubén Díez,66,66,MEI,32,Espanha
+Ceuta,Yann Bodiger,Yann Bodiger,68,68,VOL,31,França
+Ceuta,José Matos,José Matos,68,68,LAT,31,Espanha
+Ceuta,Aisar,Aisar,65,71,MEI,25,Marrocos
+Ceuta,Kuki Zalazar,Kuki Zalazar,65,66,MEI,28,Espanha
+Ceuta,Aboubacar Bassinga,Aboubacar Bassinga,62,78,MEI,21,Costa do Marfim
+Ceuta,Youness Lachhab,Youness Lachhab,65,68,VOL,27,Marrocos
+Ceuta,Salvi Sánchez,Salvi Sánchez,69,69,MEI,35,Espanha
+Ceuta,Kialy Koné,Kialy Koné,64,64,MEI,29,Costa do Marfim
+Ceuta,Manu Sánchez,Manu Sánchez,63,63,LAT,30,Espanha
+Ceuta,Manu Vallejo,Manu Vallejo,65,65,ATA,29,Espanha
+Ceuta,Samuel Obeng,Samuel Obeng,68,68,ATA,29,Gana
+Ceuta,Juanto Ortuño,Juanto Ortuño,69,69,ATA,34,Espanha
+Ceuta,Josema,Josema,60,66,MEI,23,Espanha
+Ceuta,Marcos Fernández,Marcos Fernández,64,74,ATA,23,Espanha
+Ceuta,Andy Escudero,Andy Escudero,64,65,MEI,27,Espanha
+Ceuta,Konrad de la Fuente,Konrad de la Fuente,66,72,MEI,25,Estados Unidos
+Ceuta,Diego González,Diego González,67,72,ZAG,27,Espanha
+Ceuta,Redru,Redru,65,65,LAT,29,Espanha
+Ceuta,Yago Cantero,Yago Cantero,64,68,ZAG,26,Espanha
+Ceuta,Almenara,Almenara,64,64,LAT,29,Espanha
+Ceuta,Carlos Hernández,Carlos Hernández,65,65,ZAG,35,Espanha
+Ceuta,Albert Caparrós,Albert Caparrós,62,67,ZAG,27,Espanha
+Ceuta,Pedro López,Pedro López,65,65,GOL,31,Espanha
+Ceuta,Guille Vallejo,Guille Vallejo,65,65,GOL,31,Espanha
+Mirandés,Aarón Martín,Aarón Martín,67,78,MEI,19,Espanha
+Mirandés,Marino Illescas,Marino Illescas,67,74,MEI,25,Espanha
+Mirandés,Álex Cardero,Álex Cardero,68,74,MEI,22,Espanha
+Mirandés,Hugo Novoa,Hugo Novoa,67,73,MEI,23,Espanha
+Mirandés,Ismael Barea,Ismael Barea,65,78,MEI,21,Espanha
+Mirandés,Gonzalo Petit,Gonzalo Petit,69,81,ATA,19,Uruguai
+Mirandés,Carlos Fernández,Carlos Fernández,69,69,ATA,30,Espanha
+Mirandés,Medrano,Medrano,66,71,LAT,26,Espanha
+Mirandés,Rafa Bauza,Rafa Bauza,65,78,VOL,21,Espanha
+Mirandés,Zárate,Zárate,58,66,MEI,22,Espanha
+Mirandés,Iker Varela,Iker Varela,63,72,MEI,23,Espanha
+Mirandés,Thiago Helguera,Thiago Helguera,65,79,VOL,20,Uruguai
+Mirandés,Toni Tamarit,Toni Tamarit,62,72,MEI,20,Espanha
+Mirandés,Pablo Pérez,Pablo Pérez,64,71,LAT,24,Espanha
+Mirandés,Juan Gutiérrez,Juan Gutiérrez,70,74,ZAG,26,Espanha
+Mirandés,Alberto Marí,Alberto Marí,66,70,ATA,25,Espanha
+Mirandés,Pablo López,Pablo López,63,83,ATA,20,Espanha
+Mirandés,Etienne Eto'o,Etienne Eto'o,62,71,ATA,23,Camarões
+Mirandés,Iker Córdoba,Iker Córdoba,65,78,ZAG,20,Espanha
+Mirandés,Salim El Jebari,Salim El Jebari,65,73,ATA,22,Marrocos
+Mirandés,Arriola,Arriola,57,64,MEI,21,Espanha
+Mirandés,Postigo,Postigo,66,66,ZAG,37,Espanha
+Mirandés,Pica,Pica,68,79,ZAG,24,Espanha
+Mirandés,Gabri,Gabri,58,66,MEI,23,Espanha
+Mirandés,Hodei,Hodei,56,62,LAT,23,Espanha
+Mirandés,Martín Pascual,Martín Pascual,67,72,ZAG,26,Espanha
+Mirandés,Edu Coniac,Edu Coniac,54,64,ZAG,21,Espanha
+Mirandés,Abdou Maiga,Abdou Maiga,54,68,ZAG,19,Mali
+Mirandés,Igor Nikic,Igor Nikic,68,74,GOL,25,Montenegro
+Mirandés,Juanpa,Juanpa,64,68,GOL,26,Espanha
+Mirandés,Ale Gorrín,Ale Gorrín,57,63,GOL,23,Espanha
+Cultural Leonesa,Rubén Sobrino,Rubén Sobrino,70,70,MEI,34,Espanha
+Cultural Leonesa,Iván Calero,Iván Calero,66,66,LAT,31,Espanha
+Cultural Leonesa,Yayo,Yayo,65,74,MEI,22,Espanha
+Cultural Leonesa,Bicho,Bicho,65,65,MEI,30,Espanha
+Cultural Leonesa,Daniel Paraschiv,Daniel Paraschiv,68,71,ATA,27,Romênia
+Cultural Leonesa,Thiago Ojeda,Thiago Ojeda,64,76,VOL,23,Argentina
+Cultural Leonesa,Jordi Mboula,Jordi Mboula,69,70,MEI,27,Espanha
+Cultural Leonesa,Víctor García,Víctor García,66,66,LAT,32,Venezuela
+Cultural Leonesa,Manu Justo,Manu Justo,66,66,ATA,30,Espanha
+Cultural Leonesa,Collado,Collado,65,72,ATA,25,Espanha
+Cultural Leonesa,Selu Diallo,Selu Diallo,60,73,MEI,22,Espanha
+Cultural Leonesa,Lucas Ribeiro,Lucas Ribeiro,68,71,MEI,27,Brasil
+Cultural Leonesa,Pibe,Pibe,65,65,MEI,30,Argentina
+Cultural Leonesa,Luis Chacón,Luis Chacón,68,71,MEI,26,Espanha
+Cultural Leonesa,Maestre,Maestre,64,64,VOL,35,Espanha
+Cultural Leonesa,Satrústegui,Satrústegui,65,65,ZAG,35,Espanha
+Cultural Leonesa,Nico Toca,Nico Toca,62,72,VOL,23,Espanha
+Cultural Leonesa,Tomás Ribeiro,Tomás Ribeiro,70,73,ZAG,27,Portugal
+Cultural Leonesa,Rafa Tresaco,Rafa Tresaco,65,68,MEI,25,Espanha
+Cultural Leonesa,Paco Cortés,Paco Cortés,64,81,ATA,18,Espanha
+Cultural Leonesa,Roger Hinojo,Roger Hinojo,63,77,LAT,21,Espanha
+Cultural Leonesa,Quique Fornos,Quique Fornos,64,64,ZAG,29,Espanha
+Cultural Leonesa,Juan Sánchez,Juan Sánchez,60,68,MEI,22,Espanha
+Cultural Leonesa,Juan Larios,Juan Larios,59,70,LAT,22,Espanha
+Cultural Leonesa,Rodri Suárez,Rodri Suárez,63,70,ZAG,23,Espanha
+Cultural Leonesa,Matia Barzić,Matia Barzić,64,77,ZAG,22,Croácia
+Cultural Leonesa,Álvaro Choco,Álvaro Choco,59,69,MEI,21,Espanha
+Cultural Leonesa,Edgar Badia,Edgar Badia,71,71,GOL,34,Espanha
+Cultural Leonesa,Miguel Bañuz,Miguel Bañuz,64,64,GOL,33,Espanha
+Cultural Leonesa,Arnau Rafús,Arnau Rafús,63,72,GOL,23,Espanha
+Andorra,Sergio Molina,Sergio Molina,66,66,MEI,30,Espanha
+Andorra,Villahermosa,Villahermosa,65,71,MEI,25,Espanha
+Andorra,Álex Petxa,Álex Petxa,67,67,LAT,29,Espanha
+Andorra,Imanol,Imanol,70,73,LAT,26,Espanha
+Andorra,Efe Akman,Efe Akman,62,79,VOL,20,Turquia
+Andorra,Marc Doménech,Marc Doménech,62,69,MEI,23,Espanha
+Andorra,Álex Calvo,Álex Calvo,66,72,ATA,22,Espanha
+Andorra,Manu Nieto,Manu Nieto,67,68,ATA,28,Espanha
+Andorra,Martí Vilà,Martí Vilà,65,68,LAT,27,Espanha
+Andorra,Thomas Carrique,Thomas Carrique,65,68,LAT,27,França
+Andorra,Álvaro Martín,Álvaro Martín,62,69,MEI,25,Espanha
+Andorra,Josep Cerdà,Josep Cerdà,62,69,ATA,23,Espanha
+Andorra,Minsu,Minsu,67,80,MEI,20,Coreia do Sul
+Andorra,Théo Le Normand,Théo Le Normand,60,63,MEI,25,França
+Andorra,Gael Alonso,Gael Alonso,64,72,ZAG,24,Espanha
+Andorra,Olabarrieta,Olabarrieta,65,80,MEI,20,Espanha
+Andorra,Bomba,Bomba,63,78,ZAG,20,Espanha
+Andorra,Aitor Uzkudun,Aitor Uzkudun,63,68,ATA,25,Espanha
+Andorra,Jastin,Jastin,63,78,MEI,22,Portugal
+Andorra,Lautaro,Lautaro,65,72,ATA,25,Uruguai
+Andorra,Antal Yaakobishvili,Antal Yaakobishvili,65,80,ZAG,22,Hungria
+Andorra,Diego Alende,Diego Alende,67,69,ZAG,28,Espanha
+Andorra,Nicolás Ratti,Nicolás Ratti,69,69,GOL,32,Argentina
+Andorra,Owono,Owono,67,74,GOL,25,Guiné Equatorial
+Andorra,Á. Yaakobishvili,Á. Yaakobishvili,65,79,GOL,20,Hungria

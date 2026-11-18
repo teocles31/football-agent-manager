@@ -1,0 +1,448 @@
+clube,nome_original,nome,overall,potencial,posicao,idade,pais
+Genk,Bryan Heynen,Bryan Heynen,78,78,VOL,29,Bélgica
+Genk,Patrik Hrošovský,Patrik Hrošovský,76,76,MEI,34,Eslováquia
+Genk,Junya Ito,Junya Ito,77,77,MEI,33,Japão
+Genk,Zakaria El Ouahdi,Zakaria El Ouahdi,76,83,LAT,24,Marrocos
+Genk,Joris Kayembe,Joris Kayembe,74,74,LAT,31,RD Congo
+Genk,Jarne Steuckers,Jarne Steuckers,75,82,MEI,24,Bélgica
+Genk,Daan Heymans,Daan Heymans,71,74,MEI,27,Bélgica
+Genk,Yaimar Medina,Yaimar Medina,70,84,LAT,21,Equador
+Genk,Yira Sor,Yira Sor,72,77,ATA,26,Nigéria
+Genk,Ken Nkuba,Ken Nkuba,66,73,MEI,24,Bélgica
+Genk,Oh Hyeon Gyu,Oh Hyeon Gyu,71,77,ATA,25,Coreia do Sul
+Genk,Matte Smets,Matte Smets,76,86,ZAG,22,Bélgica
+Genk,Luca Oyen,Luca Oyen,67,76,ATA,23,Bélgica
+Genk,Konstantinos Karetsas,Konstantinos Karetsas,70,86,MEI,18,Grécia
+Genk,Nikolas Sattlberger,Nikolas Sattlberger,70,82,VOL,22,Áustria
+Genk,Jusef Erabi,Jusef Erabi,68,77,ATA,23,Suécia
+Genk,Noah Adedeji-Sternberg,Noah Adedeji-Sternberg,67,83,MEI,21,Bélgica
+Genk,Ibrahima Bangoura,Ibrahima Bangoura,70,84,VOL,22,Guiné
+Genk,Mujaid,Mujaid,74,80,ZAG,26,Espanha
+Genk,Ayumu Yokoyama,Ayumu Yokoyama,65,75,MEI,23,Japão
+Genk,Josue Kongolo,Josue Kongolo,62,79,ZAG,20,Bélgica
+Genk,Brad Manguelle,Brad Manguelle,60,82,ZAG,18,Bélgica
+Genk,Kayden Pierre,Kayden Pierre,58,68,LAT,23,Estados Unidos
+Genk,Adrián Palacios,Adrián Palacios,59,70,ZAG,22,Venezuela
+Genk,Aaron Bibout,Aaron Bibout,59,73,ATA,21,Camarões
+Genk,Hendrik Van Crombrugge,Hendrik Van Crombrugge,69,69,GOL,33,Bélgica
+Genk,Tobias Lawal,Tobias Lawal,72,78,GOL,26,Áustria
+Genk,Lucca Brughmans,Lucca Brughmans,59,82,GOL,18,Bélgica
+Club Brugge,Yann Sommer,Yann Sommer,87,87,GOL,37,Suíça
+Club Brugge,Nordin Jackers,Nordin Jackers,70,70,GOL,29,Bélgica
+Club Brugge,Argus Vanden Driessche,Argus Vanden Driessche,62,73,GOL,19,Bélgica
+Club Brugge,Axl De Corte,Axl De Corte,62,78,GOL,20,Bélgica
+Club Brugge,Joel Ordóñez,Joel Ordóñez,80,86,ZAG,22,Equador
+Club Brugge,Han-beom Lee,Han-beom Lee,69,78,ZAG,24,Coreia do Sul
+Club Brugge,Jorne Spileers,Jorne Spileers,69,83,ZAG,21,Bélgica
+Club Brugge,Brandon Mechele,Brandon Mechele,76,76,ZAG,33,Bélgica
+Club Brugge,Samba Coulibaly,Samba Coulibaly,57,70,ZAG,18,França
+Club Brugge,Joaquin Seys,Joaquin Seys,79,86,LAT,21,Bélgica
+Club Brugge,Matteo Dams,Matteo Dams,70,79,LAT,22,Bélgica
+Club Brugge,Kyriani Sabbe,Kyriani Sabbe,74,84,LAT,21,Bélgica
+Club Brugge,Hugo Siquet,Hugo Siquet,70,78,LAT,24,Bélgica
+Club Brugge,Freddie Potts,Freddie Potts,76,80,VOL,23,Inglaterra
+Club Brugge,Lynnt Audoor,Lynnt Audoor,69,77,VOL,23,Bélgica
+Club Brugge,Gianluca Okon-Engstler,Gianluca Okon-Engstler,62,75,VOL,17,Itália
+Club Brugge,Cheveyo Tsawa,Cheveyo Tsawa,70,75,MEI,19,Suíça
+Club Brugge,Hugo Vetlesen,Hugo Vetlesen,71,74,MEI,26,Noruega
+Club Brugge,Félix Lemaréchal,Félix Lemaréchal,76,82,MEI,23,França
+Club Brugge,Hans Vanaken,Hans Vanaken,80,80,MEI,34,Bélgica
+Club Brugge,Tian Nai Koren,Tian Nai Koren,64,78,MEI,17,Eslovênia
+Club Brugge,Jan Virgili,Jan Virgili,74,82,ATA,20,Espanha
+Club Brugge,Mamadou Diakhon,Mamadou Diakhon,72,78,ATA,21,Senegal
+Club Brugge,Wisdom Mike,Wisdom Mike,66,79,ATA,18,Alemanha
+Club Brugge,Carlos Forbs,Carlos Forbs,78,80,ATA,22,Portugal
+Club Brugge,Nicolò Tresoldi,Nicolò Tresoldi,79,83,ATA,22,Alemanha
+Club Brugge,Romeo Vermant,Romeo Vermant,77,85,ATA,22,Bélgica
+Club Brugge,Andrej Vasovic,Andrej Vasovic,67,75,ATA,19,Suíça
+OH Leuven,Siebe Schrijvers,Siebe Schrijvers,74,74,MEI,30,Bélgica
+OH Leuven,Birger Verstraete,Birger Verstraete,71,71,MEI,32,Bélgica
+OH Leuven,Mathieu Maertens,Mathieu Maertens,69,69,MEI,31,Bélgica
+OH Leuven,Takahiro Akimoto,Takahiro Akimoto,69,69,LAT,28,Japão
+OH Leuven,Ł. Łakomy,Ł. Łakomy,70,77,MEI,25,Polônia
+OH Leuven,Youssef Maziz,Youssef Maziz,72,72,MEI,28,França
+OH Leuven,Óscar Gil,Óscar Gil,69,69,LAT,28,Espanha
+OH Leuven,Charles Ikwuemesi,Charles Ikwuemesi,68,74,ATA,24,Nigéria
+OH Leuven,Thibault Vlietinck,Thibault Vlietinck,65,65,MEI,28,Bélgica
+OH Leuven,William Balikwisha,William Balikwisha,68,71,MEI,27,RD Congo
+OH Leuven,Henok Teklab,Henok Teklab,65,66,MEI,27,Alemanha
+OH Leuven,Bryang Kayo,Bryang Kayo,64,72,MEI,24,Estados Unidos
+OH Leuven,Nachon Nsingi,Nachon Nsingi,66,72,ATA,25,Bélgica
+OH Leuven,Thibaud Verlinden,Thibaud Verlinden,70,70,MEI,27,Bélgica
+OH Leuven,Sory Kaba,Sory Kaba,67,67,ATA,31,Guiné
+OH Leuven,Casper Terho,Casper Terho,66,77,MEI,23,Finlândia
+OH Leuven,Noë Dussenne,Noë Dussenne,73,73,ZAG,34,Bélgica
+OH Leuven,Takuma Ominami,Takuma Ominami,70,70,ZAG,28,Japão
+OH Leuven,Viktor Damjanić,Viktor Damjanić,66,76,ZAG,20,Croácia
+OH Leuven,Wouter George,Wouter George,59,66,MEI,24,Bélgica
+OH Leuven,Abdoul Traoré,Abdoul Traoré,58,70,ATA,19,Guiné
+OH Leuven,Ewoud Pletinckx,Ewoud Pletinckx,70,77,ZAG,25,Bélgica
+OH Leuven,Jovan Mijatović,Jovan Mijatović,60,75,ATA,21,Sérvia
+OH Leuven,Mohamed Azzouz,Mohamed Azzouz,55,75,MEI,19,Marrocos
+OH Leuven,Davis Opoku,Davis Opoku,58,77,LAT,18,Bélgica
+OH Leuven,Roggerio Nyakossi,Roggerio Nyakossi,61,72,ZAG,22,Suíça
+OH Leuven,Christ Souanga,Christ Souanga,55,75,LAT,19,Bélgica
+OH Leuven,Tobe Leysen,Tobe Leysen,73,80,GOL,24,Bélgica
+OH Leuven,Maxence Prévot,Maxence Prévot,67,67,GOL,29,França
+OH Leuven,Owen Jochmans,Owen Jochmans,58,70,GOL,23,Bélgica
+Union Saint-Gilloise,Hervé Koffi,Hervé Koffi,75,75,GOL,30,Burkina Faso
+Union Saint-Gilloise,Vic Chambaere,Vic Chambaere,67,70,GOL,23,Bélgica
+Union Saint-Gilloise,Giorgi Kavlashvili,Giorgi Kavlashvili,54,72,GOL,19,Geórgia
+Union Saint-Gilloise,Keo Boets,Keo Boets,55,57,GOL,22,Bélgica
+Union Saint-Gilloise,Kevin Mac Allister,Kevin Mac Allister,76,76,ZAG,29,Argentina
+Union Saint-Gilloise,Massiré Sylla,Massiré Sylla,70,76,ZAG,21,Senegal
+Union Saint-Gilloise,Ross Sykes,Ross Sykes,72,76,ZAG,27,Inglaterra
+Union Saint-Gilloise,Nikki Havenaar,Nikki Havenaar,66,66,ZAG,31,Japão
+Union Saint-Gilloise,Nohim Chibani,Nohim Chibani,65,65,ZAG,23,França
+Union Saint-Gilloise,Louis Patris,Louis Patris,69,74,LAT,25,Bélgica
+Union Saint-Gilloise,Denzel De Roeve,Denzel De Roeve,70,72,LAT,22,Bélgica
+Union Saint-Gilloise,Ondrej Kricfalusi,Ondrej Kricfalusi,72,75,VOL,22,Tchéquia
+Union Saint-Gilloise,Adem Zorgane,Adem Zorgane,78,80,MEI,26,Argélia
+Union Saint-Gilloise,Kamiel Van de Perre,Kamiel Van de Perre,74,74,MEI,22,Bélgica
+Union Saint-Gilloise,Besfort Zeneli,Besfort Zeneli,77,79,MEI,23,Suécia
+Union Saint-Gilloise,Rob Schoofs,Rob Schoofs,76,76,MEI,32,Bélgica
+Union Saint-Gilloise,Ivan Pavlic,Ivan Pavlic,64,70,MEI,25,Bélgica
+Union Saint-Gilloise,Darius Olaru,Darius Olaru,73,73,MEI,28,Romênia
+Union Saint-Gilloise,Anouar Ait El Hadj,Anouar Ait El Hadj,72,77,MEI,24,Bélgica
+Union Saint-Gilloise,Dylan Aquino,Dylan Aquino,72,77,ATA,21,Argentina
+Union Saint-Gilloise,Relebohile Mofokeng,Relebohile Mofokeng,75,76,ATA,22,África do Sul
+Union Saint-Gilloise,Guilherme Smith,Guilherme Smith,70,70,ATA,23,Brasil
+Union Saint-Gilloise,Ilan Hurtevent,Ilan Hurtevent,67,70,ATA,21,Bélgica
+Union Saint-Gilloise,Mateo Biondić,Mateo Biondić,77,77,ATA,23,Alemanha
+Union Saint-Gilloise,Kevin Rodríguez,Kevin Rodríguez,67,71,ATA,26,Equador
+Union Saint-Gilloise,Raul Florucz,Raul Florucz,70,74,ATA,25,Áustria
+Anderlecht,Mats Rits,Mats Rits,72,72,MEI,33,Bélgica
+Anderlecht,Ludwig Augustinsson,Ludwig Augustinsson,72,72,LAT,32,Suécia
+Anderlecht,Thorgan Hazard,Thorgan Hazard,73,73,ATA,33,Bélgica
+Anderlecht,César Huerta,César Huerta,73,77,ATA,25,México
+Anderlecht,Thomas Foket,Thomas Foket,69,69,LAT,31,Bélgica
+Anderlecht,Majeed Ashimeru,Majeed Ashimeru,69,69,MEI,28,Gana
+Anderlecht,Mario Stroeykens,Mario Stroeykens,74,86,MEI,21,Bélgica
+Anderlecht,Adriano Bertaccini,Adriano Bertaccini,75,80,ATA,25,Bélgica
+Anderlecht,Enric Llansana Beuse,Enric Llansana Beuse,72,79,VOL,25,Holanda
+Anderlecht,Ilay Camara,Ilay Camara,69,80,LAT,23,Senegal
+Anderlecht,Yari Verschaeren,Yari Verschaeren,72,79,MEI,25,Bélgica
+Anderlecht,Nathan-Dylan Saliba,Nathan-Dylan Saliba,68,77,MEI,22,Canadá
+Anderlecht,Killian Sardella,Killian Sardella,72,81,LAT,24,Bélgica
+Anderlecht,Alexis Flips,Alexis Flips,70,73,MEI,26,França
+Anderlecht,Yasin Özcan,Yasin Özcan,69,83,ZAG,20,Turquia
+Anderlecht,Luis Vázquez,Luis Vázquez,69,74,ATA,25,Argentina
+Anderlecht,Mihajlo Cvetković,Mihajlo Cvetković,67,82,ATA,19,Sérvia
+Anderlecht,Moussa N'Diaye,Moussa N'Diaye,72,80,LAT,24,Senegal
+Anderlecht,Lucas Hey,Lucas Hey,68,80,ZAG,23,Dinamarca
+Anderlecht,Marco Kana,Marco Kana,65,72,VOL,23,Bélgica
+Anderlecht,Cedric Hatenboer,Cedric Hatenboer,64,80,MEI,21,Holanda
+Anderlecht,Nilson Angulo,Nilson Angulo,67,78,MEI,23,Equador
+Anderlecht,Nathan De Cat,Nathan De Cat,63,83,VOL,18,Bélgica
+Anderlecht,Tristan Degreef,Tristan Degreef,64,81,MEI,21,Bélgica
+Anderlecht,Mihajlo Ilić,Mihajlo Ilić,68,81,ZAG,23,Sérvia
+Anderlecht,Anas Tajaouart,Anas Tajaouart,54,64,MEI,20,Marrocos
+Anderlecht,Ali Maamar,Ali Maamar,60,71,LAT,21,Marrocos
+Anderlecht,Elyess Dao,Elyess Dao,59,73,ATA,19,Marrocos
+Anderlecht,Zoumana Keita,Zoumana Keita,59,72,ZAG,20,Alemanha
+Anderlecht,Colin Coosemans,Colin Coosemans,77,77,GOL,33,Bélgica
+Anderlecht,Mads Kikkenborg,Mads Kikkenborg,66,71,GOL,26,Dinamarca
+Anderlecht,Timon Vanhoutte,Timon Vanhoutte,60,72,GOL,22,Bélgica
+Antwerp,Vincent Janssen,Vincent Janssen,77,77,ATA,32,Holanda
+Antwerp,Thibo Somers,Thibo Somers,73,74,MEI,27,Bélgica
+Antwerp,Dennis Praet,Dennis Praet,73,73,MEI,32,Bélgica
+Antwerp,Daam Foulon,Daam Foulon,72,73,MEI,27,Bélgica
+Antwerp,Gyrano Kerk,Gyrano Kerk,72,72,MEI,30,Suriname
+Antwerp,Geoffry Hairemans,Geoffry Hairemans,70,70,MEI,34,Bélgica
+Antwerp,Glenn Bijl,Glenn Bijl,69,69,LAT,31,Holanda
+Antwerp,Anthony Valencia,Anthony Valencia,67,77,MEI,23,Equador
+Antwerp,Mahamadou Diawara,Mahamadou Diawara,69,77,MEI,21,França
+Antwerp,Kobe Corbanie,Kobe Corbanie,67,82,LAT,21,Bélgica
+Antwerp,Mauricio Benítez,Mauricio Benítez,62,73,MEI,22,Argentina
+Antwerp,Marwan Al Sahafi,Marwan Al Sahafi,63,75,ATA,22,Arábia Saudita
+Antwerp,Mukhammadali Urinboev,Mukhammadali Urinboev,63,74,ATA,21,Uzbequistão
+Antwerp,Isaac Babadi,Isaac Babadi,67,83,MEI,21,Holanda
+Antwerp,Christopher Scott,Christopher Scott,64,73,MEI,24,Alemanha
+Antwerp,Boubakar Kouyaté,Boubakar Kouyaté,73,75,ZAG,29,Mali
+Antwerp,Zeno Van Den Bosch,Zeno Van Den Bosch,74,84,ZAG,23,Bélgica
+Antwerp,Andreas Verstraeten,Andreas Verstraeten,58,76,ZAG,20,Bélgica
+Antwerp,Farouck Adekami,Farouck Adekami,58,73,MEI,20,Costa do Marfim
+Antwerp,Semm Renders,Semm Renders,62,84,LAT,18,Bélgica
+Antwerp,Youssef Hamdaoui,Youssef Hamdaoui,55,79,MEI,18,Marrocos
+Antwerp,Milo Horemans,Milo Horemans,58,78,MEI,20,Bélgica
+Antwerp,Rosen Bozhinov,Rosen Bozhinov,61,75,ZAG,21,Bulgária
+Antwerp,Orseer Achihi,Orseer Achihi,55,70,MEI,19,Nigéria
+Antwerp,Yuto Tsunashima,Yuto Tsunashima,62,65,ZAG,25,Japão
+Antwerp,Björn Engels,Björn Engels,67,67,ZAG,31,Bélgica
+Antwerp,Gerard Vandeplas,Gerard Vandeplas,57,73,ATA,20,Bélgica
+Antwerp,Gabriel David,Gabriel David,55,75,ATA,19,Nigéria
+Antwerp,Yannick Thoelen,Yannick Thoelen,64,64,GOL,36,Bélgica
+Antwerp,Taishi Nozawa,Taishi Nozawa,55,65,GOL,23,Japão
+Antwerp,Niels Devalckeneer,Niels Devalckeneer,58,72,GOL,22,Bélgica
+Standard Liège,Casper Nielsen,Casper Nielsen,70,70,VOL,32,Dinamarca
+Standard Liège,Mohammed El Hankouri,Mohammed El Hankouri,71,71,MEI,29,Marrocos
+Standard Liège,Tobias Mohr,Tobias Mohr,69,69,MEI,30,Alemanha
+Standard Liège,Marco Ilaimaharitra,Marco Ilaimaharitra,71,71,VOL,31,Madagascar
+Standard Liège,Marlon Fossey,Marlon Fossey,71,71,LAT,27,Estados Unidos
+Standard Liège,Boli Bolingoli,Boli Bolingoli,65,65,LAT,31,Bélgica
+Standard Liège,Léandre Kuavita,Léandre Kuavita,65,77,MEI,22,Bélgica
+Standard Liège,Thomas Henry,Thomas Henry,71,71,ATA,31,França
+Standard Liège,Nayel Mehssatou,Nayel Mehssatou,67,76,LAT,23,Chile
+Standard Liège,Souleyman Doumbia,Souleyman Doumbia,68,68,LAT,29,Costa do Marfim
+Standard Liège,Henry Lawrence,Henry Lawrence,65,74,ZAG,24,Inglaterra
+Standard Liège,Rafiki Saïd,Rafiki Saïd,69,72,MEI,26,Comores
+Standard Liège,Dennis-Yerai Eckert Ayensa,Dennis-Yerai Eckert Ayensa,73,73,ATA,29,Alemanha
+Standard Liège,Timothé Nkada,Timothé Nkada,70,73,ATA,27,França
+Standard Liège,Grejohn Kyei,Grejohn Kyei,68,68,ATA,30,França
+Standard Liège,Ibrahim Karamoko,Ibrahim Karamoko,61,66,VOL,25,França
+Standard Liège,Hakim Sahabo,Hakim Sahabo,63,78,VOL,21,Ruanda
+Standard Liège,Ibe Hautekiet,Ibe Hautekiet,69,76,ZAG,24,Bélgica
+Standard Liège,René Mitongo Muteba,René Mitongo Muteba,61,81,ATA,18,Bélgica
+Standard Liège,Josué Homawoo,Josué Homawoo,67,68,ZAG,28,Togo
+Standard Liège,Alexandro Calut,Alexandro Calut,60,71,LAT,23,Bélgica
+Standard Liège,Daan Dierckx,Daan Dierckx,65,76,ZAG,23,Bélgica
+Standard Liège,David Bates,David Bates,69,69,ZAG,29,Escócia
+Standard Liège,Bradley Nam James,Bradley Nam James,52,64,MEI,19,Bélgica
+Standard Liège,Adnane Abid,Adnane Abid,60,70,ATA,22,Bélgica
+Standard Liège,Abdramane Ouedraogo,Abdramane Ouedraogo,58,75,ATA,19,Burkina Faso
+Standard Liège,Lucas Pirard,Lucas Pirard,67,67,GOL,31,Bélgica
+Standard Liège,Matthieu Epolo,Matthieu Epolo,73,85,GOL,21,Bélgica
+Standard Liège,Mattéo Godfroid,Mattéo Godfroid,52,66,GOL,22,Bélgica
+Gent,Leonardo Lopes,Leonardo Lopes,70,71,MEI,27,Portugal
+Gent,Abdelkahar Kadri,Abdelkahar Kadri,73,76,MEI,26,Argélia
+Gent,Omri Gandelman,Omri Gandelman,71,75,MEI,26,Israel
+Gent,Dante Vanzeir,Dante Vanzeir,72,73,ATA,28,Bélgica
+Gent,Matisse Samoise,Matisse Samoise,70,75,LAT,24,Bélgica
+Gent,Tiago Araújo,Tiago Araújo,69,73,MEI,25,Portugal
+Gent,Mathias Delorge,Mathias Delorge,72,82,MEI,22,Bélgica
+Gent,Atsuki Ito,Atsuki Ito,70,73,VOL,27,Japão
+Gent,Michał Skóraś,Michał Skóraś,70,73,MEI,26,Polônia
+Gent,Jean-Kévin Duverne,Jean-Kévin Duverne,71,71,LAT,29,Haiti
+Gent,Aimé Omgba,Aimé Omgba,66,74,MEI,23,Holanda
+Gent,Franck Surdez,Franck Surdez,69,76,MEI,24,Suíça
+Gent,Wilfried Kanga,Wilfried Kanga,69,70,ATA,28,Costa do Marfim
+Gent,Max Dean,Max Dean,67,76,ATA,22,Inglaterra
+Gent,Siebe Van der Heyden,Siebe Van der Heyden,73,75,ZAG,28,Bélgica
+Gent,Momodou Sonko,Momodou Sonko,67,78,MEI,21,Suécia
+Gent,Tibe De Vlieger,Tibe De Vlieger,61,75,MEI,20,Bélgica
+Gent,Gilles De Meyer,Gilles De Meyer,61,76,LAT,19,Bélgica
+Gent,Maksim Paskotši,Maksim Paskotši,64,77,ZAG,23,Estônia
+Gent,Samuel Kotto,Samuel Kotto,63,71,ZAG,22,Camarões
+Gent,Hatim Essaouabi,Hatim Essaouabi,65,68,ZAG,25,Marrocos
+Gent,Hyllarion Goore,Hyllarion Goore,62,75,ATA,20,Costa do Marfim
+Gent,Bram Lagae,Bram Lagae,65,73,ZAG,22,Bélgica
+Gent,Stefan Mitrović,Stefan Mitrović,70,70,ZAG,36,Sérvia
+Gent,Mohammed El Âdfaoui,Mohammed El Âdfaoui,58,78,VOL,18,Bélgica
+Gent,Davy Roef,Davy Roef,76,76,GOL,32,Bélgica
+Gent,Tom Vandenberghe,Tom Vandenberghe,68,68,GOL,33,Bélgica
+Gent,Kjell Peersman,Kjell Peersman,61,74,GOL,22,Bélgica
+Mechelen,Kerim Mrabti,Kerim Mrabti,74,74,MEI,32,Suécia
+Mechelen,Benito Raman,Benito Raman,73,73,ATA,31,Bélgica
+Mechelen,Fredrik Hammar,Fredrik Hammar,68,75,VOL,25,Suécia
+Mechelen,Lion Lauberbach,Lion Lauberbach,71,71,ATA,28,Alemanha
+Mechelen,Ryan Teague,Ryan Teague,69,78,VOL,24,Austrália
+Mechelen,Thérence Koudou,Thérence Koudou,68,78,LAT,21,França
+Mechelen,Mathis Servais,Mathis Servais,64,79,MEI,21,Bélgica
+Mechelen,José Marsà,José Marsà,67,75,ZAG,24,Espanha
+Mechelen,Myron van Brederode,Myron van Brederode,70,78,MEI,23,Holanda
+Mechelen,Bilal Bafdili,Bilal Bafdili,67,77,MEI,21,Bélgica
+Mechelen,Mory Konaté,Mory Konaté,71,71,VOL,32,Guiné
+Mechelen,Ian Struyf,Ian Struyf,60,78,ZAG,18,Bélgica
+Mechelen,Keano Vanrafelghem,Keano Vanrafelghem,63,73,ATA,22,Bélgica
+Mechelen,Tommy St. Jago,Tommy St. Jago,66,70,ZAG,26,Holanda
+Mechelen,Bill Antonio,Bill Antonio,62,70,MEI,23,Zimbábue
+Mechelen,Elton Yeboah,Elton Yeboah,57,70,MEI,21,Bélgica
+Mechelen,Maxim Kireev,Maxim Kireev,63,75,MEI,22,Belarus
+Mechelen,Gora Diouf,Gora Diouf,66,77,ZAG,22,Senegal
+Mechelen,Halil Özdemir,Halil Özdemir,58,75,ATA,20,Bélgica
+Mechelen,Lovro Golič,Lovro Golič,62,77,ZAG,20,Eslovênia
+Mechelen,Amine Ouahabi,Amine Ouahabi,55,79,MEI,18,Bélgica
+Mechelen,Redouane Halhal,Redouane Halhal,63,73,ZAG,23,Marrocos
+Mechelen,Lukas Baert,Lukas Baert,58,70,ZAG,21,Bélgica
+Mechelen,Ortwin De Wolf,Ortwin De Wolf,75,75,GOL,29,Bélgica
+Mechelen,Nacho Miras,Nacho Miras,63,66,GOL,29,Espanha
+Mechelen,Tijn Van Ingelgom,Tijn Van Ingelgom,57,78,GOL,19,Bélgica
+Mechelen,Axel Willockx,Axel Willockx,55,73,GOL,19,Bélgica
+Sint-Truiden,Ryotaro Ito,Ryotaro Ito,71,71,MEI,28,Japão
+Sint-Truiden,Loïc Lapoussin,Loïc Lapoussin,72,72,MEI,30,Madagascar
+Sint-Truiden,Arbnor Muja,Arbnor Muja,71,72,MEI,27,Albânia
+Sint-Truiden,Abdoulaye Sissako,Abdoulaye Sissako,67,67,MEI,28,França
+Sint-Truiden,Wolke Janssens,Wolke Janssens,65,65,ZAG,31,Bélgica
+Sint-Truiden,Simen Juklerød,Simen Juklerød,65,65,LAT,32,Noruega
+Sint-Truiden,Ilias Sebaoui,Ilias Sebaoui,66,73,MEI,24,Marrocos
+Sint-Truiden,Rihito Yamamoto,Rihito Yamamoto,65,72,MEI,24,Japão
+Sint-Truiden,Shogo Taniguchi,Shogo Taniguchi,69,69,ZAG,35,Japão
+Sint-Truiden,Robert-Jan Vanwesemael,Robert-Jan Vanwesemael,66,74,MEI,24,Bélgica
+Sint-Truiden,Andrés Ferrari,Andrés Ferrari,67,76,ATA,23,Uruguai
+Sint-Truiden,Taiga Hata,Taiga Hata,62,70,MEI,24,Japão
+Sint-Truiden,Rein Van Helden,Rein Van Helden,69,78,ZAG,24,Bélgica
+Sint-Truiden,Isaías Delpupo,Isaías Delpupo,61,72,MEI,23,Argentina
+Sint-Truiden,Visar Musliu,Visar Musliu,68,68,ZAG,31,Macedônia do Norte
+Sint-Truiden,Kaito Matsuzawa,Kaito Matsuzawa,55,60,MEI,25,Japão
+Sint-Truiden,Jay-David Mbalanda,Jay-David Mbalanda,59,70,ATA,19,Bélgica
+Sint-Truiden,Arthur Alexis,Arthur Alexis,52,69,MEI,20,Bélgica
+Sint-Truiden,Adam Nhaili,Adam Nhaili,57,74,MEI,20,Bélgica
+Sint-Truiden,Keisuke Goto,Keisuke Goto,57,68,ATA,21,Japão
+Sint-Truiden,Hugo Lambotte,Hugo Lambotte,55,70,ZAG,20,Bélgica
+Sint-Truiden,Leo Kokubo,Leo Kokubo,70,77,GOL,25,Japão
+Sint-Truiden,Jo Coppens,Jo Coppens,62,62,GOL,35,Bélgica
+Sint-Truiden,Matt Lendfers,Matt Lendfers,55,74,GOL,20,Bélgica
+Dender,Roman Květ,Roman Květ,70,70,MEI,28,Tchéquia
+Dender,Junior Mansoni,Junior Mansoni,65,65,MEI,30,Bélgica
+Dender,Fabio Ferraro,Fabio Ferraro,67,76,LAT,23,Bélgica
+Dender,Moïse Sahi,Moïse Sahi,69,74,ATA,24,Costa do Marfim
+Dender,Bryan Goncalves,Bryan Goncalves,69,69,ZAG,30,França
+Dender,David Hrncar,David Hrncar,67,67,LAT,28,Eslováquia
+Dender,Bruny Nsimba,Bruny Nsimba,68,70,ATA,26,Bélgica
+Dender,Nathan Rôdes,Nathan Rôdes,67,68,VOL,28,Bélgica
+Dender,Ragnar Oratmangoen,Ragnar Oratmangoen,65,65,MEI,28,Indonésia
+Dender,Mohamed Berte,Mohamed Berte,67,75,ATA,24,Bélgica
+Dender,Noah Mbamba,Noah Mbamba,65,79,VOL,21,Bélgica
+Dender,Malcolm Viltard,Malcolm Viltard,62,71,VOL,23,França
+Dender,Jordan Kadiri,Jordan Kadiri,66,70,ATA,26,Nigéria
+Dender,Krzysztof Koton,Krzysztof Koton,61,72,MEI,23,Polônia
+Dender,Benjamin Fredrick,Benjamin Fredrick,61,76,LAT,21,Nigéria
+Dender,Desmond Acquah,Desmond Acquah,58,67,MEI,24,Bélgica
+Dender,Kobe Cools,Kobe Cools,68,68,ZAG,29,Bélgica
+Dender,Luc De Fougerolles,Luc De Fougerolles,60,80,ZAG,20,Canadá
+Dender,Nail Moutha-Sebtaoui,Nail Moutha-Sebtaoui,57,68,LAT,20,Marrocos
+Dender,Ryan Adewusi,Ryan Adewusi,55,65,ATA,21,Bélgica
+Dender,Amine Daali,Amine Daali,51,58,MEI,22,Bélgica
+Dender,Luc Marijnissen,Luc Marijnissen,63,69,ZAG,23,Holanda
+Dender,Louis Fortin,Louis Fortin,61,67,GOL,24,Bélgica
+Dender,Michael Verrips,Michael Verrips,68,68,GOL,29,Holanda
+Dender,Guillaume Dietsch,Guillaume Dietsch,67,73,GOL,25,França
+Westerlo,Allahyar Sayyadmanesh,Allahyar Sayyadmanesh,74,79,MEI,25,Irã
+Westerlo,Doğucan Haspolat,Doğucan Haspolat,74,80,VOL,26,Turquia
+Westerlo,Sergiy Sydorchuk,Sergiy Sydorchuk,69,69,VOL,35,Ucrânia
+Westerlo,Mathias Fixelles,Mathias Fixelles,68,68,VOL,29,Bélgica
+Westerlo,Bryan Reynolds,Bryan Reynolds,73,80,LAT,25,Estados Unidos
+Westerlo,Roman Neustädter,Roman Neustädter,69,69,ZAG,38,Rússia
+Westerlo,Thomas Van Den Keybus,Thomas Van Den Keybus,68,73,MEI,25,Bélgica
+Westerlo,Emin Bayram,Emin Bayram,73,84,ZAG,23,Turquia
+Westerlo,Antoñito Cordero,Antoñito Cordero,69,85,ATA,19,Espanha
+Westerlo,Tuur Rommens,Tuur Rommens,69,79,LAT,23,Bélgica
+Westerlo,Kyan Vaesen,Kyan Vaesen,66,72,ATA,25,Bélgica
+Westerlo,Reda Laalaoui,Reda Laalaoui,61,74,MEI,21,Marrocos
+Westerlo,Ján Bernát,Ján Bernát,63,70,MEI,25,Eslováquia
+Westerlo,Griffin Yow,Griffin Yow,69,78,MEI,23,Estados Unidos
+Westerlo,Adedire Mebude,Adedire Mebude,64,78,MEI,22,Escócia
+Westerlo,Nacho Ferri,Nacho Ferri,67,82,ATA,21,Espanha
+Westerlo,Arthur Piedfort,Arthur Piedfort,68,78,VOL,21,Bélgica
+Westerlo,Josimar Alcócer,Josimar Alcócer,67,81,MEI,22,Costa Rica
+Westerlo,Amando Lapage,Amando Lapage,62,74,ZAG,21,Bélgica
+Westerlo,Eliot Bujupi,Eliot Bujupi,60,75,ATA,20,Kosovo
+Westerlo,Raf Smekens,Raf Smekens,56,70,MEI,22,Bélgica
+Westerlo,Fernand Goure,Fernand Goure,62,71,ATA,24,Costa do Marfim
+Westerlo,Bakary Haidara,Bakary Haidara,61,76,ZAG,21,Costa do Marfim
+Westerlo,Issai Sakamoto,Issai Sakamoto,54,59,ATA,22,Japão
+Westerlo,Seiji Kimura,Seiji Kimura,59,65,ZAG,24,Japão
+Westerlo,Julian Placias,Julian Placias,51,71,ATA,20,Estados Unidos
+Westerlo,Sinan Bolat,Sinan Bolat,70,70,GOL,37,Turquia
+Westerlo,Koen Van Langendonck,Koen Van Langendonck,68,68,GOL,37,Bélgica
+Westerlo,Andreas Jungdal,Andreas Jungdal,64,69,GOL,24,Dinamarca
+Westerlo,Oskar Annell,Oskar Annell,55,65,GOL,21,Bélgica
+Cercle Brugge,Pieter Gerkens,Pieter Gerkens,69,69,MEI,31,Bélgica
+Cercle Brugge,Hannes Van Der Bruggen,Hannes Van Der Bruggen,70,70,MEI,33,Bélgica
+Cercle Brugge,Gary Magnée,Gary Magnée,70,73,MEI,26,Bélgica
+Cercle Brugge,Alan Minda,Alan Minda,70,80,MEI,23,Equador
+Cercle Brugge,Nils De Wilde,Nils De Wilde,65,73,VOL,23,Bélgica
+Cercle Brugge,Oumar Diakité,Oumar Diakité,72,82,ATA,22,Costa do Marfim
+Cercle Brugge,Ibrahim Diakité,Ibrahim Diakité,66,78,ZAG,22,Guiné
+Cercle Brugge,Edan Diop,Edan Diop,66,78,MEI,21,França
+Cercle Brugge,Bruninho,Bruninho,67,78,ATA,23,Brasil
+Cercle Brugge,Erick,Erick,61,73,MEI,22,Brasil
+Cercle Brugge,Beni Mpanzu,Beni Mpanzu,66,75,LAT,22,Bélgica
+Cercle Brugge,Lawrence Agyekum,Lawrence Agyekum,62,73,MEI,22,Gana
+Cercle Brugge,Valy Konate,Valy Konate,62,72,LAT,19,Costa do Marfim
+Cercle Brugge,Edgaras Utkus,Edgaras Utkus,70,77,ZAG,26,Lituânia
+Cercle Brugge,Heriberto Jurado,Heriberto Jurado,65,74,MEI,21,México
+Cercle Brugge,Nazinho,Nazinho,67,77,LAT,23,Portugal
+Cercle Brugge,Oluwaseun Adewumi,Oluwaseun Adewumi,59,74,MEI,21,Áustria
+Cercle Brugge,Steve Ngoura,Steve Ngoura,67,75,ATA,21,França
+Cercle Brugge,Christiaan Ravych,Christiaan Ravych,70,79,ZAG,24,Bélgica
+Cercle Brugge,Emmanuel Kakou,Emmanuel Kakou,62,78,ZAG,21,Costa do Marfim
+Cercle Brugge,Dalangunypole Gomis,Dalangunypole Gomis,62,72,ZAG,22,França
+Cercle Brugge,Abdoul Ouattara,Abdoul Ouattara,62,78,ATA,21,Burkina Faso
+Cercle Brugge,Ibrahima Diaby,Ibrahima Diaby,51,66,VOL,19,França
+Cercle Brugge,Xander Martlé,Xander Martlé,57,68,MEI,22,Bélgica
+Cercle Brugge,Krys-Anthony Kouassi,Krys-Anthony Kouassi,57,69,MEI,19,França
+Cercle Brugge,Alama Bayo,Alama Bayo,57,67,ATA,20,Bélgica
+Cercle Brugge,Warleson,Warleson,70,70,GOL,29,Brasil
+Cercle Brugge,Maxime Delanghe,Maxime Delanghe,65,73,GOL,25,Bélgica
+Cercle Brugge,Bas Langenbick,Bas Langenbick,57,67,GOL,23,Bélgica
+Charleroi,Kevin Van Den Kerkhof,Kevin Van Den Kerkhof,70,70,MEI,30,Argélia
+Charleroi,Patrick Pflücke,Patrick Pflücke,73,73,MEI,29,Alemanha
+Charleroi,Antoine Bernier,Antoine Bernier,70,70,MEI,28,Bélgica
+Charleroi,Isaac Mbenza,Isaac Mbenza,69,69,MEI,30,Bélgica
+Charleroi,Jules Gaudin,Jules Gaudin,68,73,LAT,26,França
+Charleroi,Yassine Titraoui,Yassine Titraoui,68,78,VOL,23,Argélia
+Charleroi,Parfait Guiagon,Parfait Guiagon,72,77,MEI,25,Costa do Marfim
+Charleroi,Aiham Ousou,Aiham Ousou,71,75,ZAG,26,Síria
+Charleroi,E. Camara,E. Camara,68,78,VOL,23,França
+Charleroi,Lewin Blum,Lewin Blum,69,76,LAT,25,Suíça
+Charleroi,Aurélien Scheidler,Aurélien Scheidler,68,68,ATA,28,França
+Charleroi,Jakob Romsaas,Jakob Romsaas,63,77,ATA,22,Noruega
+Charleroi,Filip Szymczak,Filip Szymczak,65,73,ATA,24,Polônia
+Charleroi,Mardochée Nzita,Mardochée Nzita,65,68,LAT,26,Bélgica
+Charleroi,Antoine Colassin,Antoine Colassin,64,69,MEI,25,Bélgica
+Charleroi,Cheick Keita,Cheick Keita,69,77,ZAG,23,França
+Charleroi,Amine Boukamir,Amine Boukamir,57,72,VOL,19,Marrocos
+Charleroi,Massamba Sow,Massamba Sow,64,77,ZAG,22,França
+Charleroi,Raymond Asante,Raymond Asante,60,70,ATA,22,Gana
+Charleroi,Mehdi Boukamir,Mehdi Boukamir,62,76,ZAG,22,Marrocos
+Charleroi,Quentin Benaets,Quentin Benaets,52,60,ATA,22,Bélgica
+Charleroi,Martin Delavallée,Martin Delavallée,70,81,GOL,22,Bélgica
+Charleroi,Théo Defourny,Théo Defourny,65,65,GOL,34,Bélgica
+Charleroi,Mohamed Koné,Mohamed Koné,68,75,GOL,24,Costa do Marfim
+Charleroi,Nicolas Closset,Nicolas Closset,55,68,GOL,22,Bélgica
+La Louvière,Maxime Pau,Maxime Pau,68,70,MEI,26,França
+La Louvière,Alexis Beka Beka,Alexis Beka Beka,69,77,VOL,25,França
+La Louvière,Joel Ito,Joel Ito,65,65,MEI,28,Bélgica
+La Louvière,Mouhamed Belkheir,Mouhamed Belkheir,70,70,ATA,27,Argélia
+La Louvière,Sami Lahssaini,Sami Lahssaini,64,64,MEI,27,Bélgica
+La Louvière,Jordi Liongola,Jordi Liongola,68,69,MEI,26,Bélgica
+La Louvière,Samuel Gueulette,Samuel Gueulette,64,66,VOL,26,Ruanda
+La Louvière,Owen Maës,Owen Maës,65,67,MEI,27,França
+La Louvière,Djibril Lamego,Djibril Lamego,66,72,LAT,23,França
+La Louvière,Oucasse Mendy,Oucasse Mendy,62,68,MEI,25,França
+La Louvière,Sekou Sidibe,Sekou Sidibe,64,69,MEI,25,Bélgica
+La Louvière,Thierry Lutonda,Thierry Lutonda,64,69,LAT,25,Bélgica
+La Louvière,Mohamed Guindo,Mohamed Guindo,65,69,ATA,23,Mali
+La Louvière,Lucas Bretelle,Lucas Bretelle,58,62,VOL,24,França
+La Louvière,Darío Benavides,Darío Benavides,65,76,LAT,23,Espanha
+La Louvière,Theo Epailly,Theo Epailly,59,59,ATA,27,França
+La Louvière,Matthis Riou,Matthis Riou,66,72,ZAG,25,França
+La Louvière,Yllan Okou,Yllan Okou,65,74,ZAG,23,França
+La Louvière,Wagane Faye,Wagane Faye,66,66,ZAG,32,Senegal
+La Louvière,Norlan Gillot,Norlan Gillot,60,65,LAT,23,França
+La Louvière,Maxence Maisonneuve,Maxence Maisonneuve,65,66,ZAG,27,França
+La Louvière,Pape Fall,Pape Fall,60,71,ATA,22,Senegal
+La Louvière,Ryan Safari,Ryan Safari,55,62,ATA,23,Bélgica
+La Louvière,Jerry Afriyie,Jerry Afriyie,49,64,ATA,19,Gana
+La Louvière,Marcos Peano,Marcos Peano,67,69,GOL,27,Argentina
+La Louvière,Célestin De Schrevel,Célestin De Schrevel,61,68,GOL,24,Bélgica
+Zulte Waregem,Jelle Vossen,Jelle Vossen,71,71,ATA,37,Bélgica
+Zulte Waregem,Jeppe Erenbjerg,Jeppe Erenbjerg,69,72,MEI,26,Dinamarca
+Zulte Waregem,Joseph Opoku,Joseph Opoku,69,77,MEI,20,Gana
+Zulte Waregem,Marley Aké,Marley Aké,69,73,MEI,25,França
+Zulte Waregem,Enrique Lofolomo,Enrique Lofolomo,66,71,VOL,26,Alemanha
+Zulte Waregem,Benoit Nyssen,Benoit Nyssen,65,65,LAT,28,Bélgica
+Zulte Waregem,Emran Soglo,Emran Soglo,64,72,LAT,21,Inglaterra
+Zulte Waregem,Thomas Claes,Thomas Claes,66,78,MEI,22,Bélgica
+Zulte Waregem,Stavros Gavriel,Stavros Gavriel,69,74,ATA,24,Chipre
+Zulte Waregem,Nikola Mituljikic,Nikola Mituljikic,65,72,ATA,23,Sérvia
+Zulte Waregem,Tochukwu Nnadi,Tochukwu Nnadi,58,63,MEI,23,Nigéria
+Zulte Waregem,Serxho Ujka,Serxho Ujka,64,65,MEI,27,Albânia
+Zulte Waregem,Yannick Cappelle,Yannick Cappelle,61,68,LAT,23,Bélgica
+Zulte Waregem,Atli Barkarson,Atli Barkarson,60,64,LAT,25,Islândia
+Zulte Waregem,Anosike Ementa,Anosike Ementa,64,73,ATA,24,Dinamarca
+Zulte Waregem,Ibrahim Diabate,Ibrahim Diabate,55,63,MEI,22,Costa do Marfim
+Zulte Waregem,Anton Tanghe,Anton Tanghe,67,70,ZAG,27,Bélgica
+Zulte Waregem,Jakob Kiilerich,Jakob Kiilerich,67,74,ZAG,26,Dinamarca
+Zulte Waregem,Lukas Willen,Lukas Willen,63,70,ZAG,23,Bélgica
+Zulte Waregem,Abdoulaye Traorè,Abdoulaye Traorè,57,62,ATA,23,Costa do Marfim
+Zulte Waregem,Wilguens Paugain,Wilguens Paugain,55,58,LAT,24,Haiti
+Zulte Waregem,Tobias Hedl,Tobias Hedl,63,69,ATA,23,Áustria
+Zulte Waregem,Laurent Lemoine,Laurent Lemoine,65,67,ZAG,28,Bélgica
+Zulte Waregem,Siebe Van Keymolen,Siebe Van Keymolen,51,62,MEI,21,Bélgica
+Zulte Waregem,Benoit De Jaegere,Benoit De Jaegere,53,62,LAT,22,Bélgica
+Zulte Waregem,Ennio van der Gouw,Ennio van der Gouw,66,70,GOL,25,Holanda
+Zulte Waregem,Louis Bostyn,Louis Bostyn,64,64,GOL,32,Bélgica
+Zulte Waregem,Arnaud Dobbels,Arnaud Dobbels,56,67,GOL,21,Bélgica
+Zulte Waregem,Brent Gabriël,Brent Gabriël,65,69,GOL,27,Bélgica
