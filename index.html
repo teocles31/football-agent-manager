@@ -5355,7 +5355,7 @@ function musStop(){MUS.on=false;clearInterval(MUS.t);MUS.t=null;if(MUS.ctx){cons
 /* o navegador só deixa tocar som depois de um toque: se a trilha estiver ligada, ela começa no primeiro toque */
 document.addEventListener('pointerdown',function f(e){if(e.target&&e.target.closest&&e.target.closest('[data-a="musica"]'))return;if(musOn()&&!MUS.on){musStart();try{render();}catch(x){}}},{passive:true});
 document.addEventListener('visibilitychange',()=>{if(!MUS.ctx)return;if(document.hidden)MUS.ctx.suspend();else if(MUS.on)MUS.ctx.resume();});
-const MUSA={musica(){if(MUS.on){musStop();try{localStorage.setItem(MUS_K,'0');}catch(e){}toast('Trilha sonora desligada.');}else{try{localStorage.setItem(MUS_K,'1');}catch(e){}musStart();toast('Trilha sonora ligada.');}render();}};
+const MUSA={musica(){if(MUS.on){musStop();try{localStorage.setItem(MUS_K,'0');}catch(e){}}else{try{localStorage.setItem(MUS_K,'1');}catch(e){}musStart();}render();}};
 /* ---- ui-views.js ---- */
 /* ================= COMPONENTES ================= */
 const CAT={transf:['Transferência','info'],lesao:['Lesão','bad'],contrato:['Contrato','warn'],agencia:['Agência','good'],clube:['Clube','warn'],liga:['Competições','info'],evolucao:['Evolução','good'],selecao:['Seleção','good'],premio:['Prêmio','warn'],geral:['Geral','']};
