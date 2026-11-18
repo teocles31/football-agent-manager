@@ -2120,8 +2120,9 @@ function genOffers(){G.offers=G.offers.filter(o=>{if(G.d>o.exp){news('A proposta
     const t=seasonTot(p);if(Math.random()>(.06+p.fame/300+G.staff.assessor*.03+(t.ap>=3&&t.avg>=7?.07:0)+(cur?0:.1))*(mind('fam')?.9:1)*(lastDays()?1.6:1))continue;
     const v=value(p),cands=G.clubs.filter(c=>{if(cur&&c.id===cur.id)return false;if(G.offers.some(o=>o.pid===id&&o.cid===c.id)||(p.cool&&(p.cool[c.id]||0)>G.d)||isOwn(c))return false;
       if(!clientRoom(c,p))return false;if(cur)return winOpen(regOf(c))&&wouldBuy(c,p)&&c.bud>=v;return freeFit(p,c);});
-    if(!cands.length)continue;cands.sort((a,b)=>prest(b)-prest(a));const c=pick(cands.slice(0,8));const fee=cur?nice(v*rnd(.95,1.25)*(lastDays()?1.1:1)*(p.noCl?1.15:1)):0;
-    G.offers.push({id:G.nid++,pid:id,cid:c.id,fee,exp:G.d+21,tries:0});
+    if(!cands.length)continue;cands.sort((a,b)=>prest(b)-prest(a));const c=pick(cands.slice(0,8));let fee=0,cl=0,ask=0;if(cur&&!isOwn(cur)){const y=yDeal(p,c);if(y.no){if(!G._pre&&Math.random()<.5)news('Bastidores: '+y.why+'.','transf');continue;}fee=y.fee;cl=y.cl?1:0;ask=y.ask?1:0;}else if(cur)fee=nice(v*rnd(.95,1.2));
+    G.offers.push({id:G.nid++,pid:id,cid:c.id,fee,cl,ask,acc:cur?1:0,exp:G.d+21,tries:0});
+    if(cur&&!G._pre&&!isOwn(cur))news(cl?'O '+c.n+' pagou a multa rescisória de '+p.name+' ao '+cur.n+'. Falta acertar o contrato com você.':'O '+cur.n+' aceitou a proposta do '+c.n+' por '+p.name+'. Falta acertar o contrato com você.','transf');
     news('Proposta na mesa: o '+c.n+' quer '+p.name+(fee?' e aceita pagar '+fmt(fee)+' ao '+cur.n:'')+'. Veja em Mercado.','transf');}}
 function genMissions(){G.missions=G.missions.filter(m=>{if(G.d>m.exp){const c=G.clubs[m.cid];c.need=null;news('O pedido do '+c.n+' por um '+POSN[m.pos]+' venceu sem solução.','clube');return false;}return true;});
   if(G.rep>=6&&G.missions.length<3&&Math.random()<.15+.03*G.me.rel){const maxP=64+G.rep*.4,cs=G.clubs.filter(c=>prest(c)<=maxP&&!isOwn(c)&&!G.missions.some(m=>m.cid===c.id));
@@ -2130,17 +2131,38 @@ function genMissions(){G.missions=G.missions.filter(m=>{if(G.d>m.exp){const c=G.
       news('O '+c.n+' pediu sua ajuda: precisa de um '+POSN[nd.pos]+' de nível '+min+' ou mais. Veja em Mercado.','clube');}}}
 function payMission(p,c){let rg=0;G.missions=G.missions.filter(m=>{if(m.cid===c.id&&m.pos===p.pos&&p.ovr>=m.min){G.money+=m.fee;c.need=null;rg+=2;relAdd(c,8);news('Pedido cumprido: o '+c.n+' pagou '+fmt(m.fee)+' pela indicação de '+p.name+'.','agencia');return false;}return true;});return rg;}
 
+/* ---------- o clube dono do jogador decide a venda ---------- */
+/* multa rescisória: contratos antigos sem multa registrada ganham 2,5x o valor */
+function clauseOf(p){if(!p||p.noCl||p.club==null)return 0;if(!(p.clause>0))p.clause=nice(value(p)*2.5);return p.clause;}
+/* quanto o clube atual pede: valor de mercado ajustado por titularidade, contrato restante, caixa. A multa rescisória é o teto. */
+function yAsk(p,cur){let f=1;if(xiOf(cur.id).includes(p))f+=.25;const m=monthsLeft(p);f+=m>=36?.2:m>=24?.1:m<=6?-.3:m<=12?-.15:0;if(cur.bud<0)f-=.15;if(p.noCl)f+=.15;
+  let a=nice(value(p)*Math.max(.55,f));if(clauseOf(p)>0)a=Math.min(a,clauseOf(p));return a;}
+/* resposta do clube atual a uma proposta: ok, more (contraproposta) ou no. Multa paga = liberação obrigatória */
+function ySell(p,buyer,bid){const cur=club(p);if(!cur||isOwn(cur))return{r:'ok',fee:bid};if(clauseOf(p)>0&&bid>=clauseOf(p))return{r:'ok',fee:clauseOf(p),cl:1};
+  const ask=yAsk(p,cur);if(bid>=ask)return{r:'ok',fee:bid};if(bid>=ask*.82)return{r:'more',ask};return{r:'no',ask};}
+/* lance do comprador: perto do valor; clube rico e decidido às vezes paga a multa direto */
+function yBid(p,buyer){const cur=club(p),v=value(p);if(clauseOf(p)>0&&buyer.bud>=clauseOf(p)&&prest(buyer)>=prest(cur)&&clauseOf(p)<=v*2.2&&Math.random()<.35)return clauseOf(p);return nice(v*rnd(.9,1.15)*(lastDays()?1.08:1));}
+/* negociação clube x clube; devolve {fee,cl} se fechou, null se não */
+function yDeal(p,buyer){const cur=club(p);let bid=yBid(p,buyer);if(buyer.bud<bid)bid=nice(buyer.bud*.95);let r=ySell(p,buyer,bid);
+  if(r.r==='more'){if(buyer.bud>=r.ask&&Math.random()<.6)return{fee:r.ask,ask:1,bid};return{no:1,bid,ask:r.ask,why:'o '+cur.n+' pediu '+fmtC(r.ask,cur)+' e o '+buyer.n+' não chegou lá'};}
+  if(r.r==='no')return{no:1,bid,ask:r.ask,why:'o '+cur.n+' recusou a proposta de '+fmtC(bid,buyer)+' do '+buyer.n+(xiOf(cur.id).includes(p)?': ele é titular e o clube não quer vender':monthsLeft(p)>=24?': ainda há '+leftTxt(p)+' de contrato':'')};
+  return{fee:r.fee,cl:r.cl,bid};}
 /* ---------- oferecer, renovar, negociar ---------- */
 function pitch(pid,cid){const p=G.P[pid],c=G.clubs[cid],cur=club(p);
   if(p.loan){toast('Ele está emprestado até o fim da temporada.');return;}
   if(locked(p)){toast(p.name+' acabou de assinar com o '+cur.n+'. Só pode ser oferecido a partir de '+fdate(p.lockTil,true)+', quando abrir a próxima janela.');return;}
   if(cur&&!winOpen(regOf(c))){toast('A janela de '+LG[c.lg].cn+' está fechada.');return;}
   if(!useAP())return;G.tut.pitch=true;ui.modal=null;
-  const fee=cur?nice(value(p)*(p.noCl?1.35:1.15)):0,d=p.ovr-teamStr(c.id);let why='';
-  if(!isOwn(c)&&!clientRoom(c,p))why='o '+c.n+' já tem '+posCnt(c,p.pos)+' '+POSPL[p.pos]+' no profissional e '+p.name+' não é melhor que nenhum deles';else if(cur){if(prest(c)<prest(cur)-4)why=p.name+' não quer trocar o '+cur.n+' por um clube menor';else if(!wouldBuy(c,p)&&d<-1)why='o '+c.n+' acha que ele não melhora o elenco';else if(c.bud<fee)why='o '+c.n+' não tem caixa para pagar '+fmt(fee)+' ao '+cur.n;}
+  let fee=0;const d=p.ovr-teamStr(c.id);let why='';
+  if(!isOwn(c)&&!clientRoom(c,p))why='o '+c.n+' já tem '+posCnt(c,p.pos)+' '+POSPL[p.pos]+' no profissional e '+p.name+' não é melhor que nenhum deles';else if(cur){if(prest(c)<prest(cur)-4)why=p.name+' não quer trocar o '+cur.n+' por um clube menor';else if(!wouldBuy(c,p)&&d<-1)why='o '+c.n+' acha que ele não melhora o elenco';else if(c.bud<value(p)*.85)why='o '+c.n+' não tem caixa para pagar o '+cur.n;}
   else if(!freeFit(p,c))why='o '+c.n+' avaliou que ele está abaixo do nível do elenco';
   if(!why&&Math.random()>clamp(.8+G.rep/400+(d>=3?.15:0)+(c.need===p.pos?.15:0)+(isOwn(c)?.3:0)+.03*G.me.rel+clubPull(c)+(relOf(c)-50)/250+(langsOf(p).includes(clubL(c))&&clubL(c)!==natL(p)?.06:0),.3,.98))why='a diretoria do '+c.n+' não retornou suas ligações';
   if(why){relAdd(c,-2);p.cool[cid]=G.d+Math.round(42*(1-.1*G.me.rel));news('Sem acordo: '+why+'.','transf');pop({k:'bad',ic:'no',wait:1300,wt:'Ligando para o '+c.n+'…',ti:'Sem acordo',tx:why.charAt(0).toUpperCase()+why.slice(1)+'.'});save();render();return;}
+  if(cur&&!isOwn(cur)){const y=yDeal(p,c);
+    if(y.no){relAdd(c,-1);p.cool[cid]=G.d+35;news('Sem acordo entre clubes: '+y.why+'.','transf');pop({k:'bad',ic:'no',wait:1600,wt:'O '+c.n+' fazendo proposta ao '+cur.n+'…',ti:'O '+cur.n+' não liberou',tx:y.why.charAt(0).toUpperCase()+y.why.slice(1)+'.'});save();render();return;}
+    fee=y.fee;const tx=y.cl?'O '+c.n+' pagou a multa rescisória de '+fmtC(fee,c)+'. O '+cur.n+' é obrigado a liberar '+p.name+'.':y.ask?'O '+cur.n+' pediu mais e o '+c.n+' topou pagar '+fmtC(fee,c)+'.':'O '+cur.n+' aceitou a proposta de '+fmtC(fee,c)+' do '+c.n+'.';
+    news(tx,'transf');pop({k:'good',ic:'deal',wait:1600,wt:'O '+c.n+' fazendo proposta ao '+cur.n+'…',ti:'Clubes acertados',tx:tx+' Agora é com você: acertar o contrato de '+p.name+'.'});openNeg(p,c,fee,'pitch',null,0);return;}
+  if(cur)fee=nice(value(p));
   pop({k:'good',ic:'deal',wait:1300,wt:'Ligando para o '+c.n+'…',ti:'O '+c.n+' quer conversar',tx:'A diretoria abriu a mesa de negociação por '+p.name+'.'});openNeg(p,c,fee,'pitch',null,0);}
 function renew(pid){const p=G.P[pid],c=club(p);if(!c||p.loan||!useAP())return;
   if(p.ovr<teamStr(c.id)-8&&p.age>21){news('O '+c.n+' não tem interesse em renovar com '+p.name+'.','contrato');pop({k:'bad',ic:'no',wait:1100,wt:'Reunião no '+c.n+'…',ti:'Sem renovação',tx:'O '+c.n+' não tem interesse em renovar com '+p.name+'.'});p.cool[c.id]=G.d+42;save();render();return;}
@@ -3778,7 +3800,7 @@ function figCard2(p){const open=!!(ui.figOpen&&ui.figOpen[p.id]);
   if(p.promise)tags.push('<span class="chip bad">Promessa de saída</span>');if(c&&monthsLeft(p)<=6)tags.push('<span class="chip warn">Contrato: '+monthsLeft(p)+' meses</span>');
   return'<article class="fig mini"><button class="figtog" data-a="figtog" data-p="'+p.id+'" aria-expanded="false" aria-label="Expandir card de '+esc(p.name)+'">'+chevI(0)+'</button><div class="fig-n">'+avatar(p,44)+'<b>'+p.ovr+'</b><span>'+p.pos+'</span></div><div class="fig-b">'+
    '<h3>'+plLink(p)+'<small>'+p.age+' anos · '+natTag(p)+'pot. '+potTxt(p)+'</small></h3>'+
-   '<p class="small">'+(c?clubLink(c,16)+' · até '+fmonth(p.ce)+(p.noCl?' · sem multa':''):'<b>Sem clube</b>')+'</p>'+statStrip(p)+
+   '<p class="small">'+(c?clubLink(c,16)+' · até '+fmonth(p.ce)+(p.noCl?' · sem multa':clauseOf(p)?' · multa '+fmt(clauseOf(p)):''):'<b>Sem clube</b>')+'</p>'+statStrip(p)+
    '<div class="meters two">'+meter('Moral',p.morale)+meter('Confiança',p.trust)+'</div>'+(tags.length?'<div class="acts">'+tags.join('')+'</div>':'')+
    (!c?'<div class="acts"><button class="btn pri sm" data-a="pick" data-p="'+p.id+'">Oferecer a clube</button><button class="btn sm" data-a="tryout" data-p="'+p.id+'">Levar a peneiras</button></div>':'')+'</div></article>';}
 /* peneira: clube que testa o jogador mesmo abaixo do nível. Garoto até 20 anos entra na base com contrato de formação;
@@ -5379,7 +5401,7 @@ function figCard(p){const c=club(p),t=seasonTot(p),tcost=nice(Math.max(300,wageR
   const lk=locked(p),canOffer=!p.loan&&!lk&&(!c||anyWin()),canLoan=c&&!p.loan&&anyWin();
   return'<article class="fig"><div class="fig-n">'+avatar(p,58)+'<b>'+p.ovr+'</b><span>'+p.pos+'</span><small>pot. '+potTxt(p)+'</small></div><div class="fig-b">'+
    '<h3>'+plLink(p)+'<small>'+p.age+' anos · '+natTag(p)+TRAIT[p.trait][0]+'</small></h3>'+
-   '<p class="small">'+(c?clubLink(c,16)+' · '+fmt(p.wage)+'/sem · contrato até <b>'+fmonth(p.ce)+'</b> ('+leftTxt(p)+') · você leva '+p.comm+'%':'<b>Sem clube</b> · aguardando você achar um contrato')+'</p>'+
+   '<p class="small">'+(c?clubLink(c,16)+' · '+fmt(p.wage)+'/sem · contrato até <b>'+fmonth(p.ce)+'</b> ('+leftTxt(p)+')'+(p.noCl?' · sem multa':clauseOf(p)?' · multa '+fmt(clauseOf(p)):'')+' · você leva '+p.comm+'%':'<b>Sem clube</b> · aguardando você achar um contrato')+'</p>'+
    '<div class="meters">'+meter('Moral',p.morale)+meter('Confiança',p.trust)+meter('Fama',p.fame)+'</div>'+
    '<p class="small muted">Valor '+fmt(value(p))+' · '+fmtN(offOf(p).fol)+' seguidores</p>'+statSheet(p)+
    (tags.length?'<div class="acts">'+tags.join('')+'</div>':'')+
@@ -5454,7 +5476,7 @@ function searchRes(){const q=ui.q.trim().toLowerCase();if(q.length<3)return'';co
 /* ================= MERCADO ================= */
 function vMercado(){const winTxt=reg=>(winOpen(reg)?'aberta até ':'fechada · abre em ')+fdate(winNext(reg),true);
   let h='<section><div class="sec-h"><h2>Propostas recebidas</h2><p>Europa: '+winTxt('eu')+'. Brasil: '+winTxt('sa')+'.</p></div><div class="card list">'+
-   (G.offers.map(o=>{const p=G.P[o.pid],c=G.clubs[o.cid],cur=club(p),f=fitHint(p,c);return'<div>'+avatar(p,36)+'<div class="grow">'+clubLink(c)+' quer <b>'+plLink(p)+'</b> <span class="chip '+f[1]+'">'+f[0]+'</span><div class="small muted">'+esc(LG[c.lg].n)+(o.fee?' · paga '+fmtC(o.fee,c)+' ao '+esc(cur?cur.n:'')+' · sua comissão '+fmt(o.fee*feePct()*fxMul(c)):' · jogador livre, sem taxa')+' · expira em '+fdate(o.exp)+'</div></div><button class="btn pri" data-a="offer" data-o="'+o.id+'">Negociar</button><button class="btn" data-a="refuse" data-o="'+o.id+'">Descartar</button></div>';}).join('')||'<div class="muted">Nenhuma proposta no momento.</div>')+'</div></section>';
+   (G.offers.map(o=>{const p=G.P[o.pid],c=G.clubs[o.cid],cur=club(p),f=fitHint(p,c);return'<div>'+avatar(p,36)+'<div class="grow">'+clubLink(c)+' quer <b>'+plLink(p)+'</b> <span class="chip '+f[1]+'">'+f[0]+'</span><div class="small muted">'+esc(LG[c.lg].n)+(o.fee?' · '+(o.cl?'pagou a multa de ':o.acc?'o '+esc(cur?cur.n:'')+' aceitou ':'paga ')+fmtC(o.fee,c)+(o.acc||o.cl?'':' ao '+esc(cur?cur.n:''))+' · sua comissão '+fmt(o.fee*feePct()*fxMul(c)):' · jogador livre, sem taxa')+' · expira em '+fdate(o.exp)+'</div></div><button class="btn pri" data-a="offer" data-o="'+o.id+'">Negociar</button><button class="btn" data-a="refuse" data-o="'+o.id+'">Descartar</button></div>';}).join('')||'<div class="muted">Nenhuma proposta no momento.</div>')+'</div></section>';
   h+='<section><div class="sec-h"><h2>Pedidos de clubes</h2><p>Coloque um cliente que cumpra o pedido e receba honorários.</p></div><div class="card list">'+
    (G.missions.map(m=>{const c=G.clubs[m.cid];return'<div><div class="grow">'+clubLink(c)+' procura <b>'+POSN[m.pos]+'</b> nível '+m.min+'+<div class="small muted">'+esc(LG[c.lg].n)+' · honorários '+fmt(m.fee)+' · prazo '+fdate(m.exp)+'</div></div><button class="btn" data-a="dismiss" data-m="'+m.id+'">Descartar</button></div>';}).join('')||'<div class="muted">'+(G.rep<6?'Clubes pedem ajuda quando sua reputação chega a 6.':'Nenhum pedido aberto.')+'</div>')+'</div></section>';
   const countries=['Todos'].concat(LG.slice(0,6).map(l=>l.cn),['Outros']);
