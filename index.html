@@ -3347,7 +3347,7 @@ function vPainel2(){let h='';const t=G.tut,me=G.me;
   const cs=G.clients.map(id=>G.P[id]).filter(Boolean).sort((a,b)=>b.ovr-a.ovr),lw=G.lastWk;
   h+='<div class="dcols"><section class="card c-good">'+cardH('staff','Seus atletas','<button class="btn sm" data-a="tab" data-t="clientes">Carteira</button>')+'<div class="list">'+(cs.slice(0,7).map(p=>{const c=club(p),it=lw&&lw.items.find(x=>x.pid===p.id),g=it&&it.games.length?it.games[it.games.length-1]:null,nf=c?fixturesOf(c.id,G.d,G.d+6).find(f=>f.m&&f.m[2]<0):null;
     const st=p.injury>0?'<span class="chip bad">'+esc(p.injT||'Lesionado')+' · '+p.injury+' sem</span>':g?'<span class="g">'+esc(g.cs)+' '+resChip(g.gf,g.ga)+' '+rtChip(g.rt)+(g.ng?' <b>'+g.ng+'G</b>':'')+'</span>':'';
-    return'<div class="ath">'+avatar(p,36)+ovrB(p.ovr)+'<div class="grow"><b>'+plLink(p)+'</b><div class="small muted">'+(c?esc(c.n):'Sem clube')+(nf?' · '+fdate(nf.d,true).split(',')[0]+' '+(nf.m[0]===c.id?'x ':'@ ')+esc(G.clubs[nf.m[0]===c.id?nf.m[1]:nf.m[0]].n):'')+'</div></div>'+st+'</div>';}).join('')||'<div class="muted">Você ainda não tem clientes.</div>')+
+    return'<div class="ath">'+avatar(p,36)+ovrB(p.ovr)+'<div class="grow"><b><button class="lnk" data-a="cligo" data-p="'+p.id+'">'+esc(p.name)+'</button></b><div class="small muted">'+(c?esc(c.n):'Sem clube')+(nf?' · '+fdate(nf.d,true).split(',')[0]+' '+(nf.m[0]===c.id?'x ':'@ ')+esc(G.clubs[nf.m[0]===c.id?nf.m[1]:nf.m[0]].n):'')+'</div></div>'+st+'</div>';}).join('')||'<div class="muted">Você ainda não tem clientes.</div>')+
    (cs.length>7?'<div class="small muted">E mais '+(cs.length-7)+' na carteira.</div>':'')+'</div></section>';
   const pend=[];G.offers.forEach(o=>pend.push(['info','Proposta','O '+G.clubs[o.cid].n+' quer '+(G.P[o.pid]?G.P[o.pid].name:'')+'.','mercado']));
   G.missions.forEach(m=>pend.push(['info','Pedido',G.clubs[m.cid].n+' procura '+POSN[m.pos]+' nível '+m.min+'+.','mercado']));
@@ -3661,7 +3661,7 @@ function vPainel3(){const t=G.tut,steps=[['pitch','Ofereça seu garoto a um club
   const cs=G.clients.map(id=>G.P[id]).filter(Boolean).sort((a,b)=>b.ovr-a.ovr),lw=G.lastWk,pend=pendList();
   h+='<div class="pcols"><section class="card c-good">'+cardH('staff','Seus atletas')+'<div class="plist">'+(cs.slice(0,6).map(p=>{const c=club(p),it=lw&&lw.items.find(x=>x.pid===p.id),g=it&&it.games.length?it.games[it.games.length-1]:null;
       const sub=p.injury>0?'<span class="nok">'+esc(p.injT||'Lesionado')+'</span>':g?esc(g.cs)+' '+resChip(g.gf,g.ga)+' '+rtChip(g.rt):esc(c?c.n:'Sem clube');
-      return'<button class="prow" data-a="player" data-p="'+p.id+'">'+avatar(p,28)+'<span class="grow"><b>'+esc(p.name)+'</b><small>'+sub+'</small></span>'+ovrB(p.ovr)+'</button>';}).join('')||'<p class="small muted">Nenhum cliente ainda.</p>')+
+      return'<button class="prow" data-a="cligo" data-p="'+p.id+'">'+avatar(p,28)+'<span class="grow"><b>'+esc(p.name)+'</b><small>'+sub+'</small></span>'+ovrB(p.ovr)+'</button>';}).join('')||'<p class="small muted">Nenhum cliente ainda.</p>')+
    (cs.length>6?'<button class="btn sm" data-a="tab" data-t="clientes">Ver todos ('+cs.length+')</button>':'')+'</div></section>'+
    '<div class="pcol"><section class="card c-bad">'+cardH('report','Pendências',pend.length?'<span class="chip bad">'+pend.length+'</span>':'')+'<div class="plist">'+
    (pend.slice(0,3).map(x=>'<button class="pr '+x[0]+'" data-a="tab" data-t="'+x[3]+'"><b>'+x[1]+'</b><span>'+esc(x[2])+'</span></button>').join('')||'<p class="small muted">Tudo em dia.</p>')+
@@ -4814,7 +4814,7 @@ function homeReset0(){Object.assign(ui,{stack:[],figOpen:{},offOpen:{},calOpen:f
 /* alvo: tab;subaba do clube;jogador;pop-up;seletor para rolar */
 function goTarget(g){const [t,os,pid,pop,sc]=String(g||'').split(';');homeReset();ui.tab=t||'painel';if(os)ui.osub=os;
   if(pid){ui.csub='car';ui.figOpen={};ui.figOpen[pid]=true;}ui.modal=pop?{type:'ag',k:pop}:null;render();
-  const sel=pid?'[data-a="figtog"][data-p="'+pid+'"]':sc;try{window.scrollTo(0,0);if(sel&&!pop){const el=document.querySelector('#view '+sel);if(el&&el.scrollIntoView){(el.closest&&el.closest('article,section')||el).scrollIntoView({block:'start'});window.scrollBy&&window.scrollBy(0,-150);}}}catch(e){}}
+  const sel=pid?'[data-a="figtog"][data-p="'+pid+'"]':sc;try{window.scrollTo(0,0);if(sel&&!pop){const el=document.querySelector('#view '+sel);if(el&&el.scrollIntoView){toTopOf(el.closest&&el.closest('article,section')||el);}}}catch(e){}}
 function nextSteps(n,noGoal){const L=[],r=lvlIdxR(),N=LEVELS[G.tier+1];
   if(r>G.tier)L.push(['star',LEVELS[G.tier+1].n+' liberado. Suba quando o caixa aguentar o custo de '+fmt(LEVELS[G.tier+1].cost)+'/sem.','agencia',9,'agencia;;;pat']);
   else if(N)L.push(['star','Faltam '+Math.ceil(N.rep-G.rep)+' de reputação para '+N.n+' (carteira de '+(N.cap+offL('sede'))+' clientes).','agencia',5,'agencia;;;pat']);
@@ -5603,6 +5603,14 @@ const A={
 };
 
 Object.assign(A,OFFA,EVOA,OWNA,MINDA,CALA,NAVA,CARDA,CMA,FINA,BIZA,NTCA,TIDYA,FLAGA,PROGA,BIZLA,OTRA,W2A,OLA,CLUB2A,PHA,TIEA,FACEA,RDA,NAVHA,HOFA,SCPA,BRA,SPMA,EDA,VPA,ARTA,{slots:SLOTA.slots,slotsave:SLOTA.slotsave,slotgo:SLOTA.slotgo,slotnew:SLOTA.slotnew,slotback:SLOTA.slotback,slotdel:SLOTA.slotdel,slotdelok:SLOTA.slotdelok});
+/* ---- rolagem.js ---- */
+/* coloca o topo de um card logo abaixo do cabeçalho fixo */
+function toTopOf(el){try{const tp=document.querySelector('.topo'),hb=tp?tp.getBoundingClientRect().bottom:0;window.scrollTo(0,Math.max(0,window.scrollY+el.getBoundingClientRect().top-hb-8));}catch(e){}}
+/* nome do atleta no painel: abre o card dele expandido em Clientes */
+A.cligo=d=>goTarget('clientes;;'+d.p);
+/* fichas de jogador e clube abrem no topo; ao voltar, a tela volta onde estava */
+['player','club'].forEach(k=>{const f=A[k];A[k]=function(d){const y=window.scrollY,n=ui.stack.length;f(d);if(ui.stack.length>n){ui.stack[ui.stack.length-1].y=y;window.scrollTo(0,0);}};});
+{const fb=A.back;A.back=function(d){const t=ui.stack[ui.stack.length-1];fb(d);window.scrollTo(0,t&&t.y||0);};}
 /* ---- clubeap.js ---- */
 /* ações dentro do clube (doar, associar-se, comprar/vender ações, aporte...) gastam 1 ação da semana */
 const CLUB_AP=['join','poldon','polrun','aporte','retirar','buymore','saf','shbuy','shsell','opa'],CLUB_AP2=['polwork','polup','shveto'];
