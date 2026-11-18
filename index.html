@@ -5317,44 +5317,19 @@ function gmvGo(){const m=ui.modal;if(!m||m.type!=='grpmv')return;const p=G.P[m.p
   save();render();}
 const GMVA={grpmv(d){ui.modal={type:'grpmv',pid:+d.p,k:'loan'};render();},gmvdst(d){if(ui.modal)ui.modal.dst=+d.c;render();},gmvk(d){if(ui.modal)ui.modal.k=d.k;render();},gmvgo(){gmvGo();}};
 /* ---- trilha.js ---- */
-/* trilha sonora gerada na hora pelo navegador (Web Audio): sem arquivo e sem direitos autorais.
-   Acordes suaves, baixo, batida leve e melodia na escala pentatônica, que muda sozinha a cada 8 compassos. */
-const MUS_K='fam-musica';
-const MUS={on:false,ctx:null,out:null,t:null,next:0,step:0,prog:0,bpm:84,
-  PROGS:[[[57,60,64,67],[53,57,60,64],[48,52,55,59],[55,59,62,65]],[[50,53,57,60],[55,59,62,65],[48,52,55,59],[57,60,64,67]],
-   [[53,57,60,64],[55,59,62,65],[52,55,59,62],[57,60,64,67]],[[48,52,55,59],[57,60,64,67],[50,53,57,60],[55,59,62,65]]],
-  PENTA:[0,2,4,7,9]};
+/* trilha sonora: 4 faixas livres do Pixabay, sorteadas sem repetir a mesma em sequência */
+const MUS_K='fam-musica',TRACKS=[1,2,3,4].map(i=>'musica/faixa'+i+'.mp3');
+const MUS={on:false,a:null,last:-1,err:0};
 const musOn=()=>{try{return localStorage.getItem(MUS_K)!=='0';}catch(e){return true;}};
-const mtof=n=>440*Math.pow(2,(n-69)/12);
 function musB(){const on=MUS.on||musOn();return'<button class="btn ghost sm icon-b'+(MUS.on?' mus-on':'')+'" data-a="musica" aria-pressed="'+!!MUS.on+'" aria-label="'+(MUS.on?'Desligar':'Ligar')+' a trilha sonora" title="Trilha sonora">'+
   '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/>'+(MUS.on?'':'<path d="M3 3l18 18"/>')+'</svg></button>';}
-function musInit(){if(MUS.ctx)return true;const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return false;
-  const c=new AC(),comp=c.createDynamicsCompressor(),out=c.createGain();out.gain.value=0;comp.connect(out);out.connect(c.destination);
-  /* eco suave para dar ambiência */
-  const dl=c.createDelay(1),fb=c.createGain(),wet=c.createGain();dl.delayTime.value=60/MUS.bpm*.75;fb.gain.value=.28;wet.gain.value=.22;dl.connect(fb);fb.connect(dl);dl.connect(wet);wet.connect(comp);
-  MUS.ctx=c;MUS.bus=comp;MUS.fx=dl;MUS.out=out;
-  const len=c.sampleRate*.4,nb=c.createBuffer(1,len,c.sampleRate),d=nb.getChannelData(0);for(let i=0;i<len;i++)d[i]=Math.random()*2-1;MUS.noise=nb;return true;}
-function musTone(f,t,dur,type,vol,cut,fx){const c=MUS.ctx,o=c.createOscillator(),g=c.createGain(),lp=c.createBiquadFilter();o.type=type;o.frequency.value=f;lp.type='lowpass';lp.frequency.value=cut;
-  g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(vol,t+Math.min(.08,dur*.3));g.gain.exponentialRampToValueAtTime(.0005,t+dur);o.connect(lp);lp.connect(g);g.connect(MUS.bus);if(fx)g.connect(MUS.fx);o.start(t);o.stop(t+dur+.05);}
-function musNoise(t,dur,vol,hp){const c=MUS.ctx,s=c.createBufferSource(),f=c.createBiquadFilter(),g=c.createGain();s.buffer=MUS.noise;f.type='highpass';f.frequency.value=hp;g.gain.setValueAtTime(vol,t);g.gain.exponentialRampToValueAtTime(.0005,t+dur);s.connect(f);f.connect(g);g.connect(MUS.bus);s.start(t);s.stop(t+dur+.02);}
-function musKick(t){const c=MUS.ctx,o=c.createOscillator(),g=c.createGain();o.frequency.setValueAtTime(110,t);o.frequency.exponentialRampToValueAtTime(42,t+.18);g.gain.setValueAtTime(.5,t);g.gain.exponentialRampToValueAtTime(.0005,t+.3);o.connect(g);g.connect(MUS.bus);o.start(t);o.stop(t+.32);}
-/* uma colcheia por passo: 8 passos = 1 compasso */
-function musStep(t){const st=MUS.step,bar=Math.floor(st/8),b8=st%8,P=MUS.PROGS[MUS.prog],ch=P[bar%4],e=60/MUS.bpm/2;
-  if(b8===0){ch.forEach(n=>musTone(mtof(n),t,e*8.4,'triangle',.045,1400,true));musTone(mtof(ch[0]-24),t,e*3.6,'sine',.2,400);}
-  if(b8===4)musTone(mtof(ch[0]-24+(Math.random()<.5?7:0)),t,e*3.2,'sine',.16,400);
-  if(b8===0||b8===4&&Math.random()<.5||b8===5&&Math.random()<.35)musKick(t);
-  if(b8===2||b8===6)musNoise(t,.12,.07,1800);
-  musNoise(t,.04,b8%2?.025:.04,7000);
-  if(Math.random()<(b8%2?.28:.5)){const root=ch[0]%12,oct=Math.random()<.7?72:84,n=oct+root+MUS.PENTA[Math.floor(Math.random()*5)];musTone(mtof(n),t,e*(Math.random()<.3?3:1.6),'sine',.06,3000,true);}
-  MUS.step++;if(MUS.step%64===0)MUS.prog=Math.floor(Math.random()*MUS.PROGS.length);}
-function musTick(){if(!MUS.ctx)return;const c=MUS.ctx,e=60/MUS.bpm/2;if(MUS.next<c.currentTime)MUS.next=c.currentTime+.05;while(MUS.next<c.currentTime+.3){musStep(MUS.next);MUS.next+=e;}}
-function musStart(){if(!musInit())return;const c=MUS.ctx;if(c.state==='suspended')c.resume();MUS.on=true;MUS.next=c.currentTime+.1;
-  MUS.out.gain.cancelScheduledValues(c.currentTime);MUS.out.gain.setValueAtTime(MUS.out.gain.value,c.currentTime);MUS.out.gain.linearRampToValueAtTime(.55,c.currentTime+2);
-  clearInterval(MUS.t);MUS.t=setInterval(musTick,90);}
-function musStop(){MUS.on=false;clearInterval(MUS.t);MUS.t=null;if(MUS.ctx){const c=MUS.ctx;MUS.out.gain.cancelScheduledValues(c.currentTime);MUS.out.gain.setValueAtTime(MUS.out.gain.value,c.currentTime);MUS.out.gain.linearRampToValueAtTime(0,c.currentTime+.6);setTimeout(()=>{if(!MUS.on&&c.state==='running')c.suspend();},700);}}
+function musNext(){if(!MUS.a)return;let i;do{i=Math.floor(Math.random()*TRACKS.length);}while(TRACKS.length>1&&i===MUS.last);MUS.last=i;MUS.a.src=TRACKS[i];if(MUS.on)MUS.a.play().catch(()=>{});}
+function musStart(){if(!MUS.a){const a=new Audio();a.preload='auto';a.volume=.4;a.addEventListener('ended',()=>{MUS.err=0;musNext();});a.addEventListener('error',()=>{if(MUS.on&&++MUS.err<4)setTimeout(musNext,800);});MUS.a=a;}
+  MUS.on=true;if(!MUS.a.src)musNext();else MUS.a.play().catch(()=>{});}
+function musStop(){MUS.on=false;if(MUS.a)MUS.a.pause();}
 /* o navegador só deixa tocar som depois de um toque: se a trilha estiver ligada, ela começa no primeiro toque */
-document.addEventListener('pointerdown',function f(e){if(e.target&&e.target.closest&&e.target.closest('[data-a="musica"]'))return;if(musOn()&&!MUS.on){musStart();try{render();}catch(x){}}},{passive:true});
-document.addEventListener('visibilitychange',()=>{if(!MUS.ctx)return;if(document.hidden)MUS.ctx.suspend();else if(MUS.on)MUS.ctx.resume();});
+document.addEventListener('pointerdown',function(e){if(e.target&&e.target.closest&&e.target.closest('[data-a="musica"]'))return;if(musOn()&&!MUS.on){musStart();try{render();}catch(x){}}},{passive:true});
+document.addEventListener('visibilitychange',()=>{if(!MUS.a)return;if(document.hidden)MUS.a.pause();else if(MUS.on)MUS.a.play().catch(()=>{});});
 const MUSA={musica(){if(MUS.on){musStop();try{localStorage.setItem(MUS_K,'0');}catch(e){}}else{try{localStorage.setItem(MUS_K,'1');}catch(e){}musStart();}render();}};
 /* ---- ui-views.js ---- */
 /* ================= COMPONENTES ================= */
