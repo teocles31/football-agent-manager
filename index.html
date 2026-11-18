@@ -640,6 +640,10 @@ html,body{touch-action:manipulation}
 .vs-m.rV{color:var(--good)}.vs-m.rD{color:var(--bad)}.vs-m.rE{color:var(--ink2)}
 .vs-meta{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:3px 6px;margin-top:5px;font-size:12px;color:var(--ink2);text-align:center}
 .vs-meta .rt{font-size:11.5px}
+.vs-cat{grid-column:1/-1;justify-self:center;margin-bottom:6px;padding:2px 10px;border-radius:999px;font-family:var(--f-d);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;background:color-mix(in srgb,var(--gold) 18%,transparent);color:var(--gold)}
+.vs-st{display:inline-block;padding:1px 8px;border-radius:999px;border:1px solid var(--line);font-size:10.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;line-height:1.5;color:var(--ink2)}
+.vs-st.on{border-color:color-mix(in srgb,var(--good) 50%,var(--line));color:var(--good)}.vs-st.off{border-style:dashed}
+.wk-tl{display:flex;justify-content:center;align-items:center;gap:8px;margin:2px 0 0}
 .vsb.sm{padding:8px 0;column-gap:11px}.vsb.sm .vs-t{font-size:13.5px;gap:6px}.vsb.sm .vs-m{font-size:16px;min-width:38px}.vsb.sm .vs-meta{font-size:11.5px;margin-top:3px}
 .vsb.mine{background:color-mix(in srgb,var(--gold) 14%,transparent);border-radius:8px;padding-left:6px;padding-right:6px}
 .cev.cevm{align-items:center}.cev.cevm>.vsb{flex:1;min-width:0;border:0;padding:4px 0}
@@ -5123,7 +5127,7 @@ function vsT(x){if(x==null||x==='')return{lb:'A definir'};
   if(typeof x==='object')return x.nt?{nt:x.nt}:x.id!=null&&x.n?{c:x}:x;
   if(G.clubs[x]&&G.clubs[x].n)return{c:G.clubs[x]};
   const c=vsClub(x);if(c)return{c};
-  const m=/^Sub-20 d[oa] (.+)$/.exec(x),c2=m&&vsClub(m[1]);if(c2)return{c:c2,lb:x};
+  const m=/^Sub-20 d[oa] (.+)$/.exec(x),c2=m&&vsClub(m[1]);if(c2)return{c:c2,cat:'Sub-20'};
   if(flagOf(x))return{nt:x};return{lb:String(x)};}
 const VS_NEU={c1:'#5a6672',c2:'#d0d6db'};
 function vsSide(x,sz){const t=vsT(x);
@@ -5131,8 +5135,10 @@ function vsSide(x,sz){const t=vsT(x);
   if(t.nt){const f=flagOf(t.nt);return'<span class="vs-t">'+(f?'<span class="vs-f" style="font-size:'+Math.round(sz*.95)+'px">'+f+'</span>':crest(Object.assign({n:t.nt},VS_NEU),sz))+'<span>'+esc(t.nt)+'</span></span>';}
   return'<span class="vs-t">'+crest(Object.assign({n:t.lb==='A definir'?'?':t.lb},VS_NEU),sz)+'<span>'+esc(t.lb)+'</span></span>';}
 const vsSc=(a,b)=>a+' – '+b,vsRes=(gf,ga)=>gf>ga?'V':gf<ga?'D':'E';
-function vsBox(H,A,mid,meta,cls,res){const sz=/\bsm\b/.test(cls||'')?18:22;
-  return'<div class="vsb'+(cls?' '+cls:'')+'"><div class="vs-h">'+vsSide(H,sz)+'</div><b class="vs-m'+(res?' r'+res:'')+'">'+mid+'</b><div class="vs-a">'+vsSide(A,sz)+'</div>'+(meta?'<div class="vs-meta">'+meta+'</div>':'')+'</div>';}
+function vsBox(H,A,mid,meta,cls,res){const sz=/\bsm\b/.test(cls||'')?18:22,cat=vsT(H).cat||vsT(A).cat;
+  /* categoria de base (Sub-20) vai destacada em cima; os times aparecem só pelo nome do clube */
+  if(cat&&meta){meta=String(meta).split(cat+' · ').join('');if(meta===cat)meta='';}
+  return'<div class="vsb'+(cls?' '+cls:'')+'">'+(cat?'<div class="vs-cat">'+esc(cat)+'</div>':'')+'<div class="vs-h">'+vsSide(H,sz)+'</div><b class="vs-m'+(res?' r'+res:'')+'">'+mid+'</b><div class="vs-a">'+vsSide(A,sz)+'</div>'+(meta?'<div class="vs-meta">'+meta+'</div>':'')+'</div>';}
 /* jogo visto por um lado (me): g.home, g.gf e g.ga são do ponto de vista de "me" */
 function vsGame(me,g,meta,cls){const o=g.oid!=null?g.oid:g.opp;return vsBox(g.home?me:o,g.home?o:me,g.home?vsSc(g.gf,g.ga):vsSc(g.ga,g.gf),meta,cls,vsRes(g.gf,g.ga));}
 const calMt=(f,c,who)=>({H:f.m?f.m[0]:c.id,A:f.m?f.m[1]:'',s:f.m&&f.m[2]>=0?vsSc(f.m[2],f.m[3]):'x',who:[who],cs:f.c.sh+(f.st?' · '+f.st.toLowerCase():'')});
@@ -5432,8 +5438,8 @@ function mWeek(){const w=G.wk,net=w.inc-w.exp;
   if(w.own&&false)h+='<div class="wk-row own" style="--i:0"><div class="wk-h"><b>'+esc(w.own.n)+'</b><span class="chip warn">seu clube</span></div>'+(w.own.games.map(g=>'<p class="small">'+esc(g.cs)+' · '+(g.home?'x ':'@ ')+esc(g.opp)+' '+resChip(g.gf,g.ga)+'</p>').join('')||'<p class="small muted">Sem jogos na semana.</p>')+'</div>';
   if(w.nt&&w.nt.length)h+='<div class="wk-row nt" style="--i:0"><div class="wk-h">'+svgI('flag',20)+'<b>Data FIFA</b><span class="small muted">resultados das seleções</span></div>'+w.nt.map(x=>{const mine=G.clients.map(id=>G.P[id]).filter(p=>p&&natName(p)===x.n&&isIntl(p));return vsBox({nt:x.n},{nt:x.o},vsSc(x.gf,x.ga),fdate(x.d)+' · '+esc(x.c)+(mine.length?' <span class="chip good">'+mine.map(p=>esc(p.name)).join(', ')+'</span>':''),'sm',vsRes(x.gf,x.ga));}).join('')+'</div>';
   h+=w.items.length?w.items.map((it,i)=>{const p=G.P[it.pid];return'<div class="wk-row '+it.k+'" style="--i:'+(i+1)+'"><div class="wk-h">'+(p?avatar(p,32):'')+'<span class="wk-ovr">'+it.ovr+'</span><b>'+esc(it.n)+'</b><span class="small muted">'+it.pos+(it.club?' · '+esc(it.club):'')+'</span></div>'+
-    (it.games.length?it.games.map(g=>vsGame(g.me!=null?g.me:it.club,g,esc(g.cs)+' · '+(g.sub?'entrou':'titular')+' · nota '+rtChip(g.rt)+(g.ng?' · <b>'+g.ng+' gol'+(g.ng>1?'s':'')+'</b>':'')+(g.na?' · '+g.na+' assist.':''),'sm')).join(''):'<p class="small">'+esc(it.line)+'</p>')+
-    ((it.team||[]).length?'<div class="wk-team"><span class="small muted">Time principal'+(it.games.some(g=>g.cs==='Sub-20')||!it.games.length?' (ele não jogou)':' (sem ele)')+':</span>'+it.team.map(g=>vsGame(g.me!=null?g.me:it.club,g,esc(g.cs)+(g.d!=null?' · '+fdate(g.d):''),'sm')).join('')+'</div>':'')+(it.chips.length?'<div class="fxs">'+it.chips.map(c=>'<span class="chip '+c[1]+'">'+esc(c[0])+'</span>').join('')+'</div>':'')+'</div>';}).join(''):'<p class="muted">Você não tem clientes.</p>';
+    (it.games.length?it.games.map(g=>vsGame(g.me!=null?g.me:it.club,g,esc(g.cs)+' · <span class="vs-st'+(g.sub?'':' on')+'">'+(g.sub?'Entrou':'Titular')+'</span> nota '+rtChip(g.rt)+(g.ng?' · <b>'+g.ng+' gol'+(g.ng>1?'s':'')+'</b>':'')+(g.na?' · '+g.na+' assist.':''),'sm')).join(''):'<p class="small">'+esc(it.line)+'</p>')+
+    ((it.team||[]).length?'<div class="wk-team"><div class="wk-tl"><span class="small muted">Time principal</span><span class="vs-st off">Não jogou</span></div>'+it.team.map(g=>vsGame(g.me!=null?g.me:it.club,g,esc(g.cs)+(g.d!=null?' · '+fdate(g.d):''),'sm')).join('')+'</div>':'')+(it.chips.length?'<div class="fxs">'+it.chips.map(c=>'<span class="chip '+c[1]+'">'+esc(c[0])+'</span>').join('')+'</div>':'')+'</div>';}).join(''):'<p class="muted">Você não tem clientes.</p>';
   const foot=[];if(w.offers)foot.push(w.offers+' proposta(s) nova(s) em Mercado');if(G.events.length)foot.push(G.events.length+' decisão(ões) esperando você');
   return h+(foot.length?'<p class="wk-foot">'+foot.map(esc).join(' · ')+'</p>':'')+'<div class="acts"><button class="btn pri big" data-a="wkok">'+(G.events.length?'Ver decisões':'Continuar')+'</button></div></div>';}
 function mStart(){return'<div class="sheet"><span class="eyebrow">Novo jogo · agosto de 2026</span><h2>Football Agent Manager</h2><p>Você é empresário de jogadores. Descubra talentos, coloque em clubes de 6 países, negocie contratos e transferências e suba no ranking de '+(AGNAMES.length+1)+' agências.</p>'+
