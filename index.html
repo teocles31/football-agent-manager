@@ -4785,7 +4785,8 @@ const compDe=n=>COMP_M.test(String(n))?'do':'da';
 /* conserta notícias antigas que saíram com "campeão da Brasileirão" */
 function newsFix(){try{if(!G||!G.news||G._nfx)return;G.news.forEach(n=>{n.t=String(n.t).replace(/é campeão da (\S+)/g,(m,w)=>'é campeão '+compDe(w)+' '+w);});G._nfx=1;}catch(e){}}
 function polFix(){try{if(G&&G.own&&G.pol&&!G._pfx){const o=G.clubs[G.pol.cid];G._pfx=1;if(o)news('Você deixou o quadro de sócios do '+o.n+', que ainda cobrava mensalidade.','clube');G.pol=null;}}catch(e){}}
-function render(){polFix();newsFix();render0();rdInit();vpInit();apLock();}
+let _mk='';function mdlTop(){try{const t=ui.stack[ui.stack.length-1],M=ui.modal,k=JSON.stringify([t&&t.t,t&&t.id,M&&M.type,M&&(M.pid!=null?M.pid:M.k)]);if(k!==_mk){_mk=k;const m=document.querySelector('.modal');if(m)m.scrollTop=0;}}catch(e){}}
+function render(){polFix();newsFix();render0();rdInit();vpInit();apLock();mdlTop();}
 const RDA={rdgo(d){try{const el=document.querySelector('#view .rd-car');if(!el)return;const base=ui.rd!=null?ui.rd:Math.round(el.scrollLeft/el.clientWidth),i=base+(+d.v),n=el.children.length;const j=Math.max(0,Math.min(n-1,i));ui.rd=j;el.scrollTo({left:j*el.clientWidth,behavior:'smooth'});}catch(e){}}};
 
 /* ---- crep2.js ---- */
@@ -5609,8 +5610,10 @@ function toTopOf(el){try{const tp=document.querySelector('.topo'),hb=tp?tp.getBo
 /* nome do atleta no painel: abre o card dele expandido em Clientes */
 A.cligo=d=>goTarget('clientes;;'+d.p);
 /* fichas de jogador e clube abrem no topo; ao voltar, a tela volta onde estava */
-['player','club'].forEach(k=>{const f=A[k];A[k]=function(d){const y=window.scrollY,n=ui.stack.length;f(d);if(ui.stack.length>n){ui.stack[ui.stack.length-1].y=y;window.scrollTo(0,0);}};});
-{const fb=A.back;A.back=function(d){const t=ui.stack[ui.stack.length-1];fb(d);window.scrollTo(0,t&&t.y||0);};}
+const mdl=()=>document.querySelector('.modal');
+['player','club'].forEach(k=>{const f=A[k];A[k]=function(d){const y=window.scrollY,m=mdl(),my=m?m.scrollTop:0,n=ui.stack.length;f(d);if(ui.stack.length>n){const t=ui.stack[ui.stack.length-1];t.y=y;t.my=my;const m2=mdl();if(m2)m2.scrollTop=0;else window.scrollTo(0,0);}};});
+{const fb=A.back;A.back=function(d){const t=ui.stack[ui.stack.length-1];fb(d);const m=mdl();if(m&&ui.stack.length)m.scrollTop=t&&t.my||0;else window.scrollTo(0,t&&t.y||0);};}
+{const fc=A.closeall;A.closeall=function(d){const t=ui.stack[0];fc(d);if(t)window.scrollTo(0,t.y||0);};}
 /* ---- clubeap.js ---- */
 /* ações dentro do clube (doar, associar-se, comprar/vender ações, aporte...) gastam 1 ação da semana */
 const CLUB_AP=['join','poldon','polrun','aporte','retirar','buymore','saf','shbuy','shsell','opa'],CLUB_AP2=['polwork','polup','shveto'];
