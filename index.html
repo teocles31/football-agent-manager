@@ -6134,7 +6134,7 @@ const spTierMax=v=>v>=90?1:v>=50?2:3;
 const spSlots=v=>v>=95?3:v>=65?2:v>=38?1:0;
 const spCat=s=>s.cat||(s.bid&&BRI[s.bid]?BRI[s.bid].cat:(bIdOf(s.b)&&BRI[bIdOf(s.b)].cat==='chut'?'chut':'x'));
 const spT=s=>s.t||(bIdOf(s.b)?BRI[bIdOf(s.b)].t:3);
-function spName(s){return s.bid?bN(s.bid):dispB(s.b);}
+function spName(s){return s.bid&&BRI[s.bid]?bN(s.bid):dispB(s.b);}
 function spGen0(p,c,o,id){const v=mktV(p);o.sp=o.sp||[];if(v<22||(o.spCd||0)>G.d||G.events.some(e=>e.pid===id))return;
   if(Math.random()>(.012+v/2600)*(mind('est')?1.4:1)*(1+.1*bizLv('mkt')))return;
   const tm=spTierMax(v),ch=o.sp.find(s=>spCat(s)==='chut'),oth=o.sp.filter(s=>spCat(s)!=='chut'),used=new Set(o.sp.map(s=>spCat(s)));let cat=null,swap=null;
@@ -6846,7 +6846,7 @@ async function adjLoad(){try{if(typeof fetch==='undefined'||location.protocol===
   const list=await (await fetch('planilha/arquivos.json',{cache:'no-cache',signal:ctl.signal})).json();
   const txts=await Promise.all(list.map(f=>fetch('planilha/'+encodeURIComponent(f),{cache:'no-cache',signal:ctl.signal}).then(r=>r.ok?r.text():'').catch(()=>'')));clearTimeout(tm);
   const CLN=new Set();for(const k in CLUBS)CLUBS[k].split(',').forEach(x=>CLN.add(x.split(':')[0]));
-  for(let fi=0;fi<txts.length;fi++){const t=txts[fi],isB=/^base/i.test(list[fi]),B=isB?BASE:REAL,BK=isB?'b:':'';
+  for(let fi=0;fi<txts.length;fi++){if(/^patroc/i.test(list[fi])){brandSheet(txts[fi]);continue;}const t=txts[fi],isB=/^base/i.test(list[fi]),B=isB?BASE:REAL,BK=isB?'b:':'';
     const rows=csvParse(t),h=(rows.shift()||[]).map(x=>x.trim().toLowerCase()),ix=k=>h.indexOf(k);
     const iC=ix('clube'),iO=ix('nome_original'),iN=ix('nome'),iV=ix('overall'),iP=ix('potencial'),iS=ix('posicao'),iA=ix('idade'),iX=ix('pais');if(iC<0||iO<0)continue;
     const seen={};for(const r of rows){const club=(r[iC]||'').trim(),orig=(r[iO]||'').trim().replace(/[,;`]/g,' ');if(isB&&!B[club]&&CLN.has(club))B[club]='';if(B[club]==null||!orig)continue;
@@ -6860,6 +6860,17 @@ async function adjLoad(){try{if(typeof fetch==='undefined'||location.protocol===
       const o=ov>=30&&ov<=99?ov:+x[3],p=pt>=30&&pt<=99?Math.max(pt,o):Math.max(+x[4],o),np=isB&&POS.includes(ps)?ps:x[1];
       if(nm===orig&&o===+x[3]&&p===+x[4]&&np===x[1])continue;
       ADJ[key]={club,orig,pos:x[1],n:nm,o,p,np,base:isB?1:0};x[0]=nm;x[1]=np;x[3]=o;x[4]=p;es[k]=x.join(',');B[club]=es.join(';');}}}catch(e){}}
+/* planilha/patrocinadores.csv: nome e nível de cada marca; linha nova = marca nova. Vale na hora para todas as carreiras. */
+function brandSheet(t){try{const rows=csvParse(t),h=(rows.shift()||[]).map(x=>x.trim().toLowerCase()),ix=k=>h.indexOf(k);
+  const iI=ix('id'),iC=ix('categoria'),iL=ix('nivel'),iN=ix('nome');if(iN<0)return;
+  const cl=(x)=>String(x||'').replace(/[`]/g,' ').replace(/\s+/g,' ').trim().slice(0,28),
+    lvl=x=>{const v=String(x||'').trim().toLowerCase();return v==='1'||v.startsWith('glob')?1:v==='2'||v.startsWith('grand')?2:v==='3'||v.startsWith('nac')?3:0;},
+    cat=x=>{const v=String(x||'').trim().toLowerCase();for(const k in BRC)if(k===v||BRC[k].toLowerCase()===v||BRC[k].toLowerCase().startsWith(v)&&v.length>=4)return k;return null;};
+  for(const r of rows){const id=iI>=0?String(r[iI]||'').trim():'',nm=cl(r[iN]),lv=iL>=0?lvl(r[iL]):0;if(!nm)continue;
+    let b=id&&BRI[id];
+    if(!b){const k=cat(iC>=0?r[iC]:'');if(!k)continue;const nid=id||('pl_'+nm.toLowerCase().normalize('NFD').replace(/[^a-z0-9]+/g,''));if(BRI[nid])b=BRI[nid];else{b={id:nid,n0:nm,cat:k,t:lv||3};BR.push(b);BRI[nid]=b;}}
+    if(b.n0!==nm){BRN0[nm]=b.id;b.n0=nm;}if(lv)b.t=lv;}
+  applyBrands();}catch(e){}}
 function adjSigs(){const o={};for(const k in ADJ){const a=ADJ[k];o[k]=a.n+'|'+a.o+'|'+a.p+(a.np&&a.np!==a.pos?'|'+a.np:'');
   /* guarda o nome original de quem já nasceu renomeado, para achar o jogador se a linha mudar de novo */
   if(a.n!==a.orig&&G&&G.P)Object.values(G.P).forEach(p=>{const c=club(p);if(p.real&&p.name===a.n&&c&&c.n===a.club&&(p.pos===a.pos||p.pos===a.np))p.on=a.orig;});}return o;}

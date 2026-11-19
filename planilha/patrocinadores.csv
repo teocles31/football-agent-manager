@@ -1,0 +1,75 @@
+id,categoria,nivel,nome_original,nome
+rajada,Material esportivo,1,Nipe,Nipe
+vortice,Material esportivo,1,Adides,Adides
+orion,Material esportivo,1,Pumba,Pumba
+atlas,Material esportivo,2,Nova Balanço,Nova Balanço
+kaizen,Material esportivo,2,Mizuna,Mizuna
+falco,Material esportivo,2,Under Amor,Under Amor
+tempest,Material esportivo,2,Umbra,Umbra
+pampa,Material esportivo,3,Penalte,Penalte
+garra,Material esportivo,3,Tóper,Tóper
+tupi,Material esportivo,3,Kapa,Kapa
+marola,Material esportivo,3,Diadorra,Diadorra
+aurum,Relógios,1,Rolecs,Rolecs
+solenne,Relógios,1,Tag Hoyer,Tag Hoyer
+cronos,Relógios,2,Cassio,Cassio
+ponteiro,Relógios,3,Técnus Relógios,Técnus Relógios
+brisa,Bebidas,1,Coca-Cova,Coca-Cova
+polar,Bebidas,1,Red Boi,Red Boi
+voltz,Bebidas,2,Gatoreide,Gatoreide
+trovao,Bebidas,2,Monstrão Energy,Monstrão Energy
+serra,Bebidas,2,Brahmo,Brahmo
+garoa,Bebidas,3,Guaraná Antártido,Guaraná Antártido
+caju,Bebidas,3,Del Vale,Del Vale
+austral,Bancos,1,Santandé,Santandé
+meridia,Bancos,1,Banco Itaí,Banco Itaí
+ponta,Bancos,2,Bradescu,Bradescu
+lastro,Bancos,2,Nubanco,Nubanco
+cofre,Bancos,2,Banco Interr,Banco Interr
+cooper,Bancos,2,Banrisol,Banrisol
+pix9,Bancos,3,PicPey,PicPey
+nebula,Telefonia e tecnologia,1,Samsong,Samsong
+quanta,Telefonia e tecnologia,1,Xiaomy,Xiaomy
+sinal,Telefonia e tecnologia,2,Vivu,Vivu
+fibra,Telefonia e tecnologia,2,Claru,Claru
+onda,Telefonia e tecnologia,3,Tin,Tin
+pulso,Telefonia e tecnologia,3,Fones JBQ,Fones JBQ
+arenax,Games e apps,1,PlayStação,PlayStação
+pixelr,Games e apps,1,Konani,Konani
+streamy,Games e apps,2,Twitchy,Twitchy
+bolada,Games e apps,2,Betanu,Betanu
+palpite,Games e apps,3,Estrelinha Bet,Estrelinha Bet
+monarca,Moda e beleza,1,Gucchi,Gucchi
+velluto,Moda e beleza,1,Luis Vuiton,Luis Vuiton
+lince,Moda e beleza,2,Ray-Bam,Ray-Bam
+ebano,Moda e beleza,2,Boticálio,Boticálio
+lacosta,Moda e beleza,2,Lacosta,Lacosta
+corte,Moda e beleza,3,Herinque,Herinque
+urbano,Moda e beleza,3,Levys,Levys
+trilha,Automóveis,1,Volksvagem,Volksvagem
+astra,Automóveis,1,Toiota,Toiota
+pneus,Automóveis,2,Pirelly,Pirelly
+vertice,Automóveis,3,Hunda Motos,Hunda Motos
+locar,Automóveis,3,Localizza,Localizza
+titan,Suplementos,2,Max Titânio,Max Titânio
+forja,Suplementos,3,Growthe,Growthe
+pura,Suplementos,3,Integrálmédica,Integrálmédica
+rumo,Empresas (só clubes),1,Fly Emirados,Fly Emirados
+qatar,Empresas (só clubes),1,Catar Airways,Catar Airways
+petrovia,Empresas (só clubes),1,Petrobrasa,Petrobrasa
+agro,Empresas (só clubes),1,Ambevi,Ambevi
+alicerce,Empresas (só clubes),2,MRB Engenharia,MRB Engenharia
+escudo,Empresas (só clubes),2,Porto Segurado,Porto Segurado
+cesta,Empresas (só clubes),2,Carrefur,Carrefur
+saude,Empresas (só clubes),2,Unimédica,Unimédica
+logix,Empresas (só clubes),2,Ipirangha,Ipirangha
+casaluz,Empresas (só clubes),2,Casas Bahiá,Casas Bahiá
+energia,Empresas (só clubes),2,Crefisu,Crefisu
+magazine,Empresas (só clubes),2,Magazine Luíza,Magazine Luíza
+bet,Empresas (só clubes),2,Superbete,Superbete
+azull,Empresas (só clubes),2,Azull Linhas Aéreas,Azull Linhas Aéreas
+latan,Empresas (só clubes),2,Latan,Latan
+sportbet,Empresas (só clubes),2,Sportingbete,Sportingbete
+farma,Empresas (só clubes),3,Drogasill,Drogasill
+edu,Empresas (só clubes),3,Unopár,Unopár
+havan,Empresas (só clubes),3,Havã,Havã

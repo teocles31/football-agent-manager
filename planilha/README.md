@@ -48,3 +48,28 @@ Crie uma linha nova com todas as colunas preenchidas:
 - **pais**: em português, como no jogo (`Brasil`, `Argentina`, `Inglaterra`...)
 
 Ele entra na base do clube nas carreiras novas e, uma vez, nas carreiras em andamento.
+
+## Patrocinadores (`patrocinadores.csv`)
+
+São as marcas que patrocinam seus atletas (chuteira, relógio, banco...) e as empresas que podem ser patrocinador master do clube que você comprar.
+
+Pode mudar:
+
+- **nome**: o nome que aparece no jogo
+- **nivel**: 1 = marca global, 2 = marca grande, 3 = marca nacional. Marcas globais só procuram atletas de imagem muito alta e pagam mais. Só as marcas de nível 1 e 2 viram patrocinador master de clube.
+
+Não mexa em **id**, **categoria** e **nome_original**: é por elas que o jogo acha a marca.
+
+### Adicionar uma marca nova
+
+Crie uma linha nova. Deixe o **id** vazio e preencha:
+
+- **categoria**: uma destas, escrita igual: Material esportivo, Relógios, Bebidas, Bancos, Telefonia e tecnologia, Games e apps, Moda e beleza, Automóveis, Suplementos, Empresas (só clubes)
+- **nivel**: 1, 2 ou 3
+- **nome_original** e **nome**: o nome da marca, igual nas duas colunas
+
+### Como o jogo usa
+
+- O nome novo aparece na hora, em todas as carreiras, inclusive nos contratos que já estão assinados.
+- O nível vale para as próximas propostas. Contratos já assinados continuam com o valor combinado.
+- Se você trocou o nome de uma marca pela tela **Marcas do jogo**, dentro do jogo, o nome dessa tela vale mais que o da planilha naquele aparelho.
