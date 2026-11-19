@@ -3859,6 +3859,7 @@ function ytAdd(T){G.yt=(G.yt||[]).filter(x=>!x.win||x.k!==T.k);G.yt.push(T);
   news(T.name+' '+T.lbl+': '+T.teams.length+(T.kind==='nat'?' seleções inscritas':' clubes inscritos')+'. A bola rola em '+fdate(T.rounds[0].d,true)+'.',ytCat(T));
   cs.forEach(p=>{const k=T.teams.find(k=>T.sq[k].includes(p.id));p.morale=clamp(p.morale+(T.kind==='nat'?8:4),0,100);p.fame=clamp(p.fame+(T.kind==='nat'?4:2),0,100);if(T.kind==='nat')addRep(.4);
     news(p.name+(T.kind==='nat'?' foi convocado por '+k+' para o ':' está na lista do '+ytName(T,k)+' para '+ytA(T)+' ')+T.name+' '+T.lbl+'.',ytCat(T));});
+  if(!cs.length)pop({k:'info',ic:T.kind==='nat'?'flag':'cup',ti:T.name+' '+T.lbl+(T.k==='SM'?': sorteio feito':' vai começar'),tx:T.teams.length+(T.kind==='nat'?' seleções':' clubes')+' em '+T.groups.length+' grupos. A bola rola em '+fdate(T.rounds[0].d,true)+'. Grupos e jogos em Competições.',ch:[]});
   if(cs.length)pop({k:'good',ic:T.kind==='nat'?'flag':'cup',ti:T.kind==='nat'?'Convocado para o '+T.name+'!':'Vai disputar '+ytA(T)+' '+T.name+'!',tx:cs.map(p=>p.name).join(', ')+(cs.length>1?' estão':' está')+' na lista '+ytDe(T)+' '+T.name+' '+T.lbl+'.',ch:[['Fama +','good'],['Moral +','good']]});}
 function ytStartCOP(Y){const cs=G.clubs.filter(isBRtop).sort((a,b)=>teamStr(b.id)-teamStr(a.id)).slice(0,32);if(cs.length<16)return;const n=cs.length>=32?32:16,use=cs.slice(0,n);
   const sq={},teams=[];use.forEach(c=>{baseFill(c,16);const s=ntPick(ytPool(c,21));if(s.length>=11){sq[c.id]=s;teams.push(String(c.id));}});if(teams.length<16)return;
