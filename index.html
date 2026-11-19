@@ -3078,7 +3078,7 @@ function dayTriggers(d){const t=ymd(d);
   ['eu','sa'].forEach(reg=>{const a=winOpen(reg,d),b=winOpen(reg,d-1);if(a&&!b){G.clubs.forEach(c=>{if(regOf(c)===reg){c.arr=0;c.lo=0;c.li=0;}});news('Abriu a janela de transferências '+(reg==='eu'?'na Europa':'no Brasil e na América do Sul')+'.','transf');}
     if(!a&&b){news('Fechou a janela de transferências '+(reg==='eu'?'na Europa':'no Brasil e na América do Sul')+'.','transf');G.clients.forEach(id=>{const p=G.P[id];const c=club(p);if(p.promise&&c&&regOf(c)===reg){p.promise=null;p.trust=clamp(p.trust-25,0,100);p.morale=clamp(p.morale-15,0,100);news('A janela fechou e você não cumpriu a promessa de transferir '+p.name+'. Ele está furioso.','agencia');}});}});
   worldDay(d,t);}
-function nextWeek(){if(!G||G.over||G.ntc||G.paper||G.yrec||(G.phoneQ&&G.phoneQ.length)||(G.cer&&G.cer.length)||G.neg||G.events.length||G.evRes||G.summ.length||G.wk||(G.smq&&G.smq.length)||ui.modal)return;
+function nextWeek(){if(G&&G.smPend&&G.smPend.length&&!(G.smq&&G.smq.length))smFlush();if(!G||G.over||G.ntc||G.paper||G.yrec||(G.phoneQ&&G.phoneQ.length)||(G.cer&&G.cer.length)||G.neg||G.events.length||G.evRes||G.summ.length||G.wk||(G.smq&&G.smq.length)||ui.modal)return;
   const snap={},rep0=G.rep,off0=G.offers.length,d0=G.d;G.clients.forEach(id=>{const p=G.P[id];snap[id]={ovr:p.ovr,inj:p.injury,m:p.morale,t:p.trust};});G.wlog=[];
   fxWeek();let inc=0;G.clients.forEach(id=>{const p=G.P[id];if(p.club!=null)inc+=p.wage*(p.comm||0)/100*fxMul(club(p));});
   let exp=fixedCost();inc=Math.round(inc);G.money+=inc-exp;G.last={inc,exp};const mFx=G.money,i0=inc,e0=exp;G.stats.earned+=inc;
@@ -3562,7 +3562,7 @@ const PIC={
 };
 const popQ=[];let popCur=null;
 function popIcon(k){return'<svg viewBox="0 0 28 28" width="44" height="44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(PIC[k]||PIC.ball)+'</svg>';}
-function pop(o){if(typeof window==='undefined'||typeof document==='undefined'||!document.getElementById||!document.getElementById('pop'))return;popQ.push(o);if(!popCur)try{popNext();}catch(e){popQ.length=0;popCur=null;}}
+function pop(o){if(G&&G._popDefer){(G.smPend||(G.smPend=[])).push(o);return;}if(typeof window==='undefined'||typeof document==='undefined'||!document.getElementById||!document.getElementById('pop'))return;popQ.push(o);if(!popCur)try{popNext();}catch(e){popQ.length=0;popCur=null;}}
 function popNext(){const el=$('#pop');clearTimeout(popNext.t);if(!popQ.length){popCur=null;if(el){el.hidden=true;el.innerHTML='';}return;}
   const o=popCur=popQ.shift();const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   const show=()=>{const parts=o.k==='good'?'<i class="pp"></i>'.repeat(14):'';
@@ -3893,12 +3893,13 @@ function ytDay(d){liveYT().forEach(T=>{
     s.done=1;if(k===T.ko.length-1)ytEnd(T,s.ties[0]);});});}
 const ytAvg=x=>x.s[2]/x.s[0]/10;
 function ytScore(x){return ytAvg(x)+x.s[1]*.15+Math.min(x.s[0],7)*.03;}
-function ytEnd(T,fin){T.win=fin.w;const ru=fin.w===fin.a?fin.b:fin.a,ps=Object.keys(T.st).map(id=>({p:G.P[id],s:T.st[id]})).filter(x=>x.p);
+function ytEnd(T,fin){if(T.k==='SM'&&G.smq&&G.smq.length){G._popDefer=1;try{ytEnd0(T,fin);}finally{G._popDefer=0;}return;}ytEnd0(T,fin);}
+function ytEnd0(T,fin){T.win=fin.w;const ru=fin.w===fin.a?fin.b:fin.a,ps=Object.keys(T.st).map(id=>({p:G.P[id],s:T.st[id]})).filter(x=>x.p);
   news(T.name+' '+T.lbl+': '+ytName(T,T.win)+' conquista o título ao vencer '+ytName(T,ru)+' na final'+(fin.pen?', nos pênaltis':'')+'.',ytCat(T));
   if(T.kind==='club'){const c=G.clubs[+T.win];if(c)c.tro.push(T.sh+' '+T.lbl);}
   T.sq[T.win].forEach(id=>{const p=G.P[id];if(!p)return;honAdd(p,'Título: '+T.name+' '+T.lbl);
     if(p.ag===0){p.fame=clamp(p.fame+6,0,100);p.morale=clamp(p.morale+10,0,100);addRep(T.k==='SM'?2.5:T.kind==='nat'?1.2:.6);p.fame=clamp(p.fame+(T.k==='SM'?6:0),0,100);news(p.name+' conquistou '+ytA(T)+' '+T.name+' '+T.lbl+'.',ytCat(T));
-      pop({k:'good',ic:'cup',ti:'Campeão na base!',tx:p.name+' conquistou '+ytA(T)+' '+T.name+' '+T.lbl+' com '+(T.kind==='nat'?'a seleção ('+T.win+')':'o '+ytName(T,T.win))+'.',ch:[['Fama +6','good'],['Reputação +','good']]});}});
+      pop({k:'good',ic:'cup',ti:T.k==='SM'?'Campeão do Super Mundial!':'Campeão na base!',tx:p.name+' conquistou '+ytA(T)+' '+T.name+' '+T.lbl+' com '+(T.kind==='nat'?'a seleção ('+T.win+')':'o '+ytName(T,T.win))+'.',ch:[['Fama +6','good'],['Reputação +','good']]});}});
   const top=ps.slice().sort((a,b)=>b.s[1]-a.s[1]||ytAvg(b)-ytAvg(a))[0],best=ps.filter(x=>x.s[0]>=3).sort((a,b)=>ytScore(b)-ytScore(a))[0]||top;
   if(top&&top.s[1]>0)award(T.lbl,'Artilheiro ('+T.sh+')',top.p,top.s[1]+' gols');if(best)award(T.lbl,'Craque ('+T.sh+')',best.p);
   /* revelações: quem mais brilhou e não é seu cliente. Ganham fama, e o melhor da base sobe para o profissional */
@@ -3994,6 +3995,8 @@ function smStart(Y){if(G.yt&&G.yt.some(T=>T.k==='SM'&&T.Y===Y))return;const q=sm
   news('Sorteio do Super Mundial de Clubes '+Y+': 64 clubes de '+n+' países em '+T.groups.length+' grupos. As ligas param entre 14 de junho e 14 de julho'+(mv?' e as rodadas desse período foram remarcadas':'')+'.','liga');
   G.clients.forEach(id=>{const p=G.P[id],c=club(p);if(c&&ids.includes(c.id)){p.morale=clamp(p.morale+6,0,100);p.fame=clamp(p.fame+3,0,100);}});}
 /* fila para ver os jogos um a um */
+/* depois do último jogo mostrado, saem os avisos que esperavam (campeão, prêmios) */
+function smFlush(){if(G.smq&&G.smq.length)return;const a=G.smPend||[];G.smPend=[];a.forEach(o=>pop(o));}
 function smQueue(T,ref){if(T.k!=='SM')return;(G.smq||(G.smq=[])).push(ref);}
 function smRef(r){const T=(G.yt||[]).find(x=>x.id===r.t);if(!T)return null;if(r.g!=null){const R=T.rounds[r.g],m=R.m[r.i];return{T,a:m[0],b:m[1],ga:m[2],gb:m[3],sa:m[4]||[],sb:m[5]||[],d:R.d,stage:'Fase de grupos · '+(r.g+1)+'ª rodada',grp:'Grupo '+'ABCDEFGHIJKLMNOP'[T.groups.findIndex(g=>g.includes(m[0]))]};}
   const S=T.ko[r.k],t=S.ties[r.i];return{T,a:t.a,b:t.b,ga:t.ga,gb:t.gb,sa:t.sa||[],sb:t.sb||[],d:S.d,stage:S.n,pen:t.pen,w:t.w};}
@@ -6820,7 +6823,7 @@ const A={
   scout(d){scout(d.r);},
   observe(d){const p=G.P[d.p];if(!useAP())return;p.obs=(p.obs||0)+1;p.potErr=Math.max(1,p.potErr*(.55-.06*G.me.olh));pop({k:'info',ic:'report',wait:1100,wt:'Observando '+p.name+'…',ti:'Relatório pronto',tx:'Potencial de '+p.name+': '+potTxt(p)+'.'});save();render();},
   sign(d){const p=G.P[d.p];if((p.signCool||0)>G.d){toast('Ele pediu um tempo.');return;}ui.stack=[];ui.modal={type:'sign',pid:p.id};render();},
-  signgo(){signGo();},smshow(){ui.smShow=1;render();},ytv(d){ui.ytv=ui.ytv||{};ui.ytv[d.t]=d.v;render();},smgo(){const i=(G.yt||[]).findIndex(T=>T.k==='SM'&&!T.win);ui.tab='ligas';ui.stack=[];if(i>=0)ui.comp='Y'+i;render();window.scrollTo(0,0);},smoff(){ui.smOff=!ui.smOff;render();window.scrollTo(0,0);},smnext(){if(G.smq)G.smq.shift();ui.smShow=0;save();render();},smskip(){G.smq=[];ui.smShow=0;save();render();},signctr(){const m=ui.modal;if(m&&m.ctr){const p=G.P[m.pid];if(G.clients.length>=cap()){toast('Carteira cheia. Suba de patamar ou dispense alguém.');return;}signDone(p,m.ctr);}},
+  signgo(){signGo();},smshow(){ui.smShow=1;render();},ytv(d){ui.ytv=ui.ytv||{};ui.ytv[d.t]=d.v;render();},smgo(){const i=(G.yt||[]).findIndex(T=>T.k==='SM'&&!T.win);ui.tab='ligas';ui.stack=[];if(i>=0)ui.comp='Y'+i;render();window.scrollTo(0,0);},smoff(){ui.smOff=!ui.smOff;render();window.scrollTo(0,0);},smnext(){if(G.smq)G.smq.shift();ui.smShow=0;smFlush();save();render();},smskip(){G.smq=[];ui.smShow=0;smFlush();save();render();},signctr(){const m=ui.modal;if(m&&m.ctr){const p=G.P[m.pid];if(G.clients.length>=cap()){toast('Carteira cheia. Suba de patamar ou dispense alguém.');return;}signDone(p,m.ctr);}},
   offer(d){const o=G.offers.find(x=>x.id===+d.o);if(!o)return;openNeg(G.P[o.pid],G.clubs[o.cid],o.fee,'offer',o.id,o.tries);},
   refuse(d){const o=G.offers.find(x=>x.id===+d.o);if(!o)return;const p=G.P[o.pid],c=G.clubs[o.cid],cur=club(p);G.offers=G.offers.filter(x=>x!==o);relAdd(c,-3);
     if(cur&&prest(c)>prest(cur)+2){p.trust=clamp(p.trust-6,0,100);news(p.name+' soube que você recusou o '+c.n+' sem consultá-lo e não gostou.','agencia');}pop({k:'info',ic:'bin',ti:'Proposta descartada',tx:'A proposta do '+c.n+' por '+p.name+' foi recusada.'});save();render();},
