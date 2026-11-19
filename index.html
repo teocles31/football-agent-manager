@@ -2327,7 +2327,10 @@ const contractEnd=(c,years)=>alignCE(curMonth()+years*12-1,regOf(c));
 /* ================= GERAÇÃO DE JOGADORES ================= */
 let NAMESET=null;
 function genName(nat){if(!NAMESET)NAMESET=new Set(allP().map(p=>p.name));const L=NAMES[nat]||NAMES.XX,F=L[0].split(','),S=L[1].split(',');
-  for(let i=0;i<40;i++){const n=pick(F)+' '+pick(S);if(!NAMESET.has(n)){NAMESET.add(n);return n;}}const n=pick(F)+' '+pick(S)+' '+ri(2,99);NAMESET.add(n);return n;}
+  for(let i=0;i<40;i++){const n=pick(F)+' '+pick(S);if(!NAMESET.has(n)){NAMESET.add(n);return n;}}
+  /* nomes simples esgotados: nome com dois sobrenomes, como é comum no Brasil e na América do Sul */
+  for(let i=0;i<80;i++){const a=pick(S),b=pick(S);if(a===b)continue;const n=pick(F)+' '+a+' '+b;if(!NAMESET.has(n)){NAMESET.add(n);return n;}}
+  for(let i=0;i<80;i++){const n=pick(F)+' '+pick(F)+' '+pick(S);if(!NAMESET.has(n)){NAMESET.add(n);return n;}}const n=pick(F)+' '+pick(S)+' '+pick(S)+' '+pick(S);NAMESET.add(n);return n;}
 function natFor(c){const L=LG[c.lg];let nat=L.ext?(NAT_OF[c.cn]||'XX'):L.nat;if(Math.random()<(L.id==='bra'?.03:L.ext?.15:.25))nat=pick(L.reg==='sa'?['BR','AR']:Object.keys(NAMES));return nat;}
 function newPlayer(o){const p=Object.assign({id:G.nid++,real:0,trait:pick(Object.keys(TRAIT)),morale:65,fame:0,club:null,wage:0,ce:0,ag:-1,injury:0,st:{},lr:[],fat:0,ovr:50,pot:50,age:20,pos:'MEI'},o);
   if(p.av==null)p.av=hash(p.name)%20;if(p.pot<p.ovr)p.pot=p.ovr;if(p.pk==null)p.pk=p.ovr;G.P[p.id]=p;if(p.yb)YIDX=null;else if(IDX&&p.club!=null)(IDX[p.club]||(IDX[p.club]=[])).push(p);if(p.club!=null)delete STR[p.club];return p;}
@@ -2335,6 +2338,8 @@ function agFor(p){if(p.age<=19&&Math.random()<.5)return -1;if(p.ovr<64&&Math.ran
 function genFor(c,pos,kind){const s=c.str,nat=natFor(c);let age,ovr,pot;
   if(kind==='youth'){age=ri(17,19);ovr=s-ri(10,16);pot=clamp(s+ri(-3,9),ovr+3,95);}
   else if(kind==='starter'){age=ri(21,31);ovr=s-ri(0,3);pot=age<=23?ovr+ri(2,8):ovr;}
+  /* reposição no meio da temporada: reserva de nível médio, nunca um craque inventado */
+  else if(kind==='fill'){age=ri(20,30);ovr=s-ri(7,13);pot=age<=23?ovr+ri(2,8):ovr;}
   else{age=ri(19,33);ovr=s-ri(3,9);pot=age<=23?ovr+ri(2,10):ovr;}
   const p=newPlayer({name:genName(nat),pos,age,ovr,pot,club:c.id,nat});
   p.wage=nice(wageRef(ovr,c.lg)*rnd(.8,1.2)*(age<=19?.5:1));p.ce=alignCE(curMonth()+ri(6,48),regOf(c));p.fame=clamp((ovr-65)*2,0,60);p.ag=agFor(p);return p;}
@@ -2678,7 +2683,7 @@ function aiMarket(){const free=allP().filter(p=>p.club==null&&p.ag!==0&&!G.prosp
     if(sq.length<21&&free.length){const nd=needOf(c),fs=free.filter(p=>p.pos===nd.pos&&roomFor(c,p.pos)&&p.ovr>=teamStr(c.id)-12&&freeFits(c,p)&&fitW(c,p)>.08);
       const cand=wpick(fs.sort((a,b)=>b.ovr-a.ovr).slice(0,6),p=>fitW(c,p)*(p.ovr-teamStr(c.id)+14));
       if(cand){free.splice(free.indexOf(cand),1);doTransfer(cand,c,0,'livre');continue;}}
-    if(squad(c.id).length<20){genFor(c,needOf(c).pos,squad(c.id).length<18?'starter':'youth');continue;}
+    if(squad(c.id).length<20){baseFor(c,needOf(c).pos);continue;}
     if(!winOpen(regOf(c)))continue;
     /* elenco acima do limite na posição: o clube cede um excedente por vez durante a janela */
     if(Math.random()<.3){let w=null,wx=0;POS.forEach(pos=>{const x=posCnt(c,pos)-POS_MAX[pos];if(x>wx){wx=x;w=pos;}});if(w)shedOne(c,w);}
@@ -3152,7 +3157,14 @@ function fixedCost(){let e=lvl().cost+offUpkeep();STAFF.forEach(s=>e+=STAFF_WAGE
 /* correções de dados aplicadas uma vez nos saves antigos: [clube, nome, posição, overall errado mínimo, overall, potencial] */
 const DATA_FIX=[['Criciúma','Alisson','GOL',64,62,62],['Novorizontino','Rômulo','ATA',67,65,71],['RB Leipzig','Rômulo','ATA',76,74,80],['Cuiabá','Pepê','MEI',67,65,65],['Porto','Pepê','ATA',76,74,74],['Paços de Ferreira','Wesley','ATA',65,63,74],['Académico de Viseu','Juan Soriano','GOL',63,61,63],['Leganés','Juan Soriano','GOL',66,64,66],['Al Khaleej','Konstantinos Fortounis','MEI',63,61,61],['Olympiacos','Konstantinos Fortounis','MEI',70,68,68],['São Paulo','João Pedro','GOL',63,61,69],['Grêmio','João Pedro','LAT',73,71,73],['Fluminense','Alisson','MEI',73,71,71]];
 function dataFix(){G.fixd=G.fixd||{};DATA_FIX.forEach(f=>{const k=f.join('|');if(G.fixd[k])return;G.fixd[k]=1;Object.values(G.P).forEach(p=>{const c=club(p);if(c&&c.n===f[0]&&p.name===f[1]&&p.pos===f[2]&&p.ovr>=f[3]){p.ovr=f[4];p.pot=f[5];p.pk=Math.min(p.pk||f[4],f[4]);p.fame=Math.min(p.fame,20);c.str=Math.round(teamStr(c.id));if(G.nt&&G.nt.sq)for(const n in G.nt.sq)G.nt.sq[n]=G.nt.sq[n].filter(id=>id!==p.id);}});});}
-function migrate(){baseSeed();dataFix();ownInstall();ntReflow();porAdd();porReal();porAdj();porSync();fcSync();G.me=G.me||newMe();evoMigrate();G.office=G.office||newOffice();G.fc=G.fc||[];if(G.inv===undefined)G.inv=null;if(G.pol===undefined)G.pol=null;
+/* fictícios criados como titulares em clubes com elenco real: voltam a nível de reserva (uma vez) */
+function fakeFix(){if(G._fakeFix)return;G._fakeFix=1;const pros=new Set(G.prospects);let n=0;
+  Object.values(G.P).forEach(p=>{const c=club(p);if(!c||p.real||p.yb||p.ag===0||pros.has(p.id)||p.gen||!REAL[c.n]||p.age<21)return;
+    if(p.ovr>=c.str-4){const o=p.ovr;p.ovr=Math.max(45,c.str-ri(7,12));p.pot=Math.max(p.ovr,p.pot-(o-p.ovr));p.pk=Math.min(p.pk||p.ovr,p.ovr);p.fame=Math.min(p.fame,25);n++;
+      if(G.nt&&G.nt.sq)for(const k in G.nt.sq)G.nt.sq[k]=G.nt.sq[k].filter(id=>id!==p.id);}});
+  if(n){G.clubs.forEach(c=>c.str=Math.round(teamStr(c.id)));dirty();}}
+function nameFix(){if(G._nameFix)return;G._nameFix=1;NAMESET=null;Object.values(G.P).forEach(p=>{if(!p.real&&p.ag!==0&&/ \d+$/.test(p.name)){p.name=genName(p.nat||'XX');p.fk=null;}});DUPN=null;DUP2=null;}
+function migrate(){baseSeed();dataFix();fakeFix();nameFix();ownInstall();ntReflow();porAdd();porReal();porAdj();porSync();fcSync();G.me=G.me||newMe();evoMigrate();G.office=G.office||newOffice();G.fc=G.fc||[];if(G.inv===undefined)G.inv=null;if(G.pol===undefined)G.pol=null;
   if(G.own){G.own.role=G.own.role||'dono';if(G.own.pct==null)G.own.pct=100;}
   G.clubs.forEach(c=>{c.cf=c.cf||newCf();c.sack=c.sack||0;});if(!G.rc)applyRealCoaches(true);
   if(!G.hfix)fixHomonyms();
@@ -3689,13 +3701,16 @@ function hofAdd(p){const c=club(p),pk=Math.max(p.pk||0,p.ovr);if(pk<82&&p.fame<6
   G.hof.unshift({n:p.name,pos:p.pos,age:p.age,pk,y:ymd(G.d).y,cl:c?c.n:'',caps:p.nt?p.nt[0]:0,gl:p.nt?p.nt[1]:0,hon:(p.hon||[]).slice(-4),mine:p.ag===0?1:0});if(G.hof.length>400)G.hof.length=400;}
 function retireP(p,keepEv){const c=club(p),pos=p.pos;hofAdd(p);if(p.ag===0)alumAdd(p,c);
   if(p.ag===0){G.clients=G.clients.filter(i=>i!==p.id);G.offers=G.offers.filter(o=>o.pid!==p.id);if(!keepEv)G.events=G.events.filter(e=>e.pid!==p.id);}
-  delete G.P[p.id];dirty();if(c&&!baseUp(c,pos))genFor(c,pos,'youth');}
-/* vaga no elenco: o clube sobe o melhor garoto da base naquela posição (ou o melhor de todos), se tiver nível */
-function baseUp(c,pos){if(squad(c.id).length>=30)return null;const ts=teamStr(c.id),b=baseOf(c.id).filter(p=>p.age>=17&&p.ovr>=ts-16).sort((a,b)=>(b.pos===pos)-(a.pos===pos)||b.ovr+b.pot*.3-(a.ovr+a.pot*.3));if(!b.length)return null;basePromote(b[0],'para ocupar uma vaga no elenco');return b[0];}
+  delete G.P[p.id];dirty();if(c&&squad(c.id).length<22)baseFor(c,pos);}
+/* vaga no elenco: sobe sempre um garoto da base do clube. Primeiro o melhor da posição, depois o de uma posição vizinha, depois o melhor de todos, mesmo que seja fraco. Jogador novo só nasce na base. */
+function baseFor(c,pos){let b=baseOf(c.id);if(!b.length){baseFill(c,isBRtop(c)?16:10);b=baseOf(c.id);}if(!b.length)return null;const sc=p=>p.ovr+p.pot*.25+(p.age>=17?3:0),by=ps=>b.filter(p=>p.pos===ps).sort((x,y)=>sc(y)-sc(x))[0];
+  let p=by(pos);if(!p)for(const q of (NEAR_POS[pos]||[])){p=by(q);if(p)break;}if(!p)p=b.slice().sort((x,y)=>sc(y)-sc(x))[0];basePromote(p,'para ocupar uma vaga no elenco');return p;}
+function baseUp(c,pos){if(squad(c.id).length>=30)return null;return baseFor(c,pos);}
 /* safra do ano: um ou dois garotos de 16–17 anos por clube; poucos são joias de verdade */
 function intake(region,Y){if(region!=='sa')baseYear(region);const born=[];G.clubs.forEach(c=>{if(regOf(c)!==region)return;const n=Math.random()<.35?2:1;
-    /* clube com categoria de base: a safra vem de lá (os melhores garotos sobem); sem base, nasce um garoto novo no elenco */
-    if(baseOf(c.id).length>=8){const b=baseOf(c.id).filter(p=>p.age>=17&&squad(c.id).length<32).sort((a,b)=>b.ovr+b.pot*.4-(a.ovr+a.pot*.4)).slice(0,n);b.forEach(p=>{basePromote(p,'na virada da temporada');p.gen=Y;born.push(p);});if(b.length){if(!isOwn(c))trimSquad(c);return;}}
+    /* a safra nasce na categoria de base e os melhores garotos sobem; ninguém nasce direto no elenco principal */
+    baseFill(c,baseOf(c.id).length>=12||isBRtop(c)?16:10);
+    if(baseOf(c.id).length>=8){const b=baseOf(c.id).filter(p=>p.age>=17&&squad(c.id).length<32).sort((a,b)=>b.ovr+b.pot*.4-(a.ovr+a.pot*.4)).slice(0,n);b.forEach(p=>{basePromote(p,'na virada da temporada');p.gen=Y;born.push(p);});if(!isOwn(c))trimSquad(c);return;}
     for(let i=0;i<n;i++){const p=genFor(c,pick(POS),'youth'),r=Math.random();p.age=ri(16,17);p.ovr=clamp(Math.round(c.str-ri(13,20)),45,74);
       p.pot=Math.max(p.ovr+4,r<.03?ri(88,95):r<.13?ri(82,89):clamp(c.str+ri(-6,7),60,90));p.gen=Y;p.fame=0;p.pk=p.ovr;p.wage=nice(wageRef(p.ovr,c.lg)*.4);born.push(p);}
     if(!isOwn(c))trimSquad(c);});
