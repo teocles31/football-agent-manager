@@ -4524,7 +4524,9 @@ function mTitle(c){const cl=c.kind==='club'?G.clubs[+c.win]:null,nm=cl?cl.n:Stri
   if(ps.length)h+='<h3 class="cer-t">'+(ps.length>1?'Seus clientes campeões':'Seu cliente campeão')+'</h3><div class="aw-cards">'+ps.map((p,i)=>'<div class="awc me" style="--dl:'+(1.2+i*.2).toFixed(2)+'s">'+cerAv({pid:p.id},60)+'<b>'+esc(p.name)+'</b><span class="aws">'+esc((x=>x.charAt(0).toUpperCase()+x.slice(1))(POSN[p.pos]||p.pos))+' · '+p.ovr+'</span><span class="mineb">Fama + · Reputação +</span></div>').join('')+'</div>';
   const aw=(c.aw||[]).filter(a=>G.P[a[1]]);
   if(aw.length)h+='<h3 class="cer-t">Destaques</h3><div class="aw-cards">'+aw.map((a,i)=>{const p=G.P[a[1]],me=p.ag===0;return'<div class="awc'+(me?' me':'')+'" style="--dl:'+(1.6+i*.25).toFixed(2)+'s"><span class="awi">'+svgI(i?'star':'ball',22)+'</span><span class="awk">'+esc(a[0])+'</span>'+cerAv({pid:p.id},52)+'<b>'+esc(p.name)+'</b><span class="aws">'+esc((club(p)?club(p).n:'')+(a[2]?' · '+a[2]:''))+'</span>'+(me?'<span class="mineb">Seu cliente</span>':'')+'</div>';}).join('')+'</div>';
-  return h+'<div class="acts cer-a"><button class="btn pri big" data-a="cerok">Comemorar</button></div></div>';}
+  /* só comemora quem ganhou: cliente campeão, seu clube ou cliente premiado; nos outros casos o botão só cumprimenta o campeão */
+  const won=ps.length||c.own||aw.some(a=>G.P[a[1]].ag===0);
+  return h+'<div class="acts cer-a"><button class="btn pri big" data-a="cerok">'+(won?'Comemorar':'Parabéns ao campeão')+'</button></div></div>';}
 function mCer(c){if(c.k==='title')return mTitle(c);const pc=x=>{const pl=c.pod.indexOf(x)+1;
     return'<div class="pc p'+pl+'" style="--dl:'+(pl===1?1.1:pl===2?.6:.3)+'s">'+(pl===1?'<span class="crown">'+svgI('cup',26)+'</span>':'')+'<span class="plc">'+pl+'º</span>'+cerAv(x,pl===1?84:62)+'<b class="pn">'+esc(x.n)+'</b><span class="pm">'+(x.cid!=null&&G.clubs[x.cid]?crest(G.clubs[x.cid],18)+' ':'')+esc(x.cl||'')+'</span>'+(x.mine?'<span class="mineb">Seu cliente</span>':'')+'<span class="step">'+(pl===1?'Bola de Ouro':pl+'º lugar')+'</span></div>';};
   return'<div class="sheet cer">'+confetti(28)+'<div class="cer-h"><span class="cer-ey">Gala da premiação · 26 de outubro de '+esc(c.y)+'</span><h2>Bola de Ouro '+esc(c.y)+'</h2></div>'+
@@ -5416,7 +5418,7 @@ function mSlots(inGame){return'<div class="sheet slots"><span class="eyebrow">Fo
   (inGame?'<h3 class="menu-t">Opções</h3><div class="acts"><button class="btn" data-a="edit">Editar fotos e patrocinadores</button><button class="btn" data-a="slotsave">Salvar agora</button></div>':'')+
   '<h3 class="menu-t">Versão do jogo</h3><div class="updb"><div class="grow"><b>Atualizações</b><span class="small muted">'+esc(verTxt(APP_V))+'</span>'+(ui.upd?'<span class="small '+(ui.upd.k||'')+'">'+esc(ui.upd.t)+'</span>':'')+'</div><button class="btn pri" data-a="updchk"'+(ui.upd&&ui.upd.busy?' disabled':'')+'>Buscar atualização</button></div>'+(inGame?'<div class="acts"><button class="btn pri big" data-a="close">Voltar ao jogo</button></div>':'')+'</div>';}
 /* versão: o script de publicação grava a data e a hora em APP_V. O botão baixa a página publicada sem cache e, se ela for mais nova, salva e recarrega. */
-const APP_V='202611191659';
+const APP_V='202611191701';
 const verTxt=v=>/^\d{12}$/.test(v)?'Publicada em '+v.slice(6,8)+'/'+v.slice(4,6)+'/'+v.slice(0,4)+' às '+v.slice(8,10)+':'+v.slice(10,12):'Versão de teste';
 async function updChk(){ui.upd={t:'Procurando…',busy:1};render();
   try{const r=await fetch(location.pathname+'?chk='+Date.now(),{cache:'no-store'}),t=await r.text(),m=t.match(/const APP_V='(\d{12})'/),nv=m?m[1]:null;
