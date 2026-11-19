@@ -143,7 +143,10 @@ table.mini td,table.mini th{padding:4px 6px}
 .sheet{position:relative;background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:var(--r);width:min(100%,640px);padding:18px 20px 20px;display:flex;flex-direction:column;gap:12px}
 .sheet.wide{width:min(100%,920px)}.sheet h2{font-size:26px;text-transform:uppercase;letter-spacing:.03em;line-height:1.05}
 .eyebrow{font-size:11.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink2);font-weight:600}
-.pl-head,.neg-h{display:flex;gap:14px;align-items:center;flex-wrap:wrap}.pl-ovr{display:flex;flex-direction:column;align-items:center;gap:2px}
+.pl-head,.neg-h{display:flex;gap:14px;align-items:center;flex-wrap:wrap}.pl-ovr{display:flex;flex-direction:row;align-items:center;gap:10px;margin-top:6px}.pl-pot{display:flex;flex-direction:column;line-height:1.15}.pl-pot b{font-family:var(--f-d);font-size:20px}
+.pl-head{flex-wrap:nowrap;align-items:flex-start}.pl-head>.grow{display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-width:0;padding-right:44px}.pl-head h2{margin:0;line-height:1.05;overflow-wrap:anywhere}
+.kpi b small{display:block;font-family:var(--f-b,inherit);font-size:11px;font-weight:400;color:var(--ink2);margin-top:2px}
+.pl-club{display:flex;align-items:center;flex-wrap:wrap;gap:6px 8px}.pl-club .chip{margin:0}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media (max-width:700px){.two{grid-template-columns:1fr}}
 .sparks{display:flex;gap:8px;align-items:flex-end;height:70px}.sparks>div{display:flex;flex-direction:column;align-items:center;gap:2px;height:100%;justify-content:flex-end;width:34px}
 .sparks i{display:block;width:100%;background:var(--info);border-radius:3px 3px 0 0;min-height:4px}.sparks i.hi{background:var(--good)}.sparks i.lo{background:var(--bad)}.sparks span{font-size:11px}
@@ -451,7 +454,8 @@ tr.sel td{background:color-mix(in srgb,var(--rose) 16%,transparent)}
 .mtile{display:flex;flex-direction:column;align-items:center;gap:4px;padding:9px 3px;border:1px solid var(--line);border-radius:var(--r);background:var(--bg);color:var(--ink);cursor:pointer;font:inherit;font-size:11.5px;font-weight:600;line-height:1.15;text-align:center;min-width:0}
 .mtile svg{color:var(--teal)}.mtile[aria-pressed="true"]{border:2px solid var(--gold);padding:8px 2px;background:color-mix(in srgb,var(--gold) 14%,var(--bg))}
 .mdesc{background:var(--surface2);border-radius:var(--r);padding:8px 11px;font-size:13px;line-height:1.4}.mdesc span{font-weight:700}
-@media (max-width:480px){.mtiles{grid-template-columns:repeat(3,minmax(0,1fr))}.sheet.start .st-top h2{font-size:20px}.sheet.start .st-top .st-logo{width:54px;height:54px}.mini3 b{font-size:15px}.mini3>div{padding:5px 7px}.prow b{font-size:12.5px}}
+@media (max-width:480px){.mtiles{grid-template-columns:repeat(3,minmax(0,1fr))}.sheet.start .st-top h2{font-size:20px}.sheet.start .st-top .st-logo{width:54px;height:54px}.mini3 b{font-size:15px}.mini3>div{padding:5px 7px}.prow b{font-size:12.5px}
+.prow b{white-space:normal;overflow-wrap:anywhere;line-height:1.15}.prow small{white-space:normal;line-height:1.2}}
 /* ===== colunas niveladas e calendário ===== */
 .pcols{align-items:stretch}.pcols>.card{height:100%}.pcol>.c-gray{flex:1 1 auto}
 .calnav{display:flex;align-items:center;gap:6px}.calnav b{font-family:var(--f-d);font-size:16px;text-transform:uppercase;letter-spacing:.05em;min-width:78px;text-align:center}
@@ -5420,7 +5424,7 @@ function mSlots(inGame){return'<div class="sheet slots"><span class="eyebrow">Fo
   (inGame?'<h3 class="menu-t">Opções</h3><div class="acts"><button class="btn" data-a="edit">Editar fotos e patrocinadores</button><button class="btn" data-a="slotsave">Salvar agora</button></div>':'')+
   '<h3 class="menu-t">Versão do jogo</h3><div class="updb"><div class="grow"><b>Atualizações</b><span class="small muted">'+esc(verTxt(APP_V))+'</span>'+(ui.upd?'<span class="small '+(ui.upd.k||'')+'">'+esc(ui.upd.t)+'</span>':'')+'</div><button class="btn pri" data-a="updchk"'+(ui.upd&&ui.upd.busy?' disabled':'')+'>Buscar atualização</button></div>'+(inGame?'<div class="acts"><button class="btn pri big" data-a="close">Voltar ao jogo</button></div>':'')+'</div>';}
 /* versão: o script de publicação grava a data e a hora em APP_V. O botão baixa a página publicada sem cache e, se ela for mais nova, salva e recarrega. */
-const APP_V='202611191721';
+const APP_V='202611191724';
 const verTxt=v=>/^\d{12}$/.test(v)?'Publicada em '+v.slice(6,8)+'/'+v.slice(4,6)+'/'+v.slice(0,4)+' às '+v.slice(8,10)+':'+v.slice(10,12):'Versão de teste';
 async function updChk(){ui.upd={t:'Procurando…',busy:1};render();
   try{const r=await fetch(location.pathname+'?chk='+Date.now(),{cache:'no-store'}),t=await r.text(),m=t.match(/const APP_V='(\d{12})'/),nv=m?m[1]:null;
@@ -6732,9 +6736,10 @@ function mPlayer(p){const c=club(p),t=seasonTot(p),own=ownC();
   else if(!G.prospects.includes(p.id)){const ch=signChance(p,0),cool=(p.signCool||0)>G.d;acts+='<button class="btn pri" data-a="sign" data-p="'+p.id+'"'+(cool||ch===0?' disabled':'')+'>'+(cool?'Pediu um tempo':ch===0?'Não atende você (reputação baixa)':'Negociar representação')+'</button>';}
   if(own&&c&&c.id!==own.id&&!isClient(p))acts+='<button class="btn" data-a="hireclub" data-p="'+p.id+'"'+(winOpen(regOf(own))&&settled(p)?'':' disabled')+'>Contratar para o '+esc(own.n)+' <small>'+fmt(nice(value(p)*1.15))+'</small></button>';
   return'<div class="sheet wide"><div class="pl-head">'+avatar(p,88)+'<div class="grow"><span class="eyebrow">'+POSN[p.pos]+' · '+p.age+' anos'+(natName(p)?' · '+flagS(natName(p))+esc(natName(p)):'')+'</span><h2>'+esc(p.name)+'</h2>'+
-   '<div class="small">'+(c?clubLink(c,18):'<b>Sem clube</b>')+(p.yb?' <span class="chip info">Categoria de base</span>':'')+(p.loan?' <span class="chip info">emprestado pelo '+esc(G.clubs[p.loan.from].n)+'</span>':'')+'</div>'+
-   '<div class="small muted">'+(p.ag===0?'Sua agência':p.ag>0?'Empresário: <button class="lnk" data-a="agency" data-i="'+p.ag+'">'+esc(G.ags[p.ag].n)+'</button>':'Sem empresário')+'</div></div><div class="pl-ovr">'+ovrB(p.ovr,'xl')+'<span class="small muted">pot. '+potTxt(p)+'</span></div></div>'+
-   '<div class="kpis">'+[['Valor',fmt(value(p))],['Salário',c?fmt(p.wage)+'/sem':'—'],['Contrato',c?'até '+fmonth(p.ce)+' ('+monthsLeft(p)+' m)':'livre'],['Fama',Math.round(p.fame)]].map(k=>'<div class="kpi"><span>'+k[0]+'</span><b>'+k[1]+'</b></div>').join('')+'</div>'+
+   '<div class="pl-club small">'+(c?clubLink(c,18):'<b>Sem clube</b>')+(p.yb?'<span class="chip info">Categoria de base</span>':'')+(p.loan?'<span class="chip info">emprestado pelo '+esc(G.clubs[p.loan.from].n)+'</span>':'')+'</div>'+
+   '<div class="small muted">'+(p.ag===0?'Sua agência':p.ag>0?'Empresário: <button class="lnk" data-a="agency" data-i="'+p.ag+'">'+esc(G.ags[p.ag].n)+'</button>':'Sem empresário')+'</div>'+
+   '<div class="pl-ovr">'+ovrB(p.ovr,'xl')+'<div class="pl-pot"><span class="lbl">Potencial</span><b>'+potTxt(p)+'</b></div></div></div></div>'+
+   '<div class="kpis">'+[['Valor',fmt(value(p))],['Salário',c?fmt(p.wage)+'/sem':'—'],['Contrato',c?'até '+fmonth(p.ce)+'<small>faltam '+monthsLeft(p)+' meses</small>':'livre'],['Fama',Math.round(p.fame)]].map(k=>'<div class="kpi"><span>'+k[0]+'</span><b>'+k[1]+'</b></div>').join('')+'</div>'+
    (p.injury>0?'<p class="small"><span class="chip bad">'+esc(p.injT||'Lesionado')+'</span> fora por mais '+p.injury+' semana(s).</p>':'')+(isClient(p)?offLine(p):'')+(natName(p)&&(isIntl(p)||p.nt)?'<p class="small"><b>Seleção:</b> '+natBtn(natName(p))+(isIntl(p)?' <span class="chip good">Convocado</span>':' <span class="chip">Fora da última lista</span>')+(p.nt?' · '+p.nt[0]+' jogo(s) e '+p.nt[1]+' gol(s) desde 2026':'')+'</p>':'')+
    (p.hon&&p.hon.length?'<h3>Conquistas</h3><div class="hon">'+p.hon.map(t=>'<span class="chip warn">'+esc(t)+'</span>').join('')+'</div>':'')+
    attrH(p)+'<h3>Temporada</h3>'+statSheet(p)+(clauseChips(p)?'<div class="acts">'+clauseChips(p)+'</div>':'')+clubHistH(p)+(rows?'<div class="tbw"><table><thead><tr><th>Competição</th><th class="r">J</th><th class="r">G</th><th class="r">A</th><th class="r">Nota</th><th class="r">SG</th><th class="r">Craque</th></tr></thead><tbody>'+rows+
