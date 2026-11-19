@@ -3541,15 +3541,15 @@ function popNext(){const el=$('#pop');clearTimeout(popNext.t);if(!popQ.length){p
     el.innerHTML='<div class="pop-card '+(o.k||'info')+'" role="alertdialog" aria-live="assertive"><button class="xclose sm" data-a="popok" aria-label="Fechar">✕</button><div class="pop-ic">'+popIcon(o.ic)+parts+'</div>'+
       (o.ti?'<b class="pop-ti">'+esc(o.ti)+'</b>':'')+(o.tx?'<p>'+esc(o.tx)+'</p>':'')+
       (o.ch&&o.ch.length?'<div class="pop-ch">'+o.ch.map(c=>'<span class="'+(c[1]||'')+'">'+esc(c[0])+'</span>').join('')+'</div>':'')+
-      '<button class="btn pri sm" data-a="popok">OK</button><i class="pop-bar"></i></div>';
+      '<button class="btn pri sm" data-a="popok">OK</button>'+(o.auto?'<i class="pop-bar"></i>':'')+'</div>';
     el.querySelectorAll('.pp').forEach((p,i)=>{const a=i/14*Math.PI*2,r=46+((i*37)%28);p.style.setProperty('--x',Math.cos(a)*r+'px');p.style.setProperty('--y',Math.sin(a)*r+'px');});
-    popNext.t=setTimeout(popNext,o.k==='bad'?4200:3400);};
+    if(o.auto)popNext.t=setTimeout(popNext,o.k==='bad'?4200:3400);};
   el.hidden=false;
   if(o.wait&&!reduce){el.innerHTML='<div class="pop-card wait" role="status"><div class="pop-ic spin">'+popIcon(o.wic||(['no','cup','star','bin','sign','deal','yes','ok'].includes(o.ic)?'ball':o.ic))+'</div><b class="pop-ti">'+esc(o.wt||'Aguarde…')+'</b><i class="pop-prog" style="--d:'+o.wait+'ms"></i></div>';popNext.t=setTimeout(show,o.wait);}
   else show();}
 /* fallback: qualquer aviso antigo também vira popup */
 function toast(t){const bad=/insuficiente|fechad|recus|não |Sem acordo|travado|cheia|já usou|pediu um tempo|outro empresário|emprestado até|acabou de|ainda |precisa|máximo/i.test(t);
-  pop({k:bad?'bad':'info',ic:/janela/i.test(t)?'lock':/caixa|aport/i.test(t)?'money':/ações/.test(t)?'clock':bad?'no':'ball',ti:bad?'Não deu':'Feito',tx:t});}
+  pop({auto:1,k:bad?'bad':'info',ic:/janela/i.test(t)?'lock':/caixa|aport/i.test(t)?'money':/ações/.test(t)?'clock':bad?'no':'ball',ti:bad?'Não deu':'Feito',tx:t});}
 
 /* ---- nations.js ---- */
 /* ================= SELEÇÕES, COPAS, PRÊMIOS E GERAÇÕES =================
