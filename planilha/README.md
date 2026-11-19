@@ -24,7 +24,8 @@ Em cerca de 1 minuto o site atualiza. Na próxima vez que o jogo for aberto, a m
 ## Como o jogo usa
 
 - **Carreira nova**: já começa com os valores da planilha.
-- **Carreira em andamento**: cada linha alterada é aplicada uma vez, quando você abre o jogo. Depois o jogador volta a evoluir normalmente. Se você mudar a mesma linha de novo, a nova mudança é aplicada.
+- **Carreira em andamento**: cada linha alterada é aplicada uma vez, quando você abre o jogo. Depois o jogador volta a evoluir normalmente. Se você mudar a mesma linha de novo, a nova mudança é aplicada. Vale mesmo se ele já mudou de clube no seu save: o jogo acha o jogador pelo clube da planilha, que é o clube de origem dele.
+- **Quando aparece**: o site atualiza em cerca de 1 minuto. Depois feche o jogo e abra de novo (ou use Menu → Buscar atualização).
 - **Clientes da sua agência** também recebem a mudança.
 - **Sem internet**: o jogo usa os dados de sempre.
 

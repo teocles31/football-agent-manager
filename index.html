@@ -5399,7 +5399,7 @@ function mSlots(inGame){return'<div class="sheet slots"><span class="eyebrow">Fo
   (inGame?'<h3 class="menu-t">Opções</h3><div class="acts"><button class="btn" data-a="edit">Editar fotos e patrocinadores</button><button class="btn" data-a="slotsave">Salvar agora</button></div>':'')+
   '<h3 class="menu-t">Versão do jogo</h3><div class="updb"><div class="grow"><b>Atualizações</b><span class="small muted">'+esc(verTxt(APP_V))+'</span>'+(ui.upd?'<span class="small '+(ui.upd.k||'')+'">'+esc(ui.upd.t)+'</span>':'')+'</div><button class="btn pri" data-a="updchk"'+(ui.upd&&ui.upd.busy?' disabled':'')+'>Buscar atualização</button></div>'+(inGame?'<div class="acts"><button class="btn pri big" data-a="close">Voltar ao jogo</button></div>':'')+'</div>';}
 /* versão: o script de publicação grava a data e a hora em APP_V. O botão baixa a página publicada sem cache e, se ela for mais nova, salva e recarrega. */
-const APP_V='202611191633';
+const APP_V='202611191639';
 const verTxt=v=>/^\d{12}$/.test(v)?'Publicada em '+v.slice(6,8)+'/'+v.slice(4,6)+'/'+v.slice(0,4)+' às '+v.slice(8,10)+':'+v.slice(10,12):'Versão de teste';
 async function updChk(){ui.upd={t:'Procurando…',busy:1};render();
   try{const r=await fetch(location.pathname+'?chk='+Date.now(),{cache:'no-store'}),t=await r.text(),m=t.match(/const APP_V='(\d{12})'/),nv=m?m[1]:null;
@@ -6981,8 +6981,10 @@ function adjSigs(){const o={};for(const k in ADJ){const a=ADJ[k];o[k]=a.n+'|'+a.
   if(a.n!==a.orig&&G&&G.P)Object.values(G.P).forEach(p=>{const c=club(p);if(p.real&&p.name===a.n&&c&&c.n===a.club&&(p.pos===a.pos||p.pos===a.np))p.on=a.orig;});}return o;}
 function adjSync(){try{if(!G||!G.P)return;G.adjA=G.adjA||{};const ch=new Set();
   for(const key in ADJ){const a=ADJ[key],sig=a.n+'|'+a.o+'|'+a.p+(a.np&&a.np!==a.pos?'|'+a.np:'');if(G.adjA[key]===sig)continue;
-    const ps=Object.values(G.P).filter(p=>p.real),atC=p=>{const c=club(p);return c&&c.n===a.club;};
-    let c=ps.filter(p=>(p.on||p.name)===a.orig||(p.name===a.n&&atC(p)));if(c.length>1)c=c.filter(atC);if(c.length>1)c=c.filter(p=>p.pos===a.pos);
+    const ps=Object.values(G.P).filter(p=>p.real),org=p=>{const h=p.ch,id=h&&h.length&&h[0].f!==undefined?h[0].f:p.club,c=id!=null?G.clubs[id]:null;return c?c.n:null;},
+      /* acha pelo clube atual ou, se ele já foi vendido no save, pelo clube de origem (primeiro registro do histórico) */
+      atC=p=>{const c=club(p);return(c&&c.n===a.club)||org(p)===a.club;};
+    let c=ps.filter(p=>(p.on||p.name)===a.orig||(p.name===a.n&&atC(p)));if(c.length>1)c=c.filter(atC);if(c.length>1){const cur=c.filter(p=>{const k=club(p);return k&&k.n===a.club;});if(cur.length)c=cur;}if(c.length>1)c=c.filter(p=>p.pos===a.pos);
     if(!c.length&&a.add){const cl=G.clubs.find(x=>x.n===a.club);if(cl){const k=baseKid(cl,{name:a.n,pos:a.pos,age:a.age,ovr:a.o,pot:Math.max(a.o,a.p),real:1,nf:a.nat,potErr:4,potOff:0});k.on=a.orig;G.adjA[key]=sig;news(a.n+', '+POSN[a.pos].toLowerCase()+' de '+a.age+' anos, apareceu na base do '+cl.n+'.','base');}continue;}
     if(c.length!==1)continue;const p=c[0];if(a.np&&a.np!==p.pos&&a.base)p.pos=a.np;
     if(a.n!==p.name){if(p.name===a.orig)p.on=p.on||a.orig;p.name=a.n;p.fk=null;}p.ovr=a.o;p.pot=Math.max(a.o,a.p);if((p.pk||0)<p.ovr)p.pk=p.ovr;
