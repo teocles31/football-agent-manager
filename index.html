@@ -464,6 +464,15 @@ tr.sel td{background:color-mix(in srgb,var(--rose) 16%,transparent)}
 .dts{display:flex;gap:2px;flex-wrap:wrap;justify-content:center}
 .dt{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ink2);flex:none}
 .dt.gold{background:var(--gold)}.dt.purple{background:var(--purple)}.dt.rose{background:var(--rose)}.dt.warn{background:var(--warn)}.dt.bad{background:var(--bad)}.dt.teal{background:var(--teal)}
+.dt.good{background:var(--good)}.dt.info{background:var(--info)}.dt.ink2{background:var(--ink2)}
+.cev .dt{width:10px;height:10px;border-radius:3px}
+.calg .wbar i.weu,.calleg i.weu{background:var(--ink)!important}.calg .wbar i.wsa,.calleg i.wsa{background:repeating-linear-gradient(90deg,var(--ink) 0 4px,transparent 4px 7px)!important}
+.calleg .dt{width:12px;height:12px;border-radius:3px;top:0}
+.calg .cd.ev1{background:color-mix(in srgb,var(--c1) 34%,var(--surface));border-color:var(--c1)}
+.calg .cd.ev2{background:linear-gradient(135deg,color-mix(in srgb,var(--c1) 38%,var(--surface)) 50%,color-mix(in srgb,var(--c2) 38%,var(--surface)) 50%);border-color:var(--c1)}
+.calg .cd.ev3{background:linear-gradient(135deg,color-mix(in srgb,var(--c1) 38%,var(--surface)) 34%,color-mix(in srgb,var(--c2) 38%,var(--surface)) 34% 66%,color-mix(in srgb,var(--c3) 38%,var(--surface)) 66%);border-color:var(--c1)}
+.calg .cd.wk:not(.ev1):not(.ev2):not(.ev3){background:var(--surface)}.calg .cd.wk{box-shadow:inset 0 0 0 2px var(--gold)}
+.cd.sel{outline:2px solid var(--ink);outline-offset:1px}
 .wbar{position:absolute;left:3px;right:3px;bottom:2px;display:flex;flex-direction:column;gap:1px}
 .wbar i,.calleg i.weu,.calleg i.wsa{display:block;height:2px;border-radius:1px}.weu{background:var(--info)}.wsa{background:var(--good)}
 .calleg{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:11px;color:var(--ink2)}.calleg span{display:inline-flex;align-items:center;gap:5px}.calleg i.weu,.calleg i.wsa{width:14px;height:3px}
@@ -4817,7 +4826,8 @@ function mStart3(){const sel=ui.mind||'form',m=MINDS.find(x=>x.id===sel),nm=ui.a
    Mês em grade (segunda a domingo). Pontos marcam jogos dos seus clientes, do seu clube, datas FIFA, torneios,
    janelas abrindo ou fechando, fim de contrato e do seu curso. As faixas embaixo de cada dia mostram janela aberta
    na Europa (azul) e no Brasil (verde). Tocar num dia mostra o que acontece nele. */
-const CALK={jogo:['Jogo de cliente','gold'],own:['Jogo do seu clube','purple'],fifa:['Seleções','rose'],tour:['Torneio','rose'],gala:['Prêmios','gold'],win:['Janela','warn'],ctr:['Contrato','bad'],cur:['Curso','teal']};
+/* cada tipo de evento com a sua cor (o quadrado do dia é pintado com ela); a ordem é a prioridade quando o dia tem mais de um tipo */
+const CALK={ctr:['Fim de contrato','bad'],gala:['Prêmios','gold'],tour:['Torneios','rose'],fifa:['Seleções','info'],own:['Jogo do seu clube','purple'],jogo:['Jogo de cliente','good'],win:['Janela abre ou fecha','ink2'],cur:['Curso','teal']};
 function calData(d1,d2){const m={},add=(d,k,t,mt)=>{if(d<d1||d>d2)return;(m[d]||(m[d]=[])).push({k,t,mt});};
   G.clients.forEach(id=>{const p=G.P[id],c=club(p);if(!c)return;
     fixturesOf(c.id,d1,d2).forEach(f=>{const o=f.m?G.clubs[f.m[0]===c.id?f.m[1]:f.m[0]]:null;
@@ -4836,14 +4846,15 @@ function calData(d1,d2){const m={},add=(d,k,t,mt)=>{if(d<d1||d>d2)return;(m[d]||
 function vCal(){const cm=ui.calM!=null?ui.calM:curMonth(),y=Math.floor(cm/12),mo=cm%12+1,d1=dayOf(y,mo,1),d2=dayOf(y,mo+1,1)-1,data=calData(d1,d2),off=(ymd(d1).w+6)%7;
   let sel=ui.calSel;if(sel==null||sel<d1||sel>d2){sel=null;for(let d=Math.max(d1,G.d);d<=d2;d++)if(data[d]){sel=d;break;}if(sel==null)sel=Math.max(d1,Math.min(G.d,d2));}
   let cells='';for(let i=0;i<off;i++)cells+='<span class="cd pad"></span>';
-  for(let d=d1;d<=d2;d++){const ev=data[d]||[],ks=[...new Set(ev.map(e=>e.k))].slice(0,4),wk=d>=G.d&&d<G.d+7,past=d<G.d;
-    cells+='<button class="cd'+(wk?' wk':'')+(past?' past':'')+(d===sel?' sel':'')+'" data-a="calday" data-d="'+d+'" aria-label="'+fdate(d,true)+(ev.length?', '+ev.length+' evento(s)':'')+'"><b>'+ymd(d).dd+'</b><span class="dts">'+ks.map(k=>'<i class="dt '+CALK[k][1]+'"></i>').join('')+'</span>'+
+  const KO=Object.keys(CALK);for(let d=d1;d<=d2;d++){const ev=data[d]||[],ks=[...new Set(ev.map(e=>e.k))].sort((a,b)=>KO.indexOf(a)-KO.indexOf(b)).slice(0,3),wk=d>=G.d&&d<G.d+7,past=d<G.d;
+    const st=ks.map((k,i)=>'--c'+(i+1)+':var(--'+CALK[k][1]+')').join(';');
+    cells+='<button class="cd'+(ks.length?' ev'+ks.length:'')+(wk?' wk':'')+(past?' past':'')+(d===sel?' sel':'')+'"'+(st?' style="'+st+'"':'')+' data-a="calday" data-d="'+d+'" aria-label="'+fdate(d,true)+(ev.length?', '+ev.map(e=>CALK[e.k][0]).filter((x,i,a)=>a.indexOf(x)===i).join(', '):'')+'"><b>'+ymd(d).dd+'</b>'+
      '<span class="wbar">'+(winOpen('eu',d)?'<i class="weu"></i>':'')+(winOpen('sa',d)?'<i class="wsa"></i>':'')+'</span></button>';}
   const se=data[sel]||[];
   const up=[];const nd=calData(G.d,G.d+75);Object.keys(nd).map(Number).sort((a,b)=>a-b).forEach(d=>nd[d].forEach(e=>{if(e.k!=='jogo'&&e.k!=='own'&&up.length<4)up.push([d,e]);}));
   return'<section class="card c-teal calc">'+cardH('clock','Calendário','<div class="calnav"><button class="btn sm" data-a="calm" data-v="-1" aria-label="Mês anterior">‹</button><b>'+MES[mo-1]+' '+y+'</b><button class="btn sm" data-a="calm" data-v="1" aria-label="Próximo mês">›</button></div>')+
-   '<p class="small muted">Os pontos mostram o tipo de evento. Toque num dia para ver os detalhes.</p><div class="calg">'+['seg','ter','qua','qui','sex','sáb','dom'].map(w=>'<span class="cw">'+w+'</span>').join('')+cells+'</div>'+
-   '<div class="calleg"><span><i class="weu"></i>Janela Europa</span><span><i class="wsa"></i>Janela Brasil</span>'+Object.entries(CALK).filter(([k])=>k!=='own'||G.own).filter(([k])=>k!=='tour').map(([k,v])=>'<span><i class="dt '+v[1]+'"></i>'+v[0]+'</span>').join('')+'</div>'+
+   '<p class="small muted">A cor do dia mostra o tipo de evento (dia com mais de um tipo fica dividido). Contorno: semana atual. Toque num dia para ver os detalhes.</p><div class="calg">'+['seg','ter','qua','qui','sex','sáb','dom'].map(w=>'<span class="cw">'+w+'</span>').join('')+cells+'</div>'+
+   '<div class="calleg"><span><i class="weu"></i>Janela Europa</span><span><i class="wsa"></i>Janela Brasil</span>'+Object.entries(CALK).filter(([k])=>k!=='own'||G.own).map(([k,v])=>'<span><i class="dt '+v[1]+'"></i>'+v[0]+'</span>').join('')+'</div>'+
    '<div class="calsel"><span class="lbl">'+fdate(sel,true)+'</span>'+(se.length?calMerge(se).map(e=>e.mt?'<div class="cev cevm"><i class="dt '+CALK[e.k][1]+'"></i>'+vsBox(e.mt.H,e.mt.A,e.mt.s,esc(e.mt.cs+' · '+e.mt.who.join(', ')),'sm')+'</div>':'<div class="cev"><i class="dt '+CALK[e.k][1]+'"></i><span>'+esc(e.t)+'</span></div>').join(''):'<p class="small muted">Nada marcado neste dia.</p>')+'</div>'+
    (up.length?'<div class="calsel"><span class="lbl">Próximas datas</span>'+up.map(([d,e])=>'<div class="cev"><i class="dt '+CALK[e.k][1]+'"></i><span><b>'+fdate(d)+'</b> · '+esc(e.t)+'</span></div>').join('')+'</div>':'')+'</section>';}
 const CALA={
@@ -5405,7 +5416,7 @@ function mSlots(inGame){return'<div class="sheet slots"><span class="eyebrow">Fo
   (inGame?'<h3 class="menu-t">Opções</h3><div class="acts"><button class="btn" data-a="edit">Editar fotos e patrocinadores</button><button class="btn" data-a="slotsave">Salvar agora</button></div>':'')+
   '<h3 class="menu-t">Versão do jogo</h3><div class="updb"><div class="grow"><b>Atualizações</b><span class="small muted">'+esc(verTxt(APP_V))+'</span>'+(ui.upd?'<span class="small '+(ui.upd.k||'')+'">'+esc(ui.upd.t)+'</span>':'')+'</div><button class="btn pri" data-a="updchk"'+(ui.upd&&ui.upd.busy?' disabled':'')+'>Buscar atualização</button></div>'+(inGame?'<div class="acts"><button class="btn pri big" data-a="close">Voltar ao jogo</button></div>':'')+'</div>';}
 /* versão: o script de publicação grava a data e a hora em APP_V. O botão baixa a página publicada sem cache e, se ela for mais nova, salva e recarrega. */
-const APP_V='202611191646';
+const APP_V='202611191659';
 const verTxt=v=>/^\d{12}$/.test(v)?'Publicada em '+v.slice(6,8)+'/'+v.slice(4,6)+'/'+v.slice(0,4)+' às '+v.slice(8,10)+':'+v.slice(10,12):'Versão de teste';
 async function updChk(){ui.upd={t:'Procurando…',busy:1};render();
   try{const r=await fetch(location.pathname+'?chk='+Date.now(),{cache:'no-store'}),t=await r.text(),m=t.match(/const APP_V='(\d{12})'/),nv=m?m[1]:null;
