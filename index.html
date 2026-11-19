@@ -2601,12 +2601,23 @@ function processDay(day,pre){G._pre=pre;
 function weeklyHealth(){allP().forEach(p=>{if(p.injury>0){p.injury--;if(!p.injury)p.injT=null;}p.fat=Math.max(0,(p.fat||0)-2);});}
 
 /* ================= EVOLUÇÃO ================= */
+/* ================= POTENCIAL VIVO (até 23 anos) =================
+   O potencial não é mais um teto fixo: quem joga bem, ganha título ou é revelação ganha teto; quem joga mal, fica parado,
+   sofre lesão longa ou vive endividado perde teto. Limite de 10 pontos para cima ou para baixo do potencial de origem e nunca abaixo do overall. */
+function potMove(p,n,why){if(!n)return;p.potB=p.potB||p.pot;const lo=Math.max(p.ovr,p.potB-10),hi=Math.min(99,p.potB+10),o=p.pot;p.pot=clamp(p.pot+n,lo,hi);const d=p.pot-o;if(!d)return;
+  if(p.ag===0){p.potN=(p.potN||0)+d;if(Math.abs(p.potN)>=2){news(p.potN>0?p.name+' '+why+': os observadores enxergam um teto maior para ele.':p.name+' '+why+': o teto dele já não parece o mesmo.','evolucao');p.potN=0;}}}
+function potDyn(p){if(p.age>23)return;const played=(p.wkg||0)>0;
+  const lr=p.lr&&p.lr.length>=4&&played?p.lr:(p.u20&&p.u20.lr&&p.u20.lr.length>=4?p.u20.lr:null),yng=p.age<=20?1.3:1;
+  if(played&&lr){const av=lr.reduce((a,b)=>a+b,0)/lr.length/10;if(av>=7.2&&Math.random()<.06*yng)potMove(p,1,'vive grande fase');else if(av<5.7&&lr===p.lr&&Math.random()<.02)potMove(p,-1,'não consegue render');}
+  if(p.club!=null&&!p.injury&&!p.yb){p.idle=played?0:(p.idle||0)+1;if(p.idle>=16&&Math.random()<.008)potMove(p,-1,'está parado há meses');}
+  if(p.injury>=8&&!p.injHit){p.injHit=1;if(Math.random()<.5)potMove(p,-(p.injury>=16?2:1),'sofreu uma lesão longa');}if(!p.injury)p.injHit=0;
+  if(p.ag===0&&debtPen(p)>=3&&Math.random()<.02)potMove(p,-1,'vive endividado');}
 function develop(){STR={};SC={};allP().forEach(p=>{const mine=p.ag===0,gap=p.pot-p.ovr,played=(p.wkg||0)>0;
   if(gap>0){const af=p.age<=19?1.25:p.age<=22?1:p.age<=25?.6:p.age<=29?.25:0;
     let pr=.03+(played?.05:(p.club!=null&&p.age<=20?.02:0))+((p.training||0)>0?.06:0)+(mine?G.staff.preparador*.015+offL('perf')*.008:.012)+(p.trait==='profissional'?.015:0)-(p.trait==='baladeiro'?.01:0);
     pr*=af*clamp(gap/15,.2,1);if(mine)pr*=evoDev(p);{const oo=ownOfId(p.club);if(oo&&p.age<=21)pr*=1+.06*(oo.base||0)+.04*(oo.ct||0);}if(p.age<=21&&p.club!=null&&G.clubs[p.club].coach.pe==='frm')pr*=1.3;if(Math.random()<pr){p.ovr++;if(p.ovr>(p.pk||0))p.pk=p.ovr;if(mine&&p.ovr%5===0)news(p.name+' evoluiu e chegou ao nível '+p.ovr+'.','evolucao');}}
   if(p.age>=31&&Math.random()<.011*(p.age-30)){p.ovr--;if(p.pot>p.ovr+2)p.pot--;}
-  if(mine&&p.training>0)p.training--;p.wkg=0;});}
+  potDyn(p);if(mine&&p.training>0)p.training--;p.wkg=0;});}
 
 /* ================= CONTRATOS (mensal) ================= */
 function monthly(){const mi=curMonth();
@@ -3621,7 +3632,7 @@ const FIFA_D=[[3,23],[9,8],[10,6],[11,10]];
 const newNT=()=>({rank:{},sq:{},last:0,tours:[],hist:[],newc:[]});
 const newAW=()=>({hist:[],cand:null,bonus:{},y0:null,coach:null});
 const exO=()=>(G&&G.exs&&G.exs.olh)||0;
-function honAdd(p,t){(p.hon||(p.hon=[])).push(t);if(p.hon.length>14)p.hon.shift();}
+function honAdd(p,t){(p.hon||(p.hon=[])).push(t);if(p.hon.length>14)p.hon.shift();if(p.age<=23){if(/^Título/.test(t)&&Math.random()<.4)potMove(p,1,'foi campeão');if(/^Revelação/.test(t))potMove(p,2,'foi eleito revelação');}}
 /* ---------- convocação ---------- */
 function ntPick(ps){const by={};ps.forEach(p=>{if(p.injury>2)return;const t=seasonTot(p);p._n=p.ovr+(t.ap>=5?(t.avg-6.6)*1.5:0)-(p.age>=34?1:0)-(p.club==null?3:0);(by[p.pos]||(by[p.pos]=[])).push(p);});
   const out=[];POS.forEach(pos=>{(by[pos]||[]).sort((a,b)=>b._n-a._n).slice(0,NT_T[pos]).forEach(p=>out.push(p.id));});return out;}
@@ -5424,7 +5435,7 @@ function mSlots(inGame){return'<div class="sheet slots"><span class="eyebrow">Fo
   (inGame?'<h3 class="menu-t">Opções</h3><div class="acts"><button class="btn" data-a="edit">Editar fotos e patrocinadores</button><button class="btn" data-a="slotsave">Salvar agora</button></div>':'')+
   '<h3 class="menu-t">Versão do jogo</h3><div class="updb"><div class="grow"><b>Atualizações</b><span class="small muted">'+esc(verTxt(APP_V))+'</span>'+(ui.upd?'<span class="small '+(ui.upd.k||'')+'">'+esc(ui.upd.t)+'</span>':'')+'</div><button class="btn pri" data-a="updchk"'+(ui.upd&&ui.upd.busy?' disabled':'')+'>Buscar atualização</button></div>'+(inGame?'<div class="acts"><button class="btn pri big" data-a="close">Voltar ao jogo</button></div>':'')+'</div>';}
 /* versão: o script de publicação grava a data e a hora em APP_V. O botão baixa a página publicada sem cache e, se ela for mais nova, salva e recarrega. */
-const APP_V='202611191724';
+const APP_V='202611191733';
 const verTxt=v=>/^\d{12}$/.test(v)?'Publicada em '+v.slice(6,8)+'/'+v.slice(4,6)+'/'+v.slice(0,4)+' às '+v.slice(8,10)+':'+v.slice(10,12):'Versão de teste';
 async function updChk(){ui.upd={t:'Procurando…',busy:1};render();
   try{const r=await fetch(location.pathname+'?chk='+Date.now(),{cache:'no-store'}),t=await r.text(),m=t.match(/const APP_V='(\d{12})'/),nv=m?m[1]:null;
