@@ -92,12 +92,9 @@ Ajax,Tolu Arokodare,Tolu Arokodare,80,82,ATA,25,Nigéria
 Ajax,Marcos Leonardo,Marcos Leonardo,79,85,ATA,23,Brasil
 Ajax,Kasper Dolberg,Kasper Dolberg,77,77,ATA,29,Dinamarca
 Utrecht,Dani de Wit,Dani de Wit,72,73,MEI,28,Holanda
-Utrecht,Souffian El Karouani,Souffian El Karouani,75,79,LAT,25,Marrocos
 Utrecht,Can Bozdoğan,Can Bozdoğan,67,73,MEI,25,Alemanha
 Utrecht,Dave van den Berg,Dave van den Berg,67,72,MEI,26,Holanda
 Utrecht,Sébastien Haller,Sébastien Haller,77,77,ATA,32,Costa do Marfim
-Utrecht,Miguel Rodríguez,Miguel Rodríguez,73,83,ATA,23,Espanha
-Utrecht,Gjivai Zechiël,Gjivai Zechiël,69,81,MEI,22,Holanda
 Utrecht,Yoann Cathline,Yoann Cathline,75,84,ATA,24,França
 Utrecht,Victor Jensen,Victor Jensen,69,74,MEI,26,Dinamarca
 Utrecht,Alonzo Engwanda,Alonzo Engwanda,70,79,VOL,23,Bélgica
@@ -118,7 +115,6 @@ Utrecht,Rafik El Arguioui,Rafik El Arguioui,60,75,MEI,21,Marrocos
 Utrecht,Emirhan Demircan,Emirhan Demircan,62,77,ATA,21,Turquia
 Utrecht,Matisse Didden,Matisse Didden,68,77,ZAG,24,Bélgica
 Utrecht,Mike Eerdhuijzen,Mike Eerdhuijzen,73,79,ZAG,26,Holanda
-Utrecht,Markus Jensen,Markus Jensen,62,78,ATA,21,Dinamarca
 Utrecht,Jesse van de Haar,Jesse van de Haar,63,76,ATA,21,Holanda
 Utrecht,Vasilis Barkas,Vasilis Barkas,74,74,GOL,32,Grécia
 Utrecht,Mees Eppink,Mees Eppink,56,68,GOL,20,Holanda
@@ -126,7 +122,6 @@ Utrecht,Michael Brouwer,Michael Brouwer,68,68,GOL,33,Holanda
 Utrecht,Kevin Gadellaa,Kevin Gadellaa,60,70,GOL,23,Holanda
 Sparta Rotterdam,Patrick van Aanholt,Patrick van Aanholt,72,72,LAT,35,Holanda
 Sparta Rotterdam,Jens Toornstra,Jens Toornstra,69,69,MEI,37,Holanda
-Sparta Rotterdam,Joshua Kitolano,Joshua Kitolano,69,76,MEI,24,Noruega
 Sparta Rotterdam,Pelle Clement,Pelle Clement,67,67,MEI,30,Holanda
 Sparta Rotterdam,Saïd Bakari,Saïd Bakari,67,67,LAT,31,Comores
 Sparta Rotterdam,Jonathan de Guzmán,Jonathan de Guzmán,66,66,MEI,38,Holanda
@@ -150,10 +145,8 @@ Sparta Rotterdam,Max de Ligt,Max de Ligt,57,70,ZAG,22,Holanda
 Sparta Rotterdam,Joël Drommel,Joël Drommel,72,74,GOL,29,Holanda
 Sparta Rotterdam,Filip Bednarek,Filip Bednarek,65,65,GOL,33,Polônia
 Sparta Rotterdam,Pascal Kuiper,Pascal Kuiper,59,68,GOL,22,Holanda
-AZ Alkmaar,Sven Mijnans,Sven Mijnans,75,80,MEI,26,Holanda
 AZ Alkmaar,Jordy Clasie,Jordy Clasie,79,79,VOL,35,Holanda
 AZ Alkmaar,Seiya Maikuma,Seiya Maikuma,74,75,LAT,28,Japão
-AZ Alkmaar,Troy Parrott,Troy Parrott,74,80,ATA,24,Irlanda
 AZ Alkmaar,Peer Koopmeiners,Peer Koopmeiners,74,79,VOL,26,Holanda
 AZ Alkmaar,Matěj Šín,Matěj Šín,74,83,MEI,22,Tchéquia
 AZ Alkmaar,Kees Smit,Kees Smit,72,87,MEI,20,Holanda
@@ -165,7 +158,6 @@ AZ Alkmaar,Patati,Patati,72,83,MEI,22,Brasil
 AZ Alkmaar,Mateo Chávez,Mateo Chávez,72,79,LAT,22,México
 AZ Alkmaar,Dave Kwakman,Dave Kwakman,66,78,MEI,21,Holanda
 AZ Alkmaar,Wouter Goes,Wouter Goes,77,85,ZAG,22,Holanda
-AZ Alkmaar,Isak Jensen,Isak Jensen,70,83,MEI,22,Dinamarca
 AZ Alkmaar,Alexandre Penetra,Alexandre Penetra,74,82,ZAG,24,Portugal
 AZ Alkmaar,Ro-Zangelo Daal,Ro-Zangelo Daal,68,79,MEI,22,Holanda
 AZ Alkmaar,Elijah Dijkstra,Elijah Dijkstra,64,82,LAT,19,Holanda
@@ -180,7 +172,6 @@ AZ Alkmaar,Hobie Verhulst,Hobie Verhulst,65,65,GOL,33,Holanda
 AZ Alkmaar,Rome Owusu-Oduro,Rome Owusu-Oduro,71,84,GOL,22,Holanda
 AZ Alkmaar,Daniël Virginio Deen,Daniël Virginio Deen,60,70,GOL,23,Holanda
 Go Ahead Eagles,Melle Meulensteen,Melle Meulensteen,72,75,VOL,27,Holanda
-Go Ahead Eagles,Mats Deijl,Mats Deijl,72,72,LAT,29,Holanda
 Go Ahead Eagles,Dean James,Dean James,70,74,LAT,26,Indonésia
 Go Ahead Eagles,Kenzo Goudmijn,Kenzo Goudmijn,68,74,MEI,24,Holanda
 Go Ahead Eagles,E. Linthorst,E. Linthorst,69,74,VOL,26,Holanda
@@ -214,7 +205,6 @@ Twente,Ricky van Wolfswinkel,Ricky van Wolfswinkel,73,73,ATA,37,Holanda
 Twente,Arno Verschueren,Arno Verschueren,70,70,MEI,29,Bélgica
 Twente,Thomas van den Belt,Thomas van den Belt,70,77,MEI,25,Holanda
 Twente,Marko Pjaca,Marko Pjaca,71,71,MEI,31,Croácia
-Twente,Sam Lammers,Sam Lammers,73,73,ATA,29,Holanda
 Twente,Daan Rots,Daan Rots,74,80,MEI,25,Holanda
 Twente,Taylor Booth,Taylor Booth,70,76,MEI,25,Estados Unidos
 Twente,Bas Kuipers,Bas Kuipers,70,70,LAT,31,Holanda
@@ -222,7 +212,6 @@ Twente,Mathias Kjølø,Mathias Kjølø,71,76,VOL,25,Noruega
 Twente,Bart van Rooij,Bart van Rooij,74,78,LAT,25,Holanda
 Twente,Robin Pröpper,Robin Pröpper,73,73,ZAG,32,Holanda
 Twente,Max Bruns,Max Bruns,69,78,ZAG,23,Holanda
-Twente,Mats Rots,Mats Rots,68,79,LAT,20,Holanda
 Twente,Mees Hilgers,Mees Hilgers,72,78,ZAG,25,Indonésia
 Twente,Naci Ünüvar,Naci Ünüvar,69,76,MEI,23,Turquia
 Twente,Kristian Hlynsson,Kristian Hlynsson,68,79,MEI,22,Islândia
@@ -269,7 +258,6 @@ Fortuna Sittard,Luuk Koopmans,Luuk Koopmans,65,65,GOL,32,Holanda
 Fortuna Sittard,Niels Martens,Niels Martens,57,68,GOL,22,Holanda
 Fortuna Sittard,Boaz Broekmans,Boaz Broekmans,56,71,GOL,19,Holanda
 NEC Nijmegen,Thomas Ouwejan,Thomas Ouwejan,69,69,LAT,29,Holanda
-NEC Nijmegen,Kodai Sano,Kodai Sano,71,82,VOL,22,Japão
 NEC Nijmegen,Tjaronn Chery,Tjaronn Chery,74,74,MEI,38,Suriname
 NEC Nijmegen,Bryan Linssen,Bryan Linssen,69,69,ATA,35,Holanda
 NEC Nijmegen,Vito van Crooij,Vito van Crooij,69,69,MEI,30,Holanda
@@ -280,8 +268,6 @@ NEC Nijmegen,Virgil Misidjan,Virgil Misidjan,70,70,MEI,33,Suriname
 NEC Nijmegen,Youssef El Kachati,Youssef El Kachati,69,74,ATA,26,Marrocos
 NEC Nijmegen,Noé Lebreton,Noé Lebreton,65,75,MEI,22,França
 NEC Nijmegen,Argyris Darelas,Argyris Darelas,60,72,MEI,22,Grécia
-NEC Nijmegen,Başar Önal,Başar Önal,68,78,MEI,22,Turquia
-NEC Nijmegen,Sami Ouaissa,Sami Ouaissa,68,78,MEI,21,Holanda
 NEC Nijmegen,Darko Nejašmić,Darko Nejašmić,70,72,VOL,27,Croácia
 NEC Nijmegen,Rober,Rober,67,73,MEI,25,Espanha
 NEC Nijmegen,Brayann Pereira,Brayann Pereira,67,76,LAT,23,França
@@ -398,7 +384,6 @@ Heracles,Mario Engels,Mario Engels,66,66,ATA,32,Alemanha
 Heracles,Ivan Mesík,Ivan Mesík,66,74,ZAG,25,Eslováquia
 Heracles,Djevencio van der Kust,Djevencio van der Kust,67,71,LAT,25,Suriname
 Heracles,Mike te Wierik,Mike te Wierik,65,65,ZAG,34,Holanda
-Heracles,Bryan Limbombe,Bryan Limbombe,65,71,ATA,25,Bélgica
 Heracles,Jannes Wieckhoff,Jannes Wieckhoff,65,69,LAT,25,Alemanha
 Heracles,Tristan van Gilst,Tristan van Gilst,63,70,MEI,23,Holanda
 Heracles,Alec Van Hoorenbeeck,Alec Van Hoorenbeeck,68,73,ZAG,27,Bélgica
@@ -426,7 +411,6 @@ Groningen,Travis Hernes,Travis Hernes,61,79,MEI,20,Noruega
 Groningen,Tyrique Mercera,Tyrique Mercera,64,73,LAT,22,Curacao
 Groningen,Rui Mendes,Rui Mendes,65,67,MEI,26,Portugal
 Groningen,Noam Emeran,Noam Emeran,61,72,MEI,23,França
-Groningen,Dies Janse,Dies Janse,66,81,ZAG,20,Holanda
 Groningen,Marco Rente,Marco Rente,68,68,LAT,29,Alemanha
 Groningen,Jismerai Dillema,Jismerai Dillema,58,78,VOL,19,Holanda
 Groningen,David van der Werff,David van der Werff,62,74,MEI,21,Holanda
@@ -524,6 +508,5 @@ Volendam,Nick Verschuren,Nick Verschuren,61,76,ZAG,21,Holanda
 Volendam,Jesper Tielemans,Jesper Tielemans,58,69,ATA,20,Holanda
 Volendam,Silvinho Esajas,Silvinho Esajas,61,72,ZAG,24,Suriname
 Volendam,Luca Blondeau,Luca Blondeau,56,69,ZAG,20,Holanda
-Volendam,Kayne van Oevelen,Kayne van Oevelen,66,78,GOL,22,Holanda
 Volendam,Roy Steur,Roy Steur,59,75,GOL,21,Holanda
 Volendam,Dion Vlak,Dion Vlak,55,62,GOL,25,Holanda

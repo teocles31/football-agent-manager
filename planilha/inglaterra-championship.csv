@@ -1,18 +1,10 @@
 clube,nome_original,nome,overall,potencial,posicao,idade,pais
-West Ham,Lucas Paquetá,Lucas Paquetá,80,80,MEI,28,Brasil
 West Ham,Jarrod Bowen,Jarrod Bowen,83,83,MEI,29,Inglaterra
 West Ham,James Ward-Prowse,James Ward-Prowse,77,77,MEI,31,Inglaterra
 West Ham,El Diouf,El Diouf,75,82,LAT,21,Senegal
 West Ham,Tomáš Souček,Tomáš Souček,78,78,VOL,31,Tchéquia
-West Ham,Mateus Fernandes,Mateus Fernandes,76,85,MEI,22,Portugal
-West Ham,Aaron Wan-Bissaka,Aaron Wan-Bissaka,80,81,LAT,28,RD Congo
-West Ham,Niclas Füllkrug,Niclas Füllkrug,79,79,ATA,33,Alemanha
 West Ham,Andrew Irving,Andrew Irving,70,72,MEI,26,Escócia
-West Ham,Callum Wilson,Callum Wilson,78,78,ATA,34,Inglaterra
-West Ham,Guido Rodríguez,Guido Rodríguez,77,77,VOL,32,Argentina
-West Ham,Freddie Potts,Freddie Potts,70,80,VOL,22,Inglaterra
 West Ham,Kyle Walker-Peters,Kyle Walker-Peters,75,75,LAT,29,Inglaterra
-West Ham,Jean-Clair Todibo,Jean-Clair Todibo,78,81,ZAG,26,França
 West Ham,Crysencio Summerville,Crysencio Summerville,76,84,MEI,24,Holanda
 West Ham,Oliver Scarles,Oliver Scarles,70,80,LAT,20,Inglaterra
 West Ham,Soungoutou Magassa,Soungoutou Magassa,73,80,VOL,22,França
@@ -27,10 +19,8 @@ West Ham,Mads Hermansen,Mads Hermansen,76,81,GOL,26,Dinamarca
 West Ham,Ł. Fabiański,Ł. Fabiański,75,75,GOL,41,Polônia
 Wolverhampton,Jean-Ricner Bellegarde,Jean-Ricner Bellegarde,75,76,MEI,28,Haiti
 Wolverhampton,Ladislav Krejčí,Ladislav Krejčí,78,82,ZAG,27,Tchéquia
-Wolverhampton,João Gomes,João Gomes,78,83,VOL,25,Brasil
 Wolverhampton,Marshall Munetsi,Marshall Munetsi,76,76,MEI,30,Zimbábue
 Wolverhampton,André,André,78,83,VOL,25,Brasil
-Wolverhampton,Jhon Arias,Jhon Arias,78,78,ATA,28,Colômbia
 Wolverhampton,Matthew Doherty,Matthew Doherty,74,74,ZAG,34,Irlanda
 Wolverhampton,Jackson Tchatchoua,Jackson Tchatchoua,74,81,LAT,25,Camarões
 Wolverhampton,Hugo Bueno,Hugo Bueno,74,80,LAT,23,Espanha
@@ -44,7 +34,6 @@ Wolverhampton,Rodrigo Gomes,Rodrigo Gomes,72,82,ATA,23,Portugal
 Wolverhampton,Toluwalase Arokodare,Toluwalase Arokodare,79,85,ATA,25,Nigéria
 Wolverhampton,Fer López,Fer López,73,82,ATA,22,Espanha
 Wolverhampton,Tawanda Chirewa,Tawanda Chirewa,64,76,MEI,22,Zimbábue
-Wolverhampton,Santiago Bueno,Santiago Bueno,76,79,ZAG,27,Uruguai
 Wolverhampton,Yerson Mosquera,Yerson Mosquera,72,78,ZAG,25,Colômbia
 Wolverhampton,Enso González,Enso González,63,77,ATA,21,Paraguai
 Wolverhampton,Mateus Mané,Mateus Mané,60,79,ATA,18,Inglaterra
@@ -53,27 +42,19 @@ Wolverhampton,Samuel Johnstone,Samuel Johnstone,76,76,GOL,33,Inglaterra
 Wolverhampton,Daniel Bentley,Daniel Bentley,71,71,GOL,33,Inglaterra
 Burnley,Kyle Walker,Kyle Walker,79,79,LAT,36,Inglaterra
 Burnley,Hannibal,Hannibal,74,82,MEI,23,Tunísia
-Burnley,Quilindschy Hartman,Quilindschy Hartman,77,83,LAT,24,Holanda
 Burnley,Joshua Cullen,Joshua Cullen,76,76,VOL,30,Irlanda
-Burnley,Zian Flemming,Zian Flemming,73,74,ATA,28,Holanda
 Burnley,Joshua Laurent,Joshua Laurent,73,73,VOL,31,Inglaterra
 Burnley,Jacob Larsen,Jacob Larsen,74,74,MEI,27,Dinamarca
 Burnley,Connor Roberts,Connor Roberts,75,75,LAT,30,País de Gales
 Burnley,Zeki Amdouni,Zeki Amdouni,75,81,ATA,25,Suíça
 Burnley,Lucas Pires,Lucas Pires,74,78,LAT,25,Brasil
-Burnley,Florentino,Florentino,80,83,VOL,26,Portugal
-Burnley,Lesley Ugochukwu,Lesley Ugochukwu,73,82,VOL,22,França
 Burnley,Ashley Barnes,Ashley Barnes,70,70,ATA,36,Inglaterra
 Burnley,Bashir Humphreys,Bashir Humphreys,73,82,LAT,23,Inglaterra
 Burnley,Mike Trésor,Mike Trésor,73,74,MEI,27,Bélgica
-Burnley,Jaidon Anthony,Jaidon Anthony,74,76,MEI,26,Inglaterra
-Burnley,Axel Tuanzebe,Axel Tuanzebe,73,74,LAT,28,RD Congo
 Burnley,Marcus Edwards,Marcus Edwards,76,77,MEI,27,Inglaterra
 Burnley,Lyle Foster,Lyle Foster,72,77,ATA,25,África do Sul
 Burnley,Jordan Beyer,Jordan Beyer,74,78,ZAG,26,Alemanha
 Burnley,Oliver Sonne,Oliver Sonne,70,76,LAT,25,Peru
-Burnley,Loum Tchaouna,Loum Tchaouna,69,78,MEI,22,França
-Burnley,Maxime Estève,Maxime Estève,76,82,ZAG,24,França
 Burnley,Armando Broja,Armando Broja,72,77,ATA,24,Albânia
 Burnley,Hannes Delcroix,Hannes Delcroix,71,74,ZAG,27,Bélgica
 Burnley,Hjalmar Ekdal,Hjalmar Ekdal,72,74,ZAG,27,Suécia
@@ -81,23 +62,18 @@ Burnley,Jaydon Banel,Jaydon Banel,64,77,MEI,21,Holanda
 Burnley,Enock Agyei,Enock Agyei,63,75,MEI,21,Bélgica
 Burnley,Joseph Worrall,Joseph Worrall,73,73,ZAG,29,Inglaterra
 Burnley,Václav Hladký,Václav Hladký,69,69,GOL,35,Tchéquia
-Burnley,Martin Dúbravka,Martin Dúbravka,77,77,GOL,37,Eslováquia
 Burnley,Max Weiß,Max Weiß,68,80,GOL,22,Alemanha
 Leicester City,Ricardo Pereira,Ricardo Pereira,74,74,LAT,32,Portugal
 Leicester City,Jordan Ayew,Jordan Ayew,73,73,MEI,34,Gana
-Leicester City,Abdul Fatawu,Abdul Fatawu,76,83,MEI,22,Gana
 Leicester City,Boubakary Soumaré,Boubakary Soumaré,75,78,VOL,27,França
 Leicester City,Bobby De Cordova-Reid,Bobby De Cordova-Reid,72,72,MEI,33,Jamaica
-Leicester City,Harry Winks,Harry Winks,74,74,VOL,30,Inglaterra
 Leicester City,Victor Kristiansen,Victor Kristiansen,75,81,LAT,23,Dinamarca
 Leicester City,Stephy Mavididi,Stephy Mavididi,75,75,MEI,28,Inglaterra
 Leicester City,Hamza Choudhury,Hamza Choudhury,72,73,LAT,28,Bangladesh
-Leicester City,Julián Carranza,Julián Carranza,73,77,ATA,26,Argentina
 Leicester City,Jordan James,Jordan James,69,80,MEI,22,País de Gales
 Leicester City,Aaron Ramsey,Aaron Ramsey,70,80,MEI,23,Inglaterra
 Leicester City,Oliver Skipp,Oliver Skipp,74,76,VOL,25,Inglaterra
 Leicester City,Luke Thomas,Luke Thomas,70,73,LAT,25,Inglaterra
-Leicester City,Patson Daka,Patson Daka,72,73,ATA,27,Zâmbia
 Leicester City,Michael Golding,Michael Golding,62,79,MEI,20,Inglaterra
 Leicester City,Louis Page,Louis Page,61,83,MEI,18,Inglaterra
 Leicester City,Jannik Vestergaard,Jannik Vestergaard,74,74,ZAG,33,Dinamarca
@@ -110,9 +86,7 @@ Leicester City,Jake Evans,Jake Evans,59,79,MEI,17,Inglaterra
 Leicester City,Harry Souttar,Harry Souttar,73,75,ZAG,27,Austrália
 Leicester City,Olabade Aluko,Olabade Aluko,58,79,LAT,19,Inglaterra
 Leicester City,Asmir Begović,Asmir Begović,70,70,GOL,39,Bósnia
-Leicester City,Fran Vieites,Fran Vieites,71,74,GOL,27,Espanha
 Leicester City,Jakub Stolarczyk,Jakub Stolarczyk,70,74,GOL,25,Polônia
-Sheffield United,Gustavo Hamer,Gustavo Hamer,77,77,MEI,29,Holanda
 Sheffield United,Harrison Burrows,Harrison Burrows,74,80,LAT,24,Inglaterra
 Sheffield United,Callum O'Hare,Callum O'Hare,73,74,MEI,28,Inglaterra
 Sheffield United,Chiedozie Ogbene,Chiedozie Ogbene,74,74,MEI,29,Irlanda
@@ -166,7 +140,6 @@ Birmingham City,Jack Robinson,Jack Robinson,71,71,ZAG,32,Inglaterra
 Birmingham City,Eiran Cashin,Eiran Cashin,73,79,ZAG,24,Irlanda
 Birmingham City,Patrick Roberts,Patrick Roberts,72,72,MEI,29,Inglaterra
 Birmingham City,Lyndon Dykes,Lyndon Dykes,68,68,ATA,30,Escócia
-Birmingham City,Lewis Koumas,Lewis Koumas,69,83,MEI,20,País de Gales
 Birmingham City,Lee Buchanan,Lee Buchanan,70,76,LAT,25,Inglaterra
 Birmingham City,Scott Wright,Scott Wright,69,69,MEI,28,Escócia
 Birmingham City,Christoph Klarer,Christoph Klarer,72,76,ZAG,26,Áustria
@@ -177,8 +150,6 @@ Southampton,Joseph Aribo,Joseph Aribo,73,73,MEI,30,Nigéria
 Southampton,Finn Azaz,Finn Azaz,74,79,MEI,25,Irlanda
 Southampton,Flynn Downes,Flynn Downes,74,77,MEI,27,Inglaterra
 Southampton,Ryan Manning,Ryan Manning,73,73,LAT,30,Irlanda
-Southampton,Shea Charles,Shea Charles,72,82,MEI,22,Irlanda do Norte
-Southampton,Elias Jelert,Elias Jelert,73,78,LAT,23,Dinamarca
 Southampton,Caspar Jander,Caspar Jander,73,82,MEI,23,Alemanha
 Southampton,Kuryu Matsuki,Kuryu Matsuki,67,77,MEI,23,Japão
 Southampton,Adam Armstrong,Adam Armstrong,73,73,ATA,29,Inglaterra
@@ -187,14 +158,11 @@ Southampton,Welington,Welington,72,79,LAT,25,Brasil
 Southampton,Ryan Fraser,Ryan Fraser,70,70,MEI,32,Escócia
 Southampton,Mads Roerslev,Mads Roerslev,73,75,LAT,27,Dinamarca
 Southampton,Léo Scienza,Léo Scienza,73,73,MEI,27,Brasil
-Southampton,Cameron Archer,Cameron Archer,72,78,ATA,24,Inglaterra
-Southampton,Taylor Harwood-Bellis,Taylor Harwood-Bellis,74,81,ZAG,24,Inglaterra
 Southampton,Samuel Edozie,Samuel Edozie,72,81,ATA,23,Inglaterra
 Southampton,Jack Stephens,Jack Stephens,72,72,ZAG,32,Inglaterra
 Southampton,Ross Stewart,Ross Stewart,71,71,ATA,30,Escócia
 Southampton,Ronnie Edwards,Ronnie Edwards,70,80,ZAG,23,Inglaterra
 Southampton,Damion Downs,Damion Downs,70,80,ATA,22,Estados Unidos
-Southampton,Jay Robinson,Jay Robinson,64,80,ATA,19,Inglaterra
 Southampton,Joshua Quarshie,Joshua Quarshie,69,79,ZAG,22,Alemanha
 Southampton,Moses Sesay,Moses Sesay,56,75,MEI,19,Inglaterra
 Southampton,Nathan Wood,Nathan Wood,68,75,ZAG,24,Inglaterra
@@ -202,16 +170,13 @@ Southampton,Gavin Bazunu,Gavin Bazunu,73,80,GOL,24,Irlanda
 Southampton,Alex McCarthy,Alex McCarthy,70,70,GOL,36,Inglaterra
 Southampton,George Long,George Long,66,66,GOL,32,Inglaterra
 Southampton,Dylan Moody,Dylan Moody,55,78,GOL,18,Inglaterra
-Middlesbrough,Alan Browne,Alan Browne,72,72,MEI,31,Irlanda
 Middlesbrough,Riley McGree,Riley McGree,72,73,MEI,27,Austrália
-Middlesbrough,Hayden Hackney,Hayden Hackney,73,82,VOL,24,Inglaterra
 Middlesbrough,Callum Brittain,Callum Brittain,72,73,LAT,28,Inglaterra
 Middlesbrough,Aidan Morris,Aidan Morris,73,78,VOL,24,Estados Unidos
 Middlesbrough,Morgan Whittaker,Morgan Whittaker,73,78,MEI,25,Inglaterra
 Middlesbrough,Matthew Targett,Matthew Targett,71,71,LAT,30,Inglaterra
 Middlesbrough,Luke Ayling,Luke Ayling,71,71,LAT,34,Inglaterra
 Middlesbrough,Sverre Nypan,Sverre Nypan,69,86,MEI,19,Noruega
-Middlesbrough,Kaly Sène,Kaly Sène,69,76,ATA,25,Senegal
 Middlesbrough,Delano Burgzorg,Delano Burgzorg,69,70,MEI,27,Holanda
 Middlesbrough,Darragh Lenihan,Darragh Lenihan,71,71,ZAG,32,Irlanda
 Middlesbrough,Alex Bangura,Alex Bangura,69,72,LAT,27,Serra Leoa
@@ -262,7 +227,6 @@ Norwich City,Vladan Kovacević,Vladan Kovacević,70,73,GOL,28,Bósnia
 Stoke City,Lewis Baker,Lewis Baker,70,70,MEI,31,Inglaterra
 Stoke City,Million Manhoef,Million Manhoef,72,78,MEI,24,Holanda
 Stoke City,Aaron Cresswell,Aaron Cresswell,73,73,ZAG,36,Inglaterra
-Stoke City,Sorba Thomas,Sorba Thomas,71,72,MEI,27,País de Gales
 Stoke City,Tomáš Rigo,Tomáš Rigo,70,75,MEI,25,Eslováquia
 Stoke City,Bosun Lawal,Bosun Lawal,65,76,MEI,23,Irlanda
 Stoke City,É. Bocat,É. Bocat,69,72,LAT,27,França
@@ -274,7 +238,6 @@ Stoke City,Samuel Gallagher,Samuel Gallagher,69,69,ATA,30,Inglaterra
 Stoke City,Benjamin Pearson,Benjamin Pearson,70,70,VOL,31,Inglaterra
 Stoke City,Bae Jun Ho,Bae Jun Ho,71,80,MEI,22,Coreia do Sul
 Stoke City,Lamine Cissé,Lamine Cissé,68,78,ATA,23,França
-Stoke City,André Vidigal,André Vidigal,68,68,MEI,27,Angola
 Stoke City,Jamie Donley,Jamie Donley,67,81,MEI,21,Irlanda do Norte
 Stoke City,Ashley Phillips,Ashley Phillips,70,81,ZAG,21,Inglaterra
 Stoke City,Benjamin Wilmot,Benjamin Wilmot,69,73,ZAG,26,Inglaterra
@@ -313,10 +276,8 @@ West Bromwich Albion,Joshua Griffiths,Joshua Griffiths,65,73,GOL,24,Inglaterra
 West Bromwich Albion,Joe Wallis,Joe Wallis,54,68,GOL,21,Nova Zelândia
 Watford,Edo Kayembe,Edo Kayembe,71,72,MEI,28,RD Congo
 Watford,Moussa Sissoko,Moussa Sissoko,72,72,MEI,36,França
-Watford,Nestory Irankunda,Nestory Irankunda,67,82,MEI,20,Austrália
 Watford,Imrân Louza,Imrân Louza,73,75,MEI,27,Marrocos
 Watford,Nampalys Mendy,Nampalys Mendy,73,73,VOL,34,Senegal
-Watford,Giorgi Chakvetadze,Giorgi Chakvetadze,74,75,MEI,26,Geórgia
 Watford,Thomas Ince,Thomas Ince,67,67,MEI,34,Inglaterra
 Watford,Pierre Dwomoh,Pierre Dwomoh,68,78,MEI,22,Bélgica
 Watford,Caleb Wiley,Caleb Wiley,68,81,LAT,21,Estados Unidos
@@ -325,10 +286,8 @@ Watford,Marc Bola,Marc Bola,72,73,LAT,28,Inglaterra
 Watford,Jeremy Ngakia,Jeremy Ngakia,69,73,LAT,25,RD Congo
 Watford,Rocco Vata,Rocco Vata,67,80,MEI,21,Irlanda
 Watford,Kwadwo Baah,Kwadwo Baah,68,78,MEI,23,Alemanha
-Watford,Formose Mendy,Formose Mendy,71,79,ZAG,25,Senegal
 Watford,Jack Grieves,Jack Grieves,57,73,MEI,21,Inglaterra
 Watford,James Morris,James Morris,65,72,LAT,24,Inglaterra
-Watford,James Abankwah,James Abankwah,66,76,ZAG,22,Irlanda
 Watford,Othmane Maamma,Othmane Maamma,61,75,MEI,20,Marrocos
 Watford,Jeremy Petris,Jeremy Petris,68,68,LAT,28,França
 Watford,Kévin Keben,Kévin Keben,69,78,ZAG,22,Camarões
@@ -338,7 +297,6 @@ Watford,Max Alleyne,Max Alleyne,64,76,ZAG,21,Inglaterra
 Watford,Mamadou Doumbia,Mamadou Doumbia,64,78,ATA,20,Mali
 Watford,Matthew Pollock,Matthew Pollock,71,77,ZAG,24,Inglaterra
 Watford,Nathan Baxter,Nathan Baxter,66,71,GOL,27,Inglaterra
-Watford,Egil Selvik,Egil Selvik,70,73,GOL,29,Noruega
 Watford,Alfie Marriott,Alfie Marriott,54,67,GOL,22,Inglaterra
 Millwall,Alfie Doughty,Alfie Doughty,74,77,LAT,26,Inglaterra
 Millwall,Casper De Norre,Casper De Norre,72,72,VOL,29,Bélgica
@@ -376,7 +334,6 @@ Millwall,George Evans,George Evans,60,72,GOL,21,Inglaterra
 Bristol City,Jason Knight,Jason Knight,73,79,MEI,25,Irlanda
 Bristol City,Adam Randell,Adam Randell,69,75,MEI,25,Inglaterra
 Bristol City,Scott Twine,Scott Twine,72,73,MEI,27,Inglaterra
-Bristol City,Anis Mehmeti,Anis Mehmeti,72,77,MEI,25,Albânia
 Bristol City,Max Bird,Max Bird,73,77,MEI,25,Inglaterra
 Bristol City,Neto Borges,Neto Borges,71,71,LAT,29,Brasil
 Bristol City,Mark Sykes,Mark Sykes,69,69,MEI,28,Irlanda
@@ -391,7 +348,6 @@ Bristol City,Sinclair Armstrong,Sinclair Armstrong,68,78,ATA,23,Irlanda
 Bristol City,Yu Hirakawa,Yu Hirakawa,68,74,MEI,25,Japão
 Bristol City,Joshua Stokes,Joshua Stokes,64,75,MEI,22,Inglaterra
 Bristol City,Robert Dickie,Robert Dickie,73,73,ZAG,30,Inglaterra
-Bristol City,Fally Mayulu,Fally Mayulu,68,77,ATA,24,França
 Bristol City,Zachary Vyner,Zachary Vyner,70,72,ZAG,29,Quênia
 Bristol City,Luke McNally,Luke McNally,72,76,ZAG,26,Irlanda
 Bristol City,Robert Atkinson,Robert Atkinson,71,74,ZAG,28,Inglaterra
@@ -431,7 +387,6 @@ Queens Park Rangers,Daniel Bennie,Daniel Bennie,62,77,MEI,20,Austrália
 Queens Park Rangers,Liam Morrison,Liam Morrison,68,77,ZAG,23,Escócia
 Queens Park Rangers,Esquerdinha,Esquerdinha,58,75,LAT,20,Brasil
 Queens Park Rangers,Emmerson Sutton,Emmerson Sutton,57,76,MEI,19,Inglaterra
-Queens Park Rangers,Paul Nardi,Paul Nardi,73,73,GOL,32,França
 Queens Park Rangers,Joe Walsh,Joe Walsh,61,70,GOL,24,Inglaterra
 Wrexham,Liberato Cacace,Liberato Cacace,72,77,LAT,25,Nova Zelândia
 Wrexham,Benjamin Sheaf,Benjamin Sheaf,74,77,VOL,28,Inglaterra
@@ -528,14 +483,12 @@ Preston North End,Thierry Small,Thierry Small,67,78,MEI,22,Inglaterra
 Preston North End,Stefán Þórðarson,Stefán Þórðarson,69,72,MEI,27,Islândia
 Preston North End,Milutin Osmajić,Milutin Osmajić,70,73,ATA,27,Montenegro
 Preston North End,Alfie Devine,Alfie Devine,70,84,MEI,22,Inglaterra
-Preston North End,Harrison Armstrong,Harrison Armstrong,67,83,VOL,19,Inglaterra
 Preston North End,Andrew Hughes,Andrew Hughes,70,70,ZAG,34,País de Gales
 Preston North End,Pol Valentín,Pol Valentín,67,67,LAT,29,Espanha
 Preston North End,Andrija Vukčević,Andrija Vukčević,65,65,LAT,29,Montenegro
 Preston North End,Lewis Dobbin,Lewis Dobbin,67,77,MEI,23,Inglaterra
 Preston North End,Michael Smith,Michael Smith,69,69,ATA,34,Inglaterra
 Preston North End,Noah Mawene,Noah Mawene,59,71,MEI,21,Inglaterra
-Preston North End,Daniel Jebbison,Daniel Jebbison,65,75,ATA,23,Canadá
 Preston North End,Odeluga Offiah,Odeluga Offiah,67,77,LAT,23,Inglaterra
 Preston North End,Jordan Storey,Jordan Storey,71,73,ZAG,28,Inglaterra
 Preston North End,Lewis Gibson,Lewis Gibson,69,76,ZAG,26,Inglaterra
@@ -644,7 +597,6 @@ Sheffield Wednesday,Max Lowe,Max Lowe,71,71,LAT,29,Inglaterra
 Sheffield Wednesday,Yan Valery,Yan Valery,71,74,LAT,27,Tunísia
 Sheffield Wednesday,Jamal Lowe,Jamal Lowe,70,70,ATA,32,Jamaica
 Sheffield Wednesday,Nathaniel Chalobah,Nathaniel Chalobah,69,69,VOL,31,Inglaterra
-Sheffield Wednesday,Harry Amass,Harry Amass,68,83,LAT,19,Inglaterra
 Sheffield Wednesday,Iké Ugbo,Iké Ugbo,69,70,ATA,27,Canadá
 Sheffield Wednesday,Olaf Kobacki,Olaf Kobacki,64,70,MEI,25,Polônia
 Sheffield Wednesday,Di'Shon Bernard,Di'Shon Bernard,69,77,ZAG,25,Jamaica

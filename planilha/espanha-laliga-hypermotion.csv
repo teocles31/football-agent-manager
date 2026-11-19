@@ -1,25 +1,17 @@
 clube,nome_original,nome,overall,potencial,posicao,idade,pais
-Girona,Thomas Lemar,Thomas Lemar,77,77,MEI,30,França
 Girona,Portu,Portu,76,76,MEI,34,Espanha
 Girona,Daley Blind,Daley Blind,77,77,ZAG,36,Holanda
 Girona,Donny van de Beek,Donny van de Beek,76,76,MEI,29,Holanda
-Girona,Iván Martín,Iván Martín,77,80,MEI,27,Espanha
 Girona,Álex Moreno,Álex Moreno,77,77,LAT,33,Espanha
-Girona,Viktor Tsygankov,Viktor Tsygankov,79,79,MEI,28,Ucrânia
-Girona,Arnau Martínez,Arnau Martínez,79,84,LAT,23,Espanha
 Girona,Cristhian Stuani,Cristhian Stuani,77,77,ATA,39,Uruguai
-Girona,Axel Witsel,Axel Witsel,77,77,ZAG,37,Bélgica
 Girona,Azzedine Ounahi,Azzedine Ounahi,76,81,MEI,26,Marrocos
 Girona,Yaser Asprilla,Yaser Asprilla,75,82,MEI,22,Colômbia
-Girona,Hugo Rincón,Hugo Rincón,73,81,LAT,23,Espanha
 Girona,Francés,Francés,75,82,ZAG,24,Espanha
 Girona,Abel Ruiz,Abel Ruiz,73,76,ATA,26,Espanha
 Girona,David López,David López,77,77,ZAG,36,Espanha
 Girona,Bryan Gil,Bryan Gil,78,82,MEI,25,Espanha
 Girona,Jhon Solís,Jhon Solís,71,81,VOL,21,Colômbia
 Girona,Vladyslav Vanat,Vladyslav Vanat,76,81,ATA,24,Ucrânia
-Girona,Joel Roca,Joel Roca,69,81,ATA,21,Espanha
-Girona,Vitor Reis,Vitor Reis,70,84,ZAG,20,Brasil
 Girona,Papa Ba,Papa Ba,61,70,MEI,22,Senegal
 Girona,Gibi,Gibi,61,78,LAT,19,Espanha
 Girona,Paulo Gazzaniga,Paulo Gazzaniga,79,79,GOL,34,Argentina
@@ -27,7 +19,6 @@ Girona,Dominik Livaković,Dominik Livaković,80,80,GOL,31,Croácia
 Girona,Juan Carlos,Juan Carlos,73,73,GOL,38,Espanha
 Girona,Vladyslav Krapyvtsov,Vladyslav Krapyvtsov,64,79,GOL,21,Ucrânia
 Mallorca,Sergi Darder,Sergi Darder,81,81,MEI,32,Espanha
-Mallorca,Johan Mojica,Johan Mojica,78,78,LAT,33,Colômbia
 Mallorca,Manu Morlanes,Manu Morlanes,77,80,MEI,27,Espanha
 Mallorca,Dani Rodríguez,Dani Rodríguez,76,76,MEI,38,Espanha
 Mallorca,Antonio Sánchez,Antonio Sánchez,73,73,MEI,29,Espanha
@@ -39,20 +30,14 @@ Mallorca,Takuma Asano,Takuma Asano,75,75,MEI,31,Japão
 Mallorca,Pablo Torre,Pablo Torre,74,84,MEI,23,Espanha
 Mallorca,Mateu Morey,Mateu Morey,73,78,LAT,26,Espanha
 Mallorca,Martin Valjent,Martin Valjent,77,78,ZAG,30,Eslováquia
-Mallorca,Vedat Muriqi,Vedat Muriqi,79,79,ATA,32,Kosovo
 Mallorca,Abdón Prats,Abdón Prats,73,73,ATA,33,Espanha
 Mallorca,Raíllo,Raíllo,81,81,ZAG,34,Espanha
-Mallorca,Mateo Joseph,Mateo Joseph,70,81,ATA,22,Espanha
-Mallorca,Marash Kumbulla,Marash Kumbulla,77,80,ZAG,26,Albânia
-Mallorca,Jan Virgili,Jan Virgili,68,82,ATA,20,Espanha
 Mallorca,Javi Llabrés,Javi Llabrés,69,78,MEI,23,Espanha
 Mallorca,Iliesse Salhi,Iliesse Salhi,60,80,LAT,19,França
 Mallorca,David López,David López,68,78,ZAG,23,Espanha
 Mallorca,Marc Domènech,Marc Domènech,62,80,ATA,19,Espanha
-Mallorca,Leo Román,Leo Román,77,83,GOL,26,Espanha
 Mallorca,Pichu Cuéllar,Pichu Cuéllar,67,67,GOL,42,Espanha
 Mallorca,Lucas Bergström,Lucas Bergström,63,73,GOL,23,Finlândia
-Real Oviedo,Santiago Colombatto,Santiago Colombatto,73,74,VOL,29,Argentina
 Real Oviedo,Leander Dendoncker,Leander Dendoncker,75,75,MEI,31,Bélgica
 Real Oviedo,Santi Cazorla,Santi Cazorla,75,75,MEI,41,Espanha
 Real Oviedo,Alberto Reina,Alberto Reina,73,73,MEI,28,Espanha
@@ -63,11 +48,8 @@ Real Oviedo,Ilyas Chaira,Ilyas Chaira,72,77,MEI,25,Marrocos
 Real Oviedo,Oviemuno Ejaria,Oviemuno Ejaria,67,68,MEI,28,Inglaterra
 Real Oviedo,Lucas Ahijado,Lucas Ahijado,67,67,LAT,31,Espanha
 Real Oviedo,David Costas,David Costas,72,72,ZAG,31,Espanha
-Real Oviedo,Javi López,Javi López,73,80,LAT,24,Espanha
-Real Oviedo,Salomón Rondón,Salomón Rondón,74,74,ATA,36,Venezuela
 Real Oviedo,Kwasi Sibo,Kwasi Sibo,69,72,VOL,28,Gana
 Real Oviedo,Luka Ilić,Luka Ilić,70,73,MEI,27,Sérvia
-Real Oviedo,Federico Viñas,Federico Viñas,72,73,ATA,28,Uruguai
 Real Oviedo,Rahim Alhassane,Rahim Alhassane,69,75,LAT,24,Níger
 Real Oviedo,Brandon Domingues,Brandon Domingues,70,73,MEI,26,França
 Real Oviedo,Eric Bailly,Eric Bailly,74,74,ZAG,32,Costa do Marfim
@@ -75,7 +57,6 @@ Real Oviedo,Cheli,Cheli,61,74,MEI,21,Espanha
 Real Oviedo,Alex Forés,Alex Forés,71,78,ATA,25,Espanha
 Real Oviedo,Haissem Hassan,Haissem Hassan,72,79,MEI,24,França
 Real Oviedo,Dani Calvo,Dani Calvo,73,73,ZAG,32,Espanha
-Real Oviedo,David Carmo,David Carmo,76,80,ZAG,27,Angola
 Real Oviedo,Mouhamed Gueye,Mouhamed Gueye,61,74,MEI,21,Senegal
 Real Oviedo,Oier Luengo,Oier Luengo,69,72,ZAG,28,Espanha
 Real Oviedo,Adri Lopes,Adri Lopes,60,67,LAT,20,Espanha
@@ -84,7 +65,6 @@ Real Oviedo,Marco Esteban,Marco Esteban,63,76,ZAG,19,Espanha
 Real Oviedo,Aarón,Aarón,75,77,GOL,30,Espanha
 Real Oviedo,Horațiu Moldovan,Horațiu Moldovan,71,73,GOL,28,Romênia
 Real Oviedo,Miguel Narváez,Miguel Narváez,63,70,GOL,24,Espanha
-Almería,Lucas Robertone,Lucas Robertone,72,72,MEI,29,Argentina
 Almería,André Horta,André Horta,75,75,MEI,29,Portugal
 Almería,Álex Muñoz,Álex Muñoz,73,73,LAT,32,Espanha
 Almería,Dion Lopy,Dion Lopy,73,79,VOL,24,Senegal
@@ -122,12 +102,10 @@ Las Palmas,Sandro,Sandro,75,75,MEI,31,Espanha
 Las Palmas,Viti Rozada,Viti Rozada,73,73,LAT,28,Espanha
 Las Palmas,Cristian Gutiérrez,Cristian Gutiérrez,70,77,LAT,25,Espanha
 Las Palmas,Iván Gil,Iván Gil,71,76,MEI,26,Espanha
-Las Palmas,Mika Mármol,Mika Mármol,75,82,LAT,25,Espanha
 Las Palmas,Marvin,Marvin,68,69,LAT,26,Espanha
 Las Palmas,Edward Cedeño,Edward Cedeño,66,77,MEI,23,Panamá
 Las Palmas,Iñaki González,Iñaki González,68,81,VOL,22,Espanha
 Las Palmas,Pejiño,Pejiño,68,68,MEI,30,Espanha
-Las Palmas,Lorenzo Amatucci,Lorenzo Amatucci,68,81,VOL,22,Itália
 Las Palmas,Álex Suárez,Álex Suárez,73,73,ZAG,33,Espanha
 Las Palmas,Jesé,Jesé,68,68,ATA,33,Espanha
 Las Palmas,Ale García,Ale García,67,78,ATA,23,Espanha
@@ -141,14 +119,12 @@ Las Palmas,Valentín Pezzolesi,Valentín Pezzolesi,64,80,LAT,19,Espanha
 Las Palmas,Adam Arvelo,Adam Arvelo,62,76,ATA,21,Espanha
 Las Palmas,Arturo,Arturo,63,83,ATA,19,Espanha
 Las Palmas,Miloš Luković,Miloš Luković,67,81,ATA,20,Sérvia
-Las Palmas,Sergio Barcia,Sergio Barcia,68,76,ZAG,25,Espanha
 Las Palmas,Sergio Ruiz,Sergio Ruiz,62,79,ATA,20,Espanha
 Las Palmas,Caro,Caro,72,72,GOL,32,Espanha
 Las Palmas,Dinko Horkaš,Dinko Horkaš,73,78,GOL,27,Croácia
 Las Palmas,Nicolau,Nicolau,61,72,GOL,23,Espanha
 Las Palmas,Adri Suárez,Adri Suárez,63,76,GOL,21,Espanha
 Las Palmas,Killane,Killane,62,79,GOL,21,Argentina
-Real Zaragoza,Francho Serrano,Francho Serrano,72,81,MEI,24,Espanha
 Real Zaragoza,Dani Tasende,Dani Tasende,70,75,LAT,26,Espanha
 Real Zaragoza,Raúl Guti,Raúl Guti,70,70,MEI,29,Espanha
 Real Zaragoza,Valery,Valery,73,76,MEI,26,Espanha
@@ -156,7 +132,6 @@ Real Zaragoza,Keidi Bare,Keidi Bare,73,74,VOL,28,Albânia
 Real Zaragoza,Soberón,Soberón,71,71,ATA,29,Espanha
 Real Zaragoza,Dani Gómez,Dani Gómez,70,71,ATA,28,Espanha
 Real Zaragoza,Paulino,Paulino,70,70,MEI,29,Espanha
-Real Zaragoza,Paul Akouokou,Paul Akouokou,71,72,VOL,28,Costa do Marfim
 Real Zaragoza,Yussif Saidu,Yussif Saidu,65,82,MEI,21,Gana
 Real Zaragoza,Samed Baždar,Samed Baždar,69,80,ATA,22,Bósnia
 Real Zaragoza,Toni Moya,Toni Moya,67,68,MEI,28,Espanha
@@ -177,7 +152,6 @@ Real Zaragoza,Sebastián Kóša,Sebastián Kóša,65,78,ZAG,22,Eslováquia
 Real Zaragoza,Barrachina,Barrachina,61,81,ZAG,19,Espanha
 Real Zaragoza,Aleksandar Radovanović,Aleksandar Radovanović,69,69,ZAG,32,Sérvia
 Real Zaragoza,Jaime Sánchez-Rubio,Jaime Sánchez-Rubio,58,73,LAT,20,Espanha
-Real Zaragoza,Esteban Andrada,Esteban Andrada,72,72,GOL,35,Argentina
 Real Zaragoza,Adrián,Adrián,66,72,GOL,25,Argentina
 Real Zaragoza,Calavia,Calavia,59,71,GOL,23,Espanha
 Real Zaragoza,Manu Obón,Manu Obón,59,69,GOL,23,Espanha
@@ -185,8 +159,6 @@ Leganés,Melero,Melero,72,72,MEI,32,Espanha
 Leganés,Rubén Peña,Rubén Peña,72,72,LAT,35,Espanha
 Leganés,Óscar Plano,Óscar Plano,70,70,ATA,35,Espanha
 Leganés,Seydouba Cisse,Seydouba Cisse,73,80,MEI,25,Guiné
-Leganés,Duk,Duk,68,71,MEI,26,Cabo Verde
-Leganés,Juan Cruz,Juan Cruz,76,79,MEI,26,Espanha
 Leganés,Franquesa,Franquesa,72,72,LAT,29,Espanha
 Leganés,Roberto López,Roberto López,69,74,MEI,26,Espanha
 Leganés,Amadou Diawara,Amadou Diawara,68,68,VOL,29,Guiné
@@ -202,10 +174,8 @@ Leganés,Naim García,Naim García,67,71,MEI,24,Espanha
 Leganés,Lalo Aguilar,Lalo Aguilar,70,74,ZAG,24,Espanha
 Leganés,Marvel,Marvel,63,73,ZAG,23,Espanha
 Leganés,Ignasi Miquel,Ignasi Miquel,68,68,ZAG,33,Espanha
-Leganés,Benjamin Pauwels,Benjamin Pauwels,61,76,ATA,21,Bélgica
 Leganés,João Urbáez,João Urbáez,57,68,ZAG,24,República Dominicana
 Leganés,Saïd Imigene,Saïd Imigene,53,63,ZAG,21,Mauritânia
-Leganés,Juan Soriano,Juan Soriano,64,66,GOL,28,Espanha
 Leganés,San Román,San Román,69,72,GOL,29,Espanha
 Leganés,Javi Garrido,Javi Garrido,57,66,GOL,22,Espanha
 Burgos,Iñigo Córdoba,Iñigo Córdoba,71,71,MEI,29,Espanha
@@ -253,7 +223,6 @@ Sporting Gijón,Daniel Queipo,Daniel Queipo,68,77,MEI,24,Espanha
 Sporting Gijón,Enol Prendes,Enol Prendes,63,74,MEI,22,Espanha
 Sporting Gijón,Justin Smith,Justin Smith,65,76,VOL,23,Canadá
 Sporting Gijón,Álex Lozano,Álex Lozano,61,74,MEI,21,Espanha
-Sporting Gijón,Jordy Caicedo,Jordy Caicedo,66,67,ATA,28,Equador
 Sporting Gijón,Amadou Coundoul,Amadou Coundoul,65,73,ATA,24,Senegal
 Sporting Gijón,Álex Oyón,Álex Oyón,62,73,ATA,23,Espanha
 Sporting Gijón,Lucas Perrin,Lucas Perrin,69,72,ZAG,27,França
@@ -279,14 +248,12 @@ Eibar,Alkain,Alkain,70,70,MEI,29,Espanha
 Eibar,Jon Bautista,Jon Bautista,71,71,ATA,31,Espanha
 Eibar,Adu Ares,Adu Ares,68,77,MEI,24,Espanha
 Eibar,Alvaro Rodríguez,Alvaro Rodríguez,66,66,LAT,32,Espanha
-Eibar,Hodei,Hodei,67,72,LAT,22,Espanha
 Eibar,Aleix Garrido,Aleix Garrido,66,78,MEI,22,Espanha
 Eibar,Guruzeta,Guruzeta,68,71,MEI,26,Espanha
 Eibar,Cubero,Cubero,68,71,LAT,26,Espanha
 Eibar,Marc Delgado,Marc Delgado,59,73,MEI,21,Espanha
 Eibar,Javi Martón,Javi Martón,68,71,ATA,27,Espanha
 Eibar,Jair Amador,Jair Amador,68,68,ZAG,36,Portugal
-Eibar,Marco Moreno,Marco Moreno,68,74,ZAG,25,Espanha
 Eibar,Markel Arana,Markel Arana,60,67,LAT,24,Espanha
 Eibar,Ekaitz Redondo,Ekaitz Redondo,60,69,ATA,21,Espanha
 Eibar,Arambarri,Arambarri,68,70,ZAG,28,Espanha
@@ -298,7 +265,6 @@ Eibar,Luis López,Luis López,63,69,GOL,25,Espanha
 Eibar,Unai Ayala,Unai Ayala,55,66,GOL,22,Espanha
 Cádiz,Álex Fernández,Álex Fernández,72,72,MEI,33,Espanha
 Cádiz,Iza Carcelén,Iza Carcelén,70,70,LAT,33,Espanha
-Cádiz,Brian Ocampo,Brian Ocampo,70,71,MEI,27,Uruguai
 Cádiz,Youssouf Diarra,Youssouf Diarra,68,69,MEI,27,Mali
 Cádiz,Suso,Suso,77,77,MEI,32,Espanha
 Cádiz,Luís Hernández,Luís Hernández,73,73,ZAG,37,Espanha
@@ -319,25 +285,21 @@ Cádiz,Jorge Moreno,Jorge Moreno,67,76,ZAG,25,Espanha
 Cádiz,Pelayo,Pelayo,65,72,ZAG,23,Espanha
 Cádiz,Á. García Pascual,Á. García Pascual,65,74,ATA,24,Espanha
 Cádiz,Raúl Pereira,Raúl Pereira,62,71,LAT,21,Espanha
-Cádiz,Alfred Caicedo,Alfred Caicedo,61,73,LAT,21,Equador
 Cádiz,David Gil,David Gil,70,70,GOL,32,Espanha
 Cádiz,Víctor Aznar,Víctor Aznar,64,73,GOL,23,Brasil
 Real Valladolid,Mathis Lachuer,Mathis Lachuer,70,74,MEI,25,França
-Real Valladolid,Sergi Canós,Sergi Canós,71,71,MEI,29,Espanha
 Real Valladolid,Amath Ndiaye,Amath Ndiaye,72,72,MEI,30,Senegal
 Real Valladolid,Julien Ponceau,Julien Ponceau,74,78,MEI,25,França
 Real Valladolid,Meseguer,Meseguer,70,73,MEI,27,Espanha
 Real Valladolid,Iván Alejo,Iván Alejo,68,68,MEI,31,Espanha
 Real Valladolid,Pablo Tomeo,Pablo Tomeo,71,76,ZAG,26,Espanha
 Real Valladolid,Stanko Jurić,Stanko Jurić,70,70,VOL,29,Croácia
-Real Valladolid,Javi Sánchez,Javi Sánchez,72,74,ZAG,29,Espanha
 Real Valladolid,Marcos André,Marcos André,69,69,ATA,29,Brasil
 Real Valladolid,Stipe Biuk,Stipe Biuk,67,75,MEI,23,Croácia
 Real Valladolid,Guille Bueno,Guille Bueno,68,77,LAT,23,Espanha
 Real Valladolid,Ibrahim Akintunde Alani,Ibrahim Akintunde Alani,62,78,MEI,20,Nigéria
 Real Valladolid,Peter,Peter,71,80,MEI,24,República Dominicana
 Real Valladolid,Latasa,Latasa,70,76,ATA,25,Espanha
-Real Valladolid,Chuki,Chuki,68,80,MEI,22,Espanha
 Real Valladolid,Jesús Martínez,Jesús Martínez,59,69,MEI,22,Espanha
 Real Valladolid,Iván Garriel,Iván Garriel,64,77,LAT,21,Espanha
 Real Valladolid,Jorge Delgado,Jorge Delgado,62,71,ATA,23,Espanha
@@ -386,8 +348,6 @@ Granada,José Arnáiz,José Arnáiz,70,70,MEI,31,Espanha
 Granada,Álex Sola,Álex Sola,72,73,MEI,27,Espanha
 Granada,Sergio Ruiz,Sergio Ruiz,71,71,VOL,31,Espanha
 Granada,Jorge Pascual,Jorge Pascual,68,74,ATA,23,Espanha
-Granada,Souleymane Faye,Souleymane Faye,64,72,MEI,23,Senegal
-Granada,Mohamed Bouldini,Mohamed Bouldini,66,66,ATA,30,Marrocos
 Granada,Dominique Moubeke,Dominique Moubeke,60,70,MEI,20,Camarões
 Granada,Manu Lama,Manu Lama,68,77,ZAG,25,Espanha
 Granada,Gael Joel,Gael Joel,59,69,MEI,22,Guiné Equatorial
@@ -421,12 +381,10 @@ Huesca,Liberto Beltrán,Liberto Beltrán,68,68,MEI,29,Espanha
 Huesca,Carrillo,Carrillo,67,72,ZAG,24,Espanha
 Huesca,Pulido,Pulido,72,72,ZAG,35,Espanha
 Huesca,Enol Rodríguez,Enol Rodríguez,65,72,ATA,25,Espanha
-Huesca,Ángel Pérez,Ángel Pérez,62,71,LAT,23,Espanha
 Huesca,Jordi Martín,Jordi Martín,66,72,MEI,25,Espanha
 Huesca,Samuel Ntamack,Samuel Ntamack,65,72,ATA,25,França
 Huesca,Sergio Arribas,Sergio Arribas,66,75,ZAG,23,Espanha
 Huesca,Daniel Luna,Daniel Luna,66,77,MEI,23,Colômbia
-Huesca,Hugo Pérez,Hugo Pérez,63,75,ZAG,23,Espanha
 Huesca,Willy Chatiliez,Willy Chatiliez,60,75,MEI,21,Chile
 Huesca,Diego Aznar,Diego Aznar,61,72,ATA,23,Espanha
 Huesca,Iñigo Piña,Iñigo Piña,67,67,ZAG,31,Espanha
@@ -443,7 +401,6 @@ Córdoba,Carracedo,Carracedo,72,72,ATA,30,Espanha
 Córdoba,Sergi Guardiola,Sergi Guardiola,70,70,ATA,35,Espanha
 Córdoba,Albarrán,Albarrán,68,68,LAT,32,Espanha
 Córdoba,Jacobo González,Jacobo González,70,70,ATA,29,Espanha
-Córdoba,Dani Requena,Dani Requena,64,76,MEI,22,Espanha
 Córdoba,Rubén Alves,Rubén Alves,70,70,ZAG,31,Espanha
 Córdoba,Dalisson,Dalisson,64,69,MEI,26,Espanha
 Córdoba,Carlos Isaac,Carlos Isaac,68,69,LAT,28,Espanha
@@ -451,7 +408,6 @@ Córdoba,Kevin Medina,Kevin Medina,68,73,ATA,25,Espanha
 Córdoba,Adilson,Adilson,68,68,ATA,29,Portugal
 Córdoba,Alcedo,Alcedo,66,70,LAT,25,Espanha
 Córdoba,Adri Fuentes,Adri Fuentes,66,66,ATA,30,Espanha
-Córdoba,Xavi Sintes,Xavi Sintes,68,73,ZAG,24,Espanha
 Córdoba,Nikolay Obolskii,Nikolay Obolskii,67,67,ATA,29,Rússia
 Córdoba,Jan Salas,Jan Salas,60,77,MEI,20,Espanha
 Córdoba,Franck Fomeyem,Franck Fomeyem,66,72,ZAG,26,Camarões
@@ -460,7 +416,6 @@ Córdoba,Diego Bri,Diego Bri,62,71,ATA,23,Espanha
 Córdoba,Iker Álvarez,Iker Álvarez,67,72,GOL,25,Andorra
 Córdoba,Carlos Marín,Carlos Marín,70,73,GOL,29,Espanha
 Córdoba,Alejandro Arévalo,Alejandro Arévalo,55,70,GOL,18,Espanha
-Castellón,Álex Calatrava,Álex Calatrava,71,74,MEI,26,Espanha
 Castellón,Kenneth Mamah,Kenneth Mamah,68,68,MEI,28,Nigéria
 Castellón,Douglas Aurélio,Douglas Aurélio,67,70,ATA,27,Brasil
 Castellón,Israel Suero,Israel Suero,69,69,ATA,32,Espanha
@@ -518,7 +473,6 @@ Ceuta,Guille Vallejo,Guille Vallejo,65,65,GOL,31,Espanha
 Mirandés,Aarón Martín,Aarón Martín,67,78,MEI,19,Espanha
 Mirandés,Marino Illescas,Marino Illescas,67,74,MEI,25,Espanha
 Mirandés,Álex Cardero,Álex Cardero,68,74,MEI,22,Espanha
-Mirandés,Hugo Novoa,Hugo Novoa,67,73,MEI,23,Espanha
 Mirandés,Ismael Barea,Ismael Barea,65,78,MEI,21,Espanha
 Mirandés,Gonzalo Petit,Gonzalo Petit,69,81,ATA,19,Uruguai
 Mirandés,Carlos Fernández,Carlos Fernández,69,69,ATA,30,Espanha
@@ -527,13 +481,11 @@ Mirandés,Rafa Bauza,Rafa Bauza,65,78,VOL,21,Espanha
 Mirandés,Zárate,Zárate,58,66,MEI,22,Espanha
 Mirandés,Iker Varela,Iker Varela,63,72,MEI,23,Espanha
 Mirandés,Thiago Helguera,Thiago Helguera,65,79,VOL,20,Uruguai
-Mirandés,Toni Tamarit,Toni Tamarit,62,72,MEI,20,Espanha
 Mirandés,Pablo Pérez,Pablo Pérez,64,71,LAT,24,Espanha
 Mirandés,Juan Gutiérrez,Juan Gutiérrez,70,74,ZAG,26,Espanha
 Mirandés,Alberto Marí,Alberto Marí,66,70,ATA,25,Espanha
 Mirandés,Pablo López,Pablo López,63,83,ATA,20,Espanha
 Mirandés,Etienne Eto'o,Etienne Eto'o,62,71,ATA,23,Camarões
-Mirandés,Iker Córdoba,Iker Córdoba,65,78,ZAG,20,Espanha
 Mirandés,Salim El Jebari,Salim El Jebari,65,73,ATA,22,Marrocos
 Mirandés,Arriola,Arriola,57,64,MEI,21,Espanha
 Mirandés,Postigo,Postigo,66,66,ZAG,37,Espanha
@@ -565,8 +517,6 @@ Cultural Leonesa,Satrústegui,Satrústegui,65,65,ZAG,35,Espanha
 Cultural Leonesa,Nico Toca,Nico Toca,62,72,VOL,23,Espanha
 Cultural Leonesa,Tomás Ribeiro,Tomás Ribeiro,70,73,ZAG,27,Portugal
 Cultural Leonesa,Rafa Tresaco,Rafa Tresaco,65,68,MEI,25,Espanha
-Cultural Leonesa,Paco Cortés,Paco Cortés,64,81,ATA,18,Espanha
-Cultural Leonesa,Roger Hinojo,Roger Hinojo,63,77,LAT,21,Espanha
 Cultural Leonesa,Quique Fornos,Quique Fornos,64,64,ZAG,29,Espanha
 Cultural Leonesa,Juan Sánchez,Juan Sánchez,60,68,MEI,22,Espanha
 Cultural Leonesa,Juan Larios,Juan Larios,59,70,LAT,22,Espanha

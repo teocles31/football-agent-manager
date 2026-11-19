@@ -1,30 +1,22 @@
 clube,nome_original,nome,overall,potencial,posicao,idade,pais
 Wolfsburg,Maximilian Arnold,Maximilian Arnold,79,79,VOL,32,Alemanha
 Wolfsburg,Lovro Majer,Lovro Majer,78,79,MEI,28,Croácia
-Wolfsburg,Mohamed Amoura,Mohamed Amoura,80,84,ATA,26,Argélia
 Wolfsburg,Yannick Gerhardt,Yannick Gerhardt,75,75,MEI,32,Alemanha
 Wolfsburg,Mattias Svanberg,Mattias Svanberg,76,79,MEI,27,Suécia
 Wolfsburg,Andreas Skov Olsen,Andreas Skov Olsen,77,78,ATA,26,Dinamarca
 Wolfsburg,Joakim Mæhle,Joakim Mæhle,78,78,LAT,29,Dinamarca
 Wolfsburg,Aaron Zehnter,Aaron Zehnter,72,80,MEI,21,Alemanha
-Wolfsburg,Patrick Wimmer,Patrick Wimmer,77,83,MEI,25,Áustria
 Wolfsburg,Denis Vavro,Denis Vavro,78,79,ZAG,30,Eslováquia
-Wolfsburg,Jonas Wind,Jonas Wind,78,80,ATA,27,Dinamarca
 Wolfsburg,Vinicius Souza,Vinicius Souza,76,79,VOL,27,Brasil
 Wolfsburg,Christian Eriksen,Christian Eriksen,76,76,MEI,34,Dinamarca
-Wolfsburg,Jesper Lindstrøm,Jesper Lindstrøm,75,78,MEI,26,Dinamarca
 Wolfsburg,Rogério,Rogério,73,74,LAT,28,Brasil
-Wolfsburg,Konstantinos Koulierakis,Konstantinos Koulierakis,77,86,ZAG,22,Grécia
 Wolfsburg,Kevin Paredes,Kevin Paredes,73,82,ATA,23,Estados Unidos
-Wolfsburg,Adam Daghim,Adam Daghim,66,78,ATA,20,Dinamarca
 Wolfsburg,Kilian Fischer,Kilian Fischer,74,77,LAT,25,Alemanha
 Wolfsburg,Bence Dárdai,Bence Dárdai,72,82,MEI,20,Hungria
 Wolfsburg,Saël Kumbedi,Saël Kumbedi,72,80,LAT,21,França
-Wolfsburg,Moritz Jenz,Moritz Jenz,76,79,ZAG,27,Alemanha
 Wolfsburg,Dženan Pejčinović,Dženan Pejčinović,65,79,ATA,21,Alemanha
 Wolfsburg,Jenson Seelt,Jenson Seelt,66,78,ZAG,23,Holanda
 Wolfsburg,Mathys Angély,Mathys Angély,61,79,ZAG,19,França
-Wolfsburg,Kamil Grabara,Kamil Grabara,79,84,GOL,27,Polônia
 Wolfsburg,Marius Müller,Marius Müller,75,75,GOL,33,Alemanha
 Wolfsburg,Pavao Pervan,Pavao Pervan,71,71,GOL,38,Áustria
 Wolfsburg,Jakub Zieliński,Jakub Zieliński,59,79,GOL,18,Polônia
@@ -36,7 +28,6 @@ Heidenheim,Marnon-Thomas Busch,Marnon-Thomas Busch,72,72,LAT,31,Alemanha
 Heidenheim,Luca Kerber,Luca Kerber,70,77,VOL,24,Alemanha
 Heidenheim,Omar Traoré,Omar Traoré,73,74,LAT,28,Alemanha
 Heidenheim,Jan Schöppner,Jan Schöppner,74,76,VOL,27,Alemanha
-Heidenheim,Marvin Pieringer,Marvin Pieringer,75,76,ATA,26,Alemanha
 Heidenheim,Sirlord Conteh,Sirlord Conteh,69,69,ATA,30,Alemanha
 Heidenheim,Julian Niehues,Julian Niehues,69,75,VOL,25,Alemanha
 Heidenheim,Budu Zivzivadze,Budu Zivzivadze,72,72,ATA,32,Geórgia
@@ -51,8 +42,6 @@ Heidenheim,Nick Rothweiler,Nick Rothweiler,59,73,MEI,20,Alemanha
 Heidenheim,Arijon Ibrahimović,Arijon Ibrahimović,61,77,MEI,20,Alemanha
 Heidenheim,Yannik Wagner,Yannik Wagner,59,77,MEI,19,Alemanha
 Heidenheim,Adam Kölle,Adam Kölle,59,74,ZAG,20,Alemanha
-Heidenheim,Diant Ramaj,Diant Ramaj,73,81,GOL,24,Alemanha
-Heidenheim,Kevin Müller,Kevin Müller,74,74,GOL,35,Alemanha
 Heidenheim,Frank Feller,Frank Feller,68,77,GOL,22,Alemanha
 Heidenheim,Paul Tschernuth,Paul Tschernuth,59,69,GOL,24,Áustria
 Bochum,Matúš Bero,Matúš Bero,74,74,MEI,30,Eslováquia
@@ -80,7 +69,6 @@ Bochum,Niklas Jahn,Niklas Jahn,59,69,VOL,22,Alemanha
 Bochum,Kacper Kościerski,Kacper Kościerski,61,81,LAT,19,Alemanha
 Bochum,Philipp Strompf,Philipp Strompf,69,71,ZAG,28,Alemanha
 Bochum,Erhan Mašović,Erhan Mašović,71,75,ZAG,27,Sérvia
-Bochum,Cajetan Lenz,Cajetan Lenz,60,72,VOL,20,Alemanha
 Bochum,Alessandro Crimaldi,Alessandro Crimaldi,59,73,ATA,18,Itália
 Bochum,Lirim Jashari,Lirim Jashari,60,73,MEI,20,Kosovo
 Bochum,Daniel Hülsenbusch,Daniel Hülsenbusch,59,69,ZAG,21,Alemanha
@@ -90,7 +78,6 @@ Bochum,Niclas Thiede,Niclas Thiede,66,71,GOL,27,Alemanha
 Bochum,Hugo Rölleke,Hugo Rölleke,60,75,GOL,21,Alemanha
 St. Pauli,Mathias Pereira Lage,Mathias Pereira Lage,75,75,ATA,29,Portugal
 St. Pauli,Jackson Irvine,Jackson Irvine,75,75,MEI,33,Austrália
-St. Pauli,Manolis Saliakas,Manolis Saliakas,73,73,LAT,29,Grécia
 St. Pauli,Eric Smith,Eric Smith,75,76,VOL,29,Suécia
 St. Pauli,Louis Oppie,Louis Oppie,68,74,LAT,24,Alemanha
 St. Pauli,Connor Metcalfe,Connor Metcalfe,69,73,MEI,26,Austrália
@@ -118,7 +105,6 @@ St. Pauli,Nikola Vasilj,Nikola Vasilj,77,78,GOL,30,Bósnia
 St. Pauli,Ben Voll,Ben Voll,67,72,GOL,25,Alemanha
 St. Pauli,Simon Spari,Simon Spari,61,71,GOL,24,Áustria
 Hertha BSC,Fabian Reese,Fabian Reese,75,75,ATA,28,Alemanha
-Hertha BSC,Michaël Cuisance,Michaël Cuisance,72,75,MEI,26,França
 Hertha BSC,Paul Seguin,Paul Seguin,71,71,VOL,31,Alemanha
 Hertha BSC,Kevin Sessa,Kevin Sessa,68,73,MEI,26,Alemanha
 Hertha BSC,Bilal Hussein,Bilal Hussein,66,71,MEI,26,Suécia
@@ -127,7 +113,6 @@ Hertha BSC,Diego Demme,Diego Demme,71,71,VOL,34,Alemanha
 Hertha BSC,Michał Karbownik,Michał Karbownik,70,74,LAT,25,Polônia
 Hertha BSC,Jón Þorsteinsson,Jón Þorsteinsson,69,70,MEI,27,Islândia
 Hertha BSC,Leon Jensen,Leon Jensen,70,70,MEI,29,Alemanha
-Hertha BSC,Maurice Krattenmacher,Maurice Krattenmacher,69,83,MEI,20,Alemanha
 Hertha BSC,Deyovaisio Zeefuik,Deyovaisio Zeefuik,69,70,LAT,28,Holanda
 Hertha BSC,Márton Dárdai,Márton Dárdai,70,76,ZAG,24,Hungria
 Hertha BSC,Julian Eitschberger,Julian Eitschberger,67,79,MEI,22,Alemanha
@@ -139,13 +124,11 @@ Hertha BSC,Toni Leistner,Toni Leistner,70,70,ZAG,35,Alemanha
 Hertha BSC,Boris Mamuzah Lum,Boris Mamuzah Lum,60,82,VOL,18,Alemanha
 Hertha BSC,John Brooks,John Brooks,72,72,ZAG,33,Estados Unidos
 Hertha BSC,Linus Gechter,Linus Gechter,69,78,ZAG,22,Alemanha
-Hertha BSC,Agustín Rogel,Agustín Rogel,70,73,ZAG,28,Uruguai
 Hertha BSC,Dion Ajvazi,Dion Ajvazi,57,68,MEI,22,Albânia
 Hertha BSC,Niklas Kolbe,Niklas Kolbe,67,69,ZAG,29,Alemanha
 Hertha BSC,Tim Hoffmann,Tim Hoffmann,61,73,ZAG,21,Alemanha
 Hertha BSC,Marius Gersbeck,Marius Gersbeck,68,68,GOL,31,Alemanha
 Hertha BSC,Konstantin Heide,Konstantin Heide,63,77,GOL,20,Alemanha
-Hertha BSC,Tjark Ernst,Tjark Ernst,69,79,GOL,23,Alemanha
 Hertha BSC,Tim Goller,Tim Goller,59,74,GOL,21,Alemanha
 Holstein Kiel,Stefan Schwab,Stefan Schwab,73,73,MEI,35,Áustria
 Holstein Kiel,Tymoteusz Puchacz,Tymoteusz Puchacz,69,72,LAT,27,Polônia
@@ -186,7 +169,6 @@ Kaiserslautern,Semih Sahin,Semih Sahin,71,75,VOL,26,Alemanha
 Kaiserslautern,Afeez Aremu,Afeez Aremu,67,73,VOL,26,Nigéria
 Kaiserslautern,Naatan Skyttä,Naatan Skyttä,71,79,MEI,24,Finlândia
 Kaiserslautern,Hendrick Zuck,Hendrick Zuck,66,66,LAT,36,Alemanha
-Kaiserslautern,Luca Sirch,Luca Sirch,71,76,ZAG,27,Alemanha
 Kaiserslautern,Tobias Raschl,Tobias Raschl,66,71,MEI,26,Alemanha
 Kaiserslautern,Kenny Redondo,Kenny Redondo,67,67,MEI,31,Alemanha
 Kaiserslautern,Simon Asta,Simon Asta,69,72,MEI,25,Alemanha
@@ -215,7 +197,6 @@ Darmstadt,Marco Richter,Marco Richter,69,69,MEI,28,Alemanha
 Darmstadt,Fabian Holland,Fabian Holland,71,71,VOL,36,Alemanha
 Darmstadt,Jean-Paul Boëtius,Jean-Paul Boëtius,69,69,MEI,32,Suriname
 Darmstadt,Sergio López,Sergio López,68,71,LAT,27,Espanha
-Darmstadt,Isac Lidberg,Isac Lidberg,73,74,ATA,27,Suécia
 Darmstadt,Paul Will,Paul Will,68,73,VOL,27,Alemanha
 Darmstadt,Kai Klefisch,Kai Klefisch,71,75,VOL,26,Alemanha
 Darmstadt,Luca Marseiler,Luca Marseiler,68,68,ATA,29,Alemanha
@@ -238,7 +219,6 @@ Darmstadt,Marcel Schuhen,Marcel Schuhen,72,72,GOL,33,Alemanha
 Darmstadt,Max Pfister,Max Pfister,55,73,ZAG,19,Alemanha
 Darmstadt,Alexander Brunst,Alexander Brunst,66,67,GOL,31,Alemanha
 Darmstadt,Benedikt Börner,Benedikt Börner,58,74,GOL,20,Alemanha
-Hannover 96,Enzo Leopold,Enzo Leopold,73,77,MEI,26,Alemanha
 Hannover 96,Maurice Neubauer,Maurice Neubauer,73,73,LAT,30,Alemanha
 Hannover 96,Mustapha Bundu,Mustapha Bundu,69,69,MEI,29,Serra Leoa
 Hannover 96,Jannik Rochelt,Jannik Rochelt,68,69,MEI,27,Alemanha
@@ -250,12 +230,9 @@ Hannover 96,Benjamin Källman,Benjamin Källman,72,73,ATA,28,Finlândia
 Hannover 96,Brooklyn Ezeh,Brooklyn Ezeh,67,72,LAT,25,Alemanha
 Hannover 96,Jonas Sterner,Jonas Sterner,69,75,LAT,24,Alemanha
 Hannover 96,Benedikt Pichler,Benedikt Pichler,68,68,ATA,29,Áustria
-Hannover 96,Maik Nawrocki,Maik Nawrocki,69,77,ZAG,25,Polônia
 Hannover 96,Virgil Ghiță,Virgil Ghiță,70,72,ZAG,28,Romênia
-Hannover 96,William Kokolo,William Kokolo,65,70,LAT,26,França
 Hannover 96,Bastian Allgeier,Bastian Allgeier,66,74,MEI,24,Alemanha
 Hannover 96,Boris Tomiak,Boris Tomiak,71,74,ZAG,27,Alemanha
-Hannover 96,Noël Aséko,Noël Aséko,62,79,VOL,20,Alemanha
 Hannover 96,Kolja Oudenne,Kolja Oudenne,66,72,MEI,24,Suécia
 Hannover 96,Hayate Matsuda,Hayate Matsuda,63,73,LAT,22,Japão
 Hannover 96,Ime Okon,Ime Okon,67,74,ZAG,22,África do Sul
@@ -263,7 +240,6 @@ Hannover 96,Hendry Blank,Hendry Blank,64,79,ZAG,21,Alemanha
 Hannover 96,Husseyn Chakroun,Husseyn Chakroun,64,76,MEI,21,Líbano
 Hannover 96,Taycan Kurt,Taycan Kurt,55,75,ATA,18,Alemanha
 Hannover 96,Denis Husser,Denis Husser,56,77,ATA,18,Alemanha
-Hannover 96,Nahuel Noll,Nahuel Noll,67,73,GOL,23,Alemanha
 Hannover 96,Leo Weinkauf,Leo Weinkauf,66,67,GOL,30,Alemanha
 Hannover 96,Jonas Schwanke,Jonas Schwanke,57,72,GOL,19,Alemanha
 Magdeburg,Barış Atik,Barış Atik,72,72,ATA,31,Turquia
@@ -278,7 +254,6 @@ Magdeburg,Silas Gnaka,Silas Gnaka,70,72,VOL,27,Costa do Marfim
 Magdeburg,Jean Hugonet,Jean Hugonet,71,74,ZAG,26,França
 Magdeburg,Abu-Bekir El Zein,Abu-Bekir El Zein,67,74,MEI,23,Alemanha
 Magdeburg,Falko Michel,Falko Michel,66,71,MEI,25,Alemanha
-Magdeburg,Laurin Ulrich,Laurin Ulrich,65,80,MEI,21,Alemanha
 Magdeburg,Robert Leipertz,Robert Leipertz,65,65,ATA,33,Alemanha
 Magdeburg,Mateusz Żukowski,Mateusz Żukowski,64,70,ATA,24,Polônia
 Magdeburg,Rayan Ghrieb,Rayan Ghrieb,68,69,MEI,27,França
@@ -286,12 +261,10 @@ Magdeburg,Tarek Chahed,Tarek Chahed,60,60,LAT,30,Alemanha
 Magdeburg,Daniel Heber,Daniel Heber,68,68,ZAG,32,Alemanha
 Magdeburg,Luka-Mikael Hyryläinen,Luka-Mikael Hyryläinen,66,76,VOL,21,Finlândia
 Magdeburg,Samuel Loric,Samuel Loric,66,70,LAT,26,França
-Magdeburg,Dariusz Stalmach,Dariusz Stalmach,61,75,MEI,20,Polônia
 Magdeburg,Aleksa Marušić,Aleksa Marušić,64,67,ATA,27,Montenegro
 Magdeburg,Alexander Ahl Holmström,Alexander Ahl Holmström,65,68,ATA,27,Suécia
 Magdeburg,Noah Pesch,Noah Pesch,63,76,MEI,21,Croácia
 Magdeburg,Maximilian Breunig,Maximilian Breunig,68,73,ATA,25,Alemanha
-Magdeburg,Kandet Diawara,Kandet Diawara,65,68,MEI,26,Guiné
 Magdeburg,Max Geschwill,Max Geschwill,68,74,ZAG,25,Alemanha
 Magdeburg,Emir Kuhinja,Emir Kuhinja,61,70,ATA,24,Alemanha
 Magdeburg,Tobias Müller,Tobias Müller,68,68,ZAG,32,Alemanha
@@ -307,12 +280,10 @@ Fortuna Düsseldorf,Sotirios Alexandropoulos,Sotirios Alexandropoulos,68,74,MEI,
 Fortuna Düsseldorf,Matthias Zimmermann,Matthias Zimmermann,71,71,VOL,34,Alemanha
 Fortuna Düsseldorf,Cédric Itten,Cédric Itten,70,70,ATA,29,Suíça
 Fortuna Düsseldorf,Christopher Lenz,Christopher Lenz,70,70,LAT,31,Alemanha
-Fortuna Düsseldorf,Florent Muslija,Florent Muslija,71,72,MEI,28,Kosovo
 Fortuna Düsseldorf,Tim Oberdorf,Tim Oberdorf,72,72,ZAG,29,Alemanha
 Fortuna Düsseldorf,Moritz Heyer,Moritz Heyer,68,68,LAT,31,Alemanha
 Fortuna Düsseldorf,Ž. Celar,Ž. Celar,69,72,ATA,27,Eslovênia
 Fortuna Düsseldorf,Julian Hettwer,Julian Hettwer,69,78,ATA,23,Alemanha
-Fortuna Düsseldorf,Anouar El Azzouzi,Anouar El Azzouzi,67,75,VOL,25,Marrocos
 Fortuna Düsseldorf,Shinta Appelkamp,Shinta Appelkamp,70,75,MEI,25,Alemanha
 Fortuna Düsseldorf,Tim Rossmann,Tim Rossmann,68,75,MEI,22,Alemanha
 Fortuna Düsseldorf,Christian Rasmussen,Christian Rasmussen,66,74,ATA,23,Dinamarca
@@ -321,12 +292,9 @@ Fortuna Düsseldorf,Jordy de Wijs,Jordy de Wijs,68,68,ZAG,31,Holanda
 Fortuna Düsseldorf,Danny Schmidt,Danny Schmidt,67,72,ATA,23,Alemanha
 Fortuna Düsseldorf,Luca Raimund,Luca Raimund,62,77,MEI,21,Alemanha
 Fortuna Düsseldorf,Jesper Daland,Jesper Daland,72,76,ZAG,26,Noruega
-Fortuna Düsseldorf,Tim Breithaupt,Tim Breithaupt,69,76,VOL,24,Alemanha
-Fortuna Düsseldorf,Sima Suso,Sima Suso,59,74,VOL,21,Alemanha
 Fortuna Düsseldorf,Karim Affo,Karim Affo,61,75,MEI,20,Alemanha
 Fortuna Düsseldorf,K. Schmidt,K. Schmidt,67,76,ZAG,24,Alemanha
 Fortuna Düsseldorf,Elias Egouli,Elias Egouli,60,68,ZAG,23,Alemanha
-Fortuna Düsseldorf,Florian Kastenmeier,Florian Kastenmeier,72,74,GOL,29,Alemanha
 Fortuna Düsseldorf,Marcel Lotka,Marcel Lotka,68,74,GOL,25,Polônia
 Fortuna Düsseldorf,Florian Schock,Florian Schock,61,68,GOL,25,Alemanha
 Karlsruhe,Marvin Wanitzek,Marvin Wanitzek,76,76,MEI,33,Alemanha
@@ -363,7 +331,6 @@ Nürnberg,Danilo,Danilo,68,68,LAT,34,Brasil
 Nürnberg,Pape Diop,Pape Diop,69,78,VOL,22,Senegal
 Nürnberg,Ondřej Karafiát,Ondřej Karafiát,68,68,ZAG,31,Tchéquia
 Nürnberg,Adam Markhiev,Adam Markhiev,67,74,MEI,24,Finlândia
-Nürnberg,Tom Baack,Tom Baack,68,71,MEI,27,Alemanha
 Nürnberg,Finn Becker,Finn Becker,72,75,MEI,26,Alemanha
 Nürnberg,Henri Koudossou,Henri Koudossou,69,72,LAT,26,Alemanha
 Nürnberg,Benjamin Goller,Benjamin Goller,66,67,MEI,27,Alemanha
@@ -373,7 +340,6 @@ Nürnberg,Hindolo Mustapha,Hindolo Mustapha,61,80,MEI,20,Serra Leoa
 Nürnberg,Adriano Grimaldi,Adriano Grimaldi,68,68,ATA,35,Alemanha
 Nürnberg,Justin-Kai von der Hitz,Justin-Kai von der Hitz,60,82,MEI,19,Alemanha
 Nürnberg,Mohamed Zoma,Mohamed Zoma,66,74,ATA,22,Itália
-Nürnberg,Tim Drexler,Tim Drexler,69,80,ZAG,21,Alemanha
 Nürnberg,Eryk Grzywacz,Eryk Grzywacz,60,77,VOL,20,Polônia
 Nürnberg,Berkay Yilmaz,Berkay Yilmaz,68,77,LAT,21,Turquia
 Nürnberg,Fabio Gruber,Fabio Gruber,67,74,ZAG,23,Alemanha
@@ -387,7 +353,6 @@ Nürnberg,Simon Joachims,Simon Joachims,57,65,MEI,24,Alemanha
 Nürnberg,Eric Porstner,Eric Porstner,57,72,LAT,19,Alemanha
 Nürnberg,Kristian Mandić,Kristian Mandić,57,79,ZAG,18,Croácia
 Nürnberg,Tino Kusanović,Tino Kusanović,57,78,ATA,18,Croácia
-Nürnberg,Luka Lochoshvili,Luka Lochoshvili,69,72,ZAG,28,Geórgia
 Nürnberg,Tarek Buchmann,Tarek Buchmann,60,77,ZAG,21,Alemanha
 Nürnberg,Michal Kukucka,Michal Kukucka,61,68,GOL,24,Eslováquia
 Nürnberg,Christian Mathenia,Christian Mathenia,67,67,GOL,34,Alemanha
@@ -404,7 +369,6 @@ Greuther Fürth,Jomaine Consbruch,Jomaine Consbruch,67,74,MEI,24,Alemanha
 Greuther Fürth,Mathias Olesen,Mathias Olesen,66,72,MEI,25,Luxemburgo
 Greuther Fürth,Dennis Srbeny,Dennis Srbeny,67,67,ATA,32,Alemanha
 Greuther Fürth,Juan Cabrera,Juan Cabrera,64,74,MEI,23,Uruguai
-Greuther Fürth,Noel Futkeu,Noel Futkeu,70,77,ATA,23,Alemanha
 Greuther Fürth,Omar Sillah,Omar Sillah,63,74,ATA,23,Alemanha
 Greuther Fürth,Aaron Keller,Aaron Keller,67,78,MEI,22,Suíça
 Greuther Fürth,Reno Münz,Reno Münz,63,75,LAT,20,Alemanha
@@ -456,14 +420,12 @@ Preußen Münster,Marcel Benger,Marcel Benger,67,69,VOL,28,Alemanha
 Preußen Münster,Rico Preißinger,Rico Preißinger,66,66,VOL,30,Alemanha
 Preußen Münster,Zidan Sertdemir,Zidan Sertdemir,65,78,MEI,21,Dinamarca
 Preußen Münster,Etienne Amenyido,Etienne Amenyido,66,67,ATA,28,Togo
-Preußen Münster,Oliver Batista Meier,Oliver Batista Meier,68,75,MEI,25,Alemanha
 Preußen Münster,Joshua Mees,Joshua Mees,69,69,MEI,30,Alemanha
 Preußen Münster,Yassine Bouchama,Yassine Bouchama,65,65,MEI,29,Alemanha
 Preußen Münster,Jannis Heuer,Jannis Heuer,68,73,ZAG,27,Alemanha
 Preußen Münster,Malik Batmaz,Malik Batmaz,68,73,ATA,26,Turquia
 Preußen Münster,Marco Meyerhöfer,Marco Meyerhöfer,69,69,LAT,30,Alemanha
 Preußen Münster,Lars Lokotsch,Lars Lokotsch,65,65,ATA,30,Alemanha
-Preußen Münster,Jano ter Horst,Jano ter Horst,67,73,LAT,24,Alemanha
 Preußen Münster,Paul Jaeckel,Paul Jaeckel,69,71,ZAG,28,Alemanha
 Preußen Münster,Oscar Vilhelmsson,Oscar Vilhelmsson,67,77,ATA,22,Suécia
 Preußen Münster,Luca Bolay,Luca Bolay,62,71,LAT,24,Alemanha
@@ -518,7 +480,6 @@ Dynamo Dresden,Aljaž Casar,Aljaž Casar,66,71,MEI,25,Eslovênia
 Dynamo Dresden,Jakob Lemmer,Jakob Lemmer,68,71,ATA,26,Alemanha
 Dynamo Dresden,Vinko Šapina,Vinko Šapina,69,69,VOL,31,Alemanha
 Dynamo Dresden,Tony Menzel,Tony Menzel,65,74,MEI,21,Alemanha
-Dynamo Dresden,Kofi Amoako,Kofi Amoako,64,81,VOL,21,Alemanha
 Dynamo Dresden,Lars Bünning,Lars Bünning,67,69,ZAG,28,Alemanha
 Dynamo Dresden,Christoph Daferner,Christoph Daferner,69,70,ATA,28,Alemanha
 Dynamo Dresden,Lukas Boeder,Lukas Boeder,67,68,ZAG,29,Alemanha

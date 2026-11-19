@@ -298,12 +298,9 @@ Rangers,John Souttar,John Souttar,73,74,ZAG,29,Escócia
 Rangers,Oliver Antman,Oliver Antman,75,81,MEI,24,Finlândia
 Rangers,Bojan Miovski,Bojan Miovski,72,75,ATA,27,Macedônia do Norte
 Rangers,Thelonious Aasgaard,Thelonious Aasgaard,68,75,MEI,24,Noruega
-Rangers,Kieran Dowell,Kieran Dowell,70,70,MEI,28,Inglaterra
 Rangers,Maximilian Aarons,Maximilian Aarons,72,75,LAT,26,Inglaterra
 Rangers,Danilo,Danilo,73,75,ATA,27,Brasil
-Rangers,Derek Cornelius,Derek Cornelius,74,76,ZAG,28,Canadá
 Rangers,Rabbi Matondo,Rabbi Matondo,69,72,MEI,25,País de Gales
-Rangers,Mikey Moore,Mikey Moore,72,86,ATA,18,Inglaterra
 Rangers,Djeidi Gassama,Djeidi Gassama,71,80,MEI,22,França
 Rangers,Youssef Chermiti,Youssef Chermiti,71,77,ATA,22,Portugal
 Rangers,Jayden Meghoma,Jayden Meghoma,64,78,LAT,20,Inglaterra
@@ -312,7 +309,6 @@ Rangers,Bailey Rice,Bailey Rice,61,83,VOL,19,Escócia
 Rangers,Clinton Nsiala,Clinton Nsiala,63,78,ZAG,22,França
 Rangers,Emmanuel Fernandez,Emmanuel Fernandez,64,71,ZAG,24,Inglaterra
 Rangers,Findlay Curtis,Findlay Curtis,63,84,ATA,19,Escócia
-Rangers,Jack Butland,Jack Butland,75,75,GOL,33,Inglaterra
 Rangers,Liam Kelly,Liam Kelly,67,67,GOL,30,Escócia
 Sturm Graz,Otar Kiteishvili,Otar Kiteishvili,75,75,MEI,30,Geórgia
 Sturm Graz,Tomi Horvat,Tomi Horvat,73,76,MEI,27,Eslovênia
@@ -323,7 +319,6 @@ Sturm Graz,Dimitri Lavalée,Dimitri Lavalée,72,72,LAT,29,Bélgica
 Sturm Graz,Jon Gorenc Stanković,Jon Gorenc Stanković,74,74,VOL,30,Eslovênia
 Sturm Graz,Emir Karić,Emir Karić,66,66,LAT,29,Áustria
 Sturm Graz,Julius Beck,Julius Beck,60,77,MEI,21,Dinamarca
-Sturm Graz,Tim Oermann,Tim Oermann,72,80,ZAG,22,Alemanha
 Sturm Graz,Emanuel Aiwu,Emanuel Aiwu,68,72,ZAG,25,Áustria
 Sturm Graz,Seedyahmed Jatta,Seedyahmed Jatta,65,74,ATA,23,Noruega
 Sturm Graz,Jacob Hödl,Jacob Hödl,58,78,MEI,19,Áustria
@@ -333,11 +328,9 @@ Sturm Graz,Leon Grgić,Leon Grgić,64,78,ATA,20,Croácia
 Sturm Graz,Axel Kayombo,Axel Kayombo,64,79,ATA,20,França
 Sturm Graz,Kristjan Bendra,Kristjan Bendra,59,73,LAT,20,Eslovênia
 Sturm Graz,Niklas Geyrhofer,Niklas Geyrhofer,68,72,ZAG,26,Áustria
-Sturm Graz,Jeyland Mitchell,Jeyland Mitchell,66,78,ZAG,21,Costa Rica
 Sturm Graz,Arjan Malić,Arjan Malić,63,78,LAT,20,Bósnia
 Sturm Graz,Belmin Beganović,Belmin Beganović,56,70,ATA,21,Bósnia
 Sturm Graz,Gabriel Haider,Gabriel Haider,58,66,ZAG,24,Áustria
-Sturm Graz,Oliver Christensen,Oliver Christensen,71,74,GOL,27,Dinamarca
 Sturm Graz,Matteo Bignetti,Matteo Bignetti,61,69,GOL,22,Áustria
 Sturm Graz,Daniil Khudyakov,Daniil Khudyakov,63,75,GOL,22,Rússia
 Sturm Graz,Elias Lorenz,Elias Lorenz,56,69,GOL,20,Áustria
@@ -375,13 +368,11 @@ PAOK,Andrija Živković,Andrija Živković,78,78,MEI,30,Sérvia
 PAOK,Magomed Ozdoev,Magomed Ozdoev,74,74,MEI,33,Rússia
 PAOK,Rahman Baba,Rahman Baba,76,76,LAT,32,Gana
 PAOK,Greg Taylor,Greg Taylor,74,75,LAT,28,Escócia
-PAOK,Luka Ivanušec,Luka Ivanušec,72,73,ATA,27,Croácia
 PAOK,Taison,Taison,75,75,MEI,38,Brasil
 PAOK,Soualiho Meïté,Soualiho Meïté,75,75,VOL,32,França
 PAOK,Jonjoe Kenny,Jonjoe Kenny,72,72,LAT,29,Inglaterra
 PAOK,Dimitrios Pelkas,Dimitrios Pelkas,72,72,MEI,32,Grécia
 PAOK,Kiril Despodov,Kiril Despodov,77,77,ATA,29,Bulgária
-PAOK,Giannis Konstantelias,Giannis Konstantelias,77,84,MEI,23,Grécia
 PAOK,Tomasz Kędziora,Tomasz Kędziora,75,75,ZAG,32,Polônia
 PAOK,Alessandro Bianco,Alessandro Bianco,71,80,MEI,23,Itália
 PAOK,Giannis Michailidis,Giannis Michailidis,72,75,ZAG,26,Grécia
@@ -414,8 +405,6 @@ Sparta Praga,Filip Panák,Filip Panák,74,74,ZAG,30,Tchéquia
 Sparta Praga,Sivert Mannsverk,Sivert Mannsverk,68,76,VOL,24,Noruega
 Sparta Praga,Elias Cobbaut,Elias Cobbaut,73,76,ZAG,28,Bélgica
 Sparta Praga,Martin Suchomel,Martin Suchomel,69,75,LAT,23,Tchéquia
-Sparta Praga,Albion Rrahmani,Albion Rrahmani,73,78,ATA,25,Kosovo
-Sparta Praga,Asger Sørensen,Asger Sørensen,74,75,ZAG,30,Dinamarca
 Sparta Praga,Emmanuel Uchenna,Emmanuel Uchenna,70,76,ZAG,22,Nigéria
 Sparta Praga,John Mercado,John Mercado,70,79,ATA,24,Equador
 Sparta Praga,Adam Ševínský,Adam Ševínský,67,74,ZAG,22,Tchéquia

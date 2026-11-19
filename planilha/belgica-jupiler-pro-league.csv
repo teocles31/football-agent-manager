@@ -2,7 +2,6 @@ clube,nome_original,nome,overall,potencial,posicao,idade,pais
 Genk,Bryan Heynen,Bryan Heynen,78,78,VOL,29,Bélgica
 Genk,Patrik Hrošovský,Patrik Hrošovský,76,76,MEI,34,Eslováquia
 Genk,Junya Ito,Junya Ito,77,77,MEI,33,Japão
-Genk,Zakaria El Ouahdi,Zakaria El Ouahdi,76,83,LAT,24,Marrocos
 Genk,Joris Kayembe,Joris Kayembe,74,74,LAT,31,RD Congo
 Genk,Jarne Steuckers,Jarne Steuckers,75,82,MEI,24,Bélgica
 Genk,Daan Heymans,Daan Heymans,71,74,MEI,27,Bélgica
@@ -113,8 +112,6 @@ Union Saint-Gilloise,Kevin Rodríguez,Kevin Rodríguez,67,71,ATA,26,Equador
 Union Saint-Gilloise,Raul Florucz,Raul Florucz,70,74,ATA,25,Áustria
 Anderlecht,Mats Rits,Mats Rits,72,72,MEI,33,Bélgica
 Anderlecht,Ludwig Augustinsson,Ludwig Augustinsson,72,72,LAT,32,Suécia
-Anderlecht,Thorgan Hazard,Thorgan Hazard,73,73,ATA,33,Bélgica
-Anderlecht,César Huerta,César Huerta,73,77,ATA,25,México
 Anderlecht,Thomas Foket,Thomas Foket,69,69,LAT,31,Bélgica
 Anderlecht,Majeed Ashimeru,Majeed Ashimeru,69,69,MEI,28,Gana
 Anderlecht,Mario Stroeykens,Mario Stroeykens,74,86,MEI,21,Bélgica
@@ -132,8 +129,6 @@ Anderlecht,Moussa N'Diaye,Moussa N'Diaye,72,80,LAT,24,Senegal
 Anderlecht,Lucas Hey,Lucas Hey,68,80,ZAG,23,Dinamarca
 Anderlecht,Marco Kana,Marco Kana,65,72,VOL,23,Bélgica
 Anderlecht,Cedric Hatenboer,Cedric Hatenboer,64,80,MEI,21,Holanda
-Anderlecht,Nilson Angulo,Nilson Angulo,67,78,MEI,23,Equador
-Anderlecht,Nathan De Cat,Nathan De Cat,63,83,VOL,18,Bélgica
 Anderlecht,Tristan Degreef,Tristan Degreef,64,81,MEI,21,Bélgica
 Anderlecht,Mihajlo Ilić,Mihajlo Ilić,68,81,ZAG,23,Sérvia
 Anderlecht,Anas Tajaouart,Anas Tajaouart,54,64,MEI,20,Marrocos
@@ -150,7 +145,6 @@ Antwerp,Daam Foulon,Daam Foulon,72,73,MEI,27,Bélgica
 Antwerp,Gyrano Kerk,Gyrano Kerk,72,72,MEI,30,Suriname
 Antwerp,Geoffry Hairemans,Geoffry Hairemans,70,70,MEI,34,Bélgica
 Antwerp,Glenn Bijl,Glenn Bijl,69,69,LAT,31,Holanda
-Antwerp,Anthony Valencia,Anthony Valencia,67,77,MEI,23,Equador
 Antwerp,Mahamadou Diawara,Mahamadou Diawara,69,77,MEI,21,França
 Antwerp,Kobe Corbanie,Kobe Corbanie,67,82,LAT,21,Bélgica
 Antwerp,Mauricio Benítez,Mauricio Benítez,62,73,MEI,22,Argentina
@@ -159,7 +153,6 @@ Antwerp,Mukhammadali Urinboev,Mukhammadali Urinboev,63,74,ATA,21,Uzbequistão
 Antwerp,Isaac Babadi,Isaac Babadi,67,83,MEI,21,Holanda
 Antwerp,Christopher Scott,Christopher Scott,64,73,MEI,24,Alemanha
 Antwerp,Boubakar Kouyaté,Boubakar Kouyaté,73,75,ZAG,29,Mali
-Antwerp,Zeno Van Den Bosch,Zeno Van Den Bosch,74,84,ZAG,23,Bélgica
 Antwerp,Andreas Verstraeten,Andreas Verstraeten,58,76,ZAG,20,Bélgica
 Antwerp,Farouck Adekami,Farouck Adekami,58,73,MEI,20,Costa do Marfim
 Antwerp,Semm Renders,Semm Renders,62,84,LAT,18,Bélgica
@@ -187,7 +180,6 @@ Standard Liège,Souleyman Doumbia,Souleyman Doumbia,68,68,LAT,29,Costa do Marfim
 Standard Liège,Henry Lawrence,Henry Lawrence,65,74,ZAG,24,Inglaterra
 Standard Liège,Rafiki Saïd,Rafiki Saïd,69,72,MEI,26,Comores
 Standard Liège,Dennis-Yerai Eckert Ayensa,Dennis-Yerai Eckert Ayensa,73,73,ATA,29,Alemanha
-Standard Liège,Timothé Nkada,Timothé Nkada,70,73,ATA,27,França
 Standard Liège,Grejohn Kyei,Grejohn Kyei,68,68,ATA,30,França
 Standard Liège,Ibrahim Karamoko,Ibrahim Karamoko,61,66,VOL,25,França
 Standard Liège,Hakim Sahabo,Hakim Sahabo,63,78,VOL,21,Ruanda
@@ -205,13 +197,11 @@ Standard Liège,Matthieu Epolo,Matthieu Epolo,73,85,GOL,21,Bélgica
 Standard Liège,Mattéo Godfroid,Mattéo Godfroid,52,66,GOL,22,Bélgica
 Gent,Leonardo Lopes,Leonardo Lopes,70,71,MEI,27,Portugal
 Gent,Abdelkahar Kadri,Abdelkahar Kadri,73,76,MEI,26,Argélia
-Gent,Omri Gandelman,Omri Gandelman,71,75,MEI,26,Israel
 Gent,Dante Vanzeir,Dante Vanzeir,72,73,ATA,28,Bélgica
 Gent,Matisse Samoise,Matisse Samoise,70,75,LAT,24,Bélgica
 Gent,Tiago Araújo,Tiago Araújo,69,73,MEI,25,Portugal
 Gent,Mathias Delorge,Mathias Delorge,72,82,MEI,22,Bélgica
 Gent,Atsuki Ito,Atsuki Ito,70,73,VOL,27,Japão
-Gent,Michał Skóraś,Michał Skóraś,70,73,MEI,26,Polônia
 Gent,Jean-Kévin Duverne,Jean-Kévin Duverne,71,71,LAT,29,Haiti
 Gent,Aimé Omgba,Aimé Omgba,66,74,MEI,23,Holanda
 Gent,Franck Surdez,Franck Surdez,69,76,MEI,24,Suíça
@@ -234,7 +224,6 @@ Gent,Kjell Peersman,Kjell Peersman,61,74,GOL,22,Bélgica
 Mechelen,Kerim Mrabti,Kerim Mrabti,74,74,MEI,32,Suécia
 Mechelen,Benito Raman,Benito Raman,73,73,ATA,31,Bélgica
 Mechelen,Fredrik Hammar,Fredrik Hammar,68,75,VOL,25,Suécia
-Mechelen,Lion Lauberbach,Lion Lauberbach,71,71,ATA,28,Alemanha
 Mechelen,Ryan Teague,Ryan Teague,69,78,VOL,24,Austrália
 Mechelen,Thérence Koudou,Thérence Koudou,68,78,LAT,21,França
 Mechelen,Mathis Servais,Mathis Servais,64,79,MEI,21,Bélgica
@@ -252,7 +241,6 @@ Mechelen,Gora Diouf,Gora Diouf,66,77,ZAG,22,Senegal
 Mechelen,Halil Özdemir,Halil Özdemir,58,75,ATA,20,Bélgica
 Mechelen,Lovro Golič,Lovro Golič,62,77,ZAG,20,Eslovênia
 Mechelen,Amine Ouahabi,Amine Ouahabi,55,79,MEI,18,Bélgica
-Mechelen,Redouane Halhal,Redouane Halhal,63,73,ZAG,23,Marrocos
 Mechelen,Lukas Baert,Lukas Baert,58,70,ZAG,21,Bélgica
 Mechelen,Ortwin De Wolf,Ortwin De Wolf,75,75,GOL,29,Bélgica
 Mechelen,Nacho Miras,Nacho Miras,63,66,GOL,29,Espanha
@@ -265,7 +253,6 @@ Sint-Truiden,Abdoulaye Sissako,Abdoulaye Sissako,67,67,MEI,28,França
 Sint-Truiden,Wolke Janssens,Wolke Janssens,65,65,ZAG,31,Bélgica
 Sint-Truiden,Simen Juklerød,Simen Juklerød,65,65,LAT,32,Noruega
 Sint-Truiden,Ilias Sebaoui,Ilias Sebaoui,66,73,MEI,24,Marrocos
-Sint-Truiden,Rihito Yamamoto,Rihito Yamamoto,65,72,MEI,24,Japão
 Sint-Truiden,Shogo Taniguchi,Shogo Taniguchi,69,69,ZAG,35,Japão
 Sint-Truiden,Robert-Jan Vanwesemael,Robert-Jan Vanwesemael,66,74,MEI,24,Bélgica
 Sint-Truiden,Andrés Ferrari,Andrés Ferrari,67,76,ATA,23,Uruguai
@@ -277,7 +264,6 @@ Sint-Truiden,Kaito Matsuzawa,Kaito Matsuzawa,55,60,MEI,25,Japão
 Sint-Truiden,Jay-David Mbalanda,Jay-David Mbalanda,59,70,ATA,19,Bélgica
 Sint-Truiden,Arthur Alexis,Arthur Alexis,52,69,MEI,20,Bélgica
 Sint-Truiden,Adam Nhaili,Adam Nhaili,57,74,MEI,20,Bélgica
-Sint-Truiden,Keisuke Goto,Keisuke Goto,57,68,ATA,21,Japão
 Sint-Truiden,Hugo Lambotte,Hugo Lambotte,55,70,ZAG,20,Bélgica
 Sint-Truiden,Leo Kokubo,Leo Kokubo,70,77,GOL,25,Japão
 Sint-Truiden,Jo Coppens,Jo Coppens,62,62,GOL,35,Bélgica
@@ -296,7 +282,6 @@ Dender,Noah Mbamba,Noah Mbamba,65,79,VOL,21,Bélgica
 Dender,Malcolm Viltard,Malcolm Viltard,62,71,VOL,23,França
 Dender,Jordan Kadiri,Jordan Kadiri,66,70,ATA,26,Nigéria
 Dender,Krzysztof Koton,Krzysztof Koton,61,72,MEI,23,Polônia
-Dender,Benjamin Fredrick,Benjamin Fredrick,61,76,LAT,21,Nigéria
 Dender,Desmond Acquah,Desmond Acquah,58,67,MEI,24,Bélgica
 Dender,Kobe Cools,Kobe Cools,68,68,ZAG,29,Bélgica
 Dender,Luc De Fougerolles,Luc De Fougerolles,60,80,ZAG,20,Canadá
@@ -322,8 +307,6 @@ Westerlo,Reda Laalaoui,Reda Laalaoui,61,74,MEI,21,Marrocos
 Westerlo,Ján Bernát,Ján Bernát,63,70,MEI,25,Eslováquia
 Westerlo,Griffin Yow,Griffin Yow,69,78,MEI,23,Estados Unidos
 Westerlo,Adedire Mebude,Adedire Mebude,64,78,MEI,22,Escócia
-Westerlo,Nacho Ferri,Nacho Ferri,67,82,ATA,21,Espanha
-Westerlo,Arthur Piedfort,Arthur Piedfort,68,78,VOL,21,Bélgica
 Westerlo,Josimar Alcócer,Josimar Alcócer,67,81,MEI,22,Costa Rica
 Westerlo,Amando Lapage,Amando Lapage,62,74,ZAG,21,Bélgica
 Westerlo,Eliot Bujupi,Eliot Bujupi,60,75,ATA,20,Kosovo
@@ -340,7 +323,6 @@ Westerlo,Oskar Annell,Oskar Annell,55,65,GOL,21,Bélgica
 Cercle Brugge,Pieter Gerkens,Pieter Gerkens,69,69,MEI,31,Bélgica
 Cercle Brugge,Hannes Van Der Bruggen,Hannes Van Der Bruggen,70,70,MEI,33,Bélgica
 Cercle Brugge,Gary Magnée,Gary Magnée,70,73,MEI,26,Bélgica
-Cercle Brugge,Alan Minda,Alan Minda,70,80,MEI,23,Equador
 Cercle Brugge,Nils De Wilde,Nils De Wilde,65,73,VOL,23,Bélgica
 Cercle Brugge,Oumar Diakité,Oumar Diakité,72,82,ATA,22,Costa do Marfim
 Cercle Brugge,Ibrahim Diakité,Ibrahim Diakité,66,78,ZAG,22,Guiné
@@ -351,8 +333,6 @@ Cercle Brugge,Beni Mpanzu,Beni Mpanzu,66,75,LAT,22,Bélgica
 Cercle Brugge,Lawrence Agyekum,Lawrence Agyekum,62,73,MEI,22,Gana
 Cercle Brugge,Valy Konate,Valy Konate,62,72,LAT,19,Costa do Marfim
 Cercle Brugge,Edgaras Utkus,Edgaras Utkus,70,77,ZAG,26,Lituânia
-Cercle Brugge,Heriberto Jurado,Heriberto Jurado,65,74,MEI,21,México
-Cercle Brugge,Nazinho,Nazinho,67,77,LAT,23,Portugal
 Cercle Brugge,Oluwaseun Adewumi,Oluwaseun Adewumi,59,74,MEI,21,Áustria
 Cercle Brugge,Steve Ngoura,Steve Ngoura,67,75,ATA,21,França
 Cercle Brugge,Christiaan Ravych,Christiaan Ravych,70,79,ZAG,24,Bélgica
@@ -363,7 +343,6 @@ Cercle Brugge,Ibrahima Diaby,Ibrahima Diaby,51,66,VOL,19,França
 Cercle Brugge,Xander Martlé,Xander Martlé,57,68,MEI,22,Bélgica
 Cercle Brugge,Krys-Anthony Kouassi,Krys-Anthony Kouassi,57,69,MEI,19,França
 Cercle Brugge,Alama Bayo,Alama Bayo,57,67,ATA,20,Bélgica
-Cercle Brugge,Warleson,Warleson,70,70,GOL,29,Brasil
 Cercle Brugge,Maxime Delanghe,Maxime Delanghe,65,73,GOL,25,Bélgica
 Cercle Brugge,Bas Langenbick,Bas Langenbick,57,67,GOL,23,Bélgica
 Charleroi,Kevin Van Den Kerkhof,Kevin Van Den Kerkhof,70,70,MEI,30,Argélia
@@ -375,7 +354,6 @@ Charleroi,Yassine Titraoui,Yassine Titraoui,68,78,VOL,23,Argélia
 Charleroi,Parfait Guiagon,Parfait Guiagon,72,77,MEI,25,Costa do Marfim
 Charleroi,Aiham Ousou,Aiham Ousou,71,75,ZAG,26,Síria
 Charleroi,E. Camara,E. Camara,68,78,VOL,23,França
-Charleroi,Lewin Blum,Lewin Blum,69,76,LAT,25,Suíça
 Charleroi,Aurélien Scheidler,Aurélien Scheidler,68,68,ATA,28,França
 Charleroi,Jakob Romsaas,Jakob Romsaas,63,77,ATA,22,Noruega
 Charleroi,Filip Szymczak,Filip Szymczak,65,73,ATA,24,Polônia
@@ -404,7 +382,6 @@ La Louvière,Oucasse Mendy,Oucasse Mendy,62,68,MEI,25,França
 La Louvière,Sekou Sidibe,Sekou Sidibe,64,69,MEI,25,Bélgica
 La Louvière,Thierry Lutonda,Thierry Lutonda,64,69,LAT,25,Bélgica
 La Louvière,Mohamed Guindo,Mohamed Guindo,65,69,ATA,23,Mali
-La Louvière,Lucas Bretelle,Lucas Bretelle,58,62,VOL,24,França
 La Louvière,Darío Benavides,Darío Benavides,65,76,LAT,23,Espanha
 La Louvière,Theo Epailly,Theo Epailly,59,59,ATA,27,França
 La Louvière,Matthis Riou,Matthis Riou,66,72,ZAG,25,França
@@ -427,7 +404,6 @@ Zulte Waregem,Emran Soglo,Emran Soglo,64,72,LAT,21,Inglaterra
 Zulte Waregem,Thomas Claes,Thomas Claes,66,78,MEI,22,Bélgica
 Zulte Waregem,Stavros Gavriel,Stavros Gavriel,69,74,ATA,24,Chipre
 Zulte Waregem,Nikola Mituljikic,Nikola Mituljikic,65,72,ATA,23,Sérvia
-Zulte Waregem,Tochukwu Nnadi,Tochukwu Nnadi,58,63,MEI,23,Nigéria
 Zulte Waregem,Serxho Ujka,Serxho Ujka,64,65,MEI,27,Albânia
 Zulte Waregem,Yannick Cappelle,Yannick Cappelle,61,68,LAT,23,Bélgica
 Zulte Waregem,Atli Barkarson,Atli Barkarson,60,64,LAT,25,Islândia
@@ -442,7 +418,6 @@ Zulte Waregem,Tobias Hedl,Tobias Hedl,63,69,ATA,23,Áustria
 Zulte Waregem,Laurent Lemoine,Laurent Lemoine,65,67,ZAG,28,Bélgica
 Zulte Waregem,Siebe Van Keymolen,Siebe Van Keymolen,51,62,MEI,21,Bélgica
 Zulte Waregem,Benoit De Jaegere,Benoit De Jaegere,53,62,LAT,22,Bélgica
-Zulte Waregem,Ennio van der Gouw,Ennio van der Gouw,66,70,GOL,25,Holanda
 Zulte Waregem,Louis Bostyn,Louis Bostyn,64,64,GOL,32,Bélgica
 Zulte Waregem,Arnaud Dobbels,Arnaud Dobbels,56,67,GOL,21,Bélgica
 Zulte Waregem,Brent Gabriël,Brent Gabriël,65,69,GOL,27,Bélgica

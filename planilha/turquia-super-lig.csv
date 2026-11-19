@@ -66,13 +66,10 @@ Beşiktaş,Milot Rashica,Milot Rashica,76,76,MEI,30,Kosovo
 Beşiktaş,Jonas Svensson,Jonas Svensson,75,75,LAT,33,Noruega
 Beşiktaş,Wilfred Ndidi,Wilfred Ndidi,76,76,VOL,29,Nigéria
 Beşiktaş,Rafa,Rafa,82,82,MEI,33,Portugal
-Beşiktaş,David Jurásek,David Jurásek,73,77,LAT,25,Tchéquia
 Beşiktaş,Salih Uçan,Salih Uçan,72,72,MEI,32,Turquia
 Beşiktaş,Rıdvan Yılmaz,Rıdvan Yılmaz,73,77,LAT,25,Turquia
-Beşiktaş,Jota Silva,Jota Silva,75,76,MEI,27,Portugal
 Beşiktaş,Cengiz Ünder,Cengiz Ünder,76,76,ATA,29,Turquia
 Beşiktaş,Kartal Yılmaz,Kartal Yılmaz,70,75,VOL,25,Turquia
-Beşiktaş,Gabriel Paulista,Gabriel Paulista,77,77,ZAG,35,Brasil
 Beşiktaş,Václav Černý,Václav Černý,77,77,MEI,28,Tchéquia
 Beşiktaş,Demir Tıknaz,Demir Tıknaz,72,82,VOL,21,Turquia
 Beşiktaş,Tamaraebi Abraham,Tamaraebi Abraham,77,77,ATA,28,Inglaterra
@@ -80,11 +77,9 @@ Beşiktaş,Gökhan Sazdağı,Gökhan Sazdağı,69,69,LAT,31,Turquia
 Beşiktaş,Taylan Bulut,Taylan Bulut,67,78,LAT,20,Alemanha
 Beşiktaş,Tiago Djaló,Tiago Djaló,75,80,ZAG,26,Portugal
 Beşiktaş,El Touré,El Touré,73,81,ATA,24,Mali
-Beşiktaş,Felix Uduokhai,Felix Uduokhai,76,78,ZAG,28,Alemanha
 Beşiktaş,Necip Uysal,Necip Uysal,68,68,ZAG,35,Turquia
 Beşiktaş,Emirhan Topçu,Emirhan Topçu,73,79,ZAG,25,Turquia
 Beşiktaş,Mustafa Hekimoğlu,Mustafa Hekimoğlu,66,78,ATA,19,Turquia
-Beşiktaş,Mert Günok,Mert Günok,78,78,GOL,37,Turquia
 Beşiktaş,Ersin Destanoğlu,Ersin Destanoğlu,72,77,GOL,25,Turquia
 Beşiktaş,Emre Bilgin,Emre Bilgin,64,74,GOL,22,Turquia
 Trabzonspor,Ozan Tufan,Ozan Tufan,73,73,VOL,31,Turquia
@@ -100,7 +95,6 @@ Trabzonspor,Tim Jabol-Folcarelli,Tim Jabol-Folcarelli,69,74,MEI,26,França
 Trabzonspor,Danylo Sikan,Danylo Sikan,74,81,ATA,25,Ucrânia
 Trabzonspor,Paul Onuachu,Paul Onuachu,74,74,ATA,32,Nigéria
 Trabzonspor,Cihan Çanak,Cihan Çanak,66,81,MEI,21,Turquia
-Trabzonspor,Christ Inao Oulaï,Christ Inao Oulaï,64,78,MEI,20,Costa do Marfim
 Trabzonspor,Kazeem Olaigbe,Kazeem Olaigbe,67,77,MEI,23,Bélgica
 Trabzonspor,Stefan Savić,Stefan Savić,78,78,ZAG,35,Montenegro
 Trabzonspor,Arseniy Batagov,Arseniy Batagov,73,80,ZAG,24,Ucrânia
@@ -147,7 +141,6 @@ Samsunspor,Afonso Sousa,Afonso Sousa,74,76,MEI,26,Portugal
 Samsunspor,Antoine Makoumbou,Antoine Makoumbou,73,76,VOL,28,Congo
 Samsunspor,Emre Kılınç,Emre Kılınç,73,73,MEI,31,Turquia
 Samsunspor,Logi Tómasson,Logi Tómasson,67,72,LAT,25,Islândia
-Samsunspor,Eyüp Aydın,Eyüp Aydın,66,77,VOL,21,Turquia
 Samsunspor,Josafat Mendes,Josafat Mendes,72,79,LAT,23,Suécia
 Samsunspor,Marius Mouandilmadji,Marius Mouandilmadji,73,74,ATA,28,Chade
 Samsunspor,Tanguy Coulibaly,Tanguy Coulibaly,71,77,MEI,25,França
@@ -157,7 +150,6 @@ Samsunspor,Rick van Drongelen,Rick van Drongelen,75,79,ZAG,27,Holanda
 Samsunspor,Anthony Musaba,Anthony Musaba,70,76,MEI,25,Holanda
 Samsunspor,Soner Gönül,Soner Gönül,66,66,LAT,29,Turquia
 Samsunspor,Ľ. Šatka,Ľ. Šatka,70,70,ZAG,30,Eslováquia
-Samsunspor,Toni Borevković,Toni Borevković,73,75,ZAG,29,Croácia
 Samsunspor,Yunus Çift,Yunus Çift,66,72,ZAG,22,Turquia
 Samsunspor,Ebrima Ceesay,Ebrima Ceesay,58,74,ATA,20,Gâmbia
 Samsunspor,Bedirhan Çetin,Bedirhan Çetin,57,72,ZAG,20,Turquia
@@ -169,7 +161,6 @@ Rizespor,Casper Højer,Casper Højer,73,73,LAT,31,Dinamarca
 Rizespor,Taylan Antalyalı,Taylan Antalyalı,69,69,MEI,31,Turquia
 Rizespor,Václav Jurečka,Václav Jurečka,70,70,ATA,32,Tchéquia
 Rizespor,Giannis Papanikolaou,Giannis Papanikolaou,68,71,VOL,27,Grécia
-Rizespor,Loide Augusto,Loide Augusto,67,70,MEI,26,Angola
 Rizespor,Taha Şahin,Taha Şahin,71,78,LAT,25,Turquia
 Rizespor,Ibrahim Olawoyin,Ibrahim Olawoyin,70,71,MEI,28,Nigéria
 Rizespor,Ali Sowe,Ali Sowe,74,74,ATA,32,Gâmbia
@@ -218,7 +209,6 @@ Kasımpaşa,Mortadha Ben Ouanes,Mortadha Ben Ouanes,69,69,LAT,32,Tunísia
 Kasımpaşa,Mamadou Fall,Mamadou Fall,73,73,MEI,34,Senegal
 Kasımpaşa,Fousseni Diabaté,Fousseni Diabaté,69,69,MEI,30,Mali
 Kasımpaşa,Attila Szalai,Attila Szalai,70,70,ZAG,28,Hungria
-Kasımpaşa,Jhon Espinoza,Jhon Espinoza,67,70,LAT,27,Equador
 Kasımpaşa,Emre Taşdemir,Emre Taşdemir,63,63,LAT,30,Turquia
 Kasımpaşa,Godfried Frimpong,Godfried Frimpong,70,71,LAT,27,Holanda
 Kasımpaşa,Pape Gueye,Pape Gueye,68,71,ATA,26,Senegal
@@ -240,7 +230,6 @@ Başakşehir,Christopher Operi,Christopher Operi,74,74,LAT,29,Costa do Marfim
 Başakşehir,Deniz Türüç,Deniz Türüç,73,73,MEI,33,Turquia
 Başakşehir,Olivier Kemen,Olivier Kemen,72,72,MEI,30,Camarões
 Başakşehir,Ö. Şahiner,Ö. Şahiner,68,68,LAT,34,Turquia
-Başakşehir,Amine Harit,Amine Harit,75,75,MEI,29,Marrocos
 Başakşehir,Berat Özdemir,Berat Özdemir,73,74,VOL,28,Turquia
 Başakşehir,Onur Bulut,Onur Bulut,68,68,LAT,32,Turquia
 Başakşehir,Festy Ebosele,Festy Ebosele,69,77,MEI,23,Irlanda
@@ -254,7 +243,6 @@ Başakşehir,Umut Güneş,Umut Güneş,69,74,VOL,26,Turquia
 Başakşehir,Abbosbek Fayzullaev,Abbosbek Fayzullaev,65,77,MEI,22,Uzbequistão
 Başakşehir,Ivan Brnić,Ivan Brnić,69,75,MEI,24,Croácia
 Başakşehir,Jerome Opoku,Jerome Opoku,72,77,ZAG,27,Gana
-Başakşehir,Léo Duarte,Léo Duarte,75,76,ZAG,30,Brasil
 Başakşehir,Bertuğ Yıldırım,Bertuğ Yıldırım,69,77,ATA,24,Turquia
 Başakşehir,Ö. Beyaz,Ö. Beyaz,65,76,MEI,22,Turquia
 Başakşehir,Ousseynou Ba,Ousseynou Ba,74,75,ZAG,30,Senegal
@@ -315,7 +303,6 @@ Eyüpspor,Talha Ülvan,Talha Ülvan,57,64,LAT,25,Turquia
 Eyüpspor,Emir Ortakaya,Emir Ortakaya,58,71,ZAG,22,Turquia
 Eyüpspor,Metehan Altunbaş,Metehan Altunbaş,58,69,ATA,23,Turquia
 Eyüpspor,Marcos Felipe,Marcos Felipe,67,69,GOL,30,Brasil
-Eyüpspor,Jankat Yılmaz,Jankat Yılmaz,64,78,GOL,21,Turquia
 Eyüpspor,Alp Köseer,Alp Köseer,50,58,GOL,23,Turquia
 Kayserispor,Dorukhan Toköz,Dorukhan Toköz,71,71,MEI,30,Turquia
 Kayserispor,László Bénes,László Bénes,72,72,MEI,28,Eslováquia
@@ -346,11 +333,9 @@ Kayserispor,Enes Gökçek,Enes Gökçek,57,72,LAT,19,Turquia
 Kayserispor,Bilal Bayazıt,Bilal Bayazıt,70,75,GOL,27,Turquia
 Kayserispor,Onurcan Piri,Onurcan Piri,64,65,GOL,31,Turquia
 Kayserispor,Ş. Öztürk,Ş. Öztürk,50,63,GOL,21,Turquia
-Fatih Karagümrük,Ricardo Esgaio,Ricardo Esgaio,73,73,LAT,33,Portugal
 Fatih Karagümrük,Jure Balkovec,Jure Balkovec,71,71,LAT,31,Eslovênia
 Fatih Karagümrük,Berkay Özcan,Berkay Özcan,69,70,MEI,28,Turquia
 Fatih Karagümrük,Daniel Johnson,Daniel Johnson,68,68,MEI,33,Jamaica
-Fatih Karagümrük,Matías Kranevitter,Matías Kranevitter,74,74,VOL,33,Argentina
 Fatih Karagümrük,Sam Larsson,Sam Larsson,72,72,MEI,33,Suécia
 Fatih Karagümrük,Camacho,Camacho,73,73,MEI,32,Portugal
 Fatih Karagümrük,David Fofana,David Fofana,72,80,ATA,23,Costa do Marfim
@@ -382,7 +367,6 @@ Kocaelispor,Darko Churlinov,Darko Churlinov,68,71,MEI,26,Macedônia do Norte
 Kocaelispor,Tayfur Bingöl,Tayfur Bingöl,65,65,MEI,33,Turquia
 Kocaelispor,Tarkan Serbest,Tarkan Serbest,68,68,ZAG,32,Turquia
 Kocaelispor,Serdar Dursun,Serdar Dursun,69,69,ATA,34,Turquia
-Kocaelispor,Joseph Nonge,Joseph Nonge,64,77,MEI,21,Bélgica
 Kocaelispor,Daniel Agyei,Daniel Agyei,65,65,ATA,29,Inglaterra
 Kocaelispor,Can Keleş,Can Keleş,68,73,MEI,24,Turquia
 Kocaelispor,Anfernee Dijksteel,Anfernee Dijksteel,69,69,LAT,29,Suriname
@@ -402,7 +386,6 @@ Kocaelispor,Serhat Öztaşdelen,Serhat Öztaşdelen,51,67,GOL,21,Turquia
 Alanyaspor,Gaïus Makouta,Gaïus Makouta,72,73,VOL,29,Congo
 Alanyaspor,Hwang Ui Jo,Hwang Ui Jo,71,71,ATA,33,Coreia do Sul
 Alanyaspor,Ianis Hagi,Ianis Hagi,74,77,MEI,27,Romênia
-Alanyaspor,Steve Mounié,Steve Mounié,73,73,ATA,31,Benin
 Alanyaspor,Nicolas Janvier,Nicolas Janvier,68,69,MEI,27,França
 Alanyaspor,Efecan Karaca,Efecan Karaca,72,72,MEI,36,Turquia
 Alanyaspor,Florent Hadergjonaj,Florent Hadergjonaj,69,69,LAT,32,Kosovo
@@ -422,11 +405,9 @@ Alanyaspor,Enes Keskin,Enes Keskin,57,63,MEI,25,Turquia
 Alanyaspor,Nuno Lima,Nuno Lima,67,76,ZAG,25,Portugal
 Alanyaspor,İ. Çelik,İ. Çelik,59,73,MEI,22,Turquia
 Alanyaspor,Batuhan Yavuz,Batuhan Yavuz,57,74,LAT,21,Alemanha
-Alanyaspor,Uchenna Ogundu,Uchenna Ogundu,61,75,ATA,20,Nigéria
 Alanyaspor,Paulo Victor,Paulo Victor,75,75,GOL,39,Brasil
 Alanyaspor,Ertuğrul Taşkıran,Ertuğrul Taşkıran,69,69,GOL,36,Turquia
 Alanyaspor,Mert Bayram,Mert Bayram,50,66,GOL,21,Turquia
-Antalyaspor,Abdülkadir Ömür,Abdülkadir Ömür,73,74,MEI,27,Turquia
 Antalyaspor,Georgiy Dzhikiya,Georgiy Dzhikiya,73,73,ZAG,32,Rússia
 Antalyaspor,Kenneth Paal,Kenneth Paal,69,69,LAT,29,Suriname
 Antalyaspor,Dario Šarić,Dario Šarić,67,67,MEI,29,Bósnia

@@ -6,8 +6,6 @@ Inter Miami,Luis Suárez,Luis Suárez,79,79,ATA,39,Uruguai
 Inter Miami,Sergio Busquets,Sergio Busquets,80,80,VOL,38,Espanha
 Inter Miami,Tadeo Allende,Tadeo Allende,72,73,MEI,27,Argentina
 Inter Miami,Telasco Segovia,Telasco Segovia,69,79,MEI,23,Venezuela
-Inter Miami,Marcelo Weigandt,Marcelo Weigandt,69,73,LAT,26,Argentina
-Inter Miami,Baltasar Rodríguez,Baltasar Rodríguez,70,79,MEI,23,Argentina
 Inter Miami,Fafà Picault,Fafà Picault,69,69,ATA,35,Haiti
 Inter Miami,Noah Allen,Noah Allen,65,75,ZAG,22,Grécia
 Inter Miami,Tomás Avilés,Tomás Avilés,69,78,ZAG,22,Argentina
@@ -16,7 +14,6 @@ Inter Miami,Mateo Silvetti,Mateo Silvetti,63,81,MEI,20,Argentina
 Inter Miami,David Ruíz,David Ruíz,64,74,MEI,22,Honduras
 Inter Miami,Yannick Bright,Yannick Bright,68,72,VOL,24,Itália
 Inter Miami,Ian Fray,Ian Fray,64,73,LAT,23,Estados Unidos
-Inter Miami,Allen Obando,Allen Obando,64,78,ATA,20,Equador
 Inter Miami,Maximiliano Falcón,Maximiliano Falcón,70,70,ZAG,29,Uruguai
 Inter Miami,Santiago Morales,Santiago Morales,57,76,MEI,19,Estados Unidos
 Inter Miami,Tyler Hall,Tyler Hall,57,75,ZAG,20,Estados Unidos
@@ -56,11 +53,9 @@ FC Cincinnati,Evander,Evander,79,80,MEI,28,Brasil
 FC Cincinnati,Pavel Bucha,Pavel Bucha,75,76,MEI,28,Tchéquia
 FC Cincinnati,Obinna Nwobodo,Obinna Nwobodo,73,73,VOL,29,Nigéria
 FC Cincinnati,Yuya Kubo,Yuya Kubo,70,70,MEI,32,Japão
-FC Cincinnati,Luca Orellano,Luca Orellano,73,76,MEI,26,Argentina
 FC Cincinnati,Lukas Engel,Lukas Engel,71,74,LAT,27,Dinamarca
 FC Cincinnati,Kévin Denkey,Kévin Denkey,77,81,ATA,25,Togo
 FC Cincinnati,Dominik Marczuk,Dominik Marczuk,70,79,MEI,22,Polônia
-FC Cincinnati,Brenner,Brenner,71,74,ATA,26,Brasil
 FC Cincinnati,Kei Kamara,Kei Kamara,66,66,ATA,41,Serra Leoa
 FC Cincinnati,Bradley Smith,Bradley Smith,64,64,MEI,32,Austrália
 FC Cincinnati,Miles Robinson,Miles Robinson,73,75,ZAG,29,Estados Unidos
@@ -140,7 +135,6 @@ LA Galaxy,Marco Reus,Marco Reus,79,79,MEI,37,Alemanha
 LA Galaxy,Riqui Puig,Riqui Puig,80,83,MEI,26,Espanha
 LA Galaxy,Joseph Paintsil,Joseph Paintsil,76,76,MEI,28,Gana
 LA Galaxy,Miki Yamane,Miki Yamane,72,72,LAT,32,Japão
-LA Galaxy,Gabriel Pec,Gabriel Pec,76,82,MEI,25,Brasil
 LA Galaxy,Diego Fagúndez,Diego Fagúndez,70,70,MEI,31,Uruguai
 LA Galaxy,Lucas Sanabria,Lucas Sanabria,69,80,VOL,22,Uruguai
 LA Galaxy,Julián Aude,Julián Aude,67,75,LAT,23,Argentina
@@ -156,7 +150,6 @@ LA Galaxy,Miguel Berry,Miguel Berry,64,64,ATA,28,Espanha
 LA Galaxy,Eriq Zavaleta,Eriq Zavaleta,62,62,ZAG,33,El Salvador
 LA Galaxy,Elijah Wynder,Elijah Wynder,58,66,MEI,23,Estados Unidos
 LA Galaxy,John Nelson,John Nelson,67,68,LAT,28,Estados Unidos
-LA Galaxy,Matheus Nascimento,Matheus Nascimento,63,75,ATA,22,Brasil
 LA Galaxy,Gino Vivi,Gino Vivi,59,65,ATA,25,Costa Rica
 LA Galaxy,Harbor Miller,Harbor Miller,57,76,LAT,19,Estados Unidos
 LA Galaxy,Rubén Ramos Jr,Rubén Ramos Jr,53,76,MEI,19,Estados Unidos
@@ -214,7 +207,6 @@ Nashville SC,Jack Maher,Jack Maher,65,69,ZAG,26,Estados Unidos
 Nashville SC,Jeisson Palacios,Jeisson Palacios,67,67,ZAG,32,Colômbia
 Nashville SC,Christopher Applewhite,Christopher Applewhite,58,71,ZAG,18,Estados Unidos
 Nashville SC,Josh Bauer,Josh Bauer,63,66,ZAG,28,Estados Unidos
-Nashville SC,Jonathan Pérez,Jonathan Pérez,56,63,MEI,23,México
 Nashville SC,Taylor Washington,Taylor Washington,62,62,LAT,32,Estados Unidos
 Nashville SC,Julian Gaines,Julian Gaines,56,63,LAT,23,Estados Unidos
 Nashville SC,Wyatt Meyer,Wyatt Meyer,53,57,ZAG,25,Estados Unidos
@@ -274,7 +266,6 @@ New York Red Bulls,Rafael Mosquera,Rafael Mosquera,54,66,ATA,21,Panamá
 New York Red Bulls,Curtis Ofori,Curtis Ofori,56,74,LAT,20,Estados Unidos
 New York Red Bulls,Wiktor Bogacz,Wiktor Bogacz,56,70,ATA,22,Polônia
 New York Red Bulls,Julian Hall,Julian Hall,54,77,MEI,18,Estados Unidos
-New York Red Bulls,Carlos Coronel,Carlos Coronel,72,75,GOL,29,Paraguai
 New York Red Bulls,Roald Mitchell,Roald Mitchell,50,61,ATA,23,Estados Unidos
 New York Red Bulls,John McCarthy,John McCarthy,68,68,GOL,34,Estados Unidos
 New York Red Bulls,AJ Marcucci,AJ Marcucci,53,58,GOL,27,Estados Unidos
@@ -287,7 +278,6 @@ New York City FC,Keaton Parks,Keaton Parks,72,73,VOL,28,Estados Unidos
 New York City FC,Andrés Perea,Andrés Perea,65,70,VOL,25,Estados Unidos
 New York City FC,Adrián Martínez,Adrián Martínez,70,73,ATA,27,Costa Rica
 New York City FC,Axel Ojeda,Axel Ojeda,70,78,MEI,22,Argentina
-New York City FC,Julián Fernández,Julián Fernández,68,75,ATA,22,Argentina
 New York City FC,Thiago,Thiago,71,71,ZAG,31,Brasil
 New York City FC,Kevin O'Toole,Kevin O'Toole,64,67,LAT,27,Estados Unidos
 New York City FC,Raul Gustavo,Raul Gustavo,71,74,ZAG,27,Brasil
@@ -309,9 +299,7 @@ New York City FC,Alexander Rando,Alexander Rando,52,57,GOL,26,Estados Unidos
 Columbus Crew,Darlington Nagbe,Darlington Nagbe,75,75,MEI,36,Estados Unidos
 Columbus Crew,Dániel Gazdag,Dániel Gazdag,74,74,MEI,30,Hungria
 Columbus Crew,Andrés Herrera,Andrés Herrera,70,70,LAT,27,Argentina
-Columbus Crew,Hugo Picard,Hugo Picard,71,79,MEI,23,França
 Columbus Crew,Dylan Chambost,Dylan Chambost,70,70,MEI,28,França
-Columbus Crew,Diego Rossi,Diego Rossi,75,76,MEI,28,Uruguai
 Columbus Crew,Steven Moreira,Steven Moreira,72,72,ZAG,31,Cabo Verde
 Columbus Crew,Mohamed Farsi,Mohamed Farsi,70,73,MEI,26,Argélia
 Columbus Crew,Malte Amundsen,Malte Amundsen,68,69,ZAG,28,Dinamarca
@@ -325,7 +313,6 @@ Columbus Crew,Rudy Camacho,Rudy Camacho,69,69,ZAG,35,França
 Columbus Crew,Lassi Lappalainen,Lassi Lappalainen,65,65,MEI,27,Finlândia
 Columbus Crew,Ibrahim Aliyu,Ibrahim Aliyu,65,74,MEI,24,Nigéria
 Columbus Crew,Taha Habroune,Taha Habroune,57,77,MEI,20,Estados Unidos
-Columbus Crew,Jacen Russell-Rowe,Jacen Russell-Rowe,64,73,ATA,23,Canadá
 Columbus Crew,Tristan Brown,Tristan Brown,57,74,LAT,18,Estados Unidos
 Columbus Crew,Cesar Ruvalcaba,Cesar Ruvalcaba,56,64,ZAG,25,Estados Unidos
 Columbus Crew,Abraham Romero,Abraham Romero,61,64,GOL,28,México
@@ -334,7 +321,6 @@ Columbus Crew,Evan Bush,Evan Bush,62,62,GOL,40,Estados Unidos
 Columbus Crew,Nicholas Hagen,Nicholas Hagen,64,66,GOL,29,Guatemala
 Chicago Fire,Kellyn Acosta,Kellyn Acosta,71,71,VOL,31,Estados Unidos
 Chicago Fire,Jonathan Bamba,Jonathan Bamba,77,77,MEI,30,Costa do Marfim
-Chicago Fire,Hugo Cuypers,Hugo Cuypers,77,77,ATA,29,Bélgica
 Chicago Fire,Philip Zinckernagel,Philip Zinckernagel,75,75,ATA,31,Dinamarca
 Chicago Fire,Rominigue Kouamé,Rominigue Kouamé,73,73,MEI,29,Mali
 Chicago Fire,André Franco,André Franco,72,72,MEI,28,Portugal
@@ -364,7 +350,6 @@ Chicago Fire,Jeffrey Gal,Jeffrey Gal,63,63,GOL,33,Estados Unidos
 Houston Dynamo,Ondřej Lingr,Ondřej Lingr,72,73,MEI,27,Tchéquia
 Houston Dynamo,Amine Bassi,Amine Bassi,70,70,MEI,28,Marrocos
 Houston Dynamo,Duane Holmes,Duane Holmes,68,68,MEI,31,Estados Unidos
-Houston Dynamo,Ezequiel Ponce,Ezequiel Ponce,73,73,ATA,29,Argentina
 Houston Dynamo,Griffin Dorsey,Griffin Dorsey,70,72,LAT,27,Estados Unidos
 Houston Dynamo,Júnior Urso,Júnior Urso,67,67,VOL,37,Brasil
 Houston Dynamo,Jack McGlynn,Jack McGlynn,71,81,MEI,23,Estados Unidos
@@ -397,7 +382,6 @@ Atlanta United,Steven Alzate,Steven Alzate,71,74,VOL,27,Colômbia
 Atlanta United,Brooks Lennon,Brooks Lennon,70,71,LAT,28,Estados Unidos
 Atlanta United,Aleksey Miranchuk,Aleksey Miranchuk,78,78,MEI,30,Rússia
 Atlanta United,Bartosz Slisz,Bartosz Slisz,73,76,VOL,27,Polônia
-Atlanta United,Emmanuel Latte Lath,Emmanuel Latte Lath,73,76,ATA,27,Costa do Marfim
 Atlanta United,Pedro Amador,Pedro Amador,69,72,LAT,27,Portugal
 Atlanta United,Tristan Muyumba,Tristan Muyumba,68,69,VOL,29,França
 Atlanta United,Jamal Thiaré,Jamal Thiaré,68,68,ATA,33,Senegal
@@ -418,10 +402,8 @@ Atlanta United,Bradley Guzan,Bradley Guzan,68,68,GOL,41,Estados Unidos
 Atlanta United,Joshua Cohen,Joshua Cohen,68,68,GOL,33,Estados Unidos
 Atlanta United,Jayden Hibbert,Jayden Hibbert,51,62,GOL,21,Jamaica
 Portland Timbers,Matías Rojas,Matías Rojas,74,74,ATA,30,Paraguai
-Portland Timbers,Jonathan Rodríguez,Jonathan Rodríguez,76,76,MEI,33,Uruguai
 Portland Timbers,Julio Ortiz,Julio Ortiz,71,71,VOL,30,Equador
 Portland Timbers,Felipe Carballo,Felipe Carballo,73,73,MEI,29,Uruguai
-Portland Timbers,Cristhian Paredes,Cristhian Paredes,67,67,VOL,28,Paraguai
 Portland Timbers,Diego Chará,Diego Chará,70,70,VOL,40,Colômbia
 Portland Timbers,Kristoffer Velde,Kristoffer Velde,70,71,MEI,26,Noruega
 Portland Timbers,David da Costa,David da Costa,75,78,MEI,25,Portugal
@@ -431,7 +413,6 @@ Portland Timbers,David Ayala,David Ayala,69,75,VOL,24,Argentina
 Portland Timbers,Juan Mosquera,Juan Mosquera,67,76,LAT,23,Colômbia
 Portland Timbers,Antony,Antony,71,75,MEI,24,Brasil
 Portland Timbers,Ariel Lassiter,Ariel Lassiter,66,66,MEI,31,Costa Rica
-Portland Timbers,Felipe Mora,Felipe Mora,71,71,ATA,32,Chile
 Portland Timbers,Omir Fernandez,Omir Fernandez,66,67,MEI,27,Estados Unidos
 Portland Timbers,Kevin Kelsy,Kevin Kelsy,68,81,ATA,22,Venezuela
 Portland Timbers,Eric Miller,Eric Miller,64,64,LAT,33,Estados Unidos
@@ -445,7 +426,6 @@ Portland Timbers,James Pantemis,James Pantemis,65,66,GOL,29,Canadá
 Portland Timbers,T. Muse,T. Muse,54,58,GOL,27,Estados Unidos
 Toronto FC,D. Mihailovic,D. Mihailovic,75,78,MEI,27,Estados Unidos
 Toronto FC,José Cifuentes,José Cifuentes,72,75,MEI,27,Equador
-Toronto FC,Maxime Dominguez,Maxime Dominguez,71,71,MEI,30,Suíça
 Toronto FC,Richmond Laryea,Richmond Laryea,72,72,MEI,31,Canadá
 Toronto FC,Jonathan Osorio,Jonathan Osorio,71,71,MEI,34,Canadá
 Toronto FC,Theodor Corbeanu,Theodor Corbeanu,68,74,MEI,24,Canadá
@@ -453,7 +433,6 @@ Toronto FC,Raoul Petretta,Raoul Petretta,67,67,LAT,29,Itália
 Toronto FC,Henry Wingo,Henry Wingo,64,64,LAT,30,Estados Unidos
 Toronto FC,Derrick Etienne Jr.,Derrick Etienne Jr.,66,66,MEI,29,Haiti
 Toronto FC,Kosi Thompson,Kosi Thompson,63,68,LAT,23,Canadá
-Toronto FC,Deandre Kerr,Deandre Kerr,61,68,ATA,23,Canadá
 Toronto FC,Alonso Coello,Alonso Coello,64,69,MEI,26,Espanha
 Toronto FC,Markus Cimermancic,Markus Cimermancic,57,69,MEI,21,Canadá
 Toronto FC,Sigurd Rosted,Sigurd Rosted,64,64,ZAG,32,Noruega
@@ -470,7 +449,6 @@ Toronto FC,Luka Gavran,Luka Gavran,64,68,GOL,26,Canadá
 Toronto FC,Adisa De Rosario,Adisa De Rosario,52,66,GOL,21,Canadá
 Colorado Rapids,Paxten Aaronson,Paxten Aaronson,75,82,MEI,22,Estados Unidos
 Colorado Rapids,Connor Ronan,Connor Ronan,69,70,VOL,28,Irlanda
-Colorado Rapids,Alexis Manyoma,Alexis Manyoma,72,80,MEI,23,Colômbia
 Colorado Rapids,Keegan Rosenberry,Keegan Rosenberry,70,70,LAT,32,Estados Unidos
 Colorado Rapids,Cole Bassett,Cole Bassett,70,77,MEI,25,Estados Unidos
 Colorado Rapids,Reginald Cannon,Reginald Cannon,71,72,LAT,28,Estados Unidos
@@ -505,12 +483,10 @@ San Diego FC,Aníbal Godoy,Aníbal Godoy,70,70,MEI,36,Panamá
 San Diego FC,Emmanuel Boateng,Emmanuel Boateng,65,65,MEI,32,Gana
 San Diego FC,Corey Baird,Corey Baird,66,66,ATA,30,Estados Unidos
 San Diego FC,Alejandro Alvarado,Alejandro Alvarado,63,74,MEI,23,Estados Unidos
-San Diego FC,Tomás Ángel,Tomás Ángel,69,77,ATA,23,Colômbia
 San Diego FC,William Kumado,William Kumado,62,72,LAT,23,Gana
 San Diego FC,Christopher McVey,Christopher McVey,64,66,ZAG,29,Suécia
 San Diego FC,Aiden Harangi,Aiden Harangi,62,81,LAT,20,Estados Unidos
 San Diego FC,Alexander Mighten,Alexander Mighten,65,73,MEI,24,Inglaterra
-San Diego FC,Andrés Reyes,Andrés Reyes,68,73,ZAG,26,Colômbia
 San Diego FC,Manu Duah,Manu Duah,53,73,MEI,20,Gana
 San Diego FC,Pedro Soma,Pedro Soma,50,63,VOL,20,Estados Unidos
 San Diego FC,Oscar Verhoeven,Oscar Verhoeven,56,76,LAT,20,Estados Unidos
@@ -543,7 +519,6 @@ Minnesota United FC,Loïc Mesanvi,Loïc Mesanvi,52,62,ATA,23,Togo
 Minnesota United FC,Dayne St. Clair,Dayne St. Clair,73,76,GOL,29,Canadá
 Minnesota United FC,Alec Smir,Alec Smir,52,57,GOL,27,Estados Unidos
 Orlando City SC,Eduard Atuesta,Eduard Atuesta,74,74,MEI,29,Colômbia
-Orlando City SC,Luis Muriel,Luis Muriel,76,76,ATA,35,Colômbia
 Orlando City SC,Martín Ojeda,Martín Ojeda,74,76,MEI,27,Argentina
 Orlando City SC,Wilder Cartagena,Wilder Cartagena,69,69,VOL,31,Peru
 Orlando City SC,Marco Pašalić,Marco Pašalić,71,74,MEI,25,Croácia
@@ -551,7 +526,6 @@ Orlando City SC,Adrián Marín,Adrián Marín,71,71,LAT,29,Espanha
 Orlando City SC,Alexander Freeman,Alexander Freeman,65,79,LAT,21,Estados Unidos
 Orlando City SC,Iván Angulo,Iván Angulo,69,70,MEI,27,Colômbia
 Orlando City SC,Dagur Thorhallsson,Dagur Thorhallsson,65,70,LAT,26,Islândia
-Orlando City SC,César Araújo,César Araújo,69,77,VOL,25,Uruguai
 Orlando City SC,David Brekalo,David Brekalo,70,73,ZAG,27,Eslovênia
 Orlando City SC,Tyrese Spicer,Tyrese Spicer,63,69,MEI,25,Trinidad e Tobago
 Orlando City SC,Robin Jansson,Robin Jansson,70,70,ZAG,34,Suécia
@@ -565,7 +539,6 @@ Orlando City SC,Rodrigo Schlegel,Rodrigo Schlegel,65,65,ZAG,29,Argentina
 Orlando City SC,Colin Guske,Colin Guske,54,70,VOL,19,Estados Unidos
 Orlando City SC,Thomas Williams,Thomas Williams,53,68,ZAG,21,Estados Unidos
 Orlando City SC,Yutaro Tsukada,Yutaro Tsukada,49,55,ATA,25,Japão
-Orlando City SC,Pedro Gallese,Pedro Gallese,72,72,GOL,36,Peru
 Orlando City SC,Tahir Reid-Brown,Tahir Reid-Brown,48,68,LAT,20,Estados Unidos
 Orlando City SC,Gustavo Caraballo,Gustavo Caraballo,50,76,ATA,17,Venezuela
 Orlando City SC,Carlos Mercado,Carlos Mercado,56,59,GOL,26,Estados Unidos
@@ -580,7 +553,6 @@ Charlotte FC,Eryk Williamson,Eryk Williamson,67,67,MEI,29,Estados Unidos
 Charlotte FC,Nathan Byrne,Nathan Byrne,69,69,LAT,34,Inglaterra
 Charlotte FC,Timothy Ream,Timothy Ream,72,72,ZAG,38,Estados Unidos
 Charlotte FC,Bill Tuiloma,Bill Tuiloma,65,65,ZAG,31,Nova Zelândia
-Charlotte FC,Kerwin Vargas,Kerwin Vargas,68,76,MEI,24,Colômbia
 Charlotte FC,Djibril Diani,Djibril Diani,67,70,VOL,28,França
 Charlotte FC,Jahkeele Marshall-Rutty,Jahkeele Marshall-Rutty,63,75,MEI,22,Canadá
 Charlotte FC,Archie Goodwin,Archie Goodwin,64,78,ATA,21,Austrália
@@ -663,14 +635,12 @@ Sporting Kansas City,Zorhan Bassong,Zorhan Bassong,63,66,LAT,27,Canadá
 Sporting Kansas City,Santiago Muñóz,Santiago Muñóz,63,70,ATA,23,México
 Sporting Kansas City,Mason Toye,Mason Toye,65,66,ATA,27,Estados Unidos
 Sporting Kansas City,Jacob Bartlett,Jacob Bartlett,58,72,VOL,20,Estados Unidos
-Sporting Kansas City,Alán Montes,Alán Montes,60,64,ZAG,25,México
 Sporting Kansas City,Stephen Afrifa,Stephen Afrifa,59,65,ATA,25,Canadá
 Sporting Kansas City,Robert Voloder,Robert Voloder,61,66,ZAG,25,Alemanha
 Sporting Kansas City,Jansen Miller,Jansen Miller,59,65,ZAG,24,Estados Unidos
 Sporting Kansas City,Ian James,Ian James,50,63,ZAG,18,Estados Unidos
 Sporting Kansas City,John Pulskamp,John Pulskamp,64,69,GOL,25,Estados Unidos
 Sporting Kansas City,Ryan Schewe,Ryan Schewe,52,58,GOL,24,Estados Unidos
-San Jose Earthquakes,Cristian Arango,Cristian Arango,78,78,ATA,31,Colômbia
 San Jose Earthquakes,DeJuan Jones,DeJuan Jones,71,71,LAT,29,Estados Unidos
 San Jose Earthquakes,Cristian Espinoza,Cristian Espinoza,75,75,MEI,31,Argentina
 San Jose Earthquakes,Ronaldo Vieira,Ronaldo Vieira,68,68,MEI,28,Inglaterra
@@ -702,10 +672,8 @@ Austin FC,Mikkel Desler,Mikkel Desler,73,73,LAT,31,Dinamarca
 Austin FC,Besard Sabovic,Besard Sabovic,68,69,MEI,28,Suécia
 Austin FC,Robert Taylor,Robert Taylor,70,70,ATA,31,Finlândia
 Austin FC,Ilie Sánchez,Ilie Sánchez,71,71,MEI,35,Espanha
-Austin FC,Osman Bukari,Osman Bukari,72,73,ATA,27,Gana
 Austin FC,Dani Pereira,Dani Pereira,67,72,MEI,26,Venezuela
 Austin FC,Brandon Vazquez,Brandon Vazquez,73,76,ATA,27,Estados Unidos
-Austin FC,Jáder Obrian,Jáder Obrian,68,68,MEI,31,Colômbia
 Austin FC,Jon Gallagher,Jon Gallagher,65,65,LAT,30,Irlanda
 Austin FC,Ž. Kolmanič,Ž. Kolmanič,64,68,LAT,26,Eslovênia
 Austin FC,Owen Wolff,Owen Wolff,65,77,VOL,21,Estados Unidos
@@ -792,7 +760,6 @@ CF Montréal,Aleksandr Guboglo,Aleksandr Guboglo,59,76,MEI,19,Haiti
 CF Montréal,Bode Hidalgo,Bode Hidalgo,62,71,LAT,24,Estados Unidos
 CF Montréal,Samuel Piette,Samuel Piette,69,69,VOL,31,Canadá
 CF Montréal,Hennadiy Synchuk,Hennadiy Synchuk,62,77,MEI,20,Ucrânia
-CF Montréal,Fernando Álvarez,Fernando Álvarez,64,72,ZAG,22,Colômbia
 CF Montréal,Dawid Bugaj,Dawid Bugaj,58,64,LAT,22,Polônia
 CF Montréal,Jalen Neal,Jalen Neal,66,78,ZAG,22,Estados Unidos
 CF Montréal,Olger Escobar,Olger Escobar,61,78,ATA,19,Guatemala

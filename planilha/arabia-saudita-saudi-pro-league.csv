@@ -1,21 +1,17 @@
 clube,nome_original,nome,overall,potencial,posicao,idade,pais
 Al Hilal,Theo Hernández,Theo Hernández,84,85,LAT,28,França
-Al Hilal,João Cancelo,João Cancelo,84,84,LAT,32,Portugal
 Al Hilal,Sergej Milinković-Savić,Sergej Milinković-Savić,84,84,MEI,31,Sérvia
 Al Hilal,Rúben Neves,Rúben Neves,84,85,VOL,29,Portugal
 Al Hilal,Salem Al Dawsari,Salem Al Dawsari,82,82,MEI,34,Arábia Saudita
 Al Hilal,Malcom,Malcom,82,82,MEI,29,Brasil
-Al Hilal,Renan Lodi,Renan Lodi,78,79,LAT,28,Brasil
 Al Hilal,Darwin Núñez,Darwin Núñez,79,82,ATA,27,Uruguai
 Al Hilal,Mohamed Kanno,Mohamed Kanno,72,72,MEI,31,Arábia Saudita
 Al Hilal,Nasser Al Dawsari,Nasser Al Dawsari,68,71,MEI,27,Arábia Saudita
 Al Hilal,Kalidou Koulibaly,Kalidou Koulibaly,82,82,ZAG,35,Senegal
-Al Hilal,Marcos Leonardo,Marcos Leonardo,79,85,ATA,23,Brasil
 Al Hilal,Ali Lajami,Ali Lajami,70,71,ZAG,30,Arábia Saudita
 Al Hilal,Moteb Al Harbi,Moteb Al Harbi,67,72,LAT,26,Arábia Saudita
 Al Hilal,Hamad Al Yami,Hamad Al Yami,65,68,LAT,27,Arábia Saudita
 Al Hilal,Hassan Tombakti,Hassan Tombakti,72,77,ZAG,27,Arábia Saudita
-Al Hilal,Kaio César,Kaio César,73,83,MEI,22,Brasil
 Al Hilal,Abdulelah Al Malki,Abdulelah Al Malki,65,65,VOL,31,Arábia Saudita
 Al Hilal,Abdullah Al Hamdan,Abdullah Al Hamdan,64,67,ATA,26,Arábia Saudita
 Al Hilal,Suhayb Al Zaid,Suhayb Al Zaid,57,72,VOL,21,Arábia Saudita
@@ -34,7 +30,6 @@ Al Hilal,Saleh Barnawi,Saleh Barnawi,51,66,ZAG,19,Arábia Saudita
 Al Hilal,Yassine Bounou,Yassine Bounou,82,82,GOL,35,Marrocos
 Al Hilal,Mohammed Al Rubaie,Mohammed Al Rubaie,62,65,GOL,28,Arábia Saudita
 Al Hilal,Ahmad Abo Rasain,Ahmad Abo Rasain,52,66,GOL,22,Arábia Saudita
-Al Hilal,Mathieu Patouillet,Mathieu Patouillet,64,77,GOL,22,França
 Al Qadsiah,Otávio,Otávio,82,82,MEI,31,Portugal
 Al Qadsiah,Nahitan Nández,Nahitan Nández,76,76,MEI,30,Uruguai
 Al Qadsiah,Julián Quiñones,Julián Quiñones,80,80,ATA,29,México
@@ -61,12 +56,10 @@ Al Qadsiah,Mohammed Al Shanqeeti,Mohammed Al Shanqeeti,57,60,LAT,27,Arábia Saud
 Al Qadsiah,Saif Rajab,Saif Rajab,56,70,MEI,21,Arábia Saudita
 Al Qadsiah,Alejandro Vergaz,Alejandro Vergaz,58,76,ZAG,20,Espanha
 Al Qadsiah,Koen Casteels,Koen Casteels,82,82,GOL,34,Bélgica
-Al Qadsiah,Gabriel Carvalho,Gabriel Carvalho,54,69,ATA,18,Brasil
 Al Qadsiah,Mohammed Al Shammari,Mohammed Al Shammari,51,65,LAT,19,Arábia Saudita
 Al Qadsiah,Ahmed Kaabi,Ahmed Kaabi,47,61,ZAG,21,Arábia Saudita
 Al Qadsiah,Ahmed Al Kassar,Ahmed Al Kassar,63,63,GOL,35,Arábia Saudita
 Al Qadsiah,Meshary Sanyour,Meshary Sanyour,60,70,GOL,24,Arábia Saudita
-Al Ahli,Franck Kessié,Franck Kessié,80,81,VOL,29,Costa do Marfim
 Al Ahli,Ivan Toney,Ivan Toney,81,81,ATA,30,Inglaterra
 Al Ahli,Riyad Mahrez,Riyad Mahrez,84,84,MEI,35,Argélia
 Al Ahli,Galeno,Galeno,81,81,MEI,28,Brasil
@@ -79,7 +72,6 @@ Al Ahli,Ali Majrashi,Ali Majrashi,70,75,LAT,26,Arábia Saudita
 Al Ahli,Merih Demiral,Merih Demiral,78,81,ZAG,28,Turquia
 Al Ahli,Ziyad Al Johani,Ziyad Al Johani,67,78,VOL,24,Arábia Saudita
 Al Ahli,Abdulelah Al Khaibari,Abdulelah Al Khaibari,66,66,LAT,29,Arábia Saudita
-Al Ahli,Matteo Dams,Matteo Dams,68,79,LAT,22,Bélgica
 Al Ahli,Zakaria Hawsawi,Zakaria Hawsawi,65,72,LAT,25,Arábia Saudita
 Al Ahli,Fahad Al Rashidi,Fahad Al Rashidi,61,61,MEI,29,Arábia Saudita
 Al Ahli,Sumayhan Al Nabit,Sumayhan Al Nabit,63,63,MEI,30,Arábia Saudita
@@ -136,7 +128,6 @@ Al Ettifaq,Jack Hendry,Jack Hendry,74,74,ZAG,31,Escócia
 Al Ettifaq,João Costa,João Costa,71,86,MEI,21,Brasil
 Al Ettifaq,Moussa Dembélé,Moussa Dembélé,70,70,ATA,30,França
 Al Ettifaq,Mukhtar Ali,Mukhtar Ali,67,67,VOL,28,Arábia Saudita
-Al Ettifaq,Francisco Calvo,Francisco Calvo,68,68,ZAG,34,Costa Rica
 Al Ettifaq,Ahmed Hassan,Ahmed Hassan,72,72,ATA,33,Egito
 Al Ettifaq,Radhi Al Otaibi,Radhi Al Otaibi,67,72,LAT,26,Arábia Saudita
 Al Ettifaq,Madallah Al Olayan,Madallah Al Olayan,63,63,LAT,31,Arábia Saudita
@@ -161,7 +152,6 @@ Al Ettifaq,Turki Baljawsh,Turki Baljawsh,52,60,GOL,22,Arábia Saudita
 Al Shabab,Yannick Carrasco,Yannick Carrasco,81,81,ATA,32,Bélgica
 Al Shabab,Yacine Adli,Yacine Adli,78,83,VOL,26,França
 Al Shabab,Joshua Brownhill,Joshua Brownhill,76,76,VOL,30,Inglaterra
-Al Shabab,Vincent Sierro,Vincent Sierro,75,75,MEI,30,Suíça
 Al Shabab,Carlos Júnior,Carlos Júnior,73,73,ATA,30,Brasil
 Al Shabab,Abderrazak Hamdallah,Abderrazak Hamdallah,79,79,ATA,35,Marrocos
 Al Shabab,Wesley Hoedt,Wesley Hoedt,74,74,ZAG,32,Holanda
@@ -188,12 +178,10 @@ Al Shabab,Marcelo Grohe,Marcelo Grohe,75,75,GOL,39,Brasil
 Al Shabab,Mohammed Al Mahasna,Mohammed Al Mahasna,58,61,GOL,29,Arábia Saudita
 Al Shabab,Abdulaziz Al Ouwiradi,Abdulaziz Al Ouwiradi,54,64,GOL,24,Arábia Saudita
 Al Shabab,Mishal Saad,Mishal Saad,52,72,GOL,20,Arábia Saudita
-Al Ittihad,N'Golo Kanté,N'Golo Kanté,85,85,VOL,35,França
 Al Ittihad,Karim Benzema,Karim Benzema,85,85,ATA,38,França
 Al Ittihad,Fabinho,Fabinho,82,82,VOL,32,Brasil
 Al Ittihad,Houssem Aouar,Houssem Aouar,77,78,MEI,28,Argélia
 Al Ittihad,Steven Bergwijn,Steven Bergwijn,80,80,MEI,28,Holanda
-Al Ittihad,Moussa Diaby,Moussa Diaby,84,85,MEI,27,França
 Al Ittihad,Danilo Pereira,Danilo Pereira,81,81,ZAG,34,Portugal
 Al Ittihad,Roger Fernandes,Roger Fernandes,76,85,MEI,20,Portugal
 Al Ittihad,Mahamadou Doumbia,Mahamadou Doumbia,68,80,VOL,22,Mali
@@ -205,7 +193,6 @@ Al Ittihad,Muhannad Al Shanqeeti,Muhannad Al Shanqeeti,70,73,LAT,27,Arábia Saud
 Al Ittihad,Fawaz Al Sagour,Fawaz Al Sagour,66,66,LAT,30,Arábia Saudita
 Al Ittihad,Ahmed Sharahili,Ahmed Sharahili,71,71,ZAG,32,Arábia Saudita
 Al Ittihad,Hamed Al Ghamdi,Hamed Al Ghamdi,62,65,MEI,27,Arábia Saudita
-Al Ittihad,Mario Mitaj,Mario Mitaj,68,76,LAT,22,Albânia
 Al Ittihad,Abdulaziz Al Bishi,Abdulaziz Al Bishi,63,63,MEI,32,Arábia Saudita
 Al Ittihad,Ahmed Al Ghamdi,Ahmed Al Ghamdi,65,71,MEI,24,Arábia Saudita
 Al Ittihad,Saleh Al Shehri,Saleh Al Shehri,69,69,ATA,32,Arábia Saudita
@@ -289,7 +276,6 @@ Al Fateh,Mourad Batna,Mourad Batna,77,77,MEI,36,Marrocos
 Al Fateh,Matías Vargas,Matías Vargas,77,77,MEI,29,Argentina
 Al Fateh,Marwane Saadane,Marwane Saadane,72,72,ZAG,34,Marrocos
 Al Fateh,Karl Toko Ekambi,Karl Toko Ekambi,69,69,ATA,33,Camarões
-Al Fateh,Amine Sbaï,Amine Sbaï,68,74,MEI,25,Marrocos
 Al Fateh,Saeed Baetaih,Saeed Baetaih,63,70,LAT,25,Arábia Saudita
 Al Fateh,Abdullah Al Mogren,Abdullah Al Mogren,59,59,MEI,29,Arábia Saudita
 Al Fateh,Fahad Al Zubaidi,Fahad Al Zubaidi,57,66,ATA,24,Arábia Saudita
@@ -314,7 +300,6 @@ Al Fateh,Amin Bukhari,Amin Bukhari,59,62,GOL,29,Arábia Saudita
 Al Fateh,Habib Al Watyan,Habib Al Watyan,56,58,GOL,29,Arábia Saudita
 Al Fateh,Sattam Al Subaie,Sattam Al Subaie,52,60,GOL,25,Arábia Saudita
 Al Fateh,Muhannad Al Yahya,Muhannad Al Yahya,50,59,GOL,21,Arábia Saudita
-Al Taawoun,Romain Faivre,Romain Faivre,76,76,MEI,28,França
 Al Taawoun,Angelo Fulgini,Angelo Fulgini,73,73,MEI,29,França
 Al Taawoun,Aschraf El Mahdioui,Aschraf El Mahdioui,78,78,VOL,30,Holanda
 Al Taawoun,Andrei Girotto,Andrei Girotto,76,76,ZAG,34,Brasil
@@ -343,7 +328,6 @@ Al Taawoun,Mailson,Mailson,74,76,GOL,29,Brasil
 Al Taawoun,Abdulquddus Attiah,Abdulquddus Attiah,65,68,GOL,29,Arábia Saudita
 Al Taawoun,Abdulrahman Al Senaidi,Abdulrahman Al Senaidi,52,67,GOL,20,Arábia Saudita
 Al Taawoun,Abdulrahman Al Ghamdi,Abdulrahman Al Ghamdi,52,65,GOL,20,Arábia Saudita
-Al Khaleej,Konstantinos Fortounis,Konstantinos Fortounis,61,61,MEI,33,Grécia
 Al Khaleej,Pedro Rebocho,Pedro Rebocho,73,73,LAT,31,Portugal
 Al Khaleej,Georgios Masouras,Georgios Masouras,73,73,ATA,32,Grécia
 Al Khaleej,Joshua King,Joshua King,74,74,ATA,34,Noruega
@@ -404,7 +388,6 @@ Al Hazem,Yazan Al Ruwaili,Yazan Al Ruwaili,52,64,GOL,21,Arábia Saudita
 Damac,Valentín Vada,Valentín Vada,67,67,MEI,30,Argentina
 Damac,Morlaye Sylla,Morlaye Sylla,72,72,MEI,28,Guiné
 Damac,Yakou Méïté,Yakou Méïté,69,69,ATA,30,Costa do Marfim
-Damac,Jesús Medina,Jesús Medina,70,70,MEI,29,Paraguai
 Damac,Abdulrahman Al Obaid,Abdulrahman Al Obaid,59,59,LAT,33,Arábia Saudita
 Damac,Assan Ceesay,Assan Ceesay,66,66,ATA,32,Gâmbia
 Damac,Nabil Alioui,Nabil Alioui,67,68,ATA,27,França
