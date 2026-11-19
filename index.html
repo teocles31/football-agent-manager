@@ -4445,7 +4445,7 @@ function mEvo(){const p=G.P[ui.modal.pid];if(!p){ui.modal=null;return'';}const c
   if(m)h+='<p class="small"><b>'+esc(m.n)+'</b> acompanha '+esc(p.name)+' até '+fdate(m.until,true)+'. Evolução '+Math.round((m.f-1)*100)+'% mais rápida.</p>';
   else if(p.age>24)h+='<p class="small muted">Mentoria é para jogadores de até 24 anos.</p>';
   else{const cs=mentorCands(p);h+='<p class="small muted">Um veterano adota o jogador por 6 meses. Do mesmo setor do campo, rende mais. O veterano precisa aceitar.</p>'+
-    (cs.length?'<div class="list">'+cs.map(x=>'<div>'+avatar(x,30)+ovrB(x.ovr)+'<div class="grow"><b>'+plLink(x)+'</b> <span class="chip">'+x.pos+'</span><div class="small muted">'+x.age+' anos · '+(x.club===p.club?'companheiro de clube':'seu cliente'+(club(x)?' no '+esc(club(x).n):''))+' · evolução '+(posG(x)===posG(p)?'+40%':'+25%')+'</div></div><button class="btn" data-a="mentor" data-p="'+p.id+'" data-m="'+x.id+'"'+(noAP?' disabled':'')+'>Convidar</button></div>').join('')+'</div>':
+    (cs.length?'<div class="list">'+cs.map(x=>'<div>'+avatar(x,30)+ovrB(x.ovr)+'<div class="grow"><b>'+plLink(x)+'</b> <span class="chip">'+x.pos+'</span><div class="small muted">'+x.age+' anos · '+(x.club===p.club?'companheiro de clube':'seu cliente'+(club(x)?' no '+esc(club(x).n):''))+' · evolução '+(posG(x)===posG(p)?'+40%':'+25%')+'</div></div>'+(((p.mentNo||{})[x.id]||0)>G.d?'<span class="chip bad">Recusou · tente na próxima semana</span>':'<button class="btn" data-a="mentor" data-p="'+p.id+'" data-m="'+x.id+'"'+(noAP?' disabled':'')+'>Convidar</button>')+'</div>').join('')+'</div>':
      '<p class="small">Nenhum veterano disponível. Ele precisa de um companheiro de clube com 29 anos ou mais e nível bem acima, ou de um cliente veterano seu.</p>');}
   h+='</div><div class="evb c-warn"><h3>'+icoS('swap')+'Mudança de posição</h3>';
   if(p.pos==='GOL')h+='<p class="small muted">Goleiro não muda de posição.</p>';
@@ -4555,10 +4555,10 @@ const EVOA={
   goN(){ui.ssub='rk';ui.tab='selecoes';ui.stack=[];render();window.scrollTo(0,0);},
   goA(){ui.ssub='aw';ui.tab='selecoes';ui.stack=[];render();window.scrollTo(0,0);},
   nat(d){ui.nat=d.n;ui.ssub='rk';ui.tab='selecoes';ui.stack=[];render();},
-  mentor(d){const p=G.P[d.p],x=G.P[d.m];if(!p||!x||!useAP())return;const same=x.club===p.club,ch=clamp((same?.6:.85)+(x.trait==='lider'?.2:0)+(x.ag===0&&same?.15:0)+G.me.car*.03,0,.97);
+  mentor(d){const p=G.P[d.p],x=G.P[d.m];if(!p||!x)return;if(((p.mentNo||{})[x.id]||0)>G.d){toast(x.name+' já recusou esta semana. Tente de novo na próxima.');return;}if(!useAP())return;const same=x.club===p.club,ch=clamp((same?.6:.85)+(x.trait==='lider'?.2:0)+(x.ag===0&&same?.15:0)+G.me.car*.03,0,.97);
     if(Math.random()<ch){const f=posG(x)===posG(p)?1.4:1.25;p.ment={id:x.id,n:x.name,until:G.d+182,f};p.morale=clamp(p.morale+4,0,100);if(x.ag===0){x.trust=clamp(x.trust+4,0,100);x.morale=clamp(x.morale+3,0,100);}
       news(x.name+' aceitou ser mentor de '+p.name+' pelos próximos seis meses.','evolucao');pop({k:'good',ic:'coach',wait:1100,wt:'Conversando com '+x.name+'…',ti:'Mentor definido',tx:x.name+' vai acompanhar '+p.name+' de perto.',ch:[['Evolução +'+Math.round((f-1)*100)+'%','good']]});}
-    else pop({k:'bad',ic:'no',wait:1100,wt:'Conversando com '+x.name+'…',ti:'Recusou',tx:x.name+' disse que prefere cuidar da própria carreira agora.'});save();render();},
+    else{(p.mentNo||(p.mentNo={}))[x.id]=G.d+7;pop({k:'bad',ic:'no',wait:1100,wt:'Conversando com '+x.name+'…',ti:'Recusou',tx:x.name+' disse que prefere cuidar da própria carreira agora. Dá para insistir na semana que vem.'});}save();render();},
   poschg(d){const p=G.P[d.p],np=d.v,c=club(p);if(!p||!POS_ADJ[p.pos].includes(np)||!useAP())return;
     if(!c||Math.random()<posChance(p)){const old=p.pos;p.pos=np;if(p.age>=27){p.ovr--;if(p.pot>p.ovr+2)p.pot--;}p.adapt=10;p.posCd=G.d+365;dirty();
       news(p.name+' trocou a função de '+POSN[old]+' pela de '+POSN[np]+'.','evolucao');pop({k:'good',ic:'swap',wait:1100,wt:c?'Conversa com o técnico do '+c.n+'…':'Treinando a nova função…',ti:'Nova posição',tx:p.name+' agora joga como '+POSN[np]+'. Ele leva 10 semanas para se adaptar.',ch:[['Adaptação: 10 sem','warn']]});}
@@ -5419,7 +5419,7 @@ function mSlots(inGame){return'<div class="sheet slots"><span class="eyebrow">Fo
   (inGame?'<h3 class="menu-t">Opções</h3><div class="acts"><button class="btn" data-a="edit">Editar fotos e patrocinadores</button><button class="btn" data-a="slotsave">Salvar agora</button></div>':'')+
   '<h3 class="menu-t">Versão do jogo</h3><div class="updb"><div class="grow"><b>Atualizações</b><span class="small muted">'+esc(verTxt(APP_V))+'</span>'+(ui.upd?'<span class="small '+(ui.upd.k||'')+'">'+esc(ui.upd.t)+'</span>':'')+'</div><button class="btn pri" data-a="updchk"'+(ui.upd&&ui.upd.busy?' disabled':'')+'>Buscar atualização</button></div>'+(inGame?'<div class="acts"><button class="btn pri big" data-a="close">Voltar ao jogo</button></div>':'')+'</div>';}
 /* versão: o script de publicação grava a data e a hora em APP_V. O botão baixa a página publicada sem cache e, se ela for mais nova, salva e recarrega. */
-const APP_V='202611191707';
+const APP_V='202611191709';
 const verTxt=v=>/^\d{12}$/.test(v)?'Publicada em '+v.slice(6,8)+'/'+v.slice(4,6)+'/'+v.slice(0,4)+' às '+v.slice(8,10)+':'+v.slice(10,12):'Versão de teste';
 async function updChk(){ui.upd={t:'Procurando…',busy:1};render();
   try{const r=await fetch(location.pathname+'?chk='+Date.now(),{cache:'no-store'}),t=await r.text(),m=t.match(/const APP_V='(\d{12})'/),nv=m?m[1]:null;
