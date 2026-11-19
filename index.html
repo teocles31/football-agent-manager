@@ -360,6 +360,7 @@ tr.sel td{background:color-mix(in srgb,var(--rose) 16%,transparent)}
 .lgn{font-family:var(--f-d);text-transform:uppercase;letter-spacing:.06em;color:var(--cer-gold)}
 .lgr{display:flex;align-items:center;gap:8px;min-width:0}.lgr .grow{display:flex;flex-direction:column;min-width:0}
 .cer-a{justify-content:center;margin-top:6px}
+.debtb{display:flex;flex-direction:column;gap:6px;margin:8px 0;padding:10px;border-radius:8px;border:1px solid var(--bad);background:rgba(220,70,60,.08)}.debtb .acts{margin:0}
 .tt-hero{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;width:min(100%,340px);margin:10px auto 4px;padding:34px 14px 16px;border-radius:14px;background:linear-gradient(180deg,var(--cer-card),#0c2723);border:2px solid var(--cer-gold);box-shadow:0 0 0 4px rgba(244,198,31,.12),0 20px 50px -18px rgba(244,198,31,.6);overflow:hidden;animation:cerIn .6s .3s both}.tt-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.14) 50%,transparent 70%);animation:shine 2.6s ease-in-out infinite;pointer-events:none}
 .tt-hero .crest-img{width:92px;height:auto}.tt-n{font-family:var(--f-d);font-size:24px;line-height:1.1}.tt-s{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--cer-gold);font-weight:700}.tt-f{font-size:12.5px;color:var(--cer-ink2)}
 @media (prefers-reduced-motion:no-preference){
@@ -2518,7 +2519,7 @@ function fillXI(by,sc){const xi=[],gap=[];
     if(p){p._r=pos;xi.push(p);}}
   return xi;}
 function lineup(cid){const av=squad(cid).filter(p=>!p.injury&&!(p.boost<0)&&!p.lent&&!((p.suspTil||0)>G.d));
-  const frm=G.clubs[cid].coach.pe==='frm';const sc=p=>p.ovr+(p.boost>0?30:0)-(p.adapt>0?4:0)-(p.fat||0)*1.6+Math.random()*1.5-(p.age<=19&&!frm?1.5:0);
+  const frm=G.clubs[cid].coach.pe==='frm';const sc=p=>p.ovr-debtPen(p)+(p.boost>0?30:0)-(p.adapt>0?4:0)-(p.fat||0)*1.6+Math.random()*1.5-(p.age<=19&&!frm?1.5:0);
   const by={};av.forEach(p=>{p._s=sc(p);(by[p.pos]||(by[p.pos]=[])).push(p);});Object.values(by).forEach(a=>a.sort((x,y)=>y._s-x._s));
   const xi=fillXI(by,p=>p._s);const rest=Object.values(by).flat().filter(p=>p.pos!=='GOL').sort((x,y)=>y._s-x._s);
   const avg=xi.reduce((s,p)=>s+p.ovr,0)/Math.max(1,xi.length);
@@ -2546,7 +2547,7 @@ function statLine(comp,lu,gf,ga){const all=lu.xi.concat(lu.subs),ng=new Map(),na
   for(let k=0;k<gf;k++){const s=wpick(all,p=>GW[p.pos]*Math.pow(p.ovr/70,2)*(lu.subs.includes(p)?.4:1));if(!s)continue;ng.set(s,(ng.get(s)||0)+1);
     if(Math.random()<.78){const a=wpick(all.filter(x=>x!==s),p=>AW[p.pos]*Math.pow(p.ovr/70,2));if(a)na.set(a,(na.get(a)||0)+1);}}
   all.forEach((p,i)=>{const sub=i>=lu.xi.length,g=ng.get(p)||0,a=na.get(p)||0;
-    let rt=(sub?6.2:6.4)+(gf-ga)*.22+rnd(-.75,.75)+(p.ovr-lu.avg)*.035+g*.9+a*.5;
+    let rt=(sub?6.2:6.4)+(gf-ga)*.22+rnd(-.75,.75)+(p.ovr-debtPen(p)*2-lu.avg)*.035+g*.9+a*.5-debtPen(p)*.06;
     if(ga===0&&!sub&&(p.pos==='GOL'||p.pos==='ZAG'||p.pos==='LAT'))rt+=.5;if(p.pos==='GOL')rt+=.4-ga*.3;
     rt=clamp(Math.round(rt*10)/10,3,10);
     const s=p.st[comp.id]||(p.st[comp.id]=[0,0,0,0,0,0]);s[0]++;s[1]+=g;s[2]+=a;s[3]+=Math.round(rt*10);cardsFor(p,s,sub);if(ga===0&&!sub&&(p.pos==='GOL'||p.pos==='ZAG'||p.pos==='LAT'))s[4]++;
@@ -4082,6 +4083,8 @@ function offOf(p){if(p.off)return p.off;const c=club(p),w=c?p.wage:wageRef(p.ovr
   const o=p.off={sm:p.trait==='timido'?'disc':p.trait==='baladeiro'&&!p.real?'pol':'fam',fol:0,pat:Math.round(w*52*.72*yrs*(SAVED[p.trait]||.25)*rnd(.7,1.1)),ls:0,fp:'no',plan:null,planP:0,red:0};
   o.fol=Math.max(200,Math.round(folTarget(p,o)*rnd(.5,.9)));o.ls=c?w*.72*spRate(p,o):0;return o;}
 function pubMonth(p,o){o=o||offOf(p);return Math.round(Math.pow(o.fol,.85)*.02*(1+.15*offL('midia')+.1*G.staff.assessor)*SMODE[o.sm][3]);}
+/* dívida pesa na cabeça: cliente no vermelho rende menos (1 a 5 pontos), mais quanto maior a dívida perto do que ele ganha */
+function debtPen(p){if(p.ag!==0||!p.off||!(p.off.pat<0))return 0;const w=Math.max(500,p.off.wi||0);return clamp(Math.round(1+(-p.off.pat/w)/4),1,5);}
 function finHealth(o){if(o.pat<0)return 4;const yr=Math.max(150,o.ws||o.ls||150)*52;return clamp(Math.round(o.pat/(yr*3)*100),6,100);}
 const campCostP=p=>nice(Math.max(400,wageRef(p.ovr,club(p)?club(p).lg:0)*.6));
 const planCost=p=>nice(Math.max(2000,(p.wage||wageRef(p.ovr,0)*.5)*4));
@@ -4185,9 +4188,13 @@ const OFFA={
     const ch=[['-'+fmt(cost),'bad'],folCh(o,pct)];p.fame=clamp(p.fame+2,0,100);ch.push(['Fama +2','good']);
     pop({k:'good',ic:'phone',wait:1300,wt:'Gravando a série de vídeos…',ti:'Campanha no ar',tx:'A série de bastidores de '+p.name+' estreou nas redes.',ch});save();render();},
   offfp(d){const p=G.P[d.p],o=offOf(p),v=d.v;if(!FPLAN[v]||o.fp===v)return;const cost=o.fp==='no'?nice(Math.max(500,p.wage||1000)):0;
-    if(v!=='no'&&p.trust<40){toast(p.name+' ainda não confia em você o bastante para entregar o dinheiro dele. Ele precisa de confiança 40.');return;}
+    {const need=o.pat<0?25:40;if(v!=='no'&&p.trust<need){toast(p.name+' ainda não confia em você o bastante para entregar o dinheiro dele. Ele precisa de confiança '+need+'.');return;}}
     if(G.money<cost){toast('Caixa insuficiente para pagar o consultor financeiro.');return;}if(!useAP())return;G.money-=cost;o.fp=v;
     pop({k:v==='no'?'warn':'good',ic:'wallet',wait:1200,wt:'Reunião com o consultor…',ti:FPLAN[v][0],tx:v==='no'?p.name+' voltou a cuidar sozinho do próprio dinheiro.':p.name+' assinou o plano. '+FPLAN[v][1],ch:cost?[['-'+fmt(cost),'bad'],['Taxa de gestão toda semana','good']]:[]});save();render();},
+  offpay(d){const p=G.P[d.p],o=offOf(p);if(!(o.pat<0))return;const debt=-o.pat,half=d.v==='half',amt=nice(half?debt/2:debt);
+    if(G.money<amt){toast('Caixa insuficiente para pagar a dívida.');return;}G.money-=amt;o.pat=Math.min(0,o.pat+amt);if(!half||o.pat>=0){o.pat=0;o.red=0;}
+    const tr=half?6:12,mo=half?4:8;p.trust=clamp(p.trust+tr,0,100);p.morale=clamp(p.morale+mo,0,100);if(!half)o.aust=Math.max(o.aust||0,G.d+182);
+    pop({k:'good',ic:'wallet',wait:1100,wt:'Acertando com os credores…',ti:half?'Metade paga':'Dívida quitada',tx:half?p.name+' respirou. Ainda deve '+fmt(-o.pat)+'.':p.name+' agradeceu e prometeu segurar os gastos por seis meses. A cabeça volta para o futebol.',ch:[['-'+fmt(amt)+' no caixa','bad'],['Confiança +'+tr,'good'],['Moral +'+mo,'good']]});save();render();},
   offtalk(d){const p=G.P[d.p],o=offOf(p);if((o.aust||0)>G.d)return;if(!useAP())return;
     if(Math.random()<clamp(.35+p.trust/200+G.me.car*.05-(p.trait==='baladeiro'?.2:0),.1,.95)){o.aust=G.d+182;
       pop({k:'good',ic:'wallet',wait:1100,wt:'Planilha na mesa…',ti:'Ele ouviu',tx:p.name+' topou cortar um quarto dos gastos pelos próximos seis meses.',ch:[['Gastos -25%','good']]});}
@@ -4211,6 +4218,7 @@ function offCard(p){const o=offOf(p),c=club(p),T=folTarget(p,o),pub=pubMonth(p,o
    seg('offsm',Object.keys(SMODE).map(k=>[k,SMODE[k][0]]),o.sm,k=>k==='pol'&&p.trait==='timido')+'<p class="small muted">'+esc(SMODE[o.sm][1])+(o.sm==='pol'&&p.real?' Com jogador real, a resenha fica no bom humor: cresce menos e não gera crise.':'')+'</p>'+
    '<div class="acts"><button class="btn" data-a="offcamp" data-p="'+p.id+'"'+(canCamp&&G.money>=cc?'':' disabled')+'>'+(canCamp?'Campanha de conteúdo <small>'+fmt(cc)+' · 1 ação</small>':'Nova campanha em '+fdate(o.camp))+'</button></div></div>';
   h+='<div class="offb c-good"><h3>'+icoS('wallet')+'Finanças</h3><b class="big2'+(o.pat<0?' dn':'')+'">'+fmt(o.pat)+'</b><span class="small muted">'+(o.wi!=null?'Recebe '+fmt(o.wi)+' líquidos e gasta '+fmt(o.ws)+' por semana ('+(bal>=0?'sobram ':'faltam ')+fmt(Math.abs(bal))+')':'O primeiro balanço sai na próxima semana')+'</span>'+
+   (o.pat<0?(()=>{const debt=-o.pat,pen=debtPen(p),half=nice(debt/2),all=nice(debt);return'<div class="debtb"><b>Endividado: deve '+fmt(debt)+'</b><span class="small">Com a cabeça nas contas, rende menos em campo (−'+pen+' no desempenho). Quanto maior a dívida, pior.</span><div class="acts"><button class="btn pri sm" data-a="offpay" data-p="'+p.id+'" data-v="all"'+(G.money>=all?'':' disabled')+'>Quitar a dívida <small>'+fmt(all)+'</small></button><button class="btn sm" data-a="offpay" data-p="'+p.id+'" data-v="half"'+(G.money>=half?'':' disabled')+'>Pagar metade <small>'+fmt(half)+'</small></button></div><span class="small muted">Você também pode conversar sobre os gastos e ajustar o plano financeiro logo abaixo.</span></div>';})():'')+
    spLine(o)+'<div class="meters one">'+meter('Saúde financeira',finHealth(o))+'</div>'+seg('offfp',Object.keys(FPLAN).map(k=>[k,FPLAN[k][0]]),o.fp)+
    '<p class="small muted">'+esc(FPLAN[o.fp][1])+(o.fp!=='no'?' A agência recebe '+fmt(Math.max(0,o.pat)*.00025)+' por semana de taxa de gestão.':' Montar um plano custa '+fmt(nice(Math.max(500,p.wage||1000)))+' e 1 ação.')+'</p>'+
    '<div class="acts"><button class="btn" data-a="offtalk" data-p="'+p.id+'"'+((o.aust||0)>G.d?' disabled':'')+'>'+((o.aust||0)>G.d?'Gastos contidos até '+fdate(o.aust):'Conversar sobre gastos <small>1 ação</small>')+'</button></div></div>';
