@@ -210,9 +210,9 @@ table.squad td{padding:4px 8px}
 .pop-ch{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}.pop-ch span{font-weight:600;font-size:13px;padding:2px 9px;border-radius:12px;background:var(--surface2)}
 .pop-ch .good{color:var(--good)}.pop-ch .bad{color:var(--bad)}
 .pop-card .btn{margin-top:4px;min-width:96px}
-.pop-bar{position:absolute;left:0;bottom:0;height:3px;width:100%;background:var(--gold);transform-origin:left}
+.pop-bar{position:absolute;left:0;bottom:0;height:3px;width:100%;background:var(--gold);transform-origin:left;will-change:transform}
 .pop-prog{display:block;width:100%;height:6px;border-radius:3px;background:var(--surface2);position:relative;overflow:hidden}
-.pop-prog::after{content:"";position:absolute;inset:0;background:var(--gold);transform-origin:left}
+.pop-prog::after{content:"";position:absolute;inset:0;background:var(--gold);transform-origin:left;will-change:transform}
 .pp{position:absolute;left:50%;top:50%;width:7px;height:7px;margin:-3px;border-radius:2px;background:var(--gold);opacity:0}
 .pp:nth-child(3n){background:var(--good)}.pp:nth-child(4n){background:var(--info);border-radius:50%}
 @media (prefers-reduced-motion:no-preference){
@@ -2863,7 +2863,7 @@ async function gz(str){if(typeof CompressionStream==='undefined')return str;retu
 async function ungz(v){if(typeof v==='string')return v;return await new Response(v.stream().pipeThrough(new DecompressionStream('gzip'))).text();}
 let _svT=null,_svBusy=null,_svAgain=false;
 function saveMeta(){try{if(G)localStorage.setItem(KEY+'-meta',JSON.stringify(slotMetaOf(G)));}catch(e){}}
-function save(){if(!G)return;saveMeta();if(!HAS_IDB){try{localStorage.setItem(KEY,JSON.stringify(G));}catch(e){}return;}clearTimeout(_svT);_svT=setTimeout(saveNow,300);}
+function save(){if(!G)return;saveMeta();if(!HAS_IDB){try{localStorage.setItem(KEY,JSON.stringify(G));}catch(e){}return;}clearTimeout(_svT);_svT=setTimeout(()=>{/* espera as animações acabarem e a tela ficar parada: montar o save trava a tela por um instante no celular */if(typeof requestIdleCallback==='function')requestIdleCallback(()=>{if(_svT)saveNow();},{timeout:2500});else saveNow();},1400);}
 async function saveNow(){clearTimeout(_svT);_svT=null;if(!G||!HAS_IDB)return;if(_svBusy){_svAgain=true;return _svBusy;}
   const k=KEY,str=JSON.stringify(G);
   _svBusy=(async()=>{try{await SDB.put(k,await gz(str));try{localStorage.removeItem(k);}catch(e){}}
