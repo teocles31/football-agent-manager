@@ -1,512 +1,512 @@
-clube,nome_original,nome,overall,potencial,posicao,idade,pais
-Bayern de Munique,Jonas Urbig,Jonas Urbig,79,84,GOL,23,Alemanha
-Bayern de Munique,Manuel Neuer,Manuel Neuer,84,84,GOL,40,Alemanha
-Bayern de Munique,Sven Ulreich,Sven Ulreich,73,73,GOL,38,Alemanha
-Bayern de Munique,Dayot Upamecano,Dayot Upamecano,85,88,ZAG,28,França
-Bayern de Munique,Jonathan Tah,Jonathan Tah,87,87,ZAG,30,Alemanha
-Bayern de Munique,Min-jae Kim,Min-jae Kim,82,83,ZAG,30,Coreia do Sul
-Bayern de Munique,Hiroki Ito,Hiroki Ito,78,82,ZAG,27,Japão
-Bayern de Munique,Nathaniel Brown,Nathaniel Brown,79,85,LAT,23,Alemanha
-Bayern de Munique,Alphonso Davies,Alphonso Davies,84,87,LAT,26,Canadá
-Bayern de Munique,Josip Stanisic,Josip Stanisic,78,82,LAT,26,Croácia
-Bayern de Munique,Konrad Laimer,Konrad Laimer,82,82,LAT,29,Áustria
-Bayern de Munique,Sacha Boey,Sacha Boey,77,80,LAT,26,França
-Bayern de Munique,Aleksandar Pavlovic,Aleksandar Pavlovic,83,87,VOL,22,Alemanha
-Bayern de Munique,Joshua Kimmich,Joshua Kimmich,89,89,VOL,31,Alemanha
-Bayern de Munique,David Santos Daiber,David Santos Daiber,65,79,VOL,19,Portugal
-Bayern de Munique,Tom Bischof,Tom Bischof,80,86,MEI,21,Alemanha
-Bayern de Munique,Bara Sapoko Ndiaye,Bara Sapoko Ndiaye,69,81,MEI,18,Senegal
-Bayern de Munique,Jamal Musiala,Jamal Musiala,88,92,MEI,23,Alemanha
-Bayern de Munique,Lennart Karl,Lennart Karl,77,86,MEI,18,Alemanha
-Bayern de Munique,Ismael Saibari,Ismael Saibari,85,87,MEI,25,Marrocos
-Bayern de Munique,Luis Díaz,Luis Díaz,85,85,ATA,29,Colômbia
-Bayern de Munique,Michael Olise,Michael Olise,86,88,ATA,24,França
-Bayern de Munique,Tim Binder,Tim Binder,65,74,ATA,19,Alemanha
-Bayern de Munique,Serge Gnabry,Serge Gnabry,82,82,ATA,31,Alemanha
-Bayern de Munique,Harry Kane,Harry Kane,89,89,ATA,33,Inglaterra
-Borussia Dortmund,Gregor Kobel,Gregor Kobel,86,89,GOL,28,Suíça
-Borussia Dortmund,Alexander Meyer,Alexander Meyer,75,75,GOL,35,Alemanha
-Borussia Dortmund,Patrick Drewes,Patrick Drewes,71,71,GOL,33,Alemanha
-Borussia Dortmund,Silas Ostrzinski,Silas Ostrzinski,63,77,GOL,22,Alemanha
-Borussia Dortmund,Nico Schlotterbeck,Nico Schlotterbeck,85,88,ZAG,26,Alemanha
-Borussia Dortmund,Joane Gadou,Joane Gadou,76,86,ZAG,19,França
-Borussia Dortmund,Waldemar Anton,Waldemar Anton,82,82,ZAG,30,Alemanha
-Borussia Dortmund,Luca Reggiani,Luca Reggiani,69,82,ZAG,18,Itália
-Borussia Dortmund,Ramy Bensebaini,Ramy Bensebaini,79,79,ZAG,31,Argélia
-Borussia Dortmund,Filippo Mané,Filippo Mané,70,79,ZAG,21,Itália
-Borussia Dortmund,Emre Can,Emre Can,82,82,ZAG,32,Alemanha
-Borussia Dortmund,Daniel Svensson,Daniel Svensson,77,82,LAT,24,Suécia
-Borussia Dortmund,Kauã Prates,Kauã Prates,71,87,LAT,18,Brasil
-Borussia Dortmund,Julian Ryerson,Julian Ryerson,79,80,LAT,28,Noruega
-Borussia Dortmund,Mussa Kaba,Mussa Kaba,54,67,VOL,17,Alemanha
-Borussia Dortmund,Felix Nmecha,Felix Nmecha,82,86,MEI,26,Alemanha
-Borussia Dortmund,Jobe Bellingham,Jobe Bellingham,78,85,MEI,21,Inglaterra
-Borussia Dortmund,Joey Veerman,Joey Veerman,79,81,MEI,27,Holanda
-Borussia Dortmund,Carney Chukwuemeka,Carney Chukwuemeka,78,84,MEI,23,Áustria
-Borussia Dortmund,Marcel Sabitzer,Marcel Sabitzer,80,80,MEI,32,Áustria
-Borussia Dortmund,Enzo dos Santos,Enzo dos Santos,60,75,MEI,17,Luxemburgo
-Borussia Dortmund,Ethan Nwaneri,Ethan Nwaneri,76,88,MEI,19,Inglaterra
-Borussia Dortmund,Konstantinos Karetsas,Konstantinos Karetsas,73,86,MEI,18,Grécia
-Borussia Dortmund,Giannis Konstantelias,Giannis Konstantelias,80,84,MEI,23,Grécia
-Borussia Dortmund,Justin Lerma,Justin Lerma,65,78,MEI,18,Equador
-Borussia Dortmund,Mathis Albert,Mathis Albert,66,80,ATA,17,EUA
-Borussia Dortmund,Samuele Inácio,Samuele Inácio,71,85,ATA,18,Itália
-Borussia Dortmund,Maximilian Beier,Maximilian Beier,79,84,ATA,24,Alemanha
-Borussia Dortmund,Serhou Guirassy,Serhou Guirassy,87,87,ATA,30,Guiné
-Borussia Dortmund,Fábio Silva,Fábio Silva,79,85,ATA,24,Portugal
-Bayer Leverkusen,Mark Flekken,Mark Flekken,78,78,GOL,33,Holanda
-Bayer Leverkusen,Janis Blaswich,Janis Blaswich,73,73,GOL,35,Alemanha
-Bayer Leverkusen,Niklas Lomb,Niklas Lomb,66,66,GOL,33,Alemanha
-Bayer Leverkusen,Jarell Quansah,Jarell Quansah,80,83,ZAG,23,Inglaterra
-Bayer Leverkusen,Edmond Tapsoba,Edmond Tapsoba,81,83,ZAG,27,Burkina Faso
-Bayer Leverkusen,Facundo Medina,Facundo Medina,81,81,ZAG,27,Argentina
-Bayer Leverkusen,Loïc Badé,Loïc Badé,78,84,ZAG,26,França
-Bayer Leverkusen,Tim Oermann,Tim Oermann,73,80,ZAG,23,Alemanha
-Bayer Leverkusen,Miguel Gutiérrez,Miguel Gutiérrez,81,85,LAT,25,Espanha
-Bayer Leverkusen,Guéla Doué,Guéla Doué,77,82,LAT,24,Costa do Marfim
-Bayer Leverkusen,Lucas Vázquez,Lucas Vázquez,77,77,LAT,35,Espanha
-Bayer Leverkusen,Equi Fernández,Equi Fernández,75,83,VOL,24,Argentina
-Bayer Leverkusen,Kennet Eichhorn,Kennet Eichhorn,71,89,VOL,17,Alemanha
-Bayer Leverkusen,Robert Andrich,Robert Andrich,81,81,VOL,32,Alemanha
-Bayer Leverkusen,Aleix García,Aleix García,83,83,MEI,29,Espanha
-Bayer Leverkusen,Ibrahim Maza,Ibrahim Maza,78,84,MEI,20,Argélia
-Bayer Leverkusen,Malik Tillman,Malik Tillman,82,87,MEI,24,EUA
-Bayer Leverkusen,Jonas Hofmann,Jonas Hofmann,78,78,MEI,34,Alemanha
-Bayer Leverkusen,Afonso Moreira,Afonso Moreira,77,77,ATA,21,Portugal
-Bayer Leverkusen,Eliesse Ben Seghir,Eliesse Ben Seghir,77,85,ATA,21,Marrocos
-Bayer Leverkusen,Martin Terrier,Martin Terrier,79,79,ATA,29,França
-Bayer Leverkusen,Moussa Diaby,Moussa Diaby,84,85,ATA,27,França
-Bayer Leverkusen,Nathan Tella,Nathan Tella,78,79,ATA,27,Nigéria
-Bayer Leverkusen,Montrell Culbreath,Montrell Culbreath,74,83,ATA,19,Alemanha
-Bayer Leverkusen,Christian Kofane,Christian Kofane,77,84,ATA,20,Camarões
-Bayer Leverkusen,Patrik Schick,Patrik Schick,85,85,ATA,30,Tchéquia
-Bayer Leverkusen,Victor Boniface,Victor Boniface,74,76,ATA,25,Nigéria
-Bayer Leverkusen,Ndjicoura Bomba,Ndjicoura Bomba,62,75,ATA,18,Mali
-RB Leipzig,Maarten Vandevoordt,Maarten Vandevoordt,76,86,GOL,24,Bélgica
-RB Leipzig,Ørjan Nyland,Ørjan Nyland,73,73,GOL,36,Noruega
-RB Leipzig,Leopold Zingerle,Leopold Zingerle,69,69,GOL,32,Alemanha
-RB Leipzig,Castello Lukeba,Castello Lukeba,81,88,ZAG,23,França
-RB Leipzig,Maxime Estève,Maxime Estève,76,82,ZAG,24,França
-RB Leipzig,Abdoul Koné,Abdoul Koné,76,77,ZAG,21,França
-RB Leipzig,Willi Orbán,Willi Orbán,84,84,ZAG,34,Hungria
-RB Leipzig,Lukas Klostermann,Lukas Klostermann,78,79,ZAG,30,Alemanha
-RB Leipzig,David Raum,David Raum,82,83,LAT,28,Alemanha
-RB Leipzig,Max Finkgräfe,Max Finkgräfe,73,80,LAT,22,Alemanha
-RB Leipzig,Ridle Baku,Ridle Baku,78,78,LAT,28,Alemanha
-RB Leipzig,Benjamin Henrichs,Benjamin Henrichs,80,80,LAT,29,Alemanha
-RB Leipzig,Nicolas Seiwald,Nicolas Seiwald,77,84,VOL,25,Áustria
-RB Leipzig,Benno Kaltefleiter,Benno Kaltefleiter,52,63,VOL,18,Alemanha
-RB Leipzig,Neil El Aynaoui,Neil El Aynaoui,77,83,MEI,25,Marrocos
-RB Leipzig,Ezechiel Banzuzi,Ezechiel Banzuzi,78,84,MEI,21,RD Congo
-RB Leipzig,Assan Ouédraogo,Assan Ouédraogo,76,85,MEI,20,Alemanha
-RB Leipzig,Rocco Reitz,Rocco Reitz,77,83,MEI,24,Alemanha
-RB Leipzig,Christoph Baumgartner,Christoph Baumgartner,77,80,MEI,27,Áustria
-RB Leipzig,Brajan Gruda,Brajan Gruda,80,84,MEI,22,Alemanha
-RB Leipzig,Andrija Maksimovic,Andrija Maksimovic,71,81,MEI,19,Sérvia
-RB Leipzig,Viggo Gebel,Viggo Gebel,63,81,MEI,18,Alemanha
-RB Leipzig,Antonio Nusa,Antonio Nusa,79,88,ATA,21,Noruega
-RB Leipzig,Tidiam Gomis,Tidiam Gomis,75,85,ATA,20,França
-RB Leipzig,Johan Bakayoko,Johan Bakayoko,81,85,ATA,23,Bélgica
-RB Leipzig,Rômulo,Rômulo,74,80,ATA,24,Brasil
-RB Leipzig,Christopher Nkunku,Christopher Nkunku,81,81,ATA,29,França
-RB Leipzig,Marc Guiu,Marc Guiu,73,84,ATA,20,Espanha
-RB Leipzig,Samba Konaté,Samba Konaté,64,80,ATA,17,França
-Stuttgart,Dennis Seimen,Dennis Seimen,74,84,GOL,20,Alemanha
-Stuttgart,Fabian Bredlow,Fabian Bredlow,71,71,GOL,31,Alemanha
-Stuttgart,Marius Funk,Marius Funk,66,67,GOL,30,Alemanha
-Stuttgart,Stefan Drljaca,Stefan Drljaca,66,71,GOL,27,Alemanha
-Stuttgart,Finn Jeltsch,Finn Jeltsch,76,87,ZAG,20,Alemanha
-Stuttgart,Ramon Hendriks,Ramon Hendriks,70,76,ZAG,25,Holanda
-Stuttgart,Jeff Chabot,Jeff Chabot,78,80,ZAG,28,Alemanha
-Stuttgart,Luca Jaquez,Luca Jaquez,78,78,ZAG,23,Suíça
-Stuttgart,Ameen Al-Dakhil,Ameen Al-Dakhil,72,79,ZAG,24,Bélgica
-Stuttgart,Dan-Axel Zagadou,Dan-Axel Zagadou,76,78,ZAG,27,França
-Stuttgart,Maximilian Mittelstädt,Maximilian Mittelstädt,82,82,LAT,29,Alemanha
-Stuttgart,Josha Vagnoman,Josha Vagnoman,74,78,LAT,25,Alemanha
-Stuttgart,Lorenz Assignon,Lorenz Assignon,76,80,LAT,26,França
-Stuttgart,Leonidas Stergiou,Leonidas Stergiou,71,79,LAT,24,Suíça
-Stuttgart,Angelo Stiller,Angelo Stiller,83,87,VOL,25,Alemanha
-Stuttgart,Atakan Karazor,Atakan Karazor,76,76,VOL,30,Turquia
-Stuttgart,Nikolas Nartey,Nikolas Nartey,68,72,MEI,26,Dinamarca
-Stuttgart,Yanik Spalt,Yanik Spalt,66,78,MEI,19,Áustria
-Stuttgart,Grischa Prömel,Grischa Prömel,75,75,MEI,31,Alemanha
-Stuttgart,Ertugrul Yigit,Ertugrul Yigit,59,72,MEI,17,Alemanha
-Stuttgart,Bilal El Khannouss,Bilal El Khannouss,80,84,MEI,22,Marrocos
-Stuttgart,Jarzinho Malanga,Jarzinho Malanga,64,73,MEI,20,Alemanha
-Stuttgart,Leo Sauer,Leo Sauer,74,86,ATA,20,Eslováquia
-Stuttgart,Chris Führich,Chris Führich,77,77,ATA,28,Alemanha
-Stuttgart,Justin Diehl,Justin Diehl,67,81,ATA,21,Alemanha
-Stuttgart,Jamie Leweling,Jamie Leweling,75,80,ATA,25,Alemanha
-Stuttgart,Tiago Tomás,Tiago Tomás,76,82,ATA,24,Portugal
-Stuttgart,Dzenan Pejcinovic,Dzenan Pejcinovic,79,79,ATA,21,Alemanha
-Stuttgart,Ermedin Demirovic,Ermedin Demirovic,80,80,ATA,28,Bósnia
-Stuttgart,Deniz Undav,Deniz Undav,80,80,ATA,30,Alemanha
-Eintracht Frankfurt,Noah Atubolu,Noah Atubolu,77,83,GOL,24,Alemanha
-Eintracht Frankfurt,Kauã Santos,Kauã Santos,73,82,GOL,23,Brasil
-Eintracht Frankfurt,Amil Siljevic,Amil Siljevic,58,76,GOL,19,Bósnia
-Eintracht Frankfurt,Jens Grahl,Jens Grahl,64,64,GOL,38,Alemanha
-Eintracht Frankfurt,Nnamdi Collins,Nnamdi Collins,78,84,ZAG,22,Alemanha
-Eintracht Frankfurt,Lilian Brassier,Lilian Brassier,76,80,ZAG,27,Togo
-Eintracht Frankfurt,Robin Koch,Robin Koch,82,82,ZAG,30,Alemanha
-Eintracht Frankfurt,Jeremiaha Maluze,Jeremiaha Maluze,71,73,ZAG,22,Alemanha
-Eintracht Frankfurt,Keita Kosugi,Keita Kosugi,70,80,LAT,20,Japão
-Eintracht Frankfurt,Elias Baum,Elias Baum,73,84,LAT,21,Alemanha
-Eintracht Frankfurt,Timothy Chandler,Timothy Chandler,64,64,LAT,36,EUA
-Eintracht Frankfurt,Raphael Onyedika,Raphael Onyedika,80,82,VOL,25,Nigéria
-Eintracht Frankfurt,Noël Aséko,Noël Aséko,72,82,VOL,20,Alemanha
-Eintracht Frankfurt,Oscar Højlund,Oscar Højlund,75,83,MEI,21,Dinamarca
-Eintracht Frankfurt,Can Uzun,Can Uzun,80,83,MEI,21,Turquia
-Eintracht Frankfurt,Farès Chaïbi,Farès Chaïbi,80,81,MEI,23,Argélia
-Eintracht Frankfurt,Niko Ilicevic,Niko Ilicevic,63,80,MEI,16,Alemanha
-Eintracht Frankfurt,Love Arrhov,Love Arrhov,68,79,MEI,18,Suécia
-Eintracht Frankfurt,Mario Götze,Mario Götze,82,82,MEI,34,Alemanha
-Eintracht Frankfurt,Ritsu Doan,Ritsu Doan,82,82,ATA,28,Japão
-Eintracht Frankfurt,Ansgar Knauff,Ansgar Knauff,77,81,ATA,24,Alemanha
-Eintracht Frankfurt,Ayoube Amaimouni-Echghouyab,Ayoube Amaimouni-Echghouyab,72,72,ATA,21,Marrocos
-Eintracht Frankfurt,Jonathan Burkardt,Jonathan Burkardt,82,85,ATA,26,Alemanha
-Eintracht Frankfurt,Younes Ebnoutalib,Younes Ebnoutalib,70,70,ATA,23,Alemanha
-Eintracht Frankfurt,Malik Pimpong,Malik Pimpong,65,78,ATA,18,Dinamarca
-Eintracht Frankfurt,Jessic Ngankam,Jessic Ngankam,69,74,ATA,26,Alemanha
-Freiburg,Mio Backhaus,Mio Backhaus,78,81,GOL,22,Alemanha
-Freiburg,Florian Müller,Florian Müller,72,74,GOL,29,Alemanha
-Freiburg,Jannik Huth,Jannik Huth,69,69,GOL,32,Alemanha
-Freiburg,Bruno Ogbus,Bruno Ogbus,72,76,ZAG,20,Suíça
-Freiburg,Philipp Lienhart,Philipp Lienhart,79,80,ZAG,30,Áustria
-Freiburg,Max Rosenfelder,Max Rosenfelder,76,83,ZAG,23,Alemanha
-Freiburg,Matthias Ginter,Matthias Ginter,82,82,ZAG,32,Alemanha
-Freiburg,Anthony Jung,Anthony Jung,72,72,ZAG,35,Alemanha
-Freiburg,Jordy Makengo,Jordy Makengo,72,77,LAT,25,RD Congo
-Freiburg,Berkay Yılmaz,Berkay Yılmaz,73,77,LAT,21,Turquia
-Freiburg,Christian Günter,Christian Günter,77,77,LAT,33,Alemanha
-Freiburg,Philipp Treu,Philipp Treu,74,79,LAT,25,Alemanha
-Freiburg,Lukas Kübler,Lukas Kübler,75,75,LAT,34,Alemanha
-Freiburg,Yannik Engelhardt,Yannik Engelhardt,70,75,VOL,25,Alemanha
-Freiburg,Patrick Osterhage,Patrick Osterhage,75,77,VOL,26,Alemanha
-Freiburg,Rihito Yamamoto,Rihito Yamamoto,65,72,VOL,24,Japão
-Freiburg,Maximilian Eggestein,Maximilian Eggestein,75,75,MEI,29,Alemanha
-Freiburg,Rouven Tarnutzer,Rouven Tarnutzer,60,70,MEI,19,Suíça
-Freiburg,Derry Scherhant,Derry Scherhant,69,77,ATA,24,Alemanha
-Freiburg,Vincenzo Grifo,Vincenzo Grifo,80,80,ATA,33,Itália
-Freiburg,Florent Muslija,Florent Muslija,71,72,ATA,28,Kosovo
-Freiburg,Niklas Beste,Niklas Beste,76,76,ATA,27,Alemanha
-Freiburg,Cyriaque Irié,Cyriaque Irié,74,82,ATA,21,Burkina Faso
-Freiburg,Yuito Suzuki,Yuito Suzuki,71,79,ATA,25,Japão
-Freiburg,Igor Matanovic,Igor Matanovic,79,79,ATA,23,Croácia
-Freiburg,Keisuke Goto,Keisuke Goto,68,68,ATA,21,Japão
-Freiburg,Lucas Höler,Lucas Höler,73,73,ATA,32,Alemanha
-Hoffenheim,Oliver Baumann,Oliver Baumann,83,83,GOL,36,Alemanha
-Hoffenheim,Luca Philipp,Luca Philipp,68,72,GOL,25,Alemanha
-Hoffenheim,Lúkas Petersson,Lúkas Petersson,65,69,GOL,22,Islândia
-Hoffenheim,Albian Hajdari,Albian Hajdari,77,77,ZAG,23,Kosovo
-Hoffenheim,Ozan Kabak,Ozan Kabak,75,78,ZAG,26,Turquia
-Hoffenheim,Robin Hranac,Robin Hranac,71,74,ZAG,26,Tchéquia
-Hoffenheim,Koki Machida,Koki Machida,76,76,ZAG,29,Japão
-Hoffenheim,Sean Dulic,Sean Dulic,67,76,ZAG,21,Alemanha
-Hoffenheim,Mats Rots,Mats Rots,73,79,LAT,20,Holanda
-Hoffenheim,Bernardo,Bernardo,75,75,LAT,31,Brasil
-Hoffenheim,Valentin Gendrey,Valentin Gendrey,74,78,LAT,26,França
-Hoffenheim,Vladimír Coufal,Vladimír Coufal,73,73,LAT,34,Tchéquia
-Hoffenheim,Natnael Abraha,Natnael Abraha,60,73,LAT,18,Alemanha
-Hoffenheim,Leon Avdullahu,Leon Avdullahu,79,79,VOL,22,Kosovo
-Hoffenheim,Wouter Burger,Wouter Burger,73,78,VOL,25,Holanda
-Hoffenheim,Cajetan Lenz,Cajetan Lenz,72,72,VOL,20,Alemanha
-Hoffenheim,Luis Engelns,Luis Engelns,66,78,VOL,19,Alemanha
-Hoffenheim,Nathan De Cat,Nathan De Cat,74,83,MEI,18,Bélgica
-Hoffenheim,Alexander Prass,Alexander Prass,74,77,MEI,25,Áustria
-Hoffenheim,Bambasé Conté,Bambasé Conté,75,75,MEI,23,Alemanha
-Hoffenheim,Adam Daghim,Adam Daghim,75,78,ATA,21,Dinamarca
-Hoffenheim,Patrick Wimmer,Patrick Wimmer,77,83,ATA,25,Áustria
-Hoffenheim,Andrej Kramaric,Andrej Kramaric,81,81,ATA,35,Croácia
-Hoffenheim,Fisnik Asllani,Fisnik Asllani,73,79,ATA,24,Kosovo
-Hoffenheim,Tim Lemperle,Tim Lemperle,73,81,ATA,24,Alemanha
-Hoffenheim,Adam Hlozek,Adam Hlozek,77,83,ATA,24,Tchéquia
-Hoffenheim,Max Moerstedt,Max Moerstedt,70,81,ATA,20,Alemanha
-Mainz 05,Robin Zentner,Robin Zentner,78,78,GOL,32,Alemanha
-Mainz 05,Alexander Schwolow,Alexander Schwolow,70,70,GOL,34,Alemanha
-Mainz 05,Maximilian Kinzig,Maximilian Kinzig,60,62,GOL,22,Alemanha
-Mainz 05,Kacper Potulski,Kacper Potulski,72,82,ZAG,19,Polônia
-Mainz 05,Stefan Posch,Stefan Posch,79,79,ZAG,29,Áustria
-Mainz 05,Fabio Gruber,Fabio Gruber,67,74,ZAG,24,Peru
-Mainz 05,Dominik Kohr,Dominik Kohr,77,77,ZAG,32,Alemanha
-Mainz 05,Danny da Costa,Danny da Costa,75,75,ZAG,33,Alemanha
-Mainz 05,Stefan Bell,Stefan Bell,74,74,ZAG,35,Alemanha
-Mainz 05,Phillipp Mwene,Phillipp Mwene,76,76,LAT,32,Áustria
-Mainz 05,Rael Nakuzola,Rael Nakuzola,60,70,LAT,19,Alemanha
-Mainz 05,Anthony Caci,Anthony Caci,78,78,LAT,29,França
-Mainz 05,Silvan Widmer,Silvan Widmer,72,72,LAT,33,Suíça
-Mainz 05,Kaishu Sano,Kaishu Sano,79,83,VOL,25,Japão
-Mainz 05,Eric Martel,Eric Martel,76,81,VOL,24,Alemanha
-Mainz 05,Lennard Maloney,Lennard Maloney,72,74,VOL,27,EUA
-Mainz 05,Sota Kawasaki,Sota Kawasaki,71,76,VOL,25,Japão
-Mainz 05,Paul Nebel,Paul Nebel,78,85,MEI,24,Alemanha
-Mainz 05,Nadiem Amiri,Nadiem Amiri,81,81,MEI,30,Alemanha
-Mainz 05,Jae-sung Lee,Jae-sung Lee,77,77,MEI,34,Coreia do Sul
-Mainz 05,Otto Ruoppi,Otto Ruoppi,67,75,MEI,20,Finlândia
-Mainz 05,Sheraldo Becker,Sheraldo Becker,72,72,ATA,31,Suriname
-Mainz 05,Silas,Silas,71,71,ATA,28,RD Congo
-Mainz 05,Benedict Hollerbach,Benedict Hollerbach,77,82,ATA,25,Alemanha
-Mainz 05,Phillip Tietz,Phillip Tietz,75,75,ATA,29,Alemanha
-Mainz 05,Ransford Königsdörffer,Ransford Königsdörffer,75,77,ATA,25,Gana
-Mainz 05,Alynho Haidara,Alynho Haidara,59,70,ATA,18,Costa do Marfim
-Borussia Mönchengladbach,Moritz Nicolas,Moritz Nicolas,75,77,GOL,29,Alemanha
-Borussia Mönchengladbach,Jan Olschowsky,Jan Olschowsky,65,68,GOL,24,Alemanha
-Borussia Mönchengladbach,Daniel Batz,Daniel Batz,68,68,GOL,35,Alemanha
-Borussia Mönchengladbach,Tobias Sippel,Tobias Sippel,66,66,GOL,38,Alemanha
-Borussia Mönchengladbach,Kevin Diks,Kevin Diks,74,75,ZAG,30,Indonesia
-Borussia Mönchengladbach,Ko Itakura,Ko Itakura,77,78,ZAG,29,Japão
-Borussia Mönchengladbach,Fabio Chiarodia,Fabio Chiarodia,69,79,ZAG,21,Itália
-Borussia Mönchengladbach,Jan Leszczyński,Jan Leszczyński,66,77,ZAG,19,Polônia
-Borussia Mönchengladbach,Lukas Ullrich,Lukas Ullrich,75,82,LAT,22,Alemanha
-Borussia Mönchengladbach,David Herold,David Herold,74,76,LAT,23,Alemanha
-Borussia Mönchengladbach,Yukhym Konoplya,Yukhym Konoplya,72,75,LAT,27,Ucrânia
-Borussia Mönchengladbach,Joe Scally,Joe Scally,74,78,LAT,23,EUA
-Borussia Mönchengladbach,Daiki Hashioka,Daiki Hashioka,70,73,LAT,27,Japão
-Borussia Mönchengladbach,Philipp Sander,Philipp Sander,75,76,VOL,28,Alemanha
-Borussia Mönchengladbach,Zento Uno,Zento Uno,66,69,VOL,22,Japão
-Borussia Mönchengladbach,Jens Castrop,Jens Castrop,78,79,MEI,23,Coreia do Sul
-Borussia Mönchengladbach,Enzo Leopold,Enzo Leopold,73,77,MEI,26,Alemanha
-Borussia Mönchengladbach,Mathieu Nguefack,Mathieu Nguefack,65,77,MEI,18,Alemanha
-Borussia Mönchengladbach,Florian Neuhaus,Florian Neuhaus,75,75,MEI,29,Alemanha
-Borussia Mönchengladbach,Wael Mohya,Wael Mohya,70,85,MEI,17,Alemanha
-Borussia Mönchengladbach,Kevin Stöger,Kevin Stöger,76,76,MEI,33,Áustria
-Borussia Mönchengladbach,Fritz Fleck,Fritz Fleck,58,68,MEI,19,Alemanha
-Borussia Mönchengladbach,Hugo Bolin,Hugo Bolin,76,76,ATA,23,Suécia
-Borussia Mönchengladbach,Robin Hack,Robin Hack,77,77,ATA,28,Alemanha
-Borussia Mönchengladbach,Nicolas Kühn,Nicolas Kühn,77,78,ATA,26,Alemanha
-Borussia Mönchengladbach,Franck Honorat,Franck Honorat,80,80,ATA,30,França
-Borussia Mönchengladbach,Tim Kleindienst,Tim Kleindienst,81,81,ATA,31,Alemanha
-Borussia Mönchengladbach,Isac Lidberg,Isac Lidberg,73,73,ATA,28,Suécia
-Borussia Mönchengladbach,Shuto Machino,Shuto Machino,75,78,ATA,27,Japão
-Borussia Mönchengladbach,Iaia Manco Danfa,Iaia Manco Danfa,56,67,ATA,19,Guiné-Bissau
-Werder Bremen,Karl Hein,Karl Hein,73,81,GOL,24,Estônia
-Werder Bremen,Alexander Schlager,Alexander Schlager,73,75,GOL,30,Áustria
-Werder Bremen,Markus Kolke,Markus Kolke,67,67,GOL,36,Alemanha
-Werder Bremen,Stefan Smarkalev,Stefan Smarkalev,59,77,GOL,19,Bulgária
-Werder Bremen,Marco Friedl,Marco Friedl,77,79,ZAG,28,Áustria
-Werder Bremen,Oskar Wójcik,Oskar Wójcik,68,68,ZAG,23,Polônia
-Werder Bremen,Amos Pieper,Amos Pieper,75,78,ZAG,28,Alemanha
-Werder Bremen,Mick Schmetgens,Mick Schmetgens,65,75,ZAG,19,Alemanha
-Werder Bremen,Niklas Stark,Niklas Stark,75,75,ZAG,31,Alemanha
-Werder Bremen,Olivier Deman,Olivier Deman,71,74,LAT,26,Bélgica
-Werder Bremen,Moussa Ndiaye,Moussa Ndiaye,72,75,LAT,24,Senegal
-Werder Bremen,Felix Agu,Felix Agu,75,78,LAT,27,Nigéria
-Werder Bremen,Arthur,Arthur,77,77,LAT,23,Brasil
-Werder Bremen,Senne Lynen,Senne Lynen,76,79,VOL,27,Bélgica
-Werder Bremen,Youri Regeer,Youri Regeer,74,75,VOL,23,Holanda
-Werder Bremen,Dariusz Stalmach,Dariusz Stalmach,66,75,VOL,20,Polônia
-Werder Bremen,Skelly Alvero,Skelly Alvero,68,76,VOL,24,França
-Werder Bremen,Jens Stage,Jens Stage,78,78,MEI,30,Dinamarca
-Werder Bremen,Ludovit Reis,Ludovit Reis,73,76,MEI,26,Eslováquia
-Werder Bremen,Mitchell Weiser,Mitchell Weiser,78,78,MEI,32,Alemanha
-Werder Bremen,Chuki,Chuki,77,78,MEI,22,Espanha
-Werder Bremen,Darwin Soylu,Darwin Soylu,60,70,MEI,19,Turquia
-Werder Bremen,Marco Grüll,Marco Grüll,75,75,ATA,28,Áustria
-Werder Bremen,Eren Dinkçi,Eren Dinkçi,76,79,ATA,24,Turquia
-Werder Bremen,Justin Njinmah,Justin Njinmah,73,80,ATA,26,Alemanha
-Werder Bremen,Paul Erevbenagie,Paul Erevbenagie,65,74,ATA,19,Alemanha
-Werder Bremen,Niclas Füllkrug,Niclas Füllkrug,79,79,ATA,33,Alemanha
-Werder Bremen,Keke Topp,Keke Topp,72,80,ATA,22,Alemanha
-Werder Bremen,Kenny Quetant,Kenny Quetant,68,76,ATA,20,Haiti
-Werder Bremen,Salim Musah,Salim Musah,66,78,ATA,20,Alemanha
-Werder Bremen,Cedric Itten,Cedric Itten,70,70,ATA,29,Suíça
-Augsburg,Finn Dahmen,Finn Dahmen,77,79,GOL,28,Alemanha
-Augsburg,Nediljko Labrovic,Nediljko Labrovic,73,76,GOL,27,Croácia
-Augsburg,Tom Wisbereit,Tom Wisbereit,53,67,GOL,18,Alemanha
-Augsburg,Chrislain Matsima,Chrislain Matsima,77,85,ZAG,24,França
-Augsburg,Noahkai Banks,Noahkai Banks,74,78,ZAG,19,Alemanha
-Augsburg,Juma Bah,Juma Bah,72,81,ZAG,20,Sierra Leone
-Augsburg,Calvin Brackelmann,Calvin Brackelmann,72,72,ZAG,27,Alemanha
-Augsburg,Jeffrey Gouweleeuw,Jeffrey Gouweleeuw,77,77,ZAG,35,Holanda
-Augsburg,Hennes Behrens,Hennes Behrens,72,73,LAT,21,Alemanha
-Augsburg,Young-woo Seol,Young-woo Seol,75,75,LAT,27,Coreia do Sul
-Augsburg,Marius Wolf,Marius Wolf,75,75,LAT,31,Alemanha
-Augsburg,Yannik Keitel,Yannik Keitel,71,76,VOL,26,Alemanha
-Augsburg,Tim Breithaupt,Tim Breithaupt,69,76,VOL,24,Alemanha
-Augsburg,Tim Schnitzer,Tim Schnitzer,58,70,VOL,18,Alemanha
-Augsburg,Fabian Rieder,Fabian Rieder,74,82,MEI,24,Suíça
-Augsburg,Han-Noah Massengo,Han-Noah Massengo,72,78,MEI,25,França
-Augsburg,Sima Suso,Sima Suso,69,74,MEI,21,Alemanha
-Augsburg,Robin Fellhauer,Robin Fellhauer,73,75,MEI,28,Alemanha
-Augsburg,Anton Kade,Anton Kade,76,79,MEI,22,Alemanha
-Augsburg,Mert Kömür,Mert Kömür,75,82,MEI,21,Alemanha
-Augsburg,Alexis Claude-Maurice,Alexis Claude-Maurice,77,78,MEI,28,França
-Augsburg,Arijon Ibrahimovic,Arijon Ibrahimovic,74,77,MEI,20,Alemanha
-Augsburg,Faik Sakar,Faik Sakar,53,67,ATA,18,Alemanha
-Augsburg,Rodrigo Ribeiro,Rodrigo Ribeiro,72,76,ATA,21,Portugal
-Augsburg,Uchenna Ogundu,Uchenna Ogundu,69,75,ATA,20,Nigéria
-Augsburg,Michael Gregoritsch,Michael Gregoritsch,75,75,ATA,32,Áustria
-Augsburg,Steve Mounié,Steve Mounié,70,70,ATA,32,Benin
-Union Berlin,Frederik Rönnow,Frederik Rönnow,75,75,GOL,34,Dinamarca
-Union Berlin,Matheo Raab,Matheo Raab,70,74,GOL,27,Alemanha
-Union Berlin,Carl Klaus,Carl Klaus,67,67,GOL,32,Alemanha
-Union Berlin,Leopold Querfeld,Leopold Querfeld,77,85,ZAG,22,Áustria
-Union Berlin,Zeno Van Den Bosch,Zeno Van Den Bosch,74,84,ZAG,23,Bélgica
-Union Berlin,Felix Uduokhai,Felix Uduokhai,72,72,ZAG,29,Alemanha
-Union Berlin,Stanley Nsoki,Stanley Nsoki,72,77,ZAG,27,França
-Union Berlin,Marvin Friedrich,Marvin Friedrich,74,74,ZAG,30,Alemanha
-Union Berlin,Tom Rothe,Tom Rothe,77,81,LAT,22,Alemanha
-Union Berlin,Derrick Köhn,Derrick Köhn,75,76,LAT,27,Gana
-Union Berlin,Andrik Markgraf,Andrik Markgraf,63,78,LAT,20,Alemanha
-Union Berlin,Josip Juranovic,Josip Juranovic,75,75,LAT,31,Croácia
-Union Berlin,Christopher Trimmel,Christopher Trimmel,75,75,LAT,39,Áustria
-Union Berlin,Aljoscha Kemlein,Aljoscha Kemlein,75,78,VOL,22,Alemanha
-Union Berlin,Rani Khedira,Rani Khedira,75,75,VOL,32,Tunísia
-Union Berlin,András Schäfer,András Schäfer,74,77,MEI,27,Hungria
-Union Berlin,Michel Aebischer,Michel Aebischer,74,74,MEI,29,Suíça
-Union Berlin,Janik Haberer,Janik Haberer,74,74,MEI,32,Alemanha
-Union Berlin,Kastriot Imeri,Kastriot Imeri,67,72,MEI,26,Suíça
-Union Berlin,Robert Skov,Robert Skov,74,74,MEI,30,Dinamarca
-Union Berlin,Woo-yeong Jeong,Woo-yeong Jeong,73,76,MEI,27,Coreia do Sul
-Union Berlin,Livan Burcu,Livan Burcu,72,78,ATA,22,Turquia
-Union Berlin,Linus Güther,Linus Güther,59,74,ATA,16,Alemanha
-Union Berlin,Julien Friedrich,Julien Friedrich,55,64,ATA,20,Alemanha
-Union Berlin,Emmanuel Latte Lath,Emmanuel Latte Lath,76,76,ATA,27,Costa do Marfim
-Union Berlin,Andrej Ilic,Andrej Ilic,72,75,ATA,26,Sérvia
-Union Berlin,Oliver Burke,Oliver Burke,73,73,ATA,29,Escócia
-Union Berlin,Marin Ljubicic,Marin Ljubicic,71,79,ATA,24,Croácia
-Union Berlin,Tim Skarke,Tim Skarke,73,73,ATA,30,Alemanha
-Union Berlin,Mekhi Gray,Mekhi Gray,60,70,ATA,19,Jamaica
-Colônia,Marvin Schwäbe,Marvin Schwäbe,77,78,GOL,31,Alemanha
-Colônia,Ron-Robert Zieler,Ron-Robert Zieler,75,75,GOL,37,Alemanha
-Colônia,Martin James,Martin James,57,69,GOL,18,França
-Colônia,Matthias Köbbing,Matthias Köbbing,56,59,GOL,29,Alemanha
-Colônia,Jahmai Simpson-Pusey,Jahmai Simpson-Pusey,74,79,ZAG,21,Inglaterra
-Colônia,Rav van den Berg,Rav van den Berg,73,81,ZAG,22,Holanda
-Colônia,Luka Lochoshvili,Luka Lochoshvili,69,72,ZAG,28,Geórgia
-Colônia,Joël Schmied,Joël Schmied,71,71,ZAG,28,Suíça
-Colônia,Timo Hübers,Timo Hübers,71,71,ZAG,30,Alemanha
-Colônia,Gideon Mensah,Gideon Mensah,74,75,LAT,28,Gana
-Colônia,Borna Sosa,Borna Sosa,73,73,LAT,28,Croácia
-Colônia,Sebastian Sebulonsen,Sebastian Sebulonsen,74,75,LAT,26,Noruega
-Colônia,Alessio Castro-Montes,Alessio Castro-Montes,73,73,LAT,29,Bélgica
-Colônia,Tom Krauß,Tom Krauß,75,78,VOL,25,Alemanha
-Colônia,Ellyes Skhiri,Ellyes Skhiri,72,72,VOL,31,Tunísia
-Colônia,Paul Okon-Engstler,Paul Okon-Engstler,61,61,VOL,21,Austrália
-Colônia,Isak Jóhannesson,Isak Jóhannesson,77,77,MEI,23,Islândia
-Colônia,Gil Neves,Gil Neves,56,69,MEI,18,Portugal
-Colônia,Said El Mala,Said El Mala,78,84,ATA,20,Alemanha
-Colônia,Reigan Heskey,Reigan Heskey,64,76,ATA,18,Inglaterra
-Colônia,Marius Bülter,Marius Bülter,76,76,ATA,33,Alemanha
-Colônia,Mikey Moore,Mikey Moore,74,84,ATA,19,Inglaterra
-Colônia,Jan Thielmann,Jan Thielmann,73,76,ATA,24,Alemanha
-Colônia,Linton Maina,Linton Maina,73,74,ATA,27,Alemanha
-Colônia,Ragnar Ache,Ragnar Ache,77,77,ATA,28,Alemanha
-Colônia,Thijs Dallinga,Thijs Dallinga,76,81,ATA,26,Holanda
-Colônia,Luca Waldschmidt,Luca Waldschmidt,71,71,ATA,30,Alemanha
-Colônia,Imad Rondic,Imad Rondic,66,69,ATA,27,Bósnia
-Colônia,Malek El Mala,Malek El Mala,59,71,ATA,21,Alemanha
-Hamburgo,Sander Tangvik,Sander Tangvik,72,78,GOL,23,Noruega
-Hamburgo,Daniel Heuer Fernandes,Daniel Heuer Fernandes,74,74,GOL,34,Portugal
-Hamburgo,Fernando Dickes,Fernando Dickes,57,77,GOL,19,Alemanha
-Hamburgo,Elias Lahti,Elias Lahti,49,64,GOL,17,Finlândia
-Hamburgo,Nicolás Capaldo,Nicolás Capaldo,75,75,ZAG,28,Argentina
-Hamburgo,Sebastiaan Bornauw,Sebastiaan Bornauw,74,76,ZAG,27,Bélgica
-Hamburgo,Warmed Omari,Warmed Omari,73,77,ZAG,26,Comoros
-Hamburgo,Jordan Torunarigha,Jordan Torunarigha,75,75,ZAG,29,Nigéria
-Hamburgo,Shafiq Nandja,Shafiq Nandja,64,74,ZAG,19,Alemanha
-Hamburgo,Mario Vuskovic,Mario Vuskovic,65,68,ZAG,24,Croácia
-Hamburgo,Jason Bissi-Mouelle,Jason Bissi-Mouelle,57,68,ZAG,18,Alemanha
-Hamburgo,David Møller Wolfe,David Møller Wolfe,73,78,LAT,24,Noruega
-Hamburgo,Louis Lemke,Louis Lemke,64,80,LAT,17,Alemanha
-Hamburgo,Miro Muheim,Miro Muheim,73,73,LAT,28,Suíça
-Hamburgo,Zakaria El Ouahdi,Zakaria El Ouahdi,76,83,LAT,24,Marrocos
-Hamburgo,Nicolai Remberg,Nicolai Remberg,72,77,VOL,26,Alemanha
-Hamburgo,Kofi Amoako,Kofi Amoako,71,75,VOL,21,Alemanha
-Hamburgo,Albert Sambi Lokonga,Albert Sambi Lokonga,77,77,MEI,27,Bélgica
-Hamburgo,Bilal Nadir,Bilal Nadir,74,79,MEI,22,Marrocos
-Hamburgo,Bakery Jatta,Bakery Jatta,69,69,MEI,28,The Gambia
-Hamburgo,Fábio Vieira,Fábio Vieira,78,81,MEI,26,Portugal
-Hamburgo,Martin Adeline,Martin Adeline,76,77,MEI,22,França
-Hamburgo,Albert Grønbaek,Albert Grønbaek,77,79,MEI,25,Dinamarca
-Hamburgo,Immanuel Pherai,Immanuel Pherai,70,72,MEI,25,Suriname
-Hamburgo,Alexander Røssing-Lelesiit,Alexander Røssing-Lelesiit,69,80,ATA,19,Noruega
-Hamburgo,Terem Moffi,Terem Moffi,74,74,ATA,27,Nigéria
-Hamburgo,Otto Stange,Otto Stange,67,79,ATA,19,Alemanha
-Hamburgo,Patson Daka,Patson Daka,72,73,ATA,28,Zâmbia
-Hamburgo,Yussuf Poulsen,Yussuf Poulsen,72,72,ATA,32,Dinamarca
-Schalke 04,Loris Karius,Loris Karius,70,70,GOL,33,Alemanha
-Schalke 04,Kevin Müller,Kevin Müller,74,74,GOL,35,Alemanha
-Schalke 04,Johannes Siebeking,Johannes Siebeking,58,74,GOL,20,Alemanha
-Schalke 04,Mertcan Ayhan,Mertcan Ayhan,71,77,ZAG,20,Turquia
-Schalke 04,Maximilian Wöber,Maximilian Wöber,75,76,ZAG,28,Áustria
-Schalke 04,Hasan Kuruçay,Hasan Kuruçay,70,70,ZAG,29,Turquia
-Schalke 04,Nikola Katic,Nikola Katic,69,71,ZAG,30,Bósnia
-Schalke 04,Timo Becker,Timo Becker,71,71,ZAG,29,Alemanha
-Schalke 04,Robin Gosens,Robin Gosens,76,76,LAT,32,Alemanha
-Schalke 04,Vitalie Becker,Vitalie Becker,69,74,LAT,21,Alemanha
-Schalke 04,Adrian Gantenbein,Adrian Gantenbein,65,70,LAT,25,Suíça
-Schalke 04,Satoshi Tanaka,Satoshi Tanaka,73,76,VOL,24,Japão
-Schalke 04,Dejan Ljubicic,Dejan Ljubicic,73,74,VOL,29,Áustria
-Schalke 04,Ron Schallenberg,Ron Schallenberg,68,71,VOL,28,Alemanha
-Schalke 04,Luca Vozar,Luca Vozar,62,72,VOL,19,Alemanha
-Schalke 04,Soufiane El-Faouzi,Soufiane El-Faouzi,67,76,MEI,24,Marrocos
-Schalke 04,Finn Porath,Finn Porath,72,72,MEI,29,Alemanha
-Schalke 04,Janik Bachmann,Janik Bachmann,66,66,MEI,30,Alemanha
-Schalke 04,Junior Dina Ebimbe,Junior Dina Ebimbe,72,74,MEI,25,Camarões
-Schalke 04,Adil Aouchiche,Adil Aouchiche,68,76,MEI,24,Argélia
-Schalke 04,Kenan Karaman,Kenan Karaman,73,73,MEI,32,Turquia
-Schalke 04,Moussa Sylla,Moussa Sylla,73,77,ATA,26,Mali
-Schalke 04,Hee-chan Hwang,Hee-chan Hwang,75,75,ATA,30,Coreia do Sul
-Schalke 04,Junior Adamu,Junior Adamu,71,73,ATA,25,Áustria
-Schalke 04,Edin Dzeko,Edin Dzeko,81,81,ATA,40,Bósnia
-Schalke 04,Bryan Lasme,Bryan Lasme,66,68,ATA,28,França
-Schalke 04,Emil Højlund,Emil Højlund,61,76,ATA,21,Dinamarca
-Elversberg,Nicolas Kristof,Nicolas Kristof,71,74,GOL,26,Áustria
-Elversberg,Tim Boss,Tim Boss,64,64,GOL,33,Alemanha
-Elversberg,Frank Lehmann,Frank Lehmann,61,61,GOL,37,Alemanha
-Elversberg,Elias Etringer,Elias Etringer,52,63,GOL,18,Alemanha
-Elversberg,Lukas Pinckert,Lukas Pinckert,70,72,ZAG,26,Alemanha
-Elversberg,Luca Sirch,Luca Sirch,71,76,ZAG,27,Alemanha
-Elversberg,Maximilian Rohr,Maximilian Rohr,68,68,ZAG,31,Alemanha
-Elversberg,Florian Le Joncour,Florian Le Joncour,69,69,ZAG,31,França
-Elversberg,Luis Seifert,Luis Seifert,61,73,ZAG,22,Alemanha
-Elversberg,Lasse Günther,Lasse Günther,74,75,LAT,23,Alemanha
-Elversberg,Nicholas Mickelson,Nicholas Mickelson,63,66,LAT,27,Thailand
-Elversberg,Jan Gyamerah,Jan Gyamerah,68,68,LAT,31,Gana
-Elversberg,Felix Keidel,Felix Keidel,73,74,VOL,23,Alemanha
-Elversberg,Łukasz Poręba,Łukasz Poręba,68,73,VOL,26,Polônia
-Elversberg,Amara Condé,Amara Condé,67,67,VOL,29,Alemanha
-Elversberg,Frederik Schmahl,Frederik Schmahl,68,74,MEI,23,Alemanha
-Elversberg,Francis Onyeka,Francis Onyeka,71,82,MEI,19,Alemanha
-Elversberg,Noah Darvich,Noah Darvich,71,78,MEI,20,Alemanha
-Elversberg,Maurice Krattenmacher,Maurice Krattenmacher,70,83,ATA,21,Alemanha
-Elversberg,Tom Zimmerschied,Tom Zimmerschied,69,69,ATA,28,Alemanha
-Elversberg,Cole Campbell,Cole Campbell,72,79,ATA,20,EUA
-Elversberg,Lukas Petkov,Lukas Petkov,70,76,ATA,26,Bulgária
-Elversberg,Raif Adam,Raif Adam,63,67,ATA,21,Alemanha
-Elversberg,David Mokwa,David Mokwa,75,77,ATA,22,França
-Elversberg,Noel Futkeu,Noel Futkeu,74,77,ATA,23,Alemanha
-Elversberg,Luca Pfeiffer,Luca Pfeiffer,67,67,ATA,30,Alemanha
-Elversberg,Luca Schnellbacher,Luca Schnellbacher,69,69,ATA,32,Alemanha
-Paderborn,Nahuel Noll,Nahuel Noll,73,73,GOL,23,Alemanha
-Paderborn,Markus Schubert,Markus Schubert,65,69,GOL,28,Alemanha
-Paderborn,Florian Pruhs,Florian Pruhs,55,73,GOL,20,Alemanha
-Paderborn,Mattes Hansen,Mattes Hansen,69,76,ZAG,22,Alemanha
-Paderborn,Tjark Scheller,Tjark Scheller,68,75,ZAG,24,Alemanha
-Paderborn,Felix Götze,Felix Götze,72,73,ZAG,28,Alemanha
-Paderborn,Jano ter Horst,Jano ter Horst,67,73,ZAG,24,Alemanha
-Paderborn,Marcel Hoffmeier,Marcel Hoffmeier,67,71,ZAG,27,Alemanha
-Paderborn,Jonah Sticker,Jonah Sticker,65,73,ZAG,22,Alemanha
-Paderborn,Nyamekye Awortwie-Grant,Nyamekye Awortwie-Grant,59,65,ZAG,26,Alemanha
-Paderborn,Tristan Zobel,Tristan Zobel,61,70,ZAG,23,Alemanha
-Paderborn,Santiago Castañeda,Santiago Castañeda,73,78,VOL,22,EUA
-Paderborn,Tom Baack,Tom Baack,68,71,VOL,27,Alemanha
-Paderborn,Laurin Ulrich,Laurin Ulrich,70,80,MEI,21,Alemanha
-Paderborn,Sebastian Klaas,Sebastian Klaas,66,67,MEI,28,Alemanha
-Paderborn,Luka Duric,Luka Duric,67,68,MEI,23,Bósnia
-Paderborn,Timur Gayret,Timur Gayret,65,66,MEI,28,Alemanha
-Paderborn,Laurin Curda,Laurin Curda,66,73,MEI,25,Alemanha
-Paderborn,Ruben Müller,Ruben Müller,65,67,MEI,21,Alemanha
-Paderborn,Clemens Lippmann,Clemens Lippmann,64,65,MEI,20,Alemanha
-Paderborn,Raphael Obermair,Raphael Obermair,72,72,MEI,30,Philippines
-Paderborn,Niklas Mohr,Niklas Mohr,65,66,MEI,22,Alemanha
-Paderborn,Deniz Zeitler,Deniz Zeitler,67,78,ATA,19,Alemanha
-Paderborn,Gabriel Vidovic,Gabriel Vidovic,71,78,ATA,22,Croácia
-Paderborn,Oliver Batista Meier,Oliver Batista Meier,68,75,ATA,25,Alemanha
-Paderborn,Albert Millgramm,Albert Millgramm,58,62,ATA,22,Alemanha
-Paderborn,Rayan Philippe,Rayan Philippe,72,77,ATA,26,França
-Paderborn,Sven Michel,Sven Michel,69,69,ATA,36,Alemanha
-Paderborn,Marvin Pieringer,Marvin Pieringer,75,76,ATA,27,Alemanha
-Paderborn,Stefano Marino,Stefano Marino,68,71,ATA,22,Alemanha
-Paderborn,Steffen Tigges,Steffen Tigges,67,68,ATA,28,Alemanha
-Paderborn,Lasse Eickel,Lasse Eickel,53,66,ATA,18,Alemanha
+clube,nome_original,nome,overall,potencial,posicao,idade,pais,id
+Bayern de Munique,Jonas Urbig,Jonas Urbig,79,84,GOL,23,Alemanha,R11605
+Bayern de Munique,Manuel Neuer,Manuel Neuer,84,84,GOL,40,Alemanha,R11606
+Bayern de Munique,Sven Ulreich,Sven Ulreich,73,73,GOL,38,Alemanha,R11607
+Bayern de Munique,Dayot Upamecano,Dayot Upamecano,85,88,ZAG,28,França,R11608
+Bayern de Munique,Jonathan Tah,Jonathan Tah,87,87,ZAG,30,Alemanha,R11609
+Bayern de Munique,Min-jae Kim,Min-jae Kim,82,83,ZAG,30,Coreia do Sul,R11610
+Bayern de Munique,Hiroki Ito,Hiroki Ito,78,82,ZAG,27,Japão,R11611
+Bayern de Munique,Nathaniel Brown,Nathaniel Brown,79,85,LAT,23,Alemanha,R11612
+Bayern de Munique,Alphonso Davies,Alphonso Davies,84,87,LAT,26,Canadá,R11613
+Bayern de Munique,Josip Stanisic,Josip Stanisic,78,82,LAT,26,Croácia,R11614
+Bayern de Munique,Konrad Laimer,Konrad Laimer,82,82,LAT,29,Áustria,R11615
+Bayern de Munique,Sacha Boey,Sacha Boey,77,80,LAT,26,França,R11616
+Bayern de Munique,Aleksandar Pavlovic,Aleksandar Pavlovic,83,87,VOL,22,Alemanha,R11617
+Bayern de Munique,Joshua Kimmich,Joshua Kimmich,89,89,VOL,31,Alemanha,R11618
+Bayern de Munique,David Santos Daiber,David Santos Daiber,65,79,VOL,19,Portugal,R11619
+Bayern de Munique,Tom Bischof,Tom Bischof,80,86,MEI,21,Alemanha,R11620
+Bayern de Munique,Bara Sapoko Ndiaye,Bara Sapoko Ndiaye,69,81,MEI,18,Senegal,R11621
+Bayern de Munique,Jamal Musiala,Jamal Musiala,88,92,MEI,23,Alemanha,R11622
+Bayern de Munique,Lennart Karl,Lennart Karl,77,86,MEI,18,Alemanha,R11623
+Bayern de Munique,Ismael Saibari,Ismael Saibari,85,87,MEI,25,Marrocos,R11624
+Bayern de Munique,Luis Díaz,Luis Díaz,85,85,ATA,29,Colômbia,R11625
+Bayern de Munique,Michael Olise,Michael Olise,86,88,ATA,24,França,R11626
+Bayern de Munique,Tim Binder,Tim Binder,65,74,ATA,19,Alemanha,R11627
+Bayern de Munique,Serge Gnabry,Serge Gnabry,82,82,ATA,31,Alemanha,R11628
+Bayern de Munique,Harry Kane,Harry Kane,89,89,ATA,33,Inglaterra,R11629
+Borussia Dortmund,Gregor Kobel,Gregor Kobel,86,89,GOL,28,Suíça,R11630
+Borussia Dortmund,Alexander Meyer,Alexander Meyer,75,75,GOL,35,Alemanha,R11631
+Borussia Dortmund,Patrick Drewes,Patrick Drewes,71,71,GOL,33,Alemanha,R11632
+Borussia Dortmund,Silas Ostrzinski,Silas Ostrzinski,63,77,GOL,22,Alemanha,R11633
+Borussia Dortmund,Nico Schlotterbeck,Nico Schlotterbeck,85,88,ZAG,26,Alemanha,R11634
+Borussia Dortmund,Joane Gadou,Joane Gadou,76,86,ZAG,19,França,R11635
+Borussia Dortmund,Waldemar Anton,Waldemar Anton,82,82,ZAG,30,Alemanha,R11636
+Borussia Dortmund,Luca Reggiani,Luca Reggiani,69,82,ZAG,18,Itália,R11637
+Borussia Dortmund,Ramy Bensebaini,Ramy Bensebaini,79,79,ZAG,31,Argélia,R11638
+Borussia Dortmund,Filippo Mané,Filippo Mané,70,79,ZAG,21,Itália,R11639
+Borussia Dortmund,Emre Can,Emre Can,82,82,ZAG,32,Alemanha,R11640
+Borussia Dortmund,Daniel Svensson,Daniel Svensson,77,82,LAT,24,Suécia,R11641
+Borussia Dortmund,Kauã Prates,Kauã Prates,71,87,LAT,18,Brasil,R11642
+Borussia Dortmund,Julian Ryerson,Julian Ryerson,79,80,LAT,28,Noruega,R11643
+Borussia Dortmund,Mussa Kaba,Mussa Kaba,54,67,VOL,17,Alemanha,R11644
+Borussia Dortmund,Felix Nmecha,Felix Nmecha,82,86,MEI,26,Alemanha,R11645
+Borussia Dortmund,Jobe Bellingham,Jobe Bellingham,78,85,MEI,21,Inglaterra,R11646
+Borussia Dortmund,Joey Veerman,Joey Veerman,79,81,MEI,27,Holanda,R11647
+Borussia Dortmund,Carney Chukwuemeka,Carney Chukwuemeka,78,84,MEI,23,Áustria,R11648
+Borussia Dortmund,Marcel Sabitzer,Marcel Sabitzer,80,80,MEI,32,Áustria,R11649
+Borussia Dortmund,Enzo dos Santos,Enzo dos Santos,60,75,MEI,17,Luxemburgo,R11650
+Borussia Dortmund,Ethan Nwaneri,Ethan Nwaneri,76,88,MEI,19,Inglaterra,R11651
+Borussia Dortmund,Konstantinos Karetsas,Konstantinos Karetsas,73,86,MEI,18,Grécia,R11652
+Borussia Dortmund,Giannis Konstantelias,Giannis Konstantelias,80,84,MEI,23,Grécia,R11653
+Borussia Dortmund,Justin Lerma,Justin Lerma,65,78,MEI,18,Equador,R11654
+Borussia Dortmund,Mathis Albert,Mathis Albert,66,80,ATA,17,EUA,R11655
+Borussia Dortmund,Samuele Inácio,Samuele Inácio,71,85,ATA,18,Itália,R11656
+Borussia Dortmund,Maximilian Beier,Maximilian Beier,79,84,ATA,24,Alemanha,R11657
+Borussia Dortmund,Serhou Guirassy,Serhou Guirassy,87,87,ATA,30,Guiné,R11658
+Borussia Dortmund,Fábio Silva,Fábio Silva,79,85,ATA,24,Portugal,R11659
+Bayer Leverkusen,Mark Flekken,Mark Flekken,78,78,GOL,33,Holanda,R11660
+Bayer Leverkusen,Janis Blaswich,Janis Blaswich,73,73,GOL,35,Alemanha,R11661
+Bayer Leverkusen,Niklas Lomb,Niklas Lomb,66,66,GOL,33,Alemanha,R11662
+Bayer Leverkusen,Jarell Quansah,Jarell Quansah,80,83,ZAG,23,Inglaterra,R11663
+Bayer Leverkusen,Edmond Tapsoba,Edmond Tapsoba,81,83,ZAG,27,Burkina Faso,R11664
+Bayer Leverkusen,Facundo Medina,Facundo Medina,81,81,ZAG,27,Argentina,R11665
+Bayer Leverkusen,Loïc Badé,Loïc Badé,78,84,ZAG,26,França,R11666
+Bayer Leverkusen,Tim Oermann,Tim Oermann,73,80,ZAG,23,Alemanha,R11667
+Bayer Leverkusen,Miguel Gutiérrez,Miguel Gutiérrez,81,85,LAT,25,Espanha,R11668
+Bayer Leverkusen,Guéla Doué,Guéla Doué,77,82,LAT,24,Costa do Marfim,R11669
+Bayer Leverkusen,Lucas Vázquez,Lucas Vázquez,77,77,LAT,35,Espanha,R11670
+Bayer Leverkusen,Equi Fernández,Equi Fernández,75,83,VOL,24,Argentina,R11671
+Bayer Leverkusen,Kennet Eichhorn,Kennet Eichhorn,71,89,VOL,17,Alemanha,R11672
+Bayer Leverkusen,Robert Andrich,Robert Andrich,81,81,VOL,32,Alemanha,R11673
+Bayer Leverkusen,Aleix García,Aleix García,83,83,MEI,29,Espanha,R11674
+Bayer Leverkusen,Ibrahim Maza,Ibrahim Maza,78,84,MEI,20,Argélia,R11675
+Bayer Leverkusen,Malik Tillman,Malik Tillman,82,87,MEI,24,EUA,R11676
+Bayer Leverkusen,Jonas Hofmann,Jonas Hofmann,78,78,MEI,34,Alemanha,R11677
+Bayer Leverkusen,Afonso Moreira,Afonso Moreira,77,77,ATA,21,Portugal,R11678
+Bayer Leverkusen,Eliesse Ben Seghir,Eliesse Ben Seghir,77,85,ATA,21,Marrocos,R11679
+Bayer Leverkusen,Martin Terrier,Martin Terrier,79,79,ATA,29,França,R11680
+Bayer Leverkusen,Moussa Diaby,Moussa Diaby,84,85,ATA,27,França,R11681
+Bayer Leverkusen,Nathan Tella,Nathan Tella,78,79,ATA,27,Nigéria,R11682
+Bayer Leverkusen,Montrell Culbreath,Montrell Culbreath,74,83,ATA,19,Alemanha,R11683
+Bayer Leverkusen,Christian Kofane,Christian Kofane,77,84,ATA,20,Camarões,R11684
+Bayer Leverkusen,Patrik Schick,Patrik Schick,85,85,ATA,30,Tchéquia,R11685
+Bayer Leverkusen,Victor Boniface,Victor Boniface,74,76,ATA,25,Nigéria,R11686
+Bayer Leverkusen,Ndjicoura Bomba,Ndjicoura Bomba,62,75,ATA,18,Mali,R11687
+RB Leipzig,Maarten Vandevoordt,Maarten Vandevoordt,76,86,GOL,24,Bélgica,R11688
+RB Leipzig,Ørjan Nyland,Ørjan Nyland,73,73,GOL,36,Noruega,R11689
+RB Leipzig,Leopold Zingerle,Leopold Zingerle,69,69,GOL,32,Alemanha,R11690
+RB Leipzig,Castello Lukeba,Castello Lukeba,81,88,ZAG,23,França,R11691
+RB Leipzig,Maxime Estève,Maxime Estève,76,82,ZAG,24,França,R11692
+RB Leipzig,Abdoul Koné,Abdoul Koné,76,77,ZAG,21,França,R11693
+RB Leipzig,Willi Orbán,Willi Orbán,84,84,ZAG,34,Hungria,R11694
+RB Leipzig,Lukas Klostermann,Lukas Klostermann,78,79,ZAG,30,Alemanha,R11695
+RB Leipzig,David Raum,David Raum,82,83,LAT,28,Alemanha,R11696
+RB Leipzig,Max Finkgräfe,Max Finkgräfe,73,80,LAT,22,Alemanha,R11697
+RB Leipzig,Ridle Baku,Ridle Baku,78,78,LAT,28,Alemanha,R11698
+RB Leipzig,Benjamin Henrichs,Benjamin Henrichs,80,80,LAT,29,Alemanha,R11699
+RB Leipzig,Nicolas Seiwald,Nicolas Seiwald,77,84,VOL,25,Áustria,R11700
+RB Leipzig,Benno Kaltefleiter,Benno Kaltefleiter,52,63,VOL,18,Alemanha,R11701
+RB Leipzig,Neil El Aynaoui,Neil El Aynaoui,77,83,MEI,25,Marrocos,R11702
+RB Leipzig,Ezechiel Banzuzi,Ezechiel Banzuzi,78,84,MEI,21,RD Congo,R11703
+RB Leipzig,Assan Ouédraogo,Assan Ouédraogo,76,85,MEI,20,Alemanha,R11704
+RB Leipzig,Rocco Reitz,Rocco Reitz,77,83,MEI,24,Alemanha,R11705
+RB Leipzig,Christoph Baumgartner,Christoph Baumgartner,77,80,MEI,27,Áustria,R11706
+RB Leipzig,Brajan Gruda,Brajan Gruda,80,84,MEI,22,Alemanha,R11707
+RB Leipzig,Andrija Maksimovic,Andrija Maksimovic,71,81,MEI,19,Sérvia,R11708
+RB Leipzig,Viggo Gebel,Viggo Gebel,63,81,MEI,18,Alemanha,R11709
+RB Leipzig,Antonio Nusa,Antonio Nusa,79,88,ATA,21,Noruega,R11710
+RB Leipzig,Tidiam Gomis,Tidiam Gomis,75,85,ATA,20,França,R11711
+RB Leipzig,Johan Bakayoko,Johan Bakayoko,81,85,ATA,23,Bélgica,R11712
+RB Leipzig,Rômulo,Rômulo,74,80,ATA,24,Brasil,R11713
+RB Leipzig,Christopher Nkunku,Christopher Nkunku,81,81,ATA,29,França,R11714
+RB Leipzig,Marc Guiu,Marc Guiu,73,84,ATA,20,Espanha,R11715
+RB Leipzig,Samba Konaté,Samba Konaté,64,80,ATA,17,França,R11716
+Stuttgart,Dennis Seimen,Dennis Seimen,74,84,GOL,20,Alemanha,R11717
+Stuttgart,Fabian Bredlow,Fabian Bredlow,71,71,GOL,31,Alemanha,R11718
+Stuttgart,Marius Funk,Marius Funk,66,67,GOL,30,Alemanha,R11719
+Stuttgart,Stefan Drljaca,Stefan Drljaca,66,71,GOL,27,Alemanha,R11720
+Stuttgart,Finn Jeltsch,Finn Jeltsch,76,87,ZAG,20,Alemanha,R11721
+Stuttgart,Ramon Hendriks,Ramon Hendriks,70,76,ZAG,25,Holanda,R11722
+Stuttgart,Jeff Chabot,Jeff Chabot,78,80,ZAG,28,Alemanha,R11723
+Stuttgart,Luca Jaquez,Luca Jaquez,78,78,ZAG,23,Suíça,R11724
+Stuttgart,Ameen Al-Dakhil,Ameen Al-Dakhil,72,79,ZAG,24,Bélgica,R11725
+Stuttgart,Dan-Axel Zagadou,Dan-Axel Zagadou,76,78,ZAG,27,França,R11726
+Stuttgart,Maximilian Mittelstädt,Maximilian Mittelstädt,82,82,LAT,29,Alemanha,R11727
+Stuttgart,Josha Vagnoman,Josha Vagnoman,74,78,LAT,25,Alemanha,R11728
+Stuttgart,Lorenz Assignon,Lorenz Assignon,76,80,LAT,26,França,R11729
+Stuttgart,Leonidas Stergiou,Leonidas Stergiou,71,79,LAT,24,Suíça,R11730
+Stuttgart,Angelo Stiller,Angelo Stiller,83,87,VOL,25,Alemanha,R11731
+Stuttgart,Atakan Karazor,Atakan Karazor,76,76,VOL,30,Turquia,R11732
+Stuttgart,Nikolas Nartey,Nikolas Nartey,68,72,MEI,26,Dinamarca,R11733
+Stuttgart,Yanik Spalt,Yanik Spalt,66,78,MEI,19,Áustria,R11734
+Stuttgart,Grischa Prömel,Grischa Prömel,75,75,MEI,31,Alemanha,R11735
+Stuttgart,Ertugrul Yigit,Ertugrul Yigit,59,72,MEI,17,Alemanha,R11736
+Stuttgart,Bilal El Khannouss,Bilal El Khannouss,80,84,MEI,22,Marrocos,R11737
+Stuttgart,Jarzinho Malanga,Jarzinho Malanga,64,73,MEI,20,Alemanha,R11738
+Stuttgart,Leo Sauer,Leo Sauer,74,86,ATA,20,Eslováquia,R11739
+Stuttgart,Chris Führich,Chris Führich,77,77,ATA,28,Alemanha,R11740
+Stuttgart,Justin Diehl,Justin Diehl,67,81,ATA,21,Alemanha,R11741
+Stuttgart,Jamie Leweling,Jamie Leweling,75,80,ATA,25,Alemanha,R11742
+Stuttgart,Tiago Tomás,Tiago Tomás,76,82,ATA,24,Portugal,R11743
+Stuttgart,Dzenan Pejcinovic,Dzenan Pejcinovic,79,79,ATA,21,Alemanha,R11744
+Stuttgart,Ermedin Demirovic,Ermedin Demirovic,80,80,ATA,28,Bósnia,R11745
+Stuttgart,Deniz Undav,Deniz Undav,80,80,ATA,30,Alemanha,R11746
+Eintracht Frankfurt,Noah Atubolu,Noah Atubolu,77,83,GOL,24,Alemanha,R11747
+Eintracht Frankfurt,Kauã Santos,Kauã Santos,73,82,GOL,23,Brasil,R11748
+Eintracht Frankfurt,Amil Siljevic,Amil Siljevic,58,76,GOL,19,Bósnia,R11749
+Eintracht Frankfurt,Jens Grahl,Jens Grahl,64,64,GOL,38,Alemanha,R11750
+Eintracht Frankfurt,Nnamdi Collins,Nnamdi Collins,78,84,ZAG,22,Alemanha,R11751
+Eintracht Frankfurt,Lilian Brassier,Lilian Brassier,76,80,ZAG,27,Togo,R11752
+Eintracht Frankfurt,Robin Koch,Robin Koch,82,82,ZAG,30,Alemanha,R11753
+Eintracht Frankfurt,Jeremiaha Maluze,Jeremiaha Maluze,71,73,ZAG,22,Alemanha,R11754
+Eintracht Frankfurt,Keita Kosugi,Keita Kosugi,70,80,LAT,20,Japão,R11755
+Eintracht Frankfurt,Elias Baum,Elias Baum,73,84,LAT,21,Alemanha,R11756
+Eintracht Frankfurt,Timothy Chandler,Timothy Chandler,64,64,LAT,36,EUA,R11757
+Eintracht Frankfurt,Raphael Onyedika,Raphael Onyedika,80,82,VOL,25,Nigéria,R11758
+Eintracht Frankfurt,Noël Aséko,Noël Aséko,72,82,VOL,20,Alemanha,R11759
+Eintracht Frankfurt,Oscar Højlund,Oscar Højlund,75,83,MEI,21,Dinamarca,R11760
+Eintracht Frankfurt,Can Uzun,Can Uzun,80,83,MEI,21,Turquia,R11761
+Eintracht Frankfurt,Farès Chaïbi,Farès Chaïbi,80,81,MEI,23,Argélia,R11762
+Eintracht Frankfurt,Niko Ilicevic,Niko Ilicevic,63,80,MEI,16,Alemanha,R11763
+Eintracht Frankfurt,Love Arrhov,Love Arrhov,68,79,MEI,18,Suécia,R11764
+Eintracht Frankfurt,Mario Götze,Mario Götze,82,82,MEI,34,Alemanha,R11765
+Eintracht Frankfurt,Ritsu Doan,Ritsu Doan,82,82,ATA,28,Japão,R11766
+Eintracht Frankfurt,Ansgar Knauff,Ansgar Knauff,77,81,ATA,24,Alemanha,R11767
+Eintracht Frankfurt,Ayoube Amaimouni-Echghouyab,Ayoube Amaimouni-Echghouyab,72,72,ATA,21,Marrocos,R11768
+Eintracht Frankfurt,Jonathan Burkardt,Jonathan Burkardt,82,85,ATA,26,Alemanha,R11769
+Eintracht Frankfurt,Younes Ebnoutalib,Younes Ebnoutalib,70,70,ATA,23,Alemanha,R11770
+Eintracht Frankfurt,Malik Pimpong,Malik Pimpong,65,78,ATA,18,Dinamarca,R11771
+Eintracht Frankfurt,Jessic Ngankam,Jessic Ngankam,69,74,ATA,26,Alemanha,R11772
+Freiburg,Mio Backhaus,Mio Backhaus,78,81,GOL,22,Alemanha,R11773
+Freiburg,Florian Müller,Florian Müller,72,74,GOL,29,Alemanha,R11774
+Freiburg,Jannik Huth,Jannik Huth,69,69,GOL,32,Alemanha,R11775
+Freiburg,Bruno Ogbus,Bruno Ogbus,72,76,ZAG,20,Suíça,R11776
+Freiburg,Philipp Lienhart,Philipp Lienhart,79,80,ZAG,30,Áustria,R11777
+Freiburg,Max Rosenfelder,Max Rosenfelder,76,83,ZAG,23,Alemanha,R11778
+Freiburg,Matthias Ginter,Matthias Ginter,82,82,ZAG,32,Alemanha,R11779
+Freiburg,Anthony Jung,Anthony Jung,72,72,ZAG,35,Alemanha,R11780
+Freiburg,Jordy Makengo,Jordy Makengo,72,77,LAT,25,RD Congo,R11781
+Freiburg,Berkay Yılmaz,Berkay Yılmaz,73,77,LAT,21,Turquia,R11782
+Freiburg,Christian Günter,Christian Günter,77,77,LAT,33,Alemanha,R11783
+Freiburg,Philipp Treu,Philipp Treu,74,79,LAT,25,Alemanha,R11784
+Freiburg,Lukas Kübler,Lukas Kübler,75,75,LAT,34,Alemanha,R11785
+Freiburg,Yannik Engelhardt,Yannik Engelhardt,70,75,VOL,25,Alemanha,R11786
+Freiburg,Patrick Osterhage,Patrick Osterhage,75,77,VOL,26,Alemanha,R11787
+Freiburg,Rihito Yamamoto,Rihito Yamamoto,65,72,VOL,24,Japão,R11788
+Freiburg,Maximilian Eggestein,Maximilian Eggestein,75,75,MEI,29,Alemanha,R11789
+Freiburg,Rouven Tarnutzer,Rouven Tarnutzer,60,70,MEI,19,Suíça,R11790
+Freiburg,Derry Scherhant,Derry Scherhant,69,77,ATA,24,Alemanha,R11791
+Freiburg,Vincenzo Grifo,Vincenzo Grifo,80,80,ATA,33,Itália,R11792
+Freiburg,Florent Muslija,Florent Muslija,71,72,ATA,28,Kosovo,R11793
+Freiburg,Niklas Beste,Niklas Beste,76,76,ATA,27,Alemanha,R11794
+Freiburg,Cyriaque Irié,Cyriaque Irié,74,82,ATA,21,Burkina Faso,R11795
+Freiburg,Yuito Suzuki,Yuito Suzuki,71,79,ATA,25,Japão,R11796
+Freiburg,Igor Matanovic,Igor Matanovic,79,79,ATA,23,Croácia,R11797
+Freiburg,Keisuke Goto,Keisuke Goto,68,68,ATA,21,Japão,R11798
+Freiburg,Lucas Höler,Lucas Höler,73,73,ATA,32,Alemanha,R11799
+Hoffenheim,Oliver Baumann,Oliver Baumann,83,83,GOL,36,Alemanha,R11800
+Hoffenheim,Luca Philipp,Luca Philipp,68,72,GOL,25,Alemanha,R11801
+Hoffenheim,Lúkas Petersson,Lúkas Petersson,65,69,GOL,22,Islândia,R11802
+Hoffenheim,Albian Hajdari,Albian Hajdari,77,77,ZAG,23,Kosovo,R11803
+Hoffenheim,Ozan Kabak,Ozan Kabak,75,78,ZAG,26,Turquia,R11804
+Hoffenheim,Robin Hranac,Robin Hranac,71,74,ZAG,26,Tchéquia,R11805
+Hoffenheim,Koki Machida,Koki Machida,76,76,ZAG,29,Japão,R11806
+Hoffenheim,Sean Dulic,Sean Dulic,67,76,ZAG,21,Alemanha,R11807
+Hoffenheim,Mats Rots,Mats Rots,73,79,LAT,20,Holanda,R11808
+Hoffenheim,Bernardo,Bernardo,75,75,LAT,31,Brasil,R11809
+Hoffenheim,Valentin Gendrey,Valentin Gendrey,74,78,LAT,26,França,R11810
+Hoffenheim,Vladimír Coufal,Vladimír Coufal,73,73,LAT,34,Tchéquia,R11811
+Hoffenheim,Natnael Abraha,Natnael Abraha,60,73,LAT,18,Alemanha,R11812
+Hoffenheim,Leon Avdullahu,Leon Avdullahu,79,79,VOL,22,Kosovo,R11813
+Hoffenheim,Wouter Burger,Wouter Burger,73,78,VOL,25,Holanda,R11814
+Hoffenheim,Cajetan Lenz,Cajetan Lenz,72,72,VOL,20,Alemanha,R11815
+Hoffenheim,Luis Engelns,Luis Engelns,66,78,VOL,19,Alemanha,R11816
+Hoffenheim,Nathan De Cat,Nathan De Cat,74,83,MEI,18,Bélgica,R11817
+Hoffenheim,Alexander Prass,Alexander Prass,74,77,MEI,25,Áustria,R11818
+Hoffenheim,Bambasé Conté,Bambasé Conté,75,75,MEI,23,Alemanha,R11819
+Hoffenheim,Adam Daghim,Adam Daghim,75,78,ATA,21,Dinamarca,R11820
+Hoffenheim,Patrick Wimmer,Patrick Wimmer,77,83,ATA,25,Áustria,R11821
+Hoffenheim,Andrej Kramaric,Andrej Kramaric,81,81,ATA,35,Croácia,R11822
+Hoffenheim,Fisnik Asllani,Fisnik Asllani,73,79,ATA,24,Kosovo,R11823
+Hoffenheim,Tim Lemperle,Tim Lemperle,73,81,ATA,24,Alemanha,R11824
+Hoffenheim,Adam Hlozek,Adam Hlozek,77,83,ATA,24,Tchéquia,R11825
+Hoffenheim,Max Moerstedt,Max Moerstedt,70,81,ATA,20,Alemanha,R11826
+Mainz 05,Robin Zentner,Robin Zentner,78,78,GOL,32,Alemanha,R11827
+Mainz 05,Alexander Schwolow,Alexander Schwolow,70,70,GOL,34,Alemanha,R11828
+Mainz 05,Maximilian Kinzig,Maximilian Kinzig,60,62,GOL,22,Alemanha,R11829
+Mainz 05,Kacper Potulski,Kacper Potulski,72,82,ZAG,19,Polônia,R11830
+Mainz 05,Stefan Posch,Stefan Posch,79,79,ZAG,29,Áustria,R11831
+Mainz 05,Fabio Gruber,Fabio Gruber,67,74,ZAG,24,Peru,R11832
+Mainz 05,Dominik Kohr,Dominik Kohr,77,77,ZAG,32,Alemanha,R11833
+Mainz 05,Danny da Costa,Danny da Costa,75,75,ZAG,33,Alemanha,R11834
+Mainz 05,Stefan Bell,Stefan Bell,74,74,ZAG,35,Alemanha,R11835
+Mainz 05,Phillipp Mwene,Phillipp Mwene,76,76,LAT,32,Áustria,R11836
+Mainz 05,Rael Nakuzola,Rael Nakuzola,60,70,LAT,19,Alemanha,R11837
+Mainz 05,Anthony Caci,Anthony Caci,78,78,LAT,29,França,R11838
+Mainz 05,Silvan Widmer,Silvan Widmer,72,72,LAT,33,Suíça,R11839
+Mainz 05,Kaishu Sano,Kaishu Sano,79,83,VOL,25,Japão,R11840
+Mainz 05,Eric Martel,Eric Martel,76,81,VOL,24,Alemanha,R11841
+Mainz 05,Lennard Maloney,Lennard Maloney,72,74,VOL,27,EUA,R11842
+Mainz 05,Sota Kawasaki,Sota Kawasaki,71,76,VOL,25,Japão,R11843
+Mainz 05,Paul Nebel,Paul Nebel,78,85,MEI,24,Alemanha,R11844
+Mainz 05,Nadiem Amiri,Nadiem Amiri,81,81,MEI,30,Alemanha,R11845
+Mainz 05,Jae-sung Lee,Jae-sung Lee,77,77,MEI,34,Coreia do Sul,R11846
+Mainz 05,Otto Ruoppi,Otto Ruoppi,67,75,MEI,20,Finlândia,R11847
+Mainz 05,Sheraldo Becker,Sheraldo Becker,72,72,ATA,31,Suriname,R11848
+Mainz 05,Silas,Silas,71,71,ATA,28,RD Congo,R11849
+Mainz 05,Benedict Hollerbach,Benedict Hollerbach,77,82,ATA,25,Alemanha,R11850
+Mainz 05,Phillip Tietz,Phillip Tietz,75,75,ATA,29,Alemanha,R11851
+Mainz 05,Ransford Königsdörffer,Ransford Königsdörffer,75,77,ATA,25,Gana,R11852
+Mainz 05,Alynho Haidara,Alynho Haidara,59,70,ATA,18,Costa do Marfim,R11853
+Borussia Mönchengladbach,Moritz Nicolas,Moritz Nicolas,75,77,GOL,29,Alemanha,R11854
+Borussia Mönchengladbach,Jan Olschowsky,Jan Olschowsky,65,68,GOL,24,Alemanha,R11855
+Borussia Mönchengladbach,Daniel Batz,Daniel Batz,68,68,GOL,35,Alemanha,R11856
+Borussia Mönchengladbach,Tobias Sippel,Tobias Sippel,66,66,GOL,38,Alemanha,R11857
+Borussia Mönchengladbach,Kevin Diks,Kevin Diks,74,75,ZAG,30,Indonesia,R11858
+Borussia Mönchengladbach,Ko Itakura,Ko Itakura,77,78,ZAG,29,Japão,R11859
+Borussia Mönchengladbach,Fabio Chiarodia,Fabio Chiarodia,69,79,ZAG,21,Itália,R11860
+Borussia Mönchengladbach,Jan Leszczyński,Jan Leszczyński,66,77,ZAG,19,Polônia,R11861
+Borussia Mönchengladbach,Lukas Ullrich,Lukas Ullrich,75,82,LAT,22,Alemanha,R11862
+Borussia Mönchengladbach,David Herold,David Herold,74,76,LAT,23,Alemanha,R11863
+Borussia Mönchengladbach,Yukhym Konoplya,Yukhym Konoplya,72,75,LAT,27,Ucrânia,R11864
+Borussia Mönchengladbach,Joe Scally,Joe Scally,74,78,LAT,23,EUA,R11865
+Borussia Mönchengladbach,Daiki Hashioka,Daiki Hashioka,70,73,LAT,27,Japão,R11866
+Borussia Mönchengladbach,Philipp Sander,Philipp Sander,75,76,VOL,28,Alemanha,R11867
+Borussia Mönchengladbach,Zento Uno,Zento Uno,66,69,VOL,22,Japão,R11868
+Borussia Mönchengladbach,Jens Castrop,Jens Castrop,78,79,MEI,23,Coreia do Sul,R11869
+Borussia Mönchengladbach,Enzo Leopold,Enzo Leopold,73,77,MEI,26,Alemanha,R11870
+Borussia Mönchengladbach,Mathieu Nguefack,Mathieu Nguefack,65,77,MEI,18,Alemanha,R11871
+Borussia Mönchengladbach,Florian Neuhaus,Florian Neuhaus,75,75,MEI,29,Alemanha,R11872
+Borussia Mönchengladbach,Wael Mohya,Wael Mohya,70,85,MEI,17,Alemanha,R11873
+Borussia Mönchengladbach,Kevin Stöger,Kevin Stöger,76,76,MEI,33,Áustria,R11874
+Borussia Mönchengladbach,Fritz Fleck,Fritz Fleck,58,68,MEI,19,Alemanha,R11875
+Borussia Mönchengladbach,Hugo Bolin,Hugo Bolin,76,76,ATA,23,Suécia,R11876
+Borussia Mönchengladbach,Robin Hack,Robin Hack,77,77,ATA,28,Alemanha,R11877
+Borussia Mönchengladbach,Nicolas Kühn,Nicolas Kühn,77,78,ATA,26,Alemanha,R11878
+Borussia Mönchengladbach,Franck Honorat,Franck Honorat,80,80,ATA,30,França,R11879
+Borussia Mönchengladbach,Tim Kleindienst,Tim Kleindienst,81,81,ATA,31,Alemanha,R11880
+Borussia Mönchengladbach,Isac Lidberg,Isac Lidberg,73,73,ATA,28,Suécia,R11881
+Borussia Mönchengladbach,Shuto Machino,Shuto Machino,75,78,ATA,27,Japão,R11882
+Borussia Mönchengladbach,Iaia Manco Danfa,Iaia Manco Danfa,56,67,ATA,19,Guiné-Bissau,R11883
+Werder Bremen,Karl Hein,Karl Hein,73,81,GOL,24,Estônia,R11884
+Werder Bremen,Alexander Schlager,Alexander Schlager,73,75,GOL,30,Áustria,R11885
+Werder Bremen,Markus Kolke,Markus Kolke,67,67,GOL,36,Alemanha,R11886
+Werder Bremen,Stefan Smarkalev,Stefan Smarkalev,59,77,GOL,19,Bulgária,R11887
+Werder Bremen,Marco Friedl,Marco Friedl,77,79,ZAG,28,Áustria,R11888
+Werder Bremen,Oskar Wójcik,Oskar Wójcik,68,68,ZAG,23,Polônia,R11889
+Werder Bremen,Amos Pieper,Amos Pieper,75,78,ZAG,28,Alemanha,R11890
+Werder Bremen,Mick Schmetgens,Mick Schmetgens,65,75,ZAG,19,Alemanha,R11891
+Werder Bremen,Niklas Stark,Niklas Stark,75,75,ZAG,31,Alemanha,R11892
+Werder Bremen,Olivier Deman,Olivier Deman,71,74,LAT,26,Bélgica,R11893
+Werder Bremen,Moussa Ndiaye,Moussa Ndiaye,72,75,LAT,24,Senegal,R11894
+Werder Bremen,Felix Agu,Felix Agu,75,78,LAT,27,Nigéria,R11895
+Werder Bremen,Arthur,Arthur,77,77,LAT,23,Brasil,R11896
+Werder Bremen,Senne Lynen,Senne Lynen,76,79,VOL,27,Bélgica,R11897
+Werder Bremen,Youri Regeer,Youri Regeer,74,75,VOL,23,Holanda,R11898
+Werder Bremen,Dariusz Stalmach,Dariusz Stalmach,66,75,VOL,20,Polônia,R11899
+Werder Bremen,Skelly Alvero,Skelly Alvero,68,76,VOL,24,França,R11900
+Werder Bremen,Jens Stage,Jens Stage,78,78,MEI,30,Dinamarca,R11901
+Werder Bremen,Ludovit Reis,Ludovit Reis,73,76,MEI,26,Eslováquia,R11902
+Werder Bremen,Mitchell Weiser,Mitchell Weiser,78,78,MEI,32,Alemanha,R11903
+Werder Bremen,Chuki,Chuki,77,78,MEI,22,Espanha,R11904
+Werder Bremen,Darwin Soylu,Darwin Soylu,60,70,MEI,19,Turquia,R11905
+Werder Bremen,Marco Grüll,Marco Grüll,75,75,ATA,28,Áustria,R11906
+Werder Bremen,Eren Dinkçi,Eren Dinkçi,76,79,ATA,24,Turquia,R11907
+Werder Bremen,Justin Njinmah,Justin Njinmah,73,80,ATA,26,Alemanha,R11908
+Werder Bremen,Paul Erevbenagie,Paul Erevbenagie,65,74,ATA,19,Alemanha,R11909
+Werder Bremen,Niclas Füllkrug,Niclas Füllkrug,79,79,ATA,33,Alemanha,R11910
+Werder Bremen,Keke Topp,Keke Topp,72,80,ATA,22,Alemanha,R11911
+Werder Bremen,Kenny Quetant,Kenny Quetant,68,76,ATA,20,Haiti,R11912
+Werder Bremen,Salim Musah,Salim Musah,66,78,ATA,20,Alemanha,R11913
+Werder Bremen,Cedric Itten,Cedric Itten,70,70,ATA,29,Suíça,R11914
+Augsburg,Finn Dahmen,Finn Dahmen,77,79,GOL,28,Alemanha,R11915
+Augsburg,Nediljko Labrovic,Nediljko Labrovic,73,76,GOL,27,Croácia,R11916
+Augsburg,Tom Wisbereit,Tom Wisbereit,53,67,GOL,18,Alemanha,R11917
+Augsburg,Chrislain Matsima,Chrislain Matsima,77,85,ZAG,24,França,R11918
+Augsburg,Noahkai Banks,Noahkai Banks,74,78,ZAG,19,Alemanha,R11919
+Augsburg,Juma Bah,Juma Bah,72,81,ZAG,20,Sierra Leone,R11920
+Augsburg,Calvin Brackelmann,Calvin Brackelmann,72,72,ZAG,27,Alemanha,R11921
+Augsburg,Jeffrey Gouweleeuw,Jeffrey Gouweleeuw,77,77,ZAG,35,Holanda,R11922
+Augsburg,Hennes Behrens,Hennes Behrens,72,73,LAT,21,Alemanha,R11923
+Augsburg,Young-woo Seol,Young-woo Seol,75,75,LAT,27,Coreia do Sul,R11924
+Augsburg,Marius Wolf,Marius Wolf,75,75,LAT,31,Alemanha,R11925
+Augsburg,Yannik Keitel,Yannik Keitel,71,76,VOL,26,Alemanha,R11926
+Augsburg,Tim Breithaupt,Tim Breithaupt,69,76,VOL,24,Alemanha,R11927
+Augsburg,Tim Schnitzer,Tim Schnitzer,58,70,VOL,18,Alemanha,R11928
+Augsburg,Fabian Rieder,Fabian Rieder,74,82,MEI,24,Suíça,R11929
+Augsburg,Han-Noah Massengo,Han-Noah Massengo,72,78,MEI,25,França,R11930
+Augsburg,Sima Suso,Sima Suso,69,74,MEI,21,Alemanha,R11931
+Augsburg,Robin Fellhauer,Robin Fellhauer,73,75,MEI,28,Alemanha,R11932
+Augsburg,Anton Kade,Anton Kade,76,79,MEI,22,Alemanha,R11933
+Augsburg,Mert Kömür,Mert Kömür,75,82,MEI,21,Alemanha,R11934
+Augsburg,Alexis Claude-Maurice,Alexis Claude-Maurice,77,78,MEI,28,França,R11935
+Augsburg,Arijon Ibrahimovic,Arijon Ibrahimovic,74,77,MEI,20,Alemanha,R11936
+Augsburg,Faik Sakar,Faik Sakar,53,67,ATA,18,Alemanha,R11937
+Augsburg,Rodrigo Ribeiro,Rodrigo Ribeiro,72,76,ATA,21,Portugal,R11938
+Augsburg,Uchenna Ogundu,Uchenna Ogundu,69,75,ATA,20,Nigéria,R11939
+Augsburg,Michael Gregoritsch,Michael Gregoritsch,75,75,ATA,32,Áustria,R11940
+Augsburg,Steve Mounié,Steve Mounié,70,70,ATA,32,Benin,R11941
+Union Berlin,Frederik Rönnow,Frederik Rönnow,75,75,GOL,34,Dinamarca,R11942
+Union Berlin,Matheo Raab,Matheo Raab,70,74,GOL,27,Alemanha,R11943
+Union Berlin,Carl Klaus,Carl Klaus,67,67,GOL,32,Alemanha,R11944
+Union Berlin,Leopold Querfeld,Leopold Querfeld,77,85,ZAG,22,Áustria,R11945
+Union Berlin,Zeno Van Den Bosch,Zeno Van Den Bosch,74,84,ZAG,23,Bélgica,R11946
+Union Berlin,Felix Uduokhai,Felix Uduokhai,72,72,ZAG,29,Alemanha,R11947
+Union Berlin,Stanley Nsoki,Stanley Nsoki,72,77,ZAG,27,França,R11948
+Union Berlin,Marvin Friedrich,Marvin Friedrich,74,74,ZAG,30,Alemanha,R11949
+Union Berlin,Tom Rothe,Tom Rothe,77,81,LAT,22,Alemanha,R11950
+Union Berlin,Derrick Köhn,Derrick Köhn,75,76,LAT,27,Gana,R11951
+Union Berlin,Andrik Markgraf,Andrik Markgraf,63,78,LAT,20,Alemanha,R11952
+Union Berlin,Josip Juranovic,Josip Juranovic,75,75,LAT,31,Croácia,R11953
+Union Berlin,Christopher Trimmel,Christopher Trimmel,75,75,LAT,39,Áustria,R11954
+Union Berlin,Aljoscha Kemlein,Aljoscha Kemlein,75,78,VOL,22,Alemanha,R11955
+Union Berlin,Rani Khedira,Rani Khedira,75,75,VOL,32,Tunísia,R11956
+Union Berlin,András Schäfer,András Schäfer,74,77,MEI,27,Hungria,R11957
+Union Berlin,Michel Aebischer,Michel Aebischer,74,74,MEI,29,Suíça,R11958
+Union Berlin,Janik Haberer,Janik Haberer,74,74,MEI,32,Alemanha,R11959
+Union Berlin,Kastriot Imeri,Kastriot Imeri,67,72,MEI,26,Suíça,R11960
+Union Berlin,Robert Skov,Robert Skov,74,74,MEI,30,Dinamarca,R11961
+Union Berlin,Woo-yeong Jeong,Woo-yeong Jeong,73,76,MEI,27,Coreia do Sul,R11962
+Union Berlin,Livan Burcu,Livan Burcu,72,78,ATA,22,Turquia,R11963
+Union Berlin,Linus Güther,Linus Güther,59,74,ATA,16,Alemanha,R11964
+Union Berlin,Julien Friedrich,Julien Friedrich,55,64,ATA,20,Alemanha,R11965
+Union Berlin,Emmanuel Latte Lath,Emmanuel Latte Lath,76,76,ATA,27,Costa do Marfim,R11966
+Union Berlin,Andrej Ilic,Andrej Ilic,72,75,ATA,26,Sérvia,R11967
+Union Berlin,Oliver Burke,Oliver Burke,73,73,ATA,29,Escócia,R11968
+Union Berlin,Marin Ljubicic,Marin Ljubicic,71,79,ATA,24,Croácia,R11969
+Union Berlin,Tim Skarke,Tim Skarke,73,73,ATA,30,Alemanha,R11970
+Union Berlin,Mekhi Gray,Mekhi Gray,60,70,ATA,19,Jamaica,R11971
+Colônia,Marvin Schwäbe,Marvin Schwäbe,77,78,GOL,31,Alemanha,R11972
+Colônia,Ron-Robert Zieler,Ron-Robert Zieler,75,75,GOL,37,Alemanha,R11973
+Colônia,Martin James,Martin James,57,69,GOL,18,França,R11974
+Colônia,Matthias Köbbing,Matthias Köbbing,56,59,GOL,29,Alemanha,R11975
+Colônia,Jahmai Simpson-Pusey,Jahmai Simpson-Pusey,74,79,ZAG,21,Inglaterra,R11976
+Colônia,Rav van den Berg,Rav van den Berg,73,81,ZAG,22,Holanda,R11977
+Colônia,Luka Lochoshvili,Luka Lochoshvili,69,72,ZAG,28,Geórgia,R11978
+Colônia,Joël Schmied,Joël Schmied,71,71,ZAG,28,Suíça,R11979
+Colônia,Timo Hübers,Timo Hübers,71,71,ZAG,30,Alemanha,R11980
+Colônia,Gideon Mensah,Gideon Mensah,74,75,LAT,28,Gana,R11981
+Colônia,Borna Sosa,Borna Sosa,73,73,LAT,28,Croácia,R11982
+Colônia,Sebastian Sebulonsen,Sebastian Sebulonsen,74,75,LAT,26,Noruega,R11983
+Colônia,Alessio Castro-Montes,Alessio Castro-Montes,73,73,LAT,29,Bélgica,R11984
+Colônia,Tom Krauß,Tom Krauß,75,78,VOL,25,Alemanha,R11985
+Colônia,Ellyes Skhiri,Ellyes Skhiri,72,72,VOL,31,Tunísia,R11986
+Colônia,Paul Okon-Engstler,Paul Okon-Engstler,61,61,VOL,21,Austrália,R11987
+Colônia,Isak Jóhannesson,Isak Jóhannesson,77,77,MEI,23,Islândia,R11988
+Colônia,Gil Neves,Gil Neves,56,69,MEI,18,Portugal,R11989
+Colônia,Said El Mala,Said El Mala,78,84,ATA,20,Alemanha,R11990
+Colônia,Reigan Heskey,Reigan Heskey,64,76,ATA,18,Inglaterra,R11991
+Colônia,Marius Bülter,Marius Bülter,76,76,ATA,33,Alemanha,R11992
+Colônia,Mikey Moore,Mikey Moore,74,84,ATA,19,Inglaterra,R11993
+Colônia,Jan Thielmann,Jan Thielmann,73,76,ATA,24,Alemanha,R11994
+Colônia,Linton Maina,Linton Maina,73,74,ATA,27,Alemanha,R11995
+Colônia,Ragnar Ache,Ragnar Ache,77,77,ATA,28,Alemanha,R11996
+Colônia,Thijs Dallinga,Thijs Dallinga,76,81,ATA,26,Holanda,R11997
+Colônia,Luca Waldschmidt,Luca Waldschmidt,71,71,ATA,30,Alemanha,R11998
+Colônia,Imad Rondic,Imad Rondic,66,69,ATA,27,Bósnia,R11999
+Colônia,Malek El Mala,Malek El Mala,59,71,ATA,21,Alemanha,R12000
+Hamburgo,Sander Tangvik,Sander Tangvik,72,78,GOL,23,Noruega,R12001
+Hamburgo,Daniel Heuer Fernandes,Daniel Heuer Fernandes,74,74,GOL,34,Portugal,R12002
+Hamburgo,Fernando Dickes,Fernando Dickes,57,77,GOL,19,Alemanha,R12003
+Hamburgo,Elias Lahti,Elias Lahti,49,64,GOL,17,Finlândia,R12004
+Hamburgo,Nicolás Capaldo,Nicolás Capaldo,75,75,ZAG,28,Argentina,R12005
+Hamburgo,Sebastiaan Bornauw,Sebastiaan Bornauw,74,76,ZAG,27,Bélgica,R12006
+Hamburgo,Warmed Omari,Warmed Omari,73,77,ZAG,26,Comoros,R12007
+Hamburgo,Jordan Torunarigha,Jordan Torunarigha,75,75,ZAG,29,Nigéria,R12008
+Hamburgo,Shafiq Nandja,Shafiq Nandja,64,74,ZAG,19,Alemanha,R12009
+Hamburgo,Mario Vuskovic,Mario Vuskovic,65,68,ZAG,24,Croácia,R12010
+Hamburgo,Jason Bissi-Mouelle,Jason Bissi-Mouelle,57,68,ZAG,18,Alemanha,R12011
+Hamburgo,David Møller Wolfe,David Møller Wolfe,73,78,LAT,24,Noruega,R12012
+Hamburgo,Louis Lemke,Louis Lemke,64,80,LAT,17,Alemanha,R12013
+Hamburgo,Miro Muheim,Miro Muheim,73,73,LAT,28,Suíça,R12014
+Hamburgo,Zakaria El Ouahdi,Zakaria El Ouahdi,76,83,LAT,24,Marrocos,R12015
+Hamburgo,Nicolai Remberg,Nicolai Remberg,72,77,VOL,26,Alemanha,R12016
+Hamburgo,Kofi Amoako,Kofi Amoako,71,75,VOL,21,Alemanha,R12017
+Hamburgo,Albert Sambi Lokonga,Albert Sambi Lokonga,77,77,MEI,27,Bélgica,R12018
+Hamburgo,Bilal Nadir,Bilal Nadir,74,79,MEI,22,Marrocos,R12019
+Hamburgo,Bakery Jatta,Bakery Jatta,69,69,MEI,28,The Gambia,R12020
+Hamburgo,Fábio Vieira,Fábio Vieira,78,81,MEI,26,Portugal,R12021
+Hamburgo,Martin Adeline,Martin Adeline,76,77,MEI,22,França,R12022
+Hamburgo,Albert Grønbaek,Albert Grønbaek,77,79,MEI,25,Dinamarca,R12023
+Hamburgo,Immanuel Pherai,Immanuel Pherai,70,72,MEI,25,Suriname,R12024
+Hamburgo,Alexander Røssing-Lelesiit,Alexander Røssing-Lelesiit,69,80,ATA,19,Noruega,R12025
+Hamburgo,Terem Moffi,Terem Moffi,74,74,ATA,27,Nigéria,R12026
+Hamburgo,Otto Stange,Otto Stange,67,79,ATA,19,Alemanha,R12027
+Hamburgo,Patson Daka,Patson Daka,72,73,ATA,28,Zâmbia,R12028
+Hamburgo,Yussuf Poulsen,Yussuf Poulsen,72,72,ATA,32,Dinamarca,R12029
+Schalke 04,Loris Karius,Loris Karius,70,70,GOL,33,Alemanha,R12030
+Schalke 04,Kevin Müller,Kevin Müller,74,74,GOL,35,Alemanha,R12031
+Schalke 04,Johannes Siebeking,Johannes Siebeking,58,74,GOL,20,Alemanha,R12032
+Schalke 04,Mertcan Ayhan,Mertcan Ayhan,71,77,ZAG,20,Turquia,R12033
+Schalke 04,Maximilian Wöber,Maximilian Wöber,75,76,ZAG,28,Áustria,R12034
+Schalke 04,Hasan Kuruçay,Hasan Kuruçay,70,70,ZAG,29,Turquia,R12035
+Schalke 04,Nikola Katic,Nikola Katic,69,71,ZAG,30,Bósnia,R12036
+Schalke 04,Timo Becker,Timo Becker,71,71,ZAG,29,Alemanha,R12037
+Schalke 04,Robin Gosens,Robin Gosens,76,76,LAT,32,Alemanha,R12038
+Schalke 04,Vitalie Becker,Vitalie Becker,69,74,LAT,21,Alemanha,R12039
+Schalke 04,Adrian Gantenbein,Adrian Gantenbein,65,70,LAT,25,Suíça,R12040
+Schalke 04,Satoshi Tanaka,Satoshi Tanaka,73,76,VOL,24,Japão,R12041
+Schalke 04,Dejan Ljubicic,Dejan Ljubicic,73,74,VOL,29,Áustria,R12042
+Schalke 04,Ron Schallenberg,Ron Schallenberg,68,71,VOL,28,Alemanha,R12043
+Schalke 04,Luca Vozar,Luca Vozar,62,72,VOL,19,Alemanha,R12044
+Schalke 04,Soufiane El-Faouzi,Soufiane El-Faouzi,67,76,MEI,24,Marrocos,R12045
+Schalke 04,Finn Porath,Finn Porath,72,72,MEI,29,Alemanha,R12046
+Schalke 04,Janik Bachmann,Janik Bachmann,66,66,MEI,30,Alemanha,R12047
+Schalke 04,Junior Dina Ebimbe,Junior Dina Ebimbe,72,74,MEI,25,Camarões,R12048
+Schalke 04,Adil Aouchiche,Adil Aouchiche,68,76,MEI,24,Argélia,R12049
+Schalke 04,Kenan Karaman,Kenan Karaman,73,73,MEI,32,Turquia,R12050
+Schalke 04,Moussa Sylla,Moussa Sylla,73,77,ATA,26,Mali,R12051
+Schalke 04,Hee-chan Hwang,Hee-chan Hwang,75,75,ATA,30,Coreia do Sul,R12052
+Schalke 04,Junior Adamu,Junior Adamu,71,73,ATA,25,Áustria,R12053
+Schalke 04,Edin Dzeko,Edin Dzeko,81,81,ATA,40,Bósnia,R12054
+Schalke 04,Bryan Lasme,Bryan Lasme,66,68,ATA,28,França,R12055
+Schalke 04,Emil Højlund,Emil Højlund,61,76,ATA,21,Dinamarca,R12056
+Elversberg,Nicolas Kristof,Nicolas Kristof,71,74,GOL,26,Áustria,R12057
+Elversberg,Tim Boss,Tim Boss,64,64,GOL,33,Alemanha,R12058
+Elversberg,Frank Lehmann,Frank Lehmann,61,61,GOL,37,Alemanha,R12059
+Elversberg,Elias Etringer,Elias Etringer,52,63,GOL,18,Alemanha,R12060
+Elversberg,Lukas Pinckert,Lukas Pinckert,70,72,ZAG,26,Alemanha,R12061
+Elversberg,Luca Sirch,Luca Sirch,71,76,ZAG,27,Alemanha,R12062
+Elversberg,Maximilian Rohr,Maximilian Rohr,68,68,ZAG,31,Alemanha,R12063
+Elversberg,Florian Le Joncour,Florian Le Joncour,69,69,ZAG,31,França,R12064
+Elversberg,Luis Seifert,Luis Seifert,61,73,ZAG,22,Alemanha,R12065
+Elversberg,Lasse Günther,Lasse Günther,74,75,LAT,23,Alemanha,R12066
+Elversberg,Nicholas Mickelson,Nicholas Mickelson,63,66,LAT,27,Thailand,R12067
+Elversberg,Jan Gyamerah,Jan Gyamerah,68,68,LAT,31,Gana,R12068
+Elversberg,Felix Keidel,Felix Keidel,73,74,VOL,23,Alemanha,R12069
+Elversberg,Łukasz Poręba,Łukasz Poręba,68,73,VOL,26,Polônia,R12070
+Elversberg,Amara Condé,Amara Condé,67,67,VOL,29,Alemanha,R12071
+Elversberg,Frederik Schmahl,Frederik Schmahl,68,74,MEI,23,Alemanha,R12072
+Elversberg,Francis Onyeka,Francis Onyeka,71,82,MEI,19,Alemanha,R12073
+Elversberg,Noah Darvich,Noah Darvich,71,78,MEI,20,Alemanha,R12074
+Elversberg,Maurice Krattenmacher,Maurice Krattenmacher,70,83,ATA,21,Alemanha,R12075
+Elversberg,Tom Zimmerschied,Tom Zimmerschied,69,69,ATA,28,Alemanha,R12076
+Elversberg,Cole Campbell,Cole Campbell,72,79,ATA,20,EUA,R12077
+Elversberg,Lukas Petkov,Lukas Petkov,70,76,ATA,26,Bulgária,R12078
+Elversberg,Raif Adam,Raif Adam,63,67,ATA,21,Alemanha,R12079
+Elversberg,David Mokwa,David Mokwa,75,77,ATA,22,França,R12080
+Elversberg,Noel Futkeu,Noel Futkeu,74,77,ATA,23,Alemanha,R12081
+Elversberg,Luca Pfeiffer,Luca Pfeiffer,67,67,ATA,30,Alemanha,R12082
+Elversberg,Luca Schnellbacher,Luca Schnellbacher,69,69,ATA,32,Alemanha,R12083
+Paderborn,Nahuel Noll,Nahuel Noll,73,73,GOL,23,Alemanha,R12084
+Paderborn,Markus Schubert,Markus Schubert,65,69,GOL,28,Alemanha,R12085
+Paderborn,Florian Pruhs,Florian Pruhs,55,73,GOL,20,Alemanha,R12086
+Paderborn,Mattes Hansen,Mattes Hansen,69,76,ZAG,22,Alemanha,R12087
+Paderborn,Tjark Scheller,Tjark Scheller,68,75,ZAG,24,Alemanha,R12088
+Paderborn,Felix Götze,Felix Götze,72,73,ZAG,28,Alemanha,R12089
+Paderborn,Jano ter Horst,Jano ter Horst,67,73,ZAG,24,Alemanha,R12090
+Paderborn,Marcel Hoffmeier,Marcel Hoffmeier,67,71,ZAG,27,Alemanha,R12091
+Paderborn,Jonah Sticker,Jonah Sticker,65,73,ZAG,22,Alemanha,R12092
+Paderborn,Nyamekye Awortwie-Grant,Nyamekye Awortwie-Grant,59,65,ZAG,26,Alemanha,R12093
+Paderborn,Tristan Zobel,Tristan Zobel,61,70,ZAG,23,Alemanha,R12094
+Paderborn,Santiago Castañeda,Santiago Castañeda,73,78,VOL,22,EUA,R12095
+Paderborn,Tom Baack,Tom Baack,68,71,VOL,27,Alemanha,R12096
+Paderborn,Laurin Ulrich,Laurin Ulrich,70,80,MEI,21,Alemanha,R12097
+Paderborn,Sebastian Klaas,Sebastian Klaas,66,67,MEI,28,Alemanha,R12098
+Paderborn,Luka Duric,Luka Duric,67,68,MEI,23,Bósnia,R12099
+Paderborn,Timur Gayret,Timur Gayret,65,66,MEI,28,Alemanha,R12100
+Paderborn,Laurin Curda,Laurin Curda,66,73,MEI,25,Alemanha,R12101
+Paderborn,Ruben Müller,Ruben Müller,65,67,MEI,21,Alemanha,R12102
+Paderborn,Clemens Lippmann,Clemens Lippmann,64,65,MEI,20,Alemanha,R12103
+Paderborn,Raphael Obermair,Raphael Obermair,72,72,MEI,30,Philippines,R12104
+Paderborn,Niklas Mohr,Niklas Mohr,65,66,MEI,22,Alemanha,R12105
+Paderborn,Deniz Zeitler,Deniz Zeitler,67,78,ATA,19,Alemanha,R12106
+Paderborn,Gabriel Vidovic,Gabriel Vidovic,71,78,ATA,22,Croácia,R12107
+Paderborn,Oliver Batista Meier,Oliver Batista Meier,68,75,ATA,25,Alemanha,R12108
+Paderborn,Albert Millgramm,Albert Millgramm,58,62,ATA,22,Alemanha,R12109
+Paderborn,Rayan Philippe,Rayan Philippe,72,77,ATA,26,França,R12110
+Paderborn,Sven Michel,Sven Michel,69,69,ATA,36,Alemanha,R12111
+Paderborn,Marvin Pieringer,Marvin Pieringer,75,76,ATA,27,Alemanha,R12112
+Paderborn,Stefano Marino,Stefano Marino,68,71,ATA,22,Alemanha,R12113
+Paderborn,Steffen Tigges,Steffen Tigges,67,68,ATA,28,Alemanha,R12114
+Paderborn,Lasse Eickel,Lasse Eickel,53,66,ATA,18,Alemanha,R12115

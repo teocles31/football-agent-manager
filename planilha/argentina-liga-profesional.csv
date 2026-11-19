@@ -1,872 +1,872 @@
-clube,nome_original,nome,overall,potencial,posicao,idade,pais
-River Plate,Santiago Beltrán,Santiago Beltrán,73,73,GOL,22,Argentina
-River Plate,Ezequiel Centurión,Ezequiel Centurión,70,70,GOL,29,Argentina
-River Plate,Lautaro Rivero,Lautaro Rivero,75,81,ZAG,23,Argentina
-River Plate,Lucas Martínez Quarta,Lucas Martínez Quarta,77,77,ZAG,30,Argentina
-River Plate,Tobías Ramírez,Tobías Ramírez,70,78,ZAG,20,Argentina
-River Plate,Juan Carlos Portillo,Juan Carlos Portillo,76,82,ZAG,26,Argentina
-River Plate,Nicolás Otamendi,Nicolás Otamendi,78,78,ZAG,38,Argentina
-River Plate,Facundo González,Facundo González,60,68,ZAG,20,Argentina
-River Plate,Francisco Ortega,Francisco Ortega,78,78,LAT,27,Argentina
-River Plate,Marcos Acuña,Marcos Acuña,78,78,LAT,35,Argentina
-River Plate,Gonzalo Montiel,Gonzalo Montiel,78,78,LAT,29,Argentina
-River Plate,Giovanni González,Giovanni González,73,73,LAT,32,Uruguai
-River Plate,Aníbal Moreno,Aníbal Moreno,77,77,VOL,27,Argentina
-River Plate,Fausto Vera,Fausto Vera,75,76,VOL,26,Argentina
-River Plate,Lucas Silva,Lucas Silva,59,69,VOL,19,Argentina
-River Plate,Tobías Andrada,Tobías Andrada,72,83,MEI,19,Argentina
-River Plate,Mauro Arambarri,Mauro Arambarri,78,78,MEI,31,Uruguai
-River Plate,Lautaro Pereyra,Lautaro Pereyra,60,73,MEI,18,Argentina
-River Plate,Thiago Almada,Thiago Almada,81,83,MEI,25,Argentina
-River Plate,Tomás Galván,Tomás Galván,74,75,MEI,26,Argentina
-River Plate,Juan Cruz Meza,Juan Cruz Meza,65,82,MEI,18,Argentina
-River Plate,Ángel Correa,Ángel Correa,78,78,ATA,31,Argentina
-River Plate,Lucas Beltrán,Lucas Beltrán,76,81,ATA,25,Argentina
-River Plate,Sebastián Driussi,Sebastián Driussi,77,77,ATA,30,Argentina
-River Plate,Rafael Santos Borré,Rafael Santos Borré,75,75,ATA,31,Colômbia
-River Plate,Agustín Ruberto,Agustín Ruberto,68,82,ATA,20,Argentina
-Boca Juniors,Álvaro Montero,Álvaro Montero,74,74,GOL,31,Colômbia
-Boca Juniors,Leandro Brey,Leandro Brey,69,79,GOL,24,Argentina
-Boca Juniors,Agustín Marchesín,Agustín Marchesín,77,77,GOL,38,Argentina
-Boca Juniors,Javier García,Javier García,69,69,GOL,39,Argentina
-Boca Juniors,Lautaro Di Lollo,Lautaro Di Lollo,75,81,ZAG,22,Argentina
-Boca Juniors,Ayrton Costa,Ayrton Costa,74,77,ZAG,27,Argentina
-Boca Juniors,Facundo Herrera,Facundo Herrera,72,79,ZAG,20,Argentina
-Boca Juniors,Marco Pellegrino,Marco Pellegrino,70,79,ZAG,24,Argentina
-Boca Juniors,Matías Satas,Matías Satas,63,74,ZAG,18,Argentina
-Boca Juniors,Nicolás Figal,Nicolás Figal,73,73,ZAG,32,Argentina
-Boca Juniors,Lautaro Blanco,Lautaro Blanco,75,78,LAT,27,Argentina
-Boca Juniors,Malcom Braida,Malcom Braida,76,76,LAT,29,Argentina
-Boca Juniors,Leandro Lozano,Leandro Lozano,74,77,LAT,27,Uruguai
-Boca Juniors,Dylan Gorosito,Dylan Gorosito,68,76,LAT,20,Argentina
-Boca Juniors,Milton Delgado,Milton Delgado,76,80,VOL,21,Argentina
-Boca Juniors,Santiago Ascacíbar,Santiago Ascacíbar,77,77,VOL,29,Argentina
-Boca Juniors,Leandro Paredes,Leandro Paredes,78,78,VOL,32,Argentina
-Boca Juniors,Tomás Belmonte,Tomás Belmonte,74,77,VOL,28,Argentina
-Boca Juniors,Camilo Rey Domenech,Camilo Rey Domenech,64,81,VOL,20,Argentina
-Boca Juniors,Rodrigo Battaglia,Rodrigo Battaglia,76,76,VOL,35,Argentina
-Boca Juniors,Williams Alarcón,Williams Alarcón,71,78,MEI,25,Chile
-Boca Juniors,Juan Ramírez,Juan Ramírez,66,66,MEI,33,Argentina
-Boca Juniors,Tomás Aranda,Tomás Aranda,74,83,MEI,19,Argentina
-Boca Juniors,Carlos Palacios,Carlos Palacios,76,79,MEI,26,Chile
-Boca Juniors,Sebastián Villa,Sebastián Villa,76,76,ATA,30,Colômbia
-Boca Juniors,Alan Velasco,Alan Velasco,74,82,ATA,24,Argentina
-Boca Juniors,Leonel Flores,Leonel Flores,72,82,ATA,19,Argentina
-Boca Juniors,Ángel Romero,Ángel Romero,68,68,ATA,34,Paraguai
-Boca Juniors,Miguel Merentiel,Miguel Merentiel,76,76,ATA,30,Uruguai
-Boca Juniors,Adam Bareiro,Adam Bareiro,76,76,ATA,30,Paraguai
-Boca Juniors,Milton Giménez,Milton Giménez,73,73,ATA,30,Argentina
-Boca Juniors,Enner Valencia,Enner Valencia,76,76,ATA,37,Equador
-Estudiantes,Fernando Muslera,Fernando Muslera,79,79,GOL,40,Uruguai
-Estudiantes,Fabricio Iacovich,Fabricio Iacovich,67,74,GOL,24,Argentina
-Estudiantes,Rodrigo Borzone,Rodrigo Borzone,64,74,GOL,22,Argentina
-Estudiantes,Tomás Palacios,Tomás Palacios,78,78,ZAG,23,Argentina
-Estudiantes,Santiago Núñez,Santiago Núñez,73,76,ZAG,26,Argentina
-Estudiantes,Leandro González Pírez,Leandro González Pírez,74,74,ZAG,34,Argentina
-Estudiantes,Valente Pierani,Valente Pierani,58,67,ZAG,20,Argentina
-Estudiantes,Marcos Rojo,Marcos Rojo,67,67,ZAG,36,Argentina
-Estudiantes,Ramiro Funes Mori,Ramiro Funes Mori,70,70,ZAG,35,Argentina
-Estudiantes,Santiago Arzamendia,Santiago Arzamendia,73,73,LAT,28,Paraguai
-Estudiantes,Gastón Benedetti,Gastón Benedetti,71,77,LAT,25,Argentina
-Estudiantes,Joaquín Pereyra,Joaquín Pereyra,61,73,LAT,21,Argentina
-Estudiantes,Eros Mancuso,Eros Mancuso,72,72,LAT,27,Argentina
-Estudiantes,Eric Meza,Eric Meza,73,74,LAT,27,Argentina
-Estudiantes,Jalil Elías,Jalil Elías,72,72,VOL,30,Syria
-Estudiantes,Gabriel Neves,Gabriel Neves,75,75,VOL,29,Uruguai
-Estudiantes,Ezequiel Piovi,Ezequiel Piovi,72,72,VOL,34,Argentina
-Estudiantes,Alexis Castro,Alexis Castro,73,73,MEI,32,Argentina
-Estudiantes,Bautista Kociubinski,Bautista Kociubinski,66,68,MEI,25,Argentina
-Estudiantes,Baltasar Rodríguez,Baltasar Rodríguez,74,75,MEI,23,Argentina
-Estudiantes,Miguel Monsalve,Miguel Monsalve,73,75,MEI,22,Colômbia
-Estudiantes,José Sosa,José Sosa,73,73,MEI,41,Argentina
-Estudiantes,Joaquín Tobio Burgos,Joaquín Tobio Burgos,71,81,ATA,21,Argentina
-Estudiantes,Edwuin Cetré,Edwuin Cetré,73,73,ATA,28,Colômbia
-Estudiantes,Brian Aguirre,Brian Aguirre,74,74,ATA,23,Argentina
-Estudiantes,Tiago Palacios,Tiago Palacios,75,81,ATA,25,Uruguai
-Estudiantes,Fabricio Pérez,Fabricio Pérez,68,75,ATA,20,Argentina
-Estudiantes,Joaquín Correa,Joaquín Correa,72,72,ATA,32,Argentina
-Estudiantes,Adolfo Gaich,Adolfo Gaich,70,70,ATA,27,Argentina
-Estudiantes,Guido Carrillo,Guido Carrillo,74,74,ATA,35,Argentina
-Estudiantes,Lucas Alario,Lucas Alario,72,72,ATA,34,Argentina
-Vélez Sarsfield,Facundo Sanguinetti,Facundo Sanguinetti,68,74,GOL,25,Argentina
-Vélez Sarsfield,Tomás Marchiori,Tomás Marchiori,75,75,GOL,31,Argentina
-Vélez Sarsfield,Álvaro Busso,Álvaro Busso,56,64,GOL,20,Argentina
-Vélez Sarsfield,Thiago Silvero,Thiago Silvero,72,77,ZAG,20,Argentina
-Vélez Sarsfield,Emanuel Mammana,Emanuel Mammana,75,75,ZAG,30,Argentina
-Vélez Sarsfield,Lisandro Magallán,Lisandro Magallán,72,72,ZAG,33,Argentina
-Vélez Sarsfield,Leo Cristaldo,Leo Cristaldo,66,80,ZAG,17,Paraguai
-Vélez Sarsfield,Elías Gómez,Elías Gómez,73,73,LAT,32,Argentina
-Vélez Sarsfield,Joaquín Vaquero,Joaquín Vaquero,56,56,LAT,23,Argentina
-Vélez Sarsfield,Joaquín García,Joaquín García,74,80,LAT,25,Argentina
-Vélez Sarsfield,Jano Gordon,Jano Gordon,69,79,LAT,22,Argentina
-Vélez Sarsfield,Claudio Baeza,Claudio Baeza,73,73,VOL,32,Chile
-Vélez Sarsfield,Lucas Robertone,Lucas Robertone,73,73,MEI,29,Argentina
-Vélez Sarsfield,Rodrigo Aliendro,Rodrigo Aliendro,74,74,MEI,35,Argentina
-Vélez Sarsfield,Diego Valdés,Diego Valdés,75,75,MEI,32,Chile
-Vélez Sarsfield,Manuel Lanzini,Manuel Lanzini,74,74,MEI,33,Argentina
-Vélez Sarsfield,Luca Feler,Luca Feler,61,73,MEI,18,Argentina
-Vélez Sarsfield,Matías Arias,Matías Arias,58,74,MEI,19,Argentina
-Vélez Sarsfield,Matías Pellegrini,Matías Pellegrini,70,73,ATA,26,Argentina
-Vélez Sarsfield,Álex Verón,Álex Verón,62,76,ATA,18,Argentina
-Vélez Sarsfield,Ronaldo Martínez,Ronaldo Martínez,75,75,ATA,30,Paraguai
-Vélez Sarsfield,Thiago Aguirre,Thiago Aguirre,59,75,ATA,17,Argentina
-Vélez Sarsfield,Dilan Godoy,Dilan Godoy,62,72,ATA,20,Argentina
-Racing,Facundo Cambeses,Facundo Cambeses,72,73,GOL,29,Argentina
-Racing,Matías Tagliamonte,Matías Tagliamonte,71,71,GOL,28,Argentina
-Racing,Marco Di Césare,Marco Di Césare,74,82,ZAG,24,Argentina
-Racing,Nazareno Colombo,Nazareno Colombo,73,75,ZAG,27,Argentina
-Racing,Matías Pérez,Matías Pérez,72,72,ZAG,27,Argentina
-Racing,Mateo Martínez,Mateo Martínez,61,73,ZAG,18,Argentina
-Racing,Gonzalo Escudero,Gonzalo Escudero,53,73,ZAG,19,Argentina
-Racing,Ignacio Rodríguez,Ignacio Rodríguez,67,76,LAT,24,Argentina
-Racing,Alfonso Espino,Alfonso Espino,71,71,LAT,34,Uruguai
-Racing,Ezequiel Cannavo,Ezequiel Cannavo,66,74,LAT,24,Argentina
-Racing,Juan Barinaga,Juan Barinaga,73,74,LAT,26,Argentina
-Racing,Leonel Pérez,Leonel Pérez,75,77,VOL,22,Argentina
-Racing,Ulises Ortegoza,Ulises Ortegoza,72,72,VOL,29,Chile
-Racing,Matías Kranevitter,Matías Kranevitter,72,72,VOL,33,Argentina
-Racing,Alan Forneris,Alan Forneris,65,73,VOL,21,Argentina
-Racing,Gastón Lodico,Gastón Lodico,73,73,MEI,28,Argentina
-Racing,Valentín Carboni,Valentín Carboni,75,84,MEI,21,Argentina
-Racing,Matko Miljevic,Matko Miljevic,73,75,MEI,25,EUA
-Racing,Matías Zaracho,Matías Zaracho,75,76,MEI,28,Argentina
-Racing,Adrián Fernández,Adrián Fernández,66,72,MEI,25,Argentina
-Racing,Alejandro Tello,Alejandro Tello,58,70,MEI,18,Argentina
-Racing,Tomás Conechny,Tomás Conechny,73,73,ATA,28,Argentina
-Racing,Duván Vergara,Duván Vergara,74,74,ATA,30,Colômbia
-Racing,Leandro Córdoba,Leandro Córdoba,60,66,ATA,21,Argentina
-Racing,Adrián Martínez,Adrián Martínez,78,78,ATA,34,Argentina
-Racing,Lautaro Díaz,Lautaro Díaz,70,70,ATA,28,Argentina
-Racing,Elías Torres,Elías Torres,70,75,ATA,25,Argentina
-Rosario Central,Conan Ledesma,Conan Ledesma,73,73,GOL,33,Argentina
-Rosario Central,Axel Werner,Axel Werner,66,66,GOL,30,Argentina
-Rosario Central,Damián Fernández,Damián Fernández,56,59,GOL,22,Argentina
-Rosario Central,Ignacio Ovando,Ignacio Ovando,71,82,ZAG,19,Argentina
-Rosario Central,Gastón Ávila,Gastón Ávila,75,77,ZAG,25,Argentina
-Rosario Central,Juan Giménez,Juan Giménez,66,80,ZAG,20,Argentina
-Rosario Central,Facundo Mallo,Facundo Mallo,73,73,ZAG,31,Uruguai
-Rosario Central,Sebastián Zaracho,Sebastián Zaracho,66,66,ZAG,27,Paraguai
-Rosario Central,Juan Cruz Komar,Juan Cruz Komar,72,72,ZAG,30,Argentina
-Rosario Central,Luca Raffin,Luca Raffin,56,66,ZAG,20,Argentina
-Rosario Central,Agustín Sández,Agustín Sández,73,79,LAT,25,Paraguai
-Rosario Central,Alexis Soto,Alexis Soto,72,72,LAT,33,Argentina
-Rosario Central,Emanuel Coronel,Emanuel Coronel,71,71,LAT,29,Argentina
-Rosario Central,Ulises Ciccioli,Ulises Ciccioli,65,66,LAT,23,Argentina
-Rosario Central,Elías Verón,Elías Verón,53,65,LAT,19,Argentina
-Rosario Central,Franco Ibarra,Franco Ibarra,71,78,VOL,25,Argentina
-Rosario Central,Vicente Pizarro,Vicente Pizarro,75,78,VOL,24,Chile
-Rosario Central,Federico Navarro,Federico Navarro,71,76,VOL,26,Argentina
-Rosario Central,Alan Rodríguez,Alan Rodríguez,71,72,MEI,26,Uruguai
-Rosario Central,Pol Fernández,Pol Fernández,75,75,MEI,35,Argentina
-Rosario Central,Santiago Segovia,Santiago Segovia,57,77,MEI,19,Argentina
-Rosario Central,Jáminton Campaz,Jáminton Campaz,76,79,ATA,26,Colômbia
-Rosario Central,Giovanni Cantizano,Giovanni Cantizano,68,74,ATA,19,Argentina
-Rosario Central,Franco Cervi,Franco Cervi,70,70,ATA,32,Argentina
-Rosario Central,Julián Fernández,Julián Fernández,73,75,ATA,22,Argentina
-Rosario Central,Ángel Di María,Ángel Di María,82,82,ATA,38,Argentina
-Rosario Central,Gaspar Duarte,Gaspar Duarte,68,77,ATA,23,Argentina
-Rosario Central,Tomás Badaloni,Tomás Badaloni,75,76,ATA,26,Argentina
-Rosario Central,Enzo Copetti,Enzo Copetti,72,72,ATA,30,Argentina
-Rosario Central,Marco Ruben,Marco Ruben,63,63,ATA,40,Argentina
-Newell's Old Boys,É. Banega,É. Banega,77,77,MEI,38,Argentina
-Newell's Old Boys,Martín Fernández,Martín Fernández,69,76,VOL,25,Uruguai
-Newell's Old Boys,Gaspar Iñiguez,Gaspar Iñiguez,66,66,MEI,32,Argentina
-Newell's Old Boys,Juan García,Juan García,71,71,ATA,33,Argentina
-Newell's Old Boys,Gonzalo Maroni,Gonzalo Maroni,70,71,MEI,27,Argentina
-Newell's Old Boys,Alejo Montero,Alejo Montero,63,64,LAT,28,Argentina
-Newell's Old Boys,Carlos González,Carlos González,73,73,ATA,33,Paraguai
-Newell's Old Boys,Víctor Cuesta,Víctor Cuesta,75,75,ZAG,37,Argentina
-Newell's Old Boys,Lisandro Montenegro,Lisandro Montenegro,63,74,MEI,23,Argentina
-Newell's Old Boys,Brian Calderara,Brian Calderara,66,66,MEI,28,Argentina
-Newell's Old Boys,Luca Sosa,Luca Sosa,70,70,ZAG,32,Argentina
-Newell's Old Boys,Martín Luciano,Martín Luciano,67,74,LAT,22,Argentina
-Newell's Old Boys,Luca Regiardo,Luca Regiardo,60,77,MEI,19,Argentina
-Newell's Old Boys,Alejo Tabares,Alejo Tabares,63,69,MEI,25,Argentina
-Newell's Old Boys,Luciano Lollo,Luciano Lollo,72,72,ZAG,39,Argentina
-Newell's Old Boys,Franco Orozco,Franco Orozco,68,76,MEI,24,Argentina
-Newell's Old Boys,David Sotelo,David Sotelo,59,70,MEI,23,Argentina
-Newell's Old Boys,Josué Colmán,Josué Colmán,65,65,MEI,28,Paraguai
-Newell's Old Boys,Genaro Rossi,Genaro Rossi,63,72,ATA,24,Argentina
-Newell's Old Boys,Saúl Salcedo,Saúl Salcedo,71,73,ZAG,28,Paraguai
-Newell's Old Boys,Pablo Altamirano,Pablo Altamirano,59,71,MEI,21,Argentina
-Newell's Old Boys,Fabián Noguera,Fabián Noguera,70,70,ZAG,33,Argentina
-Newell's Old Boys,Valentino Acuña,Valentino Acuña,59,75,MEI,20,Argentina
-Newell's Old Boys,Giovani Chiaverano,Giovani Chiaverano,58,73,MEI,21,Argentina
-Newell's Old Boys,Alejo Navarro,Alejo Navarro,59,76,ATA,19,Argentina
-Newell's Old Boys,Lucas Hoyos,Lucas Hoyos,72,72,GOL,37,Argentina
-Newell's Old Boys,Thiago Gigena,Thiago Gigena,51,62,ATA,20,Argentina
-Newell's Old Boys,Juan Espínola,Juan Espínola,71,71,GOL,31,Paraguai
-Newell's Old Boys,Williams Barlasina,Williams Barlasina,66,66,GOL,28,Argentina
-Lanús,Ramiro Carrera,Ramiro Carrera,74,74,MEI,32,Argentina
-Lanús,Marcelino Moreno,Marcelino Moreno,78,78,MEI,31,Argentina
-Lanús,Eduardo Salvio,Eduardo Salvio,76,76,MEI,36,Argentina
-Lanús,Walter Bou,Walter Bou,73,73,ATA,32,Argentina
-Lanús,Lautaro Acosta,Lautaro Acosta,72,72,MEI,38,Argentina
-Lanús,Agustín Cardozo,Agustín Cardozo,71,71,VOL,29,Argentina
-Lanús,Felipe Peña Biafore,Felipe Peña Biafore,70,78,VOL,25,Argentina
-Lanús,Alexis Canelo,Alexis Canelo,72,72,MEI,34,Argentina
-Lanús,Franco Watson,Franco Watson,70,79,MEI,24,Argentina
-Lanús,Nicolás Morgantini,Nicolás Morgantini,67,67,LAT,31,Argentina
-Lanús,Sasha Marcich,Sasha Marcich,72,73,LAT,28,Argentina
-Lanús,Raúl Loaiza,Raúl Loaiza,71,71,VOL,32,Colômbia
-Lanús,Armando Méndez,Armando Méndez,71,71,LAT,30,Uruguai
-Lanús,Carlos Izquierdoz,Carlos Izquierdoz,74,74,ZAG,37,Argentina
-Lanús,Gonzalo Pérez,Gonzalo Pérez,70,77,VOL,25,Uruguai
-Lanús,Alexis Segovia,Alexis Segovia,63,77,MEI,22,Argentina
-Lanús,Bruno Cabrera,Bruno Cabrera,62,71,MEI,23,Argentina
-Lanús,Agustín Medina,Agustín Medina,58,77,VOL,19,Argentina
-Lanús,José Canale,José Canale,69,70,ZAG,30,Paraguai
-Lanús,Octavio Ontivero,Octavio Ontivero,62,81,LAT,20,Argentina
-Lanús,Agustín Rodríguez,Agustín Rodríguez,61,75,MEI,22,Argentina
-Lanús,Ronaldo Dejesús,Ronaldo Dejesús,66,75,ZAG,25,Paraguai
-Lanús,Elías Brito,Elías Brito,57,73,LAT,20,Argentina
-Lanús,Ezequiel Muñoz,Ezequiel Muñoz,69,69,ZAG,35,Argentina
-Lanús,Brian Aguilar,Brian Aguilar,62,74,ZAG,23,Argentina
-Lanús,Lucas Irusta,Lucas Irusta,56,66,ZAG,23,Argentina
-Lanús,Leonel Cardozo,Leonel Cardozo,58,68,ZAG,22,Argentina
-Lanús,Mariano Gerez,Mariano Gerez,57,76,VOL,20,Argentina
-Lanús,Lautaro Morales,Lautaro Morales,70,75,GOL,26,Argentina
-Lanús,Jeremías Chavero,Jeremías Chavero,55,68,ATA,20,Argentina
-Lanús,Facundo Sanchez,Facundo Sanchez,49,64,ZAG,20,Argentina
-Lanús,Nahuel Losada,Nahuel Losada,73,73,GOL,33,Argentina
-Platense,Mauro Luna Diale,Mauro Luna Diale,72,75,MEI,27,Argentina
-Platense,Franco Zapiola,Franco Zapiola,70,76,MEI,25,Argentina
-Platense,Guido Mainero,Guido Mainero,69,69,MEI,31,Argentina
-Platense,Enzo Roldán,Enzo Roldán,67,74,MEI,25,Argentina
-Platense,Ignacio Schor,Ignacio Schor,70,73,MEI,25,Argentina
-Platense,Augusto Lotti,Augusto Lotti,71,71,ATA,30,Argentina
-Platense,Jonathan Bay,Jonathan Bay,69,69,LAT,33,Argentina
-Platense,Santiago Toloza,Santiago Toloza,70,78,MEI,23,Argentina
-Platense,Franco Baldassarra,Franco Baldassarra,64,67,MEI,27,Argentina
-Platense,Rodrigo Herrera,Rodrigo Herrera,67,74,VOL,25,Argentina
-Platense,Marcos Portillo,Marcos Portillo,63,68,MEI,26,Argentina
-Platense,Raúl Lozano,Raúl Lozano,69,69,LAT,28,Argentina
-Platense,Nicolás Orsini,Nicolás Orsini,70,70,ATA,31,Argentina
-Platense,Rodrigo Márquez,Rodrigo Márquez,67,73,MEI,24,Argentina
-Platense,Benjamín Bosch,Benjamín Bosch,64,76,MEI,21,Argentina
-Platense,Edgar Elizalde,Edgar Elizalde,69,74,ZAG,26,Uruguai
-Platense,Bautista Barros Schelotto,Bautista Barros Schelotto,66,71,LAT,26,Argentina
-Platense,Felipe Bussio,Felipe Bussio,60,70,VOL,22,Argentina
-Platense,Maximiliano Rodríguez Vejar,Maximiliano Rodríguez Vejar,66,71,ATA,26,Chile
-Platense,Juan Saborido,Juan Saborido,65,66,LAT,28,Argentina
-Platense,Celías Ingenthron,Celías Ingenthron,58,73,LAT,18,Argentina
-Platense,Tomás Silva,Tomás Silva,62,73,LAT,23,Argentina
-Platense,Oscar Salomón,Oscar Salomón,66,71,ZAG,27,Argentina
-Platense,Cristian Ortíz,Cristian Ortíz,55,69,MEI,21,Argentina
-Platense,Franco Minerva,Franco Minerva,59,75,MEI,20,Argentina
-Platense,Ignacio Vázquez,Ignacio Vázquez,72,74,ZAG,29,Argentina
-Platense,Juan Goicochea,Juan Goicochea,61,72,ATA,21,Peru
-Platense,Ivo Visona,Ivo Visona,61,74,ATA,19,Argentina
-Platense,Gonzalo Goñi,Gonzalo Goñi,67,70,ZAG,27,Argentina
-Platense,Andrés Desábato,Andrés Desábato,71,71,GOL,36,Argentina
-Platense,Federico Losas,Federico Losas,58,64,GOL,24,Argentina
-Defensa y Justicia,Rafael Delgado,Rafael Delgado,71,71,LAT,36,Argentina
-Defensa y Justicia,Kevin Gutiérrez,Kevin Gutiérrez,71,72,VOL,29,Argentina
-Defensa y Justicia,Lucas González,Lucas González,71,76,MEI,26,Argentina
-Defensa y Justicia,Damián Pérez,Damián Pérez,69,69,LAT,37,Argentina
-Defensa y Justicia,Aaron Molinas,Aaron Molinas,73,78,MEI,25,Argentina
-Defensa y Justicia,Nicolás Stefanelli,Nicolás Stefanelli,68,68,MEI,31,Argentina
-Defensa y Justicia,David Barbona,David Barbona,70,70,MEI,31,Argentina
-Defensa y Justicia,Ezequiel Cannavó,Ezequiel Cannavó,66,74,LAT,24,Argentina
-Defensa y Justicia,Juan Gutiérrez,Juan Gutiérrez,69,76,MEI,24,Uruguai
-Defensa y Justicia,César Pérez,César Pérez,68,77,VOL,23,Chile
-Defensa y Justicia,Tobías Rubio,Tobías Rubio,68,80,LAT,22,Argentina
-Defensa y Justicia,Lucas Ferreira,Lucas Ferreira,69,76,ZAG,26,Uruguai
-Defensa y Justicia,Lenny Lobato,Lenny Lobato,68,74,MEI,25,Brasil
-Defensa y Justicia,Emanuel Aguilera,Emanuel Aguilera,71,71,ZAG,37,Argentina
-Defensa y Justicia,Damián Fernández,Damián Fernández,71,77,ZAG,25,Argentina
-Defensa y Justicia,Lucas Souto,Lucas Souto,67,70,LAT,27,Argentina
-Defensa y Justicia,Benjamín Schamine,Benjamín Schamine,61,75,MEI,22,Argentina
-Defensa y Justicia,Agustín Hausch,Agustín Hausch,61,71,ATA,23,Argentina
-Defensa y Justicia,Santiago Sosa,Santiago Sosa,60,77,VOL,21,Argentina
-Defensa y Justicia,Matías Sosa,Matías Sosa,61,67,MEI,24,Argentina
-Defensa y Justicia,Mateo Aguiar,Mateo Aguiar,50,70,MEI,19,Argentina
-Defensa y Justicia,Samuel Lucero,Samuel Lucero,56,72,ZAG,21,Argentina
-Defensa y Justicia,Enrique Bologna,Enrique Bologna,69,69,GOL,44,Argentina
-Defensa y Justicia,Roberto León,Roberto León,64,70,GOL,24,Argentina
-Defensa y Justicia,Facundo Masuero,Facundo Masuero,62,68,GOL,26,Argentina
-Defensa y Justicia,Josué Reinatti,Josué Reinatti,60,70,GOL,23,Argentina
-Independiente,Santiago Montiel,Santiago Montiel,75,81,MEI,25,Argentina
-Independiente,Iván Marcone,Iván Marcone,76,76,VOL,36,Argentina
-Independiente,Leonardo Godoy,Leonardo Godoy,74,74,LAT,31,Argentina
-Independiente,Federico Mancuello,Federico Mancuello,72,72,MEI,37,Argentina
-Independiente,Pablo Galdames,Pablo Galdames,69,69,MEI,29,Chile
-Independiente,Felipe Loyola,Felipe Loyola,69,76,MEI,25,Chile
-Independiente,Rodrigo Fernández,Rodrigo Fernández,66,66,VOL,30,Uruguai
-Independiente,Franco Paredes,Franco Paredes,68,70,ZAG,27,Argentina
-Independiente,Luciano Cabral,Luciano Cabral,70,70,MEI,31,Chile
-Independiente,Matías Abaldo,Matías Abaldo,70,82,ATA,22,Uruguai
-Independiente,Walter Mazzantti,Walter Mazzantti,70,70,MEI,29,Argentina
-Independiente,Facundo Zabala,Facundo Zabala,71,74,LAT,27,Argentina
-Independiente,Tomás Parmo,Tomás Parmo,64,82,MEI,18,Argentina
-Independiente,Lautaro Millán,Lautaro Millán,63,78,MEI,20,Argentina
-Independiente,Enzo Taborda,Enzo Taborda,60,72,ATA,21,Argentina
-Independiente,Jonathan de Irastorza,Jonathan de Irastorza,58,70,LAT,20,Argentina
-Independiente,Sebastián Valdéz,Sebastián Valdéz,68,69,ZAG,30,Argentina
-Independiente,Fernando Closter,Fernando Closter,57,76,ZAG,18,Argentina
-Independiente,Rodrigo Rey,Rodrigo Rey,78,78,GOL,35,Argentina
-Independiente,Lucas Lavagnino,Lucas Lavagnino,64,74,GOL,21,Argentina
-Independiente,Mateo Morro,Mateo Morro,61,76,GOL,21,Argentina
-Independiente,Joaquín Blázquez,Joaquín Blázquez,65,73,GOL,25,Argentina
-Gimnasia La Plata,Lucas Castro,Lucas Castro,72,72,MEI,37,Argentina
-Gimnasia La Plata,Pedro Silva Torrejón,Pedro Silva Torrejón,71,71,LAT,29,Argentina
-Gimnasia La Plata,Juan Pintado,Juan Pintado,73,73,LAT,29,Uruguai
-Gimnasia La Plata,Júnior Moreno,Júnior Moreno,69,69,VOL,33,Venezuela
-Gimnasia La Plata,Bautista Merlini,Bautista Merlini,71,71,MEI,31,Argentina
-Gimnasia La Plata,Matías Melluso,Matías Melluso,70,71,LAT,28,Argentina
-Gimnasia La Plata,Alan Sosa,Alan Sosa,68,77,MEI,23,Argentina
-Gimnasia La Plata,Facundo Di Biasi,Facundo Di Biasi,66,77,VOL,21,Argentina
-Gimnasia La Plata,Augusto Max,Augusto Max,67,67,VOL,33,Argentina
-Gimnasia La Plata,Norberto Briasco,Norberto Briasco,68,68,ATA,30,Armênia
-Gimnasia La Plata,Jan Hurtado,Jan Hurtado,69,74,ATA,26,Venezuela
-Gimnasia La Plata,Leandro Mamut,Leandro Mamut,64,75,MEI,22,Argentina
-Gimnasia La Plata,Sebastián Lomónaco,Sebastián Lomónaco,68,69,ATA,27,Argentina
-Gimnasia La Plata,Fabricio Corbalán,Fabricio Corbalán,67,76,LAT,22,Argentina
-Gimnasia La Plata,Mateo Seoane,Mateo Seoane,64,74,MEI,22,Argentina
-Gimnasia La Plata,Juan Pérez,Juan Pérez,67,78,MEI,22,Colômbia
-Gimnasia La Plata,Santino Primante,Santino Primante,63,75,ATA,21,Argentina
-Gimnasia La Plata,Alejandro Piedrahita,Alejandro Piedrahita,68,77,MEI,23,Colômbia
-Gimnasia La Plata,Ivo Mammini,Ivo Mammini,66,75,ATA,23,Argentina
-Gimnasia La Plata,Santiago Villarreal,Santiago Villarreal,61,73,MEI,20,Argentina
-Gimnasia La Plata,Enzo Martínez,Enzo Martínez,71,73,ZAG,28,Uruguai
-Gimnasia La Plata,Manuel Panaro,Manuel Panaro,64,73,MEI,23,Argentina
-Gimnasia La Plata,Gastón Suso,Gastón Suso,72,72,ZAG,35,Argentina
-Gimnasia La Plata,Marcelo Torres,Marcelo Torres,65,66,ATA,28,Argentina
-Gimnasia La Plata,Maximiliano Zalazar,Maximiliano Zalazar,66,72,MEI,25,Argentina
-Gimnasia La Plata,Franco Torres,Franco Torres,66,67,MEI,27,Argentina
-Gimnasia La Plata,Renzo Giampaoli,Renzo Giampaoli,67,72,ZAG,26,Argentina
-Gimnasia La Plata,Germán Conti,Germán Conti,71,71,ZAG,32,Argentina
-Gimnasia La Plata,Juan Villalba,Juan Villalba,61,76,ZAG,20,Argentina
-Gimnasia La Plata,Valentín Peñalva,Valentín Peñalva,59,70,ZAG,23,Argentina
-Gimnasia La Plata,Jeremías Merlo,Jeremías Merlo,62,74,ATA,20,Argentina
-Gimnasia La Plata,Jorge de Asís,Jorge de Asís,59,73,ATA,20,Argentina
-Gimnasia La Plata,Juan Cortazzo,Juan Cortazzo,61,74,ZAG,20,Argentina
-Gimnasia La Plata,Nelson Insfrán,Nelson Insfrán,71,71,GOL,31,Argentina
-Gimnasia La Plata,Luis Ingolotti,Luis Ingolotti,68,73,GOL,26,Argentina
-Gimnasia La Plata,Julián Kadijevic,Julián Kadijevic,63,73,GOL,22,Argentina
-Belgrano,Lucas Zelarayán,Lucas Zelarayán,79,79,MEI,34,Armênia
-Belgrano,Lucas Menossi,Lucas Menossi,73,73,MEI,34,Argentina
-Belgrano,Nicolás Fernández,Nicolás Fernández,75,75,ATA,30,Argentina
-Belgrano,Ulises Sánchez,Ulises Sánchez,73,73,MEI,28,Argentina
-Belgrano,Francisco González Metilli,Francisco González Metilli,73,73,MEI,29,Argentina
-Belgrano,Facundo Quignon,Facundo Quignon,73,73,VOL,33,Argentina
-Belgrano,Elías López,Elías López,68,71,LAT,26,Argentina
-Belgrano,Adrián Spörle,Adrián Spörle,70,70,LAT,31,Argentina
-Belgrano,Santiago Longo,Santiago Longo,70,73,VOL,28,Argentina
-Belgrano,Franco Jara,Franco Jara,72,72,ATA,38,Argentina
-Belgrano,Federico Ricca,Federico Ricca,69,69,ZAG,31,Uruguai
-Belgrano,Rodrigo Saravia,Rodrigo Saravia,68,74,VOL,25,Uruguai
-Belgrano,Leonardo Morales,Leonardo Morales,74,74,ZAG,35,Argentina
-Belgrano,Gabriel Compagnucci,Gabriel Compagnucci,65,65,LAT,34,Argentina
-Belgrano,Gerónimo Heredia,Gerónimo Heredia,64,76,LAT,21,Argentina
-Belgrano,Lisandro López,Lisandro López,71,71,ZAG,36,Argentina
-Belgrano,Agustín Baldi,Agustín Baldi,65,76,ZAG,24,Argentina
-Belgrano,Tobias Ostchega,Tobias Ostchega,68,69,LAT,27,Argentina
-Belgrano,Juan Velázquez,Juan Velázquez,65,79,MEI,21,Argentina
-Belgrano,Julián Mavilla,Julián Mavilla,59,64,MEI,26,Argentina
-Belgrano,Lucas Passerini,Lucas Passerini,72,72,ATA,32,Argentina
-Belgrano,Ramiro Hernándes,Ramiro Hernándes,58,73,MEI,21,Argentina
-Belgrano,Jeremías Lucco,Jeremías Lucco,60,75,MEI,20,Argentina
-Belgrano,Alexis Maldonado,Alexis Maldonado,70,70,ZAG,28,Argentina
-Belgrano,Lucas Bernabéu,Lucas Bernabéu,57,65,ZAG,22,Argentina
-Belgrano,Gonzalo Zelarayán,Gonzalo Zelarayán,50,61,ATA,22,Argentina
-Belgrano,Thiago Cardozo,Thiago Cardozo,71,72,GOL,30,Uruguai
-Belgrano,Ignacio Chicco,Ignacio Chicco,69,71,GOL,30,Argentina
-Belgrano,Manuel Vicentini,Manuel Vicentini,64,64,GOL,35,Argentina
-Belgrano,Matías Daniele,Matías Daniele,54,65,GOL,22,Argentina
-Argentinos Juniors,Nicolás Oroz,Nicolás Oroz,73,73,MEI,32,Argentina
-Argentinos Juniors,Luciano Sánchez,Luciano Sánchez,69,69,LAT,32,Argentina
-Argentinos Juniors,Gabriel Florentín,Gabriel Florentín,68,71,MEI,27,Argentina
-Argentinos Juniors,Ismael Sosa,Ismael Sosa,70,70,MEI,39,Argentina
-Argentinos Juniors,Hernán López Muñoz,Hernán López Muñoz,73,77,MEI,25,Argentina
-Argentinos Juniors,Matías Giménez,Matías Giménez,70,73,ATA,27,Argentina
-Argentinos Juniors,Sebastián Prieto,Sebastián Prieto,69,69,LAT,33,Argentina
-Argentinos Juniors,Claudio Bravo,Claudio Bravo,68,68,LAT,29,Argentina
-Argentinos Juniors,Emiliano Viveros,Emiliano Viveros,64,72,ATA,23,Argentina
-Argentinos Juniors,Joaquín Gho,Joaquín Gho,67,75,MEI,23,Argentina
-Argentinos Juniors,Tómas Molina,Tómas Molina,71,71,ATA,31,Argentina
-Argentinos Juniors,Juan Cardozo,Juan Cardozo,62,74,MEI,22,Paraguai
-Argentinos Juniors,Lucas Gómez,Lucas Gómez,61,75,MEI,22,Argentina
-Argentinos Juniors,Lautaro Giaccone,Lautaro Giaccone,71,76,MEI,25,Argentina
-Argentinos Juniors,Kevin Coronel,Kevin Coronel,62,74,LAT,21,Argentina
-Argentinos Juniors,Francisco Álvarez,Francisco Álvarez,74,80,ZAG,26,Argentina
-Argentinos Juniors,Mateo Antoni,Mateo Antoni,68,79,ZAG,23,Uruguai
-Argentinos Juniors,E. Godoy,E. Godoy,70,70,ZAG,32,Argentina
-Argentinos Juniors,Manuel Brondo,Manuel Brondo,63,71,ATA,24,Argentina
-Argentinos Juniors,Lautaro Ovando,Lautaro Ovando,61,71,ATA,23,Argentina
-Argentinos Juniors,Gastón Bouhier,Gastón Bouhier,54,73,MEI,18,Argentina
-Argentinos Juniors,Ryoga Kida,Ryoga Kida,56,65,ATA,21,Japão
-Argentinos Juniors,Diego Rodríguez,Diego Rodríguez,74,74,GOL,37,Argentina
-Argentinos Juniors,Diego Porcel,Diego Porcel,55,65,ATA,21,Argentina
-Argentinos Juniors,Gonzalo Siri,Gonzalo Siri,62,72,GOL,23,Argentina
-Argentinos Juniors,Agustín Mangiaut,Agustín Mangiaut,61,70,GOL,22,Argentina
-Godoy Cruz,Gonzalo Abrego,Gonzalo Abrego,72,77,MEI,26,Argentina
-Godoy Cruz,Nicolás Fernández,Nicolás Fernández,71,72,MEI,28,Uruguai
-Godoy Cruz,Walter Montoya,Walter Montoya,69,69,MEI,33,Argentina
-Godoy Cruz,Vicente Poggi,Vicente Poggi,70,79,MEI,24,Uruguai
-Godoy Cruz,Juan Escobar,Juan Escobar,69,69,LAT,31,Paraguai
-Godoy Cruz,Leonardo Jara,Leonardo Jara,70,70,LAT,35,Argentina
-Godoy Cruz,Lucas Arce,Lucas Arce,70,70,LAT,28,Argentina
-Godoy Cruz,Agustin Valverde,Agustin Valverde,64,73,MEI,24,Argentina
-Godoy Cruz,Andrés Meli,Andrés Meli,69,74,LAT,25,Argentina
-Godoy Cruz,Daniel Barrea,Daniel Barrea,68,74,MEI,25,Argentina
-Godoy Cruz,Luciano Pascual,Luciano Pascual,62,73,MEI,22,Argentina
-Godoy Cruz,Tomás Pozzo,Tomás Pozzo,67,73,MEI,25,Argentina
-Godoy Cruz,Nahuel Ulariaga,Nahuel Ulariaga,69,76,ATA,24,Argentina
-Godoy Cruz,Santino Andino,Santino Andino,68,83,MEI,20,Argentina
-Godoy Cruz,Facundo Altamira,Facundo Altamira,69,75,MEI,24,Argentina
-Godoy Cruz,Mariano Santiago,Mariano Santiago,65,72,MEI,25,Argentina
-Godoy Cruz,Bastián Yáñez,Bastián Yáñez,69,75,MEI,25,Chile
-Godoy Cruz,Juan Morán,Juan Morán,65,76,LAT,20,Argentina
-Godoy Cruz,Agustín Villalobos,Agustín Villalobos,63,74,MEI,23,Argentina
-Godoy Cruz,Federico Rasmussen,Federico Rasmussen,72,72,ZAG,34,Argentina
-Godoy Cruz,Mateo Mendoza,Mateo Mendoza,70,81,ZAG,21,Argentina
-Godoy Cruz,M. González,M. González,65,76,VOL,22,Argentina
-Godoy Cruz,Misael Sosa,Misael Sosa,68,76,ATA,24,Argentina
-Godoy Cruz,Luca Martínez Dupuy,Luca Martínez Dupuy,67,74,ATA,25,México
-Godoy Cruz,Maximiliano Porcel,Maximiliano Porcel,64,78,MEI,20,Argentina
-Godoy Cruz,Facundo Ardiles,Facundo Ardiles,66,69,LAT,27,Argentina
-Godoy Cruz,Agustín Auzmendi,Agustín Auzmendi,67,67,ATA,29,Argentina
-Godoy Cruz,Francisco Facello,Francisco Facello,63,74,LAT,23,Argentina
-Godoy Cruz,Santiago Martínez,Santiago Martínez,61,72,MEI,22,Argentina
-Godoy Cruz,Tomás Rossi,Tomás Rossi,67,72,ZAG,27,Argentina
-Godoy Cruz,Leandro Quiroz,Leandro Quiroz,62,73,ZAG,22,Argentina
-Godoy Cruz,Franco Petroli,Franco Petroli,74,78,GOL,28,Argentina
-Godoy Cruz,Roberto Ramírez,Roberto Ramírez,70,72,GOL,30,Argentina
-Godoy Cruz,Edilson Salinas,Edilson Salinas,63,71,GOL,24,Argentina
-Godoy Cruz,Nicolás Claa,Nicolás Claa,59,71,GOL,21,Argentina
-Talleres,Ezequiel Unsain,Ezequiel Unsain,72,72,GOL,31,Argentina
-Talleres,Santino Barbi,Santino Barbi,59,64,GOL,21,Argentina
-Talleres,Santiago Fernández,Santiago Fernández,71,74,ZAG,21,Argentina
-Talleres,Román Riquelme,Román Riquelme,71,74,ZAG,24,Argentina
-Talleres,Valentín Fascendini,Valentín Fascendini,68,69,ZAG,23,Argentina
-Talleres,Matías Catalán,Matías Catalán,73,73,ZAG,34,Chile
-Talleres,Thiago Baroni,Thiago Baroni,53,61,ZAG,20,Argentina
-Talleres,Gonzalo Nuccio,Gonzalo Nuccio,54,64,ZAG,19,Argentina
-Talleres,Alexandro Maidana,Alexandro Maidana,71,74,LAT,21,Paraguai
-Talleres,Gabriel Báez,Gabriel Báez,71,71,LAT,31,Argentina
-Talleres,Augusto Schott,Augusto Schott,66,70,LAT,26,Argentina
-Talleres,Timoteo Chamorro,Timoteo Chamorro,60,69,LAT,20,Argentina
-Talleres,Tomás Olmos,Tomás Olmos,62,76,LAT,21,Argentina
-Talleres,Matías Galarza,Matías Galarza,73,82,VOL,24,Argentina
-Talleres,Juan Sforza,Juan Sforza,69,72,VOL,24,Argentina
-Talleres,Federico Fattori,Federico Fattori,71,71,VOL,34,Argentina
-Talleres,Bruno Trey,Bruno Trey,49,59,VOL,20,Argentina
-Talleres,Mateo Cáceres,Mateo Cáceres,66,77,MEI,24,Argentina
-Talleres,Matías Gómez,Matías Gómez,61,77,MEI,20,Argentina
-Talleres,Franco Cristaldo,Franco Cristaldo,75,75,MEI,30,Argentina
-Talleres,Lautaro Ortiz,Lautaro Ortiz,52,65,MEI,18,Argentina
-Talleres,Rick,Rick,61,62,ATA,27,Brasil
-Talleres,Valentín Depietri,Valentín Depietri,66,72,ATA,26,Argentina
-Talleres,Diego Valoyes,Diego Valoyes,71,71,ATA,30,Colômbia
-Talleres,Ignacio Alastra,Ignacio Alastra,51,73,ATA,19,Argentina
-Talleres,Emiliano Chiavassa,Emiliano Chiavassa,49,59,ATA,20,Argentina
-Talleres,Agustín Álvarez,Agustín Álvarez,72,74,ATA,25,Uruguai
-Talleres,Valentín Dávila,Valentín Dávila,66,75,ATA,19,Argentina
-Huracán,Sebastián Meza,Sebastián Meza,72,78,GOL,26,Argentina
-Huracán,Hernán Galíndez,Hernán Galíndez,74,74,GOL,39,Equador
-Huracán,Nazareno Durán,Nazareno Durán,58,72,GOL,22,Argentina
-Huracán,Máximo Palazzo,Máximo Palazzo,69,73,ZAG,21,Argentina
-Huracán,Hugo Nervo,Hugo Nervo,74,74,ZAG,35,Argentina
-Huracán,Fabio Pereyra,Fabio Pereyra,72,72,ZAG,36,Argentina
-Huracán,Daniel Zabala,Daniel Zabala,66,74,ZAG,23,Argentina
-Huracán,César Ibáñez,César Ibáñez,69,72,LAT,27,Argentina
-Huracán,Leandro Lescano,Leandro Lescano,63,72,LAT,23,Argentina
-Huracán,Lucas Blondel,Lucas Blondel,72,72,LAT,30,Suíça
-Huracán,Federico Vera,Federico Vera,68,68,LAT,28,Argentina
-Huracán,Ignacio Campo,Ignacio Campo,60,66,LAT,21,Argentina
-Huracán,Rodrigo Fernández Cedrés,Rodrigo Fernández Cedrés,66,66,VOL,30,Uruguai
-Huracán,Emmanuel Ojeda,Emmanuel Ojeda,67,68,VOL,29,Argentina
-Huracán,Lautaro Mora,Lautaro Mora,55,64,VOL,21,Argentina
-Huracán,Leonardo Gil,Leonardo Gil,70,70,MEI,35,Chile
-Huracán,Facundo Kalinger,Facundo Kalinger,68,72,MEI,21,Argentina
-Huracán,Santiago Luján,Santiago Luján,60,63,MEI,24,Argentina
-Huracán,Facundo Waller,Facundo Waller,72,72,MEI,29,Uruguai
-Huracán,Thaiel Peralta,Thaiel Peralta,62,74,MEI,18,Argentina
-Huracán,Óscar Romero,Óscar Romero,69,69,MEI,34,Paraguai
-Huracán,Óscar Cortés,Óscar Cortés,73,74,ATA,22,Colômbia
-Huracán,Juan Bisanz,Juan Bisanz,68,74,ATA,25,Argentina
-Huracán,Tomás Uribe,Tomás Uribe,53,65,ATA,19,Argentina
-Huracán,Jordy Caicedo,Jordy Caicedo,71,71,ATA,28,Equador
-Huracán,Bruno Barticciotto,Bruno Barticciotto,71,73,ATA,25,Chile
-Huracán,Ignacio Pussetto,Ignacio Pussetto,70,70,ATA,30,Argentina
-Unión de Santa Fe,Mauro Pittón,Mauro Pittón,71,71,MEI,31,Argentina
-Unión de Santa Fe,Bruno Pittón,Bruno Pittón,70,70,LAT,33,Argentina
-Unión de Santa Fe,Augusto Solari,Augusto Solari,71,71,MEI,34,Argentina
-Unión de Santa Fe,Claudio Corvalán,Claudio Corvalán,73,73,ZAG,37,Argentina
-Unión de Santa Fe,Mauricio Martínez,Mauricio Martínez,72,72,VOL,33,Argentina
-Unión de Santa Fe,Ezequiel Cañete,Ezequiel Cañete,67,70,MEI,27,Argentina
-Unión de Santa Fe,Cristian Tarragona,Cristian Tarragona,70,70,ATA,35,Argentina
-Unión de Santa Fe,Lucas Gamba,Lucas Gamba,69,69,ATA,39,Argentina
-Unión de Santa Fe,Franco Fragapane,Franco Fragapane,70,70,MEI,33,Argentina
-Unión de Santa Fe,Julián Palacios,Julián Palacios,69,69,MEI,27,Argentina
-Unión de Santa Fe,Jerónimo Domina,Jerónimo Domina,70,84,ATA,20,Argentina
-Unión de Santa Fe,Lautaro Vargas,Lautaro Vargas,67,78,LAT,21,Argentina
-Unión de Santa Fe,Francisco Gerometta,Francisco Gerometta,66,69,LAT,26,Argentina
-Unión de Santa Fe,Nicolás Paz,Nicolás Paz,70,79,ZAG,23,Argentina
-Unión de Santa Fe,Nicolás Palavecino,Nicolás Palavecino,62,72,MEI,23,Argentina
-Unión de Santa Fe,Marcelo Estigarribia,Marcelo Estigarribia,69,69,ATA,31,Argentina
-Unión de Santa Fe,Diego Díaz,Diego Díaz,61,69,ATA,24,Argentina
-Unión de Santa Fe,Rafael Profini,Rafael Profini,64,75,VOL,22,Argentina
-Unión de Santa Fe,Agustín Colazo,Agustín Colazo,61,63,ATA,25,Argentina
-Unión de Santa Fe,Valentín Fascendini,Valentín Fascendini,66,74,ZAG,23,Argentina
-Unión de Santa Fe,Maizon Rodríguez,Maizon Rodríguez,64,71,ZAG,23,Uruguai
-Unión de Santa Fe,Juan Ludueña,Juan Ludueña,64,71,ZAG,23,Argentina
-Unión de Santa Fe,Emiliano Álvarez,Emiliano Álvarez,61,68,LAT,25,Uruguai
-Unión de Santa Fe,Fernando Díaz,Fernando Díaz,58,65,LAT,25,Paraguai
-Unión de Santa Fe,Lucas Meuli,Lucas Meuli,63,69,GOL,25,Argentina
-Unión de Santa Fe,Tomás Durso,Tomás Durso,66,71,GOL,27,Argentina
-Instituto,Gastón Lódico,Gastón Lódico,75,76,MEI,28,Argentina
-Instituto,Juan Méndez,Juan Méndez,69,69,MEI,29,Argentina
-Instituto,Lucas Rodríguez,Lucas Rodríguez,69,69,LAT,32,Argentina
-Instituto,Jonás Acevedo,Jonás Acevedo,69,69,MEI,29,Argentina
-Instituto,Franco Díaz,Franco Díaz,69,75,VOL,25,Argentina
-Instituto,Alex Luna,Alex Luna,70,79,MEI,22,Argentina
-Instituto,Nicolás Cordero,Nicolás Cordero,69,72,ATA,27,Argentina
-Instituto,Matías Gallardo,Matías Gallardo,64,72,MEI,22,Argentina
-Instituto,Francis Mac Allister,Francis Mac Allister,70,70,VOL,30,Argentina
-Instituto,Juan Franco,Juan Franco,67,67,LAT,34,Paraguai
-Instituto,Stéfano Moreyra,Stéfano Moreyra,67,75,VOL,25,Argentina
-Instituto,Damián Puebla,Damián Puebla,67,74,MEI,23,Argentina
-Instituto,Matias Fonseca,Matias Fonseca,66,73,ATA,25,Uruguai
-Instituto,Elías Pereyra,Elías Pereyra,68,71,LAT,27,Argentina
-Instituto,Jhon Córdoba,Jhon Córdoba,69,72,MEI,26,Colômbia
-Instituto,Facundo Suárez,Facundo Suárez,67,67,ATA,32,Argentina
-Instituto,Jeremías Lázaro,Jeremías Lázaro,60,72,MEI,22,Argentina
-Instituto,Fernando Alarcón,Fernando Alarcón,72,72,ZAG,32,Argentina
-Instituto,Emanuel Beltrán,Emanuel Beltrán,64,65,LAT,28,Uruguai
-Instituto,Agustín Bravo,Agustín Bravo,62,71,ZAG,25,Argentina
-Instituto,Nicolás Zalazar,Nicolás Zalazar,67,69,ZAG,29,Argentina
-Instituto,Luca Klimowicz,Luca Klimowicz,60,74,ATA,22,Argentina
-Instituto,Manuel Romero,Manuel Romero,62,69,ATA,25,Paraguai
-Instituto,Leonel Mosevich,Leonel Mosevich,68,70,ZAG,29,Argentina
-Instituto,Matías Klimowicz,Matías Klimowicz,55,76,ATA,19,Equador
-Instituto,Lorenzo Albarracin,Lorenzo Albarracin,55,75,ATA,19,Argentina
-Instituto,Gonzalo Requena,Gonzalo Requena,61,68,ZAG,23,Argentina
-Instituto,Joaquín Papaleo,Joaquín Papaleo,68,68,GOL,32,Argentina
-Instituto,Emanuel Sittaro,Emanuel Sittaro,60,64,GOL,26,Argentina
-Sarmiento,Jonatan Gómez,Jonatan Gómez,71,71,MEI,36,Argentina
-Sarmiento,Alex Vigo,Alex Vigo,68,69,LAT,27,Argentina
-Sarmiento,Yair Arismendi,Yair Arismendi,67,67,LAT,28,Argentina
-Sarmiento,Carlos Villalba,Carlos Villalba,68,68,MEI,28,Argentina
-Sarmiento,Gastón González,Gastón González,69,75,ATA,25,Argentina
-Sarmiento,Manuel García,Manuel García,68,69,VOL,27,Argentina
-Sarmiento,Santiago Rodríguez,Santiago Rodríguez,70,70,ATA,28,Argentina
-Sarmiento,Facundo Roncaglia,Facundo Roncaglia,69,69,ZAG,39,Argentina
-Sarmiento,Juan Andrada,Juan Andrada,67,67,MEI,31,Argentina
-Sarmiento,Renzo Orihuela,Renzo Orihuela,68,74,ZAG,25,Uruguai
-Sarmiento,Emiliano Méndez,Emiliano Méndez,68,68,VOL,37,Argentina
-Sarmiento,Juan Insaurralde,Juan Insaurralde,70,70,ZAG,41,Argentina
-Sarmiento,Tomas Guiacobini,Tomas Guiacobini,66,76,VOL,22,Argentina
-Sarmiento,Federico Paradela,Federico Paradela,65,71,MEI,25,Argentina
-Sarmiento,Elián Gimenez,Elián Gimenez,64,72,MEI,22,Argentina
-Sarmiento,Gabriel Díaz Núñez,Gabriel Díaz Núñez,68,71,LAT,26,Argentina
-Sarmiento,Iván Morales,Iván Morales,68,69,ATA,27,Chile
-Sarmiento,Pablo Magnín,Pablo Magnín,68,68,ATA,36,Argentina
-Sarmiento,Joaquín Ardaiz,Joaquín Ardaiz,64,67,ATA,27,Uruguai
-Sarmiento,Franco Frías,Franco Frías,67,74,MEI,24,Argentina
-Sarmiento,Julián Contrera,Julián Contrera,64,73,ATA,23,Argentina
-Sarmiento,Matías Rosales,Matías Rosales,60,70,MEI,21,Argentina
-Sarmiento,Agustín Molina,Agustín Molina,59,71,ATA,20,Argentina
-Sarmiento,Jeremías Vallejos,Jeremías Vallejos,60,67,LAT,23,Argentina
-Sarmiento,Agustín Seyral,Agustín Seyral,60,70,ZAG,21,Argentina
-Sarmiento,Santiago Morales,Santiago Morales,64,70,ZAG,24,Argentina
-Sarmiento,Joel Godoy,Joel Godoy,59,71,LAT,21,Argentina
-Sarmiento,Lucas Acosta,Lucas Acosta,71,71,GOL,31,Argentina
-Sarmiento,Jhon Rentería,Jhon Rentería,50,63,ATA,20,Colômbia
-Sarmiento,José Devecchi,José Devecchi,70,71,GOL,31,Argentina
-Sarmiento,Thyago Ayala,Thyago Ayala,63,69,GOL,24,Argentina
-Independiente Rivadavia,Ezequiel Bonifacio,Ezequiel Bonifacio,70,70,LAT,32,Argentina
-Independiente Rivadavia,Luciano Gómez,Luciano Gómez,70,70,LAT,30,Argentina
-Independiente Rivadavia,Leonel Bucca,Leonel Bucca,69,71,MEI,27,Argentina
-Independiente Rivadavia,Luciano Abecasis,Luciano Abecasis,66,66,LAT,36,Argentina
-Independiente Rivadavia,Diego Tonetto,Diego Tonetto,67,67,MEI,37,Argentina
-Independiente Rivadavia,Mauricio Cardillo,Mauricio Cardillo,66,75,MEI,23,Argentina
-Independiente Rivadavia,Victorio Ramis,Victorio Ramis,67,67,ATA,32,Argentina
-Independiente Rivadavia,Mauro Peinipil,Mauro Peinipil,68,71,LAT,27,Argentina
-Independiente Rivadavia,Maximiliano Amarfil,Maximiliano Amarfil,65,71,MEI,24,Argentina
-Independiente Rivadavia,Adrián Arce,Adrián Arce,75,75,ATA,31,Paraguai
-Independiente Rivadavia,Tomás Bottari,Tomás Bottari,64,68,MEI,25,Argentina
-Independiente Rivadavia,Leonard Costa,Leonard Costa,67,70,ZAG,27,Uruguai
-Independiente Rivadavia,Nicolás Retamar,Nicolás Retamar,68,71,ATA,27,Argentina
-Independiente Rivadavia,Matías Fernandez,Matías Fernandez,63,70,MEI,25,Argentina
-Independiente Rivadavia,Thomas Ortega,Thomas Ortega,65,70,LAT,25,Argentina
-Independiente Rivadavia,Mateo Schwartz,Mateo Schwartz,60,74,MEI,22,Argentina
-Independiente Rivadavia,Santiago Muñoz,Santiago Muñoz,61,62,MEI,26,Colômbia
-Independiente Rivadavia,Pedro Souto,Pedro Souto,66,71,LAT,26,Argentina
-Independiente Rivadavia,Fernando Romero,Fernando Romero,64,69,ATA,26,Paraguai
-Independiente Rivadavia,Sheyko Studer,Sheyko Studer,68,77,ZAG,23,Argentina
-Independiente Rivadavia,Tomás Muro,Tomás Muro,64,70,MEI,24,Argentina
-Independiente Rivadavia,Santiago Flores,Santiago Flores,68,75,ZAG,25,Argentina
-Independiente Rivadavia,Gonzalo Álvez,Gonzalo Álvez,64,73,MEI,22,Argentina
-Independiente Rivadavia,Matías Valenti,Matías Valenti,66,73,LAT,23,Argentina
-Independiente Rivadavia,Laureano Rodriguez,Laureano Rodriguez,61,70,VOL,23,Argentina
-Independiente Rivadavia,Iván Villalba,Iván Villalba,68,68,ZAG,31,Paraguai
-Independiente Rivadavia,Juan Barbieri,Juan Barbieri,62,62,ATA,29,Argentina
-Independiente Rivadavia,Alejo Osella,Alejo Osella,62,69,LAT,25,Argentina
-Independiente Rivadavia,Fabrizio Sartori,Fabrizio Sartori,64,73,ATA,24,Argentina
-Independiente Rivadavia,Gonzalo Marinelli,Gonzalo Marinelli,68,68,GOL,37,Argentina
-Independiente Rivadavia,Agustín Lastra,Agustín Lastra,63,71,GOL,25,Argentina
-Atlético Tucumán,Carlos Auzqui,Carlos Auzqui,70,70,MEI,35,Argentina
-Atlético Tucumán,Damián Martínez,Damián Martínez,69,69,LAT,36,Argentina
-Atlético Tucumán,Nicolás Castro,Nicolás Castro,67,67,MEI,36,Argentina
-Atlético Tucumán,Ramiro Ruiz Rodríguez,Ramiro Ruiz Rodríguez,70,75,ATA,26,Argentina
-Atlético Tucumán,Kevin Lopez,Kevin Lopez,68,77,MEI,24,Argentina
-Atlético Tucumán,Adrián Sánchez,Adrián Sánchez,70,73,MEI,27,Argentina
-Atlético Tucumán,Leandro Díaz,Leandro Díaz,73,73,ATA,34,Argentina
-Atlético Tucumán,Renzo Tesuri,Renzo Tesuri,70,70,MEI,30,Argentina
-Atlético Tucumán,Rodrigo Melo,Rodrigo Melo,69,69,VOL,30,Argentina
-Atlético Tucumán,Kevin Ortiz,Kevin Ortiz,69,75,VOL,25,Argentina
-Atlético Tucumán,Juan Infante,Juan Infante,69,69,LAT,30,Argentina
-Atlético Tucumán,Gianluca Ferrari,Gianluca Ferrari,70,72,ZAG,29,Argentina
-Atlético Tucumán,Fausto Grillo,Fausto Grillo,70,70,ZAG,33,Argentina
-Atlético Tucumán,Miguel Brizuela,Miguel Brizuela,70,72,ZAG,29,Argentina
-Atlético Tucumán,Franco Nicola,Franco Nicola,65,72,MEI,24,Uruguai
-Atlético Tucumán,Nicolás Laméndola,Nicolás Laméndola,61,62,MEI,27,Argentina
-Atlético Tucumán,Maximiliano Villa,Maximiliano Villa,69,69,LAT,29,Uruguai
-Atlético Tucumán,Lucas Román,Lucas Román,65,77,MEI,22,Itália
-Atlético Tucumán,Mateo Bajamich,Mateo Bajamich,62,65,ATA,26,Argentina
-Atlético Tucumán,Lisandro Cabrera,Lisandro Cabrera,58,59,ATA,28,Argentina
-Atlético Tucumán,Marcelo Ortíz,Marcelo Ortíz,67,67,ZAG,32,Argentina
-Atlético Tucumán,Ignacio Galván,Ignacio Galván,60,69,LAT,23,Argentina
-Atlético Tucumán,Moisés Brandán,Moisés Brandán,62,67,LAT,25,Argentina
-Atlético Tucumán,Lautaro Godoy,Lautaro Godoy,55,64,MEI,23,Argentina
-Atlético Tucumán,Luciano Vallejo,Luciano Vallejo,58,71,ZAG,22,Argentina
-Atlético Tucumán,Clever Ferreira,Clever Ferreira,58,68,ZAG,23,Paraguai
-Atlético Tucumán,Matías Mansilla,Matías Mansilla,73,73,GOL,30,Argentina
-Atlético Tucumán,Juan González,Juan González,62,62,GOL,33,Uruguai
-Atlético Tucumán,Patricio Albornoz,Patricio Albornoz,59,65,GOL,26,Argentina
-Tigre,Jalil Elías,Jalil Elías,71,71,VOL,30,Síria
-Tigre,Sebastián Medina,Sebastián Medina,68,71,MEI,26,Argentina
-Tigre,Julián López,Julián López,70,73,VOL,26,Argentina
-Tigre,Jabes Saralegui,Jabes Saralegui,67,75,MEI,23,Argentina
-Tigre,Bruno Leyes,Bruno Leyes,70,77,VOL,24,Argentina
-Tigre,Gonzalo Piñeiro,Gonzalo Piñeiro,65,68,MEI,25,Argentina
-Tigre,Simón Rivero,Simón Rivero,66,77,MEI,23,Argentina
-Tigre,Martín Garay,Martín Garay,69,70,LAT,27,Argentina
-Tigre,Braian Martínez,Braian Martínez,66,67,MEI,26,Argentina
-Tigre,Héctor Fertoli,Héctor Fertoli,68,68,MEI,31,Argentina
-Tigre,Diego Sosa,Diego Sosa,68,68,LAT,29,Argentina
-Tigre,Santiago González,Santiago González,67,75,MEI,23,Argentina
-Tigre,Nahuel Banegas,Nahuel Banegas,70,70,LAT,29,Argentina
-Tigre,Martín Ortega,Martín Ortega,67,68,LAT,26,Argentina
-Tigre,Darío Sarmiento,Darío Sarmiento,66,73,MEI,23,Argentina
-Tigre,Ignacio Russo,Ignacio Russo,67,70,ATA,25,Argentina
-Tigre,Joaquín Laso,Joaquín Laso,70,70,ZAG,36,Argentina
-Tigre,Valentín Moreno,Valentín Moreno,63,70,LAT,23,Argentina
-Tigre,Guillermo Soto,Guillermo Soto,67,67,LAT,32,Chile
-Tigre,Alfio Oviedo,Alfio Oviedo,68,68,ATA,30,Paraguai
-Tigre,Blas Armoa,Blas Armoa,67,70,MEI,26,Paraguai
-Tigre,Federico Álvarez,Federico Álvarez,63,63,LAT,31,Argentina
-Tigre,Manuel Fernández,Manuel Fernández,64,74,MEI,21,Argentina
-Tigre,Á. Marchese,Á. Marchese,63,73,LAT,21,Argentina
-Tigre,Ramón Arias,Ramón Arias,66,66,ZAG,34,Uruguai
-Tigre,Alan Barrionuevo,Alan Barrionuevo,66,66,ZAG,29,Argentina
-Tigre,Tomás Sultani,Tomás Sultani,67,71,GOL,28,Argentina
-Tigre,Alan Sosa,Alan Sosa,64,64,GOL,30,Argentina
-Tigre,Felipe Zenobio,Felipe Zenobio,69,72,GOL,26,Argentina
-Aldosivi,Ignacio Guerrico,Ignacio Guerrico,71,71,LAT,28,Argentina
-Aldosivi,Justo Giani,Justo Giani,71,72,MEI,27,Argentina
-Aldosivi,Marcelo Esponda,Marcelo Esponda,66,73,VOL,23,Argentina
-Aldosivi,Tobías Leiva,Tobías Leiva,67,75,MEI,22,Argentina
-Aldosivi,Matías García,Matías García,68,68,MEI,34,Argentina
-Aldosivi,Néstor Breitenbruch,Néstor Breitenbruch,70,70,ZAG,30,Argentina
-Aldosivi,Federico Gino,Federico Gino,67,67,MEI,33,Uruguai
-Aldosivi,Roberto Bochi,Roberto Bochi,66,66,VOL,36,Argentina
-Aldosivi,Lucio Falasco,Lucio Falasco,63,71,MEI,22,Argentina
-Aldosivi,Agustín Palavecino,Agustín Palavecino,68,76,MEI,23,Argentina
-Aldosivi,Giuliano Cerato,Giuliano Cerato,66,66,LAT,28,Argentina
-Aldosivi,Gonzalo Mottes,Gonzalo Mottes,70,70,ZAG,28,Argentina
-Aldosivi,Fernando Román,Fernando Román,66,66,LAT,27,Paraguai
-Aldosivi,Gabriel Paredes,Gabriel Paredes,63,71,LAT,22,Argentina
-Aldosivi,Franco Rami,Franco Rami,67,74,ATA,23,Argentina
-Aldosivi,Lautaro Chávez,Lautaro Chávez,65,68,MEI,25,Argentina
-Aldosivi,Rodrigo González,Rodrigo González,68,71,LAT,26,Argentina
-Aldosivi,Tiago Serrago,Tiago Serrago,67,77,MEI,22,Argentina
-Aldosivi,Tobías Cervera,Tobías Cervera,65,74,ATA,23,Síria
-Aldosivi,Natanael Guzmán,Natanael Guzmán,66,67,MEI,26,Argentina
-Aldosivi,Tomás Kummer,Tomás Kummer,63,73,ZAG,21,Argentina
-Aldosivi,Santiago Laquidain,Santiago Laquidain,63,69,ZAG,25,Argentina
-Aldosivi,Juan Achetoni,Juan Achetoni,55,68,VOL,21,Argentina
-Aldosivi,Yonathan Cabral,Yonathan Cabral,67,67,ZAG,34,Argentina
-Aldosivi,Alejandro Villarreal,Alejandro Villarreal,58,71,ATA,21,Colômbia
-Aldosivi,Santiago Moya,Santiago Moya,61,74,ZAG,23,Argentina
-Aldosivi,Sebastián Moyano,Sebastián Moyano,71,71,GOL,35,Argentina
-Aldosivi,Jorge Carranza,Jorge Carranza,70,70,GOL,45,Argentina
-Aldosivi,Nahuel González,Nahuel González,63,73,GOL,22,Argentina
-Central Córdoba,José Florentín,José Florentín,71,71,MEI,30,Paraguai
-Central Córdoba,Braian Cufré,Braian Cufré,68,68,LAT,29,Argentina
-Central Córdoba,Iván Gómez,Iván Gómez,70,70,MEI,29,Argentina
-Central Córdoba,Cristian Vega,Cristian Vega,68,68,MEI,32,Argentina
-Central Córdoba,Leonardo Heredia,Leonardo Heredia,71,71,ATA,30,Argentina
-Central Córdoba,Jonathan Galván,Jonathan Galván,70,70,ZAG,34,Argentina
-Central Córdoba,Iván Pillud,Iván Pillud,67,67,LAT,40,Argentina
-Central Córdoba,Gastón Verón,Gastón Verón,71,77,ATA,25,Argentina
-Central Córdoba,Sebastián Cristóforo,Sebastián Cristóforo,68,68,VOL,32,Uruguai
-Central Córdoba,Matías Vera,Matías Vera,67,67,VOL,30,Argentina
-Central Córdoba,David Zalazar,David Zalazar,68,74,ATA,24,Argentina
-Central Córdoba,Matías Godoy,Matías Godoy,68,76,MEI,24,Argentina
-Central Córdoba,Franco Alfonso,Franco Alfonso,67,72,MEI,24,Argentina
-Central Córdoba,Leonardo Marchi,Leonardo Marchi,65,65,LAT,29,Argentina
-Central Córdoba,Fernando Juárez,Fernando Juárez,63,66,VOL,27,Argentina
-Central Córdoba,Matías Perelló,Matías Perelló,64,70,MEI,24,Argentina
-Central Córdoba,Juan Pignani,Juan Pignani,66,75,ZAG,25,Argentina
-Central Córdoba,Lucas Besozzi,Lucas Besozzi,68,75,MEI,23,Argentina
-Central Córdoba,Santiago Moyano,Santiago Moyano,65,66,LAT,28,Argentina
-Central Córdoba,Lucas Varaldo,Lucas Varaldo,63,72,ATA,24,Argentina
-Central Córdoba,Facundo Mansilla,Facundo Mansilla,68,73,ZAG,27,Argentina
-Central Córdoba,Fernando Martínez,Fernando Martínez,62,67,LAT,26,Argentina
-Central Córdoba,Favio Cabral,Favio Cabral,64,71,ATA,25,Argentina
-Central Córdoba,Diego Barrera,Diego Barrera,61,72,MEI,22,Argentina
-Central Córdoba,Gonzalo Trindade,Gonzalo Trindade,60,69,LAT,22,Argentina
-Central Córdoba,Nazareno Funez,Nazareno Funez,62,67,ATA,25,Argentina
-Central Córdoba,Ignacio Galván Vittar,Ignacio Galván Vittar,60,69,ZAG,22,Argentina
-Central Córdoba,Yuri Casermeiro,Yuri Casermeiro,58,65,ZAG,24,Argentina
-Central Córdoba,Alan Aguerre,Alan Aguerre,69,69,GOL,35,Argentina
-Central Córdoba,Juan Zozaya,Juan Zozaya,63,68,GOL,24,Argentina
-Central Córdoba,Javier Vallejos,Javier Vallejos,59,66,GOL,23,Argentina
-Central Córdoba,Lautaro Bursich,Lautaro Bursich,61,69,GOL,23,Argentina
-Barracas Central,Iván Tapia,Iván Tapia,71,74,MEI,27,Argentina
-Barracas Central,Rodrigo Insua,Rodrigo Insua,70,71,LAT,28,Argentina
-Barracas Central,Facundo Mater,Facundo Mater,69,70,LAT,28,Síria
-Barracas Central,Nahuel Barrios,Nahuel Barrios,74,74,ATA,28,Argentina
-Barracas Central,Jhonatan Candia,Jhonatan Candia,68,68,ATA,31,Uruguai
-Barracas Central,Manuel Duarte,Manuel Duarte,64,71,MEI,24,Argentina
-Barracas Central,Dardo Miloc,Dardo Miloc,69,69,VOL,35,Argentina
-Barracas Central,Siro Rosane,Siro Rosane,67,73,VOL,26,Argentina
-Barracas Central,Dylan Glaby,Dylan Glaby,67,67,VOL,30,Argentina
-Barracas Central,Tomás Porra,Tomás Porra,65,76,MEI,22,Argentina
-Barracas Central,Facundo Bruera,Facundo Bruera,71,72,ATA,27,Argentina
-Barracas Central,Maximiliano Puig,Maximiliano Puig,63,66,MEI,25,Argentina
-Barracas Central,Gonzalo Morales,Gonzalo Morales,69,78,ATA,23,Argentina
-Barracas Central,Yonatthan Rak,Yonatthan Rak,71,71,ZAG,32,Uruguai
-Barracas Central,Nicolás Blandi,Nicolás Blandi,65,65,ATA,36,Argentina
-Barracas Central,Ignacio Tapia,Ignacio Tapia,60,74,MEI,21,Argentina
-Barracas Central,Rafael Barrios,Rafael Barrios,66,66,LAT,33,Argentina
-Barracas Central,Alex Juárez,Alex Juárez,59,66,MEI,21,Argentina
-Barracas Central,Nicolás Capraro,Nicolás Capraro,67,70,ZAG,28,Argentina
-Barracas Central,Agustin Irazoque,Agustin Irazoque,65,68,ZAG,26,Argentina
-Barracas Central,Fernando Tobio,Fernando Tobio,70,70,ZAG,36,Argentina
-Barracas Central,Nicolás Demartini,Nicolás Demartini,68,72,ZAG,26,Argentina
-Barracas Central,Thiago Perugini,Thiago Perugini,60,76,ATA,21,Argentina
-Barracas Central,Facundo Kruger,Facundo Kruger,62,66,ATA,26,Argentina
-Barracas Central,Kevin Jappert,Kevin Jappert,59,74,ZAG,22,Argentina
-Barracas Central,Iván Guaraz,Iván Guaraz,56,69,ATA,21,Argentina
-Barracas Central,Marcos Ledesma,Marcos Ledesma,70,70,GOL,29,Argentina
-Barracas Central,Marcelo Miño,Marcelo Miño,62,65,GOL,28,Argentina
-San Martín de San Juan,Diego González,Diego González,70,70,MEI,38,Argentina
-San Martín de San Juan,Jonathan Menéndez,Jonathan Menéndez,70,70,MEI,32,Argentina
-San Martín de San Juan,Tomás Escalante,Tomás Escalante,65,68,MEI,27,Argentina
-San Martín de San Juan,Marco Iacobellis,Marco Iacobellis,67,70,MEI,26,Argentina
-San Martín de San Juan,Santiago Salle,Santiago Salle,62,75,LAT,22,Argentina
-San Martín de San Juan,Horacio Tijanovich,Horacio Tijanovich,67,67,MEI,30,Argentina
-San Martín de San Juan,Sebastián Jaurena,Sebastián Jaurena,62,65,MEI,27,Argentina
-San Martín de San Juan,Ayrton Portillo,Ayrton Portillo,62,65,MEI,25,Argentina
-San Martín de San Juan,Tomás Fernández,Tomás Fernández,66,66,MEI,27,Argentina
-San Martín de San Juan,Nicólas Watson,Nicólas Watson,65,68,VOL,28,Argentina
-San Martín de San Juan,Ignacio Maestro Puch,Ignacio Maestro Puch,68,79,ATA,22,Argentina
-San Martín de San Juan,Lucas Diarte,Lucas Diarte,69,69,LAT,33,Argentina
-San Martín de San Juan,Pablo García,Pablo García,67,68,MEI,27,Uruguai
-San Martín de San Juan,Esteban Burgos,Esteban Burgos,68,68,ZAG,34,Argentina
-San Martín de San Juan,Sebastián Gonzalez,Sebastián Gonzalez,63,63,MEI,34,Argentina
-San Martín de San Juan,Franco Toloza,Franco Toloza,64,64,ATA,32,Argentina
-San Martín de San Juan,Tomás Lecanda,Tomás Lecanda,64,75,ZAG,24,Argentina
-San Martín de San Juan,Nicolás Pelaitay,Nicolás Pelaitay,61,61,VOL,33,Argentina
-San Martín de San Juan,Alejandro Molina,Alejandro Molina,64,64,LAT,28,Argentina
-San Martín de San Juan,Julián Marchio,Julián Marchio,61,69,ZAG,25,Argentina
-San Martín de San Juan,Gonzalo Lucero,Gonzalo Lucero,58,68,LAT,22,Argentina
-San Martín de San Juan,Federico Anselmo,Federico Anselmo,64,64,ATA,32,Argentina
-San Martín de San Juan,Leonel Álvarez,Leonel Álvarez,62,62,LAT,30,Argentina
-San Martín de San Juan,Lucas Acosta,Lucas Acosta,58,73,MEI,21,Argentina
-San Martín de San Juan,Luciano Recalde,Luciano Recalde,67,67,ZAG,30,Argentina
-San Martín de San Juan,Rodrigo Cáseres,Rodrigo Cáseres,64,66,ZAG,28,Argentina
-San Martín de San Juan,Federico Bonansea,Federico Bonansea,64,68,GOL,28,Argentina
-San Martín de San Juan,Matías Borgogno,Matías Borgogno,65,69,GOL,27,Argentina
-San Martín de San Juan,Maximiliano Velazco,Maximiliano Velazco,60,61,GOL,31,Argentina
-San Lorenzo,Nery Domínguez,Nery Domínguez,72,72,ZAG,36,Argentina
-San Lorenzo,Nicolás Tripichio,Nicolás Tripichio,73,73,LAT,30,Argentina
-San Lorenzo,Andrés Vombergar,Andrés Vombergar,74,74,ATA,31,Eslovênia
-San Lorenzo,Manuel Insaurralde,Manuel Insaurralde,66,69,MEI,27,Argentina
-San Lorenzo,Ezequiel Cerutti,Ezequiel Cerutti,70,70,MEI,34,Argentina
-San Lorenzo,Alexis Cuello,Alexis Cuello,68,72,ATA,26,Argentina
-San Lorenzo,Diego Herazo,Diego Herazo,71,71,ATA,30,Colômbia
-San Lorenzo,Elías Báez,Elías Báez,67,78,LAT,21,Argentina
-San Lorenzo,Matías Reali,Matías Reali,70,70,ATA,29,Argentina
-San Lorenzo,Gastón Hernández,Gastón Hernández,73,76,ZAG,28,Argentina
-San Lorenzo,Teo Rodríguez Pagano,Teo Rodríguez Pagano,63,77,LAT,20,Argentina
-San Lorenzo,Francisco Perruzzi,Francisco Perruzzi,65,74,VOL,25,Argentina
-San Lorenzo,Agustín Ladstatter,Agustín Ladstatter,60,77,MEI,21,Argentina
-San Lorenzo,Valentín Escalante,Valentín Escalante,62,75,MEI,22,Argentina
-San Lorenzo,Johan Romaña,Johan Romaña,74,77,ZAG,27,Colômbia
-San Lorenzo,Ezequiel Herrera,Ezequiel Herrera,62,73,LAT,23,Argentina
-San Lorenzo,Juan Rattalino,Juan Rattalino,58,70,MEI,22,Argentina
-San Lorenzo,Nahuel Arias,Nahuel Arias,60,73,LAT,21,Argentina
-San Lorenzo,Facundo Gulli,Facundo Gulli,59,74,MEI,20,Argentina
-San Lorenzo,Ignacio Perruzzi,Ignacio Perruzzi,63,79,VOL,21,Argentina
-San Lorenzo,Fabricio López,Fabricio López,62,71,LAT,23,Argentina
-San Lorenzo,Daniel Herrera,Daniel Herrera,62,74,ZAG,22,Argentina
-San Lorenzo,Ramiro Pedroza,Ramiro Pedroza,57,78,ZAG,19,Argentina
-San Lorenzo,Maximiliano Zelaya,Maximiliano Zelaya,60,62,ZAG,29,Argentina
-San Lorenzo,Branco Salinardi,Branco Salinardi,55,77,ATA,19,Argentina
-San Lorenzo,Facundo Altamirano,Facundo Altamirano,71,73,GOL,30,Argentina
-San Lorenzo,Mateo Clemente,Mateo Clemente,59,69,GOL,24,Argentina
-Banfield,Santiago López García,Santiago López García,66,66,MEI,28,Argentina
-Banfield,Julio Furch,Julio Furch,75,75,ATA,37,Argentina
-Banfield,Frank Castañeda,Frank Castañeda,70,70,MEI,32,Colômbia
-Banfield,Sergio Vittor,Sergio Vittor,70,70,ZAG,37,Argentina
-Banfield,Martín Río,Martín Río,70,76,MEI,25,Argentina
-Banfield,Tomás Nasif,Tomás Nasif,70,80,ATA,22,Argentina
-Banfield,Juan Alfaro,Juan Alfaro,66,69,LAT,26,Argentina
-Banfield,Mauro Méndez,Mauro Méndez,69,70,ATA,27,Uruguai
-Banfield,Lautaro Ríos,Lautaro Ríos,67,70,MEI,25,Argentina
-Banfield,Agustín Obando,Agustín Obando,65,68,MEI,26,Argentina
-Banfield,Agustín Alaniz,Agustín Alaniz,68,75,ATA,24,Uruguai
-Banfield,Juan Iribarren,Juan Iribarren,65,73,LAT,23,Argentina
-Banfield,Gonzalo Ríos,Gonzalo Ríos,68,69,MEI,27,Argentina
-Banfield,Santiago Esquivel,Santiago Esquivel,64,74,VOL,22,Argentina
-Banfield,Tiziano Perrotta,Tiziano Perrotta,63,77,ATA,19,Argentina
-Banfield,Rodrigo Auzmendi,Rodrigo Auzmendi,66,72,ATA,25,Argentina
-Banfield,Gabriel Vega,Gabriel Vega,65,72,MEI,24,Argentina
-Banfield,Bruno Sepúlveda,Bruno Sepúlveda,69,69,ATA,33,Argentina
-Banfield,Marcos Arturia,Marcos Arturia,65,65,ATA,28,Argentina
-Banfield,Ignacio Abraham,Ignacio Abraham,66,66,LAT,28,Argentina
-Banfield,Lucas Palavecino,Lucas Palavecino,60,68,VOL,22,Argentina
-Banfield,Matías González,Matías González,65,72,MEI,24,Argentina
-Banfield,Nicolás Meriano,Nicolás Meriano,69,72,ZAG,25,Argentina
-Banfield,Danilo Arboleda,Danilo Arboleda,70,70,ZAG,31,Colômbia
-Banfield,Tomás Adoryán,Tomás Adoryán,64,70,MEI,24,Argentina
-Banfield,Brandon Oviedo,Brandon Oviedo,63,75,ZAG,21,Argentina
-Banfield,Santiago Daniele,Santiago Daniele,63,75,ZAG,20,Argentina
-Banfield,Joaquín Pombo,Joaquín Pombo,66,72,ZAG,25,Argentina
-Banfield,Lisandro Piñero,Lisandro Piñero,60,76,MEI,19,Argentina
-Banfield,Facundo Sanguinetti,Facundo Sanguinetti,70,76,GOL,25,Argentina
-Deportivo Riestra,Rodrigo Sayavedra,Rodrigo Sayavedra,64,64,LAT,31,Argentina
-Deportivo Riestra,Milton Céliz,Milton Céliz,63,63,MEI,34,Argentina
-Deportivo Riestra,Pablo Monje,Pablo Monje,63,63,MEI,29,Argentina
-Deportivo Riestra,Alexander Díaz,Alexander Díaz,67,72,ATA,26,Argentina
-Deportivo Riestra,Y. Goitia,Y. Goitia,66,66,VOL,31,Argentina
-Deportivo Riestra,Ariel Muñoz,Ariel Muñoz,61,68,MEI,25,Argentina
-Deportivo Riestra,Braian Guille,Braian Guille,64,64,ATA,29,Argentina
-Deportivo Riestra,Jonathan Herrera,Jonathan Herrera,69,69,ATA,34,Argentina
-Deportivo Riestra,Nicolás Benegas,Nicolás Benegas,68,68,ATA,30,Argentina
-Deportivo Riestra,Rodrigo Gallo,Rodrigo Gallo,62,68,LAT,25,Argentina
-Deportivo Riestra,Leonardo Landriel,Leonardo Landriel,61,61,MEI,32,Argentina
-Deportivo Riestra,Nicolás Sansotre,Nicolás Sansotre,64,64,LAT,32,Argentina
-Deportivo Riestra,Pedro Ramírez,Pedro Ramírez,62,67,LAT,26,Argentina
-Deportivo Riestra,Mariano Bracamonte,Mariano Bracamonte,63,65,LAT,27,Argentina
-Deportivo Riestra,Mateo Ramírez,Mateo Ramírez,60,60,MEI,31,Argentina
-Deportivo Riestra,Miguel Barbieri,Miguel Barbieri,69,69,ZAG,32,Argentina
-Deportivo Riestra,Santiago Vera,Santiago Vera,59,60,MEI,27,Argentina
-Deportivo Riestra,Gabriel Obredor,Gabriel Obredor,62,62,ATA,29,Argentina
-Deportivo Riestra,Cristian Paz,Cristian Paz,65,65,ZAG,31,Argentina
-Deportivo Riestra,Antony Alonso,Antony Alonso,61,62,ATA,28,Uruguai
-Deportivo Riestra,Carlos Gugenheim,Carlos Gugenheim,57,66,ATA,22,Argentina
-Deportivo Riestra,Juan Randazzo,Juan Randazzo,62,62,ZAG,31,Argentina
-Deportivo Riestra,Nicolás Caro Torres,Nicolás Caro Torres,65,65,ZAG,31,Argentina
-Deportivo Riestra,Franco Fagúndez,Franco Fagúndez,60,62,ATA,27,Uruguai
-Deportivo Riestra,Yeison Murillo,Yeison Murillo,65,65,ZAG,32,Colômbia
-Deportivo Riestra,Facundo Mino,Facundo Mino,61,63,ZAG,26,Argentina
-Deportivo Riestra,Eric Tovo,Eric Tovo,63,63,ZAG,34,Argentina
-Deportivo Riestra,Jaime Barceló,Jaime Barceló,61,64,GOL,26,Argentina
-Deportivo Riestra,Ignacio Arce,Ignacio Arce,72,72,GOL,34,Argentina
-Deportivo Riestra,Nahuel Manganelli,Nahuel Manganelli,60,67,GOL,25,Argentina
+clube,nome_original,nome,overall,potencial,posicao,idade,pais,id
+River Plate,Santiago Beltrán,Santiago Beltrán,73,73,GOL,22,Argentina,R13180
+River Plate,Ezequiel Centurión,Ezequiel Centurión,70,70,GOL,29,Argentina,R13181
+River Plate,Lautaro Rivero,Lautaro Rivero,75,81,ZAG,23,Argentina,R13182
+River Plate,Lucas Martínez Quarta,Lucas Martínez Quarta,77,77,ZAG,30,Argentina,R13183
+River Plate,Tobías Ramírez,Tobías Ramírez,70,78,ZAG,20,Argentina,R13184
+River Plate,Juan Carlos Portillo,Juan Carlos Portillo,76,82,ZAG,26,Argentina,R13185
+River Plate,Nicolás Otamendi,Nicolás Otamendi,78,78,ZAG,38,Argentina,R13186
+River Plate,Facundo González,Facundo González,60,68,ZAG,20,Argentina,R13187
+River Plate,Francisco Ortega,Francisco Ortega,78,78,LAT,27,Argentina,R13188
+River Plate,Marcos Acuña,Marcos Acuña,78,78,LAT,35,Argentina,R13189
+River Plate,Gonzalo Montiel,Gonzalo Montiel,78,78,LAT,29,Argentina,R13190
+River Plate,Giovanni González,Giovanni González,73,73,LAT,32,Uruguai,R13191
+River Plate,Aníbal Moreno,Aníbal Moreno,77,77,VOL,27,Argentina,R13192
+River Plate,Fausto Vera,Fausto Vera,75,76,VOL,26,Argentina,R13193
+River Plate,Lucas Silva,Lucas Silva,59,69,VOL,19,Argentina,R13194
+River Plate,Tobías Andrada,Tobías Andrada,72,83,MEI,19,Argentina,R13195
+River Plate,Mauro Arambarri,Mauro Arambarri,78,78,MEI,31,Uruguai,R13196
+River Plate,Lautaro Pereyra,Lautaro Pereyra,60,73,MEI,18,Argentina,R13197
+River Plate,Thiago Almada,Thiago Almada,81,83,MEI,25,Argentina,R13198
+River Plate,Tomás Galván,Tomás Galván,74,75,MEI,26,Argentina,R13199
+River Plate,Juan Cruz Meza,Juan Cruz Meza,65,82,MEI,18,Argentina,R13200
+River Plate,Ángel Correa,Ángel Correa,78,78,ATA,31,Argentina,R13201
+River Plate,Lucas Beltrán,Lucas Beltrán,76,81,ATA,25,Argentina,R13202
+River Plate,Sebastián Driussi,Sebastián Driussi,77,77,ATA,30,Argentina,R13203
+River Plate,Rafael Santos Borré,Rafael Santos Borré,75,75,ATA,31,Colômbia,R13204
+River Plate,Agustín Ruberto,Agustín Ruberto,68,82,ATA,20,Argentina,R13205
+Boca Juniors,Álvaro Montero,Álvaro Montero,74,74,GOL,31,Colômbia,R13206
+Boca Juniors,Leandro Brey,Leandro Brey,69,79,GOL,24,Argentina,R13207
+Boca Juniors,Agustín Marchesín,Agustín Marchesín,77,77,GOL,38,Argentina,R13208
+Boca Juniors,Javier García,Javier García,69,69,GOL,39,Argentina,R13209
+Boca Juniors,Lautaro Di Lollo,Lautaro Di Lollo,75,81,ZAG,22,Argentina,R13210
+Boca Juniors,Ayrton Costa,Ayrton Costa,74,77,ZAG,27,Argentina,R13211
+Boca Juniors,Facundo Herrera,Facundo Herrera,72,79,ZAG,20,Argentina,R13212
+Boca Juniors,Marco Pellegrino,Marco Pellegrino,70,79,ZAG,24,Argentina,R13213
+Boca Juniors,Matías Satas,Matías Satas,63,74,ZAG,18,Argentina,R13214
+Boca Juniors,Nicolás Figal,Nicolás Figal,73,73,ZAG,32,Argentina,R13215
+Boca Juniors,Lautaro Blanco,Lautaro Blanco,75,78,LAT,27,Argentina,R13216
+Boca Juniors,Malcom Braida,Malcom Braida,76,76,LAT,29,Argentina,R13217
+Boca Juniors,Leandro Lozano,Leandro Lozano,74,77,LAT,27,Uruguai,R13218
+Boca Juniors,Dylan Gorosito,Dylan Gorosito,68,76,LAT,20,Argentina,R13219
+Boca Juniors,Milton Delgado,Milton Delgado,76,80,VOL,21,Argentina,R13220
+Boca Juniors,Santiago Ascacíbar,Santiago Ascacíbar,77,77,VOL,29,Argentina,R13221
+Boca Juniors,Leandro Paredes,Leandro Paredes,78,78,VOL,32,Argentina,R13222
+Boca Juniors,Tomás Belmonte,Tomás Belmonte,74,77,VOL,28,Argentina,R13223
+Boca Juniors,Camilo Rey Domenech,Camilo Rey Domenech,64,81,VOL,20,Argentina,R13224
+Boca Juniors,Rodrigo Battaglia,Rodrigo Battaglia,76,76,VOL,35,Argentina,R13225
+Boca Juniors,Williams Alarcón,Williams Alarcón,71,78,MEI,25,Chile,R13226
+Boca Juniors,Juan Ramírez,Juan Ramírez,66,66,MEI,33,Argentina,R13227
+Boca Juniors,Tomás Aranda,Tomás Aranda,74,83,MEI,19,Argentina,R13228
+Boca Juniors,Carlos Palacios,Carlos Palacios,76,79,MEI,26,Chile,R13229
+Boca Juniors,Sebastián Villa,Sebastián Villa,76,76,ATA,30,Colômbia,R13230
+Boca Juniors,Alan Velasco,Alan Velasco,74,82,ATA,24,Argentina,R13231
+Boca Juniors,Leonel Flores,Leonel Flores,72,82,ATA,19,Argentina,R13232
+Boca Juniors,Ángel Romero,Ángel Romero,68,68,ATA,34,Paraguai,R13233
+Boca Juniors,Miguel Merentiel,Miguel Merentiel,76,76,ATA,30,Uruguai,R13234
+Boca Juniors,Adam Bareiro,Adam Bareiro,76,76,ATA,30,Paraguai,R13235
+Boca Juniors,Milton Giménez,Milton Giménez,73,73,ATA,30,Argentina,R13236
+Boca Juniors,Enner Valencia,Enner Valencia,76,76,ATA,37,Equador,R13237
+Estudiantes,Fernando Muslera,Fernando Muslera,79,79,GOL,40,Uruguai,R13265
+Estudiantes,Fabricio Iacovich,Fabricio Iacovich,67,74,GOL,24,Argentina,R13266
+Estudiantes,Rodrigo Borzone,Rodrigo Borzone,64,74,GOL,22,Argentina,R13267
+Estudiantes,Tomás Palacios,Tomás Palacios,78,78,ZAG,23,Argentina,R13268
+Estudiantes,Santiago Núñez,Santiago Núñez,73,76,ZAG,26,Argentina,R13269
+Estudiantes,Leandro González Pírez,Leandro González Pírez,74,74,ZAG,34,Argentina,R13270
+Estudiantes,Valente Pierani,Valente Pierani,58,67,ZAG,20,Argentina,R13271
+Estudiantes,Marcos Rojo,Marcos Rojo,67,67,ZAG,36,Argentina,R13272
+Estudiantes,Ramiro Funes Mori,Ramiro Funes Mori,70,70,ZAG,35,Argentina,R13273
+Estudiantes,Santiago Arzamendia,Santiago Arzamendia,73,73,LAT,28,Paraguai,R13274
+Estudiantes,Gastón Benedetti,Gastón Benedetti,71,77,LAT,25,Argentina,R13275
+Estudiantes,Joaquín Pereyra,Joaquín Pereyra,61,73,LAT,21,Argentina,R13276
+Estudiantes,Eros Mancuso,Eros Mancuso,72,72,LAT,27,Argentina,R13277
+Estudiantes,Eric Meza,Eric Meza,73,74,LAT,27,Argentina,R13278
+Estudiantes,Jalil Elías,Jalil Elías,72,72,VOL,30,Syria,R13279
+Estudiantes,Gabriel Neves,Gabriel Neves,75,75,VOL,29,Uruguai,R13280
+Estudiantes,Ezequiel Piovi,Ezequiel Piovi,72,72,VOL,34,Argentina,R13281
+Estudiantes,Alexis Castro,Alexis Castro,73,73,MEI,32,Argentina,R13282
+Estudiantes,Bautista Kociubinski,Bautista Kociubinski,66,68,MEI,25,Argentina,R13283
+Estudiantes,Baltasar Rodríguez,Baltasar Rodríguez,74,75,MEI,23,Argentina,R13284
+Estudiantes,Miguel Monsalve,Miguel Monsalve,73,75,MEI,22,Colômbia,R13285
+Estudiantes,José Sosa,José Sosa,73,73,MEI,41,Argentina,R13286
+Estudiantes,Joaquín Tobio Burgos,Joaquín Tobio Burgos,71,81,ATA,21,Argentina,R13287
+Estudiantes,Edwuin Cetré,Edwuin Cetré,73,73,ATA,28,Colômbia,R13288
+Estudiantes,Brian Aguirre,Brian Aguirre,74,74,ATA,23,Argentina,R13289
+Estudiantes,Tiago Palacios,Tiago Palacios,75,81,ATA,25,Uruguai,R13290
+Estudiantes,Fabricio Pérez,Fabricio Pérez,68,75,ATA,20,Argentina,R13291
+Estudiantes,Joaquín Correa,Joaquín Correa,72,72,ATA,32,Argentina,R13292
+Estudiantes,Adolfo Gaich,Adolfo Gaich,70,70,ATA,27,Argentina,R13293
+Estudiantes,Guido Carrillo,Guido Carrillo,74,74,ATA,35,Argentina,R13294
+Estudiantes,Lucas Alario,Lucas Alario,72,72,ATA,34,Argentina,R13295
+Vélez Sarsfield,Facundo Sanguinetti,Facundo Sanguinetti,68,74,GOL,25,Argentina,R13296
+Vélez Sarsfield,Tomás Marchiori,Tomás Marchiori,75,75,GOL,31,Argentina,R13297
+Vélez Sarsfield,Álvaro Busso,Álvaro Busso,56,64,GOL,20,Argentina,R13298
+Vélez Sarsfield,Thiago Silvero,Thiago Silvero,72,77,ZAG,20,Argentina,R13299
+Vélez Sarsfield,Emanuel Mammana,Emanuel Mammana,75,75,ZAG,30,Argentina,R13300
+Vélez Sarsfield,Lisandro Magallán,Lisandro Magallán,72,72,ZAG,33,Argentina,R13301
+Vélez Sarsfield,Leo Cristaldo,Leo Cristaldo,66,80,ZAG,17,Paraguai,R13302
+Vélez Sarsfield,Elías Gómez,Elías Gómez,73,73,LAT,32,Argentina,R13303
+Vélez Sarsfield,Joaquín Vaquero,Joaquín Vaquero,56,56,LAT,23,Argentina,R13304
+Vélez Sarsfield,Joaquín García,Joaquín García,74,80,LAT,25,Argentina,R13305
+Vélez Sarsfield,Jano Gordon,Jano Gordon,69,79,LAT,22,Argentina,R13306
+Vélez Sarsfield,Claudio Baeza,Claudio Baeza,73,73,VOL,32,Chile,R13307
+Vélez Sarsfield,Lucas Robertone,Lucas Robertone,73,73,MEI,29,Argentina,R13308
+Vélez Sarsfield,Rodrigo Aliendro,Rodrigo Aliendro,74,74,MEI,35,Argentina,R13309
+Vélez Sarsfield,Diego Valdés,Diego Valdés,75,75,MEI,32,Chile,R13310
+Vélez Sarsfield,Manuel Lanzini,Manuel Lanzini,74,74,MEI,33,Argentina,R13311
+Vélez Sarsfield,Luca Feler,Luca Feler,61,73,MEI,18,Argentina,R13312
+Vélez Sarsfield,Matías Arias,Matías Arias,58,74,MEI,19,Argentina,R13313
+Vélez Sarsfield,Matías Pellegrini,Matías Pellegrini,70,73,ATA,26,Argentina,R13314
+Vélez Sarsfield,Álex Verón,Álex Verón,62,76,ATA,18,Argentina,R13315
+Vélez Sarsfield,Ronaldo Martínez,Ronaldo Martínez,75,75,ATA,30,Paraguai,R13316
+Vélez Sarsfield,Thiago Aguirre,Thiago Aguirre,59,75,ATA,17,Argentina,R13317
+Vélez Sarsfield,Dilan Godoy,Dilan Godoy,62,72,ATA,20,Argentina,R13318
+Racing,Facundo Cambeses,Facundo Cambeses,72,73,GOL,29,Argentina,R13238
+Racing,Matías Tagliamonte,Matías Tagliamonte,71,71,GOL,28,Argentina,R13239
+Racing,Marco Di Césare,Marco Di Césare,74,82,ZAG,24,Argentina,R13240
+Racing,Nazareno Colombo,Nazareno Colombo,73,75,ZAG,27,Argentina,R13241
+Racing,Matías Pérez,Matías Pérez,72,72,ZAG,27,Argentina,R13242
+Racing,Mateo Martínez,Mateo Martínez,61,73,ZAG,18,Argentina,R13243
+Racing,Gonzalo Escudero,Gonzalo Escudero,53,73,ZAG,19,Argentina,R13244
+Racing,Ignacio Rodríguez,Ignacio Rodríguez,67,76,LAT,24,Argentina,R13245
+Racing,Alfonso Espino,Alfonso Espino,71,71,LAT,34,Uruguai,R13246
+Racing,Ezequiel Cannavo,Ezequiel Cannavo,66,74,LAT,24,Argentina,R13247
+Racing,Juan Barinaga,Juan Barinaga,73,74,LAT,26,Argentina,R13248
+Racing,Leonel Pérez,Leonel Pérez,75,77,VOL,22,Argentina,R13249
+Racing,Ulises Ortegoza,Ulises Ortegoza,72,72,VOL,29,Chile,R13250
+Racing,Matías Kranevitter,Matías Kranevitter,72,72,VOL,33,Argentina,R13251
+Racing,Alan Forneris,Alan Forneris,65,73,VOL,21,Argentina,R13252
+Racing,Gastón Lodico,Gastón Lodico,73,73,MEI,28,Argentina,R13253
+Racing,Valentín Carboni,Valentín Carboni,75,84,MEI,21,Argentina,R13254
+Racing,Matko Miljevic,Matko Miljevic,73,75,MEI,25,EUA,R13255
+Racing,Matías Zaracho,Matías Zaracho,75,76,MEI,28,Argentina,R13256
+Racing,Adrián Fernández,Adrián Fernández,66,72,MEI,25,Argentina,R13257
+Racing,Alejandro Tello,Alejandro Tello,58,70,MEI,18,Argentina,R13258
+Racing,Tomás Conechny,Tomás Conechny,73,73,ATA,28,Argentina,R13259
+Racing,Duván Vergara,Duván Vergara,74,74,ATA,30,Colômbia,R13260
+Racing,Leandro Córdoba,Leandro Córdoba,60,66,ATA,21,Argentina,R13261
+Racing,Adrián Martínez,Adrián Martínez,78,78,ATA,34,Argentina,R13262
+Racing,Lautaro Díaz,Lautaro Díaz,70,70,ATA,28,Argentina,R13263
+Racing,Elías Torres,Elías Torres,70,75,ATA,25,Argentina,R13264
+Rosario Central,Conan Ledesma,Conan Ledesma,73,73,GOL,33,Argentina,R13347
+Rosario Central,Axel Werner,Axel Werner,66,66,GOL,30,Argentina,R13348
+Rosario Central,Damián Fernández,Damián Fernández,56,59,GOL,22,Argentina,R13349
+Rosario Central,Ignacio Ovando,Ignacio Ovando,71,82,ZAG,19,Argentina,R13350
+Rosario Central,Gastón Ávila,Gastón Ávila,75,77,ZAG,25,Argentina,R13351
+Rosario Central,Juan Giménez,Juan Giménez,66,80,ZAG,20,Argentina,R13352
+Rosario Central,Facundo Mallo,Facundo Mallo,73,73,ZAG,31,Uruguai,R13353
+Rosario Central,Sebastián Zaracho,Sebastián Zaracho,66,66,ZAG,27,Paraguai,R13354
+Rosario Central,Juan Cruz Komar,Juan Cruz Komar,72,72,ZAG,30,Argentina,R13355
+Rosario Central,Luca Raffin,Luca Raffin,56,66,ZAG,20,Argentina,R13356
+Rosario Central,Agustín Sández,Agustín Sández,73,79,LAT,25,Paraguai,R13357
+Rosario Central,Alexis Soto,Alexis Soto,72,72,LAT,33,Argentina,R13358
+Rosario Central,Emanuel Coronel,Emanuel Coronel,71,71,LAT,29,Argentina,R13359
+Rosario Central,Ulises Ciccioli,Ulises Ciccioli,65,66,LAT,23,Argentina,R13360
+Rosario Central,Elías Verón,Elías Verón,53,65,LAT,19,Argentina,R13361
+Rosario Central,Franco Ibarra,Franco Ibarra,71,78,VOL,25,Argentina,R13362
+Rosario Central,Vicente Pizarro,Vicente Pizarro,75,78,VOL,24,Chile,R13363
+Rosario Central,Federico Navarro,Federico Navarro,71,76,VOL,26,Argentina,R13364
+Rosario Central,Alan Rodríguez,Alan Rodríguez,71,72,MEI,26,Uruguai,R13365
+Rosario Central,Pol Fernández,Pol Fernández,75,75,MEI,35,Argentina,R13366
+Rosario Central,Santiago Segovia,Santiago Segovia,57,77,MEI,19,Argentina,R13367
+Rosario Central,Jáminton Campaz,Jáminton Campaz,76,79,ATA,26,Colômbia,R13368
+Rosario Central,Giovanni Cantizano,Giovanni Cantizano,68,74,ATA,19,Argentina,R13369
+Rosario Central,Franco Cervi,Franco Cervi,70,70,ATA,32,Argentina,R13370
+Rosario Central,Julián Fernández,Julián Fernández,73,75,ATA,22,Argentina,R13371
+Rosario Central,Ángel Di María,Ángel Di María,82,82,ATA,38,Argentina,R13372
+Rosario Central,Gaspar Duarte,Gaspar Duarte,68,77,ATA,23,Argentina,R13373
+Rosario Central,Tomás Badaloni,Tomás Badaloni,75,76,ATA,26,Argentina,R13374
+Rosario Central,Enzo Copetti,Enzo Copetti,72,72,ATA,30,Argentina,R13375
+Rosario Central,Marco Ruben,Marco Ruben,63,63,ATA,40,Argentina,R13376
+Newell's Old Boys,É. Banega,É. Banega,77,77,MEI,38,Argentina,R03829
+Newell's Old Boys,Martín Fernández,Martín Fernández,69,76,VOL,25,Uruguai,R03830
+Newell's Old Boys,Gaspar Iñiguez,Gaspar Iñiguez,66,66,MEI,32,Argentina,R03831
+Newell's Old Boys,Juan García,Juan García,71,71,ATA,33,Argentina,R03832
+Newell's Old Boys,Gonzalo Maroni,Gonzalo Maroni,70,71,MEI,27,Argentina,R03833
+Newell's Old Boys,Alejo Montero,Alejo Montero,63,64,LAT,28,Argentina,R03834
+Newell's Old Boys,Carlos González,Carlos González,73,73,ATA,33,Paraguai,R03835
+Newell's Old Boys,Víctor Cuesta,Víctor Cuesta,75,75,ZAG,37,Argentina,R03836
+Newell's Old Boys,Lisandro Montenegro,Lisandro Montenegro,63,74,MEI,23,Argentina,R03837
+Newell's Old Boys,Brian Calderara,Brian Calderara,66,66,MEI,28,Argentina,R03838
+Newell's Old Boys,Luca Sosa,Luca Sosa,70,70,ZAG,32,Argentina,R03839
+Newell's Old Boys,Martín Luciano,Martín Luciano,67,74,LAT,22,Argentina,R03840
+Newell's Old Boys,Luca Regiardo,Luca Regiardo,60,77,MEI,19,Argentina,R03841
+Newell's Old Boys,Alejo Tabares,Alejo Tabares,63,69,MEI,25,Argentina,R03842
+Newell's Old Boys,Luciano Lollo,Luciano Lollo,72,72,ZAG,39,Argentina,R03843
+Newell's Old Boys,Franco Orozco,Franco Orozco,68,76,MEI,24,Argentina,R03844
+Newell's Old Boys,David Sotelo,David Sotelo,59,70,MEI,23,Argentina,R03845
+Newell's Old Boys,Josué Colmán,Josué Colmán,65,65,MEI,28,Paraguai,R03846
+Newell's Old Boys,Genaro Rossi,Genaro Rossi,63,72,ATA,24,Argentina,R03847
+Newell's Old Boys,Saúl Salcedo,Saúl Salcedo,71,73,ZAG,28,Paraguai,R03848
+Newell's Old Boys,Pablo Altamirano,Pablo Altamirano,59,71,MEI,21,Argentina,R03849
+Newell's Old Boys,Fabián Noguera,Fabián Noguera,70,70,ZAG,33,Argentina,R03850
+Newell's Old Boys,Valentino Acuña,Valentino Acuña,59,75,MEI,20,Argentina,R03851
+Newell's Old Boys,Giovani Chiaverano,Giovani Chiaverano,58,73,MEI,21,Argentina,R03852
+Newell's Old Boys,Alejo Navarro,Alejo Navarro,59,76,ATA,19,Argentina,R03853
+Newell's Old Boys,Lucas Hoyos,Lucas Hoyos,72,72,GOL,37,Argentina,R03854
+Newell's Old Boys,Thiago Gigena,Thiago Gigena,51,62,ATA,20,Argentina,R03855
+Newell's Old Boys,Juan Espínola,Juan Espínola,71,71,GOL,31,Paraguai,R03856
+Newell's Old Boys,Williams Barlasina,Williams Barlasina,66,66,GOL,28,Argentina,R03857
+Lanús,Ramiro Carrera,Ramiro Carrera,74,74,MEI,32,Argentina,R03858
+Lanús,Marcelino Moreno,Marcelino Moreno,78,78,MEI,31,Argentina,R03859
+Lanús,Eduardo Salvio,Eduardo Salvio,76,76,MEI,36,Argentina,R03860
+Lanús,Walter Bou,Walter Bou,73,73,ATA,32,Argentina,R03861
+Lanús,Lautaro Acosta,Lautaro Acosta,72,72,MEI,38,Argentina,R03862
+Lanús,Agustín Cardozo,Agustín Cardozo,71,71,VOL,29,Argentina,R03863
+Lanús,Felipe Peña Biafore,Felipe Peña Biafore,70,78,VOL,25,Argentina,R03864
+Lanús,Alexis Canelo,Alexis Canelo,72,72,MEI,34,Argentina,R03865
+Lanús,Franco Watson,Franco Watson,70,79,MEI,24,Argentina,R03866
+Lanús,Nicolás Morgantini,Nicolás Morgantini,67,67,LAT,31,Argentina,R03867
+Lanús,Sasha Marcich,Sasha Marcich,72,73,LAT,28,Argentina,R03868
+Lanús,Raúl Loaiza,Raúl Loaiza,71,71,VOL,32,Colômbia,R03869
+Lanús,Armando Méndez,Armando Méndez,71,71,LAT,30,Uruguai,R03870
+Lanús,Carlos Izquierdoz,Carlos Izquierdoz,74,74,ZAG,37,Argentina,R03871
+Lanús,Gonzalo Pérez,Gonzalo Pérez,70,77,VOL,25,Uruguai,R03872
+Lanús,Alexis Segovia,Alexis Segovia,63,77,MEI,22,Argentina,R03873
+Lanús,Bruno Cabrera,Bruno Cabrera,62,71,MEI,23,Argentina,R03874
+Lanús,Agustín Medina,Agustín Medina,58,77,VOL,19,Argentina,R03875
+Lanús,José Canale,José Canale,69,70,ZAG,30,Paraguai,R03876
+Lanús,Octavio Ontivero,Octavio Ontivero,62,81,LAT,20,Argentina,R03877
+Lanús,Agustín Rodríguez,Agustín Rodríguez,61,75,MEI,22,Argentina,R03878
+Lanús,Ronaldo Dejesús,Ronaldo Dejesús,66,75,ZAG,25,Paraguai,R03879
+Lanús,Elías Brito,Elías Brito,57,73,LAT,20,Argentina,R03880
+Lanús,Ezequiel Muñoz,Ezequiel Muñoz,69,69,ZAG,35,Argentina,R03881
+Lanús,Brian Aguilar,Brian Aguilar,62,74,ZAG,23,Argentina,R03882
+Lanús,Lucas Irusta,Lucas Irusta,56,66,ZAG,23,Argentina,R03883
+Lanús,Leonel Cardozo,Leonel Cardozo,58,68,ZAG,22,Argentina,R03884
+Lanús,Mariano Gerez,Mariano Gerez,57,76,VOL,20,Argentina,R03885
+Lanús,Lautaro Morales,Lautaro Morales,70,75,GOL,26,Argentina,R03886
+Lanús,Jeremías Chavero,Jeremías Chavero,55,68,ATA,20,Argentina,R03887
+Lanús,Facundo Sanchez,Facundo Sanchez,49,64,ZAG,20,Argentina,R03888
+Lanús,Nahuel Losada,Nahuel Losada,73,73,GOL,33,Argentina,R03889
+Platense,Mauro Luna Diale,Mauro Luna Diale,72,75,MEI,27,Argentina,R03890
+Platense,Franco Zapiola,Franco Zapiola,70,76,MEI,25,Argentina,R03891
+Platense,Guido Mainero,Guido Mainero,69,69,MEI,31,Argentina,R03892
+Platense,Enzo Roldán,Enzo Roldán,67,74,MEI,25,Argentina,R03893
+Platense,Ignacio Schor,Ignacio Schor,70,73,MEI,25,Argentina,R03894
+Platense,Augusto Lotti,Augusto Lotti,71,71,ATA,30,Argentina,R03895
+Platense,Jonathan Bay,Jonathan Bay,69,69,LAT,33,Argentina,R03896
+Platense,Santiago Toloza,Santiago Toloza,70,78,MEI,23,Argentina,R03897
+Platense,Franco Baldassarra,Franco Baldassarra,64,67,MEI,27,Argentina,R03898
+Platense,Rodrigo Herrera,Rodrigo Herrera,67,74,VOL,25,Argentina,R03899
+Platense,Marcos Portillo,Marcos Portillo,63,68,MEI,26,Argentina,R03900
+Platense,Raúl Lozano,Raúl Lozano,69,69,LAT,28,Argentina,R03901
+Platense,Nicolás Orsini,Nicolás Orsini,70,70,ATA,31,Argentina,R03902
+Platense,Rodrigo Márquez,Rodrigo Márquez,67,73,MEI,24,Argentina,R03903
+Platense,Benjamín Bosch,Benjamín Bosch,64,76,MEI,21,Argentina,R03904
+Platense,Edgar Elizalde,Edgar Elizalde,69,74,ZAG,26,Uruguai,R03905
+Platense,Bautista Barros Schelotto,Bautista Barros Schelotto,66,71,LAT,26,Argentina,R03906
+Platense,Felipe Bussio,Felipe Bussio,60,70,VOL,22,Argentina,R03907
+Platense,Maximiliano Rodríguez Vejar,Maximiliano Rodríguez Vejar,66,71,ATA,26,Chile,R03908
+Platense,Juan Saborido,Juan Saborido,65,66,LAT,28,Argentina,R03909
+Platense,Celías Ingenthron,Celías Ingenthron,58,73,LAT,18,Argentina,R03910
+Platense,Tomás Silva,Tomás Silva,62,73,LAT,23,Argentina,R03911
+Platense,Oscar Salomón,Oscar Salomón,66,71,ZAG,27,Argentina,R03912
+Platense,Cristian Ortíz,Cristian Ortíz,55,69,MEI,21,Argentina,R03913
+Platense,Franco Minerva,Franco Minerva,59,75,MEI,20,Argentina,R03914
+Platense,Ignacio Vázquez,Ignacio Vázquez,72,74,ZAG,29,Argentina,R03915
+Platense,Juan Goicochea,Juan Goicochea,61,72,ATA,21,Peru,R03916
+Platense,Ivo Visona,Ivo Visona,61,74,ATA,19,Argentina,R03917
+Platense,Gonzalo Goñi,Gonzalo Goñi,67,70,ZAG,27,Argentina,R03918
+Platense,Andrés Desábato,Andrés Desábato,71,71,GOL,36,Argentina,R03919
+Platense,Federico Losas,Federico Losas,58,64,GOL,24,Argentina,R03920
+Defensa y Justicia,Rafael Delgado,Rafael Delgado,71,71,LAT,36,Argentina,R03921
+Defensa y Justicia,Kevin Gutiérrez,Kevin Gutiérrez,71,72,VOL,29,Argentina,R03922
+Defensa y Justicia,Lucas González,Lucas González,71,76,MEI,26,Argentina,R03923
+Defensa y Justicia,Damián Pérez,Damián Pérez,69,69,LAT,37,Argentina,R03924
+Defensa y Justicia,Aaron Molinas,Aaron Molinas,73,78,MEI,25,Argentina,R03925
+Defensa y Justicia,Nicolás Stefanelli,Nicolás Stefanelli,68,68,MEI,31,Argentina,R03926
+Defensa y Justicia,David Barbona,David Barbona,70,70,MEI,31,Argentina,R03927
+Defensa y Justicia,Ezequiel Cannavó,Ezequiel Cannavó,66,74,LAT,24,Argentina,R03928
+Defensa y Justicia,Juan Gutiérrez,Juan Gutiérrez,69,76,MEI,24,Uruguai,R03929
+Defensa y Justicia,César Pérez,César Pérez,68,77,VOL,23,Chile,R03930
+Defensa y Justicia,Tobías Rubio,Tobías Rubio,68,80,LAT,22,Argentina,R03931
+Defensa y Justicia,Lucas Ferreira,Lucas Ferreira,69,76,ZAG,26,Uruguai,R03932
+Defensa y Justicia,Lenny Lobato,Lenny Lobato,68,74,MEI,25,Brasil,R03933
+Defensa y Justicia,Emanuel Aguilera,Emanuel Aguilera,71,71,ZAG,37,Argentina,R03934
+Defensa y Justicia,Damián Fernández,Damián Fernández,71,77,ZAG,25,Argentina,R03935
+Defensa y Justicia,Lucas Souto,Lucas Souto,67,70,LAT,27,Argentina,R03936
+Defensa y Justicia,Benjamín Schamine,Benjamín Schamine,61,75,MEI,22,Argentina,R03937
+Defensa y Justicia,Agustín Hausch,Agustín Hausch,61,71,ATA,23,Argentina,R03938
+Defensa y Justicia,Santiago Sosa,Santiago Sosa,60,77,VOL,21,Argentina,R03939
+Defensa y Justicia,Matías Sosa,Matías Sosa,61,67,MEI,24,Argentina,R03940
+Defensa y Justicia,Mateo Aguiar,Mateo Aguiar,50,70,MEI,19,Argentina,R03941
+Defensa y Justicia,Samuel Lucero,Samuel Lucero,56,72,ZAG,21,Argentina,R03942
+Defensa y Justicia,Enrique Bologna,Enrique Bologna,69,69,GOL,44,Argentina,R03943
+Defensa y Justicia,Roberto León,Roberto León,64,70,GOL,24,Argentina,R03944
+Defensa y Justicia,Facundo Masuero,Facundo Masuero,62,68,GOL,26,Argentina,R03945
+Defensa y Justicia,Josué Reinatti,Josué Reinatti,60,70,GOL,23,Argentina,R03946
+Independiente,Santiago Montiel,Santiago Montiel,75,81,MEI,25,Argentina,R03947
+Independiente,Iván Marcone,Iván Marcone,76,76,VOL,36,Argentina,R03948
+Independiente,Leonardo Godoy,Leonardo Godoy,74,74,LAT,31,Argentina,R03949
+Independiente,Federico Mancuello,Federico Mancuello,72,72,MEI,37,Argentina,R03950
+Independiente,Pablo Galdames,Pablo Galdames,69,69,MEI,29,Chile,R03951
+Independiente,Felipe Loyola,Felipe Loyola,69,76,MEI,25,Chile,R03952
+Independiente,Rodrigo Fernández,Rodrigo Fernández,66,66,VOL,30,Uruguai,R03953
+Independiente,Franco Paredes,Franco Paredes,68,70,ZAG,27,Argentina,R03954
+Independiente,Luciano Cabral,Luciano Cabral,70,70,MEI,31,Chile,R03955
+Independiente,Matías Abaldo,Matías Abaldo,70,82,ATA,22,Uruguai,R03956
+Independiente,Walter Mazzantti,Walter Mazzantti,70,70,MEI,29,Argentina,R03957
+Independiente,Facundo Zabala,Facundo Zabala,71,74,LAT,27,Argentina,R03958
+Independiente,Tomás Parmo,Tomás Parmo,64,82,MEI,18,Argentina,R03959
+Independiente,Lautaro Millán,Lautaro Millán,63,78,MEI,20,Argentina,R03960
+Independiente,Enzo Taborda,Enzo Taborda,60,72,ATA,21,Argentina,R03961
+Independiente,Jonathan de Irastorza,Jonathan de Irastorza,58,70,LAT,20,Argentina,R03962
+Independiente,Sebastián Valdéz,Sebastián Valdéz,68,69,ZAG,30,Argentina,R03963
+Independiente,Fernando Closter,Fernando Closter,57,76,ZAG,18,Argentina,R03964
+Independiente,Rodrigo Rey,Rodrigo Rey,78,78,GOL,35,Argentina,R03965
+Independiente,Lucas Lavagnino,Lucas Lavagnino,64,74,GOL,21,Argentina,R03966
+Independiente,Mateo Morro,Mateo Morro,61,76,GOL,21,Argentina,R03967
+Independiente,Joaquín Blázquez,Joaquín Blázquez,65,73,GOL,25,Argentina,R03968
+Gimnasia La Plata,Lucas Castro,Lucas Castro,72,72,MEI,37,Argentina,R03969
+Gimnasia La Plata,Pedro Silva Torrejón,Pedro Silva Torrejón,71,71,LAT,29,Argentina,R03970
+Gimnasia La Plata,Juan Pintado,Juan Pintado,73,73,LAT,29,Uruguai,R03971
+Gimnasia La Plata,Júnior Moreno,Júnior Moreno,69,69,VOL,33,Venezuela,R03972
+Gimnasia La Plata,Bautista Merlini,Bautista Merlini,71,71,MEI,31,Argentina,R03973
+Gimnasia La Plata,Matías Melluso,Matías Melluso,70,71,LAT,28,Argentina,R03974
+Gimnasia La Plata,Alan Sosa,Alan Sosa,68,77,MEI,23,Argentina,R03975
+Gimnasia La Plata,Facundo Di Biasi,Facundo Di Biasi,66,77,VOL,21,Argentina,R03976
+Gimnasia La Plata,Augusto Max,Augusto Max,67,67,VOL,33,Argentina,R03977
+Gimnasia La Plata,Norberto Briasco,Norberto Briasco,68,68,ATA,30,Armênia,R03978
+Gimnasia La Plata,Jan Hurtado,Jan Hurtado,69,74,ATA,26,Venezuela,R03979
+Gimnasia La Plata,Leandro Mamut,Leandro Mamut,64,75,MEI,22,Argentina,R03980
+Gimnasia La Plata,Sebastián Lomónaco,Sebastián Lomónaco,68,69,ATA,27,Argentina,R03981
+Gimnasia La Plata,Fabricio Corbalán,Fabricio Corbalán,67,76,LAT,22,Argentina,R03982
+Gimnasia La Plata,Mateo Seoane,Mateo Seoane,64,74,MEI,22,Argentina,R03983
+Gimnasia La Plata,Juan Pérez,Juan Pérez,67,78,MEI,22,Colômbia,R03984
+Gimnasia La Plata,Santino Primante,Santino Primante,63,75,ATA,21,Argentina,R03985
+Gimnasia La Plata,Alejandro Piedrahita,Alejandro Piedrahita,68,77,MEI,23,Colômbia,R03986
+Gimnasia La Plata,Ivo Mammini,Ivo Mammini,66,75,ATA,23,Argentina,R03987
+Gimnasia La Plata,Santiago Villarreal,Santiago Villarreal,61,73,MEI,20,Argentina,R03988
+Gimnasia La Plata,Enzo Martínez,Enzo Martínez,71,73,ZAG,28,Uruguai,R03989
+Gimnasia La Plata,Manuel Panaro,Manuel Panaro,64,73,MEI,23,Argentina,R03990
+Gimnasia La Plata,Gastón Suso,Gastón Suso,72,72,ZAG,35,Argentina,R03991
+Gimnasia La Plata,Marcelo Torres,Marcelo Torres,65,66,ATA,28,Argentina,R03992
+Gimnasia La Plata,Maximiliano Zalazar,Maximiliano Zalazar,66,72,MEI,25,Argentina,R03993
+Gimnasia La Plata,Franco Torres,Franco Torres,66,67,MEI,27,Argentina,R03994
+Gimnasia La Plata,Renzo Giampaoli,Renzo Giampaoli,67,72,ZAG,26,Argentina,R03995
+Gimnasia La Plata,Germán Conti,Germán Conti,71,71,ZAG,32,Argentina,R03996
+Gimnasia La Plata,Juan Villalba,Juan Villalba,61,76,ZAG,20,Argentina,R03997
+Gimnasia La Plata,Valentín Peñalva,Valentín Peñalva,59,70,ZAG,23,Argentina,R03998
+Gimnasia La Plata,Jeremías Merlo,Jeremías Merlo,62,74,ATA,20,Argentina,R03999
+Gimnasia La Plata,Jorge de Asís,Jorge de Asís,59,73,ATA,20,Argentina,R04000
+Gimnasia La Plata,Juan Cortazzo,Juan Cortazzo,61,74,ZAG,20,Argentina,R04001
+Gimnasia La Plata,Nelson Insfrán,Nelson Insfrán,71,71,GOL,31,Argentina,R04002
+Gimnasia La Plata,Luis Ingolotti,Luis Ingolotti,68,73,GOL,26,Argentina,R04003
+Gimnasia La Plata,Julián Kadijevic,Julián Kadijevic,63,73,GOL,22,Argentina,R04004
+Belgrano,Lucas Zelarayán,Lucas Zelarayán,79,79,MEI,34,Armênia,R04005
+Belgrano,Lucas Menossi,Lucas Menossi,73,73,MEI,34,Argentina,R04006
+Belgrano,Nicolás Fernández,Nicolás Fernández,75,75,ATA,30,Argentina,R04007
+Belgrano,Ulises Sánchez,Ulises Sánchez,73,73,MEI,28,Argentina,R04008
+Belgrano,Francisco González Metilli,Francisco González Metilli,73,73,MEI,29,Argentina,R04009
+Belgrano,Facundo Quignon,Facundo Quignon,73,73,VOL,33,Argentina,R04010
+Belgrano,Elías López,Elías López,68,71,LAT,26,Argentina,R04011
+Belgrano,Adrián Spörle,Adrián Spörle,70,70,LAT,31,Argentina,R04012
+Belgrano,Santiago Longo,Santiago Longo,70,73,VOL,28,Argentina,R04013
+Belgrano,Franco Jara,Franco Jara,72,72,ATA,38,Argentina,R04014
+Belgrano,Federico Ricca,Federico Ricca,69,69,ZAG,31,Uruguai,R04015
+Belgrano,Rodrigo Saravia,Rodrigo Saravia,68,74,VOL,25,Uruguai,R04016
+Belgrano,Leonardo Morales,Leonardo Morales,74,74,ZAG,35,Argentina,R04017
+Belgrano,Gabriel Compagnucci,Gabriel Compagnucci,65,65,LAT,34,Argentina,R04018
+Belgrano,Gerónimo Heredia,Gerónimo Heredia,64,76,LAT,21,Argentina,R04019
+Belgrano,Lisandro López,Lisandro López,71,71,ZAG,36,Argentina,R04020
+Belgrano,Agustín Baldi,Agustín Baldi,65,76,ZAG,24,Argentina,R04021
+Belgrano,Tobias Ostchega,Tobias Ostchega,68,69,LAT,27,Argentina,R04022
+Belgrano,Juan Velázquez,Juan Velázquez,65,79,MEI,21,Argentina,R04023
+Belgrano,Julián Mavilla,Julián Mavilla,59,64,MEI,26,Argentina,R04024
+Belgrano,Lucas Passerini,Lucas Passerini,72,72,ATA,32,Argentina,R04025
+Belgrano,Ramiro Hernándes,Ramiro Hernándes,58,73,MEI,21,Argentina,R04026
+Belgrano,Jeremías Lucco,Jeremías Lucco,60,75,MEI,20,Argentina,R04027
+Belgrano,Alexis Maldonado,Alexis Maldonado,70,70,ZAG,28,Argentina,R04028
+Belgrano,Lucas Bernabéu,Lucas Bernabéu,57,65,ZAG,22,Argentina,R04029
+Belgrano,Gonzalo Zelarayán,Gonzalo Zelarayán,50,61,ATA,22,Argentina,R04030
+Belgrano,Thiago Cardozo,Thiago Cardozo,71,72,GOL,30,Uruguai,R04031
+Belgrano,Ignacio Chicco,Ignacio Chicco,69,71,GOL,30,Argentina,R04032
+Belgrano,Manuel Vicentini,Manuel Vicentini,64,64,GOL,35,Argentina,R04033
+Belgrano,Matías Daniele,Matías Daniele,54,65,GOL,22,Argentina,R04034
+Argentinos Juniors,Nicolás Oroz,Nicolás Oroz,73,73,MEI,32,Argentina,R04035
+Argentinos Juniors,Luciano Sánchez,Luciano Sánchez,69,69,LAT,32,Argentina,R04036
+Argentinos Juniors,Gabriel Florentín,Gabriel Florentín,68,71,MEI,27,Argentina,R04037
+Argentinos Juniors,Ismael Sosa,Ismael Sosa,70,70,MEI,39,Argentina,R04038
+Argentinos Juniors,Hernán López Muñoz,Hernán López Muñoz,73,77,MEI,25,Argentina,R04039
+Argentinos Juniors,Matías Giménez,Matías Giménez,70,73,ATA,27,Argentina,R04040
+Argentinos Juniors,Sebastián Prieto,Sebastián Prieto,69,69,LAT,33,Argentina,R04041
+Argentinos Juniors,Claudio Bravo,Claudio Bravo,68,68,LAT,29,Argentina,R04042
+Argentinos Juniors,Emiliano Viveros,Emiliano Viveros,64,72,ATA,23,Argentina,R04043
+Argentinos Juniors,Joaquín Gho,Joaquín Gho,67,75,MEI,23,Argentina,R04044
+Argentinos Juniors,Tómas Molina,Tómas Molina,71,71,ATA,31,Argentina,R04045
+Argentinos Juniors,Juan Cardozo,Juan Cardozo,62,74,MEI,22,Paraguai,R04046
+Argentinos Juniors,Lucas Gómez,Lucas Gómez,61,75,MEI,22,Argentina,R04047
+Argentinos Juniors,Lautaro Giaccone,Lautaro Giaccone,71,76,MEI,25,Argentina,R04048
+Argentinos Juniors,Kevin Coronel,Kevin Coronel,62,74,LAT,21,Argentina,R04049
+Argentinos Juniors,Francisco Álvarez,Francisco Álvarez,74,80,ZAG,26,Argentina,R04050
+Argentinos Juniors,Mateo Antoni,Mateo Antoni,68,79,ZAG,23,Uruguai,R04051
+Argentinos Juniors,E. Godoy,E. Godoy,70,70,ZAG,32,Argentina,R04052
+Argentinos Juniors,Manuel Brondo,Manuel Brondo,63,71,ATA,24,Argentina,R04053
+Argentinos Juniors,Lautaro Ovando,Lautaro Ovando,61,71,ATA,23,Argentina,R04054
+Argentinos Juniors,Gastón Bouhier,Gastón Bouhier,54,73,MEI,18,Argentina,R04055
+Argentinos Juniors,Ryoga Kida,Ryoga Kida,56,65,ATA,21,Japão,R04056
+Argentinos Juniors,Diego Rodríguez,Diego Rodríguez,74,74,GOL,37,Argentina,R04057
+Argentinos Juniors,Diego Porcel,Diego Porcel,55,65,ATA,21,Argentina,R04058
+Argentinos Juniors,Gonzalo Siri,Gonzalo Siri,62,72,GOL,23,Argentina,R04059
+Argentinos Juniors,Agustín Mangiaut,Agustín Mangiaut,61,70,GOL,22,Argentina,R04060
+Godoy Cruz,Gonzalo Abrego,Gonzalo Abrego,72,77,MEI,26,Argentina,R04061
+Godoy Cruz,Nicolás Fernández,Nicolás Fernández,71,72,MEI,28,Uruguai,R04062
+Godoy Cruz,Walter Montoya,Walter Montoya,69,69,MEI,33,Argentina,R04063
+Godoy Cruz,Vicente Poggi,Vicente Poggi,70,79,MEI,24,Uruguai,R04064
+Godoy Cruz,Juan Escobar,Juan Escobar,69,69,LAT,31,Paraguai,R04065
+Godoy Cruz,Leonardo Jara,Leonardo Jara,70,70,LAT,35,Argentina,R04066
+Godoy Cruz,Lucas Arce,Lucas Arce,70,70,LAT,28,Argentina,R04067
+Godoy Cruz,Agustin Valverde,Agustin Valverde,64,73,MEI,24,Argentina,R04068
+Godoy Cruz,Andrés Meli,Andrés Meli,69,74,LAT,25,Argentina,R04069
+Godoy Cruz,Daniel Barrea,Daniel Barrea,68,74,MEI,25,Argentina,R04070
+Godoy Cruz,Luciano Pascual,Luciano Pascual,62,73,MEI,22,Argentina,R04071
+Godoy Cruz,Tomás Pozzo,Tomás Pozzo,67,73,MEI,25,Argentina,R04072
+Godoy Cruz,Nahuel Ulariaga,Nahuel Ulariaga,69,76,ATA,24,Argentina,R04073
+Godoy Cruz,Santino Andino,Santino Andino,68,83,MEI,20,Argentina,R04074
+Godoy Cruz,Facundo Altamira,Facundo Altamira,69,75,MEI,24,Argentina,R04075
+Godoy Cruz,Mariano Santiago,Mariano Santiago,65,72,MEI,25,Argentina,R04076
+Godoy Cruz,Bastián Yáñez,Bastián Yáñez,69,75,MEI,25,Chile,R04077
+Godoy Cruz,Juan Morán,Juan Morán,65,76,LAT,20,Argentina,R04078
+Godoy Cruz,Agustín Villalobos,Agustín Villalobos,63,74,MEI,23,Argentina,R04079
+Godoy Cruz,Federico Rasmussen,Federico Rasmussen,72,72,ZAG,34,Argentina,R04080
+Godoy Cruz,Mateo Mendoza,Mateo Mendoza,70,81,ZAG,21,Argentina,R04081
+Godoy Cruz,M. González,M. González,65,76,VOL,22,Argentina,R04082
+Godoy Cruz,Misael Sosa,Misael Sosa,68,76,ATA,24,Argentina,R04083
+Godoy Cruz,Luca Martínez Dupuy,Luca Martínez Dupuy,67,74,ATA,25,México,R04084
+Godoy Cruz,Maximiliano Porcel,Maximiliano Porcel,64,78,MEI,20,Argentina,R04085
+Godoy Cruz,Facundo Ardiles,Facundo Ardiles,66,69,LAT,27,Argentina,R04086
+Godoy Cruz,Agustín Auzmendi,Agustín Auzmendi,67,67,ATA,29,Argentina,R04087
+Godoy Cruz,Francisco Facello,Francisco Facello,63,74,LAT,23,Argentina,R04088
+Godoy Cruz,Santiago Martínez,Santiago Martínez,61,72,MEI,22,Argentina,R04089
+Godoy Cruz,Tomás Rossi,Tomás Rossi,67,72,ZAG,27,Argentina,R04090
+Godoy Cruz,Leandro Quiroz,Leandro Quiroz,62,73,ZAG,22,Argentina,R04091
+Godoy Cruz,Franco Petroli,Franco Petroli,74,78,GOL,28,Argentina,R04092
+Godoy Cruz,Roberto Ramírez,Roberto Ramírez,70,72,GOL,30,Argentina,R04093
+Godoy Cruz,Edilson Salinas,Edilson Salinas,63,71,GOL,24,Argentina,R04094
+Godoy Cruz,Nicolás Claa,Nicolás Claa,59,71,GOL,21,Argentina,R04095
+Talleres,Ezequiel Unsain,Ezequiel Unsain,72,72,GOL,31,Argentina,R13319
+Talleres,Santino Barbi,Santino Barbi,59,64,GOL,21,Argentina,R13320
+Talleres,Santiago Fernández,Santiago Fernández,71,74,ZAG,21,Argentina,R13321
+Talleres,Román Riquelme,Román Riquelme,71,74,ZAG,24,Argentina,R13322
+Talleres,Valentín Fascendini,Valentín Fascendini,68,69,ZAG,23,Argentina,R13323
+Talleres,Matías Catalán,Matías Catalán,73,73,ZAG,34,Chile,R13324
+Talleres,Thiago Baroni,Thiago Baroni,53,61,ZAG,20,Argentina,R13325
+Talleres,Gonzalo Nuccio,Gonzalo Nuccio,54,64,ZAG,19,Argentina,R13326
+Talleres,Alexandro Maidana,Alexandro Maidana,71,74,LAT,21,Paraguai,R13327
+Talleres,Gabriel Báez,Gabriel Báez,71,71,LAT,31,Argentina,R13328
+Talleres,Augusto Schott,Augusto Schott,66,70,LAT,26,Argentina,R13329
+Talleres,Timoteo Chamorro,Timoteo Chamorro,60,69,LAT,20,Argentina,R13330
+Talleres,Tomás Olmos,Tomás Olmos,62,76,LAT,21,Argentina,R13331
+Talleres,Matías Galarza,Matías Galarza,73,82,VOL,24,Argentina,R13332
+Talleres,Juan Sforza,Juan Sforza,69,72,VOL,24,Argentina,R13333
+Talleres,Federico Fattori,Federico Fattori,71,71,VOL,34,Argentina,R13334
+Talleres,Bruno Trey,Bruno Trey,49,59,VOL,20,Argentina,R13335
+Talleres,Mateo Cáceres,Mateo Cáceres,66,77,MEI,24,Argentina,R13336
+Talleres,Matías Gómez,Matías Gómez,61,77,MEI,20,Argentina,R13337
+Talleres,Franco Cristaldo,Franco Cristaldo,75,75,MEI,30,Argentina,R13338
+Talleres,Lautaro Ortiz,Lautaro Ortiz,52,65,MEI,18,Argentina,R13339
+Talleres,Rick,Rick,61,62,ATA,27,Brasil,R13340
+Talleres,Valentín Depietri,Valentín Depietri,66,72,ATA,26,Argentina,R13341
+Talleres,Diego Valoyes,Diego Valoyes,71,71,ATA,30,Colômbia,R13342
+Talleres,Ignacio Alastra,Ignacio Alastra,51,73,ATA,19,Argentina,R13343
+Talleres,Emiliano Chiavassa,Emiliano Chiavassa,49,59,ATA,20,Argentina,R13344
+Talleres,Agustín Álvarez,Agustín Álvarez,72,74,ATA,25,Uruguai,R13345
+Talleres,Valentín Dávila,Valentín Dávila,66,75,ATA,19,Argentina,R13346
+Huracán,Sebastián Meza,Sebastián Meza,72,78,GOL,26,Argentina,R13377
+Huracán,Hernán Galíndez,Hernán Galíndez,74,74,GOL,39,Equador,R13378
+Huracán,Nazareno Durán,Nazareno Durán,58,72,GOL,22,Argentina,R13379
+Huracán,Máximo Palazzo,Máximo Palazzo,69,73,ZAG,21,Argentina,R13380
+Huracán,Hugo Nervo,Hugo Nervo,74,74,ZAG,35,Argentina,R13381
+Huracán,Fabio Pereyra,Fabio Pereyra,72,72,ZAG,36,Argentina,R13382
+Huracán,Daniel Zabala,Daniel Zabala,66,74,ZAG,23,Argentina,R13383
+Huracán,César Ibáñez,César Ibáñez,69,72,LAT,27,Argentina,R13384
+Huracán,Leandro Lescano,Leandro Lescano,63,72,LAT,23,Argentina,R13385
+Huracán,Lucas Blondel,Lucas Blondel,72,72,LAT,30,Suíça,R13386
+Huracán,Federico Vera,Federico Vera,68,68,LAT,28,Argentina,R13387
+Huracán,Ignacio Campo,Ignacio Campo,60,66,LAT,21,Argentina,R13388
+Huracán,Rodrigo Fernández Cedrés,Rodrigo Fernández Cedrés,66,66,VOL,30,Uruguai,R13389
+Huracán,Emmanuel Ojeda,Emmanuel Ojeda,67,68,VOL,29,Argentina,R13390
+Huracán,Lautaro Mora,Lautaro Mora,55,64,VOL,21,Argentina,R13391
+Huracán,Leonardo Gil,Leonardo Gil,70,70,MEI,35,Chile,R13392
+Huracán,Facundo Kalinger,Facundo Kalinger,68,72,MEI,21,Argentina,R13393
+Huracán,Santiago Luján,Santiago Luján,60,63,MEI,24,Argentina,R13394
+Huracán,Facundo Waller,Facundo Waller,72,72,MEI,29,Uruguai,R13395
+Huracán,Thaiel Peralta,Thaiel Peralta,62,74,MEI,18,Argentina,R13396
+Huracán,Óscar Romero,Óscar Romero,69,69,MEI,34,Paraguai,R13397
+Huracán,Óscar Cortés,Óscar Cortés,73,74,ATA,22,Colômbia,R13398
+Huracán,Juan Bisanz,Juan Bisanz,68,74,ATA,25,Argentina,R13399
+Huracán,Tomás Uribe,Tomás Uribe,53,65,ATA,19,Argentina,R13400
+Huracán,Jordy Caicedo,Jordy Caicedo,71,71,ATA,28,Equador,R13401
+Huracán,Bruno Barticciotto,Bruno Barticciotto,71,73,ATA,25,Chile,R13402
+Huracán,Ignacio Pussetto,Ignacio Pussetto,70,70,ATA,30,Argentina,R13403
+Unión de Santa Fe,Mauro Pittón,Mauro Pittón,71,71,MEI,31,Argentina,R04096
+Unión de Santa Fe,Bruno Pittón,Bruno Pittón,70,70,LAT,33,Argentina,R04097
+Unión de Santa Fe,Augusto Solari,Augusto Solari,71,71,MEI,34,Argentina,R04098
+Unión de Santa Fe,Claudio Corvalán,Claudio Corvalán,73,73,ZAG,37,Argentina,R04099
+Unión de Santa Fe,Mauricio Martínez,Mauricio Martínez,72,72,VOL,33,Argentina,R04100
+Unión de Santa Fe,Ezequiel Cañete,Ezequiel Cañete,67,70,MEI,27,Argentina,R04101
+Unión de Santa Fe,Cristian Tarragona,Cristian Tarragona,70,70,ATA,35,Argentina,R04102
+Unión de Santa Fe,Lucas Gamba,Lucas Gamba,69,69,ATA,39,Argentina,R04103
+Unión de Santa Fe,Franco Fragapane,Franco Fragapane,70,70,MEI,33,Argentina,R04104
+Unión de Santa Fe,Julián Palacios,Julián Palacios,69,69,MEI,27,Argentina,R04105
+Unión de Santa Fe,Jerónimo Domina,Jerónimo Domina,70,84,ATA,20,Argentina,R04106
+Unión de Santa Fe,Lautaro Vargas,Lautaro Vargas,67,78,LAT,21,Argentina,R04107
+Unión de Santa Fe,Francisco Gerometta,Francisco Gerometta,66,69,LAT,26,Argentina,R04108
+Unión de Santa Fe,Nicolás Paz,Nicolás Paz,70,79,ZAG,23,Argentina,R04109
+Unión de Santa Fe,Nicolás Palavecino,Nicolás Palavecino,62,72,MEI,23,Argentina,R04110
+Unión de Santa Fe,Marcelo Estigarribia,Marcelo Estigarribia,69,69,ATA,31,Argentina,R04111
+Unión de Santa Fe,Diego Díaz,Diego Díaz,61,69,ATA,24,Argentina,R04112
+Unión de Santa Fe,Rafael Profini,Rafael Profini,64,75,VOL,22,Argentina,R04113
+Unión de Santa Fe,Agustín Colazo,Agustín Colazo,61,63,ATA,25,Argentina,R04114
+Unión de Santa Fe,Valentín Fascendini,Valentín Fascendini,66,74,ZAG,23,Argentina,R04115
+Unión de Santa Fe,Maizon Rodríguez,Maizon Rodríguez,64,71,ZAG,23,Uruguai,R04116
+Unión de Santa Fe,Juan Ludueña,Juan Ludueña,64,71,ZAG,23,Argentina,R04117
+Unión de Santa Fe,Emiliano Álvarez,Emiliano Álvarez,61,68,LAT,25,Uruguai,R04118
+Unión de Santa Fe,Fernando Díaz,Fernando Díaz,58,65,LAT,25,Paraguai,R04119
+Unión de Santa Fe,Lucas Meuli,Lucas Meuli,63,69,GOL,25,Argentina,R04120
+Unión de Santa Fe,Tomás Durso,Tomás Durso,66,71,GOL,27,Argentina,R04121
+Instituto,Gastón Lódico,Gastón Lódico,75,76,MEI,28,Argentina,R04122
+Instituto,Juan Méndez,Juan Méndez,69,69,MEI,29,Argentina,R04123
+Instituto,Lucas Rodríguez,Lucas Rodríguez,69,69,LAT,32,Argentina,R04124
+Instituto,Jonás Acevedo,Jonás Acevedo,69,69,MEI,29,Argentina,R04125
+Instituto,Franco Díaz,Franco Díaz,69,75,VOL,25,Argentina,R04126
+Instituto,Alex Luna,Alex Luna,70,79,MEI,22,Argentina,R04127
+Instituto,Nicolás Cordero,Nicolás Cordero,69,72,ATA,27,Argentina,R04128
+Instituto,Matías Gallardo,Matías Gallardo,64,72,MEI,22,Argentina,R04129
+Instituto,Francis Mac Allister,Francis Mac Allister,70,70,VOL,30,Argentina,R04130
+Instituto,Juan Franco,Juan Franco,67,67,LAT,34,Paraguai,R04131
+Instituto,Stéfano Moreyra,Stéfano Moreyra,67,75,VOL,25,Argentina,R04132
+Instituto,Damián Puebla,Damián Puebla,67,74,MEI,23,Argentina,R04133
+Instituto,Matias Fonseca,Matias Fonseca,66,73,ATA,25,Uruguai,R04134
+Instituto,Elías Pereyra,Elías Pereyra,68,71,LAT,27,Argentina,R04135
+Instituto,Jhon Córdoba,Jhon Córdoba,69,72,MEI,26,Colômbia,R04136
+Instituto,Facundo Suárez,Facundo Suárez,67,67,ATA,32,Argentina,R04137
+Instituto,Jeremías Lázaro,Jeremías Lázaro,60,72,MEI,22,Argentina,R04138
+Instituto,Fernando Alarcón,Fernando Alarcón,72,72,ZAG,32,Argentina,R04139
+Instituto,Emanuel Beltrán,Emanuel Beltrán,64,65,LAT,28,Uruguai,R04140
+Instituto,Agustín Bravo,Agustín Bravo,62,71,ZAG,25,Argentina,R04141
+Instituto,Nicolás Zalazar,Nicolás Zalazar,67,69,ZAG,29,Argentina,R04142
+Instituto,Luca Klimowicz,Luca Klimowicz,60,74,ATA,22,Argentina,R04143
+Instituto,Manuel Romero,Manuel Romero,62,69,ATA,25,Paraguai,R04144
+Instituto,Leonel Mosevich,Leonel Mosevich,68,70,ZAG,29,Argentina,R04145
+Instituto,Matías Klimowicz,Matías Klimowicz,55,76,ATA,19,Equador,R04146
+Instituto,Lorenzo Albarracin,Lorenzo Albarracin,55,75,ATA,19,Argentina,R04147
+Instituto,Gonzalo Requena,Gonzalo Requena,61,68,ZAG,23,Argentina,R04148
+Instituto,Joaquín Papaleo,Joaquín Papaleo,68,68,GOL,32,Argentina,R04149
+Instituto,Emanuel Sittaro,Emanuel Sittaro,60,64,GOL,26,Argentina,R04150
+Sarmiento,Jonatan Gómez,Jonatan Gómez,71,71,MEI,36,Argentina,R04151
+Sarmiento,Alex Vigo,Alex Vigo,68,69,LAT,27,Argentina,R04152
+Sarmiento,Yair Arismendi,Yair Arismendi,67,67,LAT,28,Argentina,R04153
+Sarmiento,Carlos Villalba,Carlos Villalba,68,68,MEI,28,Argentina,R04154
+Sarmiento,Gastón González,Gastón González,69,75,ATA,25,Argentina,R04155
+Sarmiento,Manuel García,Manuel García,68,69,VOL,27,Argentina,R04156
+Sarmiento,Santiago Rodríguez,Santiago Rodríguez,70,70,ATA,28,Argentina,R04157
+Sarmiento,Facundo Roncaglia,Facundo Roncaglia,69,69,ZAG,39,Argentina,R04158
+Sarmiento,Juan Andrada,Juan Andrada,67,67,MEI,31,Argentina,R04159
+Sarmiento,Renzo Orihuela,Renzo Orihuela,68,74,ZAG,25,Uruguai,R04160
+Sarmiento,Emiliano Méndez,Emiliano Méndez,68,68,VOL,37,Argentina,R04161
+Sarmiento,Juan Insaurralde,Juan Insaurralde,70,70,ZAG,41,Argentina,R04162
+Sarmiento,Tomas Guiacobini,Tomas Guiacobini,66,76,VOL,22,Argentina,R04163
+Sarmiento,Federico Paradela,Federico Paradela,65,71,MEI,25,Argentina,R04164
+Sarmiento,Elián Gimenez,Elián Gimenez,64,72,MEI,22,Argentina,R04165
+Sarmiento,Gabriel Díaz Núñez,Gabriel Díaz Núñez,68,71,LAT,26,Argentina,R04166
+Sarmiento,Iván Morales,Iván Morales,68,69,ATA,27,Chile,R04167
+Sarmiento,Pablo Magnín,Pablo Magnín,68,68,ATA,36,Argentina,R04168
+Sarmiento,Joaquín Ardaiz,Joaquín Ardaiz,64,67,ATA,27,Uruguai,R04169
+Sarmiento,Franco Frías,Franco Frías,67,74,MEI,24,Argentina,R04170
+Sarmiento,Julián Contrera,Julián Contrera,64,73,ATA,23,Argentina,R04171
+Sarmiento,Matías Rosales,Matías Rosales,60,70,MEI,21,Argentina,R04172
+Sarmiento,Agustín Molina,Agustín Molina,59,71,ATA,20,Argentina,R04173
+Sarmiento,Jeremías Vallejos,Jeremías Vallejos,60,67,LAT,23,Argentina,R04174
+Sarmiento,Agustín Seyral,Agustín Seyral,60,70,ZAG,21,Argentina,R04175
+Sarmiento,Santiago Morales,Santiago Morales,64,70,ZAG,24,Argentina,R04176
+Sarmiento,Joel Godoy,Joel Godoy,59,71,LAT,21,Argentina,R04177
+Sarmiento,Lucas Acosta,Lucas Acosta,71,71,GOL,31,Argentina,R04178
+Sarmiento,Jhon Rentería,Jhon Rentería,50,63,ATA,20,Colômbia,R04179
+Sarmiento,José Devecchi,José Devecchi,70,71,GOL,31,Argentina,R04180
+Sarmiento,Thyago Ayala,Thyago Ayala,63,69,GOL,24,Argentina,R04181
+Independiente Rivadavia,Ezequiel Bonifacio,Ezequiel Bonifacio,70,70,LAT,32,Argentina,R04182
+Independiente Rivadavia,Luciano Gómez,Luciano Gómez,70,70,LAT,30,Argentina,R04183
+Independiente Rivadavia,Leonel Bucca,Leonel Bucca,69,71,MEI,27,Argentina,R04184
+Independiente Rivadavia,Luciano Abecasis,Luciano Abecasis,66,66,LAT,36,Argentina,R04185
+Independiente Rivadavia,Diego Tonetto,Diego Tonetto,67,67,MEI,37,Argentina,R04186
+Independiente Rivadavia,Mauricio Cardillo,Mauricio Cardillo,66,75,MEI,23,Argentina,R04187
+Independiente Rivadavia,Victorio Ramis,Victorio Ramis,67,67,ATA,32,Argentina,R04188
+Independiente Rivadavia,Mauro Peinipil,Mauro Peinipil,68,71,LAT,27,Argentina,R04189
+Independiente Rivadavia,Maximiliano Amarfil,Maximiliano Amarfil,65,71,MEI,24,Argentina,R04190
+Independiente Rivadavia,Adrián Arce,Adrián Arce,75,75,ATA,31,Paraguai,R04191
+Independiente Rivadavia,Tomás Bottari,Tomás Bottari,64,68,MEI,25,Argentina,R04192
+Independiente Rivadavia,Leonard Costa,Leonard Costa,67,70,ZAG,27,Uruguai,R04193
+Independiente Rivadavia,Nicolás Retamar,Nicolás Retamar,68,71,ATA,27,Argentina,R04194
+Independiente Rivadavia,Matías Fernandez,Matías Fernandez,63,70,MEI,25,Argentina,R04195
+Independiente Rivadavia,Thomas Ortega,Thomas Ortega,65,70,LAT,25,Argentina,R04196
+Independiente Rivadavia,Mateo Schwartz,Mateo Schwartz,60,74,MEI,22,Argentina,R04197
+Independiente Rivadavia,Santiago Muñoz,Santiago Muñoz,61,62,MEI,26,Colômbia,R04198
+Independiente Rivadavia,Pedro Souto,Pedro Souto,66,71,LAT,26,Argentina,R04199
+Independiente Rivadavia,Fernando Romero,Fernando Romero,64,69,ATA,26,Paraguai,R04200
+Independiente Rivadavia,Sheyko Studer,Sheyko Studer,68,77,ZAG,23,Argentina,R04201
+Independiente Rivadavia,Tomás Muro,Tomás Muro,64,70,MEI,24,Argentina,R04202
+Independiente Rivadavia,Santiago Flores,Santiago Flores,68,75,ZAG,25,Argentina,R04203
+Independiente Rivadavia,Gonzalo Álvez,Gonzalo Álvez,64,73,MEI,22,Argentina,R04204
+Independiente Rivadavia,Matías Valenti,Matías Valenti,66,73,LAT,23,Argentina,R04205
+Independiente Rivadavia,Laureano Rodriguez,Laureano Rodriguez,61,70,VOL,23,Argentina,R04206
+Independiente Rivadavia,Iván Villalba,Iván Villalba,68,68,ZAG,31,Paraguai,R04207
+Independiente Rivadavia,Juan Barbieri,Juan Barbieri,62,62,ATA,29,Argentina,R04208
+Independiente Rivadavia,Alejo Osella,Alejo Osella,62,69,LAT,25,Argentina,R04209
+Independiente Rivadavia,Fabrizio Sartori,Fabrizio Sartori,64,73,ATA,24,Argentina,R04210
+Independiente Rivadavia,Gonzalo Marinelli,Gonzalo Marinelli,68,68,GOL,37,Argentina,R04211
+Independiente Rivadavia,Agustín Lastra,Agustín Lastra,63,71,GOL,25,Argentina,R04212
+Atlético Tucumán,Carlos Auzqui,Carlos Auzqui,70,70,MEI,35,Argentina,R04213
+Atlético Tucumán,Damián Martínez,Damián Martínez,69,69,LAT,36,Argentina,R04214
+Atlético Tucumán,Nicolás Castro,Nicolás Castro,67,67,MEI,36,Argentina,R04215
+Atlético Tucumán,Ramiro Ruiz Rodríguez,Ramiro Ruiz Rodríguez,70,75,ATA,26,Argentina,R04216
+Atlético Tucumán,Kevin Lopez,Kevin Lopez,68,77,MEI,24,Argentina,R04217
+Atlético Tucumán,Adrián Sánchez,Adrián Sánchez,70,73,MEI,27,Argentina,R04218
+Atlético Tucumán,Leandro Díaz,Leandro Díaz,73,73,ATA,34,Argentina,R04219
+Atlético Tucumán,Renzo Tesuri,Renzo Tesuri,70,70,MEI,30,Argentina,R04220
+Atlético Tucumán,Rodrigo Melo,Rodrigo Melo,69,69,VOL,30,Argentina,R04221
+Atlético Tucumán,Kevin Ortiz,Kevin Ortiz,69,75,VOL,25,Argentina,R04222
+Atlético Tucumán,Juan Infante,Juan Infante,69,69,LAT,30,Argentina,R04223
+Atlético Tucumán,Gianluca Ferrari,Gianluca Ferrari,70,72,ZAG,29,Argentina,R04224
+Atlético Tucumán,Fausto Grillo,Fausto Grillo,70,70,ZAG,33,Argentina,R04225
+Atlético Tucumán,Miguel Brizuela,Miguel Brizuela,70,72,ZAG,29,Argentina,R04226
+Atlético Tucumán,Franco Nicola,Franco Nicola,65,72,MEI,24,Uruguai,R04227
+Atlético Tucumán,Nicolás Laméndola,Nicolás Laméndola,61,62,MEI,27,Argentina,R04228
+Atlético Tucumán,Maximiliano Villa,Maximiliano Villa,69,69,LAT,29,Uruguai,R04229
+Atlético Tucumán,Lucas Román,Lucas Román,65,77,MEI,22,Itália,R04230
+Atlético Tucumán,Mateo Bajamich,Mateo Bajamich,62,65,ATA,26,Argentina,R04231
+Atlético Tucumán,Lisandro Cabrera,Lisandro Cabrera,58,59,ATA,28,Argentina,R04232
+Atlético Tucumán,Marcelo Ortíz,Marcelo Ortíz,67,67,ZAG,32,Argentina,R04233
+Atlético Tucumán,Ignacio Galván,Ignacio Galván,60,69,LAT,23,Argentina,R04234
+Atlético Tucumán,Moisés Brandán,Moisés Brandán,62,67,LAT,25,Argentina,R04235
+Atlético Tucumán,Lautaro Godoy,Lautaro Godoy,55,64,MEI,23,Argentina,R04236
+Atlético Tucumán,Luciano Vallejo,Luciano Vallejo,58,71,ZAG,22,Argentina,R04237
+Atlético Tucumán,Clever Ferreira,Clever Ferreira,58,68,ZAG,23,Paraguai,R04238
+Atlético Tucumán,Matías Mansilla,Matías Mansilla,73,73,GOL,30,Argentina,R04239
+Atlético Tucumán,Juan González,Juan González,62,62,GOL,33,Uruguai,R04240
+Atlético Tucumán,Patricio Albornoz,Patricio Albornoz,59,65,GOL,26,Argentina,R04241
+Tigre,Jalil Elías,Jalil Elías,71,71,VOL,30,Síria,R04242
+Tigre,Sebastián Medina,Sebastián Medina,68,71,MEI,26,Argentina,R04243
+Tigre,Julián López,Julián López,70,73,VOL,26,Argentina,R04244
+Tigre,Jabes Saralegui,Jabes Saralegui,67,75,MEI,23,Argentina,R04245
+Tigre,Bruno Leyes,Bruno Leyes,70,77,VOL,24,Argentina,R04246
+Tigre,Gonzalo Piñeiro,Gonzalo Piñeiro,65,68,MEI,25,Argentina,R04247
+Tigre,Simón Rivero,Simón Rivero,66,77,MEI,23,Argentina,R04248
+Tigre,Martín Garay,Martín Garay,69,70,LAT,27,Argentina,R04249
+Tigre,Braian Martínez,Braian Martínez,66,67,MEI,26,Argentina,R04250
+Tigre,Héctor Fertoli,Héctor Fertoli,68,68,MEI,31,Argentina,R04251
+Tigre,Diego Sosa,Diego Sosa,68,68,LAT,29,Argentina,R04252
+Tigre,Santiago González,Santiago González,67,75,MEI,23,Argentina,R04253
+Tigre,Nahuel Banegas,Nahuel Banegas,70,70,LAT,29,Argentina,R04254
+Tigre,Martín Ortega,Martín Ortega,67,68,LAT,26,Argentina,R04255
+Tigre,Darío Sarmiento,Darío Sarmiento,66,73,MEI,23,Argentina,R04256
+Tigre,Ignacio Russo,Ignacio Russo,67,70,ATA,25,Argentina,R04257
+Tigre,Joaquín Laso,Joaquín Laso,70,70,ZAG,36,Argentina,R04258
+Tigre,Valentín Moreno,Valentín Moreno,63,70,LAT,23,Argentina,R04259
+Tigre,Guillermo Soto,Guillermo Soto,67,67,LAT,32,Chile,R04260
+Tigre,Alfio Oviedo,Alfio Oviedo,68,68,ATA,30,Paraguai,R04261
+Tigre,Blas Armoa,Blas Armoa,67,70,MEI,26,Paraguai,R04262
+Tigre,Federico Álvarez,Federico Álvarez,63,63,LAT,31,Argentina,R04263
+Tigre,Manuel Fernández,Manuel Fernández,64,74,MEI,21,Argentina,R04264
+Tigre,Á. Marchese,Á. Marchese,63,73,LAT,21,Argentina,R04265
+Tigre,Ramón Arias,Ramón Arias,66,66,ZAG,34,Uruguai,R04266
+Tigre,Alan Barrionuevo,Alan Barrionuevo,66,66,ZAG,29,Argentina,R04267
+Tigre,Tomás Sultani,Tomás Sultani,67,71,GOL,28,Argentina,R04268
+Tigre,Alan Sosa,Alan Sosa,64,64,GOL,30,Argentina,R04269
+Tigre,Felipe Zenobio,Felipe Zenobio,69,72,GOL,26,Argentina,R04270
+Aldosivi,Ignacio Guerrico,Ignacio Guerrico,71,71,LAT,28,Argentina,R04271
+Aldosivi,Justo Giani,Justo Giani,71,72,MEI,27,Argentina,R04272
+Aldosivi,Marcelo Esponda,Marcelo Esponda,66,73,VOL,23,Argentina,R04273
+Aldosivi,Tobías Leiva,Tobías Leiva,67,75,MEI,22,Argentina,R04274
+Aldosivi,Matías García,Matías García,68,68,MEI,34,Argentina,R04275
+Aldosivi,Néstor Breitenbruch,Néstor Breitenbruch,70,70,ZAG,30,Argentina,R04276
+Aldosivi,Federico Gino,Federico Gino,67,67,MEI,33,Uruguai,R04277
+Aldosivi,Roberto Bochi,Roberto Bochi,66,66,VOL,36,Argentina,R04278
+Aldosivi,Lucio Falasco,Lucio Falasco,63,71,MEI,22,Argentina,R04279
+Aldosivi,Agustín Palavecino,Agustín Palavecino,68,76,MEI,23,Argentina,R04280
+Aldosivi,Giuliano Cerato,Giuliano Cerato,66,66,LAT,28,Argentina,R04281
+Aldosivi,Gonzalo Mottes,Gonzalo Mottes,70,70,ZAG,28,Argentina,R04282
+Aldosivi,Fernando Román,Fernando Román,66,66,LAT,27,Paraguai,R04283
+Aldosivi,Gabriel Paredes,Gabriel Paredes,63,71,LAT,22,Argentina,R04284
+Aldosivi,Franco Rami,Franco Rami,67,74,ATA,23,Argentina,R04285
+Aldosivi,Lautaro Chávez,Lautaro Chávez,65,68,MEI,25,Argentina,R04286
+Aldosivi,Rodrigo González,Rodrigo González,68,71,LAT,26,Argentina,R04287
+Aldosivi,Tiago Serrago,Tiago Serrago,67,77,MEI,22,Argentina,R04288
+Aldosivi,Tobías Cervera,Tobías Cervera,65,74,ATA,23,Síria,R04289
+Aldosivi,Natanael Guzmán,Natanael Guzmán,66,67,MEI,26,Argentina,R04290
+Aldosivi,Tomás Kummer,Tomás Kummer,63,73,ZAG,21,Argentina,R04291
+Aldosivi,Santiago Laquidain,Santiago Laquidain,63,69,ZAG,25,Argentina,R04292
+Aldosivi,Juan Achetoni,Juan Achetoni,55,68,VOL,21,Argentina,R04293
+Aldosivi,Yonathan Cabral,Yonathan Cabral,67,67,ZAG,34,Argentina,R04294
+Aldosivi,Alejandro Villarreal,Alejandro Villarreal,58,71,ATA,21,Colômbia,R04295
+Aldosivi,Santiago Moya,Santiago Moya,61,74,ZAG,23,Argentina,R04296
+Aldosivi,Sebastián Moyano,Sebastián Moyano,71,71,GOL,35,Argentina,R04297
+Aldosivi,Jorge Carranza,Jorge Carranza,70,70,GOL,45,Argentina,R04298
+Aldosivi,Nahuel González,Nahuel González,63,73,GOL,22,Argentina,R04299
+Central Córdoba,José Florentín,José Florentín,71,71,MEI,30,Paraguai,R04300
+Central Córdoba,Braian Cufré,Braian Cufré,68,68,LAT,29,Argentina,R04301
+Central Córdoba,Iván Gómez,Iván Gómez,70,70,MEI,29,Argentina,R04302
+Central Córdoba,Cristian Vega,Cristian Vega,68,68,MEI,32,Argentina,R04303
+Central Córdoba,Leonardo Heredia,Leonardo Heredia,71,71,ATA,30,Argentina,R04304
+Central Córdoba,Jonathan Galván,Jonathan Galván,70,70,ZAG,34,Argentina,R04305
+Central Córdoba,Iván Pillud,Iván Pillud,67,67,LAT,40,Argentina,R04306
+Central Córdoba,Gastón Verón,Gastón Verón,71,77,ATA,25,Argentina,R04307
+Central Córdoba,Sebastián Cristóforo,Sebastián Cristóforo,68,68,VOL,32,Uruguai,R04308
+Central Córdoba,Matías Vera,Matías Vera,67,67,VOL,30,Argentina,R04309
+Central Córdoba,David Zalazar,David Zalazar,68,74,ATA,24,Argentina,R04310
+Central Córdoba,Matías Godoy,Matías Godoy,68,76,MEI,24,Argentina,R04311
+Central Córdoba,Franco Alfonso,Franco Alfonso,67,72,MEI,24,Argentina,R04312
+Central Córdoba,Leonardo Marchi,Leonardo Marchi,65,65,LAT,29,Argentina,R04313
+Central Córdoba,Fernando Juárez,Fernando Juárez,63,66,VOL,27,Argentina,R04314
+Central Córdoba,Matías Perelló,Matías Perelló,64,70,MEI,24,Argentina,R04315
+Central Córdoba,Juan Pignani,Juan Pignani,66,75,ZAG,25,Argentina,R04316
+Central Córdoba,Lucas Besozzi,Lucas Besozzi,68,75,MEI,23,Argentina,R04317
+Central Córdoba,Santiago Moyano,Santiago Moyano,65,66,LAT,28,Argentina,R04318
+Central Córdoba,Lucas Varaldo,Lucas Varaldo,63,72,ATA,24,Argentina,R04319
+Central Córdoba,Facundo Mansilla,Facundo Mansilla,68,73,ZAG,27,Argentina,R04320
+Central Córdoba,Fernando Martínez,Fernando Martínez,62,67,LAT,26,Argentina,R04321
+Central Córdoba,Favio Cabral,Favio Cabral,64,71,ATA,25,Argentina,R04322
+Central Córdoba,Diego Barrera,Diego Barrera,61,72,MEI,22,Argentina,R04323
+Central Córdoba,Gonzalo Trindade,Gonzalo Trindade,60,69,LAT,22,Argentina,R04324
+Central Córdoba,Nazareno Funez,Nazareno Funez,62,67,ATA,25,Argentina,R04325
+Central Córdoba,Ignacio Galván Vittar,Ignacio Galván Vittar,60,69,ZAG,22,Argentina,R04326
+Central Córdoba,Yuri Casermeiro,Yuri Casermeiro,58,65,ZAG,24,Argentina,R04327
+Central Córdoba,Alan Aguerre,Alan Aguerre,69,69,GOL,35,Argentina,R04328
+Central Córdoba,Juan Zozaya,Juan Zozaya,63,68,GOL,24,Argentina,R04329
+Central Córdoba,Javier Vallejos,Javier Vallejos,59,66,GOL,23,Argentina,R04330
+Central Córdoba,Lautaro Bursich,Lautaro Bursich,61,69,GOL,23,Argentina,R04331
+Barracas Central,Iván Tapia,Iván Tapia,71,74,MEI,27,Argentina,R04332
+Barracas Central,Rodrigo Insua,Rodrigo Insua,70,71,LAT,28,Argentina,R04333
+Barracas Central,Facundo Mater,Facundo Mater,69,70,LAT,28,Síria,R04334
+Barracas Central,Nahuel Barrios,Nahuel Barrios,74,74,ATA,28,Argentina,R04335
+Barracas Central,Jhonatan Candia,Jhonatan Candia,68,68,ATA,31,Uruguai,R04336
+Barracas Central,Manuel Duarte,Manuel Duarte,64,71,MEI,24,Argentina,R04337
+Barracas Central,Dardo Miloc,Dardo Miloc,69,69,VOL,35,Argentina,R04338
+Barracas Central,Siro Rosane,Siro Rosane,67,73,VOL,26,Argentina,R04339
+Barracas Central,Dylan Glaby,Dylan Glaby,67,67,VOL,30,Argentina,R04340
+Barracas Central,Tomás Porra,Tomás Porra,65,76,MEI,22,Argentina,R04341
+Barracas Central,Facundo Bruera,Facundo Bruera,71,72,ATA,27,Argentina,R04342
+Barracas Central,Maximiliano Puig,Maximiliano Puig,63,66,MEI,25,Argentina,R04343
+Barracas Central,Gonzalo Morales,Gonzalo Morales,69,78,ATA,23,Argentina,R04344
+Barracas Central,Yonatthan Rak,Yonatthan Rak,71,71,ZAG,32,Uruguai,R04345
+Barracas Central,Nicolás Blandi,Nicolás Blandi,65,65,ATA,36,Argentina,R04346
+Barracas Central,Ignacio Tapia,Ignacio Tapia,60,74,MEI,21,Argentina,R04347
+Barracas Central,Rafael Barrios,Rafael Barrios,66,66,LAT,33,Argentina,R04348
+Barracas Central,Alex Juárez,Alex Juárez,59,66,MEI,21,Argentina,R04349
+Barracas Central,Nicolás Capraro,Nicolás Capraro,67,70,ZAG,28,Argentina,R04350
+Barracas Central,Agustin Irazoque,Agustin Irazoque,65,68,ZAG,26,Argentina,R04351
+Barracas Central,Fernando Tobio,Fernando Tobio,70,70,ZAG,36,Argentina,R04352
+Barracas Central,Nicolás Demartini,Nicolás Demartini,68,72,ZAG,26,Argentina,R04353
+Barracas Central,Thiago Perugini,Thiago Perugini,60,76,ATA,21,Argentina,R04354
+Barracas Central,Facundo Kruger,Facundo Kruger,62,66,ATA,26,Argentina,R04355
+Barracas Central,Kevin Jappert,Kevin Jappert,59,74,ZAG,22,Argentina,R04356
+Barracas Central,Iván Guaraz,Iván Guaraz,56,69,ATA,21,Argentina,R04357
+Barracas Central,Marcos Ledesma,Marcos Ledesma,70,70,GOL,29,Argentina,R04358
+Barracas Central,Marcelo Miño,Marcelo Miño,62,65,GOL,28,Argentina,R04359
+San Martín de San Juan,Diego González,Diego González,70,70,MEI,38,Argentina,R04360
+San Martín de San Juan,Jonathan Menéndez,Jonathan Menéndez,70,70,MEI,32,Argentina,R04361
+San Martín de San Juan,Tomás Escalante,Tomás Escalante,65,68,MEI,27,Argentina,R04362
+San Martín de San Juan,Marco Iacobellis,Marco Iacobellis,67,70,MEI,26,Argentina,R04363
+San Martín de San Juan,Santiago Salle,Santiago Salle,62,75,LAT,22,Argentina,R04364
+San Martín de San Juan,Horacio Tijanovich,Horacio Tijanovich,67,67,MEI,30,Argentina,R04365
+San Martín de San Juan,Sebastián Jaurena,Sebastián Jaurena,62,65,MEI,27,Argentina,R04366
+San Martín de San Juan,Ayrton Portillo,Ayrton Portillo,62,65,MEI,25,Argentina,R04367
+San Martín de San Juan,Tomás Fernández,Tomás Fernández,66,66,MEI,27,Argentina,R04368
+San Martín de San Juan,Nicólas Watson,Nicólas Watson,65,68,VOL,28,Argentina,R04369
+San Martín de San Juan,Ignacio Maestro Puch,Ignacio Maestro Puch,68,79,ATA,22,Argentina,R04370
+San Martín de San Juan,Lucas Diarte,Lucas Diarte,69,69,LAT,33,Argentina,R04371
+San Martín de San Juan,Pablo García,Pablo García,67,68,MEI,27,Uruguai,R04372
+San Martín de San Juan,Esteban Burgos,Esteban Burgos,68,68,ZAG,34,Argentina,R04373
+San Martín de San Juan,Sebastián Gonzalez,Sebastián Gonzalez,63,63,MEI,34,Argentina,R04374
+San Martín de San Juan,Franco Toloza,Franco Toloza,64,64,ATA,32,Argentina,R04375
+San Martín de San Juan,Tomás Lecanda,Tomás Lecanda,64,75,ZAG,24,Argentina,R04376
+San Martín de San Juan,Nicolás Pelaitay,Nicolás Pelaitay,61,61,VOL,33,Argentina,R04377
+San Martín de San Juan,Alejandro Molina,Alejandro Molina,64,64,LAT,28,Argentina,R04378
+San Martín de San Juan,Julián Marchio,Julián Marchio,61,69,ZAG,25,Argentina,R04379
+San Martín de San Juan,Gonzalo Lucero,Gonzalo Lucero,58,68,LAT,22,Argentina,R04380
+San Martín de San Juan,Federico Anselmo,Federico Anselmo,64,64,ATA,32,Argentina,R04381
+San Martín de San Juan,Leonel Álvarez,Leonel Álvarez,62,62,LAT,30,Argentina,R04382
+San Martín de San Juan,Lucas Acosta,Lucas Acosta,58,73,MEI,21,Argentina,R04383
+San Martín de San Juan,Luciano Recalde,Luciano Recalde,67,67,ZAG,30,Argentina,R04384
+San Martín de San Juan,Rodrigo Cáseres,Rodrigo Cáseres,64,66,ZAG,28,Argentina,R04385
+San Martín de San Juan,Federico Bonansea,Federico Bonansea,64,68,GOL,28,Argentina,R04386
+San Martín de San Juan,Matías Borgogno,Matías Borgogno,65,69,GOL,27,Argentina,R04387
+San Martín de San Juan,Maximiliano Velazco,Maximiliano Velazco,60,61,GOL,31,Argentina,R04388
+San Lorenzo,Nery Domínguez,Nery Domínguez,72,72,ZAG,36,Argentina,R04389
+San Lorenzo,Nicolás Tripichio,Nicolás Tripichio,73,73,LAT,30,Argentina,R04390
+San Lorenzo,Andrés Vombergar,Andrés Vombergar,74,74,ATA,31,Eslovênia,R04391
+San Lorenzo,Manuel Insaurralde,Manuel Insaurralde,66,69,MEI,27,Argentina,R04392
+San Lorenzo,Ezequiel Cerutti,Ezequiel Cerutti,70,70,MEI,34,Argentina,R04393
+San Lorenzo,Alexis Cuello,Alexis Cuello,68,72,ATA,26,Argentina,R04394
+San Lorenzo,Diego Herazo,Diego Herazo,71,71,ATA,30,Colômbia,R04395
+San Lorenzo,Elías Báez,Elías Báez,67,78,LAT,21,Argentina,R04396
+San Lorenzo,Matías Reali,Matías Reali,70,70,ATA,29,Argentina,R04397
+San Lorenzo,Gastón Hernández,Gastón Hernández,73,76,ZAG,28,Argentina,R04398
+San Lorenzo,Teo Rodríguez Pagano,Teo Rodríguez Pagano,63,77,LAT,20,Argentina,R04399
+San Lorenzo,Francisco Perruzzi,Francisco Perruzzi,65,74,VOL,25,Argentina,R04400
+San Lorenzo,Agustín Ladstatter,Agustín Ladstatter,60,77,MEI,21,Argentina,R04401
+San Lorenzo,Valentín Escalante,Valentín Escalante,62,75,MEI,22,Argentina,R04402
+San Lorenzo,Johan Romaña,Johan Romaña,74,77,ZAG,27,Colômbia,R04403
+San Lorenzo,Ezequiel Herrera,Ezequiel Herrera,62,73,LAT,23,Argentina,R04404
+San Lorenzo,Juan Rattalino,Juan Rattalino,58,70,MEI,22,Argentina,R04405
+San Lorenzo,Nahuel Arias,Nahuel Arias,60,73,LAT,21,Argentina,R04406
+San Lorenzo,Facundo Gulli,Facundo Gulli,59,74,MEI,20,Argentina,R04407
+San Lorenzo,Ignacio Perruzzi,Ignacio Perruzzi,63,79,VOL,21,Argentina,R04408
+San Lorenzo,Fabricio López,Fabricio López,62,71,LAT,23,Argentina,R04409
+San Lorenzo,Daniel Herrera,Daniel Herrera,62,74,ZAG,22,Argentina,R04410
+San Lorenzo,Ramiro Pedroza,Ramiro Pedroza,57,78,ZAG,19,Argentina,R04411
+San Lorenzo,Maximiliano Zelaya,Maximiliano Zelaya,60,62,ZAG,29,Argentina,R04412
+San Lorenzo,Branco Salinardi,Branco Salinardi,55,77,ATA,19,Argentina,R04413
+San Lorenzo,Facundo Altamirano,Facundo Altamirano,71,73,GOL,30,Argentina,R04414
+San Lorenzo,Mateo Clemente,Mateo Clemente,59,69,GOL,24,Argentina,R04415
+Banfield,Santiago López García,Santiago López García,66,66,MEI,28,Argentina,R04416
+Banfield,Julio Furch,Julio Furch,75,75,ATA,37,Argentina,R04417
+Banfield,Frank Castañeda,Frank Castañeda,70,70,MEI,32,Colômbia,R04418
+Banfield,Sergio Vittor,Sergio Vittor,70,70,ZAG,37,Argentina,R04419
+Banfield,Martín Río,Martín Río,70,76,MEI,25,Argentina,R04420
+Banfield,Tomás Nasif,Tomás Nasif,70,80,ATA,22,Argentina,R04421
+Banfield,Juan Alfaro,Juan Alfaro,66,69,LAT,26,Argentina,R04422
+Banfield,Mauro Méndez,Mauro Méndez,69,70,ATA,27,Uruguai,R04423
+Banfield,Lautaro Ríos,Lautaro Ríos,67,70,MEI,25,Argentina,R04424
+Banfield,Agustín Obando,Agustín Obando,65,68,MEI,26,Argentina,R04425
+Banfield,Agustín Alaniz,Agustín Alaniz,68,75,ATA,24,Uruguai,R04426
+Banfield,Juan Iribarren,Juan Iribarren,65,73,LAT,23,Argentina,R04427
+Banfield,Gonzalo Ríos,Gonzalo Ríos,68,69,MEI,27,Argentina,R04428
+Banfield,Santiago Esquivel,Santiago Esquivel,64,74,VOL,22,Argentina,R04429
+Banfield,Tiziano Perrotta,Tiziano Perrotta,63,77,ATA,19,Argentina,R04430
+Banfield,Rodrigo Auzmendi,Rodrigo Auzmendi,66,72,ATA,25,Argentina,R04431
+Banfield,Gabriel Vega,Gabriel Vega,65,72,MEI,24,Argentina,R04432
+Banfield,Bruno Sepúlveda,Bruno Sepúlveda,69,69,ATA,33,Argentina,R04433
+Banfield,Marcos Arturia,Marcos Arturia,65,65,ATA,28,Argentina,R04434
+Banfield,Ignacio Abraham,Ignacio Abraham,66,66,LAT,28,Argentina,R04435
+Banfield,Lucas Palavecino,Lucas Palavecino,60,68,VOL,22,Argentina,R04436
+Banfield,Matías González,Matías González,65,72,MEI,24,Argentina,R04437
+Banfield,Nicolás Meriano,Nicolás Meriano,69,72,ZAG,25,Argentina,R04438
+Banfield,Danilo Arboleda,Danilo Arboleda,70,70,ZAG,31,Colômbia,R04439
+Banfield,Tomás Adoryán,Tomás Adoryán,64,70,MEI,24,Argentina,R04440
+Banfield,Brandon Oviedo,Brandon Oviedo,63,75,ZAG,21,Argentina,R04441
+Banfield,Santiago Daniele,Santiago Daniele,63,75,ZAG,20,Argentina,R04442
+Banfield,Joaquín Pombo,Joaquín Pombo,66,72,ZAG,25,Argentina,R04443
+Banfield,Lisandro Piñero,Lisandro Piñero,60,76,MEI,19,Argentina,R04444
+Banfield,Facundo Sanguinetti,Facundo Sanguinetti,70,76,GOL,25,Argentina,R04445
+Deportivo Riestra,Rodrigo Sayavedra,Rodrigo Sayavedra,64,64,LAT,31,Argentina,R04446
+Deportivo Riestra,Milton Céliz,Milton Céliz,63,63,MEI,34,Argentina,R04447
+Deportivo Riestra,Pablo Monje,Pablo Monje,63,63,MEI,29,Argentina,R04448
+Deportivo Riestra,Alexander Díaz,Alexander Díaz,67,72,ATA,26,Argentina,R04449
+Deportivo Riestra,Y. Goitia,Y. Goitia,66,66,VOL,31,Argentina,R04450
+Deportivo Riestra,Ariel Muñoz,Ariel Muñoz,61,68,MEI,25,Argentina,R04451
+Deportivo Riestra,Braian Guille,Braian Guille,64,64,ATA,29,Argentina,R04452
+Deportivo Riestra,Jonathan Herrera,Jonathan Herrera,69,69,ATA,34,Argentina,R04453
+Deportivo Riestra,Nicolás Benegas,Nicolás Benegas,68,68,ATA,30,Argentina,R04454
+Deportivo Riestra,Rodrigo Gallo,Rodrigo Gallo,62,68,LAT,25,Argentina,R04455
+Deportivo Riestra,Leonardo Landriel,Leonardo Landriel,61,61,MEI,32,Argentina,R04456
+Deportivo Riestra,Nicolás Sansotre,Nicolás Sansotre,64,64,LAT,32,Argentina,R04457
+Deportivo Riestra,Pedro Ramírez,Pedro Ramírez,62,67,LAT,26,Argentina,R04458
+Deportivo Riestra,Mariano Bracamonte,Mariano Bracamonte,63,65,LAT,27,Argentina,R04459
+Deportivo Riestra,Mateo Ramírez,Mateo Ramírez,60,60,MEI,31,Argentina,R04460
+Deportivo Riestra,Miguel Barbieri,Miguel Barbieri,69,69,ZAG,32,Argentina,R04461
+Deportivo Riestra,Santiago Vera,Santiago Vera,59,60,MEI,27,Argentina,R04462
+Deportivo Riestra,Gabriel Obredor,Gabriel Obredor,62,62,ATA,29,Argentina,R04463
+Deportivo Riestra,Cristian Paz,Cristian Paz,65,65,ZAG,31,Argentina,R04464
+Deportivo Riestra,Antony Alonso,Antony Alonso,61,62,ATA,28,Uruguai,R04465
+Deportivo Riestra,Carlos Gugenheim,Carlos Gugenheim,57,66,ATA,22,Argentina,R04466
+Deportivo Riestra,Juan Randazzo,Juan Randazzo,62,62,ZAG,31,Argentina,R04467
+Deportivo Riestra,Nicolás Caro Torres,Nicolás Caro Torres,65,65,ZAG,31,Argentina,R04468
+Deportivo Riestra,Franco Fagúndez,Franco Fagúndez,60,62,ATA,27,Uruguai,R04469
+Deportivo Riestra,Yeison Murillo,Yeison Murillo,65,65,ZAG,32,Colômbia,R04470
+Deportivo Riestra,Facundo Mino,Facundo Mino,61,63,ZAG,26,Argentina,R04471
+Deportivo Riestra,Eric Tovo,Eric Tovo,63,63,ZAG,34,Argentina,R04472
+Deportivo Riestra,Jaime Barceló,Jaime Barceló,61,64,GOL,26,Argentina,R04473
+Deportivo Riestra,Ignacio Arce,Ignacio Arce,72,72,GOL,34,Argentina,R04474
+Deportivo Riestra,Nahuel Manganelli,Nahuel Manganelli,60,67,GOL,25,Argentina,R04475

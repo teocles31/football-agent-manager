@@ -1,522 +1,522 @@
-clube,nome_original,nome,overall,potencial,posicao,idade,pais
-Benfica,Anatoliy Trubin,Anatoliy Trubin,80,87,GOL,25,Ucrânia
-Benfica,Samuel Soares,Samuel Soares,70,80,GOL,24,Portugal
-Benfica,Tomás Araújo,Tomás Araújo,78,86,ZAG,24,Portugal
-Benfica,Alessandro Circati,Alessandro Circati,79,80,ZAG,23,Austrália
-Benfica,Clément Lenglet,Clément Lenglet,74,74,ZAG,31,França
-Benfica,Gabriel Índio,Gabriel Índio,65,78,ZAG,18,Brasil
-Benfica,Souffian El Karouani,Souffian El Karouani,75,79,LAT,26,Marrocos
-Benfica,Samuel Dahl,Samuel Dahl,77,82,LAT,23,Suécia
-Benfica,José Neto,José Neto,64,77,LAT,18,Portugal
-Benfica,Alexander Bah,Alexander Bah,78,79,LAT,28,Dinamarca
-Benfica,Daniel Banjaqui,Daniel Banjaqui,70,82,LAT,18,Portugal
-Benfica,João Palhinha,João Palhinha,81,81,VOL,31,Portugal
-Benfica,Enzo Barrenechea,Enzo Barrenechea,77,82,VOL,25,Argentina
-Benfica,Manu Silva,Manu Silva,72,81,VOL,25,Portugal
-Benfica,Leandro Barreiro,Leandro Barreiro,77,80,MEI,26,Luxemburgo
-Benfica,Fredrik Aursnes,Fredrik Aursnes,80,80,MEI,30,Noruega
-Benfica,Georgiy Sudakov,Georgiy Sudakov,80,87,MEI,24,Ucrânia
-Benfica,Claudio Echeverri,Claudio Echeverri,74,83,MEI,20,Argentina
-Benfica,Andreas Schjelderup,Andreas Schjelderup,81,83,ATA,22,Noruega
-Benfica,Jakub Kamiński,Jakub Kamiński,74,79,ATA,24,Polônia
-Benfica,Gianluca Prestianni,Gianluca Prestianni,79,83,ATA,20,Argentina
-Benfica,Dodi Lukébakio,Dodi Lukébakio,82,82,ATA,29,Bélgica
-Benfica,Rafa Silva,Rafa Silva,75,75,ATA,33,Portugal
-Benfica,Vangelis Pavlidis,Vangelis Pavlidis,82,84,ATA,27,Grécia
-Benfica,Jhon Durán,Jhon Durán,78,80,ATA,22,Colômbia
-Benfica,Anísio Cabral,Anísio Cabral,68,86,ATA,18,Portugal
-Porto,Diogo Costa,Diogo Costa,84,89,GOL,27,Portugal
-Porto,Cláudio Ramos,Cláudio Ramos,73,73,GOL,34,Portugal
-Porto,João Costa,João Costa,69,69,GOL,30,Portugal
-Porto,Jakub Kiwior,Jakub Kiwior,77,80,ZAG,26,Polônia
-Porto,Jan Bednarek,Jan Bednarek,74,74,ZAG,30,Polônia
-Porto,Nehuén Pérez,Nehuén Pérez,76,81,ZAG,26,Argentina
-Porto,Dominik Prpić,Dominik Prpić,72,81,ZAG,22,Croácia
-Porto,Chris Smalling,Chris Smalling,74,74,ZAG,36,Inglaterra
-Porto,Souza,Souza,74,82,LAT,20,Brasil
-Porto,Francisco Moura,Francisco Moura,78,81,LAT,27,Portugal
-Porto,Zaidu Sanusi,Zaidu Sanusi,72,72,LAT,29,Nigéria
-Porto,Alberto Costa,Alberto Costa,80,80,LAT,23,Portugal
-Porto,Martim Fernandes,Martim Fernandes,75,85,LAT,20,Portugal
-Porto,Alan Varela,Alan Varela,79,85,VOL,25,Argentina
-Porto,Pablo Rosario,Pablo Rosario,75,76,VOL,29,Dominican Republic
-Porto,Victor Froholdt,Victor Froholdt,80,82,MEI,20,Dinamarca
-Porto,Seko Fofana,Seko Fofana,78,78,MEI,31,Costa do Marfim
-Porto,In-beom Hwang,In-beom Hwang,77,77,MEI,30,Coreia do Sul
-Porto,Vasco Sousa,Vasco Sousa,71,79,MEI,23,Portugal
-Porto,Gabri Veiga,Gabri Veiga,76,83,MEI,24,Espanha
-Porto,Oskar Pietuszewski,Oskar Pietuszewski,73,80,ATA,18,Polônia
-Porto,Borja Sainz,Borja Sainz,75,81,ATA,25,Espanha
-Porto,William Gomes,William Gomes,76,82,ATA,20,Brasil
-Porto,Pepê,Pepê,74,74,ATA,29,Brasil
-Porto,Gabriel Mec,Gabriel Mec,72,89,ATA,18,Brasil
-Porto,Duarte Cunha,Duarte Cunha,61,75,ATA,18,Portugal
-Porto,Samu Aghehowa,Samu Aghehowa,81,83,ATA,22,Espanha
-Porto,Santiago Gimenez,Santiago Gimenez,79,81,ATA,25,México
-Porto,André Silva,André Silva,76,76,ATA,31,Portugal
-Sporting CP,Rui Silva,Rui Silva,81,81,GOL,32,Portugal
-Sporting CP,Kaique Pereira,Kaique Pereira,72,76,GOL,23,Brasil
-Sporting CP,Diego Callai,Diego Callai,67,71,GOL,22,Brasil
-Sporting CP,Gonçalo Inácio,Gonçalo Inácio,81,86,ZAG,25,Portugal
-Sporting CP,Zeno Debast,Zeno Debast,80,82,ZAG,23,Bélgica
-Sporting CP,Ibrahima Ba,Ibrahima Ba,73,73,ZAG,21,Senegal
-Sporting CP,Eduardo Quaresma,Eduardo Quaresma,77,84,ZAG,24,Portugal
-Sporting CP,Maxi Araújo,Maxi Araújo,83,84,LAT,26,Uruguai
-Sporting CP,Moncef Zekri,Moncef Zekri,65,78,LAT,18,Marrocos
-Sporting CP,Nuno Santos,Nuno Santos,79,79,LAT,31,Portugal
-Sporting CP,Rodrigo Dias,Rodrigo Dias,67,71,LAT,21,Portugal
-Sporting CP,Iván Fresneda,Iván Fresneda,78,81,LAT,22,Espanha
-Sporting CP,Georgios Vagiannidis,Georgios Vagiannidis,75,81,LAT,25,Grécia
-Sporting CP,Salvador Blopa,Salvador Blopa,66,76,LAT,19,Portugal
-Sporting CP,Sergi Altimira,Sergi Altimira,81,83,VOL,25,Espanha
-Sporting CP,Silas Andersen,Silas Andersen,75,77,VOL,22,Dinamarca
-Sporting CP,Issa Doumbia,Issa Doumbia,75,75,MEI,23,Itália
-Sporting CP,João Simões,João Simões,73,83,MEI,19,Portugal
-Sporting CP,Pedro Lima,Pedro Lima,73,75,MEI,23,Brasil
-Sporting CP,Sotiris Alexandropoulos,Sotiris Alexandropoulos,70,73,MEI,24,Grécia
-Sporting CP,Rodrigo Zalazar,Rodrigo Zalazar,80,80,MEI,27,Uruguai
-Sporting CP,Nestory Irankunda,Nestory Irankunda,74,82,ATA,20,Austrália
-Sporting CP,Flávio Gonçalves,Flávio Gonçalves,73,83,ATA,19,Portugal
-Sporting CP,Jesse Derry,Jesse Derry,64,75,ATA,19,Inglaterra
-Sporting CP,Geny Catamo,Geny Catamo,78,84,ATA,25,Moçambique
-Sporting CP,Luís Guilherme,Luís Guilherme,74,84,ATA,20,Brasil
-Sporting CP,Luis Suárez,Luis Suárez,80,80,ATA,28,Colômbia
-Sporting CP,Fotis Ioannidis,Fotis Ioannidis,77,80,ATA,26,Grécia
-Sporting CP,Rafael Nel,Rafael Nel,69,75,ATA,21,Portugal
-Braga,Víctor Gómez,Víctor Gómez,76,79,LAT,26,Espanha
-Braga,Sikou Niakaté,Sikou Niakaté,76,81,ZAG,27,Mali
-Braga,Vitor Carvalho,Vitor Carvalho,74,75,VOL,29,Brasil
-Braga,Diogo Travassos,Diogo Travassos,69,80,LAT,22,Portugal
-Braga,João Moutinho,João Moutinho,77,77,MEI,40,Portugal
-Braga,Fran Navarro,Fran Navarro,74,74,ATA,28,Espanha
-Braga,Pau Víctor,Pau Víctor,70,79,ATA,24,Espanha
-Braga,Gabriel Silva,Gabriel Silva,74,83,ATA,24,Brasil
-Braga,Tiago Sá,Tiago Sá,66,66,GOL,31,Portugal
-Braga,Gustaf Lagerbielke,Gustaf Lagerbielke,71,75,ZAG,26,Suécia
-Braga,Tommy Marqués,Tommy Marqués,69,74,VOL,20,Espanha
-Braga,Jovan Milošević,Jovan Milošević,70,77,ATA,21,Sérvia
-Braga,Jonas Wind,Jonas Wind,75,75,ATA,27,Dinamarca
-Braga,Mario Dorgeles,Mario Dorgeles,69,81,MEI,22,Costa do Marfim
-Braga,Ricardo Horta,Ricardo Horta,81,81,MEI,32,Portugal
-Braga,Sergio Barcia,Sergio Barcia,68,76,ZAG,25,Espanha
-Braga,Denis Huseinbašić,Denis Huseinbašić,72,77,MEI,25,Bósnia
-Braga,Bright Arrey-Mbi,Bright Arrey-Mbi,71,81,ZAG,23,Alemanha
-Braga,Jean-Baptiste Gorby,Jean-Baptiste Gorby,72,80,VOL,24,França
-Braga,Bernardo,Bernardo,73,79,GOL,24,Brasil
-Braga,Demir Ege Tıknaz,Demir Ege Tıknaz,72,82,VOL,22,Turquia
-Braga,Adrian-Leon Barišić,Adrian-Leon Barišić,75,75,ZAG,25,Bósnia
-Braga,Adrian Bajrami,Adrian Bajrami,67,78,ZAG,24,Suíça
-Braga,Diego Rodrigues,Diego Rodrigues,66,81,MEI,21,Portugal
-Braga,João Aragão,João Aragão,65,79,ATA,18,Portugal
-Braga,Gabri Martínez,Gabri Martínez,73,81,MEI,23,Espanha
-Braga,João Carvalho,João Carvalho,61,70,GOL,22,Portugal
-Vitória SC,Miguel Maga,Miguel Maga,71,77,LAT,24,Portugal
-Vitória SC,Óscar Rivas,Óscar Rivas,67,74,ZAG,26,Espanha
-Vitória SC,Ahmed Sidibé,Ahmed Sidibé,65,72,ZAG,24,França
-Vitória SC,Matija Mitrović,Matija Mitrović,65,75,MEI,21,Sérvia
-Vitória SC,Oumar Camara,Oumar Camara,63,74,ATA,19,França
-Vitória SC,Gonçalo Nogueira,Gonçalo Nogueira,66,77,MEI,22,Portugal
-Vitória SC,Arnel Jakupović,Arnel Jakupović,70,70,ATA,28,Áustria
-Vitória SC,Alan,Alan,71,71,VOL,26,Brasil
-Vitória SC,Gustavo Silva,Gustavo Silva,71,72,MEI,27,Brasil
-Vitória SC,João Mendes,João Mendes,72,77,LAT,26,Portugal
-Vitória SC,Yeimar Mosquera,Yeimar Mosquera,69,77,ZAG,21,Colômbia
-Vitória SC,Beni Mukendi,Beni Mukendi,73,76,VOL,24,Angola
-Vitória SC,Miguel Nogueira,Miguel Nogueira,61,74,MEI,21,Portugal
-Vitória SC,Telmo Arcanjo,Telmo Arcanjo,71,76,MEI,25,Cabo Verde
-Vitória SC,Victor Andersson,Victor Andersson,65,74,MEI,22,Suécia
-Vitória SC,Samu,Samu,73,73,MEI,30,Portugal
-Vitória SC,Toni Borevković,Toni Borevković,73,75,ZAG,29,Croácia
-Vitória SC,Juan Castillo,Juan Castillo,66,75,GOL,23,Colômbia
-Vitória SC,Tony Strata,Tony Strata,64,73,LAT,22,Romênia
-Vitória SC,Alioune Ndoye,Alioune Ndoye,65,71,ATA,25,Senegal
-Vitória SC,Thiago Balieiro,Thiago Balieiro,60,73,ZAG,23,Brasil
-Vitória SC,Patrick Ouotro,Patrick Ouotro,69,78,ATA,21,Costa do Marfim
-Vitória SC,Fabio Blanco,Fabio Blanco,64,75,MEI,22,Espanha
-Vitória SC,Lohann Doucet,Lohann Doucet,68,75,VOL,24,Burkina Faso
-Vitória SC,Marco Cruz,Marco Cruz,68,75,MEI,22,Portugal
-Vitória SC,Oliwier Zych,Oliwier Zych,63,75,GOL,22,Polônia
-Vitória SC,Santiago Verdi,Santiago Verdi,65,77,MEI,18,Portugal
-Vitória SC,Rica Rocha,Rica Rocha,65,72,MEI,21,Portugal
-Vitória SC,Francisco Dias,Francisco Dias,66,73,ZAG,22,Portugal
-Vitória SC,Lucas Furtado,Lucas Furtado,69,76,GOL,21,Brasil
-Famalicão,Ivan Zlobin,Ivan Zlobin,70,73,GOL,29,Rússia
-Famalicão,Gustavo Garcia,Gustavo Garcia,72,79,LAT,24,Brasil
-Famalicão,Leo Realpe,Leo Realpe,68,77,ZAG,25,Equador
-Famalicão,Finn van Breemen,Finn van Breemen,69,80,ZAG,23,Holanda
-Famalicão,Leny Meyer,Leny Meyer,64,70,ZAG,22,Suíça
-Famalicão,Tom van de Looi,Tom van de Looi,69,74,VOL,27,Holanda
-Famalicão,Sorriso,Sorriso,74,80,MEI,25,Brasil
-Famalicão,Marcos Peña,Marcos Peña,61,77,MEI,21,Espanha
-Famalicão,Umar Abubakar,Umar Abubakar,65,77,ATA,20,Nigéria
-Famalicão,Pedro Santos,Pedro Santos,65,77,MEI,23,Portugal
-Famalicão,Óscar Aranda,Óscar Aranda,74,83,MEI,24,Espanha
-Famalicão,Mathias De Amorim,Mathias De Amorim,69,80,MEI,21,Portugal
-Famalicão,Víctor Rofino,Víctor Rofino,67,70,ZAG,24,Guiné-Bissau
-Famalicão,Rodrigo Pinheiro,Rodrigo Pinheiro,70,79,LAT,24,Portugal
-Famalicão,Roméo Beney,Roméo Beney,62,76,ATA,21,Suíça
-Famalicão,Paulo Moreira,Paulo Moreira,67,72,MEI,26,Portugal
-Famalicão,Tamás Szűcs,Tamás Szűcs,64,70,MEI,21,Hungria
-Famalicão,Gabriel Cabral,Gabriel Cabral,59,69,GOL,19,Brasil
-Famalicão,Gil Dias,Gil Dias,70,70,MEI,30,Portugal
-Famalicão,Mathis Jangéal,Mathis Jangéal,64,76,MEI,18,França
-Famalicão,Lazar Carević,Lazar Carević,71,75,GOL,27,Montenegro
-Famalicão,Pedro Bondo,Pedro Bondo,66,79,LAT,22,Angola
-Famalicão,Vojin Serafimović,Vojin Serafimović,65,74,ZAG,21,Sérvia
-Famalicão,Patricio Salas,Patricio Salas,69,78,ATA,22,México
-Famalicão,Matheus Mattara,Matheus Mattara,63,72,ZAG,22,Brasil
-Famalicão,Georgios Koutsias,Georgios Koutsias,66,76,ATA,22,Grécia
-Gil Vicente,André Picornell,André Picornell,57,65,GOL,22,Suécia
-Gil Vicente,José Silva,José Silva,67,76,ZAG,21,Portugal
-Gil Vicente,Antonio Espigares,Antonio Espigares,66,77,ZAG,22,Espanha
-Gil Vicente,Marvin Elimbi,Marvin Elimbi,64,74,ZAG,23,França
-Gil Vicente,Zé Carlos,Zé Carlos,66,74,LAT,25,Portugal
-Gil Vicente,Tidjany Touré,Tidjany Touré,68,75,MEI,24,França
-Gil Vicente,Mohamed Bamba,Mohamed Bamba,65,78,VOL,22,Costa do Marfim
-Gil Vicente,Walace França,Walace França,68,76,ATA,21,Brasil
-Gil Vicente,Santi García,Santi García,69,76,MEI,25,Espanha
-Gil Vicente,Joelson Fernandes,Joelson Fernandes,66,75,MEI,23,Portugal
-Gil Vicente,Andreas Lausen,Andreas Lausen,67,71,MEI,24,Dinamarca
-Gil Vicente,Sergio Bermejo,Sergio Bermejo,68,68,MEI,29,Espanha
-Gil Vicente,Guilherme Gomes,Guilherme Gomes,61,70,MEI,20,Brasil
-Gil Vicente,Gil Martins,Gil Martins,60,68,MEI,22,Portugal
-Gil Vicente,Héctor Hernández,Héctor Hernández,70,70,ATA,31,Espanha
-Gil Vicente,Weverson,Weverson,67,67,ZAG,26,Brasil
-Gil Vicente,Agustín Moreira,Agustín Moreira,64,70,ATA,25,Uruguai
-Gil Vicente,Lucão,Lucão,67,67,GOL,25,Brasil
-Gil Vicente,Martín Fernández,Martín Fernández,67,75,MEI,23,Uruguai
-Gil Vicente,Jonathan Buatu,Jonathan Buatu,69,69,ZAG,33,Angola
-Gil Vicente,Tiago Ferreira,Tiago Ferreira,62,66,GOL,23,Portugal
-Gil Vicente,David Moreira,David Moreira,66,75,ZAG,22,Cabo Verde
-Gil Vicente,Ricardo Esgaio,Ricardo Esgaio,73,73,LAT,33,Portugal
-Gil Vicente,Murilo Costa,Murilo Costa,71,71,MEI,32,Brasil
-Gil Vicente,Gonçalo Maia,Gonçalo Maia,58,64,MEI,22,Portugal
-Gil Vicente,Diogo Prioste,Diogo Prioste,66,79,MEI,22,Portugal
-Gil Vicente,Bassco Soyer,Bassco Soyer,62,70,VOL,20,Peru
-Gil Vicente,Samuel Portugal,Samuel Portugal,70,70,GOL,32,Brasil
-Gil Vicente,Arthur Tchaptchet,Arthur Tchaptchet,60,68,ZAG,21,França
-Gil Vicente,Mohamed Kaba,Mohamed Kaba,60,67,ATA,22,Mali
-Santa Clara,Lucas França,Lucas França,75,76,GOL,30,Brasil
-Santa Clara,Henrique Silva,Henrique Silva,64,70,ZAG,21,Brasil
-Santa Clara,Pedro Pacheco,Pedro Pacheco,67,69,ZAG,29,Portugal
-Santa Clara,Guilherme Romão,Guilherme Romão,68,68,ZAG,29,Brasil
-Santa Clara,Pedro Ferreira,Pedro Ferreira,69,72,VOL,28,Portugal
-Santa Clara,Fernando,Fernando,64,70,ATA,21,Brasil
-Santa Clara,Djé Tavares,Djé Tavares,60,68,MEI,23,Cabo Verde
-Santa Clara,Gonçalo Paciência,Gonçalo Paciência,71,71,ATA,32,Portugal
-Santa Clara,Brenner Lucas,Brenner Lucas,67,72,ATA,24,Brasil
-Santa Clara,Welinton Torrão,Welinton Torrão,72,72,ATA,27,Brasil
-Santa Clara,Neneca,Neneca,62,74,GOL,23,Brasil
-Santa Clara,João Vasconcelos,João Vasconcelos,67,72,MEI,21,Portugal
-Santa Clara,Afonso Duarte,Afonso Duarte,59,64,ATA,22,Portugal
-Santa Clara,Ythallo,Ythallo,63,68,ZAG,22,Brasil
-Santa Clara,Tiago Ribeiro,Tiago Ribeiro,70,73,MEI,24,Portugal
-Santa Clara,Emanuel Moreira,Emanuel Moreira,67,71,ZAG,23,Portugal
-Santa Clara,Vitinho,Vitinho,68,76,MEI,22,Brasil
-Santa Clara,Fredy,Fredy,62,71,MEI,21,Portugal
-Santa Clara,MT,MT,70,70,VOL,25,Brasil
-Santa Clara,Dani Borges,Dani Borges,68,72,MEI,23,Brasil
-Santa Clara,Lucas Soares,Lucas Soares,69,70,LAT,28,Brasil
-Santa Clara,Vinícius Lopes,Vinícius Lopes,73,74,ATA,27,Brasil
-Santa Clara,Léo Jacó,Léo Jacó,63,69,ATA,21,Brasil
-Santa Clara,Kamika,Kamika,58,67,ZAG,20,Portugal
-Santa Clara,Sorriso,Sorriso,72,72,ATA,23,Brasil
-Santa Clara,Cristian,Cristian,60,66,GOL,21,Brasil
-Moreirense,Aranha,Aranha,65,69,GOL,23,Brasil
-Moreirense,Leandro,Leandro,63,69,LAT,21,Portugal
-Moreirense,Kevyn Monteiro,Kevyn Monteiro,59,66,ZAG,21,Brasil
-Moreirense,Manuel Mendonça,Manuel Mendonça,66,73,MEI,21,Portugal
-Moreirense,Mateja Stjepanović,Mateja Stjepanović,63,73,VOL,22,Sérvia
-Moreirense,Alexandre Parsemain,Alexandre Parsemain,63,70,ATA,23,Martinique
-Moreirense,Kiko Bondoso,Kiko Bondoso,71,71,MEI,31,Portugal
-Moreirense,Landerson,Landerson,59,72,ATA,20,Brasil
-Moreirense,André Ferreira,André Ferreira,68,69,GOL,30,Portugal
-Moreirense,Álvaro Martínez,Álvaro Martínez,66,70,LAT,24,Espanha
-Moreirense,Tiago Andrade,Tiago Andrade,61,70,ATA,22,Portugal
-Moreirense,João Veloso,João Veloso,65,79,MEI,21,Portugal
-Moreirense,Rodri,Rodri,66,69,MEI,23,Espanha
-Moreirense,Nile John,Nile John,70,74,MEI,23,Inglaterra
-Moreirense,Afonso Assis,Afonso Assis,60,77,VOL,20,Portugal
-Moreirense,Maracás,Maracás,72,72,ZAG,32,Brasil
-Moreirense,Kiko,Kiko,65,74,LAT,24,Portugal
-Moreirense,Chipyoka Songa,Chipyoka Songa,64,71,ATA,22,Zâmbia
-Moreirense,Jimi Gower,Jimi Gower,66,80,MEI,22,Inglaterra
-Moreirense,Pedro Jesus,Pedro Jesus,62,68,ZAG,21,Brasil
-Moreirense,Janderson,Janderson,62,70,ZAG,21,Brasil
-Moreirense,Michael Dacosta,Michael Dacosta,62,67,ATA,21,Espanha
-Moreirense,Guilherme Liberato,Guilherme Liberato,58,72,MEI,19,Brasil
-Moreirense,Gilberto Batista,Gilberto Batista,65,75,ZAG,23,Guiné-Bissau
-Moreirense,Dinis Pinto,Dinis Pinto,69,74,LAT,26,Portugal
-Moreirense,Koby Mottoh,Koby Mottoh,59,70,ATA,19,Inglaterra
-Moreirense,Leonardo Vonić,Leonardo Vonić,66,68,ATA,23,Croácia
-Moreirense,Afonso Vieira,Afonso Vieira,55,61,ATA,20,Portugal
-Moreirense,Yan Maranhão,Yan Maranhão,63,68,ATA,21,Brasil
-Estoril,Joel Robles,Joel Robles,73,73,GOL,36,Espanha
-Estoril,Ricard Sánchez,Ricard Sánchez,71,75,LAT,26,Espanha
-Estoril,Fernando Medrano,Fernando Medrano,70,70,ZAG,26,Espanha
-Estoril,Ferro,Ferro,68,68,ZAG,29,Portugal
-Estoril,Antef Tsoungui,Antef Tsoungui,64,75,ZAG,23,Bélgica
-Estoril,Xavi Sintes,Xavi Sintes,68,73,ZAG,25,Espanha
-Estoril,André Lacximicant,André Lacximicant,68,73,ATA,25,Portugal
-Estoril,Xeka,Xeka,72,72,MEI,32,Portugal
-Estoril,Axel Camblan,Axel Camblan,63,72,MEI,23,França
-Estoril,Jordan Holsgrove,Jordan Holsgrove,73,75,MEI,27,Escócia
-Estoril,Nail Omerović,Nail Omerović,65,67,ATA,24,Bósnia
-Estoril,João Carvalho,João Carvalho,72,72,MEI,29,Portugal
-Estoril,Yanis Begraoui,Yanis Begraoui,72,76,ATA,25,Marrocos
-Estoril,Ismael Sierra,Ismael Sierra,66,68,ZAG,23,Espanha
-Estoril,Martin Turk,Martin Turk,64,75,GOL,23,Eslovênia
-Estoril,Peixinho,Peixinho,62,71,ATA,21,Portugal
-Estoril,Tiago Parente,Tiago Parente,62,72,LAT,22,Portugal
-Estoril,Roko Jurišić,Roko Jurišić,69,69,LAT,25,Croácia
-Estoril,Pedro Carvalho,Pedro Carvalho,65,73,LAT,23,Portugal
-Estoril,Diogo Dias,Diogo Dias,59,69,GOL,23,Portugal
-Estoril,Stelios Andreou,Stelios Andreou,72,80,ZAG,24,Chipre
-Estoril,Samuel Amissah,Samuel Amissah,63,74,ZAG,19,Inglaterra
-Estoril,Israel Salazar,Israel Salazar,70,74,ATA,23,Espanha
-Estoril,Jordan Arnolin,Jordan Arnolin,61,71,ZAG,18,Portugal
-Estoril,Fletcher Smythe-Lowe,Fletcher Smythe-Lowe,61,74,GOL,19,África do Sul
-Estoril,Milan Robin,Milan Robin,65,68,MEI,26,França
-Estoril,Luís Gomes,Luís Gomes,61,70,MEI,23,Portugal
-Estoril,Tiago Brito,Tiago Brito,58,64,VOL,22,Portugal
-Estoril,Fabrício Garcia,Fabrício Garcia,67,73,MEI,25,Cabo Verde
-Estoril,Rafik Guitane,Rafik Guitane,73,74,ATA,27,Argélia
-Estoril,Khayon Edwards,Khayon Edwards,62,73,ATA,23,Inglaterra
-Casa Pia,Patrick Sequeira,Patrick Sequeira,71,76,GOL,27,Costa Rica
-Casa Pia,Khaly,Khaly,59,68,ZAG,22,Angola
-Casa Pia,João Goulart,João Goulart,70,74,ZAG,26,Portugal
-Casa Pia,Abdu Conté,Abdu Conté,64,65,LAT,28,Portugal
-Casa Pia,Gabi,Gabi,58,67,MEI,21,Portugal
-Casa Pia,Henrique Araújo,Henrique Araújo,70,78,ATA,24,Portugal
-Casa Pia,Rochinha,Rochinha,64,64,ATA,31,Portugal
-Casa Pia,Mo Salah,Mo Salah,65,70,MEI,22,Bélgica
-Casa Pia,Selvi Clua,Selvi Clua,64,69,MEI,21,Espanha
-Casa Pia,Evans Maurin,Evans Maurin,67,67,ATA,25,França
-Casa Pia,André Geraldes,André Geraldes,69,69,LAT,35,Portugal
-Casa Pia,Kevin Prieto,Kevin Prieto,53,63,ZAG,19,Uruguai
-Casa Pia,Alassana Jatta,Alassana Jatta,65,68,ATA,27,The Gambia
-Casa Pia,Aymen Zouin,Aymen Zouin,53,61,ATA,20,Marrocos
-Casa Pia,Daniel Azevedo,Daniel Azevedo,60,64,GOL,28,Portugal
-Casa Pia,Seba Pérez,Seba Pérez,71,71,VOL,33,Colômbia
-Casa Pia,Kaique Rocha,Kaique Rocha,69,78,ZAG,25,Brasil
-Casa Pia,Jérémy Livolant,Jérémy Livolant,70,70,ATA,28,França
-Casa Pia,André Gomes,André Gomes,69,80,GOL,22,Portugal
-Casa Pia,David Sousa,David Sousa,66,75,ZAG,25,Brasil
-Casa Pia,Lipe,Lipe,65,69,ZAG,24,Brasil
-Casa Pia,Abdu Dafé,Abdu Dafé,59,64,MEI,21,Portugal
-Casa Pia,João Rego,João Rego,67,81,MEI,21,Portugal
-Casa Pia,Pedro Rosas,Pedro Rosas,65,65,ZAG,25,Portugal
-Casa Pia,Benjamin Pauwels,Benjamin Pauwels,61,76,ATA,22,Bélgica
-Casa Pia,Lawrence Ofori,Lawrence Ofori,71,74,VOL,28,Gana
-Casa Pia,Cassiano,Cassiano,72,72,ATA,37,Brasil
-Casa Pia,Ivan Mandić,Ivan Mandić,53,63,GOL,19,Croácia
-Casa Pia,JP,JP,64,72,MEI,21,Brasil
-Rio Ave,Cezary Miszta,Cezary Miszta,72,80,GOL,25,Polônia
-Rio Ave,Zé Carlos,Zé Carlos,70,71,LAT,28,Portugal
-Rio Ave,Simón García,Simón García,66,76,ZAG,21,Colômbia
-Rio Ave,Andreas Ntoi,Andreas Ntoi,72,79,ZAG,23,Grécia
-Rio Ave,Nelson Abbey,Nelson Abbey,66,75,ZAG,23,Inglaterra
-Rio Ave,Diogo Bezerra,Diogo Bezerra,67,70,ATA,24,Brasil
-Rio Ave,Ryan Guilherme,Ryan Guilherme,68,71,VOL,23,Brasil
-Rio Ave,Tamble Monteiro,Tamble Monteiro,68,68,ATA,26,Guiné-Bissau
-Rio Ave,Brandon Aguilera,Brandon Aguilera,69,79,MEI,23,Costa Rica
-Rio Ave,Jalen Blesa,Jalen Blesa,68,68,MEI,25,Espanha
-Rio Ave,Julien Lomboto,Julien Lomboto,65,73,ZAG,24,França
-Rio Ave,Jakub Brabec,Jakub Brabec,72,72,ZAG,34,Tchéquia
-Rio Ave,Marios Vrousai,Marios Vrousai,72,73,LAT,28,Grécia
-Rio Ave,Malik Sellouki,Malik Sellouki,68,73,MEI,26,França
-Rio Ave,João Tomé,João Tomé,66,74,LAT,23,Portugal
-Rio Ave,Radek Šiler,Radek Šiler,64,71,ATA,22,Tchéquia
-Rio Ave,Kevin Chamorro,Kevin Chamorro,69,75,GOL,26,Costa Rica
-Rio Ave,Francisco Petrasso,Francisco Petrasso,66,75,ZAG,24,Argentina
-Rio Ave,Pedro Amaral,Pedro Amaral,70,70,LAT,29,Portugal
-Rio Ave,Tobías Medina,Tobías Medina,64,76,MEI,23,Argentina
-Rio Ave,Roland Galčík,Roland Galčík,69,69,MEI,25,Eslováquia
-Rio Ave,Vitor Hugo,Vitor Hugo,65,65,GOL,25,Brasil
-Rio Ave,Gustavo Mancha,Gustavo Mancha,66,79,ZAG,22,Brasil
-Rio Ave,Tamás Nikitscher,Tamás Nikitscher,69,73,VOL,27,Hungria
-Rio Ave,Georgios Liavas,Georgios Liavas,69,75,VOL,25,Grécia
-Rio Ave,Samuel Alves,Samuel Alves,61,70,ATA,22,Brasil
-Rio Ave,Caike,Caike,57,66,ZAG,20,Brasil
-Rio Ave,Antoine Wenck,Antoine Wenck,59,66,MEI,21,Senegal
-Rio Ave,Dario Špikić,Dario Špikić,69,69,ATA,27,Croácia
-Rio Ave,Miguel Patrício,Miguel Patrício,56,62,MEI,20,Portugal
-Rio Ave,Sebastian Clemmensen,Sebastian Clemmensen,66,70,ATA,23,Togo
-Rio Ave,Diogo Nascimento,Diogo Nascimento,68,75,MEI,24,Portugal
-Rio Ave,Ennio van der Gouw,Ennio van der Gouw,66,70,GOL,25,Holanda
-Arouca,Jakub Vinarčík,Jakub Vinarčík,60,76,GOL,21,Eslováquia
-Arouca,Leo Shahar,Leo Shahar,58,71,ATA,19,Inglaterra
-Arouca,José Fontán,José Fontán,70,74,ZAG,26,Espanha
-Arouca,Diogo Monteiro,Diogo Monteiro,62,74,ZAG,21,Portugal
-Arouca,Boris Popović,Boris Popović,67,70,ZAG,26,Sérvia
-Arouca,Espen van Ee,Espen van Ee,65,76,VOL,23,Holanda
-Arouca,Naïs Djouahra,Naïs Djouahra,69,72,MEI,26,França
-Arouca,Taichi Fukui,Taichi Fukui,69,82,MEI,22,Japão
-Arouca,Fally Mayulu,Fally Mayulu,66,69,ATA,24,França
-Arouca,Pablo Gozálbez,Pablo Gozálbez,67,74,MEI,25,Espanha
-Arouca,Miguel Puche,Miguel Puche,67,73,MEI,25,Espanha
-Arouca,Ignacio de Arruabarrena,Ignacio de Arruabarrena,69,69,GOL,29,Uruguai
-Arouca,Lee Hyun-ju,Lee Hyun-ju,69,76,MEI,23,Coreia do Sul
-Arouca,Javi Sánchez,Javi Sánchez,72,74,ZAG,29,Espanha
-Arouca,Iván Barbero,Iván Barbero,68,68,ATA,28,Espanha
-Arouca,Orest Lebedenko,Orest Lebedenko,69,72,LAT,28,Ucrânia
-Arouca,Alfonso Trezza,Alfonso Trezza,71,72,MEI,27,Uruguai
-Arouca,Gabriel Rukavina,Gabriel Rukavina,61,69,ATA,22,Croácia
-Arouca,Mateo Flores,Mateo Flores,66,79,VOL,22,Espanha
-Arouca,Dylan Nandín,Dylan Nandín,69,77,ATA,24,Uruguai
-Arouca,Brian Mansilla,Brian Mansilla,68,76,MEI,24,Uruguai
-Arouca,Tiago Esgaio,Tiago Esgaio,73,73,LAT,31,Portugal
-Arouca,Mario Climent,Mario Climent,64,67,ZAG,24,Espanha
-Arouca,Martim Duarte,Martim Duarte,64,68,GOL,23,Portugal
-Arouca,Park Si-hoo,Park Si-hoo,62,65,ATA,23,Coreia do Sul
-Arouca,Pedro Santos,Pedro Santos,68,75,MEI,26,Portugal
-Nacional da Madeira,Renato Marin,Renato Marin,62,78,GOL,20,Itália
-Nacional da Madeira,Daniel de la Cruz,Daniel de la Cruz,61,69,ZAG,22,Equador
-Nacional da Madeira,Ulisses,Ulisses,69,72,ZAG,27,Brasil
-Nacional da Madeira,José Gomes,José Gomes,68,68,LAT,30,Portugal
-Nacional da Madeira,Matheus Dias,Matheus Dias,68,76,VOL,24,Brasil
-Nacional da Madeira,Markus Jensen,Markus Jensen,63,71,MEI,21,Dinamarca
-Nacional da Madeira,Miguel Baeza,Miguel Baeza,67,71,MEI,26,Espanha
-Nacional da Madeira,Allen Obando,Allen Obando,59,67,ATA,20,Equador
-Nacional da Madeira,Daniel Júnior,Daniel Júnior,66,73,MEI,24,Brasil
-Nacional da Madeira,Stavros Gavriil,Stavros Gavriil,65,69,MEI,24,Chipre
-Nacional da Madeira,Song Min-kyu,Song Min-kyu,70,71,MEI,27,Coreia do Sul
-Nacional da Madeira,João Gonçalves,João Gonçalves,69,76,GOL,26,Portugal
-Nacional da Madeira,Ivanildo Fernandes,Ivanildo Fernandes,66,66,ZAG,30,Cabo Verde
-Nacional da Madeira,Chiheb Labidi,Chiheb Labidi,65,70,MEI,25,Tunísia
-Nacional da Madeira,Fernando Nava,Fernando Nava,63,72,ATA,22,Bolívia
-Nacional da Madeira,Matchoi Djaló,Matchoi Djaló,66,76,MEI,23,Portugal
-Nacional da Madeira,William Kokolo,William Kokolo,64,64,LAT,26,França
-Nacional da Madeira,Filipe Soares,Filipe Soares,67,70,MEI,27,Portugal
-Nacional da Madeira,Mateus Iseppe,Mateus Iseppe,57,63,MEI,20,Brasil
-Nacional da Madeira,Joel Silva,Joel Silva,70,76,MEI,23,Portugal
-Nacional da Madeira,Igor Liziero,Igor Liziero,70,71,MEI,28,Brasil
-Nacional da Madeira,Njoya Abdel,Njoya Abdel,61,64,ATA,23,Camarões
-Nacional da Madeira,Martim Watts,Martim Watts,60,71,ATA,21,Portugal
-Nacional da Madeira,Danel Dongmo,Danel Dongmo,58,64,MEI,25,Camarões
-Nacional da Madeira,Francisco Gonçalves,Francisco Gonçalves,61,70,ZAG,22,Portugal
-Nacional da Madeira,Léo Santos,Léo Santos,67,70,ZAG,27,Brasil
-Nacional da Madeira,Zé Vitor,Zé Vitor,66,72,ZAG,25,Brasil
-Nacional da Madeira,Kevyn,Kevyn,62,76,GOL,20,Brasil
-Nacional da Madeira,Wesley Gasolina,Wesley Gasolina,66,66,LAT,26,Brasil
-Nacional da Madeira,Deivison,Deivison,60,72,MEI,21,Brasil
-Nacional da Madeira,Pablo Ruan,Pablo Ruan,56,64,ATA,20,Brasil
-Nacional da Madeira,Josué,Josué,61,72,VOL,21,Brasil
-Estrela da Amadora,Lucas Mincarelli,Lucas Mincarelli,60,68,ZAG,22,França
-Estrela da Amadora,Bernardo Schappo,Bernardo Schappo,69,71,ZAG,27,Brasil
-Estrela da Amadora,Stefan Leković,Stefan Leković,60,69,ZAG,22,Sérvia
-Estrela da Amadora,Kevin Höög Jansson,Kevin Höög Jansson,69,69,MEI,26,Suécia
-Estrela da Amadora,Robinho,Robinho,66,75,MEI,24,Brasil
-Estrela da Amadora,Ianis Stoica,Ianis Stoica,70,78,MEI,23,Romênia
-Estrela da Amadora,Rodrigo Dudok,Rodrigo Dudok,60,70,ATA,19,Uruguai
-Estrela da Amadora,Lovro Zvonarek,Lovro Zvonarek,65,77,MEI,21,Croácia
-Estrela da Amadora,Jefferson Encada,Jefferson Encada,66,67,LAT,28,Guiné-Bissau
-Estrela da Amadora,Vuk Pavićević,Vuk Pavićević,54,67,MEI,19,Montenegro
-Estrela da Amadora,Joan Jordán,Joan Jordán,76,76,MEI,32,Espanha
-Estrela da Amadora,Max Scholze,Max Scholze,62,73,LAT,21,Alemanha
-Estrela da Amadora,David Grilo,David Grilo,62,65,GOL,23,Portugal
-Estrela da Amadora,Léo Linck,Léo Linck,67,67,GOL,25,Brasil
-Estrela da Amadora,Tom Moustier,Tom Moustier,65,72,MEI,24,França
-Estrela da Amadora,Jeremy Arévalo,Jeremy Arévalo,64,73,ATA,21,Equador
-Estrela da Amadora,Luan Patrick,Luan Patrick,65,74,ZAG,24,Brasil
-Estrela da Amadora,Leandro Antonetti,Leandro Antonetti,60,71,ATA,23,Porto Rico
-Estrela da Amadora,Eddy Doué,Eddy Doué,59,64,VOL,20,Costa do Marfim
-Estrela da Amadora,Yang Si-Woo,Yang Si-Woo,57,62,ATA,20,Coreia do Sul
-Estrela da Amadora,René Mitongo,René Mitongo,59,73,ATA,18,Bélgica
-Estrela da Amadora,Diogo Pinto,Diogo Pinto,68,80,GOL,22,Portugal
-Estrela da Amadora,Rafa Soares,Rafa Soares,70,70,LAT,31,Portugal
-Estrela da Amadora,Emerson Vanga,Emerson Vanga,54,66,MEI,19,França
-Estrela da Amadora,Henrique Poniewas,Henrique Poniewas,57,66,ATA,20,Brasil
-Estrela da Amadora,Santiago Serra,Santiago Serra,56,62,MEI,20,Portugal
-Estrela da Amadora,Atanas Chernev,Atanas Chernev,64,72,ZAG,24,Bulgária
-Estrela da Amadora,Alisson Souza,Alisson Souza,59,65,ATA,22,Brasil
-Estrela da Amadora,Bénito,Bénito,59,66,ATA,21,França
-Estrela da Amadora,Abraham Marcus,Abraham Marcus,65,68,MEI,26,Nigéria
-Alverca,Noah Raveyre,Noah Raveyre,64,72,GOL,21,França
-Alverca,Nabil Touaizi,Nabil Touaizi,65,71,MEI,25,Marrocos
-Alverca,Julián Martínez,Julián Martínez,65,74,ZAG,22,Honduras
-Alverca,Yaya Bojang,Yaya Bojang,60,69,ZAG,22,The Gambia
-Alverca,Sabit Abdulai,Sabit Abdulai,62,65,MEI,27,Gana
-Alverca,Davy Gui,Davy Gui,60,69,MEI,20,Costa do Marfim
-Alverca,André Vidigal,André Vidigal,68,68,MEI,28,Angola
-Alverca,Vasco Moreira,Vasco Moreira,57,62,MEI,22,Portugal
-Alverca,Vivaldo Semedo,Vivaldo Semedo,64,69,ATA,21,Portugal
-Alverca,Chiquinho,Chiquinho,72,75,MEI,26,Portugal
-Alverca,Cédric Nuozzi,Cédric Nuozzi,63,75,ATA,20,Bélgica
-Alverca,Isaac James,Isaac James,63,74,LAT,22,Nigéria
-Alverca,Steven Baseya,Steven Baseya,63,75,ZAG,21,França
-Alverca,Ikker Julian,Ikker Julian,58,65,LAT,22,Bélgica
-Alverca,Samy Merheg,Samy Merheg,58,70,ATA,19,Líbano
-Alverca,Zakaria Kassary,Zakaria Kassary,61,64,MEI,23,Marrocos
-Alverca,Dawda Camara,Dawda Camara,62,64,ATA,24,Mauritania
-Alverca,Diogo Spencer,Diogo Spencer,64,78,LAT,22,Portugal
-Alverca,Sergi Gómez,Sergi Gómez,72,72,ZAG,34,Espanha
-Alverca,Figueiredo,Figueiredo,68,72,ATA,25,Brasil
-Alverca,André Paulo,André Paulo,63,66,GOL,29,Portugal
-Alverca,Mofe Jemide,Mofe Jemide,57,66,ZAG,20,Inglaterra
-Alverca,Ian Luccas,Ian Luccas,64,67,MEI,23,Brasil
-Alverca,Matheus França,Matheus França,64,73,ATA,22,Brasil
-Alverca,Toni Tamarit,Toni Tamarit,62,72,MEI,20,Espanha
-Alverca,Matheus Mendes,Matheus Mendes,68,70,GOL,27,Brasil
-Alverca,Bastien Meupiyou,Bastien Meupiyou,61,76,ZAG,20,França
-Alverca,Rayan Lucas,Rayan Lucas,59,66,MEI,21,Brasil
-Alverca,Francisco Chissumba,Francisco Chissumba,70,80,LAT,21,Portugal
-Alverca,Óscar Torrellas,Óscar Torrellas,56,66,ZAG,19,Espanha
-Alverca,Tiago Octávio,Tiago Octávio,55,64,MEI,22,Portugal
-Alverca,Jhonatan,Jhonatan,65,65,GOL,35,Brasil
-Alverca,Zé Rafael,Zé Rafael,65,65,VOL,33,Brasil
-Tondela,Lucas Cañizares,Lucas Cañizares,66,76,GOL,24,Espanha
-Tondela,Bebeto,Bebeto,70,70,LAT,36,Brasil
-Tondela,Ian Kamga,Ian Kamga,58,66,ZAG,21,Inglaterra
-Tondela,Christian Marques,Christian Marques,66,75,ZAG,23,Portugal
-Tondela,João Afonso,João Afonso,69,69,ZAG,36,Portugal
-Tondela,Farru,Farru,64,64,ZAG,25,Espanha
-Tondela,Cascavel,Cascavel,57,66,ATA,21,Portugal
-Tondela,Hélder Tavares,Hélder Tavares,65,65,VOL,36,Cabo Verde
-Tondela,João Lima,João Lima,64,64,ATA,26,Brasil
-Tondela,Henry Addo,Henry Addo,62,65,ATA,23,Gana
-Tondela,Richarllyson,Richarllyson,54,61,ATA,20,Brasil
-Tondela,Zé Ricardo,Zé Ricardo,68,68,ZAG,28,Brasil
-Tondela,Yaya Sithole,Yaya Sithole,68,68,MEI,27,África do Sul
-Tondela,Xabi Huarte,Xabi Huarte,65,72,MEI,25,Espanha
-Tondela,Carraça,Carraça,64,64,MEI,33,Portugal
-Tondela,Gastón Novero,Gastón Novero,67,67,ATA,28,Argentina
-Tondela,Tomané,Tomané,61,61,ATA,34,Portugal
-Tondela,Hugo Félix,Hugo Félix,63,68,MEI,22,Portugal
-Tondela,Gabriel Alves,Gabriel Alves,54,66,ZAG,19,Portugal
-Tondela,Bruno Almeida,Bruno Almeida,55,60,ZAG,21,Cabo Verde
-Tondela,Brayan Medina,Brayan Medina,68,77,ZAG,23,Colômbia
-Tondela,Ruly García,Ruly García,55,62,GOL,22,Espanha
-Tondela,Arjen van der Heide,Arjen van der Heide,64,66,ATA,24,Holanda
-Tondela,Carlão,Carlão,52,65,GOL,19,Brasil
-Tondela,Mateus Sarará,Mateus Sarará,66,69,MEI,24,Brasil
-Tondela,Tiago Dias,Tiago Dias,68,68,ATA,28,Portugal
-Tondela,Leonardo Silva,Leonardo Silva,56,67,MEI,19,Portugal
-Tondela,Rodrigo da Silva,Rodrigo da Silva,57,62,GOL,21,Portugal
-Tondela,Cícero,Cícero,55,63,MEI,22,Brasil
-AVS,Dani Rebollo,Dani Rebollo,65,65,GOL,26,Espanha
-AVS,Lazar Rosić,Lazar Rosić,70,70,ZAG,33,Sérvia
-AVS,Davi Schuindt,Davi Schuindt,61,69,ZAG,22,Brasil
-AVS,Carlos Ponck,Carlos Ponck,65,65,VOL,31,Cabo Verde
-AVS,Guilherme Neiva,Guilherme Neiva,58,60,ATA,23,Brasil
-AVS,Jorge Meireles,Jorge Meireles,62,76,ATA,22,Portugal
-AVS,Rodrigo Pinho,Rodrigo Pinho,70,70,ATA,35,Brasil
-AVS,Abdoulaye Keita,Abdoulaye Keita,65,67,ATA,24,Espanha
-AVS,Daniel Rivas,Daniel Rivas,65,71,LAT,24,Paraguai
-AVS,Régis N'do,Régis N'do,64,64,ATA,25,Burkina Faso
-AVS,Rafael Lobato,Rafael Lobato,63,78,ATA,20,Brasil
-AVS,Ruan Assis,Ruan Assis,63,68,ATA,22,Brasil
-AVS,Diogo Brasido,Diogo Brasido,60,63,ZAG,23,Portugal
-AVS,Raul Steffens,Raul Steffens,67,67,GOL,29,Brasil
-AVS,Bernardo Conde,Bernardo Conde,62,64,ZAG,23,França
-AVS,André Sousa,André Sousa,66,66,VOL,28,Portugal
-AVS,Deandre Kerr,Deandre Kerr,61,65,ATA,23,Canadá
-AVS,Talles Wander,Talles Wander,61,63,ATA,23,Brasil
-AVS,Pedro Pimentel,Pedro Pimentel,52,63,MEI,19,Portugal
-AVS,Roni,Roni,66,66,MEI,27,Brasil
-AVS,Guga,Guga,53,65,ATA,19,Brasil
-AVS,Andrey,Andrey,58,64,MEI,22,Brasil
-AVS,Hiago,Hiago,58,62,MEI,23,Brasil
-AVS,Fernando Almeida,Fernando Almeida,57,62,MEI,21,Portugal
-AVS,Mateus Pivô,Mateus Pivô,67,67,ZAG,28,Brasil
-AVS,Estevão,Estevão,53,65,GOL,19,Brasil
+clube,nome_original,nome,overall,potencial,posicao,idade,pais,id
+Benfica,Anatoliy Trubin,Anatoliy Trubin,80,87,GOL,25,Ucrânia,R12601
+Benfica,Samuel Soares,Samuel Soares,70,80,GOL,24,Portugal,R12602
+Benfica,Tomás Araújo,Tomás Araújo,78,86,ZAG,24,Portugal,R12603
+Benfica,Alessandro Circati,Alessandro Circati,79,80,ZAG,23,Austrália,R12604
+Benfica,Clément Lenglet,Clément Lenglet,74,74,ZAG,31,França,R12605
+Benfica,Gabriel Índio,Gabriel Índio,65,78,ZAG,18,Brasil,R12606
+Benfica,Souffian El Karouani,Souffian El Karouani,75,79,LAT,26,Marrocos,R12607
+Benfica,Samuel Dahl,Samuel Dahl,77,82,LAT,23,Suécia,R12608
+Benfica,José Neto,José Neto,64,77,LAT,18,Portugal,R12609
+Benfica,Alexander Bah,Alexander Bah,78,79,LAT,28,Dinamarca,R12610
+Benfica,Daniel Banjaqui,Daniel Banjaqui,70,82,LAT,18,Portugal,R12611
+Benfica,João Palhinha,João Palhinha,81,81,VOL,31,Portugal,R12612
+Benfica,Enzo Barrenechea,Enzo Barrenechea,77,82,VOL,25,Argentina,R12613
+Benfica,Manu Silva,Manu Silva,72,81,VOL,25,Portugal,R12614
+Benfica,Leandro Barreiro,Leandro Barreiro,77,80,MEI,26,Luxemburgo,R12615
+Benfica,Fredrik Aursnes,Fredrik Aursnes,80,80,MEI,30,Noruega,R12616
+Benfica,Georgiy Sudakov,Georgiy Sudakov,80,87,MEI,24,Ucrânia,R12617
+Benfica,Claudio Echeverri,Claudio Echeverri,74,83,MEI,20,Argentina,R12618
+Benfica,Andreas Schjelderup,Andreas Schjelderup,81,83,ATA,22,Noruega,R12619
+Benfica,Jakub Kamiński,Jakub Kamiński,74,79,ATA,24,Polônia,R12620
+Benfica,Gianluca Prestianni,Gianluca Prestianni,79,83,ATA,20,Argentina,R12621
+Benfica,Dodi Lukébakio,Dodi Lukébakio,82,82,ATA,29,Bélgica,R12622
+Benfica,Rafa Silva,Rafa Silva,75,75,ATA,33,Portugal,R12623
+Benfica,Vangelis Pavlidis,Vangelis Pavlidis,82,84,ATA,27,Grécia,R12624
+Benfica,Jhon Durán,Jhon Durán,78,80,ATA,22,Colômbia,R12625
+Benfica,Anísio Cabral,Anísio Cabral,68,86,ATA,18,Portugal,R12626
+Porto,Diogo Costa,Diogo Costa,84,89,GOL,27,Portugal,R12627
+Porto,Cláudio Ramos,Cláudio Ramos,73,73,GOL,34,Portugal,R12628
+Porto,João Costa,João Costa,69,69,GOL,30,Portugal,R12629
+Porto,Jakub Kiwior,Jakub Kiwior,77,80,ZAG,26,Polônia,R12630
+Porto,Jan Bednarek,Jan Bednarek,74,74,ZAG,30,Polônia,R12631
+Porto,Nehuén Pérez,Nehuén Pérez,76,81,ZAG,26,Argentina,R12632
+Porto,Dominik Prpić,Dominik Prpić,72,81,ZAG,22,Croácia,R12633
+Porto,Chris Smalling,Chris Smalling,74,74,ZAG,36,Inglaterra,R12634
+Porto,Souza,Souza,74,82,LAT,20,Brasil,R12635
+Porto,Francisco Moura,Francisco Moura,78,81,LAT,27,Portugal,R12636
+Porto,Zaidu Sanusi,Zaidu Sanusi,72,72,LAT,29,Nigéria,R12637
+Porto,Alberto Costa,Alberto Costa,80,80,LAT,23,Portugal,R12638
+Porto,Martim Fernandes,Martim Fernandes,75,85,LAT,20,Portugal,R12639
+Porto,Alan Varela,Alan Varela,79,85,VOL,25,Argentina,R12640
+Porto,Pablo Rosario,Pablo Rosario,75,76,VOL,29,Dominican Republic,R12641
+Porto,Victor Froholdt,Victor Froholdt,80,82,MEI,20,Dinamarca,R12642
+Porto,Seko Fofana,Seko Fofana,78,78,MEI,31,Costa do Marfim,R12643
+Porto,In-beom Hwang,In-beom Hwang,77,77,MEI,30,Coreia do Sul,R12644
+Porto,Vasco Sousa,Vasco Sousa,71,79,MEI,23,Portugal,R12645
+Porto,Gabri Veiga,Gabri Veiga,76,83,MEI,24,Espanha,R12646
+Porto,Oskar Pietuszewski,Oskar Pietuszewski,73,80,ATA,18,Polônia,R12647
+Porto,Borja Sainz,Borja Sainz,75,81,ATA,25,Espanha,R12648
+Porto,William Gomes,William Gomes,76,82,ATA,20,Brasil,R12649
+Porto,Pepê,Pepê,74,74,ATA,29,Brasil,R12650
+Porto,Gabriel Mec,Gabriel Mec,72,89,ATA,18,Brasil,R12651
+Porto,Duarte Cunha,Duarte Cunha,61,75,ATA,18,Portugal,R12652
+Porto,Samu Aghehowa,Samu Aghehowa,81,83,ATA,22,Espanha,R12653
+Porto,Santiago Gimenez,Santiago Gimenez,79,81,ATA,25,México,R12654
+Porto,André Silva,André Silva,76,76,ATA,31,Portugal,R12655
+Sporting CP,Rui Silva,Rui Silva,81,81,GOL,32,Portugal,R12656
+Sporting CP,Kaique Pereira,Kaique Pereira,72,76,GOL,23,Brasil,R12657
+Sporting CP,Diego Callai,Diego Callai,67,71,GOL,22,Brasil,R12658
+Sporting CP,Gonçalo Inácio,Gonçalo Inácio,81,86,ZAG,25,Portugal,R12659
+Sporting CP,Zeno Debast,Zeno Debast,80,82,ZAG,23,Bélgica,R12660
+Sporting CP,Ibrahima Ba,Ibrahima Ba,73,73,ZAG,21,Senegal,R12661
+Sporting CP,Eduardo Quaresma,Eduardo Quaresma,77,84,ZAG,24,Portugal,R12662
+Sporting CP,Maxi Araújo,Maxi Araújo,83,84,LAT,26,Uruguai,R12663
+Sporting CP,Moncef Zekri,Moncef Zekri,65,78,LAT,18,Marrocos,R12664
+Sporting CP,Nuno Santos,Nuno Santos,79,79,LAT,31,Portugal,R12665
+Sporting CP,Rodrigo Dias,Rodrigo Dias,67,71,LAT,21,Portugal,R12666
+Sporting CP,Iván Fresneda,Iván Fresneda,78,81,LAT,22,Espanha,R12667
+Sporting CP,Georgios Vagiannidis,Georgios Vagiannidis,75,81,LAT,25,Grécia,R12668
+Sporting CP,Salvador Blopa,Salvador Blopa,66,76,LAT,19,Portugal,R12669
+Sporting CP,Sergi Altimira,Sergi Altimira,81,83,VOL,25,Espanha,R12670
+Sporting CP,Silas Andersen,Silas Andersen,75,77,VOL,22,Dinamarca,R12671
+Sporting CP,Issa Doumbia,Issa Doumbia,75,75,MEI,23,Itália,R12672
+Sporting CP,João Simões,João Simões,73,83,MEI,19,Portugal,R12673
+Sporting CP,Pedro Lima,Pedro Lima,73,75,MEI,23,Brasil,R12674
+Sporting CP,Sotiris Alexandropoulos,Sotiris Alexandropoulos,70,73,MEI,24,Grécia,R12675
+Sporting CP,Rodrigo Zalazar,Rodrigo Zalazar,80,80,MEI,27,Uruguai,R12676
+Sporting CP,Nestory Irankunda,Nestory Irankunda,74,82,ATA,20,Austrália,R12677
+Sporting CP,Flávio Gonçalves,Flávio Gonçalves,73,83,ATA,19,Portugal,R12678
+Sporting CP,Jesse Derry,Jesse Derry,64,75,ATA,19,Inglaterra,R12679
+Sporting CP,Geny Catamo,Geny Catamo,78,84,ATA,25,Moçambique,R12680
+Sporting CP,Luís Guilherme,Luís Guilherme,74,84,ATA,20,Brasil,R12681
+Sporting CP,Luis Suárez,Luis Suárez,80,80,ATA,28,Colômbia,R12682
+Sporting CP,Fotis Ioannidis,Fotis Ioannidis,77,80,ATA,26,Grécia,R12683
+Sporting CP,Rafael Nel,Rafael Nel,69,75,ATA,21,Portugal,R12684
+Braga,Víctor Gómez,Víctor Gómez,76,79,LAT,26,Espanha,R09237
+Braga,Sikou Niakaté,Sikou Niakaté,76,81,ZAG,27,Mali,R09238
+Braga,Vitor Carvalho,Vitor Carvalho,74,75,VOL,29,Brasil,R09239
+Braga,Diogo Travassos,Diogo Travassos,69,80,LAT,22,Portugal,R09240
+Braga,João Moutinho,João Moutinho,77,77,MEI,40,Portugal,R09241
+Braga,Fran Navarro,Fran Navarro,74,74,ATA,28,Espanha,R09242
+Braga,Pau Víctor,Pau Víctor,70,79,ATA,24,Espanha,R09243
+Braga,Gabriel Silva,Gabriel Silva,74,83,ATA,24,Brasil,R09244
+Braga,Tiago Sá,Tiago Sá,66,66,GOL,31,Portugal,R09245
+Braga,Gustaf Lagerbielke,Gustaf Lagerbielke,71,75,ZAG,26,Suécia,R09246
+Braga,Tommy Marqués,Tommy Marqués,69,74,VOL,20,Espanha,R09247
+Braga,Jovan Milošević,Jovan Milošević,70,77,ATA,21,Sérvia,R09248
+Braga,Jonas Wind,Jonas Wind,75,75,ATA,27,Dinamarca,R09249
+Braga,Mario Dorgeles,Mario Dorgeles,69,81,MEI,22,Costa do Marfim,R09250
+Braga,Ricardo Horta,Ricardo Horta,81,81,MEI,32,Portugal,R09251
+Braga,Sergio Barcia,Sergio Barcia,68,76,ZAG,25,Espanha,R09252
+Braga,Denis Huseinbašić,Denis Huseinbašić,72,77,MEI,25,Bósnia,R09253
+Braga,Bright Arrey-Mbi,Bright Arrey-Mbi,71,81,ZAG,23,Alemanha,R09254
+Braga,Jean-Baptiste Gorby,Jean-Baptiste Gorby,72,80,VOL,24,França,R09255
+Braga,Bernardo,Bernardo,73,79,GOL,24,Brasil,R09256
+Braga,Demir Ege Tıknaz,Demir Ege Tıknaz,72,82,VOL,22,Turquia,R09257
+Braga,Adrian-Leon Barišić,Adrian-Leon Barišić,75,75,ZAG,25,Bósnia,R09258
+Braga,Adrian Bajrami,Adrian Bajrami,67,78,ZAG,24,Suíça,R09259
+Braga,Diego Rodrigues,Diego Rodrigues,66,81,MEI,21,Portugal,R09260
+Braga,João Aragão,João Aragão,65,79,ATA,18,Portugal,R09261
+Braga,Gabri Martínez,Gabri Martínez,73,81,MEI,23,Espanha,R09262
+Braga,João Carvalho,João Carvalho,61,70,GOL,22,Portugal,R09263
+Vitória SC,Miguel Maga,Miguel Maga,71,77,LAT,24,Portugal,R09264
+Vitória SC,Óscar Rivas,Óscar Rivas,67,74,ZAG,26,Espanha,R09265
+Vitória SC,Ahmed Sidibé,Ahmed Sidibé,65,72,ZAG,24,França,R09266
+Vitória SC,Matija Mitrović,Matija Mitrović,65,75,MEI,21,Sérvia,R09267
+Vitória SC,Oumar Camara,Oumar Camara,63,74,ATA,19,França,R09268
+Vitória SC,Gonçalo Nogueira,Gonçalo Nogueira,66,77,MEI,22,Portugal,R09269
+Vitória SC,Arnel Jakupović,Arnel Jakupović,70,70,ATA,28,Áustria,R09270
+Vitória SC,Alan,Alan,71,71,VOL,26,Brasil,R09271
+Vitória SC,Gustavo Silva,Gustavo Silva,71,72,MEI,27,Brasil,R09272
+Vitória SC,João Mendes,João Mendes,72,77,LAT,26,Portugal,R09273
+Vitória SC,Yeimar Mosquera,Yeimar Mosquera,69,77,ZAG,21,Colômbia,R09274
+Vitória SC,Beni Mukendi,Beni Mukendi,73,76,VOL,24,Angola,R09275
+Vitória SC,Miguel Nogueira,Miguel Nogueira,61,74,MEI,21,Portugal,R09276
+Vitória SC,Telmo Arcanjo,Telmo Arcanjo,71,76,MEI,25,Cabo Verde,R09277
+Vitória SC,Victor Andersson,Victor Andersson,65,74,MEI,22,Suécia,R09278
+Vitória SC,Samu,Samu,73,73,MEI,30,Portugal,R09279
+Vitória SC,Toni Borevković,Toni Borevković,73,75,ZAG,29,Croácia,R09280
+Vitória SC,Juan Castillo,Juan Castillo,66,75,GOL,23,Colômbia,R09281
+Vitória SC,Tony Strata,Tony Strata,64,73,LAT,22,Romênia,R09282
+Vitória SC,Alioune Ndoye,Alioune Ndoye,65,71,ATA,25,Senegal,R09283
+Vitória SC,Thiago Balieiro,Thiago Balieiro,60,73,ZAG,23,Brasil,R09284
+Vitória SC,Patrick Ouotro,Patrick Ouotro,69,78,ATA,21,Costa do Marfim,R09285
+Vitória SC,Fabio Blanco,Fabio Blanco,64,75,MEI,22,Espanha,R09286
+Vitória SC,Lohann Doucet,Lohann Doucet,68,75,VOL,24,Burkina Faso,R09287
+Vitória SC,Marco Cruz,Marco Cruz,68,75,MEI,22,Portugal,R09288
+Vitória SC,Oliwier Zych,Oliwier Zych,63,75,GOL,22,Polônia,R09289
+Vitória SC,Santiago Verdi,Santiago Verdi,65,77,MEI,18,Portugal,R09290
+Vitória SC,Rica Rocha,Rica Rocha,65,72,MEI,21,Portugal,R09291
+Vitória SC,Francisco Dias,Francisco Dias,66,73,ZAG,22,Portugal,R09292
+Vitória SC,Lucas Furtado,Lucas Furtado,69,76,GOL,21,Brasil,R09293
+Famalicão,Ivan Zlobin,Ivan Zlobin,70,73,GOL,29,Rússia,R09088
+Famalicão,Gustavo Garcia,Gustavo Garcia,72,79,LAT,24,Brasil,R09089
+Famalicão,Leo Realpe,Leo Realpe,68,77,ZAG,25,Equador,R09090
+Famalicão,Finn van Breemen,Finn van Breemen,69,80,ZAG,23,Holanda,R09091
+Famalicão,Leny Meyer,Leny Meyer,64,70,ZAG,22,Suíça,R09092
+Famalicão,Tom van de Looi,Tom van de Looi,69,74,VOL,27,Holanda,R09093
+Famalicão,Sorriso,Sorriso,74,80,MEI,25,Brasil,R09094
+Famalicão,Marcos Peña,Marcos Peña,61,77,MEI,21,Espanha,R09095
+Famalicão,Umar Abubakar,Umar Abubakar,65,77,ATA,20,Nigéria,R09096
+Famalicão,Pedro Santos,Pedro Santos,65,77,MEI,23,Portugal,R09097
+Famalicão,Óscar Aranda,Óscar Aranda,74,83,MEI,24,Espanha,R09098
+Famalicão,Mathias De Amorim,Mathias De Amorim,69,80,MEI,21,Portugal,R09099
+Famalicão,Víctor Rofino,Víctor Rofino,67,70,ZAG,24,Guiné-Bissau,R09100
+Famalicão,Rodrigo Pinheiro,Rodrigo Pinheiro,70,79,LAT,24,Portugal,R09101
+Famalicão,Roméo Beney,Roméo Beney,62,76,ATA,21,Suíça,R09102
+Famalicão,Paulo Moreira,Paulo Moreira,67,72,MEI,26,Portugal,R09103
+Famalicão,Tamás Szűcs,Tamás Szűcs,64,70,MEI,21,Hungria,R09104
+Famalicão,Gabriel Cabral,Gabriel Cabral,59,69,GOL,19,Brasil,R09105
+Famalicão,Gil Dias,Gil Dias,70,70,MEI,30,Portugal,R09106
+Famalicão,Mathis Jangéal,Mathis Jangéal,64,76,MEI,18,França,R09107
+Famalicão,Lazar Carević,Lazar Carević,71,75,GOL,27,Montenegro,R09108
+Famalicão,Pedro Bondo,Pedro Bondo,66,79,LAT,22,Angola,R09109
+Famalicão,Vojin Serafimović,Vojin Serafimović,65,74,ZAG,21,Sérvia,R09110
+Famalicão,Patricio Salas,Patricio Salas,69,78,ATA,22,México,R09111
+Famalicão,Matheus Mattara,Matheus Mattara,63,72,ZAG,22,Brasil,R09112
+Famalicão,Georgios Koutsias,Georgios Koutsias,66,76,ATA,22,Grécia,R09113
+Gil Vicente,André Picornell,André Picornell,57,65,GOL,22,Suécia,R09114
+Gil Vicente,José Silva,José Silva,67,76,ZAG,21,Portugal,R09115
+Gil Vicente,Antonio Espigares,Antonio Espigares,66,77,ZAG,22,Espanha,R09116
+Gil Vicente,Marvin Elimbi,Marvin Elimbi,64,74,ZAG,23,França,R09117
+Gil Vicente,Zé Carlos,Zé Carlos,66,74,LAT,25,Portugal,R09118
+Gil Vicente,Tidjany Touré,Tidjany Touré,68,75,MEI,24,França,R09119
+Gil Vicente,Mohamed Bamba,Mohamed Bamba,65,78,VOL,22,Costa do Marfim,R09120
+Gil Vicente,Walace França,Walace França,68,76,ATA,21,Brasil,R09121
+Gil Vicente,Santi García,Santi García,69,76,MEI,25,Espanha,R09122
+Gil Vicente,Joelson Fernandes,Joelson Fernandes,66,75,MEI,23,Portugal,R09123
+Gil Vicente,Andreas Lausen,Andreas Lausen,67,71,MEI,24,Dinamarca,R09124
+Gil Vicente,Sergio Bermejo,Sergio Bermejo,68,68,MEI,29,Espanha,R09125
+Gil Vicente,Guilherme Gomes,Guilherme Gomes,61,70,MEI,20,Brasil,R09126
+Gil Vicente,Gil Martins,Gil Martins,60,68,MEI,22,Portugal,R09127
+Gil Vicente,Héctor Hernández,Héctor Hernández,70,70,ATA,31,Espanha,R09128
+Gil Vicente,Weverson,Weverson,67,67,ZAG,26,Brasil,R09129
+Gil Vicente,Agustín Moreira,Agustín Moreira,64,70,ATA,25,Uruguai,R09130
+Gil Vicente,Lucão,Lucão,67,67,GOL,25,Brasil,R09131
+Gil Vicente,Martín Fernández,Martín Fernández,67,75,MEI,23,Uruguai,R09132
+Gil Vicente,Jonathan Buatu,Jonathan Buatu,69,69,ZAG,33,Angola,R09133
+Gil Vicente,Tiago Ferreira,Tiago Ferreira,62,66,GOL,23,Portugal,R09134
+Gil Vicente,David Moreira,David Moreira,66,75,ZAG,22,Cabo Verde,R09135
+Gil Vicente,Ricardo Esgaio,Ricardo Esgaio,73,73,LAT,33,Portugal,R09136
+Gil Vicente,Murilo Costa,Murilo Costa,71,71,MEI,32,Brasil,R09137
+Gil Vicente,Gonçalo Maia,Gonçalo Maia,58,64,MEI,22,Portugal,R09138
+Gil Vicente,Diogo Prioste,Diogo Prioste,66,79,MEI,22,Portugal,R09139
+Gil Vicente,Bassco Soyer,Bassco Soyer,62,70,VOL,20,Peru,R09140
+Gil Vicente,Samuel Portugal,Samuel Portugal,70,70,GOL,32,Brasil,R09141
+Gil Vicente,Arthur Tchaptchet,Arthur Tchaptchet,60,68,ZAG,21,França,R09142
+Gil Vicente,Mohamed Kaba,Mohamed Kaba,60,67,ATA,22,Mali,R09143
+Santa Clara,Lucas França,Lucas França,75,76,GOL,30,Brasil,R08944
+Santa Clara,Henrique Silva,Henrique Silva,64,70,ZAG,21,Brasil,R08945
+Santa Clara,Pedro Pacheco,Pedro Pacheco,67,69,ZAG,29,Portugal,R08946
+Santa Clara,Guilherme Romão,Guilherme Romão,68,68,ZAG,29,Brasil,R08947
+Santa Clara,Pedro Ferreira,Pedro Ferreira,69,72,VOL,28,Portugal,R08948
+Santa Clara,Fernando,Fernando,64,70,ATA,21,Brasil,R08949
+Santa Clara,Djé Tavares,Djé Tavares,60,68,MEI,23,Cabo Verde,R08950
+Santa Clara,Gonçalo Paciência,Gonçalo Paciência,71,71,ATA,32,Portugal,R08951
+Santa Clara,Brenner Lucas,Brenner Lucas,67,72,ATA,24,Brasil,R08952
+Santa Clara,Welinton Torrão,Welinton Torrão,72,72,ATA,27,Brasil,R08953
+Santa Clara,Neneca,Neneca,62,74,GOL,23,Brasil,R08954
+Santa Clara,João Vasconcelos,João Vasconcelos,67,72,MEI,21,Portugal,R08955
+Santa Clara,Afonso Duarte,Afonso Duarte,59,64,ATA,22,Portugal,R08956
+Santa Clara,Ythallo,Ythallo,63,68,ZAG,22,Brasil,R08957
+Santa Clara,Tiago Ribeiro,Tiago Ribeiro,70,73,MEI,24,Portugal,R08958
+Santa Clara,Emanuel Moreira,Emanuel Moreira,67,71,ZAG,23,Portugal,R08959
+Santa Clara,Vitinho,Vitinho,68,76,MEI,22,Brasil,R08960
+Santa Clara,Fredy,Fredy,62,71,MEI,21,Portugal,R08961
+Santa Clara,MT,MT,70,70,VOL,25,Brasil,R08962
+Santa Clara,Dani Borges,Dani Borges,68,72,MEI,23,Brasil,R08963
+Santa Clara,Lucas Soares,Lucas Soares,69,70,LAT,28,Brasil,R08964
+Santa Clara,Vinícius Lopes,Vinícius Lopes,73,74,ATA,27,Brasil,R08965
+Santa Clara,Léo Jacó,Léo Jacó,63,69,ATA,21,Brasil,R08966
+Santa Clara,Kamika,Kamika,58,67,ZAG,20,Portugal,R08967
+Santa Clara,Sorriso,Sorriso,72,72,ATA,23,Brasil,R08968
+Santa Clara,Cristian,Cristian,60,66,GOL,21,Brasil,R08969
+Moreirense,Aranha,Aranha,65,69,GOL,23,Brasil,R09175
+Moreirense,Leandro,Leandro,63,69,LAT,21,Portugal,R09176
+Moreirense,Kevyn Monteiro,Kevyn Monteiro,59,66,ZAG,21,Brasil,R09177
+Moreirense,Manuel Mendonça,Manuel Mendonça,66,73,MEI,21,Portugal,R09178
+Moreirense,Mateja Stjepanović,Mateja Stjepanović,63,73,VOL,22,Sérvia,R09179
+Moreirense,Alexandre Parsemain,Alexandre Parsemain,63,70,ATA,23,Martinique,R09180
+Moreirense,Kiko Bondoso,Kiko Bondoso,71,71,MEI,31,Portugal,R09181
+Moreirense,Landerson,Landerson,59,72,ATA,20,Brasil,R09182
+Moreirense,André Ferreira,André Ferreira,68,69,GOL,30,Portugal,R09183
+Moreirense,Álvaro Martínez,Álvaro Martínez,66,70,LAT,24,Espanha,R09184
+Moreirense,Tiago Andrade,Tiago Andrade,61,70,ATA,22,Portugal,R09185
+Moreirense,João Veloso,João Veloso,65,79,MEI,21,Portugal,R09186
+Moreirense,Rodri,Rodri,66,69,MEI,23,Espanha,R09187
+Moreirense,Nile John,Nile John,70,74,MEI,23,Inglaterra,R09188
+Moreirense,Afonso Assis,Afonso Assis,60,77,VOL,20,Portugal,R09189
+Moreirense,Maracás,Maracás,72,72,ZAG,32,Brasil,R09190
+Moreirense,Kiko,Kiko,65,74,LAT,24,Portugal,R09191
+Moreirense,Chipyoka Songa,Chipyoka Songa,64,71,ATA,22,Zâmbia,R09192
+Moreirense,Jimi Gower,Jimi Gower,66,80,MEI,22,Inglaterra,R09193
+Moreirense,Pedro Jesus,Pedro Jesus,62,68,ZAG,21,Brasil,R09194
+Moreirense,Janderson,Janderson,62,70,ZAG,21,Brasil,R09195
+Moreirense,Michael Dacosta,Michael Dacosta,62,67,ATA,21,Espanha,R09196
+Moreirense,Guilherme Liberato,Guilherme Liberato,58,72,MEI,19,Brasil,R09197
+Moreirense,Gilberto Batista,Gilberto Batista,65,75,ZAG,23,Guiné-Bissau,R09198
+Moreirense,Dinis Pinto,Dinis Pinto,69,74,LAT,26,Portugal,R09199
+Moreirense,Koby Mottoh,Koby Mottoh,59,70,ATA,19,Inglaterra,R09200
+Moreirense,Leonardo Vonić,Leonardo Vonić,66,68,ATA,23,Croácia,R09201
+Moreirense,Afonso Vieira,Afonso Vieira,55,61,ATA,20,Portugal,R09202
+Moreirense,Yan Maranhão,Yan Maranhão,63,68,ATA,21,Brasil,R09203
+Estoril,Joel Robles,Joel Robles,73,73,GOL,36,Espanha,R09144
+Estoril,Ricard Sánchez,Ricard Sánchez,71,75,LAT,26,Espanha,R09145
+Estoril,Fernando Medrano,Fernando Medrano,70,70,ZAG,26,Espanha,R09146
+Estoril,Ferro,Ferro,68,68,ZAG,29,Portugal,R09147
+Estoril,Antef Tsoungui,Antef Tsoungui,64,75,ZAG,23,Bélgica,R09148
+Estoril,Xavi Sintes,Xavi Sintes,68,73,ZAG,25,Espanha,R09149
+Estoril,André Lacximicant,André Lacximicant,68,73,ATA,25,Portugal,R09150
+Estoril,Xeka,Xeka,72,72,MEI,32,Portugal,R09151
+Estoril,Axel Camblan,Axel Camblan,63,72,MEI,23,França,R09152
+Estoril,Jordan Holsgrove,Jordan Holsgrove,73,75,MEI,27,Escócia,R09153
+Estoril,Nail Omerović,Nail Omerović,65,67,ATA,24,Bósnia,R09154
+Estoril,João Carvalho,João Carvalho,72,72,MEI,29,Portugal,R09155
+Estoril,Yanis Begraoui,Yanis Begraoui,72,76,ATA,25,Marrocos,R09156
+Estoril,Ismael Sierra,Ismael Sierra,66,68,ZAG,23,Espanha,R09157
+Estoril,Martin Turk,Martin Turk,64,75,GOL,23,Eslovênia,R09158
+Estoril,Peixinho,Peixinho,62,71,ATA,21,Portugal,R09159
+Estoril,Tiago Parente,Tiago Parente,62,72,LAT,22,Portugal,R09160
+Estoril,Roko Jurišić,Roko Jurišić,69,69,LAT,25,Croácia,R09161
+Estoril,Pedro Carvalho,Pedro Carvalho,65,73,LAT,23,Portugal,R09162
+Estoril,Diogo Dias,Diogo Dias,59,69,GOL,23,Portugal,R09163
+Estoril,Stelios Andreou,Stelios Andreou,72,80,ZAG,24,Chipre,R09164
+Estoril,Samuel Amissah,Samuel Amissah,63,74,ZAG,19,Inglaterra,R09165
+Estoril,Israel Salazar,Israel Salazar,70,74,ATA,23,Espanha,R09166
+Estoril,Jordan Arnolin,Jordan Arnolin,61,71,ZAG,18,Portugal,R09167
+Estoril,Fletcher Smythe-Lowe,Fletcher Smythe-Lowe,61,74,GOL,19,África do Sul,R09168
+Estoril,Milan Robin,Milan Robin,65,68,MEI,26,França,R09169
+Estoril,Luís Gomes,Luís Gomes,61,70,MEI,23,Portugal,R09170
+Estoril,Tiago Brito,Tiago Brito,58,64,VOL,22,Portugal,R09171
+Estoril,Fabrício Garcia,Fabrício Garcia,67,73,MEI,25,Cabo Verde,R09172
+Estoril,Rafik Guitane,Rafik Guitane,73,74,ATA,27,Argélia,R09173
+Estoril,Khayon Edwards,Khayon Edwards,62,73,ATA,23,Inglaterra,R09174
+Casa Pia,Patrick Sequeira,Patrick Sequeira,71,76,GOL,27,Costa Rica,R08883
+Casa Pia,Khaly,Khaly,59,68,ZAG,22,Angola,R08884
+Casa Pia,João Goulart,João Goulart,70,74,ZAG,26,Portugal,R08885
+Casa Pia,Abdu Conté,Abdu Conté,64,65,LAT,28,Portugal,R08886
+Casa Pia,Gabi,Gabi,58,67,MEI,21,Portugal,R08887
+Casa Pia,Henrique Araújo,Henrique Araújo,70,78,ATA,24,Portugal,R08888
+Casa Pia,Rochinha,Rochinha,64,64,ATA,31,Portugal,R08889
+Casa Pia,Mo Salah,Mo Salah,65,70,MEI,22,Bélgica,R08890
+Casa Pia,Selvi Clua,Selvi Clua,64,69,MEI,21,Espanha,R08891
+Casa Pia,Evans Maurin,Evans Maurin,67,67,ATA,25,França,R08892
+Casa Pia,André Geraldes,André Geraldes,69,69,LAT,35,Portugal,R08893
+Casa Pia,Kevin Prieto,Kevin Prieto,53,63,ZAG,19,Uruguai,R08894
+Casa Pia,Alassana Jatta,Alassana Jatta,65,68,ATA,27,The Gambia,R08895
+Casa Pia,Aymen Zouin,Aymen Zouin,53,61,ATA,20,Marrocos,R08896
+Casa Pia,Daniel Azevedo,Daniel Azevedo,60,64,GOL,28,Portugal,R08897
+Casa Pia,Seba Pérez,Seba Pérez,71,71,VOL,33,Colômbia,R08898
+Casa Pia,Kaique Rocha,Kaique Rocha,69,78,ZAG,25,Brasil,R08899
+Casa Pia,Jérémy Livolant,Jérémy Livolant,70,70,ATA,28,França,R08900
+Casa Pia,André Gomes,André Gomes,69,80,GOL,22,Portugal,R08901
+Casa Pia,David Sousa,David Sousa,66,75,ZAG,25,Brasil,R08902
+Casa Pia,Lipe,Lipe,65,69,ZAG,24,Brasil,R08903
+Casa Pia,Abdu Dafé,Abdu Dafé,59,64,MEI,21,Portugal,R08904
+Casa Pia,João Rego,João Rego,67,81,MEI,21,Portugal,R08905
+Casa Pia,Pedro Rosas,Pedro Rosas,65,65,ZAG,25,Portugal,R08906
+Casa Pia,Benjamin Pauwels,Benjamin Pauwels,61,76,ATA,22,Bélgica,R08907
+Casa Pia,Lawrence Ofori,Lawrence Ofori,71,74,VOL,28,Gana,R08908
+Casa Pia,Cassiano,Cassiano,72,72,ATA,37,Brasil,R08909
+Casa Pia,Ivan Mandić,Ivan Mandić,53,63,GOL,19,Croácia,R08910
+Casa Pia,JP,JP,64,72,MEI,21,Brasil,R08911
+Rio Ave,Cezary Miszta,Cezary Miszta,72,80,GOL,25,Polônia,R09204
+Rio Ave,Zé Carlos,Zé Carlos,70,71,LAT,28,Portugal,R09205
+Rio Ave,Simón García,Simón García,66,76,ZAG,21,Colômbia,R09206
+Rio Ave,Andreas Ntoi,Andreas Ntoi,72,79,ZAG,23,Grécia,R09207
+Rio Ave,Nelson Abbey,Nelson Abbey,66,75,ZAG,23,Inglaterra,R09208
+Rio Ave,Diogo Bezerra,Diogo Bezerra,67,70,ATA,24,Brasil,R09209
+Rio Ave,Ryan Guilherme,Ryan Guilherme,68,71,VOL,23,Brasil,R09210
+Rio Ave,Tamble Monteiro,Tamble Monteiro,68,68,ATA,26,Guiné-Bissau,R09211
+Rio Ave,Brandon Aguilera,Brandon Aguilera,69,79,MEI,23,Costa Rica,R09212
+Rio Ave,Jalen Blesa,Jalen Blesa,68,68,MEI,25,Espanha,R09213
+Rio Ave,Julien Lomboto,Julien Lomboto,65,73,ZAG,24,França,R09214
+Rio Ave,Jakub Brabec,Jakub Brabec,72,72,ZAG,34,Tchéquia,R09215
+Rio Ave,Marios Vrousai,Marios Vrousai,72,73,LAT,28,Grécia,R09216
+Rio Ave,Malik Sellouki,Malik Sellouki,68,73,MEI,26,França,R09217
+Rio Ave,João Tomé,João Tomé,66,74,LAT,23,Portugal,R09218
+Rio Ave,Radek Šiler,Radek Šiler,64,71,ATA,22,Tchéquia,R09219
+Rio Ave,Kevin Chamorro,Kevin Chamorro,69,75,GOL,26,Costa Rica,R09220
+Rio Ave,Francisco Petrasso,Francisco Petrasso,66,75,ZAG,24,Argentina,R09221
+Rio Ave,Pedro Amaral,Pedro Amaral,70,70,LAT,29,Portugal,R09222
+Rio Ave,Tobías Medina,Tobías Medina,64,76,MEI,23,Argentina,R09223
+Rio Ave,Roland Galčík,Roland Galčík,69,69,MEI,25,Eslováquia,R09224
+Rio Ave,Vitor Hugo,Vitor Hugo,65,65,GOL,25,Brasil,R09225
+Rio Ave,Gustavo Mancha,Gustavo Mancha,66,79,ZAG,22,Brasil,R09226
+Rio Ave,Tamás Nikitscher,Tamás Nikitscher,69,73,VOL,27,Hungria,R09227
+Rio Ave,Georgios Liavas,Georgios Liavas,69,75,VOL,25,Grécia,R09228
+Rio Ave,Samuel Alves,Samuel Alves,61,70,ATA,22,Brasil,R09229
+Rio Ave,Caike,Caike,57,66,ZAG,20,Brasil,R09230
+Rio Ave,Antoine Wenck,Antoine Wenck,59,66,MEI,21,Senegal,R09231
+Rio Ave,Dario Špikić,Dario Špikić,69,69,ATA,27,Croácia,R09232
+Rio Ave,Miguel Patrício,Miguel Patrício,56,62,MEI,20,Portugal,R09233
+Rio Ave,Sebastian Clemmensen,Sebastian Clemmensen,66,70,ATA,23,Togo,R09234
+Rio Ave,Diogo Nascimento,Diogo Nascimento,68,75,MEI,24,Portugal,R09235
+Rio Ave,Ennio van der Gouw,Ennio van der Gouw,66,70,GOL,25,Holanda,R09236
+Arouca,Jakub Vinarčík,Jakub Vinarčík,60,76,GOL,21,Eslováquia,R09062
+Arouca,Leo Shahar,Leo Shahar,58,71,ATA,19,Inglaterra,R09063
+Arouca,José Fontán,José Fontán,70,74,ZAG,26,Espanha,R09064
+Arouca,Diogo Monteiro,Diogo Monteiro,62,74,ZAG,21,Portugal,R09065
+Arouca,Boris Popović,Boris Popović,67,70,ZAG,26,Sérvia,R09066
+Arouca,Espen van Ee,Espen van Ee,65,76,VOL,23,Holanda,R09067
+Arouca,Naïs Djouahra,Naïs Djouahra,69,72,MEI,26,França,R09068
+Arouca,Taichi Fukui,Taichi Fukui,69,82,MEI,22,Japão,R09069
+Arouca,Fally Mayulu,Fally Mayulu,66,69,ATA,24,França,R09070
+Arouca,Pablo Gozálbez,Pablo Gozálbez,67,74,MEI,25,Espanha,R09071
+Arouca,Miguel Puche,Miguel Puche,67,73,MEI,25,Espanha,R09072
+Arouca,Ignacio de Arruabarrena,Ignacio de Arruabarrena,69,69,GOL,29,Uruguai,R09073
+Arouca,Lee Hyun-ju,Lee Hyun-ju,69,76,MEI,23,Coreia do Sul,R09074
+Arouca,Javi Sánchez,Javi Sánchez,72,74,ZAG,29,Espanha,R09075
+Arouca,Iván Barbero,Iván Barbero,68,68,ATA,28,Espanha,R09076
+Arouca,Orest Lebedenko,Orest Lebedenko,69,72,LAT,28,Ucrânia,R09077
+Arouca,Alfonso Trezza,Alfonso Trezza,71,72,MEI,27,Uruguai,R09078
+Arouca,Gabriel Rukavina,Gabriel Rukavina,61,69,ATA,22,Croácia,R09079
+Arouca,Mateo Flores,Mateo Flores,66,79,VOL,22,Espanha,R09080
+Arouca,Dylan Nandín,Dylan Nandín,69,77,ATA,24,Uruguai,R09081
+Arouca,Brian Mansilla,Brian Mansilla,68,76,MEI,24,Uruguai,R09082
+Arouca,Tiago Esgaio,Tiago Esgaio,73,73,LAT,31,Portugal,R09083
+Arouca,Mario Climent,Mario Climent,64,67,ZAG,24,Espanha,R09084
+Arouca,Martim Duarte,Martim Duarte,64,68,GOL,23,Portugal,R09085
+Arouca,Park Si-hoo,Park Si-hoo,62,65,ATA,23,Coreia do Sul,R09086
+Arouca,Pedro Santos,Pedro Santos,68,75,MEI,26,Portugal,R09087
+Nacional da Madeira,Renato Marin,Renato Marin,62,78,GOL,20,Itália,R08912
+Nacional da Madeira,Daniel de la Cruz,Daniel de la Cruz,61,69,ZAG,22,Equador,R08913
+Nacional da Madeira,Ulisses,Ulisses,69,72,ZAG,27,Brasil,R08914
+Nacional da Madeira,José Gomes,José Gomes,68,68,LAT,30,Portugal,R08915
+Nacional da Madeira,Matheus Dias,Matheus Dias,68,76,VOL,24,Brasil,R08916
+Nacional da Madeira,Markus Jensen,Markus Jensen,63,71,MEI,21,Dinamarca,R08917
+Nacional da Madeira,Miguel Baeza,Miguel Baeza,67,71,MEI,26,Espanha,R08918
+Nacional da Madeira,Allen Obando,Allen Obando,59,67,ATA,20,Equador,R08919
+Nacional da Madeira,Daniel Júnior,Daniel Júnior,66,73,MEI,24,Brasil,R08920
+Nacional da Madeira,Stavros Gavriil,Stavros Gavriil,65,69,MEI,24,Chipre,R08921
+Nacional da Madeira,Song Min-kyu,Song Min-kyu,70,71,MEI,27,Coreia do Sul,R08922
+Nacional da Madeira,João Gonçalves,João Gonçalves,69,76,GOL,26,Portugal,R08923
+Nacional da Madeira,Ivanildo Fernandes,Ivanildo Fernandes,66,66,ZAG,30,Cabo Verde,R08924
+Nacional da Madeira,Chiheb Labidi,Chiheb Labidi,65,70,MEI,25,Tunísia,R08925
+Nacional da Madeira,Fernando Nava,Fernando Nava,63,72,ATA,22,Bolívia,R08926
+Nacional da Madeira,Matchoi Djaló,Matchoi Djaló,66,76,MEI,23,Portugal,R08927
+Nacional da Madeira,William Kokolo,William Kokolo,64,64,LAT,26,França,R08928
+Nacional da Madeira,Filipe Soares,Filipe Soares,67,70,MEI,27,Portugal,R08929
+Nacional da Madeira,Mateus Iseppe,Mateus Iseppe,57,63,MEI,20,Brasil,R08930
+Nacional da Madeira,Joel Silva,Joel Silva,70,76,MEI,23,Portugal,R08931
+Nacional da Madeira,Igor Liziero,Igor Liziero,70,71,MEI,28,Brasil,R08932
+Nacional da Madeira,Njoya Abdel,Njoya Abdel,61,64,ATA,23,Camarões,R08933
+Nacional da Madeira,Martim Watts,Martim Watts,60,71,ATA,21,Portugal,R08934
+Nacional da Madeira,Danel Dongmo,Danel Dongmo,58,64,MEI,25,Camarões,R08935
+Nacional da Madeira,Francisco Gonçalves,Francisco Gonçalves,61,70,ZAG,22,Portugal,R08936
+Nacional da Madeira,Léo Santos,Léo Santos,67,70,ZAG,27,Brasil,R08937
+Nacional da Madeira,Zé Vitor,Zé Vitor,66,72,ZAG,25,Brasil,R08938
+Nacional da Madeira,Kevyn,Kevyn,62,76,GOL,20,Brasil,R08939
+Nacional da Madeira,Wesley Gasolina,Wesley Gasolina,66,66,LAT,26,Brasil,R08940
+Nacional da Madeira,Deivison,Deivison,60,72,MEI,21,Brasil,R08941
+Nacional da Madeira,Pablo Ruan,Pablo Ruan,56,64,ATA,20,Brasil,R08942
+Nacional da Madeira,Josué,Josué,61,72,VOL,21,Brasil,R08943
+Estrela da Amadora,Lucas Mincarelli,Lucas Mincarelli,60,68,ZAG,22,França,R08999
+Estrela da Amadora,Bernardo Schappo,Bernardo Schappo,69,71,ZAG,27,Brasil,R09000
+Estrela da Amadora,Stefan Leković,Stefan Leković,60,69,ZAG,22,Sérvia,R09001
+Estrela da Amadora,Kevin Höög Jansson,Kevin Höög Jansson,69,69,MEI,26,Suécia,R09002
+Estrela da Amadora,Robinho,Robinho,66,75,MEI,24,Brasil,R09003
+Estrela da Amadora,Ianis Stoica,Ianis Stoica,70,78,MEI,23,Romênia,R09004
+Estrela da Amadora,Rodrigo Dudok,Rodrigo Dudok,60,70,ATA,19,Uruguai,R09005
+Estrela da Amadora,Lovro Zvonarek,Lovro Zvonarek,65,77,MEI,21,Croácia,R09006
+Estrela da Amadora,Jefferson Encada,Jefferson Encada,66,67,LAT,28,Guiné-Bissau,R09007
+Estrela da Amadora,Vuk Pavićević,Vuk Pavićević,54,67,MEI,19,Montenegro,R09008
+Estrela da Amadora,Joan Jordán,Joan Jordán,76,76,MEI,32,Espanha,R09009
+Estrela da Amadora,Max Scholze,Max Scholze,62,73,LAT,21,Alemanha,R09010
+Estrela da Amadora,David Grilo,David Grilo,62,65,GOL,23,Portugal,R09011
+Estrela da Amadora,Léo Linck,Léo Linck,67,67,GOL,25,Brasil,R09012
+Estrela da Amadora,Tom Moustier,Tom Moustier,65,72,MEI,24,França,R09013
+Estrela da Amadora,Jeremy Arévalo,Jeremy Arévalo,64,73,ATA,21,Equador,R09014
+Estrela da Amadora,Luan Patrick,Luan Patrick,65,74,ZAG,24,Brasil,R09015
+Estrela da Amadora,Leandro Antonetti,Leandro Antonetti,60,71,ATA,23,Porto Rico,R09016
+Estrela da Amadora,Eddy Doué,Eddy Doué,59,64,VOL,20,Costa do Marfim,R09017
+Estrela da Amadora,Yang Si-Woo,Yang Si-Woo,57,62,ATA,20,Coreia do Sul,R09018
+Estrela da Amadora,René Mitongo,René Mitongo,59,73,ATA,18,Bélgica,R09019
+Estrela da Amadora,Diogo Pinto,Diogo Pinto,68,80,GOL,22,Portugal,R09020
+Estrela da Amadora,Rafa Soares,Rafa Soares,70,70,LAT,31,Portugal,R09021
+Estrela da Amadora,Emerson Vanga,Emerson Vanga,54,66,MEI,19,França,R09022
+Estrela da Amadora,Henrique Poniewas,Henrique Poniewas,57,66,ATA,20,Brasil,R09023
+Estrela da Amadora,Santiago Serra,Santiago Serra,56,62,MEI,20,Portugal,R09024
+Estrela da Amadora,Atanas Chernev,Atanas Chernev,64,72,ZAG,24,Bulgária,R09025
+Estrela da Amadora,Alisson Souza,Alisson Souza,59,65,ATA,22,Brasil,R09026
+Estrela da Amadora,Bénito,Bénito,59,66,ATA,21,França,R09027
+Estrela da Amadora,Abraham Marcus,Abraham Marcus,65,68,MEI,26,Nigéria,R09028
+Alverca,Noah Raveyre,Noah Raveyre,64,72,GOL,21,França,R09029
+Alverca,Nabil Touaizi,Nabil Touaizi,65,71,MEI,25,Marrocos,R09030
+Alverca,Julián Martínez,Julián Martínez,65,74,ZAG,22,Honduras,R09031
+Alverca,Yaya Bojang,Yaya Bojang,60,69,ZAG,22,The Gambia,R09032
+Alverca,Sabit Abdulai,Sabit Abdulai,62,65,MEI,27,Gana,R09033
+Alverca,Davy Gui,Davy Gui,60,69,MEI,20,Costa do Marfim,R09034
+Alverca,André Vidigal,André Vidigal,68,68,MEI,28,Angola,R09035
+Alverca,Vasco Moreira,Vasco Moreira,57,62,MEI,22,Portugal,R09036
+Alverca,Vivaldo Semedo,Vivaldo Semedo,64,69,ATA,21,Portugal,R09037
+Alverca,Chiquinho,Chiquinho,72,75,MEI,26,Portugal,R09038
+Alverca,Cédric Nuozzi,Cédric Nuozzi,63,75,ATA,20,Bélgica,R09039
+Alverca,Isaac James,Isaac James,63,74,LAT,22,Nigéria,R09040
+Alverca,Steven Baseya,Steven Baseya,63,75,ZAG,21,França,R09041
+Alverca,Ikker Julian,Ikker Julian,58,65,LAT,22,Bélgica,R09042
+Alverca,Samy Merheg,Samy Merheg,58,70,ATA,19,Líbano,R09043
+Alverca,Zakaria Kassary,Zakaria Kassary,61,64,MEI,23,Marrocos,R09044
+Alverca,Dawda Camara,Dawda Camara,62,64,ATA,24,Mauritania,R09045
+Alverca,Diogo Spencer,Diogo Spencer,64,78,LAT,22,Portugal,R09046
+Alverca,Sergi Gómez,Sergi Gómez,72,72,ZAG,34,Espanha,R09047
+Alverca,Figueiredo,Figueiredo,68,72,ATA,25,Brasil,R09048
+Alverca,André Paulo,André Paulo,63,66,GOL,29,Portugal,R09049
+Alverca,Mofe Jemide,Mofe Jemide,57,66,ZAG,20,Inglaterra,R09050
+Alverca,Ian Luccas,Ian Luccas,64,67,MEI,23,Brasil,R09051
+Alverca,Matheus França,Matheus França,64,73,ATA,22,Brasil,R09052
+Alverca,Toni Tamarit,Toni Tamarit,62,72,MEI,20,Espanha,R09053
+Alverca,Matheus Mendes,Matheus Mendes,68,70,GOL,27,Brasil,R09054
+Alverca,Bastien Meupiyou,Bastien Meupiyou,61,76,ZAG,20,França,R09055
+Alverca,Rayan Lucas,Rayan Lucas,59,66,MEI,21,Brasil,R09056
+Alverca,Francisco Chissumba,Francisco Chissumba,70,80,LAT,21,Portugal,R09057
+Alverca,Óscar Torrellas,Óscar Torrellas,56,66,ZAG,19,Espanha,R09058
+Alverca,Tiago Octávio,Tiago Octávio,55,64,MEI,22,Portugal,R09059
+Alverca,Jhonatan,Jhonatan,65,65,GOL,35,Brasil,R09060
+Alverca,Zé Rafael,Zé Rafael,65,65,VOL,33,Brasil,R09061
+Tondela,Lucas Cañizares,Lucas Cañizares,66,76,GOL,24,Espanha,R08970
+Tondela,Bebeto,Bebeto,70,70,LAT,36,Brasil,R08971
+Tondela,Ian Kamga,Ian Kamga,58,66,ZAG,21,Inglaterra,R08972
+Tondela,Christian Marques,Christian Marques,66,75,ZAG,23,Portugal,R08973
+Tondela,João Afonso,João Afonso,69,69,ZAG,36,Portugal,R08974
+Tondela,Farru,Farru,64,64,ZAG,25,Espanha,R08975
+Tondela,Cascavel,Cascavel,57,66,ATA,21,Portugal,R08976
+Tondela,Hélder Tavares,Hélder Tavares,65,65,VOL,36,Cabo Verde,R08977
+Tondela,João Lima,João Lima,64,64,ATA,26,Brasil,R08978
+Tondela,Henry Addo,Henry Addo,62,65,ATA,23,Gana,R08979
+Tondela,Richarllyson,Richarllyson,54,61,ATA,20,Brasil,R08980
+Tondela,Zé Ricardo,Zé Ricardo,68,68,ZAG,28,Brasil,R08981
+Tondela,Yaya Sithole,Yaya Sithole,68,68,MEI,27,África do Sul,R08982
+Tondela,Xabi Huarte,Xabi Huarte,65,72,MEI,25,Espanha,R08983
+Tondela,Carraça,Carraça,64,64,MEI,33,Portugal,R08984
+Tondela,Gastón Novero,Gastón Novero,67,67,ATA,28,Argentina,R08985
+Tondela,Tomané,Tomané,61,61,ATA,34,Portugal,R08986
+Tondela,Hugo Félix,Hugo Félix,63,68,MEI,22,Portugal,R08987
+Tondela,Gabriel Alves,Gabriel Alves,54,66,ZAG,19,Portugal,R08988
+Tondela,Bruno Almeida,Bruno Almeida,55,60,ZAG,21,Cabo Verde,R08989
+Tondela,Brayan Medina,Brayan Medina,68,77,ZAG,23,Colômbia,R08990
+Tondela,Ruly García,Ruly García,55,62,GOL,22,Espanha,R08991
+Tondela,Arjen van der Heide,Arjen van der Heide,64,66,ATA,24,Holanda,R08992
+Tondela,Carlão,Carlão,52,65,GOL,19,Brasil,R08993
+Tondela,Mateus Sarará,Mateus Sarará,66,69,MEI,24,Brasil,R08994
+Tondela,Tiago Dias,Tiago Dias,68,68,ATA,28,Portugal,R08995
+Tondela,Leonardo Silva,Leonardo Silva,56,67,MEI,19,Portugal,R08996
+Tondela,Rodrigo da Silva,Rodrigo da Silva,57,62,GOL,21,Portugal,R08997
+Tondela,Cícero,Cícero,55,63,MEI,22,Brasil,R08998
+AVS,Dani Rebollo,Dani Rebollo,65,65,GOL,26,Espanha,R08857
+AVS,Lazar Rosić,Lazar Rosić,70,70,ZAG,33,Sérvia,R08858
+AVS,Davi Schuindt,Davi Schuindt,61,69,ZAG,22,Brasil,R08859
+AVS,Carlos Ponck,Carlos Ponck,65,65,VOL,31,Cabo Verde,R08860
+AVS,Guilherme Neiva,Guilherme Neiva,58,60,ATA,23,Brasil,R08861
+AVS,Jorge Meireles,Jorge Meireles,62,76,ATA,22,Portugal,R08862
+AVS,Rodrigo Pinho,Rodrigo Pinho,70,70,ATA,35,Brasil,R08863
+AVS,Abdoulaye Keita,Abdoulaye Keita,65,67,ATA,24,Espanha,R08864
+AVS,Daniel Rivas,Daniel Rivas,65,71,LAT,24,Paraguai,R08865
+AVS,Régis N'do,Régis N'do,64,64,ATA,25,Burkina Faso,R08866
+AVS,Rafael Lobato,Rafael Lobato,63,78,ATA,20,Brasil,R08867
+AVS,Ruan Assis,Ruan Assis,63,68,ATA,22,Brasil,R08868
+AVS,Diogo Brasido,Diogo Brasido,60,63,ZAG,23,Portugal,R08869
+AVS,Raul Steffens,Raul Steffens,67,67,GOL,29,Brasil,R08870
+AVS,Bernardo Conde,Bernardo Conde,62,64,ZAG,23,França,R08871
+AVS,André Sousa,André Sousa,66,66,VOL,28,Portugal,R08872
+AVS,Deandre Kerr,Deandre Kerr,61,65,ATA,23,Canadá,R08873
+AVS,Talles Wander,Talles Wander,61,63,ATA,23,Brasil,R08874
+AVS,Pedro Pimentel,Pedro Pimentel,52,63,MEI,19,Portugal,R08875
+AVS,Roni,Roni,66,66,MEI,27,Brasil,R08876
+AVS,Guga,Guga,53,65,ATA,19,Brasil,R08877
+AVS,Andrey,Andrey,58,64,MEI,22,Brasil,R08878
+AVS,Hiago,Hiago,58,62,MEI,23,Brasil,R08879
+AVS,Fernando Almeida,Fernando Almeida,57,62,MEI,21,Portugal,R08880
+AVS,Mateus Pivô,Mateus Pivô,67,67,ZAG,28,Brasil,R08881
+AVS,Estevão,Estevão,53,65,GOL,19,Brasil,R08882

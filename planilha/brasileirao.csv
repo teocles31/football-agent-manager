@@ -1,669 +1,669 @@
-clube,nome_original,nome,overall,potencial,posicao,idade,pais
-Flamengo,Agustín Rossi,Agustín Rossi,80,80,GOL,31,Argentina
-Flamengo,Andrew,Andrew,74,76,GOL,25,Brasil
-Flamengo,Dyogo Alves,Dyogo Alves,62,66,GOL,22,Brasil
-Flamengo,Léo Ortiz,Léo Ortiz,80,80,ZAG,30,Brasil
-Flamengo,Léo Pereira,Léo Pereira,80,80,ZAG,30,Brasil
-Flamengo,Vitão,Vitão,77,78,ZAG,26,Brasil
-Flamengo,Danilo,Danilo,76,76,ZAG,35,Brasil
-Flamengo,João Souza,João Souza,61,72,ZAG,19,Brasil
-Flamengo,Ayrton Lucas,Ayrton Lucas,75,75,LAT,29,Brasil
-Flamengo,Alex Sandro,Alex Sandro,74,74,LAT,35,Brasil
-Flamengo,Emerson Royal,Emerson Royal,76,76,LAT,27,Brasil
-Flamengo,Guillermo Varela,Guillermo Varela,72,72,LAT,33,Uruguai
-Flamengo,Evertton Araújo,Evertton Araújo,80,80,VOL,23,Brasil
-Flamengo,Erick Pulgar,Erick Pulgar,78,78,VOL,32,Chile
-Flamengo,Jorginho,Jorginho,78,78,VOL,34,Itália
-Flamengo,Nicolás de la Cruz,Nicolás de la Cruz,77,77,MEI,29,Uruguai
-Flamengo,Saúl Ñíguez,Saúl Ñíguez,71,71,MEI,31,Espanha
-Flamengo,Lucas Paquetá,Lucas Paquetá,80,80,MEI,29,Brasil
-Flamengo,Jorge Carrascal,Jorge Carrascal,78,78,MEI,28,Colômbia
-Flamengo,Giorgian de Arrascaeta,Giorgian de Arrascaeta,82,82,MEI,32,Uruguai
-Flamengo,Samuel Lino,Samuel Lino,79,80,ATA,26,Brasil
-Flamengo,Gonzalo Plata,Gonzalo Plata,77,78,ATA,26,Equador
-Flamengo,Luiz Araújo,Luiz Araújo,77,77,ATA,30,Brasil
-Flamengo,Anthony Valencia,Anthony Valencia,71,72,ATA,23,Equador
-Flamengo,Pedro,Pedro,78,78,ATA,29,Brasil
-Flamengo,Joaquín Freitas,Joaquín Freitas,64,76,ATA,19,Argentina
-Flamengo,Bruno Henrique,Bruno Henrique,76,76,ATA,35,Brasil
-Palmeiras,Carlos Miguel,Carlos Miguel,77,77,GOL,28,Brasil
-Palmeiras,Marcelo Lomba,Marcelo Lomba,66,66,GOL,39,Brasil
-Palmeiras,Bruno Bertinato,Bruno Bertinato,58,58,GOL,28,Brasil
-Palmeiras,Murilo,Murilo,76,76,ZAG,29,Brasil
-Palmeiras,Alexander Barboza,Alexander Barboza,77,77,ZAG,31,Uruguai
-Palmeiras,Bruno Fuchs,Bruno Fuchs,75,75,ZAG,27,Brasil
-Palmeiras,Luis Benedetti,Luis Benedetti,68,78,ZAG,20,Brasil
-Palmeiras,Gustavo Gómez,Gustavo Gómez,79,79,ZAG,33,Paraguai
-Palmeiras,Joaquín Piquerez,Joaquín Piquerez,79,79,LAT,28,Uruguai
-Palmeiras,Jefté,Jefté,73,75,LAT,22,Brasil
-Palmeiras,Arthur Gabriel,Arthur Gabriel,70,75,LAT,21,Brasil
-Palmeiras,Agustín Giay,Agustín Giay,77,79,LAT,22,Argentina
-Palmeiras,Khellven,Khellven,77,79,LAT,25,Brasil
-Palmeiras,Marlon Freitas,Marlon Freitas,78,78,VOL,31,Brasil
-Palmeiras,Emiliano Martínez,Emiliano Martínez,86,86,VOL,27,Uruguai
-Palmeiras,Luis Pacheco,Luis Pacheco,63,75,VOL,18,Brasil
-Palmeiras,Andreas Pereira,Andreas Pereira,78,78,MEI,30,Brasil
-Palmeiras,Lucas Evangelista,Lucas Evangelista,77,77,MEI,31,Brasil
-Palmeiras,Larson,Larson,67,70,MEI,21,Brasil
-Palmeiras,Mauricio,Mauricio,77,79,MEI,25,Paraguai
-Palmeiras,Erick Belé,Erick Belé,64,86,MEI,19,Brasil
-Palmeiras,Ramón Sosa,Ramón Sosa,77,77,ATA,27,Paraguai
-Palmeiras,Felipe Anderson,Felipe Anderson,76,76,ATA,33,Brasil
-Palmeiras,Jhon Arias,Jhon Arias,80,80,ATA,29,Colômbia
-Palmeiras,Paulinho,Paulinho,77,78,ATA,26,Brasil
-Palmeiras,Vitor Roque,Vitor Roque,80,86,ATA,21,Brasil
-Palmeiras,José Manuel López,José Manuel López,81,83,ATA,25,Argentina
-Cruzeiro,Otávio,Otávio,73,82,GOL,20,Brasil
-Cruzeiro,Léo Aragão,Léo Aragão,69,72,GOL,24,Brasil
-Cruzeiro,Cássio,Cássio,76,76,GOL,39,Brasil
-Cruzeiro,Jonathan Jesus,Jonathan Jesus,77,79,ZAG,22,Brasil
-Cruzeiro,Fabrício Bruno,Fabrício Bruno,78,78,ZAG,30,Brasil
-Cruzeiro,João Marcelo,João Marcelo,72,73,ZAG,26,Brasil
-Cruzeiro,Gabriel Rojas,Gabriel Rojas,73,73,LAT,29,Argentina
-Cruzeiro,Matías Viña,Matías Viña,71,71,LAT,29,Uruguai
-Cruzeiro,Lucas Villalba,Lucas Villalba,74,74,LAT,32,Argentina
-Cruzeiro,Kauã Moraes,Kauã Moraes,67,77,LAT,20,Brasil
-Cruzeiro,William,William,75,75,LAT,31,Brasil
-Cruzeiro,Fagner,Fagner,69,69,LAT,37,Brasil
-Cruzeiro,Zé Lucas,Zé Lucas,69,87,VOL,18,Brasil
-Cruzeiro,Lucas Romero,Lucas Romero,75,75,VOL,32,Argentina
-Cruzeiro,Lucas Silva,Lucas Silva,70,70,VOL,33,Brasil
-Cruzeiro,Gerson,Gerson,80,80,MEI,29,Brasil
-Cruzeiro,Matheus Henrique,Matheus Henrique,75,75,MEI,28,Brasil
-Cruzeiro,Fabrizio Peralta,Fabrizio Peralta,67,70,MEI,24,Paraguai
-Cruzeiro,Matheus Pereira,Matheus Pereira,80,80,MEI,30,Brasil
-Cruzeiro,Felipe Morais,Felipe Morais,64,76,MEI,18,Brasil
-Cruzeiro,Luis Sinisterra,Luis Sinisterra,79,79,ATA,27,Colômbia
-Cruzeiro,Wesley,Wesley,79,84,ATA,21,Brasil
-Cruzeiro,Kaique Kenji,Kaique Kenji,68,77,ATA,20,Brasil
-Cruzeiro,Wanderson,Wanderson,75,75,ATA,32,Brasil
-Cruzeiro,Bruno Rodrigues,Bruno Rodrigues,68,68,ATA,29,Brasil
-Cruzeiro,Keny Arroyo,Keny Arroyo,75,82,ATA,20,Equador
-Cruzeiro,Gabriel Pec,Gabriel Pec,76,82,ATA,25,Brasil
-Cruzeiro,Marquinhos,Marquinhos,71,75,ATA,23,Brasil
-Cruzeiro,João Costa,João Costa,71,86,ATA,21,Portugal
-Cruzeiro,Kaio Jorge,Kaio Jorge,80,83,ATA,24,Brasil
-Cruzeiro,Luciano Rodríguez,Luciano Rodríguez,77,78,ATA,23,Uruguai
-Cruzeiro,Néiser Villarreal,Néiser Villarreal,72,75,ATA,21,Colômbia
-Botafogo,Gabriel Batista,Gabriel Batista,73,77,GOL,28,Brasil
-Botafogo,Warleson,Warleson,72,72,GOL,30,Brasil
-Botafogo,Cristhian Loor,Cristhian Loor,60,68,GOL,20,Equador
-Botafogo,Arthur Chaves,Arthur Chaves,74,80,ZAG,25,Brasil
-Botafogo,Nahuel Ferraresi,Nahuel Ferraresi,75,75,ZAG,27,Venezuela
-Botafogo,Kaio,Kaio,73,73,ZAG,31,Brasil
-Botafogo,Lucas Monzón,Lucas Monzón,71,73,ZAG,25,Uruguai
-Botafogo,Gabriel Justino,Gabriel Justino,65,74,ZAG,20,Brasil
-Botafogo,Anthony,Anthony,60,65,ZAG,21,Brasil
-Botafogo,Kawan,Kawan,56,58,ZAG,23,Brasil
-Botafogo,Alex Telles,Alex Telles,77,77,LAT,33,Brasil
-Botafogo,Paulinho,Paulinho,68,68,LAT,31,Brasil
-Botafogo,Marçal,Marçal,69,69,LAT,37,Brasil
-Botafogo,Jhoan Hernández,Jhoan Hernández,56,65,LAT,20,Colômbia
-Botafogo,Vitinho,Vitinho,78,78,LAT,27,Brasil
-Botafogo,Mateo Ponte,Mateo Ponte,72,74,LAT,23,Uruguai
-Botafogo,Kadu Santos,Kadu Santos,62,66,LAT,21,Brasil
-Botafogo,Huguinho,Huguinho,68,84,VOL,19,Brasil
-Botafogo,Domingos Andrade,Domingos Andrade,70,71,VOL,23,Angola
-Botafogo,Allan,Allan,75,83,VOL,35,Brasil
-Botafogo,Wallace Davi,Wallace Davi,62,73,VOL,19,Brasil
-Botafogo,Danilo,Danilo,83,85,MEI,25,Brasil
-Botafogo,Cristian Medina,Cristian Medina,76,79,MEI,24,Argentina
-Botafogo,Edenilson,Edenilson,70,70,MEI,36,Brasil
-Botafogo,Jordan Barrera,Jordan Barrera,67,76,MEI,20,Colômbia
-Botafogo,Álvaro Montoro,Álvaro Montoro,74,85,ATA,19,Argentina
-Botafogo,Matheus Martins,Matheus Martins,76,77,ATA,23,Brasil
-Botafogo,Júnior Santos,Júnior Santos,74,74,ATA,32,Brasil
-Botafogo,Hakim Ziyech,Hakim Ziyech,78,78,ATA,33,Marrocos
-Botafogo,Lucas Villalba,Lucas Villalba,71,73,ATA,25,Uruguai
-Botafogo,Kauan Toledo,Kauan Toledo,63,73,ATA,20,Brasil
-Botafogo,Arthur Cabral,Arthur Cabral,76,76,ATA,28,Brasil
-Botafogo,Kadir Barría,Kadir Barría,66,76,ATA,19,Panamá
-Botafogo,Lucas Emanuel,Lucas Emanuel,62,77,ATA,17,Brasil
-Botafogo,Danilo,Danilo,71,71,ATA,27,Brasil
-Botafogo,Tiquinho Soares,Tiquinho Soares,72,72,ATA,35,Brasil
-Fluminense,Vitor Eudes,Vitor Eudes,65,65,GOL,28,Brasil
-Fluminense,Marcelo Pitaluga,Marcelo Pitaluga,63,63,GOL,23,Brasil
-Fluminense,Fábio,Fábio,72,72,GOL,46,Brasil
-Fluminense,Juan Pablo Freytes,Juan Pablo Freytes,75,76,ZAG,26,Argentina
-Fluminense,Julián Millán,Julián Millán,75,75,ZAG,28,Colômbia
-Fluminense,Ignácio,Ignácio,73,73,ZAG,29,Brasil
-Fluminense,Jemmes,Jemmes,72,73,ZAG,26,Brasil
-Fluminense,Igor Rabello,Igor Rabello,73,73,ZAG,31,Brasil
-Fluminense,Thiago Silva,Thiago Silva,76,76,ZAG,42,Brasil
-Fluminense,Guilherme Arana,Guilherme Arana,75,75,LAT,29,Brasil
-Fluminense,Renê,Renê,70,70,LAT,34,Brasil
-Fluminense,Léo Jance,Léo Jance,54,58,LAT,21,Brasil
-Fluminense,Guga,Guga,71,71,LAT,28,Brasil
-Fluminense,Julio Fidelis,Julio Fidelis,61,70,LAT,20,Brasil
-Fluminense,Jhonny,Jhonny,63,66,LAT,24,Brasil
-Fluminense,Samuel Xavier,Samuel Xavier,69,69,LAT,36,Brasil
-Fluminense,Martinelli,Martinelli,76,79,VOL,25,Brasil
-Fluminense,Otávio,Otávio,71,71,VOL,32,Brasil
-Fluminense,Luis Fernando,Luis Fernando,53,58,VOL,21,Brasil
-Fluminense,Hércules,Hércules,80,81,MEI,26,Brasil
-Fluminense,Nonato,Nonato,72,72,MEI,28,Brasil
-Fluminense,Alisson,Alisson,71,71,MEI,33,Brasil
-Fluminense,Luciano Acosta,Luciano Acosta,77,77,MEI,32,Argentina
-Fluminense,Ganso,Ganso,70,70,MEI,37,Brasil
-Fluminense,Yago Ferreira,Yago Ferreira,56,58,MEI,25,Brasil
-Fluminense,Jefferson Savarino,Jefferson Savarino,79,79,ATA,30,Venezuela
-Fluminense,Yeferson Soteldo,Yeferson Soteldo,73,73,ATA,29,Venezuela
-Fluminense,Wesley Natã,Wesley Natã,60,74,ATA,18,Brasil
-Fluminense,Matheus Reis,Matheus Reis,54,63,ATA,19,México
-Fluminense,Agustín Canobbio,Agustín Canobbio,78,78,ATA,28,Uruguai
-Fluminense,Riquelme,Riquelme,70,80,ATA,19,Brasil
-Fluminense,Kevin Serna,Kevin Serna,76,76,ATA,28,Colômbia
-Fluminense,John Kennedy,John Kennedy,77,80,ATA,24,Brasil
-Fluminense,Rodrigo Castillo,Rodrigo Castillo,72,75,ATA,27,Argentina
-Fluminense,Hulk,Hulk,79,79,ATA,40,Brasil
-Fluminense,Germán Cano,Germán Cano,74,74,ATA,38,Argentina
-Bahia,Ronaldo,Ronaldo,71,71,GOL,30,Brasil
-Bahia,Guido Herrera,Guido Herrera,75,75,GOL,34,Argentina
-Bahia,Léo Vieira,Léo Vieira,68,68,GOL,36,Brasil
-Bahia,Victor,Victor,52,61,GOL,20,Brasil
-Bahia,Kanu,Kanu,71,71,ZAG,29,Brasil
-Bahia,David Duarte,David Duarte,71,71,ZAG,31,Brasil
-Bahia,Marco Moreno,Marco Moreno,68,74,ZAG,25,Espanha
-Bahia,Luiz Gustavo,Luiz Gustavo,61,71,ZAG,20,Brasil
-Bahia,Marcos Victor,Marcos Victor,66,69,ZAG,24,Brasil
-Bahia,Fredi Gomes,Fredi Gomes,53,61,ZAG,20,Brasil
-Bahia,Luciano Juba,Luciano Juba,77,78,LAT,27,Brasil
-Bahia,Zé Guilherme,Zé Guilherme,62,66,LAT,21,Brasil
-Bahia,Román Gómez,Román Gómez,70,71,LAT,22,Argentina
-Bahia,Nicolás Acevedo,Nicolás Acevedo,78,78,VOL,27,Uruguai
-Bahia,Caio Alexandre,Caio Alexandre,77,77,VOL,27,Brasil
-Bahia,Erick,Erick,76,76,VOL,29,Brasil
-Bahia,Lautaro López,Lautaro López,62,66,VOL,21,Argentina
-Bahia,Jean Lucas,Jean Lucas,77,77,MEI,28,Brasil
-Bahia,Rodrigo Nestor,Rodrigo Nestor,76,77,MEI,26,Brasil
-Bahia,Everton Ribeiro,Everton Ribeiro,76,76,MEI,37,Brasil
-Bahia,David Martins,David Martins,63,73,MEI,19,Brasil
-Bahia,Roger Gabriel,Roger Gabriel,53,63,MEI,19,Brasil
-Bahia,Erick Pulga,Erick Pulga,78,79,ATA,26,Brasil
-Bahia,Ruan Pablo,Ruan Pablo,70,82,ATA,18,Brasil
-Bahia,Mateo Sanabria,Mateo Sanabria,69,72,ATA,22,Argentina
-Bahia,Cristian Olivera,Cristian Olivera,74,77,ATA,24,Uruguai
-Bahia,Kauê Furquim,Kauê Furquim,66,79,ATA,17,Brasil
-Bahia,Michel Araújo,Michel Araújo,74,74,ATA,30,Uruguai
-Bahia,Ademir,Ademir,70,70,ATA,31,Brasil
-Bahia,Alejo Veliz,Alejo Veliz,76,80,ATA,23,Argentina
-Bahia,Dell,Dell,67,79,ATA,18,Brasil
-Bahia,Willian José,Willian José,73,73,ATA,34,Brasil
-Bahia,Everaldo,Everaldo,69,69,ATA,35,Brasil
-Atlético-MG,Gabriel Delfim,Gabriel Delfim,74,77,GOL,24,Brasil
-Atlético-MG,Everson,Everson,77,77,GOL,36,Brasil
-Atlético-MG,Pedro Cobra,Pedro Cobra,63,71,GOL,20,Brasil
-Atlético-MG,Robert,Robert,54,58,GOL,21,Brasil
-Atlético-MG,Lyanco,Lyanco,75,75,ZAG,29,Brasil
-Atlético-MG,Ruan,Ruan,74,74,ZAG,27,Brasil
-Atlético-MG,Léo Duarte,Léo Duarte,75,76,ZAG,30,Brasil
-Atlético-MG,Vitão,Vitão,62,75,ZAG,18,Brasil
-Atlético-MG,Vitor Hugo,Vitor Hugo,70,70,ZAG,35,Brasil
-Atlético-MG,Renan Lodi,Renan Lodi,78,79,LAT,28,Brasil
-Atlético-MG,Kauã Pascini,Kauã Pascini,64,77,LAT,18,Brasil
-Atlético-MG,Natanael,Natanael,75,78,LAT,24,Brasil
-Atlético-MG,Angelo Preciado,Angelo Preciado,73,73,LAT,28,Equador
-Atlético-MG,Alexsander,Alexsander,76,76,VOL,23,Brasil
-Atlético-MG,Kevin Castaño,Kevin Castaño,74,75,VOL,26,Colômbia
-Atlético-MG,Tomás Pérez,Tomás Pérez,69,79,VOL,21,Argentina
-Atlético-MG,Victor Hugo,Victor Hugo,66,66,MEI,22,Brasil
-Atlético-MG,Fred,Fred,78,78,MEI,33,Brasil
-Atlético-MG,Alan Franco,Alan Franco,74,74,MEI,28,Equador
-Atlético-MG,Mamady Cissé,Mamady Cissé,66,77,MEI,19,Guiné
-Atlético-MG,Maycon,Maycon,70,70,MEI,29,Brasil
-Atlético-MG,Índio,Índio,51,64,MEI,18,Brasil
-Atlético-MG,Gustavo Scarpa,Gustavo Scarpa,77,77,MEI,32,Brasil
-Atlético-MG,Reinier,Reinier,75,78,MEI,24,Brasil
-Atlético-MG,Igor Gomes,Igor Gomes,73,73,MEI,27,Brasil
-Atlético-MG,Tomás Cuello,Tomás Cuello,77,78,ATA,26,Argentina
-Atlético-MG,Dudu,Dudu,71,71,ATA,34,Brasil
-Atlético-MG,Bernard,Bernard,71,71,ATA,34,Brasil
-Atlético-MG,Alan Minda,Alan Minda,75,77,ATA,23,Equador
-Atlético-MG,Mateo Cassierra,Mateo Cassierra,77,77,ATA,29,Colômbia
-Atlético-MG,Thiago Borbas,Thiago Borbas,74,77,ATA,24,Uruguai
-Atlético-MG,Cauã Soares,Cauã Soares,64,75,ATA,18,Brasil
-São Paulo,Carlos Coronel,Carlos Coronel,69,69,GOL,29,Paraguai
-São Paulo,Rafael,Rafael,76,76,GOL,37,Brasil
-São Paulo,Young,Young,61,64,GOL,24,Brasil
-São Paulo,João Pedro,João Pedro,61,69,GOL,20,Brasil
-São Paulo,Felipe Preis,Felipe Preis,52,61,GOL,20,Brasil
-São Paulo,Sabino,Sabino,69,69,ZAG,30,Brasil
-São Paulo,Matheus Belém,Matheus Belém,67,69,ZAG,23,Brasil
-São Paulo,Rafael Tolói,Rafael Tolói,73,73,ZAG,36,Itália
-São Paulo,Domingos Duarte,Domingos Duarte,74,74,ZAG,31,Portugal
-São Paulo,Luis Osorio,Luis Osorio,62,70,ZAG,20,Brasil
-São Paulo,Robert Arboleda,Robert Arboleda,70,70,ZAG,35,Equador
-São Paulo,Isac,Isac,51,61,ZAG,20,Brasil
-São Paulo,Iago,Iago,72,72,LAT,29,Brasil
-São Paulo,Enzo Díaz,Enzo Díaz,73,73,LAT,30,Argentina
-São Paulo,Wendell,Wendell,73,73,LAT,33,Brasil
-São Paulo,Nicolas,Nicolas,53,63,LAT,19,Brasil
-São Paulo,Pedro Lima,Pedro Lima,70,83,LAT,20,Brasil
-São Paulo,Aurélio Buta,Aurélio Buta,73,73,LAT,29,Portugal
-São Paulo,Lucas Ramon,Lucas Ramon,69,69,LAT,32,Brasil
-São Paulo,Cédric Soares,Cédric Soares,70,70,LAT,35,Portugal
-São Paulo,Igor Felisberto,Igor Felisberto,54,63,LAT,19,Brasil
-São Paulo,Pablo Maia,Pablo Maia,74,77,VOL,24,Brasil
-São Paulo,Newton,Newton,74,75,VOL,26,Brasil
-São Paulo,Marcos Antônio,Marcos Antônio,80,81,MEI,26,Brasil
-São Paulo,Damián Bobadilla,Damián Bobadilla,78,80,MEI,25,Paraguai
-São Paulo,Djhordney,Djhordney,64,84,MEI,19,Brasil
-São Paulo,Danielzinho,Danielzinho,71,71,MEI,32,Brasil
-São Paulo,Cauly,Cauly,72,72,MEI,31,Brasil
-São Paulo,Pedro Ferreira,Pedro Ferreira,52,63,MEI,19,Brasil
-São Paulo,Ferreirinha,Ferreirinha,74,74,ATA,28,Brasil
-São Paulo,Lucca,Lucca,68,77,ATA,19,Brasil
-São Paulo,Victor Sá,Victor Sá,73,73,ATA,32,Brasil
-São Paulo,Tetê,Tetê,63,73,ATA,19,Brasil
-São Paulo,Artur,Artur,77,77,ATA,28,Brasil
-São Paulo,Lucas Moura,Lucas Moura,76,76,ATA,34,Brasil
-São Paulo,Ryan Francisco,Ryan Francisco,69,78,ATA,19,Brasil
-São Paulo,André Silva,André Silva,71,71,ATA,29,Brasil
-São Paulo,Jonathan Calleri,Jonathan Calleri,77,77,ATA,33,Argentina
-São Paulo,Luciano,Luciano,71,71,ATA,33,Brasil
-São Paulo,Gustavo Santana,Gustavo Santana,65,70,ATA,21,Brasil
-Corinthians,Hugo Souza,Hugo Souza,78,80,GOL,27,Brasil
-Corinthians,Kauê,Kauê,67,70,GOL,22,Brasil
-Corinthians,Felipe Longo,Felipe Longo,62,67,GOL,21,Brasil
-Corinthians,João Pedro Tchoca,João Pedro Tchoca,72,75,ZAG,22,Brasil
-Corinthians,Iago Machado,Iago Machado,64,87,ZAG,17,Brasil
-Corinthians,André Ramalho,André Ramalho,71,71,ZAG,34,Brasil
-Corinthians,Gustavo Henrique,Gustavo Henrique,69,69,ZAG,33,Brasil
-Corinthians,Gabriel Paulista,Gabriel Paulista,77,77,ZAG,35,Brasil
-Corinthians,Renato Santos,Renato Santos,55,58,ZAG,22,Brasil
-Corinthians,Matheus Bidu,Matheus Bidu,78,78,LAT,27,Brasil
-Corinthians,Hugo,Hugo,67,67,LAT,29,Brasil
-Corinthians,Fabrizio Angileri,Fabrizio Angileri,67,67,LAT,32,Argentina
-Corinthians,Matheuzinho,Matheuzinho,78,79,LAT,26,Brasil
-Corinthians,Pedro Milans,Pedro Milans,69,72,LAT,24,Uruguai
-Corinthians,Léo Mana,Léo Mana,64,67,LAT,22,Brasil
-Corinthians,Raniele,Raniele,73,73,VOL,29,Brasil
-Corinthians,Allan,Allan,75,83,VOL,29,Brasil
-Corinthians,Charles,Charles,69,69,VOL,30,Brasil
-Corinthians,Breno Bidon,Breno Bidon,76,84,MEI,21,Brasil
-Corinthians,André,André,75,83,MEI,20,Brasil
-Corinthians,Matheus Pereira,Matheus Pereira,70,70,MEI,28,Brasil
-Corinthians,Alex Santana,Alex Santana,71,71,MEI,31,Brasil
-Corinthians,André Carrillo,André Carrillo,73,73,MEI,35,Peru
-Corinthians,Bahia,Bahia,52,61,MEI,20,Brasil
-Corinthians,Rodrigo Garro,Rodrigo Garro,79,79,MEI,28,Argentina
-Corinthians,Jesse Lingard,Jesse Lingard,73,73,MEI,33,Inglaterra
-Corinthians,Zakaria Labyad,Zakaria Labyad,71,71,MEI,33,Marrocos
-Corinthians,Kayke,Kayke,68,71,ATA,22,Brasil
-Corinthians,Vitinho,Vitinho,72,72,ATA,33,Brasil
-Corinthians,Kaio César,Kaio César,73,83,ATA,22,Brasil
-Corinthians,Dieguinho,Dieguinho,70,79,ATA,19,Brasil
-Corinthians,Yuri Alberto,Yuri Alberto,79,81,ATA,25,Brasil
-Corinthians,Memphis Depay,Memphis Depay,81,81,ATA,32,Holanda
-Corinthians,Gui Negão,Gui Negão,70,80,ATA,19,Brasil
-Corinthians,Pedro Raul,Pedro Raul,71,71,ATA,30,Brasil
-Internacional,Anthoni,Anthoni,74,77,GOL,24,Brasil
-Internacional,Matheus Cunha,Matheus Cunha,68,68,GOL,25,Brasil
-Internacional,Sergio Rochet,Sergio Rochet,75,75,GOL,33,Uruguai
-Internacional,Kauan,Kauan,57,58,GOL,23,Brasil
-Internacional,Diego Esser,Diego Esser,54,58,GOL,21,Brasil
-Internacional,Victor Gabriel,Victor Gabriel,72,75,ZAG,22,Brasil
-Internacional,Guillermo Maripán,Guillermo Maripán,75,75,ZAG,32,Chile
-Internacional,Félix Torres,Félix Torres,69,69,ZAG,29,Equador
-Internacional,Juninho,Juninho,69,69,ZAG,31,Brasil
-Internacional,Gabriel Mercado,Gabriel Mercado,69,69,ZAG,39,Argentina
-Internacional,Alexandro Bernabei,Alexandro Bernabei,76,78,LAT,26,Argentina
-Internacional,Matheus Bahia,Matheus Bahia,73,73,LAT,27,Brasil
-Internacional,Bruno Gomes,Bruno Gomes,76,78,LAT,25,Brasil
-Internacional,Braian Aguirre,Braian Aguirre,73,74,LAT,26,Argentina
-Internacional,Rodrigo Villagra,Rodrigo Villagra,72,74,VOL,25,Argentina
-Internacional,Thiago Maia,Thiago Maia,70,70,VOL,29,Brasil
-Internacional,Benjamin,Benjamin,51,61,VOL,20,Gana
-Internacional,Paulinho Paula,Paulinho Paula,70,70,MEI,29,Brasil
-Internacional,Bruno Henrique,Bruno Henrique,72,72,MEI,37,Brasil
-Internacional,Niclas Eliasson,Niclas Eliasson,75,75,MEI,30,Suécia
-Internacional,Alan Patrick,Alan Patrick,78,78,MEI,35,Brasil
-Internacional,Calebe,Calebe,71,72,MEI,26,Brasil
-Internacional,Allex,Allex,64,73,MEI,20,Brasil
-Internacional,Yago Noal,Yago Noal,59,70,MEI,19,Brasil
-Internacional,Johan Carbonero,Johan Carbonero,76,76,ATA,27,Colômbia
-Internacional,Kayky,Kayky,75,75,ATA,23,Brasil
-Internacional,Alerrandro,Alerrandro,72,73,ATA,26,Brasil
-Internacional,Antonio Sanabria,Antonio Sanabria,73,73,ATA,30,Paraguai
-Internacional,Raykkonen,Raykkonen,60,74,ATA,18,Brasil
-Grêmio,Gabriel Grando,Gabriel Grando,69,70,GOL,26,Brasil
-Grêmio,Weverton,Weverton,76,76,GOL,38,Brasil
-Grêmio,Thiago Beltrame,Thiago Beltrame,57,58,GOL,23,Brasil
-Grêmio,Gabriel Menegon,Gabriel Menegon,51,64,GOL,18,Brasil
-Grêmio,Gustavo Martins,Gustavo Martins,75,78,ZAG,24,Brasil
-Grêmio,Wallace,Wallace,70,74,ZAG,21,Brasil
-Grêmio,Wagner Leonardo,Wagner Leonardo,72,72,ZAG,27,Brasil
-Grêmio,Fabián Balbuena,Fabián Balbuena,72,72,ZAG,35,Paraguai
-Grêmio,Luis Eduardo,Luis Eduardo,59,71,ZAG,18,Brasil
-Grêmio,Walter Kannemann,Walter Kannemann,69,69,ZAG,35,Argentina
-Grêmio,Athos Thawan,Athos Thawan,55,58,ZAG,21,Brasil
-Grêmio,Marlon,Marlon,74,74,LAT,29,Brasil
-Grêmio,Pedro Gabriel,Pedro Gabriel,66,76,LAT,19,Brasil
-Grêmio,Caio Paulista,Caio Paulista,71,71,LAT,28,Brasil
-Grêmio,Diego Caito,Diego Caito,69,71,LAT,22,Brasil
-Grêmio,João Pedro,João Pedro,71,73,LAT,30,Brasil
-Grêmio,Marcos Rocha,Marcos Rocha,69,69,LAT,37,Brasil
-Grêmio,Erick Noriega,Erick Noriega,77,79,VOL,25,Peru
-Grêmio,Mathías Villasanti,Mathías Villasanti,75,75,VOL,29,Paraguai
-Grêmio,Danilo Barbosa,Danilo Barbosa,72,72,VOL,30,Brasil
-Grêmio,Filip Krovinovic,Filip Krovinovic,70,70,VOL,31,Croácia
-Grêmio,Dodi,Dodi,66,66,VOL,30,Brasil
-Grêmio,Juan Nardoni,Juan Nardoni,75,78,MEI,24,Argentina
-Grêmio,Tiago Augusto,Tiago Augusto,58,71,MEI,18,Brasil
-Grêmio,Riquelme,Riquelme,67,75,MEI,20,Brasil
-Grêmio,Francis Amuzu,Francis Amuzu,77,77,ATA,27,Gana
-Grêmio,Jovane Cabral,Jovane Cabral,70,70,ATA,28,Cabo Verde
-Grêmio,Tetê,Tetê,76,77,ATA,26,Brasil
-Grêmio,Cristian Pavón,Cristian Pavón,73,73,ATA,30,Argentina
-Grêmio,José Enamorado,José Enamorado,71,71,ATA,27,Colômbia
-Grêmio,Roger,Roger,58,70,ATA,18,Brasil
-Grêmio,Carlos Vinícius,Carlos Vinícius,77,77,ATA,31,Brasil
-Grêmio,Matheus Nascimento,Matheus Nascimento,71,75,ATA,22,Brasil
-Grêmio,Martin Braithwaite,Martin Braithwaite,75,75,ATA,35,Dinamarca
-Vasco da Gama,Léo Jardim,Léo Jardim,77,77,GOL,31,Brasil
-Vasco da Gama,Daniel Fuzato,Daniel Fuzato,68,68,GOL,29,Brasil
-Vasco da Gama,Pablo,Pablo,58,58,GOL,23,Brasil
-Vasco da Gama,Robert Renan,Robert Renan,79,79,ZAG,23,Brasil
-Vasco da Gama,Carlos Cuesta,Carlos Cuesta,76,76,ZAG,27,Colômbia
-Vasco da Gama,Gabriel Pereira,Gabriel Pereira,74,79,ZAG,26,Brasil
-Vasco da Gama,Lucas Freitas,Lucas Freitas,75,77,ZAG,25,Brasil
-Vasco da Gama,Alan Saldivia,Alan Saldivia,70,73,ZAG,24,Uruguai
-Vasco da Gama,Walace Falcão,Walace Falcão,55,58,ZAG,21,Brasil
-Vasco da Gama,Cuiabano,Cuiabano,77,79,LAT,23,Brasil
-Vasco da Gama,Lucas Piton,Lucas Piton,76,77,LAT,26,Itália
-Vasco da Gama,Riquelme,Riquelme,67,70,LAT,24,Brasil
-Vasco da Gama,Paulinho,Paulinho,66,68,LAT,22,Brasil
-Vasco da Gama,Paulo Henrique,Paulo Henrique,77,77,LAT,30,Brasil
-Vasco da Gama,José Luis Rodríguez,José Luis Rodríguez,71,71,LAT,29,Uruguai
-Vasco da Gama,João Mutano,João Mutano,62,67,LAT,21,Brasil
-Vasco da Gama,Santiago Sosa,Santiago Sosa,77,77,VOL,27,Argentina
-Vasco da Gama,Cauan Barros,Cauan Barros,74,77,VOL,22,Brasil
-Vasco da Gama,Mateus Carvalho,Mateus Carvalho,69,72,VOL,24,Brasil
-Vasco da Gama,Thiago Mendes,Thiago Mendes,74,74,VOL,34,Brasil
-Vasco da Gama,Jair,Jair,68,68,VOL,32,Brasil
-Vasco da Gama,Euder,Euder,53,58,VOL,21,Brasil
-Vasco da Gama,Ramon Rique,Ramon Rique,70,79,MEI,19,Brasil
-Vasco da Gama,Tchê Tchê,Tchê Tchê,71,71,MEI,34,Brasil
-Vasco da Gama,Alan Lescano,Alan Lescano,75,77,MEI,25,Argentina
-Vasco da Gama,Johan Rojas,Johan Rojas,74,77,MEI,24,Colômbia
-Vasco da Gama,Andrés Gómez,Andrés Gómez,80,83,ATA,24,Colômbia
-Vasco da Gama,David,David,73,73,ATA,31,Brasil
-Vasco da Gama,Nuno Moreira,Nuno Moreira,75,75,ATA,27,Portugal
-Vasco da Gama,Marino Hinestroza,Marino Hinestroza,73,76,ATA,24,Colômbia
-Vasco da Gama,Adson,Adson,71,72,ATA,26,Brasil
-Vasco da Gama,Loide Augusto,Loide Augusto,67,70,ATA,26,Angola
-Vasco da Gama,Facundo Colidio,Facundo Colidio,76,79,ATA,26,Argentina
-Vasco da Gama,Bruno Duarte,Bruno Duarte,75,75,ATA,30,Brasil
-Vasco da Gama,Brenner,Brenner,73,74,ATA,26,Brasil
-Vasco da Gama,Claudio Spinelli,Claudio Spinelli,72,72,ATA,29,Argentina
-Santos,Gabriel Brazão,Gabriel Brazão,77,80,GOL,26,Brasil
-Santos,João Paulo,João Paulo,73,73,GOL,31,Brasil
-Santos,Diógenes,Diógenes,63,65,GOL,25,Brasil
-Santos,João Fernandes,João Fernandes,55,58,GOL,22,Brasil
-Santos,Rodrigo Falcão,Rodrigo Falcão,55,58,GOL,21,Brasil
-Santos,João Ananias,João Ananias,69,79,ZAG,19,Brasil
-Santos,Lucas Veríssimo,Lucas Veríssimo,76,76,ZAG,31,Brasil
-Santos,Alexis Duarte,Alexis Duarte,71,72,ZAG,26,Paraguai
-Santos,Willian Arão,Willian Arão,73,73,ZAG,34,Brasil
-Santos,Luan Peres,Luan Peres,70,70,ZAG,32,Brasil
-Santos,João Alencar,João Alencar,54,63,ZAG,19,Brasil
-Santos,Vinicius Lira,Vinicius Lira,69,78,LAT,19,Brasil
-Santos,Gonzalo Escobar,Gonzalo Escobar,68,68,LAT,29,Argentina
-Santos,Gabriel Menino,Gabriel Menino,77,78,LAT,26,Brasil
-Santos,Igor Vinícius,Igor Vinícius,72,72,LAT,29,Brasil
-Santos,Rodinei,Rodinei,72,72,LAT,34,Brasil
-Santos,Arthur Melo,Arthur Melo,73,73,VOL,30,Brasil
-Santos,Gustavinho,Gustavinho,69,73,VOL,21,Brasil
-Santos,Christian Oliva,Christian Oliva,70,70,VOL,30,Uruguai
-Santos,João Schmidt,João Schmidt,72,72,VOL,33,Brasil
-Santos,Gabriel Bontempo,Gabriel Bontempo,76,80,MEI,21,Brasil
-Santos,Neymar,Neymar,80,80,MEI,34,Brasil
-Santos,Miguelito,Miguelito,72,76,MEI,22,Bolívia
-Santos,Philippe Coutinho,Philippe Coutinho,75,75,MEI,34,Brasil
-Santos,Lima,Lima,71,71,MEI,30,Brasil
-Santos,Thaciano,Thaciano,70,70,MEI,31,Brasil
-Santos,Nadson,Nadson,61,74,MEI,17,Brasil
-Santos,Pepê Fermino,Pepê Fermino,52,63,MEI,19,Brasil
-Santos,Álvaro Barreal,Álvaro Barreal,77,78,ATA,26,Argentina
-Santos,Everton,Everton,76,76,ATA,30,Brasil
-Santos,Moisés,Moisés,71,71,ATA,30,Brasil
-Santos,Gustavo Caballero,Gustavo Caballero,68,70,ATA,25,Paraguai
-Santos,Mateus Xavier,Mateus Xavier,58,69,ATA,19,Brasil
-Santos,Benjamín Rollheiser,Benjamín Rollheiser,77,78,ATA,26,Argentina
-Santos,Andrey Quintino,Andrey Quintino,58,61,ATA,24,Brasil
-Santos,Enzo Boer,Enzo Boer,53,58,ATA,21,Brasil
-Santos,Gabriel Barbosa,Gabriel Barbosa,77,77,ATA,30,Brasil
-Santos,Rony,Rony,75,75,ATA,31,Brasil
-Red Bull Bragantino,Cleiton,Cleiton,74,74,GOL,29,Brasil
-Red Bull Bragantino,Tiago Volpi,Tiago Volpi,73,73,GOL,35,Brasil
-Red Bull Bragantino,Fabrício,Fabrício,59,60,GOL,26,Brasil
-Red Bull Bragantino,Gustavo Reis,Gustavo Reis,54,58,GOL,21,Brasil
-Red Bull Bragantino,Gustavo Marques,Gustavo Marques,76,78,ZAG,25,Brasil
-Red Bull Bragantino,Alix,Alix,75,75,ZAG,27,Brasil
-Red Bull Bragantino,Guzmán Rodríguez,Guzmán Rodríguez,74,75,ZAG,26,Uruguai
-Red Bull Bragantino,Eduardo,Eduardo,67,67,ZAG,28,Brasil
-Red Bull Bragantino,Juninho Capixaba,Juninho Capixaba,76,76,LAT,29,Brasil
-Red Bull Bragantino,Vanderlan,Vanderlan,73,76,LAT,24,Brasil
-Red Bull Bragantino,Cauê Nascimento,Cauê Nascimento,59,70,LAT,19,Brasil
-Red Bull Bragantino,Agustín Sant'Anna,Agustín Sant'Anna,73,73,LAT,29,Uruguai
-Red Bull Bragantino,José Andrés Hurtado,José Andrés Hurtado,72,75,LAT,24,Equador
-Red Bull Bragantino,Ryan Augusto,Ryan Augusto,64,73,LAT,19,Brasil
-Red Bull Bragantino,Fabinho,Fabinho,76,79,VOL,24,Brasil
-Red Bull Bragantino,Patrick,Patrick,70,74,VOL,22,Brasil
-Red Bull Bragantino,Matheus Fernandes,Matheus Fernandes,68,68,VOL,28,Brasil
-Red Bull Bragantino,Gabriel,Gabriel,72,72,VOL,34,Brasil
-Red Bull Bragantino,Ignacio Sosa,Ignacio Sosa,76,76,MEI,23,Uruguai
-Red Bull Bragantino,Eric Ramires,Eric Ramires,73,74,MEI,26,Brasil
-Red Bull Bragantino,Gustavo Neves,Gustavo Neves,71,74,MEI,22,Brasil
-Red Bull Bragantino,Rodriguinho,Rodriguinho,76,77,MEI,22,Brasil
-Red Bull Bragantino,Bruninho,Bruninho,68,70,MEI,23,Brasil
-Red Bull Bragantino,Marcelinho Braz,Marcelinho Braz,64,66,MEI,22,Brasil
-Red Bull Bragantino,Henry Mosquera,Henry Mosquera,75,77,ATA,25,Colômbia
-Red Bull Bragantino,Vinicinho,Vinicinho,72,74,ATA,22,Brasil
-Red Bull Bragantino,Davi Gomes,Davi Gomes,62,66,ATA,21,Brasil
-Red Bull Bragantino,Lucas Barbosa,Lucas Barbosa,77,79,ATA,25,Brasil
-Red Bull Bragantino,José Herrera,José Herrera,72,73,ATA,23,Argentina
-Red Bull Bragantino,Isidro Pitta,Isidro Pitta,77,77,ATA,27,Paraguai
-Red Bull Bragantino,Wallace Yan,Wallace Yan,70,75,ATA,21,Brasil
-Red Bull Bragantino,Fernando,Fernando,70,70,ATA,27,Brasil
-Red Bull Bragantino,Eduardo Sasha,Eduardo Sasha,74,74,ATA,34,Brasil
-Mirassol,Walter,Walter,70,70,GOL,38,Brasil
-Mirassol,Alex Muralha,Alex Muralha,65,65,GOL,37,Brasil
-Mirassol,Georgemy,Georgemy,59,59,GOL,31,Brasil
-Mirassol,Thomazella,Thomazella,64,64,GOL,36,Brasil
-Mirassol,Willian Machado,Willian Machado,73,73,ZAG,30,Brasil
-Mirassol,João Victor,João Victor,69,69,ZAG,29,Brasil
-Mirassol,Lucas Oliveira,Lucas Oliveira,69,69,ZAG,30,Brasil
-Mirassol,Gabriel,Gabriel,67,68,ZAG,23,Brasil
-Mirassol,Reinaldo,Reinaldo,71,71,LAT,37,Brasil
-Mirassol,Victor Luís,Victor Luís,67,67,LAT,33,Brasil
-Mirassol,Igor Formiga,Igor Formiga,75,75,LAT,27,Brasil
-Mirassol,Elias,Elias,67,67,LAT,27,Brasil
-Mirassol,Daniel Borges,Daniel Borges,68,68,LAT,33,Brasil
-Mirassol,Neto Moura,Neto Moura,72,72,VOL,30,Brasil
-Mirassol,Wallisson,Wallisson,68,68,VOL,29,Brasil
-Mirassol,Gustavo Cazonatti,Gustavo Cazonatti,67,67,VOL,30,Brasil
-Mirassol,Denilson,Denilson,72,74,MEI,25,Brasil
-Mirassol,Aldo Filho,Aldo Filho,71,71,MEI,28,Brasil
-Mirassol,Japa,Japa,68,70,MEI,22,Brasil
-Mirassol,Shaylon,Shaylon,68,68,MEI,29,Brasil
-Mirassol,Eduardo,Eduardo,74,74,MEI,37,Brasil
-Mirassol,Chico Kim,Chico Kim,67,67,MEI,35,Brasil
-Mirassol,Alesson,Alesson,71,71,ATA,27,Brasil
-Mirassol,Fernandinho,Fernandinho,67,67,ATA,29,Brasil
-Mirassol,Negueba,Negueba,72,73,ATA,26,Brasil
-Mirassol,Gustavo Silva,Gustavo Silva,69,69,ATA,29,Brasil
-Mirassol,Carlos Eduardo,Carlos Eduardo,66,66,ATA,30,Brasil
-Mirassol,Luiz Filipe,Luiz Filipe,61,63,ATA,25,Brasil
-Mirassol,Edson Carioca,Edson Carioca,69,69,ATA,29,Brasil
-Mirassol,André Luis,André Luis,73,73,ATA,32,Brasil
-Mirassol,Zé Roberto,Zé Roberto,66,66,ATA,33,Brasil
-Mirassol,Bruno Santos,Bruno Santos,63,63,ATA,29,Brasil
-Athletico-PR,Mycael,Mycael,72,76,GOL,22,Brasil
-Athletico-PR,Santos,Santos,72,72,GOL,36,Brasil
-Athletico-PR,Matheus Soares,Matheus Soares,53,58,GOL,21,Brasil
-Athletico-PR,Arthur Dias,Arthur Dias,72,84,ZAG,19,Brasil
-Athletico-PR,Carlos Terán,Carlos Terán,73,74,ZAG,26,Colômbia
-Athletico-PR,Juan Felipe Aguirre,Juan Felipe Aguirre,73,73,ZAG,30,Colômbia
-Athletico-PR,Léo,Léo,69,69,ZAG,30,Brasil
-Athletico-PR,Dantas,Dantas,65,68,ZAG,22,Brasil
-Athletico-PR,Lucas Esquivel,Lucas Esquivel,77,79,LAT,25,Argentina
-Athletico-PR,Léo Derik,Léo Derik,69,74,LAT,21,Brasil
-Athletico-PR,Claudinho,Claudinho,53,58,LAT,21,Brasil
-Athletico-PR,Gastón Benavídez,Gastón Benavídez,74,74,LAT,31,Argentina
-Athletico-PR,Gilberto Junior,Gilberto Junior,70,74,LAT,21,Brasil
-Athletico-PR,Gilberto,Gilberto,76,76,LAT,33,Brasil
-Athletico-PR,Diogo Riquelme,Diogo Riquelme,65,70,VOL,21,Brasil
-Athletico-PR,Luiz Gustavo,Luiz Gustavo,70,70,VOL,39,Brasil
-Athletico-PR,João Cruz,João Cruz,71,81,MEI,20,Brasil
-Athletico-PR,Juan Portilla,Juan Portilla,74,74,MEI,28,Colômbia
-Athletico-PR,Felipinho,Felipinho,68,70,MEI,25,Brasil
-Athletico-PR,Jádson,Jádson,71,71,MEI,33,Brasil
-Athletico-PR,Alejandro García,Alejandro García,66,68,MEI,25,Colômbia
-Athletico-PR,Dudu,Dudu,71,80,MEI,20,Brasil
-Athletico-PR,Bruno Zapelli,Bruno Zapelli,73,76,MEI,24,Argentina
-Athletico-PR,Chiqueti,Chiqueti,71,74,MEI,21,Brasil
-Athletico-PR,Stiven Mendoza,Stiven Mendoza,70,70,ATA,34,Colômbia
-Athletico-PR,Kerwin Vargas,Kerwin Vargas,72,75,ATA,24,Colômbia
-Athletico-PR,Leozinho,Leozinho,74,74,ATA,27,Brasil
-Athletico-PR,Kevin Viveros,Kevin Viveros,80,81,ATA,26,Colômbia
-Athletico-PR,Jorge Rivaldo,Jorge Rivaldo,72,72,ATA,23,Colômbia
-Athletico-PR,Renan Peixoto,Renan Peixoto,70,71,ATA,26,Brasil
-Athletico-PR,Renan Viana,Renan Viana,64,64,ATA,23,Brasil
-Vitória,Lucas Arcanjo,Lucas Arcanjo,75,75,GOL,28,Brasil
-Vitória,Fintelman,Fintelman,60,62,GOL,25,Brasil
-Vitória,Yuri Sena,Yuri Sena,58,60,GOL,25,Brasil
-Vitória,Riccieli,Riccieli,72,72,ZAG,28,Brasil
-Vitória,Cacá,Cacá,71,71,ZAG,27,Brasil
-Vitória,Zé Marcos,Zé Marcos,70,70,ZAG,28,Brasil
-Vitória,Edu Ribeiro,Edu Ribeiro,68,69,ZAG,26,Brasil
-Vitória,Emanuel Brítez,Emanuel Brítez,70,70,ZAG,34,Argentina
-Vitória,Edenilson,Edenilson,64,67,ZAG,21,Brasil
-Vitória,Camutanga,Camutanga,68,68,ZAG,33,Brasil
-Vitória,Darlan,Darlan,56,58,ZAG,23,Brasil
-Vitória,Luan Cândido,Luan Cândido,73,75,LAT,25,Brasil
-Vitória,Ramon,Ramon,72,74,LAT,25,Brasil
-Vitória,Jamerson,Jamerson,68,68,LAT,28,Brasil
-Vitória,Nathan Mendes,Nathan Mendes,71,74,LAT,24,Brasil
-Vitória,Fabiano,Fabiano,70,71,LAT,26,Brasil
-Vitória,Mateus Silva,Mateus Silva,69,69,LAT,28,Brasil
-Vitória,Baralhas,Baralhas,72,72,VOL,28,Brasil
-Vitória,Walace,Walace,73,73,VOL,31,Brasil
-Vitória,Rúben Ismael,Rúben Ismael,69,69,VOL,27,Portugal
-Vitória,Dudu,Dudu,66,66,VOL,27,Brasil
-Vitória,Caíque Gonçalves,Caíque Gonçalves,67,67,VOL,31,Brasil
-Vitória,Zé Vitor,Zé Vitor,69,75,MEI,26,Brasil
-Vitória,Matheuzinho,Matheuzinho,73,73,MEI,29,Brasil
-Vitória,Tomás Pochettino,Tomás Pochettino,72,72,MEI,30,Argentina
-Vitória,Emmanuel Martínez,Emmanuel Martínez,73,73,MEI,32,Argentina
-Vitória,Renê,Renê,76,76,ATA,23,Brasil
-Vitória,Diego Tarzia,Diego Tarzia,72,75,ATA,23,Argentina
-Vitória,Anderson Pato,Anderson Pato,64,67,ATA,24,Brasil
-Vitória,Erick,Erick,75,75,ATA,28,Brasil
-Vitória,Ignacio Laquintana,Ignacio Laquintana,70,70,ATA,27,Uruguai
-Vitória,Lucas Silva,Lucas Silva,68,68,ATA,27,Brasil
-Vitória,Marinho,Marinho,67,67,ATA,36,Brasil
-Vitória,Osvaldo,Osvaldo,66,66,ATA,39,Brasil
-Vitória,Renato Kayzer,Renato Kayzer,70,70,ATA,30,Brasil
-Vitória,Fabri,Fabri,68,69,ATA,26,Brasil
-Vitória,Alex Bruno,Alex Bruno,63,63,ATA,27,Brasil
-Coritiba,Pedro Morisco,Pedro Morisco,75,78,GOL,22,Brasil
-Coritiba,Pedro Rangel,Pedro Rangel,69,70,GOL,26,Brasil
-Coritiba,Keiller,Keiller,66,66,GOL,30,Brasil
-Coritiba,Benassi,Benassi,56,58,GOL,22,Brasil
-Coritiba,Jacy,Jacy,73,73,ZAG,29,Brasil
-Coritiba,Tiago Cóser,Tiago Cóser,70,71,ZAG,22,Brasil
-Coritiba,Maicon,Maicon,68,68,ZAG,38,Brasil
-Coritiba,Rodrigo Moledo,Rodrigo Moledo,67,67,ZAG,39,Brasil
-Coritiba,Thiago Santos,Thiago Santos,66,66,ZAG,37,Brasil
-Coritiba,Felipe Jonatan,Felipe Jonatan,70,70,LAT,28,Brasil
-Coritiba,Rodrigo Gelado,Rodrigo Gelado,64,65,LAT,23,Brasil
-Coritiba,Bruno Melo,Bruno Melo,67,67,LAT,34,Brasil
-Coritiba,Fabricio Bustos,Fabricio Bustos,73,73,LAT,30,Argentina
-Coritiba,Lucas Taverna,Lucas Taverna,61,70,LAT,19,Brasil
-Coritiba,Tinga,Tinga,69,69,LAT,33,Brasil
-Coritiba,Nicolás Fonseca,Nicolás Fonseca,74,74,VOL,28,Uruguai
-Coritiba,Tissi,Tissi,62,71,VOL,19,Brasil
-Coritiba,Richard,Richard,67,67,VOL,32,Brasil
-Coritiba,Sebastián Gómez,Sebastián Gómez,72,72,MEI,30,Colômbia
-Coritiba,Vini Paulista,Vini Paulista,66,68,MEI,25,Brasil
-Coritiba,Gustavo,Gustavo,66,69,MEI,24,Brasil
-Coritiba,Josué,Josué,72,72,MEI,36,Portugal
-Coritiba,Joaquín Lavega,Joaquín Lavega,74,77,ATA,21,Uruguai
-Coritiba,Breno Lopes,Breno Lopes,75,75,ATA,30,Brasil
-Coritiba,Brian Ocampo,Brian Ocampo,68,68,ATA,27,Uruguai
-Coritiba,Keno,Keno,71,71,ATA,37,Brasil
-Coritiba,Lucas Ronier,Lucas Ronier,74,77,ATA,21,Brasil
-Coritiba,Fabinho,Fabinho,70,71,ATA,26,Brasil
-Coritiba,Paulo Roberto,Paulo Roberto,68,72,ATA,21,Brasil
-Coritiba,Pedro Rocha,Pedro Rocha,74,74,ATA,32,Brasil
-Coritiba,Renato Marques,Renato Marques,66,70,ATA,22,Brasil
-Coritiba,Rodrigo Rodrigues,Rodrigo Rodrigues,68,68,ATA,30,Brasil
-Coritiba,Éberth,Éberth,63,64,ATA,23,Brasil
-Chapecoense,Anderson,Anderson,64,64,GOL,28,Brasil
-Chapecoense,Matheus Aurélio,Matheus Aurélio,64,64,GOL,27,Brasil
-Chapecoense,Rafael Santos,Rafael Santos,65,65,GOL,37,Brasil
-Chapecoense,Gabriel Werner,Gabriel Werner,56,58,GOL,23,Brasil
-Chapecoense,Doma,Doma,69,69,ZAG,28,Brasil
-Chapecoense,João Paulo,João Paulo,64,65,ZAG,29,Brasil
-Chapecoense,Victor Caetano,Victor Caetano,67,67,ZAG,29,Brasil
-Chapecoense,Kauan Faria,Kauan Faria,65,65,ZAG,23,Brasil
-Chapecoense,Rafael Thyere,Rafael Thyere,66,66,ZAG,33,Brasil
-Chapecoense,Vinicius Eduardo,Vinicius Eduardo,55,58,ZAG,21,Brasil
-Chapecoense,Mancha,Mancha,67,69,LAT,25,Brasil
-Chapecoense,Bruno Pacheco,Bruno Pacheco,68,68,LAT,34,Brasil
-Chapecoense,Da Silva,Da Silva,57,58,LAT,26,Brasil
-Chapecoense,Dudu,Dudu,66,66,LAT,29,Brasil
-Chapecoense,Heitor,Heitor,65,66,LAT,26,Brasil
-Chapecoense,Everton,Everton,66,66,LAT,31,Brasil
-Chapecoense,Carvalheira,Carvalheira,72,72,VOL,27,Brasil
-Chapecoense,Camilo,Camilo,70,70,VOL,27,Brasil
-Chapecoense,Vinicius Balieiro,Vinicius Balieiro,66,66,VOL,27,Brasil
-Chapecoense,Rosivan,Rosivan,57,58,VOL,26,Brasil
-Chapecoense,Yago Felipe,Yago Felipe,71,71,MEI,31,Brasil
-Chapecoense,Bruno Matias,Bruno Matias,66,66,MEI,27,Brasil
-Chapecoense,David Antunes,David Antunes,58,64,MEI,21,Brasil
-Chapecoense,Robert Santos,Robert Santos,70,70,MEI,23,Brasil
-Chapecoense,Max,Max,66,68,MEI,25,Brasil
-Chapecoense,Miguel Carvalho,Miguel Carvalho,60,61,MEI,21,Espanha
-Chapecoense,Giovanni Augusto,Giovanni Augusto,69,69,MEI,37,Brasil
-Chapecoense,Dylan Borrero,Dylan Borrero,69,72,ATA,24,Colômbia
-Chapecoense,Maurício Garcez,Maurício Garcez,67,67,ATA,29,Brasil
-Chapecoense,Kevin Ramírez,Kevin Ramírez,69,69,ATA,32,Uruguai
-Chapecoense,Marcinho,Marcinho,68,68,ATA,31,Brasil
-Chapecoense,Rubens,Rubens,67,67,ATA,23,Brasil
-Chapecoense,Bruno Tubarão,Bruno Tubarão,68,68,ATA,31,Brasil
-Chapecoense,Tulio Eduardo,Tulio Eduardo,69,71,ATA,22,Brasil
-Chapecoense,Franco Rossi,Franco Rossi,69,72,ATA,24,Uruguai
-Chapecoense,Yannick Bolasie,Yannick Bolasie,67,67,ATA,37,RD Congo
-Remo,Ivan,Ivan,68,68,GOL,29,Brasil
-Remo,Marcelo Rangel,Marcelo Rangel,65,65,GOL,38,Brasil
-Remo,Ygor Vinhas,Ygor Vinhas,58,58,GOL,32,Brasil
-Remo,Zé Ivaldo,Zé Ivaldo,71,71,ZAG,29,Brasil
-Remo,Tchamba,Tchamba,69,69,ZAG,28,Camarões
-Remo,Matheus Felipe,Matheus Felipe,66,66,ZAG,28,Brasil
-Remo,Léo Andrade,Léo Andrade,65,65,ZAG,28,Brasil
-Remo,Marllon,Marllon,69,69,ZAG,34,Brasil
-Remo,Cristian Tassano,Cristian Tassano,64,64,ZAG,30,Uruguai
-Remo,Mayk,Mayk,64,64,LAT,27,Brasil
-Remo,Marlon,Marlon,67,67,LAT,32,Brasil
-Remo,Edson Kauã,Edson Kauã,55,58,LAT,22,Brasil
-Remo,João Lucas,João Lucas,69,69,LAT,28,Brasil
-Remo,Matheus Alexandre,Matheus Alexandre,67,67,LAT,27,Brasil
-Remo,Marcelinho,Marcelinho,66,66,LAT,28,Brasil
-Remo,Leonel Picco,Leonel Picco,73,73,VOL,28,Argentina
-Remo,Zé Welison,Zé Welison,69,69,VOL,31,Brasil
-Remo,David Braga,David Braga,67,70,VOL,24,Brasil
-Remo,Zé Ricardo,Zé Ricardo,67,67,VOL,27,Brasil
-Remo,Edson Fernando,Edson Fernando,65,65,VOL,28,Brasil
-Remo,Patrick,Patrick,70,70,MEI,34,Brasil
-Remo,Franco Catarozzi,Franco Catarozzi,63,64,MEI,26,Uruguai
-Remo,Vitor Bueno,Vitor Bueno,71,71,MEI,32,Brasil
-Remo,Jajá,Jajá,70,70,ATA,28,Brasil
-Remo,Jáderson,Jáderson,66,67,ATA,26,Brasil
-Remo,Antonio Galeano,Antonio Galeano,73,74,ATA,26,Paraguai
-Remo,Yago Pikachu,Yago Pikachu,69,69,ATA,34,Brasil
-Remo,Tico,Tico,51,61,ATA,20,Brasil
-Remo,Gabriel Taliari,Gabriel Taliari,71,71,ATA,29,Brasil
-Remo,Gabriel Poveda,Gabriel Poveda,65,65,ATA,28,Brasil
-Remo,Eduardo Melo,Eduardo Melo,58,60,ATA,25,Brasil
+clube,nome_original,nome,overall,potencial,posicao,idade,pais,id
+Flamengo,Agustín Rossi,Agustín Rossi,80,80,GOL,31,Argentina,R09294
+Flamengo,Andrew,Andrew,74,76,GOL,25,Brasil,R09295
+Flamengo,Dyogo Alves,Dyogo Alves,62,66,GOL,22,Brasil,R09296
+Flamengo,Léo Ortiz,Léo Ortiz,80,80,ZAG,30,Brasil,R09297
+Flamengo,Léo Pereira,Léo Pereira,80,80,ZAG,30,Brasil,R09298
+Flamengo,Vitão,Vitão,77,78,ZAG,26,Brasil,R09299
+Flamengo,Danilo,Danilo,76,76,ZAG,35,Brasil,R09300
+Flamengo,João Souza,João Souza,61,72,ZAG,19,Brasil,R09301
+Flamengo,Ayrton Lucas,Ayrton Lucas,75,75,LAT,29,Brasil,R09302
+Flamengo,Alex Sandro,Alex Sandro,74,74,LAT,35,Brasil,R09303
+Flamengo,Emerson Royal,Emerson Royal,76,76,LAT,27,Brasil,R09304
+Flamengo,Guillermo Varela,Guillermo Varela,72,72,LAT,33,Uruguai,R09305
+Flamengo,Evertton Araújo,Evertton Araújo,80,80,VOL,23,Brasil,R09306
+Flamengo,Erick Pulgar,Erick Pulgar,78,78,VOL,32,Chile,R09307
+Flamengo,Jorginho,Jorginho,78,78,VOL,34,Itália,R09308
+Flamengo,Nicolás de la Cruz,Nicolás de la Cruz,77,77,MEI,29,Uruguai,R09309
+Flamengo,Saúl Ñíguez,Saúl Ñíguez,71,71,MEI,31,Espanha,R09310
+Flamengo,Lucas Paquetá,Lucas Paquetá,80,80,MEI,29,Brasil,R09311
+Flamengo,Jorge Carrascal,Jorge Carrascal,78,78,MEI,28,Colômbia,R09312
+Flamengo,Giorgian de Arrascaeta,Giorgian de Arrascaeta,82,82,MEI,32,Uruguai,R09313
+Flamengo,Samuel Lino,Samuel Lino,79,80,ATA,26,Brasil,R09314
+Flamengo,Gonzalo Plata,Gonzalo Plata,77,78,ATA,26,Equador,R09315
+Flamengo,Luiz Araújo,Luiz Araújo,77,77,ATA,30,Brasil,R09316
+Flamengo,Anthony Valencia,Anthony Valencia,71,72,ATA,23,Equador,R09317
+Flamengo,Pedro,Pedro,78,78,ATA,29,Brasil,R09318
+Flamengo,Joaquín Freitas,Joaquín Freitas,64,76,ATA,19,Argentina,R09319
+Flamengo,Bruno Henrique,Bruno Henrique,76,76,ATA,35,Brasil,R09320
+Palmeiras,Carlos Miguel,Carlos Miguel,77,77,GOL,28,Brasil,R09321
+Palmeiras,Marcelo Lomba,Marcelo Lomba,66,66,GOL,39,Brasil,R09322
+Palmeiras,Bruno Bertinato,Bruno Bertinato,58,58,GOL,28,Brasil,R09323
+Palmeiras,Murilo,Murilo,76,76,ZAG,29,Brasil,R09324
+Palmeiras,Alexander Barboza,Alexander Barboza,77,77,ZAG,31,Uruguai,R09325
+Palmeiras,Bruno Fuchs,Bruno Fuchs,75,75,ZAG,27,Brasil,R09326
+Palmeiras,Luis Benedetti,Luis Benedetti,68,78,ZAG,20,Brasil,R09327
+Palmeiras,Gustavo Gómez,Gustavo Gómez,79,79,ZAG,33,Paraguai,R09328
+Palmeiras,Joaquín Piquerez,Joaquín Piquerez,79,79,LAT,28,Uruguai,R09329
+Palmeiras,Jefté,Jefté,73,75,LAT,22,Brasil,R09330
+Palmeiras,Arthur Gabriel,Arthur Gabriel,70,75,LAT,21,Brasil,R09331
+Palmeiras,Agustín Giay,Agustín Giay,77,79,LAT,22,Argentina,R09332
+Palmeiras,Khellven,Khellven,77,79,LAT,25,Brasil,R09333
+Palmeiras,Marlon Freitas,Marlon Freitas,78,78,VOL,31,Brasil,R09334
+Palmeiras,Emiliano Martínez,Emiliano Martínez,86,86,VOL,27,Uruguai,R09335
+Palmeiras,Luis Pacheco,Luis Pacheco,63,75,VOL,18,Brasil,R09336
+Palmeiras,Andreas Pereira,Andreas Pereira,78,78,MEI,30,Brasil,R09337
+Palmeiras,Lucas Evangelista,Lucas Evangelista,77,77,MEI,31,Brasil,R09338
+Palmeiras,Larson,Larson,67,70,MEI,21,Brasil,R09339
+Palmeiras,Mauricio,Mauricio,77,79,MEI,25,Paraguai,R09340
+Palmeiras,Erick Belé,Erick Belé,64,86,MEI,19,Brasil,R09341
+Palmeiras,Ramón Sosa,Ramón Sosa,77,77,ATA,27,Paraguai,R09342
+Palmeiras,Felipe Anderson,Felipe Anderson,76,76,ATA,33,Brasil,R09343
+Palmeiras,Jhon Arias,Jhon Arias,80,80,ATA,29,Colômbia,R09344
+Palmeiras,Paulinho,Paulinho,77,78,ATA,26,Brasil,R09345
+Palmeiras,Vitor Roque,Vitor Roque,80,86,ATA,21,Brasil,R09346
+Palmeiras,José Manuel López,José Manuel López,81,83,ATA,25,Argentina,R09347
+Cruzeiro,Otávio,Otávio,73,82,GOL,20,Brasil,R09348
+Cruzeiro,Léo Aragão,Léo Aragão,69,72,GOL,24,Brasil,R09349
+Cruzeiro,Cássio,Cássio,76,76,GOL,39,Brasil,R09350
+Cruzeiro,Jonathan Jesus,Jonathan Jesus,77,79,ZAG,22,Brasil,R09351
+Cruzeiro,Fabrício Bruno,Fabrício Bruno,78,78,ZAG,30,Brasil,R09352
+Cruzeiro,João Marcelo,João Marcelo,72,73,ZAG,26,Brasil,R09353
+Cruzeiro,Gabriel Rojas,Gabriel Rojas,73,73,LAT,29,Argentina,R09354
+Cruzeiro,Matías Viña,Matías Viña,71,71,LAT,29,Uruguai,R09355
+Cruzeiro,Lucas Villalba,Lucas Villalba,74,74,LAT,32,Argentina,R09356
+Cruzeiro,Kauã Moraes,Kauã Moraes,67,77,LAT,20,Brasil,R09357
+Cruzeiro,William,William,75,75,LAT,31,Brasil,R09358
+Cruzeiro,Fagner,Fagner,69,69,LAT,37,Brasil,R09359
+Cruzeiro,Zé Lucas,Zé Lucas,69,87,VOL,18,Brasil,R09360
+Cruzeiro,Lucas Romero,Lucas Romero,75,75,VOL,32,Argentina,R09361
+Cruzeiro,Lucas Silva,Lucas Silva,70,70,VOL,33,Brasil,R09362
+Cruzeiro,Gerson,Gerson,80,80,MEI,29,Brasil,R09363
+Cruzeiro,Matheus Henrique,Matheus Henrique,75,75,MEI,28,Brasil,R09364
+Cruzeiro,Fabrizio Peralta,Fabrizio Peralta,67,70,MEI,24,Paraguai,R09365
+Cruzeiro,Matheus Pereira,Matheus Pereira,80,80,MEI,30,Brasil,R09366
+Cruzeiro,Felipe Morais,Felipe Morais,64,76,MEI,18,Brasil,R09367
+Cruzeiro,Luis Sinisterra,Luis Sinisterra,79,79,ATA,27,Colômbia,R09368
+Cruzeiro,Wesley,Wesley,79,84,ATA,21,Brasil,R09369
+Cruzeiro,Kaique Kenji,Kaique Kenji,68,77,ATA,20,Brasil,R09370
+Cruzeiro,Wanderson,Wanderson,75,75,ATA,32,Brasil,R09371
+Cruzeiro,Bruno Rodrigues,Bruno Rodrigues,68,68,ATA,29,Brasil,R09372
+Cruzeiro,Keny Arroyo,Keny Arroyo,75,82,ATA,20,Equador,R09373
+Cruzeiro,Gabriel Pec,Gabriel Pec,76,82,ATA,25,Brasil,R09374
+Cruzeiro,Marquinhos,Marquinhos,71,75,ATA,23,Brasil,R09375
+Cruzeiro,João Costa,João Costa,71,86,ATA,21,Portugal,R09376
+Cruzeiro,Kaio Jorge,Kaio Jorge,80,83,ATA,24,Brasil,R09377
+Cruzeiro,Luciano Rodríguez,Luciano Rodríguez,77,78,ATA,23,Uruguai,R09378
+Cruzeiro,Néiser Villarreal,Néiser Villarreal,72,75,ATA,21,Colômbia,R09379
+Botafogo,Gabriel Batista,Gabriel Batista,73,77,GOL,28,Brasil,R09380
+Botafogo,Warleson,Warleson,72,72,GOL,30,Brasil,R09381
+Botafogo,Cristhian Loor,Cristhian Loor,60,68,GOL,20,Equador,R09382
+Botafogo,Arthur Chaves,Arthur Chaves,74,80,ZAG,25,Brasil,R09383
+Botafogo,Nahuel Ferraresi,Nahuel Ferraresi,75,75,ZAG,27,Venezuela,R09384
+Botafogo,Kaio,Kaio,73,73,ZAG,31,Brasil,R09385
+Botafogo,Lucas Monzón,Lucas Monzón,71,73,ZAG,25,Uruguai,R09386
+Botafogo,Gabriel Justino,Gabriel Justino,65,74,ZAG,20,Brasil,R09387
+Botafogo,Anthony,Anthony,60,65,ZAG,21,Brasil,R09388
+Botafogo,Kawan,Kawan,56,58,ZAG,23,Brasil,R09389
+Botafogo,Alex Telles,Alex Telles,77,77,LAT,33,Brasil,R09390
+Botafogo,Paulinho,Paulinho,68,68,LAT,31,Brasil,R09391
+Botafogo,Marçal,Marçal,69,69,LAT,37,Brasil,R09392
+Botafogo,Jhoan Hernández,Jhoan Hernández,56,65,LAT,20,Colômbia,R09393
+Botafogo,Vitinho,Vitinho,78,78,LAT,27,Brasil,R09394
+Botafogo,Mateo Ponte,Mateo Ponte,72,74,LAT,23,Uruguai,R09395
+Botafogo,Kadu Santos,Kadu Santos,62,66,LAT,21,Brasil,R09396
+Botafogo,Huguinho,Huguinho,68,84,VOL,19,Brasil,R09397
+Botafogo,Domingos Andrade,Domingos Andrade,70,71,VOL,23,Angola,R09398
+Botafogo,Allan,Allan,75,83,VOL,35,Brasil,R09399
+Botafogo,Wallace Davi,Wallace Davi,62,73,VOL,19,Brasil,R09400
+Botafogo,Danilo,Danilo,83,85,MEI,25,Brasil,R09401
+Botafogo,Cristian Medina,Cristian Medina,76,79,MEI,24,Argentina,R09402
+Botafogo,Edenilson,Edenilson,70,70,MEI,36,Brasil,R09403
+Botafogo,Jordan Barrera,Jordan Barrera,67,76,MEI,20,Colômbia,R09404
+Botafogo,Álvaro Montoro,Álvaro Montoro,74,85,ATA,19,Argentina,R09405
+Botafogo,Matheus Martins,Matheus Martins,76,77,ATA,23,Brasil,R09406
+Botafogo,Júnior Santos,Júnior Santos,74,74,ATA,32,Brasil,R09407
+Botafogo,Hakim Ziyech,Hakim Ziyech,78,78,ATA,33,Marrocos,R09408
+Botafogo,Lucas Villalba,Lucas Villalba,71,73,ATA,25,Uruguai,R09409
+Botafogo,Kauan Toledo,Kauan Toledo,63,73,ATA,20,Brasil,R09410
+Botafogo,Arthur Cabral,Arthur Cabral,76,76,ATA,28,Brasil,R09411
+Botafogo,Kadir Barría,Kadir Barría,66,76,ATA,19,Panamá,R09412
+Botafogo,Lucas Emanuel,Lucas Emanuel,62,77,ATA,17,Brasil,R09413
+Botafogo,Danilo,Danilo,71,71,ATA,27,Brasil,R09414
+Botafogo,Tiquinho Soares,Tiquinho Soares,72,72,ATA,35,Brasil,R09415
+Fluminense,Vitor Eudes,Vitor Eudes,65,65,GOL,28,Brasil,R09416
+Fluminense,Marcelo Pitaluga,Marcelo Pitaluga,63,63,GOL,23,Brasil,R09417
+Fluminense,Fábio,Fábio,72,72,GOL,46,Brasil,R09418
+Fluminense,Juan Pablo Freytes,Juan Pablo Freytes,75,76,ZAG,26,Argentina,R09419
+Fluminense,Julián Millán,Julián Millán,75,75,ZAG,28,Colômbia,R09420
+Fluminense,Ignácio,Ignácio,73,73,ZAG,29,Brasil,R09421
+Fluminense,Jemmes,Jemmes,72,73,ZAG,26,Brasil,R09422
+Fluminense,Igor Rabello,Igor Rabello,73,73,ZAG,31,Brasil,R09423
+Fluminense,Thiago Silva,Thiago Silva,76,76,ZAG,42,Brasil,R09424
+Fluminense,Guilherme Arana,Guilherme Arana,75,75,LAT,29,Brasil,R09425
+Fluminense,Renê,Renê,70,70,LAT,34,Brasil,R09426
+Fluminense,Léo Jance,Léo Jance,54,58,LAT,21,Brasil,R09427
+Fluminense,Guga,Guga,71,71,LAT,28,Brasil,R09428
+Fluminense,Julio Fidelis,Julio Fidelis,61,70,LAT,20,Brasil,R09429
+Fluminense,Jhonny,Jhonny,63,66,LAT,24,Brasil,R09430
+Fluminense,Samuel Xavier,Samuel Xavier,69,69,LAT,36,Brasil,R09431
+Fluminense,Martinelli,Martinelli,76,79,VOL,25,Brasil,R09432
+Fluminense,Otávio,Otávio,71,71,VOL,32,Brasil,R09433
+Fluminense,Luis Fernando,Luis Fernando,53,58,VOL,21,Brasil,R09434
+Fluminense,Hércules,Hércules,80,81,MEI,26,Brasil,R09435
+Fluminense,Nonato,Nonato,72,72,MEI,28,Brasil,R09436
+Fluminense,Alisson,Alisson,71,71,MEI,33,Brasil,R09437
+Fluminense,Luciano Acosta,Luciano Acosta,77,77,MEI,32,Argentina,R09438
+Fluminense,Ganso,Ganso,70,70,MEI,37,Brasil,R09439
+Fluminense,Yago Ferreira,Yago Ferreira,56,58,MEI,25,Brasil,R09440
+Fluminense,Jefferson Savarino,Jefferson Savarino,79,79,ATA,30,Venezuela,R09441
+Fluminense,Yeferson Soteldo,Yeferson Soteldo,73,73,ATA,29,Venezuela,R09442
+Fluminense,Wesley Natã,Wesley Natã,60,74,ATA,18,Brasil,R09443
+Fluminense,Matheus Reis,Matheus Reis,54,63,ATA,19,México,R09444
+Fluminense,Agustín Canobbio,Agustín Canobbio,78,78,ATA,28,Uruguai,R09445
+Fluminense,Riquelme,Riquelme,70,80,ATA,19,Brasil,R09446
+Fluminense,Kevin Serna,Kevin Serna,76,76,ATA,28,Colômbia,R09447
+Fluminense,John Kennedy,John Kennedy,77,80,ATA,24,Brasil,R09448
+Fluminense,Rodrigo Castillo,Rodrigo Castillo,72,75,ATA,27,Argentina,R09449
+Fluminense,Hulk,Hulk,79,79,ATA,40,Brasil,R09450
+Fluminense,Germán Cano,Germán Cano,74,74,ATA,38,Argentina,R09451
+Bahia,Ronaldo,Ronaldo,71,71,GOL,30,Brasil,R09452
+Bahia,Guido Herrera,Guido Herrera,75,75,GOL,34,Argentina,R09453
+Bahia,Léo Vieira,Léo Vieira,68,68,GOL,36,Brasil,R09454
+Bahia,Victor,Victor,52,61,GOL,20,Brasil,R09455
+Bahia,Kanu,Kanu,71,71,ZAG,29,Brasil,R09456
+Bahia,David Duarte,David Duarte,71,71,ZAG,31,Brasil,R09457
+Bahia,Marco Moreno,Marco Moreno,68,74,ZAG,25,Espanha,R09458
+Bahia,Luiz Gustavo,Luiz Gustavo,61,71,ZAG,20,Brasil,R09459
+Bahia,Marcos Victor,Marcos Victor,66,69,ZAG,24,Brasil,R09460
+Bahia,Fredi Gomes,Fredi Gomes,53,61,ZAG,20,Brasil,R09461
+Bahia,Luciano Juba,Luciano Juba,77,78,LAT,27,Brasil,R09462
+Bahia,Zé Guilherme,Zé Guilherme,62,66,LAT,21,Brasil,R09463
+Bahia,Román Gómez,Román Gómez,70,71,LAT,22,Argentina,R09464
+Bahia,Nicolás Acevedo,Nicolás Acevedo,78,78,VOL,27,Uruguai,R09465
+Bahia,Caio Alexandre,Caio Alexandre,77,77,VOL,27,Brasil,R09466
+Bahia,Erick,Erick,76,76,VOL,29,Brasil,R09467
+Bahia,Lautaro López,Lautaro López,62,66,VOL,21,Argentina,R09468
+Bahia,Jean Lucas,Jean Lucas,77,77,MEI,28,Brasil,R09469
+Bahia,Rodrigo Nestor,Rodrigo Nestor,76,77,MEI,26,Brasil,R09470
+Bahia,Everton Ribeiro,Everton Ribeiro,76,76,MEI,37,Brasil,R09471
+Bahia,David Martins,David Martins,63,73,MEI,19,Brasil,R09472
+Bahia,Roger Gabriel,Roger Gabriel,53,63,MEI,19,Brasil,R09473
+Bahia,Erick Pulga,Erick Pulga,78,79,ATA,26,Brasil,R09474
+Bahia,Ruan Pablo,Ruan Pablo,70,82,ATA,18,Brasil,R09475
+Bahia,Mateo Sanabria,Mateo Sanabria,69,72,ATA,22,Argentina,R09476
+Bahia,Cristian Olivera,Cristian Olivera,74,77,ATA,24,Uruguai,R09477
+Bahia,Kauê Furquim,Kauê Furquim,66,79,ATA,17,Brasil,R09478
+Bahia,Michel Araújo,Michel Araújo,74,74,ATA,30,Uruguai,R09479
+Bahia,Ademir,Ademir,70,70,ATA,31,Brasil,R09480
+Bahia,Alejo Veliz,Alejo Veliz,76,80,ATA,23,Argentina,R09481
+Bahia,Dell,Dell,67,79,ATA,18,Brasil,R09482
+Bahia,Willian José,Willian José,73,73,ATA,34,Brasil,R09483
+Bahia,Everaldo,Everaldo,69,69,ATA,35,Brasil,R09484
+Atlético-MG,Gabriel Delfim,Gabriel Delfim,74,77,GOL,24,Brasil,R09485
+Atlético-MG,Everson,Everson,77,77,GOL,36,Brasil,R09486
+Atlético-MG,Pedro Cobra,Pedro Cobra,63,71,GOL,20,Brasil,R09487
+Atlético-MG,Robert,Robert,54,58,GOL,21,Brasil,R09488
+Atlético-MG,Lyanco,Lyanco,75,75,ZAG,29,Brasil,R09489
+Atlético-MG,Ruan,Ruan,74,74,ZAG,27,Brasil,R09490
+Atlético-MG,Léo Duarte,Léo Duarte,75,76,ZAG,30,Brasil,R09491
+Atlético-MG,Vitão,Vitão,62,75,ZAG,18,Brasil,R09492
+Atlético-MG,Vitor Hugo,Vitor Hugo,70,70,ZAG,35,Brasil,R09493
+Atlético-MG,Renan Lodi,Renan Lodi,78,79,LAT,28,Brasil,R09494
+Atlético-MG,Kauã Pascini,Kauã Pascini,64,77,LAT,18,Brasil,R09495
+Atlético-MG,Natanael,Natanael,75,78,LAT,24,Brasil,R09496
+Atlético-MG,Angelo Preciado,Angelo Preciado,73,73,LAT,28,Equador,R09497
+Atlético-MG,Alexsander,Alexsander,76,76,VOL,23,Brasil,R09498
+Atlético-MG,Kevin Castaño,Kevin Castaño,74,75,VOL,26,Colômbia,R09499
+Atlético-MG,Tomás Pérez,Tomás Pérez,69,79,VOL,21,Argentina,R09500
+Atlético-MG,Victor Hugo,Victor Hugo,66,66,MEI,22,Brasil,R09501
+Atlético-MG,Fred,Fred,78,78,MEI,33,Brasil,R09502
+Atlético-MG,Alan Franco,Alan Franco,74,74,MEI,28,Equador,R09503
+Atlético-MG,Mamady Cissé,Mamady Cissé,66,77,MEI,19,Guiné,R09504
+Atlético-MG,Maycon,Maycon,70,70,MEI,29,Brasil,R09505
+Atlético-MG,Índio,Índio,51,64,MEI,18,Brasil,R09506
+Atlético-MG,Gustavo Scarpa,Gustavo Scarpa,77,77,MEI,32,Brasil,R09507
+Atlético-MG,Reinier,Reinier,75,78,MEI,24,Brasil,R09508
+Atlético-MG,Igor Gomes,Igor Gomes,73,73,MEI,27,Brasil,R09509
+Atlético-MG,Tomás Cuello,Tomás Cuello,77,78,ATA,26,Argentina,R09510
+Atlético-MG,Dudu,Dudu,71,71,ATA,34,Brasil,R09511
+Atlético-MG,Bernard,Bernard,71,71,ATA,34,Brasil,R09512
+Atlético-MG,Alan Minda,Alan Minda,75,77,ATA,23,Equador,R09513
+Atlético-MG,Mateo Cassierra,Mateo Cassierra,77,77,ATA,29,Colômbia,R09514
+Atlético-MG,Thiago Borbas,Thiago Borbas,74,77,ATA,24,Uruguai,R09515
+Atlético-MG,Cauã Soares,Cauã Soares,64,75,ATA,18,Brasil,R09516
+São Paulo,Carlos Coronel,Carlos Coronel,69,69,GOL,29,Paraguai,R09517
+São Paulo,Rafael,Rafael,76,76,GOL,37,Brasil,R09518
+São Paulo,Young,Young,61,64,GOL,24,Brasil,R09519
+São Paulo,João Pedro,João Pedro,61,69,GOL,20,Brasil,R09520
+São Paulo,Felipe Preis,Felipe Preis,52,61,GOL,20,Brasil,R09521
+São Paulo,Sabino,Sabino,69,69,ZAG,30,Brasil,R09522
+São Paulo,Matheus Belém,Matheus Belém,67,69,ZAG,23,Brasil,R09523
+São Paulo,Rafael Tolói,Rafael Tolói,73,73,ZAG,36,Itália,R09524
+São Paulo,Domingos Duarte,Domingos Duarte,74,74,ZAG,31,Portugal,R09525
+São Paulo,Luis Osorio,Luis Osorio,62,70,ZAG,20,Brasil,R09526
+São Paulo,Robert Arboleda,Robert Arboleda,70,70,ZAG,35,Equador,R09527
+São Paulo,Isac,Isac,51,61,ZAG,20,Brasil,R09528
+São Paulo,Iago,Iago,72,72,LAT,29,Brasil,R09529
+São Paulo,Enzo Díaz,Enzo Díaz,73,73,LAT,30,Argentina,R09530
+São Paulo,Wendell,Wendell,73,73,LAT,33,Brasil,R09531
+São Paulo,Nicolas,Nicolas,53,63,LAT,19,Brasil,R09532
+São Paulo,Pedro Lima,Pedro Lima,70,83,LAT,20,Brasil,R09533
+São Paulo,Aurélio Buta,Aurélio Buta,73,73,LAT,29,Portugal,R09534
+São Paulo,Lucas Ramon,Lucas Ramon,69,69,LAT,32,Brasil,R09535
+São Paulo,Cédric Soares,Cédric Soares,70,70,LAT,35,Portugal,R09536
+São Paulo,Igor Felisberto,Igor Felisberto,54,63,LAT,19,Brasil,R09537
+São Paulo,Pablo Maia,Pablo Maia,74,77,VOL,24,Brasil,R09538
+São Paulo,Newton,Newton,74,75,VOL,26,Brasil,R09539
+São Paulo,Marcos Antônio,Marcos Antônio,80,81,MEI,26,Brasil,R09540
+São Paulo,Damián Bobadilla,Damián Bobadilla,78,80,MEI,25,Paraguai,R09541
+São Paulo,Djhordney,Djhordney,64,84,MEI,19,Brasil,R09542
+São Paulo,Danielzinho,Danielzinho,71,71,MEI,32,Brasil,R09543
+São Paulo,Cauly,Cauly,72,72,MEI,31,Brasil,R09544
+São Paulo,Pedro Ferreira,Pedro Ferreira,52,63,MEI,19,Brasil,R09545
+São Paulo,Ferreirinha,Ferreirinha,74,74,ATA,28,Brasil,R09546
+São Paulo,Lucca,Lucca,68,77,ATA,19,Brasil,R09547
+São Paulo,Victor Sá,Victor Sá,73,73,ATA,32,Brasil,R09548
+São Paulo,Tetê,Tetê,63,73,ATA,19,Brasil,R09549
+São Paulo,Artur,Artur,77,77,ATA,28,Brasil,R09550
+São Paulo,Lucas Moura,Lucas Moura,76,76,ATA,34,Brasil,R09551
+São Paulo,Ryan Francisco,Ryan Francisco,69,78,ATA,19,Brasil,R09552
+São Paulo,André Silva,André Silva,71,71,ATA,29,Brasil,R09553
+São Paulo,Jonathan Calleri,Jonathan Calleri,77,77,ATA,33,Argentina,R09554
+São Paulo,Luciano,Luciano,71,71,ATA,33,Brasil,R09555
+São Paulo,Gustavo Santana,Gustavo Santana,65,70,ATA,21,Brasil,R09556
+Corinthians,Hugo Souza,Hugo Souza,78,80,GOL,27,Brasil,R09557
+Corinthians,Kauê,Kauê,67,70,GOL,22,Brasil,R09558
+Corinthians,Felipe Longo,Felipe Longo,62,67,GOL,21,Brasil,R09559
+Corinthians,João Pedro Tchoca,João Pedro Tchoca,72,75,ZAG,22,Brasil,R09560
+Corinthians,Iago Machado,Iago Machado,64,87,ZAG,17,Brasil,R09561
+Corinthians,André Ramalho,André Ramalho,71,71,ZAG,34,Brasil,R09562
+Corinthians,Gustavo Henrique,Gustavo Henrique,69,69,ZAG,33,Brasil,R09563
+Corinthians,Gabriel Paulista,Gabriel Paulista,77,77,ZAG,35,Brasil,R09564
+Corinthians,Renato Santos,Renato Santos,55,58,ZAG,22,Brasil,R09565
+Corinthians,Matheus Bidu,Matheus Bidu,78,78,LAT,27,Brasil,R09566
+Corinthians,Hugo,Hugo,67,67,LAT,29,Brasil,R09567
+Corinthians,Fabrizio Angileri,Fabrizio Angileri,67,67,LAT,32,Argentina,R09568
+Corinthians,Matheuzinho,Matheuzinho,78,79,LAT,26,Brasil,R09569
+Corinthians,Pedro Milans,Pedro Milans,69,72,LAT,24,Uruguai,R09570
+Corinthians,Léo Mana,Léo Mana,64,67,LAT,22,Brasil,R09571
+Corinthians,Raniele,Raniele,73,73,VOL,29,Brasil,R09572
+Corinthians,Allan,Allan,75,83,VOL,29,Brasil,R09573
+Corinthians,Charles,Charles,69,69,VOL,30,Brasil,R09574
+Corinthians,Breno Bidon,Breno Bidon,76,84,MEI,21,Brasil,R09575
+Corinthians,André,André,75,83,MEI,20,Brasil,R09576
+Corinthians,Matheus Pereira,Matheus Pereira,70,70,MEI,28,Brasil,R09577
+Corinthians,Alex Santana,Alex Santana,71,71,MEI,31,Brasil,R09578
+Corinthians,André Carrillo,André Carrillo,73,73,MEI,35,Peru,R09579
+Corinthians,Bahia,Bahia,52,61,MEI,20,Brasil,R09580
+Corinthians,Rodrigo Garro,Rodrigo Garro,79,79,MEI,28,Argentina,R09581
+Corinthians,Jesse Lingard,Jesse Lingard,73,73,MEI,33,Inglaterra,R09582
+Corinthians,Zakaria Labyad,Zakaria Labyad,71,71,MEI,33,Marrocos,R09583
+Corinthians,Kayke,Kayke,68,71,ATA,22,Brasil,R09584
+Corinthians,Vitinho,Vitinho,72,72,ATA,33,Brasil,R09585
+Corinthians,Kaio César,Kaio César,73,83,ATA,22,Brasil,R09586
+Corinthians,Dieguinho,Dieguinho,70,79,ATA,19,Brasil,R09587
+Corinthians,Yuri Alberto,Yuri Alberto,79,81,ATA,25,Brasil,R09588
+Corinthians,Memphis Depay,Memphis Depay,81,81,ATA,32,Holanda,R09589
+Corinthians,Gui Negão,Gui Negão,70,80,ATA,19,Brasil,R09590
+Corinthians,Pedro Raul,Pedro Raul,71,71,ATA,30,Brasil,R09591
+Internacional,Anthoni,Anthoni,74,77,GOL,24,Brasil,R09592
+Internacional,Matheus Cunha,Matheus Cunha,68,68,GOL,25,Brasil,R09593
+Internacional,Sergio Rochet,Sergio Rochet,75,75,GOL,33,Uruguai,R09594
+Internacional,Kauan,Kauan,57,58,GOL,23,Brasil,R09595
+Internacional,Diego Esser,Diego Esser,54,58,GOL,21,Brasil,R09596
+Internacional,Victor Gabriel,Victor Gabriel,72,75,ZAG,22,Brasil,R09597
+Internacional,Guillermo Maripán,Guillermo Maripán,75,75,ZAG,32,Chile,R09598
+Internacional,Félix Torres,Félix Torres,69,69,ZAG,29,Equador,R09599
+Internacional,Juninho,Juninho,69,69,ZAG,31,Brasil,R09600
+Internacional,Gabriel Mercado,Gabriel Mercado,69,69,ZAG,39,Argentina,R09601
+Internacional,Alexandro Bernabei,Alexandro Bernabei,76,78,LAT,26,Argentina,R09602
+Internacional,Matheus Bahia,Matheus Bahia,73,73,LAT,27,Brasil,R09603
+Internacional,Bruno Gomes,Bruno Gomes,76,78,LAT,25,Brasil,R09604
+Internacional,Braian Aguirre,Braian Aguirre,73,74,LAT,26,Argentina,R09605
+Internacional,Rodrigo Villagra,Rodrigo Villagra,72,74,VOL,25,Argentina,R09606
+Internacional,Thiago Maia,Thiago Maia,70,70,VOL,29,Brasil,R09607
+Internacional,Benjamin,Benjamin,51,61,VOL,20,Gana,R09608
+Internacional,Paulinho Paula,Paulinho Paula,70,70,MEI,29,Brasil,R09609
+Internacional,Bruno Henrique,Bruno Henrique,72,72,MEI,37,Brasil,R09610
+Internacional,Niclas Eliasson,Niclas Eliasson,75,75,MEI,30,Suécia,R09611
+Internacional,Alan Patrick,Alan Patrick,78,78,MEI,35,Brasil,R09612
+Internacional,Calebe,Calebe,71,72,MEI,26,Brasil,R09613
+Internacional,Allex,Allex,64,73,MEI,20,Brasil,R09614
+Internacional,Yago Noal,Yago Noal,59,70,MEI,19,Brasil,R09615
+Internacional,Johan Carbonero,Johan Carbonero,76,76,ATA,27,Colômbia,R09616
+Internacional,Kayky,Kayky,75,75,ATA,23,Brasil,R09617
+Internacional,Alerrandro,Alerrandro,72,73,ATA,26,Brasil,R09618
+Internacional,Antonio Sanabria,Antonio Sanabria,73,73,ATA,30,Paraguai,R09619
+Internacional,Raykkonen,Raykkonen,60,74,ATA,18,Brasil,R09620
+Grêmio,Gabriel Grando,Gabriel Grando,69,70,GOL,26,Brasil,R09621
+Grêmio,Weverton,Weverton,76,76,GOL,38,Brasil,R09622
+Grêmio,Thiago Beltrame,Thiago Beltrame,57,58,GOL,23,Brasil,R09623
+Grêmio,Gabriel Menegon,Gabriel Menegon,51,64,GOL,18,Brasil,R09624
+Grêmio,Gustavo Martins,Gustavo Martins,75,78,ZAG,24,Brasil,R09625
+Grêmio,Wallace,Wallace,70,74,ZAG,21,Brasil,R09626
+Grêmio,Wagner Leonardo,Wagner Leonardo,72,72,ZAG,27,Brasil,R09627
+Grêmio,Fabián Balbuena,Fabián Balbuena,72,72,ZAG,35,Paraguai,R09628
+Grêmio,Luis Eduardo,Luis Eduardo,59,71,ZAG,18,Brasil,R09629
+Grêmio,Walter Kannemann,Walter Kannemann,69,69,ZAG,35,Argentina,R09630
+Grêmio,Athos Thawan,Athos Thawan,55,58,ZAG,21,Brasil,R09631
+Grêmio,Marlon,Marlon,74,74,LAT,29,Brasil,R09632
+Grêmio,Pedro Gabriel,Pedro Gabriel,66,76,LAT,19,Brasil,R09633
+Grêmio,Caio Paulista,Caio Paulista,71,71,LAT,28,Brasil,R09634
+Grêmio,Diego Caito,Diego Caito,69,71,LAT,22,Brasil,R09635
+Grêmio,João Pedro,João Pedro,71,73,LAT,30,Brasil,R09636
+Grêmio,Marcos Rocha,Marcos Rocha,69,69,LAT,37,Brasil,R09637
+Grêmio,Erick Noriega,Erick Noriega,77,79,VOL,25,Peru,R09638
+Grêmio,Mathías Villasanti,Mathías Villasanti,75,75,VOL,29,Paraguai,R09639
+Grêmio,Danilo Barbosa,Danilo Barbosa,72,72,VOL,30,Brasil,R09640
+Grêmio,Filip Krovinovic,Filip Krovinovic,70,70,VOL,31,Croácia,R09641
+Grêmio,Dodi,Dodi,66,66,VOL,30,Brasil,R09642
+Grêmio,Juan Nardoni,Juan Nardoni,75,78,MEI,24,Argentina,R09643
+Grêmio,Tiago Augusto,Tiago Augusto,58,71,MEI,18,Brasil,R09644
+Grêmio,Riquelme,Riquelme,67,75,MEI,20,Brasil,R09645
+Grêmio,Francis Amuzu,Francis Amuzu,77,77,ATA,27,Gana,R09646
+Grêmio,Jovane Cabral,Jovane Cabral,70,70,ATA,28,Cabo Verde,R09647
+Grêmio,Tetê,Tetê,76,77,ATA,26,Brasil,R09648
+Grêmio,Cristian Pavón,Cristian Pavón,73,73,ATA,30,Argentina,R09649
+Grêmio,José Enamorado,José Enamorado,71,71,ATA,27,Colômbia,R09650
+Grêmio,Roger,Roger,58,70,ATA,18,Brasil,R09651
+Grêmio,Carlos Vinícius,Carlos Vinícius,77,77,ATA,31,Brasil,R09652
+Grêmio,Matheus Nascimento,Matheus Nascimento,71,75,ATA,22,Brasil,R09653
+Grêmio,Martin Braithwaite,Martin Braithwaite,75,75,ATA,35,Dinamarca,R09654
+Vasco da Gama,Léo Jardim,Léo Jardim,77,77,GOL,31,Brasil,R09655
+Vasco da Gama,Daniel Fuzato,Daniel Fuzato,68,68,GOL,29,Brasil,R09656
+Vasco da Gama,Pablo,Pablo,58,58,GOL,23,Brasil,R09657
+Vasco da Gama,Robert Renan,Robert Renan,79,79,ZAG,23,Brasil,R09658
+Vasco da Gama,Carlos Cuesta,Carlos Cuesta,76,76,ZAG,27,Colômbia,R09659
+Vasco da Gama,Gabriel Pereira,Gabriel Pereira,74,79,ZAG,26,Brasil,R09660
+Vasco da Gama,Lucas Freitas,Lucas Freitas,75,77,ZAG,25,Brasil,R09661
+Vasco da Gama,Alan Saldivia,Alan Saldivia,70,73,ZAG,24,Uruguai,R09662
+Vasco da Gama,Walace Falcão,Walace Falcão,55,58,ZAG,21,Brasil,R09663
+Vasco da Gama,Cuiabano,Cuiabano,77,79,LAT,23,Brasil,R09664
+Vasco da Gama,Lucas Piton,Lucas Piton,76,77,LAT,26,Itália,R09665
+Vasco da Gama,Riquelme,Riquelme,67,70,LAT,24,Brasil,R09666
+Vasco da Gama,Paulinho,Paulinho,66,68,LAT,22,Brasil,R09667
+Vasco da Gama,Paulo Henrique,Paulo Henrique,77,77,LAT,30,Brasil,R09668
+Vasco da Gama,José Luis Rodríguez,José Luis Rodríguez,71,71,LAT,29,Uruguai,R09669
+Vasco da Gama,João Mutano,João Mutano,62,67,LAT,21,Brasil,R09670
+Vasco da Gama,Santiago Sosa,Santiago Sosa,77,77,VOL,27,Argentina,R09671
+Vasco da Gama,Cauan Barros,Cauan Barros,74,77,VOL,22,Brasil,R09672
+Vasco da Gama,Mateus Carvalho,Mateus Carvalho,69,72,VOL,24,Brasil,R09673
+Vasco da Gama,Thiago Mendes,Thiago Mendes,74,74,VOL,34,Brasil,R09674
+Vasco da Gama,Jair,Jair,68,68,VOL,32,Brasil,R09675
+Vasco da Gama,Euder,Euder,53,58,VOL,21,Brasil,R09676
+Vasco da Gama,Ramon Rique,Ramon Rique,70,79,MEI,19,Brasil,R09677
+Vasco da Gama,Tchê Tchê,Tchê Tchê,71,71,MEI,34,Brasil,R09678
+Vasco da Gama,Alan Lescano,Alan Lescano,75,77,MEI,25,Argentina,R09679
+Vasco da Gama,Johan Rojas,Johan Rojas,74,77,MEI,24,Colômbia,R09680
+Vasco da Gama,Andrés Gómez,Andrés Gómez,80,83,ATA,24,Colômbia,R09681
+Vasco da Gama,David,David,73,73,ATA,31,Brasil,R09682
+Vasco da Gama,Nuno Moreira,Nuno Moreira,75,75,ATA,27,Portugal,R09683
+Vasco da Gama,Marino Hinestroza,Marino Hinestroza,73,76,ATA,24,Colômbia,R09684
+Vasco da Gama,Adson,Adson,71,72,ATA,26,Brasil,R09685
+Vasco da Gama,Loide Augusto,Loide Augusto,67,70,ATA,26,Angola,R09686
+Vasco da Gama,Facundo Colidio,Facundo Colidio,76,79,ATA,26,Argentina,R09687
+Vasco da Gama,Bruno Duarte,Bruno Duarte,75,75,ATA,30,Brasil,R09688
+Vasco da Gama,Brenner,Brenner,73,74,ATA,26,Brasil,R09689
+Vasco da Gama,Claudio Spinelli,Claudio Spinelli,72,72,ATA,29,Argentina,R09690
+Santos,Gabriel Brazão,Gabriel Brazão,77,80,GOL,26,Brasil,R09691
+Santos,João Paulo,João Paulo,73,73,GOL,31,Brasil,R09692
+Santos,Diógenes,Diógenes,63,65,GOL,25,Brasil,R09693
+Santos,João Fernandes,João Fernandes,55,58,GOL,22,Brasil,R09694
+Santos,Rodrigo Falcão,Rodrigo Falcão,55,58,GOL,21,Brasil,R09695
+Santos,João Ananias,João Ananias,69,79,ZAG,19,Brasil,R09696
+Santos,Lucas Veríssimo,Lucas Veríssimo,76,76,ZAG,31,Brasil,R09697
+Santos,Alexis Duarte,Alexis Duarte,71,72,ZAG,26,Paraguai,R09698
+Santos,Willian Arão,Willian Arão,73,73,ZAG,34,Brasil,R09699
+Santos,Luan Peres,Luan Peres,70,70,ZAG,32,Brasil,R09700
+Santos,João Alencar,João Alencar,54,63,ZAG,19,Brasil,R09701
+Santos,Vinicius Lira,Vinicius Lira,69,78,LAT,19,Brasil,R09702
+Santos,Gonzalo Escobar,Gonzalo Escobar,68,68,LAT,29,Argentina,R09703
+Santos,Gabriel Menino,Gabriel Menino,77,78,LAT,26,Brasil,R09704
+Santos,Igor Vinícius,Igor Vinícius,72,72,LAT,29,Brasil,R09705
+Santos,Rodinei,Rodinei,72,72,LAT,34,Brasil,R09706
+Santos,Arthur Melo,Arthur Melo,73,73,VOL,30,Brasil,R09707
+Santos,Gustavinho,Gustavinho,69,73,VOL,21,Brasil,R09708
+Santos,Christian Oliva,Christian Oliva,70,70,VOL,30,Uruguai,R09709
+Santos,João Schmidt,João Schmidt,72,72,VOL,33,Brasil,R09710
+Santos,Gabriel Bontempo,Gabriel Bontempo,76,80,MEI,21,Brasil,R09711
+Santos,Neymar,Neymar,80,80,MEI,34,Brasil,R09712
+Santos,Miguelito,Miguelito,72,76,MEI,22,Bolívia,R09713
+Santos,Philippe Coutinho,Philippe Coutinho,75,75,MEI,34,Brasil,R09714
+Santos,Lima,Lima,71,71,MEI,30,Brasil,R09715
+Santos,Thaciano,Thaciano,70,70,MEI,31,Brasil,R09716
+Santos,Nadson,Nadson,61,74,MEI,17,Brasil,R09717
+Santos,Pepê Fermino,Pepê Fermino,52,63,MEI,19,Brasil,R09718
+Santos,Álvaro Barreal,Álvaro Barreal,77,78,ATA,26,Argentina,R09719
+Santos,Everton,Everton,76,76,ATA,30,Brasil,R09720
+Santos,Moisés,Moisés,71,71,ATA,30,Brasil,R09721
+Santos,Gustavo Caballero,Gustavo Caballero,68,70,ATA,25,Paraguai,R09722
+Santos,Mateus Xavier,Mateus Xavier,58,69,ATA,19,Brasil,R09723
+Santos,Benjamín Rollheiser,Benjamín Rollheiser,77,78,ATA,26,Argentina,R09724
+Santos,Andrey Quintino,Andrey Quintino,58,61,ATA,24,Brasil,R09725
+Santos,Enzo Boer,Enzo Boer,53,58,ATA,21,Brasil,R09726
+Santos,Gabriel Barbosa,Gabriel Barbosa,77,77,ATA,30,Brasil,R09727
+Santos,Rony,Rony,75,75,ATA,31,Brasil,R09728
+Red Bull Bragantino,Cleiton,Cleiton,74,74,GOL,29,Brasil,R09729
+Red Bull Bragantino,Tiago Volpi,Tiago Volpi,73,73,GOL,35,Brasil,R09730
+Red Bull Bragantino,Fabrício,Fabrício,59,60,GOL,26,Brasil,R09731
+Red Bull Bragantino,Gustavo Reis,Gustavo Reis,54,58,GOL,21,Brasil,R09732
+Red Bull Bragantino,Gustavo Marques,Gustavo Marques,76,78,ZAG,25,Brasil,R09733
+Red Bull Bragantino,Alix,Alix,75,75,ZAG,27,Brasil,R09734
+Red Bull Bragantino,Guzmán Rodríguez,Guzmán Rodríguez,74,75,ZAG,26,Uruguai,R09735
+Red Bull Bragantino,Eduardo,Eduardo,67,67,ZAG,28,Brasil,R09736
+Red Bull Bragantino,Juninho Capixaba,Juninho Capixaba,76,76,LAT,29,Brasil,R09737
+Red Bull Bragantino,Vanderlan,Vanderlan,73,76,LAT,24,Brasil,R09738
+Red Bull Bragantino,Cauê Nascimento,Cauê Nascimento,59,70,LAT,19,Brasil,R09739
+Red Bull Bragantino,Agustín Sant'Anna,Agustín Sant'Anna,73,73,LAT,29,Uruguai,R09740
+Red Bull Bragantino,José Andrés Hurtado,José Andrés Hurtado,72,75,LAT,24,Equador,R09741
+Red Bull Bragantino,Ryan Augusto,Ryan Augusto,64,73,LAT,19,Brasil,R09742
+Red Bull Bragantino,Fabinho,Fabinho,76,79,VOL,24,Brasil,R09743
+Red Bull Bragantino,Patrick,Patrick,70,74,VOL,22,Brasil,R09744
+Red Bull Bragantino,Matheus Fernandes,Matheus Fernandes,68,68,VOL,28,Brasil,R09745
+Red Bull Bragantino,Gabriel,Gabriel,72,72,VOL,34,Brasil,R09746
+Red Bull Bragantino,Ignacio Sosa,Ignacio Sosa,76,76,MEI,23,Uruguai,R09747
+Red Bull Bragantino,Eric Ramires,Eric Ramires,73,74,MEI,26,Brasil,R09748
+Red Bull Bragantino,Gustavo Neves,Gustavo Neves,71,74,MEI,22,Brasil,R09749
+Red Bull Bragantino,Rodriguinho,Rodriguinho,76,77,MEI,22,Brasil,R09750
+Red Bull Bragantino,Bruninho,Bruninho,68,70,MEI,23,Brasil,R09751
+Red Bull Bragantino,Marcelinho Braz,Marcelinho Braz,64,66,MEI,22,Brasil,R09752
+Red Bull Bragantino,Henry Mosquera,Henry Mosquera,75,77,ATA,25,Colômbia,R09753
+Red Bull Bragantino,Vinicinho,Vinicinho,72,74,ATA,22,Brasil,R09754
+Red Bull Bragantino,Davi Gomes,Davi Gomes,62,66,ATA,21,Brasil,R09755
+Red Bull Bragantino,Lucas Barbosa,Lucas Barbosa,77,79,ATA,25,Brasil,R09756
+Red Bull Bragantino,José Herrera,José Herrera,72,73,ATA,23,Argentina,R09757
+Red Bull Bragantino,Isidro Pitta,Isidro Pitta,77,77,ATA,27,Paraguai,R09758
+Red Bull Bragantino,Wallace Yan,Wallace Yan,70,75,ATA,21,Brasil,R09759
+Red Bull Bragantino,Fernando,Fernando,70,70,ATA,27,Brasil,R09760
+Red Bull Bragantino,Eduardo Sasha,Eduardo Sasha,74,74,ATA,34,Brasil,R09761
+Mirassol,Walter,Walter,70,70,GOL,38,Brasil,R09762
+Mirassol,Alex Muralha,Alex Muralha,65,65,GOL,37,Brasil,R09763
+Mirassol,Georgemy,Georgemy,59,59,GOL,31,Brasil,R09764
+Mirassol,Thomazella,Thomazella,64,64,GOL,36,Brasil,R09765
+Mirassol,Willian Machado,Willian Machado,73,73,ZAG,30,Brasil,R09766
+Mirassol,João Victor,João Victor,69,69,ZAG,29,Brasil,R09767
+Mirassol,Lucas Oliveira,Lucas Oliveira,69,69,ZAG,30,Brasil,R09768
+Mirassol,Gabriel,Gabriel,67,68,ZAG,23,Brasil,R09769
+Mirassol,Reinaldo,Reinaldo,71,71,LAT,37,Brasil,R09770
+Mirassol,Victor Luís,Victor Luís,67,67,LAT,33,Brasil,R09771
+Mirassol,Igor Formiga,Igor Formiga,75,75,LAT,27,Brasil,R09772
+Mirassol,Elias,Elias,67,67,LAT,27,Brasil,R09773
+Mirassol,Daniel Borges,Daniel Borges,68,68,LAT,33,Brasil,R09774
+Mirassol,Neto Moura,Neto Moura,72,72,VOL,30,Brasil,R09775
+Mirassol,Wallisson,Wallisson,68,68,VOL,29,Brasil,R09776
+Mirassol,Gustavo Cazonatti,Gustavo Cazonatti,67,67,VOL,30,Brasil,R09777
+Mirassol,Denilson,Denilson,72,74,MEI,25,Brasil,R09778
+Mirassol,Aldo Filho,Aldo Filho,71,71,MEI,28,Brasil,R09779
+Mirassol,Japa,Japa,68,70,MEI,22,Brasil,R09780
+Mirassol,Shaylon,Shaylon,68,68,MEI,29,Brasil,R09781
+Mirassol,Eduardo,Eduardo,74,74,MEI,37,Brasil,R09782
+Mirassol,Chico Kim,Chico Kim,67,67,MEI,35,Brasil,R09783
+Mirassol,Alesson,Alesson,71,71,ATA,27,Brasil,R09784
+Mirassol,Fernandinho,Fernandinho,67,67,ATA,29,Brasil,R09785
+Mirassol,Negueba,Negueba,72,73,ATA,26,Brasil,R09786
+Mirassol,Gustavo Silva,Gustavo Silva,69,69,ATA,29,Brasil,R09787
+Mirassol,Carlos Eduardo,Carlos Eduardo,66,66,ATA,30,Brasil,R09788
+Mirassol,Luiz Filipe,Luiz Filipe,61,63,ATA,25,Brasil,R09789
+Mirassol,Edson Carioca,Edson Carioca,69,69,ATA,29,Brasil,R09790
+Mirassol,André Luis,André Luis,73,73,ATA,32,Brasil,R09791
+Mirassol,Zé Roberto,Zé Roberto,66,66,ATA,33,Brasil,R09792
+Mirassol,Bruno Santos,Bruno Santos,63,63,ATA,29,Brasil,R09793
+Athletico-PR,Mycael,Mycael,72,76,GOL,22,Brasil,R09794
+Athletico-PR,Santos,Santos,72,72,GOL,36,Brasil,R09795
+Athletico-PR,Matheus Soares,Matheus Soares,53,58,GOL,21,Brasil,R09796
+Athletico-PR,Arthur Dias,Arthur Dias,72,84,ZAG,19,Brasil,R09797
+Athletico-PR,Carlos Terán,Carlos Terán,73,74,ZAG,26,Colômbia,R09798
+Athletico-PR,Juan Felipe Aguirre,Juan Felipe Aguirre,73,73,ZAG,30,Colômbia,R09799
+Athletico-PR,Léo,Léo,69,69,ZAG,30,Brasil,R09800
+Athletico-PR,Dantas,Dantas,65,68,ZAG,22,Brasil,R09801
+Athletico-PR,Lucas Esquivel,Lucas Esquivel,77,79,LAT,25,Argentina,R09802
+Athletico-PR,Léo Derik,Léo Derik,69,74,LAT,21,Brasil,R09803
+Athletico-PR,Claudinho,Claudinho,53,58,LAT,21,Brasil,R09804
+Athletico-PR,Gastón Benavídez,Gastón Benavídez,74,74,LAT,31,Argentina,R09805
+Athletico-PR,Gilberto Junior,Gilberto Junior,70,74,LAT,21,Brasil,R09806
+Athletico-PR,Gilberto,Gilberto,76,76,LAT,33,Brasil,R09807
+Athletico-PR,Diogo Riquelme,Diogo Riquelme,65,70,VOL,21,Brasil,R09808
+Athletico-PR,Luiz Gustavo,Luiz Gustavo,70,70,VOL,39,Brasil,R09809
+Athletico-PR,João Cruz,João Cruz,71,81,MEI,20,Brasil,R09810
+Athletico-PR,Juan Portilla,Juan Portilla,74,74,MEI,28,Colômbia,R09811
+Athletico-PR,Felipinho,Felipinho,68,70,MEI,25,Brasil,R09812
+Athletico-PR,Jádson,Jádson,71,71,MEI,33,Brasil,R09813
+Athletico-PR,Alejandro García,Alejandro García,66,68,MEI,25,Colômbia,R09814
+Athletico-PR,Dudu,Dudu,71,80,MEI,20,Brasil,R09815
+Athletico-PR,Bruno Zapelli,Bruno Zapelli,73,76,MEI,24,Argentina,R09816
+Athletico-PR,Chiqueti,Chiqueti,71,74,MEI,21,Brasil,R09817
+Athletico-PR,Stiven Mendoza,Stiven Mendoza,70,70,ATA,34,Colômbia,R09818
+Athletico-PR,Kerwin Vargas,Kerwin Vargas,72,75,ATA,24,Colômbia,R09819
+Athletico-PR,Leozinho,Leozinho,74,74,ATA,27,Brasil,R09820
+Athletico-PR,Kevin Viveros,Kevin Viveros,80,81,ATA,26,Colômbia,R09821
+Athletico-PR,Jorge Rivaldo,Jorge Rivaldo,72,72,ATA,23,Colômbia,R09822
+Athletico-PR,Renan Peixoto,Renan Peixoto,70,71,ATA,26,Brasil,R09823
+Athletico-PR,Renan Viana,Renan Viana,64,64,ATA,23,Brasil,R09824
+Vitória,Lucas Arcanjo,Lucas Arcanjo,75,75,GOL,28,Brasil,R09825
+Vitória,Fintelman,Fintelman,60,62,GOL,25,Brasil,R09826
+Vitória,Yuri Sena,Yuri Sena,58,60,GOL,25,Brasil,R09827
+Vitória,Riccieli,Riccieli,72,72,ZAG,28,Brasil,R09828
+Vitória,Cacá,Cacá,71,71,ZAG,27,Brasil,R09829
+Vitória,Zé Marcos,Zé Marcos,70,70,ZAG,28,Brasil,R09830
+Vitória,Edu Ribeiro,Edu Ribeiro,68,69,ZAG,26,Brasil,R09831
+Vitória,Emanuel Brítez,Emanuel Brítez,70,70,ZAG,34,Argentina,R09832
+Vitória,Edenilson,Edenilson,64,67,ZAG,21,Brasil,R09833
+Vitória,Camutanga,Camutanga,68,68,ZAG,33,Brasil,R09834
+Vitória,Darlan,Darlan,56,58,ZAG,23,Brasil,R09835
+Vitória,Luan Cândido,Luan Cândido,73,75,LAT,25,Brasil,R09836
+Vitória,Ramon,Ramon,72,74,LAT,25,Brasil,R09837
+Vitória,Jamerson,Jamerson,68,68,LAT,28,Brasil,R09838
+Vitória,Nathan Mendes,Nathan Mendes,71,74,LAT,24,Brasil,R09839
+Vitória,Fabiano,Fabiano,70,71,LAT,26,Brasil,R09840
+Vitória,Mateus Silva,Mateus Silva,69,69,LAT,28,Brasil,R09841
+Vitória,Baralhas,Baralhas,72,72,VOL,28,Brasil,R09842
+Vitória,Walace,Walace,73,73,VOL,31,Brasil,R09843
+Vitória,Rúben Ismael,Rúben Ismael,69,69,VOL,27,Portugal,R09844
+Vitória,Dudu,Dudu,66,66,VOL,27,Brasil,R09845
+Vitória,Caíque Gonçalves,Caíque Gonçalves,67,67,VOL,31,Brasil,R09846
+Vitória,Zé Vitor,Zé Vitor,69,75,MEI,26,Brasil,R09847
+Vitória,Matheuzinho,Matheuzinho,73,73,MEI,29,Brasil,R09848
+Vitória,Tomás Pochettino,Tomás Pochettino,72,72,MEI,30,Argentina,R09849
+Vitória,Emmanuel Martínez,Emmanuel Martínez,73,73,MEI,32,Argentina,R09850
+Vitória,Renê,Renê,76,76,ATA,23,Brasil,R09851
+Vitória,Diego Tarzia,Diego Tarzia,72,75,ATA,23,Argentina,R09852
+Vitória,Anderson Pato,Anderson Pato,64,67,ATA,24,Brasil,R09853
+Vitória,Erick,Erick,75,75,ATA,28,Brasil,R09854
+Vitória,Ignacio Laquintana,Ignacio Laquintana,70,70,ATA,27,Uruguai,R09855
+Vitória,Lucas Silva,Lucas Silva,68,68,ATA,27,Brasil,R09856
+Vitória,Marinho,Marinho,67,67,ATA,36,Brasil,R09857
+Vitória,Osvaldo,Osvaldo,66,66,ATA,39,Brasil,R09858
+Vitória,Renato Kayzer,Renato Kayzer,70,70,ATA,30,Brasil,R09859
+Vitória,Fabri,Fabri,68,69,ATA,26,Brasil,R09860
+Vitória,Alex Bruno,Alex Bruno,63,63,ATA,27,Brasil,R09861
+Coritiba,Pedro Morisco,Pedro Morisco,75,78,GOL,22,Brasil,R09862
+Coritiba,Pedro Rangel,Pedro Rangel,69,70,GOL,26,Brasil,R09863
+Coritiba,Keiller,Keiller,66,66,GOL,30,Brasil,R09864
+Coritiba,Benassi,Benassi,56,58,GOL,22,Brasil,R09865
+Coritiba,Jacy,Jacy,73,73,ZAG,29,Brasil,R09866
+Coritiba,Tiago Cóser,Tiago Cóser,70,71,ZAG,22,Brasil,R09867
+Coritiba,Maicon,Maicon,68,68,ZAG,38,Brasil,R09868
+Coritiba,Rodrigo Moledo,Rodrigo Moledo,67,67,ZAG,39,Brasil,R09869
+Coritiba,Thiago Santos,Thiago Santos,66,66,ZAG,37,Brasil,R09870
+Coritiba,Felipe Jonatan,Felipe Jonatan,70,70,LAT,28,Brasil,R09871
+Coritiba,Rodrigo Gelado,Rodrigo Gelado,64,65,LAT,23,Brasil,R09872
+Coritiba,Bruno Melo,Bruno Melo,67,67,LAT,34,Brasil,R09873
+Coritiba,Fabricio Bustos,Fabricio Bustos,73,73,LAT,30,Argentina,R09874
+Coritiba,Lucas Taverna,Lucas Taverna,61,70,LAT,19,Brasil,R09875
+Coritiba,Tinga,Tinga,69,69,LAT,33,Brasil,R09876
+Coritiba,Nicolás Fonseca,Nicolás Fonseca,74,74,VOL,28,Uruguai,R09877
+Coritiba,Tissi,Tissi,62,71,VOL,19,Brasil,R09878
+Coritiba,Richard,Richard,67,67,VOL,32,Brasil,R09879
+Coritiba,Sebastián Gómez,Sebastián Gómez,72,72,MEI,30,Colômbia,R09880
+Coritiba,Vini Paulista,Vini Paulista,66,68,MEI,25,Brasil,R09881
+Coritiba,Gustavo,Gustavo,66,69,MEI,24,Brasil,R09882
+Coritiba,Josué,Josué,72,72,MEI,36,Portugal,R09883
+Coritiba,Joaquín Lavega,Joaquín Lavega,74,77,ATA,21,Uruguai,R09884
+Coritiba,Breno Lopes,Breno Lopes,75,75,ATA,30,Brasil,R09885
+Coritiba,Brian Ocampo,Brian Ocampo,68,68,ATA,27,Uruguai,R09886
+Coritiba,Keno,Keno,71,71,ATA,37,Brasil,R09887
+Coritiba,Lucas Ronier,Lucas Ronier,74,77,ATA,21,Brasil,R09888
+Coritiba,Fabinho,Fabinho,70,71,ATA,26,Brasil,R09889
+Coritiba,Paulo Roberto,Paulo Roberto,68,72,ATA,21,Brasil,R09890
+Coritiba,Pedro Rocha,Pedro Rocha,74,74,ATA,32,Brasil,R09891
+Coritiba,Renato Marques,Renato Marques,66,70,ATA,22,Brasil,R09892
+Coritiba,Rodrigo Rodrigues,Rodrigo Rodrigues,68,68,ATA,30,Brasil,R09893
+Coritiba,Éberth,Éberth,63,64,ATA,23,Brasil,R09894
+Chapecoense,Anderson,Anderson,64,64,GOL,28,Brasil,R09895
+Chapecoense,Matheus Aurélio,Matheus Aurélio,64,64,GOL,27,Brasil,R09896
+Chapecoense,Rafael Santos,Rafael Santos,65,65,GOL,37,Brasil,R09897
+Chapecoense,Gabriel Werner,Gabriel Werner,56,58,GOL,23,Brasil,R09898
+Chapecoense,Doma,Doma,69,69,ZAG,28,Brasil,R09899
+Chapecoense,João Paulo,João Paulo,64,65,ZAG,29,Brasil,R09900
+Chapecoense,Victor Caetano,Victor Caetano,67,67,ZAG,29,Brasil,R09901
+Chapecoense,Kauan Faria,Kauan Faria,65,65,ZAG,23,Brasil,R09902
+Chapecoense,Rafael Thyere,Rafael Thyere,66,66,ZAG,33,Brasil,R09903
+Chapecoense,Vinicius Eduardo,Vinicius Eduardo,55,58,ZAG,21,Brasil,R09904
+Chapecoense,Mancha,Mancha,67,69,LAT,25,Brasil,R09905
+Chapecoense,Bruno Pacheco,Bruno Pacheco,68,68,LAT,34,Brasil,R09906
+Chapecoense,Da Silva,Da Silva,57,58,LAT,26,Brasil,R09907
+Chapecoense,Dudu,Dudu,66,66,LAT,29,Brasil,R09908
+Chapecoense,Heitor,Heitor,65,66,LAT,26,Brasil,R09909
+Chapecoense,Everton,Everton,66,66,LAT,31,Brasil,R09910
+Chapecoense,Carvalheira,Carvalheira,72,72,VOL,27,Brasil,R09911
+Chapecoense,Camilo,Camilo,70,70,VOL,27,Brasil,R09912
+Chapecoense,Vinicius Balieiro,Vinicius Balieiro,66,66,VOL,27,Brasil,R09913
+Chapecoense,Rosivan,Rosivan,57,58,VOL,26,Brasil,R09914
+Chapecoense,Yago Felipe,Yago Felipe,71,71,MEI,31,Brasil,R09915
+Chapecoense,Bruno Matias,Bruno Matias,66,66,MEI,27,Brasil,R09916
+Chapecoense,David Antunes,David Antunes,58,64,MEI,21,Brasil,R09917
+Chapecoense,Robert Santos,Robert Santos,70,70,MEI,23,Brasil,R09918
+Chapecoense,Max,Max,66,68,MEI,25,Brasil,R09919
+Chapecoense,Miguel Carvalho,Miguel Carvalho,60,61,MEI,21,Espanha,R09920
+Chapecoense,Giovanni Augusto,Giovanni Augusto,69,69,MEI,37,Brasil,R09921
+Chapecoense,Dylan Borrero,Dylan Borrero,69,72,ATA,24,Colômbia,R09922
+Chapecoense,Maurício Garcez,Maurício Garcez,67,67,ATA,29,Brasil,R09923
+Chapecoense,Kevin Ramírez,Kevin Ramírez,69,69,ATA,32,Uruguai,R09924
+Chapecoense,Marcinho,Marcinho,68,68,ATA,31,Brasil,R09925
+Chapecoense,Rubens,Rubens,67,67,ATA,23,Brasil,R09926
+Chapecoense,Bruno Tubarão,Bruno Tubarão,68,68,ATA,31,Brasil,R09927
+Chapecoense,Tulio Eduardo,Tulio Eduardo,69,71,ATA,22,Brasil,R09928
+Chapecoense,Franco Rossi,Franco Rossi,69,72,ATA,24,Uruguai,R09929
+Chapecoense,Yannick Bolasie,Yannick Bolasie,67,67,ATA,37,RD Congo,R09930
+Remo,Ivan,Ivan,68,68,GOL,29,Brasil,R09931
+Remo,Marcelo Rangel,Marcelo Rangel,65,65,GOL,38,Brasil,R09932
+Remo,Ygor Vinhas,Ygor Vinhas,58,58,GOL,32,Brasil,R09933
+Remo,Zé Ivaldo,Zé Ivaldo,71,71,ZAG,29,Brasil,R09934
+Remo,Tchamba,Tchamba,69,69,ZAG,28,Camarões,R09935
+Remo,Matheus Felipe,Matheus Felipe,66,66,ZAG,28,Brasil,R09936
+Remo,Léo Andrade,Léo Andrade,65,65,ZAG,28,Brasil,R09937
+Remo,Marllon,Marllon,69,69,ZAG,34,Brasil,R09938
+Remo,Cristian Tassano,Cristian Tassano,64,64,ZAG,30,Uruguai,R09939
+Remo,Mayk,Mayk,64,64,LAT,27,Brasil,R09940
+Remo,Marlon,Marlon,67,67,LAT,32,Brasil,R09941
+Remo,Edson Kauã,Edson Kauã,55,58,LAT,22,Brasil,R09942
+Remo,João Lucas,João Lucas,69,69,LAT,28,Brasil,R09943
+Remo,Matheus Alexandre,Matheus Alexandre,67,67,LAT,27,Brasil,R09944
+Remo,Marcelinho,Marcelinho,66,66,LAT,28,Brasil,R09945
+Remo,Leonel Picco,Leonel Picco,73,73,VOL,28,Argentina,R09946
+Remo,Zé Welison,Zé Welison,69,69,VOL,31,Brasil,R09947
+Remo,David Braga,David Braga,67,70,VOL,24,Brasil,R09948
+Remo,Zé Ricardo,Zé Ricardo,67,67,VOL,27,Brasil,R09949
+Remo,Edson Fernando,Edson Fernando,65,65,VOL,28,Brasil,R09950
+Remo,Patrick,Patrick,70,70,MEI,34,Brasil,R09951
+Remo,Franco Catarozzi,Franco Catarozzi,63,64,MEI,26,Uruguai,R09952
+Remo,Vitor Bueno,Vitor Bueno,71,71,MEI,32,Brasil,R09953
+Remo,Jajá,Jajá,70,70,ATA,28,Brasil,R09954
+Remo,Jáderson,Jáderson,66,67,ATA,26,Brasil,R09955
+Remo,Antonio Galeano,Antonio Galeano,73,74,ATA,26,Paraguai,R09956
+Remo,Yago Pikachu,Yago Pikachu,69,69,ATA,34,Brasil,R09957
+Remo,Tico,Tico,51,61,ATA,20,Brasil,R09958
+Remo,Gabriel Taliari,Gabriel Taliari,71,71,ATA,29,Brasil,R09959
+Remo,Gabriel Poveda,Gabriel Poveda,65,65,ATA,28,Brasil,R09960
+Remo,Eduardo Melo,Eduardo Melo,58,60,ATA,25,Brasil,R09961

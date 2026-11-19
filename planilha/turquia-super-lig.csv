@@ -1,459 +1,459 @@
-clube,nome_original,nome,overall,potencial,posicao,idade,pais
-Fenerbahçe,Ederson,Ederson,85,85,GOL,33,Brasil
-Fenerbahçe,Tarık Çetin,Tarık Çetin,67,70,GOL,29,Turquia
-Fenerbahçe,Mert Günok,Mert Günok,69,69,GOL,37,Turquia
-Fenerbahçe,Kuzey Sapaz,Kuzey Sapaz,51,63,GOL,18,Turquia
-Fenerbahçe,Jayden Oosterwolde,Jayden Oosterwolde,76,80,ZAG,25,Holanda
-Fenerbahçe,Kojo Oppong,Kojo Oppong,76,79,ZAG,22,Gana
-Fenerbahçe,Nathan Aké,Nathan Aké,78,78,ZAG,31,Holanda
-Fenerbahçe,Milan Škriniar,Milan Škriniar,81,81,ZAG,31,Eslováquia
-Fenerbahçe,Yiğit Efe Demir,Yiğit Efe Demir,73,75,ZAG,22,Turquia
-Fenerbahçe,Archie Brown,Archie Brown,71,76,LAT,24,Inglaterra
-Fenerbahçe,Levent Mercan,Levent Mercan,71,75,LAT,25,Turquia
-Fenerbahçe,Mert Müldür,Mert Müldür,74,76,LAT,27,Turquia
-Fenerbahçe,Nélson Semedo,Nélson Semedo,77,77,LAT,32,Portugal
-Fenerbahçe,Ognjen Mimović,Ognjen Mimović,70,73,LAT,22,Sérvia
-Fenerbahçe,İsmail Yüksek,İsmail Yüksek,77,79,VOL,27,Turquia
-Fenerbahçe,N'Golo Kanté,N'Golo Kanté,85,85,VOL,35,França
-Fenerbahçe,Bartuğ Elmaz,Bartuğ Elmaz,73,75,VOL,23,Turquia
-Fenerbahçe,Mattéo Guendouzi,Mattéo Guendouzi,81,81,MEI,27,França
-Fenerbahçe,Marco Asensio,Marco Asensio,80,80,MEI,30,Espanha
-Fenerbahçe,İrfan Can Kahveci,İrfan Can Kahveci,78,78,MEI,31,Turquia
-Fenerbahçe,Mert Hakan Yandaş,Mert Hakan Yandaş,70,70,MEI,32,Turquia
-Fenerbahçe,Kerem Aktürkoğlu,Kerem Aktürkoğlu,80,81,ATA,28,Turquia
-Fenerbahçe,Oğuz Aydın,Oğuz Aydın,77,80,ATA,26,Turquia
-Fenerbahçe,Amara Diouf,Amara Diouf,61,72,ATA,18,Senegal
-Fenerbahçe,Alaettin Ekici,Alaettin Ekici,53,69,ATA,17,Turquia
-Fenerbahçe,Mason Greenwood,Mason Greenwood,84,85,ATA,25,Inglaterra
-Fenerbahçe,Dorgeles Nene,Dorgeles Nene,78,78,ATA,23,Mali
-Fenerbahçe,Vedat Muriqi,Vedat Muriqi,79,79,ATA,32,Kosovo
-Fenerbahçe,Romelu Lukaku,Romelu Lukaku,79,79,ATA,33,Bélgica
-Fenerbahçe,Çağrı Balta,Çağrı Balta,52,63,ATA,18,Turquia
-Galatasaray,Uğurcan Çakır,Uğurcan Çakır,80,82,GOL,30,Turquia
-Galatasaray,Jankat Yılmaz,Jankat Yılmaz,70,78,GOL,22,Turquia
-Galatasaray,Günay Güvenç,Günay Güvenç,75,75,GOL,35,Turquia
-Galatasaray,Arda Yılmaz,Arda Yılmaz,51,63,GOL,18,Turquia
-Galatasaray,Enes Emre Büyük,Enes Emre Büyük,53,60,GOL,20,Turquia
-Galatasaray,El Chadaille Bitshiabu,El Chadaille Bitshiabu,77,87,ZAG,21,França
-Galatasaray,Davinson Sánchez,Davinson Sánchez,82,82,ZAG,30,Colômbia
-Galatasaray,Abdülkerim Bardakcı,Abdülkerim Bardakcı,80,80,ZAG,32,Turquia
-Galatasaray,Kaan Ayhan,Kaan Ayhan,76,76,ZAG,32,Turquia
-Galatasaray,Arda Ünyay,Arda Ünyay,64,81,ZAG,19,Turquia
-Galatasaray,Ismail Jakobs,Ismail Jakobs,75,78,LAT,27,Senegal
-Galatasaray,Eren Elmalı,Eren Elmalı,75,80,LAT,26,Turquia
-Galatasaray,Kazımcan Karataş,Kazımcan Karataş,70,70,LAT,23,Turquia
-Galatasaray,Wilfried Singo,Wilfried Singo,80,85,LAT,25,Costa do Marfim
-Galatasaray,Roland Sallai,Roland Sallai,78,78,LAT,29,Hungria
-Galatasaray,Lesley Ugochukwu,Lesley Ugochukwu,78,81,VOL,22,França
-Galatasaray,Lucas Torreira,Lucas Torreira,83,83,VOL,30,Uruguai
-Galatasaray,Mario Lemina,Mario Lemina,79,79,VOL,33,Gabão
-Galatasaray,Eyüp Aydın,Eyüp Aydın,66,77,VOL,22,Turquia
-Galatasaray,Gabriel Sara,Gabriel Sara,80,83,MEI,27,Brasil
-Galatasaray,Renato Nhaga,Renato Nhaga,69,69,MEI,19,Guiné-Bissau
-Galatasaray,İlkay Gündoğan,İlkay Gündoğan,83,83,MEI,36,Alemanha
-Galatasaray,Aleksey Batrakov,Aleksey Batrakov,77,83,MEI,21,Rússia
-Galatasaray,Rafael Leão,Rafael Leão,84,85,ATA,27,Portugal
-Galatasaray,Barış Alper Yılmaz,Barış Alper Yılmaz,80,83,ATA,26,Turquia
-Galatasaray,Berat Luş,Berat Luş,62,73,ATA,19,Turquia
-Galatasaray,Yunus Akgün,Yunus Akgün,78,81,ATA,26,Turquia
-Galatasaray,Leroy Sané,Leroy Sané,82,82,ATA,30,Alemanha
-Galatasaray,Armando Güner,Armando Güner,59,70,ATA,18,Argentina
-Galatasaray,Victor Osimhen,Victor Osimhen,87,89,ATA,27,Nigéria
-Galatasaray,Deniz Gül,Deniz Gül,77,79,ATA,22,Turquia
-Galatasaray,Ada Yüzgeç,Ada Yüzgeç,51,65,ATA,17,Turquia
-Beşiktaş,Orkun Kökçü,Orkun Kökçü,82,86,MEI,25,Turquia
-Beşiktaş,Milot Rashica,Milot Rashica,76,76,MEI,30,Kosovo
-Beşiktaş,Jonas Svensson,Jonas Svensson,75,75,LAT,33,Noruega
-Beşiktaş,Wilfred Ndidi,Wilfred Ndidi,76,76,VOL,29,Nigéria
-Beşiktaş,Rafa,Rafa,82,82,MEI,33,Portugal
-Beşiktaş,Salih Uçan,Salih Uçan,72,72,MEI,32,Turquia
-Beşiktaş,Rıdvan Yılmaz,Rıdvan Yılmaz,73,77,LAT,25,Turquia
-Beşiktaş,Cengiz Ünder,Cengiz Ünder,76,76,ATA,29,Turquia
-Beşiktaş,Kartal Yılmaz,Kartal Yılmaz,70,75,VOL,25,Turquia
-Beşiktaş,Václav Černý,Václav Černý,77,77,MEI,28,Tchéquia
-Beşiktaş,Demir Tıknaz,Demir Tıknaz,72,82,VOL,21,Turquia
-Beşiktaş,Tamaraebi Abraham,Tamaraebi Abraham,77,77,ATA,28,Inglaterra
-Beşiktaş,Gökhan Sazdağı,Gökhan Sazdağı,69,69,LAT,31,Turquia
-Beşiktaş,Taylan Bulut,Taylan Bulut,67,78,LAT,20,Alemanha
-Beşiktaş,Tiago Djaló,Tiago Djaló,75,80,ZAG,26,Portugal
-Beşiktaş,El Touré,El Touré,73,81,ATA,24,Mali
-Beşiktaş,Necip Uysal,Necip Uysal,68,68,ZAG,35,Turquia
-Beşiktaş,Emirhan Topçu,Emirhan Topçu,73,79,ZAG,25,Turquia
-Beşiktaş,Mustafa Hekimoğlu,Mustafa Hekimoğlu,66,78,ATA,19,Turquia
-Beşiktaş,Ersin Destanoğlu,Ersin Destanoğlu,72,77,GOL,25,Turquia
-Beşiktaş,Emre Bilgin,Emre Bilgin,64,74,GOL,22,Turquia
-Trabzonspor,Ozan Tufan,Ozan Tufan,73,73,VOL,31,Turquia
-Trabzonspor,Okay Yokuşlu,Okay Yokuşlu,76,76,VOL,32,Turquia
-Trabzonspor,Edin Višća,Edin Višća,78,78,MEI,36,Bósnia
-Trabzonspor,Mustafa Eskihellaç,Mustafa Eskihellaç,72,72,LAT,29,Turquia
-Trabzonspor,Anthony Nwakaeme,Anthony Nwakaeme,74,74,MEI,37,Nigéria
-Trabzonspor,Oleksandr Zubkov,Oleksandr Zubkov,78,78,MEI,29,Ucrânia
-Trabzonspor,Wagner Pina,Wagner Pina,72,82,MEI,23,Cabo Verde
-Trabzonspor,Benjamin Bouchouari,Benjamin Bouchouari,70,79,MEI,24,Marrocos
-Trabzonspor,Ernest Muçi,Ernest Muçi,75,80,MEI,25,Albânia
-Trabzonspor,Tim Jabol-Folcarelli,Tim Jabol-Folcarelli,69,74,MEI,26,França
-Trabzonspor,Danylo Sikan,Danylo Sikan,74,81,ATA,25,Ucrânia
-Trabzonspor,Paul Onuachu,Paul Onuachu,74,74,ATA,32,Nigéria
-Trabzonspor,Cihan Çanak,Cihan Çanak,66,81,MEI,21,Turquia
-Trabzonspor,Kazeem Olaigbe,Kazeem Olaigbe,67,77,MEI,23,Bélgica
-Trabzonspor,Stefan Savić,Stefan Savić,78,78,ZAG,35,Montenegro
-Trabzonspor,Arseniy Batagov,Arseniy Batagov,73,80,ZAG,24,Ucrânia
-Trabzonspor,Salih Malkoçoğlu,Salih Malkoçoğlu,59,76,VOL,21,Turquia
-Trabzonspor,Arif Boşluk,Arif Boşluk,61,72,LAT,23,Turquia
-Trabzonspor,Felipe Augusto,Felipe Augusto,67,76,ATA,22,Brasil
-Trabzonspor,Serdar Saatçı,Serdar Saatçı,70,77,ZAG,23,Turquia
-Trabzonspor,Rayyan Baniya,Rayyan Baniya,71,76,ZAG,27,Turquia
-Trabzonspor,André Onana,André Onana,80,80,GOL,30,Camarões
-Trabzonspor,Onuralp Çevikkan,Onuralp Çevikkan,62,75,GOL,20,Turquia
-Gaziantep,Kévin Rodrigues,Kévin Rodrigues,75,75,LAT,32,Portugal
-Gaziantep,B. Ndiaye,B. Ndiaye,74,74,VOL,35,Senegal
-Gaziantep,Juninho Bacuna,Juninho Bacuna,69,70,VOL,28,Curacao
-Gaziantep,Deian Sorescu,Deian Sorescu,72,72,MEI,28,Romênia
-Gaziantep,Emmanuel Boateng,Emmanuel Boateng,72,72,ATA,30,Gana
-Gaziantep,Alexandru Maxim,Alexandru Maxim,76,76,MEI,36,Romênia
-Gaziantep,Kacper Kozłowski,Kacper Kozłowski,70,80,MEI,22,Polônia
-Gaziantep,Ogün Özçiçek,Ogün Özçiçek,66,69,MEI,27,Turquia
-Gaziantep,Melih Kabasakal,Melih Kabasakal,69,69,VOL,30,Turquia
-Gaziantep,Luis Pérez,Luis Pérez,70,70,LAT,31,Espanha
-Gaziantep,Nazım Sangaré,Nazım Sangaré,67,67,LAT,32,Turquia
-Gaziantep,Rob Nizet,Rob Nizet,63,72,LAT,24,Bélgica
-Gaziantep,Mohamed Bayo,Mohamed Bayo,73,74,ATA,28,Guiné
-Gaziantep,Christopher Lungoyi,Christopher Lungoyi,66,68,MEI,26,Suíça
-Gaziantep,Drissa Camara,Drissa Camara,63,69,MEI,24,Costa do Marfim
-Gaziantep,Myenty Abena,Myenty Abena,70,70,ZAG,31,Suriname
-Gaziantep,Salem M'Bakata,Salem M'Bakata,67,68,LAT,28,França
-Gaziantep,Semih Güler,Semih Güler,69,69,ZAG,31,Turquia
-Gaziantep,Yusuf Kabadayi,Yusuf Kabadayi,66,76,MEI,22,Alemanha
-Gaziantep,Arda Kızıldağ,Arda Kızıldağ,69,73,ZAG,27,Turquia
-Gaziantep,Tayyip Sanuç,Tayyip Sanuç,68,72,ZAG,26,Turquia
-Gaziantep,Enver Kulasin,Enver Kulasin,58,67,ATA,22,Bósnia
-Gaziantep,Eren Çakır,Eren Çakır,50,64,MEI,22,Turquia
-Gaziantep,Mehmet Kuzucu,Mehmet Kuzucu,51,59,MEI,22,Turquia
-Gaziantep,Ali Kalın,Ali Kalın,53,79,ATA,18,Turquia
-Gaziantep,Halil Bağcı,Halil Bağcı,53,65,GOL,23,Turquia
-Gaziantep,Zafer Görgen,Zafer Görgen,65,70,GOL,26,Turquia
-Gaziantep,Mustafa Bozan,Mustafa Bozan,64,70,GOL,25,Turquia
-Samsunspor,Olivier Ntcham,Olivier Ntcham,73,73,VOL,30,Camarões
-Samsunspor,Carl Holse,Carl Holse,74,77,MEI,27,Dinamarca
-Samsunspor,Zeki Yavru,Zeki Yavru,71,71,LAT,34,Turquia
-Samsunspor,Soner Aydoğdu,Soner Aydoğdu,70,70,MEI,35,Turquia
-Samsunspor,Afonso Sousa,Afonso Sousa,74,76,MEI,26,Portugal
-Samsunspor,Antoine Makoumbou,Antoine Makoumbou,73,76,VOL,28,Congo
-Samsunspor,Emre Kılınç,Emre Kılınç,73,73,MEI,31,Turquia
-Samsunspor,Logi Tómasson,Logi Tómasson,67,72,LAT,25,Islândia
-Samsunspor,Josafat Mendes,Josafat Mendes,72,79,LAT,23,Suécia
-Samsunspor,Marius Mouandilmadji,Marius Mouandilmadji,73,74,ATA,28,Chade
-Samsunspor,Tanguy Coulibaly,Tanguy Coulibaly,71,77,MEI,25,França
-Samsunspor,Celil Yüksel,Celil Yüksel,67,68,VOL,28,Turquia
-Samsunspor,Cherif Ndiaye,Cherif Ndiaye,70,70,ATA,30,Senegal
-Samsunspor,Rick van Drongelen,Rick van Drongelen,75,79,ZAG,27,Holanda
-Samsunspor,Anthony Musaba,Anthony Musaba,70,76,MEI,25,Holanda
-Samsunspor,Soner Gönül,Soner Gönül,66,66,LAT,29,Turquia
-Samsunspor,Ľ. Šatka,Ľ. Šatka,70,70,ZAG,30,Eslováquia
-Samsunspor,Yunus Çift,Yunus Çift,66,72,ZAG,22,Turquia
-Samsunspor,Ebrima Ceesay,Ebrima Ceesay,58,74,ATA,20,Gâmbia
-Samsunspor,Bedirhan Çetin,Bedirhan Çetin,57,72,ZAG,20,Turquia
-Samsunspor,Albert Posiadała,Albert Posiadała,68,79,GOL,23,Polônia
-Samsunspor,Okan Kocuk,Okan Kocuk,73,73,GOL,31,Turquia
-Samsunspor,Efe Törüz,Efe Törüz,54,73,GOL,19,Turquia
-Rizespor,Qazim Laçi,Qazim Laçi,74,74,MEI,30,Albânia
-Rizespor,Casper Højer,Casper Højer,73,73,LAT,31,Dinamarca
-Rizespor,Taylan Antalyalı,Taylan Antalyalı,69,69,MEI,31,Turquia
-Rizespor,Václav Jurečka,Václav Jurečka,70,70,ATA,32,Tchéquia
-Rizespor,Giannis Papanikolaou,Giannis Papanikolaou,68,71,VOL,27,Grécia
-Rizespor,Taha Şahin,Taha Şahin,71,78,LAT,25,Turquia
-Rizespor,Ibrahim Olawoyin,Ibrahim Olawoyin,70,71,MEI,28,Nigéria
-Rizespor,Ali Sowe,Ali Sowe,74,74,ATA,32,Gâmbia
-Rizespor,Mithat Pala,Mithat Pala,64,70,VOL,25,Turquia
-Rizespor,Valentin Mihăilă,Valentin Mihăilă,72,73,MEI,26,Romênia
-Rizespor,Halil Dervişoğlu,Halil Dervişoğlu,67,68,ATA,26,Turquia
-Rizespor,Altin Zeqiri,Altin Zeqiri,67,70,MEI,26,Kosovo
-Rizespor,Jesurun Rak-Sakyi,Jesurun Rak-Sakyi,72,80,ATA,23,Inglaterra
-Rizespor,Janne-Pekka Laine,Janne-Pekka Laine,61,66,MEI,25,Finlândia
-Rizespor,Modibo Sagnan,Modibo Sagnan,73,78,ZAG,27,Mali
-Rizespor,Muhamed Buljubašić,Muhamed Buljubašić,58,67,MEI,22,Bósnia
-Rizespor,Khusniddin Alikulov,Khusniddin Alikulov,68,72,ZAG,27,Uzbequistão
-Rizespor,Samet Akaydın,Samet Akaydın,70,70,ZAG,32,Turquia
-Rizespor,Emrecan Bulut,Emrecan Bulut,61,73,MEI,23,Turquia
-Rizespor,Attila Mocsi,Attila Mocsi,68,75,ZAG,26,Hungria
-Rizespor,Yahia Fofana,Yahia Fofana,76,81,GOL,25,Costa do Marfim
-Rizespor,Erdem Canpolat,Erdem Canpolat,66,73,GOL,25,Turquia
-Konyaspor,Guilherme Sityá,Guilherme Sityá,76,76,LAT,36,Brasil
-Konyaspor,Riechedly Bazoer,Riechedly Bazoer,74,75,ZAG,29,Holanda
-Konyaspor,Enis Bardhi,Enis Bardhi,74,74,MEI,31,Macedônia do Norte
-Konyaspor,Morten Bjørlo,Morten Bjørlo,67,67,MEI,30,Noruega
-Konyaspor,Marius Ștefănescu,Marius Ștefănescu,67,67,ATA,27,Romênia
-Konyaspor,Jackson Muleka,Jackson Muleka,70,73,ATA,26,RD Congo
-Konyaspor,Marko Jevtović,Marko Jevtović,69,69,VOL,33,Sérvia
-Konyaspor,Ufuk Akyol,Ufuk Akyol,66,67,VOL,28,Turquia
-Konyaspor,Pedrinho,Pedrinho,66,66,MEI,29,Brasil
-Konyaspor,Umut Nayir,Umut Nayir,70,70,ATA,33,Turquia
-Konyaspor,Alassane Ndao,Alassane Ndao,68,68,MEI,29,Senegal
-Konyaspor,Melih Ibrahimoglu,Melih Ibrahimoglu,63,68,MEI,26,Turquia
-Konyaspor,Melih Bostan,Melih Bostan,63,77,ATA,22,Turquia
-Konyaspor,Yhoan Andzouana,Yhoan Andzouana,63,63,MEI,29,Congo
-Konyaspor,Jo Jin Ho,Jo Jin Ho,57,66,MEI,23,Coreia do Sul
-Konyaspor,Adil Demirbağ,Adil Demirbağ,70,73,ZAG,28,Turquia
-Konyaspor,Yasir Subaşı,Yasir Subaşı,61,61,LAT,30,Turquia
-Konyaspor,Tunahan Taşçı,Tunahan Taşçı,61,70,MEI,24,Turquia
-Konyaspor,Uğurcan Yazğılı,Uğurcan Yazğılı,65,70,ZAG,27,Turquia
-Konyaspor,Mücahit Ibrahimoglu,Mücahit Ibrahimoglu,57,66,VOL,21,Áustria
-Konyaspor,Josip Ćalušić,Josip Ćalušić,60,60,ZAG,32,Croácia
-Konyaspor,Kaan Akyazı,Kaan Akyazı,48,64,ATA,20,Turquia
-Konyaspor,Bahadır Güngördü,Bahadır Güngördü,68,70,GOL,30,Turquia
-Konyaspor,Deniz Ertaş,Deniz Ertaş,62,75,GOL,21,Turquia
-Kasımpaşa,Haris Hajradinović,Haris Hajradinović,76,76,MEI,32,Bósnia
-Kasımpaşa,Cláudio Winck,Cláudio Winck,74,74,LAT,32,Brasil
-Kasımpaşa,Cafú,Cafú,68,68,VOL,33,Portugal
-Kasımpaşa,Mortadha Ben Ouanes,Mortadha Ben Ouanes,69,69,LAT,32,Tunísia
-Kasımpaşa,Mamadou Fall,Mamadou Fall,73,73,MEI,34,Senegal
-Kasımpaşa,Fousseni Diabaté,Fousseni Diabaté,69,69,MEI,30,Mali
-Kasımpaşa,Attila Szalai,Attila Szalai,70,70,ZAG,28,Hungria
-Kasımpaşa,Emre Taşdemir,Emre Taşdemir,63,63,LAT,30,Turquia
-Kasımpaşa,Godfried Frimpong,Godfried Frimpong,70,71,LAT,27,Holanda
-Kasımpaşa,Pape Gueye,Pape Gueye,68,71,ATA,26,Senegal
-Kasımpaşa,Cem Üstündag,Cem Üstündag,63,68,VOL,25,Áustria
-Kasımpaşa,Andri Baldursson,Andri Baldursson,62,71,VOL,24,Islândia
-Kasımpaşa,Ali Kol,Ali Kol,62,68,ATA,25,Turquia
-Kasımpaşa,Yusuf Barası,Yusuf Barası,64,75,ATA,23,Turquia
-Kasımpaşa,Kubilay Kanatsızkuş,Kubilay Kanatsızkuş,67,67,ATA,29,Turquia
-Kasımpaşa,Erdem Çetinkaya,Erdem Çetinkaya,60,64,ATA,25,Turquia
-Kasımpaşa,Nicholas Opoku,Nicholas Opoku,67,69,ZAG,28,Gana
-Kasımpaşa,Oğuzhan Yılmaz,Oğuzhan Yılmaz,58,68,VOL,23,Turquia
-Kasımpaşa,Atakan Müjde,Atakan Müjde,50,64,MEI,22,Turquia
-Kasımpaşa,Adem Arous,Adem Arous,59,66,ZAG,22,Tunísia
-Kasımpaşa,Taylan Aydın,Taylan Aydın,57,72,ZAG,20,Turquia
-Kasımpaşa,Andreas Gianniotis,Andreas Gianniotis,73,73,GOL,33,Grécia
-Kasımpaşa,Ali Yanar,Ali Yanar,60,64,GOL,28,Turquia
-Başakşehir,Miguel Crespo,Miguel Crespo,73,73,MEI,29,Portugal
-Başakşehir,Christopher Operi,Christopher Operi,74,74,LAT,29,Costa do Marfim
-Başakşehir,Deniz Türüç,Deniz Türüç,73,73,MEI,33,Turquia
-Başakşehir,Olivier Kemen,Olivier Kemen,72,72,MEI,30,Camarões
-Başakşehir,Ö. Şahiner,Ö. Şahiner,68,68,LAT,34,Turquia
-Başakşehir,Berat Özdemir,Berat Özdemir,73,74,VOL,28,Turquia
-Başakşehir,Onur Bulut,Onur Bulut,68,68,LAT,32,Turquia
-Başakşehir,Festy Ebosele,Festy Ebosele,69,77,MEI,23,Irlanda
-Başakşehir,Yusuf Sarı,Yusuf Sarı,75,76,MEI,27,Turquia
-Başakşehir,Eldor Shomurodov,Eldor Shomurodov,74,74,ATA,31,Uzbequistão
-Başakşehir,Onur Ergün,Onur Ergün,67,67,VOL,33,Turquia
-Başakşehir,Davie Selke,Davie Selke,74,74,ATA,31,Alemanha
-Başakşehir,Jakub Kałuziński,Jakub Kałuziński,69,82,VOL,23,Polônia
-Başakşehir,Nuno da Costa,Nuno da Costa,74,74,ATA,35,Cabo Verde
-Başakşehir,Umut Güneş,Umut Güneş,69,74,VOL,26,Turquia
-Başakşehir,Abbosbek Fayzullaev,Abbosbek Fayzullaev,65,77,MEI,22,Uzbequistão
-Başakşehir,Ivan Brnić,Ivan Brnić,69,75,MEI,24,Croácia
-Başakşehir,Jerome Opoku,Jerome Opoku,72,77,ZAG,27,Gana
-Başakşehir,Bertuğ Yıldırım,Bertuğ Yıldırım,69,77,ATA,24,Turquia
-Başakşehir,Ö. Beyaz,Ö. Beyaz,65,76,MEI,22,Turquia
-Başakşehir,Ousseynou Ba,Ousseynou Ba,74,75,ZAG,30,Senegal
-Başakşehir,Hamza Güreler,Hamza Güreler,64,79,ZAG,20,Turquia
-Başakşehir,Tugra Turhan,Tugra Turhan,59,77,ATA,18,Suíça
-Başakşehir,Volkan Babacan,Volkan Babacan,70,70,GOL,37,Turquia
-Başakşehir,Doğan Alemdar,Doğan Alemdar,70,76,GOL,23,Turquia
-Başakşehir,Muhammed Şengezer,Muhammed Şengezer,71,74,GOL,29,Turquia
-Gençlerbirliği,Oghenekaro Etebo,Oghenekaro Etebo,71,71,VOL,30,Nigéria
-Gençlerbirliği,Sékou Koita,Sékou Koita,74,79,ATA,26,Mali
-Gençlerbirliği,Pedro Pereira,Pedro Pereira,74,74,LAT,28,Portugal
-Gençlerbirliği,T. Dele-Bashiru,T. Dele-Bashiru,70,73,MEI,26,Nigéria
-Gençlerbirliği,Michał Nalepa,Michał Nalepa,66,66,MEI,31,Polônia
-Gençlerbirliği,Henry Onyekuru,Henry Onyekuru,72,72,MEI,29,Nigéria
-Gençlerbirliği,Metehan Mimaroğlu,Metehan Mimaroğlu,68,68,MEI,32,Turquia
-Gençlerbirliği,Franco Tongya,Franco Tongya,65,74,MEI,24,Itália
-Gençlerbirliği,Matěj Hanousek,Matěj Hanousek,67,67,LAT,33,Tchéquia
-Gençlerbirliği,M'Baye Niang,M'Baye Niang,69,69,ATA,31,Senegal
-Gençlerbirliği,Oğulcan Ülgün,Oğulcan Ülgün,65,65,MEI,28,Turquia
-Gençlerbirliği,Dal Varešanović,Dal Varešanović,67,74,MEI,25,Bósnia
-Gençlerbirliği,Moussa Kyabou,Moussa Kyabou,64,65,VOL,28,Mali
-Gençlerbirliği,Abdurrahim Dursun,Abdurrahim Dursun,63,66,LAT,27,Turquia
-Gençlerbirliği,Ensar Kemaloğlu,Ensar Kemaloğlu,60,63,MEI,27,Turquia
-Gençlerbirliği,Dimitrios Goutas,Dimitrios Goutas,72,72,ZAG,32,Grécia
-Gençlerbirliği,Kevin Csoboth,Kevin Csoboth,66,69,MEI,26,Hungria
-Gençlerbirliği,Dilhan Demir,Dilhan Demir,58,66,MEI,23,Alemanha
-Gençlerbirliği,Göktan Gürpüz,Göktan Gürpüz,62,73,MEI,23,Turquia
-Gençlerbirliği,Fıratcan Üzüm,Fıratcan Üzüm,63,64,MEI,27,Turquia
-Gençlerbirliği,Samed Onur,Samed Onur,60,69,MEI,24,Turquia
-Gençlerbirliği,Ž. Žužek,Ž. Žužek,66,67,ZAG,29,Eslovênia
-Gençlerbirliği,Thalisson Kelven,Thalisson Kelven,66,68,ZAG,28,Brasil
-Gençlerbirliği,Elias Durmaz,Elias Durmaz,57,60,MEI,26,Suécia
-Gençlerbirliği,Sinan Osmanoğlu,Sinan Osmanoğlu,62,62,ZAG,36,Turquia
-Gençlerbirliği,Abdullah Şahindere,Abdullah Şahindere,55,68,ZAG,23,Turquia
-Gençlerbirliği,Gökhan Akkan,Gökhan Akkan,69,70,GOL,31,Turquia
-Gençlerbirliği,Ricardo Velho,Ricardo Velho,76,80,GOL,27,Portugal
-Gençlerbirliği,Erhan Erentürk,Erhan Erentürk,62,63,GOL,31,Turquia
-Eyüpspor,Kerem Demirbay,Kerem Demirbay,74,74,VOL,33,Alemanha
-Eyüpspor,Emre Akbaba,Emre Akbaba,72,72,MEI,33,Turquia
-Eyüpspor,Samu Sáiz,Samu Sáiz,74,74,MEI,35,Espanha
-Eyüpspor,Yalçın Kayan,Yalçın Kayan,69,72,MEI,27,Turquia
-Eyüpspor,Taras Stepanenko,Taras Stepanenko,73,73,VOL,36,Ucrânia
-Eyüpspor,Mame Thiam,Mame Thiam,75,75,ATA,33,Senegal
-Eyüpspor,Serdar Gürler,Serdar Gürler,71,71,MEI,34,Turquia
-Eyüpspor,Mateusz Łęgowski,Mateusz Łęgowski,67,74,MEI,23,Polônia
-Eyüpspor,Halil Akbunar,Halil Akbunar,71,71,MEI,32,Turquia
-Eyüpspor,Umut Bozok,Umut Bozok,69,69,ATA,29,Turquia
-Eyüpspor,Robin Yalçın,Robin Yalçın,67,67,ZAG,32,Alemanha
-Eyüpspor,Denis Drăguș,Denis Drăguș,72,75,ATA,27,Romênia
-Eyüpspor,Prince Ampem,Prince Ampem,70,70,MEI,28,Gana
-Eyüpspor,Svit Sešlar,Svit Sešlar,63,71,MEI,24,Eslovênia
-Eyüpspor,Umut Meraş,Umut Meraş,67,67,LAT,30,Turquia
-Eyüpspor,Calegari,Calegari,69,78,LAT,24,Brasil
-Eyüpspor,Taşkın İlter,Taşkın İlter,64,64,VOL,32,Azerbaijão
-Eyüpspor,Baran Gezek,Baran Gezek,61,77,MEI,20,Turquia
-Eyüpspor,Nihad Mujakić,Nihad Mujakić,67,70,ZAG,28,Bósnia
-Eyüpspor,Talha Ülvan,Talha Ülvan,57,64,LAT,25,Turquia
-Eyüpspor,Emir Ortakaya,Emir Ortakaya,58,71,ZAG,22,Turquia
-Eyüpspor,Metehan Altunbaş,Metehan Altunbaş,58,69,ATA,23,Turquia
-Eyüpspor,Marcos Felipe,Marcos Felipe,67,69,GOL,30,Brasil
-Eyüpspor,Alp Köseer,Alp Köseer,50,58,GOL,23,Turquia
-Kayserispor,Dorukhan Toköz,Dorukhan Toköz,71,71,MEI,30,Turquia
-Kayserispor,László Bénes,László Bénes,72,72,MEI,28,Eslováquia
-Kayserispor,Carlos Mané,Carlos Mané,73,73,MEI,32,Guiné-Bissau
-Kayserispor,João Mendes,João Mendes,73,73,MEI,31,Portugal
-Kayserispor,Youssef Aït Bennasser,Youssef Aït Bennasser,70,70,VOL,30,Marrocos
-Kayserispor,Stefano Denswil,Stefano Denswil,73,73,ZAG,33,Suriname
-Kayserispor,Ramazan Civelek,Ramazan Civelek,67,67,MEI,30,Turquia
-Kayserispor,Furkan Soyalp,Furkan Soyalp,68,68,MEI,31,Turquia
-Kayserispor,Ali Karimi,Ali Karimi,67,67,VOL,32,Irã
-Kayserispor,Lionel Carole,Lionel Carole,68,68,LAT,35,França
-Kayserispor,Burak Kapacak,Burak Kapacak,65,67,MEI,26,Turquia
-Kayserispor,Miguel Cardoso,Miguel Cardoso,70,70,MEI,32,Portugal
-Kayserispor,Aaron Opoku,Aaron Opoku,67,68,MEI,27,Alemanha
-Kayserispor,Indrit Tuci,Indrit Tuci,68,70,ATA,25,Albânia
-Kayserispor,Gideon Jung,Gideon Jung,67,67,ZAG,31,Alemanha
-Kayserispor,Yaw Ackah,Yaw Ackah,66,70,VOL,27,Gana
-Kayserispor,German Onugkha,German Onugkha,69,69,ATA,30,Rússia
-Kayserispor,Majid Hosseini,Majid Hosseini,68,69,ZAG,30,Irã
-Kayserispor,Eray Özbek,Eray Özbek,53,60,MEI,23,Turquia
-Kayserispor,Yiğit Çeltik,Yiğit Çeltik,54,63,MEI,23,Turquia
-Kayserispor,Abdulsamet Burak,Abdulsamet Burak,60,60,ZAG,30,Turquia
-Kayserispor,Talha Sarıarslan,Talha Sarıarslan,58,72,ATA,22,Turquia
-Kayserispor,Kayra Cihan,Kayra Cihan,56,73,ZAG,18,Turquia
-Kayserispor,Arif Kocaman,Arif Kocaman,63,76,ZAG,22,Turquia
-Kayserispor,Nurettin Korkmaz,Nurettin Korkmaz,58,67,MEI,24,Turquia
-Kayserispor,Enes Gökçek,Enes Gökçek,57,72,LAT,19,Turquia
-Kayserispor,Bilal Bayazıt,Bilal Bayazıt,70,75,GOL,27,Turquia
-Kayserispor,Onurcan Piri,Onurcan Piri,64,65,GOL,31,Turquia
-Kayserispor,Ş. Öztürk,Ş. Öztürk,50,63,GOL,21,Turquia
-Fatih Karagümrük,Jure Balkovec,Jure Balkovec,71,71,LAT,31,Eslovênia
-Fatih Karagümrük,Berkay Özcan,Berkay Özcan,69,70,MEI,28,Turquia
-Fatih Karagümrük,Daniel Johnson,Daniel Johnson,68,68,MEI,33,Jamaica
-Fatih Karagümrük,Sam Larsson,Sam Larsson,72,72,MEI,33,Suécia
-Fatih Karagümrük,Camacho,Camacho,73,73,MEI,32,Portugal
-Fatih Karagümrük,David Fofana,David Fofana,72,80,ATA,23,Costa do Marfim
-Fatih Karagümrük,Andre Gray,Andre Gray,70,70,ATA,35,Jamaica
-Fatih Karagümrük,Serginho,Serginho,67,67,MEI,31,Brasil
-Fatih Karagümrük,Atakan Çankaya,Atakan Çankaya,64,64,ZAG,28,Turquia
-Fatih Karagümrük,Alper Demirol,Alper Demirol,59,69,MEI,23,Suécia
-Fatih Karagümrük,Tuğbey Akgün,Tuğbey Akgün,57,64,MEI,23,Turquia
-Fatih Karagümrük,Tiago Çukur,Tiago Çukur,62,72,ATA,23,Turquia
-Fatih Karagümrük,Ç. Kurukalıp,Ç. Kurukalıp,61,70,LAT,24,Turquia
-Fatih Karagümrük,Ö. Gümüş,Ö. Gümüş,56,65,MEI,23,Turquia
-Fatih Karagümrük,Enzo Roco,Enzo Roco,68,68,ZAG,33,Chile
-Fatih Karagümrük,Barış Kalayci,Barış Kalayci,59,73,MEI,20,Turquia
-Fatih Karagümrük,Maruis Tresor Doh,Maruis Tresor Doh,57,66,VOL,22,Costa do Marfim
-Fatih Karagümrük,Ahmet Sivri,Ahmet Sivri,59,62,ATA,27,Turquia
-Fatih Karagümrük,Muhammed Kadıoğlu,Muhammed Kadıoğlu,59,74,ZAG,19,Síria
-Fatih Karagümrük,Anıl Çınar,Anıl Çınar,58,70,ZAG,23,Turquia
-Fatih Karagümrük,Burhan Ersoy,Burhan Ersoy,51,59,ZAG,23,Turquia
-Fatih Karagümrük,Nikoloz Ugrekhelidze,Nikoloz Ugrekhelidze,53,62,ZAG,22,Geórgia
-Fatih Karagümrük,Ivo Grbić,Ivo Grbić,72,72,GOL,30,Croácia
-Fatih Karagümrük,Kerem Yandal,Kerem Yandal,54,74,GOL,20,Turquia
-Fatih Karagümrük,Furkan Bekleviç,Furkan Bekleviç,55,60,GOL,27,Turquia
-Kocaelispor,Ahmet Oğuz,Ahmet Oğuz,71,71,LAT,33,Turquia
-Kocaelispor,Bruno Petković,Bruno Petković,76,76,ATA,31,Croácia
-Kocaelispor,Massadio Haïdara,Massadio Haïdara,73,73,LAT,33,Mali
-Kocaelispor,Karol Linetty,Karol Linetty,73,73,VOL,31,Polônia
-Kocaelispor,Habib Keïta,Habib Keïta,68,73,MEI,24,Mali
-Kocaelispor,Darko Churlinov,Darko Churlinov,68,71,MEI,26,Macedônia do Norte
-Kocaelispor,Tayfur Bingöl,Tayfur Bingöl,65,65,MEI,33,Turquia
-Kocaelispor,Tarkan Serbest,Tarkan Serbest,68,68,ZAG,32,Turquia
-Kocaelispor,Serdar Dursun,Serdar Dursun,69,69,ATA,34,Turquia
-Kocaelispor,Daniel Agyei,Daniel Agyei,65,65,ATA,29,Inglaterra
-Kocaelispor,Can Keleş,Can Keleş,68,73,MEI,24,Turquia
-Kocaelispor,Anfernee Dijksteel,Anfernee Dijksteel,69,69,LAT,29,Suriname
-Kocaelispor,Show,Show,66,68,VOL,27,Angola
-Kocaelispor,Rigoberto Rivas,Rigoberto Rivas,66,66,MEI,28,Honduras
-Kocaelispor,Mateusz Wieteska,Mateusz Wieteska,72,73,ZAG,29,Polônia
-Kocaelispor,Hrvoje Smolčić,Hrvoje Smolčić,72,76,ZAG,25,Croácia
-Kocaelispor,Samet Yalçın,Samet Yalçın,59,59,MEI,32,Turquia
-Kocaelispor,Muharrem Cinan,Muharrem Cinan,60,61,LAT,28,Turquia
-Kocaelispor,Oleksandr Syrota,Oleksandr Syrota,68,74,ZAG,26,Ucrânia
-Kocaelispor,Botond Balogh,Botond Balogh,70,79,ZAG,24,Hungria
-Kocaelispor,Furkan Gedik,Furkan Gedik,61,68,ATA,24,Turquia
-Kocaelispor,Ahmet Sağat,Ahmet Sağat,63,63,ATA,30,Turquia
-Kocaelispor,Gökhan Değirmenci,Gökhan Değirmenci,68,68,GOL,37,Turquia
-Kocaelispor,Aleksandar Jovanović,Aleksandar Jovanović,66,66,GOL,33,Sérvia
-Kocaelispor,Serhat Öztaşdelen,Serhat Öztaşdelen,51,67,GOL,21,Turquia
-Alanyaspor,Gaïus Makouta,Gaïus Makouta,72,73,VOL,29,Congo
-Alanyaspor,Hwang Ui Jo,Hwang Ui Jo,71,71,ATA,33,Coreia do Sul
-Alanyaspor,Ianis Hagi,Ianis Hagi,74,77,MEI,27,Romênia
-Alanyaspor,Nicolas Janvier,Nicolas Janvier,68,69,MEI,27,França
-Alanyaspor,Efecan Karaca,Efecan Karaca,72,72,MEI,36,Turquia
-Alanyaspor,Florent Hadergjonaj,Florent Hadergjonaj,69,69,LAT,32,Kosovo
-Alanyaspor,Meschack Elia,Meschack Elia,70,70,ATA,28,RD Congo
-Alanyaspor,Maestro,Maestro,69,78,VOL,22,Angola
-Alanyaspor,Yusuf Özdemir,Yusuf Özdemir,67,73,MEI,25,Turquia
-Alanyaspor,Güven Yalçın,Güven Yalçın,70,73,ATA,27,Turquia
-Alanyaspor,Fidan Aliti,Fidan Aliti,67,67,ZAG,32,Kosovo
-Alanyaspor,Bruno Viana,Bruno Viana,71,71,ZAG,31,Brasil
-Alanyaspor,Ü. Akdağ,Ü. Akdağ,67,79,ZAG,22,Romênia
-Alanyaspor,Baran Mogultay,Baran Mogultay,63,71,LAT,22,Alemanha
-Alanyaspor,Fatih Aksoy,Fatih Aksoy,68,71,ZAG,28,Turquia
-Alanyaspor,Buluthan Bulut,Buluthan Bulut,55,64,MEI,24,Turquia
-Alanyaspor,İ. Kaya,İ. Kaya,63,68,ATA,25,Turquia
-Alanyaspor,Ruan,Ruan,59,69,ATA,21,Brasil
-Alanyaspor,Enes Keskin,Enes Keskin,57,63,MEI,25,Turquia
-Alanyaspor,Nuno Lima,Nuno Lima,67,76,ZAG,25,Portugal
-Alanyaspor,İ. Çelik,İ. Çelik,59,73,MEI,22,Turquia
-Alanyaspor,Batuhan Yavuz,Batuhan Yavuz,57,74,LAT,21,Alemanha
-Alanyaspor,Paulo Victor,Paulo Victor,75,75,GOL,39,Brasil
-Alanyaspor,Ertuğrul Taşkıran,Ertuğrul Taşkıran,69,69,GOL,36,Turquia
-Alanyaspor,Mert Bayram,Mert Bayram,50,66,GOL,21,Turquia
-Antalyaspor,Georgiy Dzhikiya,Georgiy Dzhikiya,73,73,ZAG,32,Rússia
-Antalyaspor,Kenneth Paal,Kenneth Paal,69,69,LAT,29,Suriname
-Antalyaspor,Dario Šarić,Dario Šarić,67,67,MEI,29,Bósnia
-Antalyaspor,Streek van de Streek,Streek van de Streek,68,68,MEI,33,Holanda
-Antalyaspor,Soner Dikmen,Soner Dikmen,67,67,MEI,32,Turquia
-Antalyaspor,Tomáš Čvančara,Tomáš Čvančara,72,76,ATA,25,Tchéquia
-Antalyaspor,Yohan Boli,Yohan Boli,73,73,ATA,32,Costa do Marfim
-Antalyaspor,Nikola Storm,Nikola Storm,74,74,MEI,31,Bélgica
-Antalyaspor,Erdoğan Yeşilyurt,Erdoğan Yeşilyurt,66,66,LAT,32,Turquia
-Antalyaspor,Ramzi Safuri,Ramzi Safuri,70,70,MEI,30,Israel
-Antalyaspor,Bünyamin Balcı,Bünyamin Balcı,69,74,LAT,26,Turquia
-Antalyaspor,Jesper Ceesay,Jesper Ceesay,66,74,MEI,24,Gâmbia
-Antalyaspor,Doğukan Sinik,Doğukan Sinik,68,69,MEI,27,Turquia
-Antalyaspor,Veysel Sarı,Veysel Sarı,67,67,ZAG,38,Turquia
-Antalyaspor,Samuel Ballet,Samuel Ballet,65,71,MEI,25,Suíça
-Antalyaspor,Lautaro Giannetti,Lautaro Giannetti,72,72,ZAG,32,Argentina
-Antalyaspor,Hüseyin Türkmen,Hüseyin Türkmen,67,70,ZAG,28,Turquia
-Antalyaspor,Samet Karakoç,Samet Karakoç,62,70,LAT,23,Turquia
-Antalyaspor,Poyraz Yıldırım,Poyraz Yıldırım,62,79,ATA,21,Turquia
-Antalyaspor,Efecan Gülerce,Efecan Gülerce,59,66,LAT,24,Turquia
-Antalyaspor,Kerem Kayaarası,Kerem Kayaarası,61,80,ATA,20,Turquia
-Antalyaspor,Bahadır Öztürk,Bahadır Öztürk,65,66,ZAG,30,Turquia
-Antalyaspor,Julián Cuesta,Julián Cuesta,65,65,GOL,35,Espanha
-Antalyaspor,Ataberk Dadakdeniz,Ataberk Dadakdeniz,66,71,GOL,26,Turquia
-Antalyaspor,Abdullah Yiğiter,Abdullah Yiğiter,65,70,GOL,26,Turquia
-Antalyaspor,Kağan Arıcan,Kağan Arıcan,53,71,GOL,20,Turquia
-Göztepe,İ. Köybaşı,İ. Köybaşı,67,67,LAT,37,Turquia
-Göztepe,Anthony Dennis,Anthony Dennis,70,78,MEI,22,Nigéria
-Göztepe,Ahmed Ildız,Ahmed Ildız,67,67,MEI,29,Turquia
-Göztepe,Junior Olaitan,Junior Olaitan,65,73,MEI,24,Benin
-Göztepe,Efkan Bekiroğlu,Efkan Bekiroğlu,70,70,MEI,30,Turquia
-Göztepe,Ogün Bayrak,Ogün Bayrak,68,71,LAT,27,Turquia
-Göztepe,Novatus Miroshi,Novatus Miroshi,68,78,VOL,23,Tanzânia
-Göztepe,Juan,Juan,69,78,ATA,24,Brasil
-Göztepe,Arda Kurtulan,Arda Kurtulan,63,71,LAT,23,Albânia
-Göztepe,Rhaldney,Rhaldney,68,71,VOL,27,Brasil
-Göztepe,Taha Altıkardeş,Taha Altıkardeş,67,78,ZAG,22,Turquia
-Göztepe,Malcom Bokele,Malcom Bokele,68,75,ZAG,26,Camarões
-Göztepe,Ruan,Ruan,65,65,MEI,31,Brasil
-Göztepe,Amin Cherni,Amin Cherni,66,72,LAT,25,Tunísia
-Göztepe,Janderson,Janderson,67,69,ATA,27,Brasil
-Göztepe,Allan Godoi,Allan Godoi,66,66,ZAG,33,Brasil
-Göztepe,Héliton,Héliton,68,68,ZAG,30,Brasil
-Göztepe,Furkan Bayır,Furkan Bayır,65,72,ZAG,26,Turquia
-Göztepe,Ibrahim Sabra,Ibrahim Sabra,61,76,ATA,20,Jordânia
-Göztepe,Uğur Yıldız,Uğur Yıldız,57,66,LAT,23,Turquia
-Göztepe,Ege Yıldırım,Ege Yıldırım,56,79,ZAG,19,Turquia
-Göztepe,Ekrem Kılıçarslan,Ekrem Kılıçarslan,59,62,GOL,29,Turquia
-Göztepe,Mateusz Lis,Mateusz Lis,73,76,GOL,29,Polônia
+clube,nome_original,nome,overall,potencial,posicao,idade,pais,id
+Fenerbahçe,Ederson,Ederson,85,85,GOL,33,Brasil,R12865
+Fenerbahçe,Tarık Çetin,Tarık Çetin,67,70,GOL,29,Turquia,R12866
+Fenerbahçe,Mert Günok,Mert Günok,69,69,GOL,37,Turquia,R12867
+Fenerbahçe,Kuzey Sapaz,Kuzey Sapaz,51,63,GOL,18,Turquia,R12868
+Fenerbahçe,Jayden Oosterwolde,Jayden Oosterwolde,76,80,ZAG,25,Holanda,R12869
+Fenerbahçe,Kojo Oppong,Kojo Oppong,76,79,ZAG,22,Gana,R12870
+Fenerbahçe,Nathan Aké,Nathan Aké,78,78,ZAG,31,Holanda,R12871
+Fenerbahçe,Milan Škriniar,Milan Škriniar,81,81,ZAG,31,Eslováquia,R12872
+Fenerbahçe,Yiğit Efe Demir,Yiğit Efe Demir,73,75,ZAG,22,Turquia,R12873
+Fenerbahçe,Archie Brown,Archie Brown,71,76,LAT,24,Inglaterra,R12874
+Fenerbahçe,Levent Mercan,Levent Mercan,71,75,LAT,25,Turquia,R12875
+Fenerbahçe,Mert Müldür,Mert Müldür,74,76,LAT,27,Turquia,R12876
+Fenerbahçe,Nélson Semedo,Nélson Semedo,77,77,LAT,32,Portugal,R12877
+Fenerbahçe,Ognjen Mimović,Ognjen Mimović,70,73,LAT,22,Sérvia,R12878
+Fenerbahçe,İsmail Yüksek,İsmail Yüksek,77,79,VOL,27,Turquia,R12879
+Fenerbahçe,N'Golo Kanté,N'Golo Kanté,85,85,VOL,35,França,R12880
+Fenerbahçe,Bartuğ Elmaz,Bartuğ Elmaz,73,75,VOL,23,Turquia,R12881
+Fenerbahçe,Mattéo Guendouzi,Mattéo Guendouzi,81,81,MEI,27,França,R12882
+Fenerbahçe,Marco Asensio,Marco Asensio,80,80,MEI,30,Espanha,R12883
+Fenerbahçe,İrfan Can Kahveci,İrfan Can Kahveci,78,78,MEI,31,Turquia,R12884
+Fenerbahçe,Mert Hakan Yandaş,Mert Hakan Yandaş,70,70,MEI,32,Turquia,R12885
+Fenerbahçe,Kerem Aktürkoğlu,Kerem Aktürkoğlu,80,81,ATA,28,Turquia,R12886
+Fenerbahçe,Oğuz Aydın,Oğuz Aydın,77,80,ATA,26,Turquia,R12887
+Fenerbahçe,Amara Diouf,Amara Diouf,61,72,ATA,18,Senegal,R12888
+Fenerbahçe,Alaettin Ekici,Alaettin Ekici,53,69,ATA,17,Turquia,R12889
+Fenerbahçe,Mason Greenwood,Mason Greenwood,84,85,ATA,25,Inglaterra,R12890
+Fenerbahçe,Dorgeles Nene,Dorgeles Nene,78,78,ATA,23,Mali,R12891
+Fenerbahçe,Vedat Muriqi,Vedat Muriqi,79,79,ATA,32,Kosovo,R12892
+Fenerbahçe,Romelu Lukaku,Romelu Lukaku,79,79,ATA,33,Bélgica,R12893
+Fenerbahçe,Çağrı Balta,Çağrı Balta,52,63,ATA,18,Turquia,R12894
+Galatasaray,Uğurcan Çakır,Uğurcan Çakır,80,82,GOL,30,Turquia,R12833
+Galatasaray,Jankat Yılmaz,Jankat Yılmaz,70,78,GOL,22,Turquia,R12834
+Galatasaray,Günay Güvenç,Günay Güvenç,75,75,GOL,35,Turquia,R12835
+Galatasaray,Arda Yılmaz,Arda Yılmaz,51,63,GOL,18,Turquia,R12836
+Galatasaray,Enes Emre Büyük,Enes Emre Büyük,53,60,GOL,20,Turquia,R12837
+Galatasaray,El Chadaille Bitshiabu,El Chadaille Bitshiabu,77,87,ZAG,21,França,R12838
+Galatasaray,Davinson Sánchez,Davinson Sánchez,82,82,ZAG,30,Colômbia,R12839
+Galatasaray,Abdülkerim Bardakcı,Abdülkerim Bardakcı,80,80,ZAG,32,Turquia,R12840
+Galatasaray,Kaan Ayhan,Kaan Ayhan,76,76,ZAG,32,Turquia,R12841
+Galatasaray,Arda Ünyay,Arda Ünyay,64,81,ZAG,19,Turquia,R12842
+Galatasaray,Ismail Jakobs,Ismail Jakobs,75,78,LAT,27,Senegal,R12843
+Galatasaray,Eren Elmalı,Eren Elmalı,75,80,LAT,26,Turquia,R12844
+Galatasaray,Kazımcan Karataş,Kazımcan Karataş,70,70,LAT,23,Turquia,R12845
+Galatasaray,Wilfried Singo,Wilfried Singo,80,85,LAT,25,Costa do Marfim,R12846
+Galatasaray,Roland Sallai,Roland Sallai,78,78,LAT,29,Hungria,R12847
+Galatasaray,Lesley Ugochukwu,Lesley Ugochukwu,78,81,VOL,22,França,R12848
+Galatasaray,Lucas Torreira,Lucas Torreira,83,83,VOL,30,Uruguai,R12849
+Galatasaray,Mario Lemina,Mario Lemina,79,79,VOL,33,Gabão,R12850
+Galatasaray,Eyüp Aydın,Eyüp Aydın,66,77,VOL,22,Turquia,R12851
+Galatasaray,Gabriel Sara,Gabriel Sara,80,83,MEI,27,Brasil,R12852
+Galatasaray,Renato Nhaga,Renato Nhaga,69,69,MEI,19,Guiné-Bissau,R12853
+Galatasaray,İlkay Gündoğan,İlkay Gündoğan,83,83,MEI,36,Alemanha,R12854
+Galatasaray,Aleksey Batrakov,Aleksey Batrakov,77,83,MEI,21,Rússia,R12855
+Galatasaray,Rafael Leão,Rafael Leão,84,85,ATA,27,Portugal,R12856
+Galatasaray,Barış Alper Yılmaz,Barış Alper Yılmaz,80,83,ATA,26,Turquia,R12857
+Galatasaray,Berat Luş,Berat Luş,62,73,ATA,19,Turquia,R12858
+Galatasaray,Yunus Akgün,Yunus Akgün,78,81,ATA,26,Turquia,R12859
+Galatasaray,Leroy Sané,Leroy Sané,82,82,ATA,30,Alemanha,R12860
+Galatasaray,Armando Güner,Armando Güner,59,70,ATA,18,Argentina,R12861
+Galatasaray,Victor Osimhen,Victor Osimhen,87,89,ATA,27,Nigéria,R12862
+Galatasaray,Deniz Gül,Deniz Gül,77,79,ATA,22,Turquia,R12863
+Galatasaray,Ada Yüzgeç,Ada Yüzgeç,51,65,ATA,17,Turquia,R12864
+Beşiktaş,Orkun Kökçü,Orkun Kökçü,82,86,MEI,25,Turquia,R03433
+Beşiktaş,Milot Rashica,Milot Rashica,76,76,MEI,30,Kosovo,R03434
+Beşiktaş,Jonas Svensson,Jonas Svensson,75,75,LAT,33,Noruega,R03435
+Beşiktaş,Wilfred Ndidi,Wilfred Ndidi,76,76,VOL,29,Nigéria,R03436
+Beşiktaş,Rafa,Rafa,82,82,MEI,33,Portugal,R03437
+Beşiktaş,Salih Uçan,Salih Uçan,72,72,MEI,32,Turquia,R03438
+Beşiktaş,Rıdvan Yılmaz,Rıdvan Yılmaz,73,77,LAT,25,Turquia,R03439
+Beşiktaş,Cengiz Ünder,Cengiz Ünder,76,76,ATA,29,Turquia,R03440
+Beşiktaş,Kartal Yılmaz,Kartal Yılmaz,70,75,VOL,25,Turquia,R03441
+Beşiktaş,Václav Černý,Václav Černý,77,77,MEI,28,Tchéquia,R03442
+Beşiktaş,Demir Tıknaz,Demir Tıknaz,72,82,VOL,21,Turquia,R03443
+Beşiktaş,Tamaraebi Abraham,Tamaraebi Abraham,77,77,ATA,28,Inglaterra,R03444
+Beşiktaş,Gökhan Sazdağı,Gökhan Sazdağı,69,69,LAT,31,Turquia,R03445
+Beşiktaş,Taylan Bulut,Taylan Bulut,67,78,LAT,20,Alemanha,R03446
+Beşiktaş,Tiago Djaló,Tiago Djaló,75,80,ZAG,26,Portugal,R03447
+Beşiktaş,El Touré,El Touré,73,81,ATA,24,Mali,R03448
+Beşiktaş,Necip Uysal,Necip Uysal,68,68,ZAG,35,Turquia,R03449
+Beşiktaş,Emirhan Topçu,Emirhan Topçu,73,79,ZAG,25,Turquia,R03450
+Beşiktaş,Mustafa Hekimoğlu,Mustafa Hekimoğlu,66,78,ATA,19,Turquia,R03451
+Beşiktaş,Ersin Destanoğlu,Ersin Destanoğlu,72,77,GOL,25,Turquia,R03452
+Beşiktaş,Emre Bilgin,Emre Bilgin,64,74,GOL,22,Turquia,R03453
+Trabzonspor,Ozan Tufan,Ozan Tufan,73,73,VOL,31,Turquia,R03454
+Trabzonspor,Okay Yokuşlu,Okay Yokuşlu,76,76,VOL,32,Turquia,R03455
+Trabzonspor,Edin Višća,Edin Višća,78,78,MEI,36,Bósnia,R03456
+Trabzonspor,Mustafa Eskihellaç,Mustafa Eskihellaç,72,72,LAT,29,Turquia,R03457
+Trabzonspor,Anthony Nwakaeme,Anthony Nwakaeme,74,74,MEI,37,Nigéria,R03458
+Trabzonspor,Oleksandr Zubkov,Oleksandr Zubkov,78,78,MEI,29,Ucrânia,R03459
+Trabzonspor,Wagner Pina,Wagner Pina,72,82,MEI,23,Cabo Verde,R03460
+Trabzonspor,Benjamin Bouchouari,Benjamin Bouchouari,70,79,MEI,24,Marrocos,R03461
+Trabzonspor,Ernest Muçi,Ernest Muçi,75,80,MEI,25,Albânia,R03462
+Trabzonspor,Tim Jabol-Folcarelli,Tim Jabol-Folcarelli,69,74,MEI,26,França,R03463
+Trabzonspor,Danylo Sikan,Danylo Sikan,74,81,ATA,25,Ucrânia,R03464
+Trabzonspor,Paul Onuachu,Paul Onuachu,74,74,ATA,32,Nigéria,R03465
+Trabzonspor,Cihan Çanak,Cihan Çanak,66,81,MEI,21,Turquia,R03466
+Trabzonspor,Kazeem Olaigbe,Kazeem Olaigbe,67,77,MEI,23,Bélgica,R03467
+Trabzonspor,Stefan Savić,Stefan Savić,78,78,ZAG,35,Montenegro,R03468
+Trabzonspor,Arseniy Batagov,Arseniy Batagov,73,80,ZAG,24,Ucrânia,R03469
+Trabzonspor,Salih Malkoçoğlu,Salih Malkoçoğlu,59,76,VOL,21,Turquia,R03470
+Trabzonspor,Arif Boşluk,Arif Boşluk,61,72,LAT,23,Turquia,R03471
+Trabzonspor,Felipe Augusto,Felipe Augusto,67,76,ATA,22,Brasil,R03472
+Trabzonspor,Serdar Saatçı,Serdar Saatçı,70,77,ZAG,23,Turquia,R03473
+Trabzonspor,Rayyan Baniya,Rayyan Baniya,71,76,ZAG,27,Turquia,R03474
+Trabzonspor,André Onana,André Onana,80,80,GOL,30,Camarões,R03475
+Trabzonspor,Onuralp Çevikkan,Onuralp Çevikkan,62,75,GOL,20,Turquia,R03476
+Gaziantep,Kévin Rodrigues,Kévin Rodrigues,75,75,LAT,32,Portugal,R03477
+Gaziantep,B. Ndiaye,B. Ndiaye,74,74,VOL,35,Senegal,R03478
+Gaziantep,Juninho Bacuna,Juninho Bacuna,69,70,VOL,28,Curacao,R03479
+Gaziantep,Deian Sorescu,Deian Sorescu,72,72,MEI,28,Romênia,R03480
+Gaziantep,Emmanuel Boateng,Emmanuel Boateng,72,72,ATA,30,Gana,R03481
+Gaziantep,Alexandru Maxim,Alexandru Maxim,76,76,MEI,36,Romênia,R03482
+Gaziantep,Kacper Kozłowski,Kacper Kozłowski,70,80,MEI,22,Polônia,R03483
+Gaziantep,Ogün Özçiçek,Ogün Özçiçek,66,69,MEI,27,Turquia,R03484
+Gaziantep,Melih Kabasakal,Melih Kabasakal,69,69,VOL,30,Turquia,R03485
+Gaziantep,Luis Pérez,Luis Pérez,70,70,LAT,31,Espanha,R03486
+Gaziantep,Nazım Sangaré,Nazım Sangaré,67,67,LAT,32,Turquia,R03487
+Gaziantep,Rob Nizet,Rob Nizet,63,72,LAT,24,Bélgica,R03488
+Gaziantep,Mohamed Bayo,Mohamed Bayo,73,74,ATA,28,Guiné,R03489
+Gaziantep,Christopher Lungoyi,Christopher Lungoyi,66,68,MEI,26,Suíça,R03490
+Gaziantep,Drissa Camara,Drissa Camara,63,69,MEI,24,Costa do Marfim,R03491
+Gaziantep,Myenty Abena,Myenty Abena,70,70,ZAG,31,Suriname,R03492
+Gaziantep,Salem M'Bakata,Salem M'Bakata,67,68,LAT,28,França,R03493
+Gaziantep,Semih Güler,Semih Güler,69,69,ZAG,31,Turquia,R03494
+Gaziantep,Yusuf Kabadayi,Yusuf Kabadayi,66,76,MEI,22,Alemanha,R03495
+Gaziantep,Arda Kızıldağ,Arda Kızıldağ,69,73,ZAG,27,Turquia,R03496
+Gaziantep,Tayyip Sanuç,Tayyip Sanuç,68,72,ZAG,26,Turquia,R03497
+Gaziantep,Enver Kulasin,Enver Kulasin,58,67,ATA,22,Bósnia,R03498
+Gaziantep,Eren Çakır,Eren Çakır,50,64,MEI,22,Turquia,R03499
+Gaziantep,Mehmet Kuzucu,Mehmet Kuzucu,51,59,MEI,22,Turquia,R03500
+Gaziantep,Ali Kalın,Ali Kalın,53,79,ATA,18,Turquia,R03501
+Gaziantep,Halil Bağcı,Halil Bağcı,53,65,GOL,23,Turquia,R03502
+Gaziantep,Zafer Görgen,Zafer Görgen,65,70,GOL,26,Turquia,R03503
+Gaziantep,Mustafa Bozan,Mustafa Bozan,64,70,GOL,25,Turquia,R03504
+Samsunspor,Olivier Ntcham,Olivier Ntcham,73,73,VOL,30,Camarões,R03505
+Samsunspor,Carl Holse,Carl Holse,74,77,MEI,27,Dinamarca,R03506
+Samsunspor,Zeki Yavru,Zeki Yavru,71,71,LAT,34,Turquia,R03507
+Samsunspor,Soner Aydoğdu,Soner Aydoğdu,70,70,MEI,35,Turquia,R03508
+Samsunspor,Afonso Sousa,Afonso Sousa,74,76,MEI,26,Portugal,R03509
+Samsunspor,Antoine Makoumbou,Antoine Makoumbou,73,76,VOL,28,Congo,R03510
+Samsunspor,Emre Kılınç,Emre Kılınç,73,73,MEI,31,Turquia,R03511
+Samsunspor,Logi Tómasson,Logi Tómasson,67,72,LAT,25,Islândia,R03512
+Samsunspor,Josafat Mendes,Josafat Mendes,72,79,LAT,23,Suécia,R03513
+Samsunspor,Marius Mouandilmadji,Marius Mouandilmadji,73,74,ATA,28,Chade,R03514
+Samsunspor,Tanguy Coulibaly,Tanguy Coulibaly,71,77,MEI,25,França,R03515
+Samsunspor,Celil Yüksel,Celil Yüksel,67,68,VOL,28,Turquia,R03516
+Samsunspor,Cherif Ndiaye,Cherif Ndiaye,70,70,ATA,30,Senegal,R03517
+Samsunspor,Rick van Drongelen,Rick van Drongelen,75,79,ZAG,27,Holanda,R03518
+Samsunspor,Anthony Musaba,Anthony Musaba,70,76,MEI,25,Holanda,R03519
+Samsunspor,Soner Gönül,Soner Gönül,66,66,LAT,29,Turquia,R03520
+Samsunspor,Ľ. Šatka,Ľ. Šatka,70,70,ZAG,30,Eslováquia,R03521
+Samsunspor,Yunus Çift,Yunus Çift,66,72,ZAG,22,Turquia,R03522
+Samsunspor,Ebrima Ceesay,Ebrima Ceesay,58,74,ATA,20,Gâmbia,R03523
+Samsunspor,Bedirhan Çetin,Bedirhan Çetin,57,72,ZAG,20,Turquia,R03524
+Samsunspor,Albert Posiadała,Albert Posiadała,68,79,GOL,23,Polônia,R03525
+Samsunspor,Okan Kocuk,Okan Kocuk,73,73,GOL,31,Turquia,R03526
+Samsunspor,Efe Törüz,Efe Törüz,54,73,GOL,19,Turquia,R03527
+Rizespor,Qazim Laçi,Qazim Laçi,74,74,MEI,30,Albânia,R03528
+Rizespor,Casper Højer,Casper Højer,73,73,LAT,31,Dinamarca,R03529
+Rizespor,Taylan Antalyalı,Taylan Antalyalı,69,69,MEI,31,Turquia,R03530
+Rizespor,Václav Jurečka,Václav Jurečka,70,70,ATA,32,Tchéquia,R03531
+Rizespor,Giannis Papanikolaou,Giannis Papanikolaou,68,71,VOL,27,Grécia,R03532
+Rizespor,Taha Şahin,Taha Şahin,71,78,LAT,25,Turquia,R03533
+Rizespor,Ibrahim Olawoyin,Ibrahim Olawoyin,70,71,MEI,28,Nigéria,R03534
+Rizespor,Ali Sowe,Ali Sowe,74,74,ATA,32,Gâmbia,R03535
+Rizespor,Mithat Pala,Mithat Pala,64,70,VOL,25,Turquia,R03536
+Rizespor,Valentin Mihăilă,Valentin Mihăilă,72,73,MEI,26,Romênia,R03537
+Rizespor,Halil Dervişoğlu,Halil Dervişoğlu,67,68,ATA,26,Turquia,R03538
+Rizespor,Altin Zeqiri,Altin Zeqiri,67,70,MEI,26,Kosovo,R03539
+Rizespor,Jesurun Rak-Sakyi,Jesurun Rak-Sakyi,72,80,ATA,23,Inglaterra,R03540
+Rizespor,Janne-Pekka Laine,Janne-Pekka Laine,61,66,MEI,25,Finlândia,R03541
+Rizespor,Modibo Sagnan,Modibo Sagnan,73,78,ZAG,27,Mali,R03542
+Rizespor,Muhamed Buljubašić,Muhamed Buljubašić,58,67,MEI,22,Bósnia,R03543
+Rizespor,Khusniddin Alikulov,Khusniddin Alikulov,68,72,ZAG,27,Uzbequistão,R03544
+Rizespor,Samet Akaydın,Samet Akaydın,70,70,ZAG,32,Turquia,R03545
+Rizespor,Emrecan Bulut,Emrecan Bulut,61,73,MEI,23,Turquia,R03546
+Rizespor,Attila Mocsi,Attila Mocsi,68,75,ZAG,26,Hungria,R03547
+Rizespor,Yahia Fofana,Yahia Fofana,76,81,GOL,25,Costa do Marfim,R03548
+Rizespor,Erdem Canpolat,Erdem Canpolat,66,73,GOL,25,Turquia,R03549
+Konyaspor,Guilherme Sityá,Guilherme Sityá,76,76,LAT,36,Brasil,R03550
+Konyaspor,Riechedly Bazoer,Riechedly Bazoer,74,75,ZAG,29,Holanda,R03551
+Konyaspor,Enis Bardhi,Enis Bardhi,74,74,MEI,31,Macedônia do Norte,R03552
+Konyaspor,Morten Bjørlo,Morten Bjørlo,67,67,MEI,30,Noruega,R03553
+Konyaspor,Marius Ștefănescu,Marius Ștefănescu,67,67,ATA,27,Romênia,R03554
+Konyaspor,Jackson Muleka,Jackson Muleka,70,73,ATA,26,RD Congo,R03555
+Konyaspor,Marko Jevtović,Marko Jevtović,69,69,VOL,33,Sérvia,R03556
+Konyaspor,Ufuk Akyol,Ufuk Akyol,66,67,VOL,28,Turquia,R03557
+Konyaspor,Pedrinho,Pedrinho,66,66,MEI,29,Brasil,R03558
+Konyaspor,Umut Nayir,Umut Nayir,70,70,ATA,33,Turquia,R03559
+Konyaspor,Alassane Ndao,Alassane Ndao,68,68,MEI,29,Senegal,R03560
+Konyaspor,Melih Ibrahimoglu,Melih Ibrahimoglu,63,68,MEI,26,Turquia,R03561
+Konyaspor,Melih Bostan,Melih Bostan,63,77,ATA,22,Turquia,R03562
+Konyaspor,Yhoan Andzouana,Yhoan Andzouana,63,63,MEI,29,Congo,R03563
+Konyaspor,Jo Jin Ho,Jo Jin Ho,57,66,MEI,23,Coreia do Sul,R03564
+Konyaspor,Adil Demirbağ,Adil Demirbağ,70,73,ZAG,28,Turquia,R03565
+Konyaspor,Yasir Subaşı,Yasir Subaşı,61,61,LAT,30,Turquia,R03566
+Konyaspor,Tunahan Taşçı,Tunahan Taşçı,61,70,MEI,24,Turquia,R03567
+Konyaspor,Uğurcan Yazğılı,Uğurcan Yazğılı,65,70,ZAG,27,Turquia,R03568
+Konyaspor,Mücahit Ibrahimoglu,Mücahit Ibrahimoglu,57,66,VOL,21,Áustria,R03569
+Konyaspor,Josip Ćalušić,Josip Ćalušić,60,60,ZAG,32,Croácia,R03570
+Konyaspor,Kaan Akyazı,Kaan Akyazı,48,64,ATA,20,Turquia,R03571
+Konyaspor,Bahadır Güngördü,Bahadır Güngördü,68,70,GOL,30,Turquia,R03572
+Konyaspor,Deniz Ertaş,Deniz Ertaş,62,75,GOL,21,Turquia,R03573
+Kasımpaşa,Haris Hajradinović,Haris Hajradinović,76,76,MEI,32,Bósnia,R03574
+Kasımpaşa,Cláudio Winck,Cláudio Winck,74,74,LAT,32,Brasil,R03575
+Kasımpaşa,Cafú,Cafú,68,68,VOL,33,Portugal,R03576
+Kasımpaşa,Mortadha Ben Ouanes,Mortadha Ben Ouanes,69,69,LAT,32,Tunísia,R03577
+Kasımpaşa,Mamadou Fall,Mamadou Fall,73,73,MEI,34,Senegal,R03578
+Kasımpaşa,Fousseni Diabaté,Fousseni Diabaté,69,69,MEI,30,Mali,R03579
+Kasımpaşa,Attila Szalai,Attila Szalai,70,70,ZAG,28,Hungria,R03580
+Kasımpaşa,Emre Taşdemir,Emre Taşdemir,63,63,LAT,30,Turquia,R03581
+Kasımpaşa,Godfried Frimpong,Godfried Frimpong,70,71,LAT,27,Holanda,R03582
+Kasımpaşa,Pape Gueye,Pape Gueye,68,71,ATA,26,Senegal,R03583
+Kasımpaşa,Cem Üstündag,Cem Üstündag,63,68,VOL,25,Áustria,R03584
+Kasımpaşa,Andri Baldursson,Andri Baldursson,62,71,VOL,24,Islândia,R03585
+Kasımpaşa,Ali Kol,Ali Kol,62,68,ATA,25,Turquia,R03586
+Kasımpaşa,Yusuf Barası,Yusuf Barası,64,75,ATA,23,Turquia,R03587
+Kasımpaşa,Kubilay Kanatsızkuş,Kubilay Kanatsızkuş,67,67,ATA,29,Turquia,R03588
+Kasımpaşa,Erdem Çetinkaya,Erdem Çetinkaya,60,64,ATA,25,Turquia,R03589
+Kasımpaşa,Nicholas Opoku,Nicholas Opoku,67,69,ZAG,28,Gana,R03590
+Kasımpaşa,Oğuzhan Yılmaz,Oğuzhan Yılmaz,58,68,VOL,23,Turquia,R03591
+Kasımpaşa,Atakan Müjde,Atakan Müjde,50,64,MEI,22,Turquia,R03592
+Kasımpaşa,Adem Arous,Adem Arous,59,66,ZAG,22,Tunísia,R03593
+Kasımpaşa,Taylan Aydın,Taylan Aydın,57,72,ZAG,20,Turquia,R03594
+Kasımpaşa,Andreas Gianniotis,Andreas Gianniotis,73,73,GOL,33,Grécia,R03595
+Kasımpaşa,Ali Yanar,Ali Yanar,60,64,GOL,28,Turquia,R03596
+Başakşehir,Miguel Crespo,Miguel Crespo,73,73,MEI,29,Portugal,R03597
+Başakşehir,Christopher Operi,Christopher Operi,74,74,LAT,29,Costa do Marfim,R03598
+Başakşehir,Deniz Türüç,Deniz Türüç,73,73,MEI,33,Turquia,R03599
+Başakşehir,Olivier Kemen,Olivier Kemen,72,72,MEI,30,Camarões,R03600
+Başakşehir,Ö. Şahiner,Ö. Şahiner,68,68,LAT,34,Turquia,R03601
+Başakşehir,Berat Özdemir,Berat Özdemir,73,74,VOL,28,Turquia,R03602
+Başakşehir,Onur Bulut,Onur Bulut,68,68,LAT,32,Turquia,R03603
+Başakşehir,Festy Ebosele,Festy Ebosele,69,77,MEI,23,Irlanda,R03604
+Başakşehir,Yusuf Sarı,Yusuf Sarı,75,76,MEI,27,Turquia,R03605
+Başakşehir,Eldor Shomurodov,Eldor Shomurodov,74,74,ATA,31,Uzbequistão,R03606
+Başakşehir,Onur Ergün,Onur Ergün,67,67,VOL,33,Turquia,R03607
+Başakşehir,Davie Selke,Davie Selke,74,74,ATA,31,Alemanha,R03608
+Başakşehir,Jakub Kałuziński,Jakub Kałuziński,69,82,VOL,23,Polônia,R03609
+Başakşehir,Nuno da Costa,Nuno da Costa,74,74,ATA,35,Cabo Verde,R03610
+Başakşehir,Umut Güneş,Umut Güneş,69,74,VOL,26,Turquia,R03611
+Başakşehir,Abbosbek Fayzullaev,Abbosbek Fayzullaev,65,77,MEI,22,Uzbequistão,R03612
+Başakşehir,Ivan Brnić,Ivan Brnić,69,75,MEI,24,Croácia,R03613
+Başakşehir,Jerome Opoku,Jerome Opoku,72,77,ZAG,27,Gana,R03614
+Başakşehir,Bertuğ Yıldırım,Bertuğ Yıldırım,69,77,ATA,24,Turquia,R03615
+Başakşehir,Ö. Beyaz,Ö. Beyaz,65,76,MEI,22,Turquia,R03616
+Başakşehir,Ousseynou Ba,Ousseynou Ba,74,75,ZAG,30,Senegal,R03617
+Başakşehir,Hamza Güreler,Hamza Güreler,64,79,ZAG,20,Turquia,R03618
+Başakşehir,Tugra Turhan,Tugra Turhan,59,77,ATA,18,Suíça,R03619
+Başakşehir,Volkan Babacan,Volkan Babacan,70,70,GOL,37,Turquia,R03620
+Başakşehir,Doğan Alemdar,Doğan Alemdar,70,76,GOL,23,Turquia,R03621
+Başakşehir,Muhammed Şengezer,Muhammed Şengezer,71,74,GOL,29,Turquia,R03622
+Gençlerbirliği,Oghenekaro Etebo,Oghenekaro Etebo,71,71,VOL,30,Nigéria,R03623
+Gençlerbirliği,Sékou Koita,Sékou Koita,74,79,ATA,26,Mali,R03624
+Gençlerbirliği,Pedro Pereira,Pedro Pereira,74,74,LAT,28,Portugal,R03625
+Gençlerbirliği,T. Dele-Bashiru,T. Dele-Bashiru,70,73,MEI,26,Nigéria,R03626
+Gençlerbirliği,Michał Nalepa,Michał Nalepa,66,66,MEI,31,Polônia,R03627
+Gençlerbirliği,Henry Onyekuru,Henry Onyekuru,72,72,MEI,29,Nigéria,R03628
+Gençlerbirliği,Metehan Mimaroğlu,Metehan Mimaroğlu,68,68,MEI,32,Turquia,R03629
+Gençlerbirliği,Franco Tongya,Franco Tongya,65,74,MEI,24,Itália,R03630
+Gençlerbirliği,Matěj Hanousek,Matěj Hanousek,67,67,LAT,33,Tchéquia,R03631
+Gençlerbirliği,M'Baye Niang,M'Baye Niang,69,69,ATA,31,Senegal,R03632
+Gençlerbirliği,Oğulcan Ülgün,Oğulcan Ülgün,65,65,MEI,28,Turquia,R03633
+Gençlerbirliği,Dal Varešanović,Dal Varešanović,67,74,MEI,25,Bósnia,R03634
+Gençlerbirliği,Moussa Kyabou,Moussa Kyabou,64,65,VOL,28,Mali,R03635
+Gençlerbirliği,Abdurrahim Dursun,Abdurrahim Dursun,63,66,LAT,27,Turquia,R03636
+Gençlerbirliği,Ensar Kemaloğlu,Ensar Kemaloğlu,60,63,MEI,27,Turquia,R03637
+Gençlerbirliği,Dimitrios Goutas,Dimitrios Goutas,72,72,ZAG,32,Grécia,R03638
+Gençlerbirliği,Kevin Csoboth,Kevin Csoboth,66,69,MEI,26,Hungria,R03639
+Gençlerbirliği,Dilhan Demir,Dilhan Demir,58,66,MEI,23,Alemanha,R03640
+Gençlerbirliği,Göktan Gürpüz,Göktan Gürpüz,62,73,MEI,23,Turquia,R03641
+Gençlerbirliği,Fıratcan Üzüm,Fıratcan Üzüm,63,64,MEI,27,Turquia,R03642
+Gençlerbirliği,Samed Onur,Samed Onur,60,69,MEI,24,Turquia,R03643
+Gençlerbirliği,Ž. Žužek,Ž. Žužek,66,67,ZAG,29,Eslovênia,R03644
+Gençlerbirliği,Thalisson Kelven,Thalisson Kelven,66,68,ZAG,28,Brasil,R03645
+Gençlerbirliği,Elias Durmaz,Elias Durmaz,57,60,MEI,26,Suécia,R03646
+Gençlerbirliği,Sinan Osmanoğlu,Sinan Osmanoğlu,62,62,ZAG,36,Turquia,R03647
+Gençlerbirliği,Abdullah Şahindere,Abdullah Şahindere,55,68,ZAG,23,Turquia,R03648
+Gençlerbirliği,Gökhan Akkan,Gökhan Akkan,69,70,GOL,31,Turquia,R03649
+Gençlerbirliği,Ricardo Velho,Ricardo Velho,76,80,GOL,27,Portugal,R03650
+Gençlerbirliği,Erhan Erentürk,Erhan Erentürk,62,63,GOL,31,Turquia,R03651
+Eyüpspor,Kerem Demirbay,Kerem Demirbay,74,74,VOL,33,Alemanha,R03652
+Eyüpspor,Emre Akbaba,Emre Akbaba,72,72,MEI,33,Turquia,R03653
+Eyüpspor,Samu Sáiz,Samu Sáiz,74,74,MEI,35,Espanha,R03654
+Eyüpspor,Yalçın Kayan,Yalçın Kayan,69,72,MEI,27,Turquia,R03655
+Eyüpspor,Taras Stepanenko,Taras Stepanenko,73,73,VOL,36,Ucrânia,R03656
+Eyüpspor,Mame Thiam,Mame Thiam,75,75,ATA,33,Senegal,R03657
+Eyüpspor,Serdar Gürler,Serdar Gürler,71,71,MEI,34,Turquia,R03658
+Eyüpspor,Mateusz Łęgowski,Mateusz Łęgowski,67,74,MEI,23,Polônia,R03659
+Eyüpspor,Halil Akbunar,Halil Akbunar,71,71,MEI,32,Turquia,R03660
+Eyüpspor,Umut Bozok,Umut Bozok,69,69,ATA,29,Turquia,R03661
+Eyüpspor,Robin Yalçın,Robin Yalçın,67,67,ZAG,32,Alemanha,R03662
+Eyüpspor,Denis Drăguș,Denis Drăguș,72,75,ATA,27,Romênia,R03663
+Eyüpspor,Prince Ampem,Prince Ampem,70,70,MEI,28,Gana,R03664
+Eyüpspor,Svit Sešlar,Svit Sešlar,63,71,MEI,24,Eslovênia,R03665
+Eyüpspor,Umut Meraş,Umut Meraş,67,67,LAT,30,Turquia,R03666
+Eyüpspor,Calegari,Calegari,69,78,LAT,24,Brasil,R03667
+Eyüpspor,Taşkın İlter,Taşkın İlter,64,64,VOL,32,Azerbaijão,R03668
+Eyüpspor,Baran Gezek,Baran Gezek,61,77,MEI,20,Turquia,R03669
+Eyüpspor,Nihad Mujakić,Nihad Mujakić,67,70,ZAG,28,Bósnia,R03670
+Eyüpspor,Talha Ülvan,Talha Ülvan,57,64,LAT,25,Turquia,R03671
+Eyüpspor,Emir Ortakaya,Emir Ortakaya,58,71,ZAG,22,Turquia,R03672
+Eyüpspor,Metehan Altunbaş,Metehan Altunbaş,58,69,ATA,23,Turquia,R03673
+Eyüpspor,Marcos Felipe,Marcos Felipe,67,69,GOL,30,Brasil,R03674
+Eyüpspor,Alp Köseer,Alp Köseer,50,58,GOL,23,Turquia,R03675
+Kayserispor,Dorukhan Toköz,Dorukhan Toköz,71,71,MEI,30,Turquia,R03676
+Kayserispor,László Bénes,László Bénes,72,72,MEI,28,Eslováquia,R03677
+Kayserispor,Carlos Mané,Carlos Mané,73,73,MEI,32,Guiné-Bissau,R03678
+Kayserispor,João Mendes,João Mendes,73,73,MEI,31,Portugal,R03679
+Kayserispor,Youssef Aït Bennasser,Youssef Aït Bennasser,70,70,VOL,30,Marrocos,R03680
+Kayserispor,Stefano Denswil,Stefano Denswil,73,73,ZAG,33,Suriname,R03681
+Kayserispor,Ramazan Civelek,Ramazan Civelek,67,67,MEI,30,Turquia,R03682
+Kayserispor,Furkan Soyalp,Furkan Soyalp,68,68,MEI,31,Turquia,R03683
+Kayserispor,Ali Karimi,Ali Karimi,67,67,VOL,32,Irã,R03684
+Kayserispor,Lionel Carole,Lionel Carole,68,68,LAT,35,França,R03685
+Kayserispor,Burak Kapacak,Burak Kapacak,65,67,MEI,26,Turquia,R03686
+Kayserispor,Miguel Cardoso,Miguel Cardoso,70,70,MEI,32,Portugal,R03687
+Kayserispor,Aaron Opoku,Aaron Opoku,67,68,MEI,27,Alemanha,R03688
+Kayserispor,Indrit Tuci,Indrit Tuci,68,70,ATA,25,Albânia,R03689
+Kayserispor,Gideon Jung,Gideon Jung,67,67,ZAG,31,Alemanha,R03690
+Kayserispor,Yaw Ackah,Yaw Ackah,66,70,VOL,27,Gana,R03691
+Kayserispor,German Onugkha,German Onugkha,69,69,ATA,30,Rússia,R03692
+Kayserispor,Majid Hosseini,Majid Hosseini,68,69,ZAG,30,Irã,R03693
+Kayserispor,Eray Özbek,Eray Özbek,53,60,MEI,23,Turquia,R03694
+Kayserispor,Yiğit Çeltik,Yiğit Çeltik,54,63,MEI,23,Turquia,R03695
+Kayserispor,Abdulsamet Burak,Abdulsamet Burak,60,60,ZAG,30,Turquia,R03696
+Kayserispor,Talha Sarıarslan,Talha Sarıarslan,58,72,ATA,22,Turquia,R03697
+Kayserispor,Kayra Cihan,Kayra Cihan,56,73,ZAG,18,Turquia,R03698
+Kayserispor,Arif Kocaman,Arif Kocaman,63,76,ZAG,22,Turquia,R03699
+Kayserispor,Nurettin Korkmaz,Nurettin Korkmaz,58,67,MEI,24,Turquia,R03700
+Kayserispor,Enes Gökçek,Enes Gökçek,57,72,LAT,19,Turquia,R03701
+Kayserispor,Bilal Bayazıt,Bilal Bayazıt,70,75,GOL,27,Turquia,R03702
+Kayserispor,Onurcan Piri,Onurcan Piri,64,65,GOL,31,Turquia,R03703
+Kayserispor,Ş. Öztürk,Ş. Öztürk,50,63,GOL,21,Turquia,R03704
+Fatih Karagümrük,Jure Balkovec,Jure Balkovec,71,71,LAT,31,Eslovênia,R03705
+Fatih Karagümrük,Berkay Özcan,Berkay Özcan,69,70,MEI,28,Turquia,R03706
+Fatih Karagümrük,Daniel Johnson,Daniel Johnson,68,68,MEI,33,Jamaica,R03707
+Fatih Karagümrük,Sam Larsson,Sam Larsson,72,72,MEI,33,Suécia,R03708
+Fatih Karagümrük,Camacho,Camacho,73,73,MEI,32,Portugal,R03709
+Fatih Karagümrük,David Fofana,David Fofana,72,80,ATA,23,Costa do Marfim,R03710
+Fatih Karagümrük,Andre Gray,Andre Gray,70,70,ATA,35,Jamaica,R03711
+Fatih Karagümrük,Serginho,Serginho,67,67,MEI,31,Brasil,R03712
+Fatih Karagümrük,Atakan Çankaya,Atakan Çankaya,64,64,ZAG,28,Turquia,R03713
+Fatih Karagümrük,Alper Demirol,Alper Demirol,59,69,MEI,23,Suécia,R03714
+Fatih Karagümrük,Tuğbey Akgün,Tuğbey Akgün,57,64,MEI,23,Turquia,R03715
+Fatih Karagümrük,Tiago Çukur,Tiago Çukur,62,72,ATA,23,Turquia,R03716
+Fatih Karagümrük,Ç. Kurukalıp,Ç. Kurukalıp,61,70,LAT,24,Turquia,R03717
+Fatih Karagümrük,Ö. Gümüş,Ö. Gümüş,56,65,MEI,23,Turquia,R03718
+Fatih Karagümrük,Enzo Roco,Enzo Roco,68,68,ZAG,33,Chile,R03719
+Fatih Karagümrük,Barış Kalayci,Barış Kalayci,59,73,MEI,20,Turquia,R03720
+Fatih Karagümrük,Maruis Tresor Doh,Maruis Tresor Doh,57,66,VOL,22,Costa do Marfim,R03721
+Fatih Karagümrük,Ahmet Sivri,Ahmet Sivri,59,62,ATA,27,Turquia,R03722
+Fatih Karagümrük,Muhammed Kadıoğlu,Muhammed Kadıoğlu,59,74,ZAG,19,Síria,R03723
+Fatih Karagümrük,Anıl Çınar,Anıl Çınar,58,70,ZAG,23,Turquia,R03724
+Fatih Karagümrük,Burhan Ersoy,Burhan Ersoy,51,59,ZAG,23,Turquia,R03725
+Fatih Karagümrük,Nikoloz Ugrekhelidze,Nikoloz Ugrekhelidze,53,62,ZAG,22,Geórgia,R03726
+Fatih Karagümrük,Ivo Grbić,Ivo Grbić,72,72,GOL,30,Croácia,R03727
+Fatih Karagümrük,Kerem Yandal,Kerem Yandal,54,74,GOL,20,Turquia,R03728
+Fatih Karagümrük,Furkan Bekleviç,Furkan Bekleviç,55,60,GOL,27,Turquia,R03729
+Kocaelispor,Ahmet Oğuz,Ahmet Oğuz,71,71,LAT,33,Turquia,R03730
+Kocaelispor,Bruno Petković,Bruno Petković,76,76,ATA,31,Croácia,R03731
+Kocaelispor,Massadio Haïdara,Massadio Haïdara,73,73,LAT,33,Mali,R03732
+Kocaelispor,Karol Linetty,Karol Linetty,73,73,VOL,31,Polônia,R03733
+Kocaelispor,Habib Keïta,Habib Keïta,68,73,MEI,24,Mali,R03734
+Kocaelispor,Darko Churlinov,Darko Churlinov,68,71,MEI,26,Macedônia do Norte,R03735
+Kocaelispor,Tayfur Bingöl,Tayfur Bingöl,65,65,MEI,33,Turquia,R03736
+Kocaelispor,Tarkan Serbest,Tarkan Serbest,68,68,ZAG,32,Turquia,R03737
+Kocaelispor,Serdar Dursun,Serdar Dursun,69,69,ATA,34,Turquia,R03738
+Kocaelispor,Daniel Agyei,Daniel Agyei,65,65,ATA,29,Inglaterra,R03739
+Kocaelispor,Can Keleş,Can Keleş,68,73,MEI,24,Turquia,R03740
+Kocaelispor,Anfernee Dijksteel,Anfernee Dijksteel,69,69,LAT,29,Suriname,R03741
+Kocaelispor,Show,Show,66,68,VOL,27,Angola,R03742
+Kocaelispor,Rigoberto Rivas,Rigoberto Rivas,66,66,MEI,28,Honduras,R03743
+Kocaelispor,Mateusz Wieteska,Mateusz Wieteska,72,73,ZAG,29,Polônia,R03744
+Kocaelispor,Hrvoje Smolčić,Hrvoje Smolčić,72,76,ZAG,25,Croácia,R03745
+Kocaelispor,Samet Yalçın,Samet Yalçın,59,59,MEI,32,Turquia,R03746
+Kocaelispor,Muharrem Cinan,Muharrem Cinan,60,61,LAT,28,Turquia,R03747
+Kocaelispor,Oleksandr Syrota,Oleksandr Syrota,68,74,ZAG,26,Ucrânia,R03748
+Kocaelispor,Botond Balogh,Botond Balogh,70,79,ZAG,24,Hungria,R03749
+Kocaelispor,Furkan Gedik,Furkan Gedik,61,68,ATA,24,Turquia,R03750
+Kocaelispor,Ahmet Sağat,Ahmet Sağat,63,63,ATA,30,Turquia,R03751
+Kocaelispor,Gökhan Değirmenci,Gökhan Değirmenci,68,68,GOL,37,Turquia,R03752
+Kocaelispor,Aleksandar Jovanović,Aleksandar Jovanović,66,66,GOL,33,Sérvia,R03753
+Kocaelispor,Serhat Öztaşdelen,Serhat Öztaşdelen,51,67,GOL,21,Turquia,R03754
+Alanyaspor,Gaïus Makouta,Gaïus Makouta,72,73,VOL,29,Congo,R03755
+Alanyaspor,Hwang Ui Jo,Hwang Ui Jo,71,71,ATA,33,Coreia do Sul,R03756
+Alanyaspor,Ianis Hagi,Ianis Hagi,74,77,MEI,27,Romênia,R03757
+Alanyaspor,Nicolas Janvier,Nicolas Janvier,68,69,MEI,27,França,R03758
+Alanyaspor,Efecan Karaca,Efecan Karaca,72,72,MEI,36,Turquia,R03759
+Alanyaspor,Florent Hadergjonaj,Florent Hadergjonaj,69,69,LAT,32,Kosovo,R03760
+Alanyaspor,Meschack Elia,Meschack Elia,70,70,ATA,28,RD Congo,R03761
+Alanyaspor,Maestro,Maestro,69,78,VOL,22,Angola,R03762
+Alanyaspor,Yusuf Özdemir,Yusuf Özdemir,67,73,MEI,25,Turquia,R03763
+Alanyaspor,Güven Yalçın,Güven Yalçın,70,73,ATA,27,Turquia,R03764
+Alanyaspor,Fidan Aliti,Fidan Aliti,67,67,ZAG,32,Kosovo,R03765
+Alanyaspor,Bruno Viana,Bruno Viana,71,71,ZAG,31,Brasil,R03766
+Alanyaspor,Ü. Akdağ,Ü. Akdağ,67,79,ZAG,22,Romênia,R03767
+Alanyaspor,Baran Mogultay,Baran Mogultay,63,71,LAT,22,Alemanha,R03768
+Alanyaspor,Fatih Aksoy,Fatih Aksoy,68,71,ZAG,28,Turquia,R03769
+Alanyaspor,Buluthan Bulut,Buluthan Bulut,55,64,MEI,24,Turquia,R03770
+Alanyaspor,İ. Kaya,İ. Kaya,63,68,ATA,25,Turquia,R03771
+Alanyaspor,Ruan,Ruan,59,69,ATA,21,Brasil,R03772
+Alanyaspor,Enes Keskin,Enes Keskin,57,63,MEI,25,Turquia,R03773
+Alanyaspor,Nuno Lima,Nuno Lima,67,76,ZAG,25,Portugal,R03774
+Alanyaspor,İ. Çelik,İ. Çelik,59,73,MEI,22,Turquia,R03775
+Alanyaspor,Batuhan Yavuz,Batuhan Yavuz,57,74,LAT,21,Alemanha,R03776
+Alanyaspor,Paulo Victor,Paulo Victor,75,75,GOL,39,Brasil,R03777
+Alanyaspor,Ertuğrul Taşkıran,Ertuğrul Taşkıran,69,69,GOL,36,Turquia,R03778
+Alanyaspor,Mert Bayram,Mert Bayram,50,66,GOL,21,Turquia,R03779
+Antalyaspor,Georgiy Dzhikiya,Georgiy Dzhikiya,73,73,ZAG,32,Rússia,R03780
+Antalyaspor,Kenneth Paal,Kenneth Paal,69,69,LAT,29,Suriname,R03781
+Antalyaspor,Dario Šarić,Dario Šarić,67,67,MEI,29,Bósnia,R03782
+Antalyaspor,Streek van de Streek,Streek van de Streek,68,68,MEI,33,Holanda,R03783
+Antalyaspor,Soner Dikmen,Soner Dikmen,67,67,MEI,32,Turquia,R03784
+Antalyaspor,Tomáš Čvančara,Tomáš Čvančara,72,76,ATA,25,Tchéquia,R03785
+Antalyaspor,Yohan Boli,Yohan Boli,73,73,ATA,32,Costa do Marfim,R03786
+Antalyaspor,Nikola Storm,Nikola Storm,74,74,MEI,31,Bélgica,R03787
+Antalyaspor,Erdoğan Yeşilyurt,Erdoğan Yeşilyurt,66,66,LAT,32,Turquia,R03788
+Antalyaspor,Ramzi Safuri,Ramzi Safuri,70,70,MEI,30,Israel,R03789
+Antalyaspor,Bünyamin Balcı,Bünyamin Balcı,69,74,LAT,26,Turquia,R03790
+Antalyaspor,Jesper Ceesay,Jesper Ceesay,66,74,MEI,24,Gâmbia,R03791
+Antalyaspor,Doğukan Sinik,Doğukan Sinik,68,69,MEI,27,Turquia,R03792
+Antalyaspor,Veysel Sarı,Veysel Sarı,67,67,ZAG,38,Turquia,R03793
+Antalyaspor,Samuel Ballet,Samuel Ballet,65,71,MEI,25,Suíça,R03794
+Antalyaspor,Lautaro Giannetti,Lautaro Giannetti,72,72,ZAG,32,Argentina,R03795
+Antalyaspor,Hüseyin Türkmen,Hüseyin Türkmen,67,70,ZAG,28,Turquia,R03796
+Antalyaspor,Samet Karakoç,Samet Karakoç,62,70,LAT,23,Turquia,R03797
+Antalyaspor,Poyraz Yıldırım,Poyraz Yıldırım,62,79,ATA,21,Turquia,R03798
+Antalyaspor,Efecan Gülerce,Efecan Gülerce,59,66,LAT,24,Turquia,R03799
+Antalyaspor,Kerem Kayaarası,Kerem Kayaarası,61,80,ATA,20,Turquia,R03800
+Antalyaspor,Bahadır Öztürk,Bahadır Öztürk,65,66,ZAG,30,Turquia,R03801
+Antalyaspor,Julián Cuesta,Julián Cuesta,65,65,GOL,35,Espanha,R03802
+Antalyaspor,Ataberk Dadakdeniz,Ataberk Dadakdeniz,66,71,GOL,26,Turquia,R03803
+Antalyaspor,Abdullah Yiğiter,Abdullah Yiğiter,65,70,GOL,26,Turquia,R03804
+Antalyaspor,Kağan Arıcan,Kağan Arıcan,53,71,GOL,20,Turquia,R03805
+Göztepe,İ. Köybaşı,İ. Köybaşı,67,67,LAT,37,Turquia,R03806
+Göztepe,Anthony Dennis,Anthony Dennis,70,78,MEI,22,Nigéria,R03807
+Göztepe,Ahmed Ildız,Ahmed Ildız,67,67,MEI,29,Turquia,R03808
+Göztepe,Junior Olaitan,Junior Olaitan,65,73,MEI,24,Benin,R03809
+Göztepe,Efkan Bekiroğlu,Efkan Bekiroğlu,70,70,MEI,30,Turquia,R03810
+Göztepe,Ogün Bayrak,Ogün Bayrak,68,71,LAT,27,Turquia,R03811
+Göztepe,Novatus Miroshi,Novatus Miroshi,68,78,VOL,23,Tanzânia,R03812
+Göztepe,Juan,Juan,69,78,ATA,24,Brasil,R03813
+Göztepe,Arda Kurtulan,Arda Kurtulan,63,71,LAT,23,Albânia,R03814
+Göztepe,Rhaldney,Rhaldney,68,71,VOL,27,Brasil,R03815
+Göztepe,Taha Altıkardeş,Taha Altıkardeş,67,78,ZAG,22,Turquia,R03816
+Göztepe,Malcom Bokele,Malcom Bokele,68,75,ZAG,26,Camarões,R03817
+Göztepe,Ruan,Ruan,65,65,MEI,31,Brasil,R03818
+Göztepe,Amin Cherni,Amin Cherni,66,72,LAT,25,Tunísia,R03819
+Göztepe,Janderson,Janderson,67,69,ATA,27,Brasil,R03820
+Göztepe,Allan Godoi,Allan Godoi,66,66,ZAG,33,Brasil,R03821
+Göztepe,Héliton,Héliton,68,68,ZAG,30,Brasil,R03822
+Göztepe,Furkan Bayır,Furkan Bayır,65,72,ZAG,26,Turquia,R03823
+Göztepe,Ibrahim Sabra,Ibrahim Sabra,61,76,ATA,20,Jordânia,R03824
+Göztepe,Uğur Yıldız,Uğur Yıldız,57,66,LAT,23,Turquia,R03825
+Göztepe,Ege Yıldırım,Ege Yıldırım,56,79,ZAG,19,Turquia,R03826
+Göztepe,Ekrem Kılıçarslan,Ekrem Kılıçarslan,59,62,GOL,29,Turquia,R03827
+Göztepe,Mateusz Lis,Mateusz Lis,73,76,GOL,29,Polônia,R03828

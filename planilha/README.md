@@ -17,7 +17,8 @@ Em cerca de 1 minuto o site atualiza. Na próxima vez que o jogo for aberto, a m
 
 ## Não mexa em
 
-- **clube** e **nome_original**: é por elas que o jogo acha o jogador. Se mudar, a linha é ignorada.
+- **id**: o código fixo do jogador (R00001 em diante para profissionais, B00001 em diante para a base). É por ele que o jogo acha o jogador, mesmo com xará, depois de uma transferência no seu save ou se você trocar o nome dele.
+- **clube** e **nome_original**: servem de reserva para achar o jogador quando a linha não tem id.
 - **posicao**, **idade** e **pais**: estão aí só para consulta. Mudar não altera nada no jogo.
 - A primeira linha (o cabeçalho) e o arquivo `arquivos.json`.
 
@@ -43,6 +44,7 @@ Crie uma linha nova com todas as colunas preenchidas:
 
 - **clube**: o nome do clube exatamente como aparece no jogo (por exemplo `Flamengo`, `Atlético-MG`, `Bayern de Munique`)
 - **nome_original** e **nome**: o nome do garoto, igual nas duas colunas
+- **id**: deixe vazio. O jogo usa clube e nome para achar o garoto novo
 - **overall** e **potencial**
 - **posicao**: GOL, ZAG, LAT, VOL, MEI ou ATA
 - **idade**: de 14 a 20

@@ -1,417 +1,417 @@
-clube,nome_original,nome,overall,potencial,posicao,idade,pais
-Celtic,Sam Johnstone,Sam Johnstone,72,72,GOL,33,Inglaterra
-Celtic,Viljami Sinisalo,Viljami Sinisalo,69,77,GOL,25,Finlândia
-Celtic,Ross Doohan,Ross Doohan,61,63,GOL,28,Escócia
-Celtic,Cameron Carter-Vickers,Cameron Carter-Vickers,79,82,ZAG,28,EUA
-Celtic,Auston Trusty,Auston Trusty,74,77,ZAG,28,EUA
-Celtic,Liam Scales,Liam Scales,75,77,ZAG,28,Irlanda
-Celtic,Dane Murray,Dane Murray,68,78,ZAG,23,Escócia
-Celtic,Kieran Tierney,Kieran Tierney,77,77,LAT,29,Escócia
-Celtic,Landon Emenalo,Landon Emenalo,58,70,LAT,18,Inglaterra
-Celtic,Alistair Johnston,Alistair Johnston,78,81,LAT,28,Canadá
-Celtic,Colby Donovan,Colby Donovan,69,83,LAT,20,Escócia
-Celtic,Jordan Lotomba,Jordan Lotomba,71,71,LAT,28,Suíça
-Celtic,Anthony Ralston,Anthony Ralston,71,74,LAT,27,Escócia
-Celtic,Callum McGregor,Callum McGregor,79,79,VOL,33,Escócia
-Celtic,Mika Baur,Mika Baur,71,71,MEI,22,Alemanha
-Celtic,Oliver Sørensen,Oliver Sørensen,75,78,MEI,24,Dinamarca
-Celtic,Joël van den Berg,Joël van den Berg,67,79,MEI,19,Holanda
-Celtic,Luke McCowan,Luke McCowan,73,74,MEI,28,Escócia
-Celtic,Alex Oxlade-Chamberlain,Alex Oxlade-Chamberlain,72,72,MEI,33,Inglaterra
-Celtic,Benjamin Nygren,Benjamin Nygren,73,79,MEI,25,Suécia
-Celtic,Sebastian Tounekti,Sebastian Tounekti,69,76,ATA,24,Tunísia
-Celtic,Jota,Jota,77,78,ATA,27,Portugal
-Celtic,Haissem Hassan,Haissem Hassan,72,79,ATA,24,Egito
-Celtic,James Forrest,James Forrest,72,72,ATA,35,Escócia
-Celtic,Kasper Høgh,Kasper Høgh,79,81,ATA,25,Dinamarca
-Celtic,Camilo Durán,Camilo Durán,74,77,ATA,24,Colômbia
-Celtic,Shumaira Mheuka,Shumaira Mheuka,66,77,ATA,19,Inglaterra
-Celtic,Callum Osmand,Callum Osmand,63,80,ATA,21,Inglaterra
-RB Salzburg,Christian Zawieschitzky,Christian Zawieschitzky,69,80,GOL,19,Áustria
-RB Salzburg,Christian Früchtl,Christian Früchtl,68,69,GOL,26,Alemanha
-RB Salzburg,Nikola Sarcevic,Nikola Sarcevic,57,69,GOL,19,Áustria
-RB Salzburg,Kévin Boma,Kévin Boma,75,76,ZAG,23,Togo
-RB Salzburg,Valentin Zabransky,Valentin Zabransky,70,81,ZAG,19,Áustria
-RB Salzburg,Tim Drexler,Tim Drexler,69,80,ZAG,21,Alemanha
-RB Salzburg,John Mellberg,John Mellberg,65,78,ZAG,20,Suécia
-RB Salzburg,Anrie Chase,Anrie Chase,69,77,ZAG,22,Japão
-RB Salzburg,Dominik Schmid,Dominik Schmid,71,71,LAT,28,Suíça
-RB Salzburg,Frans Krätzig,Frans Krätzig,73,78,LAT,23,Alemanha
-RB Salzburg,Nikolas Veratschnig,Nikolas Veratschnig,73,75,LAT,23,Áustria
-RB Salzburg,Leandro Morgalla,Leandro Morgalla,70,73,LAT,22,Alemanha
-RB Salzburg,Stefan Lainer,Stefan Lainer,71,71,LAT,34,Áustria
-RB Salzburg,Soumaïla Diabaté,Soumaïla Diabaté,72,79,VOL,21,Mali
-RB Salzburg,Bartosz Mazurek,Bartosz Mazurek,71,71,MEI,19,Polônia
-RB Salzburg,Abubakr Barry,Abubakr Barry,68,72,MEI,26,The Gambia
-RB Salzburg,Umut Tohumcu,Umut Tohumcu,72,74,MEI,22,Alemanha
-RB Salzburg,Justin Omoregie,Justin Omoregie,66,73,MEI,23,Áustria
-RB Salzburg,Sota Kitano,Sota Kitano,74,76,MEI,22,Japão
-RB Salzburg,Filip Matijasevic,Filip Matijasevic,65,78,MEI,18,Sérvia
-RB Salzburg,Gaoussou Diakité,Gaoussou Diakité,69,77,MEI,21,Mali
-RB Salzburg,Yorbe Vertessen,Yorbe Vertessen,74,79,ATA,25,Bélgica
-RB Salzburg,Aboubacar Camara,Aboubacar Camara,69,76,ATA,20,Burkina Faso
-RB Salzburg,Johannes Moser,Johannes Moser,60,73,ATA,18,Áustria
-RB Salzburg,Edmund Baidoo,Edmund Baidoo,74,76,ATA,20,Gana
-RB Salzburg,Damir Redzic,Damir Redzic,73,74,ATA,23,Hungria
-RB Salzburg,Jesper Lindstrøm,Jesper Lindstrøm,73,74,ATA,26,Dinamarca
-RB Salzburg,Karim Konaté,Karim Konaté,76,85,ATA,22,Costa do Marfim
-RB Salzburg,Haris Tabakovic,Haris Tabakovic,73,73,ATA,32,Bósnia
-RB Salzburg,Enrique Aguilar,Enrique Aguilar,65,77,ATA,19,Suíça
-Shakhtar Donetsk,Dmytro Riznyk,Dmytro Riznyk,74,78,GOL,27,Ucrânia
-Shakhtar Donetsk,Kiril Fesyun,Kiril Fesyun,69,76,GOL,24,Ucrânia
-Shakhtar Donetsk,Denys Tvardovskyi,Denys Tvardovskyi,63,73,GOL,23,Ucrânia
-Shakhtar Donetsk,Tymur Puzankov,Tymur Puzankov,60,60,GOL,23,Ucrânia
-Shakhtar Donetsk,Mykola Matvienko,Mykola Matvienko,77,77,ZAG,30,Ucrânia
-Shakhtar Donetsk,Valeriy Bondar,Valeriy Bondar,75,79,ZAG,27,Ucrânia
-Shakhtar Donetsk,Alan Matturro,Alan Matturro,71,74,ZAG,22,Uruguai
-Shakhtar Donetsk,Marlon,Marlon,72,72,ZAG,31,Brasil
-Shakhtar Donetsk,Alaa Ghram,Alaa Ghram,67,75,ZAG,25,Tunísia
-Shakhtar Donetsk,Pedro Henrique,Pedro Henrique,72,80,LAT,24,Brasil
-Shakhtar Donetsk,Irakli Azarovi,Irakli Azarovi,70,79,LAT,24,Geórgia
-Shakhtar Donetsk,Viktor Korniyenko,Viktor Korniyenko,64,64,LAT,27,Ucrânia
-Shakhtar Donetsk,Vinícius Tobias,Vinícius Tobias,74,81,LAT,22,Brasil
-Shakhtar Donetsk,Oleksandr Karavaev,Oleksandr Karavaev,73,73,LAT,34,Ucrânia
-Shakhtar Donetsk,Marlon Gomes,Marlon Gomes,75,83,MEI,22,Brasil
-Shakhtar Donetsk,Dmytro Kryskiv,Dmytro Kryskiv,72,78,MEI,26,Ucrânia
-Shakhtar Donetsk,Yegor Nazaryna,Yegor Nazaryna,69,69,MEI,29,Ucrânia
-Shakhtar Donetsk,Viktor Tsukanov,Viktor Tsukanov,65,83,MEI,20,Ucrânia
-Shakhtar Donetsk,Isaque,Isaque,71,77,MEI,19,Brasil
-Shakhtar Donetsk,Oleg Ocheretko,Oleg Ocheretko,75,76,MEI,23,Ucrânia
-Shakhtar Donetsk,Newerton,Newerton,74,82,ATA,21,Brasil
-Shakhtar Donetsk,Eguinaldo,Eguinaldo,73,82,ATA,22,Brasil
-Shakhtar Donetsk,Ryan Roberto,Ryan Roberto,65,78,ATA,18,Brasil
-Shakhtar Donetsk,Gleiker Mendoza,Gleiker Mendoza,73,76,ATA,24,Venezuela
-Shakhtar Donetsk,Alisson,Alisson,80,80,ATA,21,Brasil
-Shakhtar Donetsk,Gabriel Carvalho,Gabriel Carvalho,69,69,ATA,19,Brasil
-Shakhtar Donetsk,Pedrinho,Pedrinho,73,73,ATA,28,Brasil
-Shakhtar Donetsk,Lucas Ferreira,Lucas Ferreira,71,82,ATA,20,Brasil
-Shakhtar Donetsk,Bruninho,Bruninho,67,81,ATA,18,Brasil
-Shakhtar Donetsk,Prosper Obah,Prosper Obah,72,74,ATA,22,Nigéria
-Shakhtar Donetsk,Maryan Shved,Maryan Shved,69,69,ATA,29,Ucrânia
-Shakhtar Donetsk,Kauã Elias,Kauã Elias,74,83,ATA,20,Brasil
-Shakhtar Donetsk,Luca Meirelles,Luca Meirelles,71,80,ATA,19,Brasil
-Shakhtar Donetsk,Lassina Traoré,Lassina Traoré,71,76,ATA,25,Burkina Faso
-Olympiacos,Stefan Ortega,Stefan Ortega,77,77,GOL,34,Alemanha
-Olympiacos,Balsa Popovic,Balsa Popovic,70,71,GOL,26,Montenegro
-Olympiacos,Dimitrios Stournaras,Dimitrios Stournaras,63,65,GOL,25,Grécia
-Olympiacos,Lorenzo Pirola,Lorenzo Pirola,75,83,ZAG,24,Itália
-Olympiacos,David Carmo,David Carmo,76,80,ZAG,27,Angola
-Olympiacos,Panagiotis Retsos,Panagiotis Retsos,77,78,ZAG,28,Grécia
-Olympiacos,Zinedin Smajlović,Zinedin Smajlović,74,79,ZAG,22,Bósnia
-Olympiacos,Nair Tiknizyan,Nair Tiknizyan,76,76,LAT,27,Armênia
-Olympiacos,Bruno Onyemaechi,Bruno Onyemaechi,72,75,LAT,27,Nigéria
-Olympiacos,Marcus Pedersen,Marcus Pedersen,73,74,LAT,26,Noruega
-Olympiacos,Manolis Saliakas,Manolis Saliakas,73,73,LAT,30,Grécia
-Olympiacos,Santiago Hezze,Santiago Hezze,78,83,VOL,25,Argentina
-Olympiacos,Lorenzo Scipioni,Lorenzo Scipioni,69,78,VOL,21,Argentina
-Olympiacos,Theofanis Bakoulas,Theofanis Bakoulas,65,79,VOL,21,Grécia
-Olympiacos,Christos Filis,Christos Filis,55,65,VOL,19,Grécia
-Olympiacos,Gustavo Puerta,Gustavo Puerta,80,80,MEI,23,Colômbia
-Olympiacos,Remo Freuler,Remo Freuler,76,76,MEI,34,Suíça
-Olympiacos,Gustavo Sá,Gustavo Sá,80,85,MEI,22,Portugal
-Olympiacos,Chiquinho,Chiquinho,78,78,MEI,31,Portugal
-Olympiacos,Yusuf Yazıcı,Yusuf Yazıcı,75,75,MEI,29,Turquia
-Olympiacos,Konstantinos Fortounis,Konstantinos Fortounis,68,68,MEI,34,Grécia
-Olympiacos,Jota Silva,Jota Silva,75,76,ATA,27,Portugal
-Olympiacos,Joel Roca,Joel Roca,72,81,ATA,21,Espanha
-Olympiacos,Leon Bailey,Leon Bailey,78,78,ATA,29,Jamaica
-Olympiacos,Gelson Martins,Gelson Martins,78,78,ATA,31,Portugal
-Olympiacos,Armando González,Armando González,79,80,ATA,23,México
-Olympiacos,Marius Mouandilmadji,Marius Mouandilmadji,73,74,ATA,28,Chad
-Olympiacos,Clayton,Clayton,76,76,ATA,27,Brasil
-Olympiacos,Ayoub El Kaabi,Ayoub El Kaabi,80,80,ATA,33,Marrocos
-Olympiacos,Roman Yaremchuk,Roman Yaremchuk,74,74,ATA,30,Ucrânia
-Slavia Praga,Nazar Domchak,Nazar Domchak,67,78,GOL,19,Ucrânia
-Slavia Praga,Jakub Markovic,Jakub Markovic,72,76,GOL,25,Tchéquia
-Slavia Praga,Ondrej Kolar,Ondrej Kolar,67,67,GOL,32,Tchéquia
-Slavia Praga,Stepan Chaloupek,Stepan Chaloupek,76,76,ZAG,23,Tchéquia
-Slavia Praga,David Zima,David Zima,74,77,ZAG,26,Tchéquia
-Slavia Praga,Igoh Ogbu,Igoh Ogbu,75,78,ZAG,26,Nigéria
-Slavia Praga,Ange N'Guessan,Ange N'Guessan,74,75,ZAG,23,França
-Slavia Praga,Tomas Vlcek,Tomas Vlcek,73,77,ZAG,25,Tchéquia
-Slavia Praga,Mikulas Konecny,Mikulas Konecny,68,76,ZAG,20,Tchéquia
-Slavia Praga,Tomas Holes,Tomas Holes,76,76,ZAG,33,Tchéquia
-Slavia Praga,David Jurásek,David Jurásek,73,77,LAT,26,Tchéquia
-Slavia Praga,Hamidou Kante,Hamidou Kante,63,68,LAT,21,Senegal
-Slavia Praga,Jakub Kolísek,Jakub Kolísek,61,71,LAT,19,Tchéquia
-Slavia Praga,Samuel Isife,Samuel Isife,73,75,LAT,22,Nigéria
-Slavia Praga,Elias Pitak,Elias Pitak,65,72,LAT,20,Tchéquia
-Slavia Praga,David Moses,David Moses,75,75,MEI,22,Nigéria
-Slavia Praga,Michal Sadílek,Michal Sadílek,76,78,MEI,27,Tchéquia
-Slavia Praga,Wiktor Nowak,Wiktor Nowak,72,74,MEI,22,Polônia
-Slavia Praga,Toumani Diakité,Toumani Diakité,67,76,MEI,20,Costa do Marfim
-Slavia Praga,Oskar Kubiak,Oskar Kubiak,66,74,MEI,20,Polônia
-Slavia Praga,Mubarak Suleiman,Mubarak Suleiman,66,77,MEI,19,Nigéria
-Slavia Praga,Lukas Provod,Lukas Provod,78,78,ATA,30,Tchéquia
-Slavia Praga,Danijel Sturm,Danijel Sturm,71,71,ATA,27,Eslovênia
-Slavia Praga,Emmanuel Ayaosi,Emmanuel Ayaosi,72,75,ATA,22,Nigéria
-Slavia Praga,Pavel Kacor,Pavel Kacor,67,75,ATA,20,Tchéquia
-Slavia Praga,Adonija Ouanda,Adonija Ouanda,66,72,ATA,21,Canadá
-Slavia Praga,Ivan Schranz,Ivan Schranz,73,73,ATA,33,Eslováquia
-Slavia Praga,Mojmír Chytil,Mojmír Chytil,74,76,ATA,27,Tchéquia
-Slavia Praga,Tomas Chory,Tomas Chory,75,75,ATA,31,Tchéquia
-Estrela Vermelha,Matheus,Matheus,74,74,GOL,34,Brasil
-Estrela Vermelha,Ivan Gutesa,Ivan Gutesa,68,71,GOL,24,Sérvia
-Estrela Vermelha,Milos Veljkovic,Milos Veljkovic,74,74,ZAG,31,Sérvia
-Estrela Vermelha,Franklin Tebo Uchenna,Franklin Tebo Uchenna,73,74,ZAG,26,Nigéria
-Estrela Vermelha,Stefan Gudelj,Stefan Gudelj,65,75,ZAG,20,Sérvia
-Estrela Vermelha,Yuta Nakayama,Yuta Nakayama,70,70,ZAG,29,Japão
-Estrela Vermelha,Derrick Luckassen,Derrick Luckassen,69,69,ZAG,31,Gana
-Estrela Vermelha,Adem Avdic,Adem Avdic,72,82,LAT,19,Sérvia
-Estrela Vermelha,Mihailo Ristic,Mihailo Ristic,73,73,LAT,31,Sérvia
-Estrela Vermelha,Tomás Händel,Tomás Händel,73,75,VOL,25,Portugal
-Estrela Vermelha,Rade Krunic,Rade Krunic,75,75,VOL,33,Bósnia
-Estrela Vermelha,Mahmudu Bajo,Mahmudu Bajo,70,72,VOL,22,The Gambia
-Estrela Vermelha,Matej Gashtarov,Matej Gashtarov,66,74,VOL,20,Macedônia do Norte
-Estrela Vermelha,Timi Max Elsnik,Timi Max Elsnik,75,75,MEI,28,Eslovênia
-Estrela Vermelha,Mohammed Abu Fani,Mohammed Abu Fani,72,72,MEI,28,Israel
-Estrela Vermelha,Vasilije Kostov,Vasilije Kostov,72,86,MEI,18,Sérvia
-Estrela Vermelha,Muhammed Cham,Muhammed Cham,74,75,MEI,26,Áustria
-Estrela Vermelha,Mirko Ivanic,Mirko Ivanic,77,77,MEI,33,Montenegro
-Estrela Vermelha,Luka Ilic,Luka Ilic,70,73,MEI,27,Sérvia
-Estrela Vermelha,Aleksandar Katai,Aleksandar Katai,72,72,MEI,35,Sérvia
-Estrela Vermelha,Ye-geon Kim,Ye-geon Kim,57,70,MEI,18,Coreia do Sul
-Estrela Vermelha,Vladimir Lucic,Vladimir Lucic,69,72,ATA,24,Sérvia
-Estrela Vermelha,Kristiyan Balov,Kristiyan Balov,66,74,ATA,20,Bulgária
-Estrela Vermelha,Osman Bukari,Osman Bukari,72,73,ATA,27,Gana
-Estrela Vermelha,Loizos Loizou,Loizos Loizou,71,72,ATA,23,Chipre
-Estrela Vermelha,Dimitrije Saric,Dimitrije Saric,58,72,ATA,18,Sérvia
-Estrela Vermelha,Bamba Dieng,Bamba Dieng,78,79,ATA,26,Senegal
-Estrela Vermelha,Marko Arnautovic,Marko Arnautovic,78,78,ATA,37,Áustria
-Copenhague,Diant Ramaj,Diant Ramaj,73,81,GOL,25,Alemanha
-Copenhague,Rúnar Alex Rúnarsson,Rúnar Alex Rúnarsson,67,67,GOL,31,Islândia
-Copenhague,Tobias Breum-Harild,Tobias Breum-Harild,51,63,GOL,19,Dinamarca
-Copenhague,Junnosuke Suzuki,Junnosuke Suzuki,72,75,ZAG,23,Japão
-Copenhague,Felix Beijmo,Felix Beijmo,73,73,ZAG,28,Suécia
-Copenhague,Asger Sørensen,Asger Sørensen,69,69,ZAG,30,Dinamarca
-Copenhague,Ákos Markgráf,Ákos Markgráf,65,70,ZAG,21,Hungria
-Copenhague,Marcos López,Marcos López,73,74,LAT,26,Peru
-Copenhague,Birger Meling,Birger Meling,70,70,LAT,31,Noruega
-Copenhague,Rodrigo Huescas,Rodrigo Huescas,75,76,LAT,23,México
-Copenhague,Kenay Myrie,Kenay Myrie,64,72,LAT,20,Costa Rica
-Copenhague,William Clem,William Clem,73,75,VOL,22,Dinamarca
-Copenhague,Magnus Mattsson,Magnus Mattsson,74,74,MEI,27,Dinamarca
-Copenhague,Mads Emil Madsen,Mads Emil Madsen,73,73,MEI,28,Dinamarca
-Copenhague,Alex Král,Alex Král,74,75,MEI,28,Tchéquia
-Copenhague,Hunor Németh,Hunor Németh,62,71,MEI,19,Hungria
-Copenhague,Thomas Delaney,Thomas Delaney,71,71,MEI,35,Dinamarca
-Copenhague,Marvin Nasnas,Marvin Nasnas,53,70,MEI,16,Dinamarca
-Copenhague,Maher Carrizo,Maher Carrizo,70,80,ATA,20,Argentina
-Copenhague,Thapelo Maseko,Thapelo Maseko,71,71,ATA,23,África do Sul
-Copenhague,Mohamed Elyounoussi,Mohamed Elyounoussi,76,76,ATA,32,Noruega
-Copenhague,Viktor Dadason,Viktor Dadason,67,78,ATA,18,Islândia
-Copenhague,Geovanni Vianney Ndjee,Geovanni Vianney Ndjee,60,70,ATA,19,Camarões
-Copenhague,Andreas Cornelius,Andreas Cornelius,66,66,ATA,33,Dinamarca
-Young Boys,Marvin Keller,Marvin Keller,72,81,GOL,24,Suíça
-Young Boys,Joël Mall,Joël Mall,65,65,GOL,35,Chipre
-Young Boys,Dario Marzino,Dario Marzino,57,59,GOL,30,Suíça
-Young Boys,Moritz Jenz,Moritz Jenz,76,79,ZAG,27,Alemanha
-Young Boys,Cédric Zesiger,Cédric Zesiger,76,79,ZAG,28,Suíça
-Young Boys,Gregory Wüthrich,Gregory Wüthrich,73,73,ZAG,31,Suíça
-Young Boys,Sandro Lauper,Sandro Lauper,70,70,ZAG,30,Suíça
-Young Boys,Loris Benito,Loris Benito,70,70,ZAG,34,Suíça
-Young Boys,Stefan Bukinac,Stefan Bukinac,71,74,LAT,21,Sérvia
-Young Boys,Lewin Blum,Lewin Blum,69,76,LAT,25,Suíça
-Young Boys,Isaac Schmidt,Isaac Schmidt,71,72,LAT,26,Suíça
-Young Boys,Ryan Andrews,Ryan Andrews,68,75,LAT,22,Inglaterra
-Young Boys,Saidy Janko,Saidy Janko,67,67,LAT,31,The Gambia
-Young Boys,Benjamin Kabeya,Benjamin Kabeya,59,61,LAT,25,Suíça
-Young Boys,Edimilson Fernandes,Edimilson Fernandes,74,74,VOL,30,Suíça
-Young Boys,Noë Tschanz,Noë Tschanz,58,66,VOL,20,Suíça
-Young Boys,Dominik Pech,Dominik Pech,68,77,MEI,20,Tchéquia
-Young Boys,Armin Gigovic,Armin Gigovic,72,79,MEI,24,Bósnia
-Young Boys,Christian Fassnacht,Christian Fassnacht,72,72,MEI,33,Suíça
-Young Boys,Edin Etoski,Edin Etoski,52,64,MEI,19,Suíça
-Young Boys,Alan Virginius,Alan Virginius,73,77,MEI,23,França
-Young Boys,Alvyn Sanches,Alvyn Sanches,78,84,MEI,23,Suíça
-Young Boys,Bahereba Guirassy,Bahereba Guirassy,70,79,ATA,20,França
-Young Boys,Samuel Essende,Samuel Essende,72,72,ATA,28,RD Congo
-Young Boys,Kaly Sène,Kaly Sène,72,74,ATA,25,Senegal
-Young Boys,Facinet Conte,Facinet Conte,63,76,ATA,21,Guiné
-Bodø/Glimt,Nikita Haikin,Nikita Haikin,74,75,GOL,31,Rússia
-Bodø/Glimt,Julian Faye Lund,Julian Faye Lund,66,69,GOL,27,Noruega
-Bodø/Glimt,Isak Sjong,Isak Sjong,56,75,GOL,19,Noruega
-Bodø/Glimt,Odin Bjørtuft,Odin Bjørtuft,70,74,ZAG,27,Noruega
-Bodø/Glimt,Villads Nielsen,Villads Nielsen,68,80,ZAG,21,Dinamarca
-Bodø/Glimt,Jostein Gundersen,Jostein Gundersen,71,72,ZAG,30,Noruega
-Bodø/Glimt,Haitam Aleesami,Haitam Aleesami,68,68,ZAG,35,Noruega
-Bodø/Glimt,Fredrik Bjørkan,Fredrik Bjørkan,74,75,LAT,28,Noruega
-Bodø/Glimt,Isak Dybvik Määttä,Isak Dybvik Määttä,67,73,LAT,25,Noruega
-Bodø/Glimt,Fredrik Sjøvold,Fredrik Sjøvold,76,76,LAT,23,Noruega
-Bodø/Glimt,Kasper Solhaug,Kasper Solhaug,53,63,LAT,19,Noruega
-Bodø/Glimt,Patrick Berg,Patrick Berg,77,80,VOL,28,Noruega
-Bodø/Glimt,Joshua Kitolano,Joshua Kitolano,71,73,VOL,25,Noruega
-Bodø/Glimt,Håkon Evjen,Håkon Evjen,73,77,MEI,26,Noruega
-Bodø/Glimt,Sondre Auklend,Sondre Auklend,74,77,MEI,23,Noruega
-Bodø/Glimt,Magnus Riisnæs,Magnus Riisnæs,68,79,MEI,22,Noruega
-Bodø/Glimt,Sondre Brunstad Fet,Sondre Brunstad Fet,70,70,MEI,29,Noruega
-Bodø/Glimt,Ulrik Saltnes,Ulrik Saltnes,72,72,MEI,34,Noruega
-Bodø/Glimt,Assan Sanyang,Assan Sanyang,52,63,MEI,18,The Gambia
-Bodø/Glimt,Jens Petter Hauge,Jens Petter Hauge,74,77,ATA,27,Noruega
-Bodø/Glimt,Ole Didrik Blomberg,Ole Didrik Blomberg,69,72,ATA,26,Noruega
-Bodø/Glimt,Joel Mvuka,Joel Mvuka,71,74,ATA,24,Noruega
-Bodø/Glimt,August Mikkelsen,August Mikkelsen,68,73,ATA,26,Noruega
-Bodø/Glimt,Ola Brynhildsen,Ola Brynhildsen,70,73,ATA,27,Noruega
-Bodø/Glimt,Andreas Helmersen,Andreas Helmersen,66,67,ATA,28,Noruega
-Dínamo Zagreb,Dominik Kotarski,Dominik Kotarski,77,81,GOL,26,Croácia
-Dínamo Zagreb,Ivan Nevistic,Ivan Nevistic,70,72,GOL,28,Croácia
-Dínamo Zagreb,Ivan Filipovic,Ivan Filipovic,65,65,GOL,32,Croácia
-Dínamo Zagreb,Danijel Zagorac,Danijel Zagorac,61,61,GOL,39,Croácia
-Dínamo Zagreb,Sergi Domínguez,Sergi Domínguez,74,80,ZAG,21,Espanha
-Dínamo Zagreb,Niko Galesic,Niko Galesic,70,74,ZAG,25,Croácia
-Dínamo Zagreb,Scott McKenna,Scott McKenna,75,77,ZAG,30,Escócia
-Dínamo Zagreb,Stjepan Radeljic,Stjepan Radeljic,72,72,ZAG,29,Bósnia
-Dínamo Zagreb,Borna Orlic,Borna Orlic,55,63,ZAG,20,Croácia
-Dínamo Zagreb,Matteo Pérez Vinlöf,Matteo Pérez Vinlöf,67,81,LAT,20,Suécia
-Dínamo Zagreb,Bruno Goda,Bruno Goda,70,70,LAT,28,Croácia
-Dínamo Zagreb,Moris Valincic,Moris Valincic,73,76,LAT,23,Croácia
-Dínamo Zagreb,Noa Mikic,Noa Mikic,62,79,LAT,19,Croácia
-Dínamo Zagreb,Paul Tabinas,Paul Tabinas,60,63,LAT,24,Philippines
-Dínamo Zagreb,Kirill Kravtsov,Kirill Kravtsov,68,71,VOL,24,Rússia
-Dínamo Zagreb,Josip Misic,Josip Misic,70,70,VOL,32,Croácia
-Dínamo Zagreb,Miha Zajc,Miha Zajc,72,72,MEI,32,Eslovênia
-Dínamo Zagreb,Egor Molchan,Egor Molchan,57,69,MEI,18,Belarus
-Dínamo Zagreb,Luka Stojkovic,Luka Stojkovic,76,80,MEI,23,Croácia
-Dínamo Zagreb,Luka Ivanušec,Luka Ivanušec,72,73,MEI,27,Croácia
-Dínamo Zagreb,Lukas Kacavenda,Lukas Kacavenda,71,75,MEI,23,Croácia
-Dínamo Zagreb,Robert Mudrazija,Robert Mudrazija,64,64,MEI,29,Croácia
-Dínamo Zagreb,Sven Sunta,Sven Sunta,59,69,MEI,19,Eslovênia
-Dínamo Zagreb,Arbër Hoxha,Arbër Hoxha,68,69,ATA,28,Albânia
-Dínamo Zagreb,Noah Nsoki,Noah Nsoki,62,73,ATA,19,França
-Dínamo Zagreb,Mislav Orsic,Mislav Orsic,68,68,ATA,33,Croácia
-Dínamo Zagreb,Mateo Lisica,Mateo Lisica,70,76,ATA,23,Croácia
-Dínamo Zagreb,Iker Almena,Iker Almena,66,78,ATA,22,Espanha
-Dínamo Zagreb,Dani Rodríguez,Dani Rodríguez,65,70,ATA,21,Espanha
-Dínamo Zagreb,Fran Topic,Fran Topic,68,77,ATA,22,Croácia
-Dínamo Zagreb,Dion Beljo,Dion Beljo,73,79,ATA,24,Croácia
-Dínamo Zagreb,Aleks Stojakovic,Aleks Stojakovic,67,69,ATA,22,Eslovênia
-Dínamo Zagreb,Smail Prevljak,Smail Prevljak,67,67,ATA,31,Bósnia
-Rangers,James Tavernier,James Tavernier,77,77,LAT,34,Inglaterra
-Rangers,Nicolas Raskin,Nicolas Raskin,77,82,VOL,25,Bélgica
-Rangers,Joseph Rothwell,Joseph Rothwell,74,74,VOL,31,Inglaterra
-Rangers,Mohamed Diomande,Mohamed Diomande,74,84,VOL,24,Costa do Marfim
-Rangers,Nedim Bajrami,Nedim Bajrami,73,76,MEI,27,Albânia
-Rangers,Connor Barron,Connor Barron,72,81,VOL,23,Escócia
-Rangers,Dujon Sterling,Dujon Sterling,73,77,LAT,26,Inglaterra
-Rangers,Lyall Cameron,Lyall Cameron,67,77,MEI,23,Escócia
-Rangers,John Souttar,John Souttar,73,74,ZAG,29,Escócia
-Rangers,Oliver Antman,Oliver Antman,75,81,MEI,24,Finlândia
-Rangers,Bojan Miovski,Bojan Miovski,72,75,ATA,27,Macedônia do Norte
-Rangers,Thelonious Aasgaard,Thelonious Aasgaard,68,75,MEI,24,Noruega
-Rangers,Maximilian Aarons,Maximilian Aarons,72,75,LAT,26,Inglaterra
-Rangers,Danilo,Danilo,73,75,ATA,27,Brasil
-Rangers,Rabbi Matondo,Rabbi Matondo,69,72,MEI,25,País de Gales
-Rangers,Djeidi Gassama,Djeidi Gassama,71,80,MEI,22,França
-Rangers,Youssef Chermiti,Youssef Chermiti,71,77,ATA,22,Portugal
-Rangers,Jayden Meghoma,Jayden Meghoma,64,78,LAT,20,Inglaterra
-Rangers,Nasser Djiga,Nasser Djiga,70,78,ZAG,23,Burkina Faso
-Rangers,Bailey Rice,Bailey Rice,61,83,VOL,19,Escócia
-Rangers,Clinton Nsiala,Clinton Nsiala,63,78,ZAG,22,França
-Rangers,Emmanuel Fernandez,Emmanuel Fernandez,64,71,ZAG,24,Inglaterra
-Rangers,Findlay Curtis,Findlay Curtis,63,84,ATA,19,Escócia
-Rangers,Liam Kelly,Liam Kelly,67,67,GOL,30,Escócia
-Sturm Graz,Otar Kiteishvili,Otar Kiteishvili,75,75,MEI,30,Geórgia
-Sturm Graz,Tomi Horvat,Tomi Horvat,73,76,MEI,27,Eslovênia
-Sturm Graz,Tochi Chukwuani,Tochi Chukwuani,68,77,MEI,23,Dinamarca
-Sturm Graz,Stefan Hierländer,Stefan Hierländer,65,65,MEI,35,Áustria
-Sturm Graz,Maurice Malone,Maurice Malone,70,74,ATA,25,Alemanha
-Sturm Graz,Dimitri Lavalée,Dimitri Lavalée,72,72,LAT,29,Bélgica
-Sturm Graz,Jon Gorenc Stanković,Jon Gorenc Stanković,74,74,VOL,30,Eslovênia
-Sturm Graz,Emir Karić,Emir Karić,66,66,LAT,29,Áustria
-Sturm Graz,Julius Beck,Julius Beck,60,77,MEI,21,Dinamarca
-Sturm Graz,Emanuel Aiwu,Emanuel Aiwu,68,72,ZAG,25,Áustria
-Sturm Graz,Seedyahmed Jatta,Seedyahmed Jatta,65,74,ATA,23,Noruega
-Sturm Graz,Jacob Hödl,Jacob Hödl,58,78,MEI,19,Áustria
-Sturm Graz,Filip Rózga,Filip Rózga,64,79,ATA,19,Polônia
-Sturm Graz,Alexandar Borković,Alexandar Borković,64,67,ZAG,27,Áustria
-Sturm Graz,Leon Grgić,Leon Grgić,64,78,ATA,20,Croácia
-Sturm Graz,Axel Kayombo,Axel Kayombo,64,79,ATA,20,França
-Sturm Graz,Kristjan Bendra,Kristjan Bendra,59,73,LAT,20,Eslovênia
-Sturm Graz,Niklas Geyrhofer,Niklas Geyrhofer,68,72,ZAG,26,Áustria
-Sturm Graz,Arjan Malić,Arjan Malić,63,78,LAT,20,Bósnia
-Sturm Graz,Belmin Beganović,Belmin Beganović,56,70,ATA,21,Bósnia
-Sturm Graz,Gabriel Haider,Gabriel Haider,58,66,ZAG,24,Áustria
-Sturm Graz,Matteo Bignetti,Matteo Bignetti,61,69,GOL,22,Áustria
-Sturm Graz,Daniil Khudyakov,Daniil Khudyakov,63,75,GOL,22,Rússia
-Sturm Graz,Elias Lorenz,Elias Lorenz,56,69,GOL,20,Áustria
-Dynamo Kyiv,Mykola Shaparenko,Mykola Shaparenko,78,79,MEI,27,Ucrânia
-Dynamo Kyiv,Volodymyr Brazhko,Volodymyr Brazhko,75,83,VOL,24,Ucrânia
-Dynamo Kyiv,Vitaliy Buyalskyi,Vitaliy Buyalskyi,76,76,MEI,33,Ucrânia
-Dynamo Kyiv,Oleksandr Pikhalyonok,Oleksandr Pikhalyonok,75,75,MEI,29,Ucrânia
-Dynamo Kyiv,Andriy Yarmolenko,Andriy Yarmolenko,73,73,MEI,36,Ucrânia
-Dynamo Kyiv,Oleksandr Karavaiev,Oleksandr Karavaiev,73,73,LAT,34,Ucrânia
-Dynamo Kyiv,Mykola Mykhailenko,Mykola Mykhailenko,68,75,MEI,25,Ucrânia
-Dynamo Kyiv,Vladyslav Dubinchak,Vladyslav Dubinchak,71,71,LAT,28,Ucrânia
-Dynamo Kyiv,Oleksandr Yatsyk,Oleksandr Yatsyk,69,77,MEI,23,Ucrânia
-Dynamo Kyiv,Kostiantyn Vivcharenko,Kostiantyn Vivcharenko,69,74,LAT,24,Ucrânia
-Dynamo Kyiv,Maksym Bragaru,Maksym Bragaru,69,76,MEI,24,Ucrânia
-Dynamo Kyiv,Valentyn Rubchynskyi,Valentyn Rubchynskyi,67,75,MEI,24,Ucrânia
-Dynamo Kyiv,Oleksandr Tymchyk,Oleksandr Tymchyk,72,72,LAT,29,Ucrânia
-Dynamo Kyiv,Á. Torres,Á. Torres,66,69,MEI,26,Colômbia
-Dynamo Kyiv,Nazar Voloshyn,Nazar Voloshyn,70,80,MEI,23,Ucrânia
-Dynamo Kyiv,Eduardo Guerrero,Eduardo Guerrero,69,72,ATA,26,Panamá
-Dynamo Kyiv,Denys Popov,Denys Popov,75,79,ZAG,27,Ucrânia
-Dynamo Kyiv,Eric Ramírez,Eric Ramírez,66,66,ATA,27,Venezuela
-Dynamo Kyiv,Vladyslav Kabaev,Vladyslav Kabaev,70,70,MEI,30,Ucrânia
-Dynamo Kyiv,Taras Mykhavko,Taras Mykhavko,70,83,ZAG,21,Ucrânia
-Dynamo Kyiv,Matviy Ponomarenko,Matviy Ponomarenko,65,82,ATA,20,Ucrânia
-Dynamo Kyiv,Vladislav Blănuță,Vladislav Blănuță,68,74,ATA,24,Romênia
-Dynamo Kyiv,Kristian Bilovar,Kristian Bilovar,68,74,ZAG,25,Ucrânia
-Dynamo Kyiv,Samba Diallo,Samba Diallo,63,71,MEI,23,Senegal
-Dynamo Kyiv,Aliou Thiaré,Aliou Thiaré,64,77,ZAG,22,Senegal
-Dynamo Kyiv,Ruslan Neshcheret,Ruslan Neshcheret,70,77,GOL,24,Ucrânia
-Dynamo Kyiv,Vyacheslav Surkis,Vyacheslav Surkis,54,66,GOL,20,Ucrânia
-Dynamo Kyiv,Valentyn Morgun,Valentyn Morgun,60,67,GOL,24,Ucrânia
-Dynamo Kyiv,Denys Ignatenko,Denys Ignatenko,60,69,GOL,23,Ucrânia
-PAOK,Mohamed Camara,Mohamed Camara,74,74,MEI,29,Guiné
-PAOK,Andrija Živković,Andrija Živković,78,78,MEI,30,Sérvia
-PAOK,Magomed Ozdoev,Magomed Ozdoev,74,74,MEI,33,Rússia
-PAOK,Rahman Baba,Rahman Baba,76,76,LAT,32,Gana
-PAOK,Greg Taylor,Greg Taylor,74,75,LAT,28,Escócia
-PAOK,Taison,Taison,75,75,MEI,38,Brasil
-PAOK,Soualiho Meïté,Soualiho Meïté,75,75,VOL,32,França
-PAOK,Jonjoe Kenny,Jonjoe Kenny,72,72,LAT,29,Inglaterra
-PAOK,Dimitrios Pelkas,Dimitrios Pelkas,72,72,MEI,32,Grécia
-PAOK,Kiril Despodov,Kiril Despodov,77,77,ATA,29,Bulgária
-PAOK,Tomasz Kędziora,Tomasz Kędziora,75,75,ZAG,32,Polônia
-PAOK,Alessandro Bianco,Alessandro Bianco,71,80,MEI,23,Itália
-PAOK,Giannis Michailidis,Giannis Michailidis,72,75,ZAG,26,Grécia
-PAOK,Fedor Chalov,Fedor Chalov,73,74,ATA,28,Rússia
-PAOK,Georgios Giakoumakis,Georgios Giakoumakis,75,75,ATA,31,Grécia
-PAOK,Joan Sastre,Joan Sastre,71,71,LAT,29,Espanha
-PAOK,Konstantinos Thymianis,Konstantinos Thymianis,68,74,VOL,25,Grécia
-PAOK,Alessandro Vogliacco,Alessandro Vogliacco,69,72,ZAG,27,Itália
-PAOK,Dejan Lovren,Dejan Lovren,72,72,ZAG,37,Croácia
-PAOK,Balde Mahamadou,Balde Mahamadou,61,80,MEI,19,Espanha
-PAOK,Dimitrios Chatsidis,Dimitrios Chatsidis,62,76,ATA,20,Grécia
-PAOK,Dimitrios Bataoulas,Dimitrios Bataoulas,62,78,ZAG,19,Grécia
-PAOK,Dimitrios Kottas,Dimitrios Kottas,63,78,ZAG,21,Grécia
-PAOK,Anestis Mythou,Anestis Mythou,61,80,ATA,19,Grécia
-PAOK,Jiří Pavlenka,Jiří Pavlenka,74,74,GOL,34,Tchéquia
-PAOK,Luka Gugeshashvili,Luka Gugeshashvili,70,73,GOL,27,Geórgia
-PAOK,Antonis Tsiftsis,Antonis Tsiftsis,65,70,GOL,27,Grécia
-Sparta Praga,Matěj Ryneš,Matěj Ryneš,73,78,MEI,25,Tchéquia
-Sparta Praga,Kasper Kairinen,Kasper Kairinen,75,75,MEI,27,Finlândia
-Sparta Praga,Á. Preciado,Á. Preciado,75,75,MEI,28,Equador
-Sparta Praga,Jaroslav Zelený,Jaroslav Zelený,72,72,ZAG,33,Tchéquia
-Sparta Praga,Lukáš Sadílek,Lukáš Sadílek,73,73,MEI,30,Tchéquia
-Sparta Praga,Lukáš Haraslín,Lukáš Haraslín,78,78,ATA,30,Eslováquia
-Sparta Praga,Patrik Vydra,Patrik Vydra,70,76,MEI,23,Tchéquia
-Sparta Praga,Pavel Kadeřábek,Pavel Kadeřábek,74,74,LAT,34,Tchéquia
-Sparta Praga,Magnus Andersen,Magnus Andersen,70,71,MEI,27,Dinamarca
-Sparta Praga,Veljko Birmančević,Veljko Birmančević,76,76,ATA,28,Sérvia
-Sparta Praga,Jan Kuchta,Jan Kuchta,73,73,ATA,29,Tchéquia
-Sparta Praga,Filip Panák,Filip Panák,74,74,ZAG,30,Tchéquia
-Sparta Praga,Sivert Mannsverk,Sivert Mannsverk,68,76,VOL,24,Noruega
-Sparta Praga,Elias Cobbaut,Elias Cobbaut,73,76,ZAG,28,Bélgica
-Sparta Praga,Martin Suchomel,Martin Suchomel,69,75,LAT,23,Tchéquia
-Sparta Praga,Emmanuel Uchenna,Emmanuel Uchenna,70,76,ZAG,22,Nigéria
-Sparta Praga,John Mercado,John Mercado,70,79,ATA,24,Equador
-Sparta Praga,Adam Ševínský,Adam Ševínský,67,74,ZAG,22,Tchéquia
-Sparta Praga,Dominik Hollý,Dominik Hollý,56,62,MEI,22,Eslováquia
-Sparta Praga,Garang Kuol,Garang Kuol,64,74,ATA,21,Austrália
-Sparta Praga,Kevin-Prince Milla,Kevin-Prince Milla,58,67,ATA,22,Camarões
-Sparta Praga,Santiago Eneme,Santiago Eneme,60,65,MEI,25,Guiné Equatorial
-Sparta Praga,Peter Vindahl,Peter Vindahl,75,77,GOL,28,Dinamarca
-Sparta Praga,Jakub Surovčík,Jakub Surovčík,65,73,GOL,24,Eslováquia
-Sparta Praga,Vojtěch Vorel,Vojtěch Vorel,69,71,GOL,30,Tchéquia
+clube,nome_original,nome,overall,potencial,posicao,idade,pais,id
+Celtic,Sam Johnstone,Sam Johnstone,72,72,GOL,33,Inglaterra,R12777
+Celtic,Viljami Sinisalo,Viljami Sinisalo,69,77,GOL,25,Finlândia,R12778
+Celtic,Ross Doohan,Ross Doohan,61,63,GOL,28,Escócia,R12779
+Celtic,Cameron Carter-Vickers,Cameron Carter-Vickers,79,82,ZAG,28,EUA,R12780
+Celtic,Auston Trusty,Auston Trusty,74,77,ZAG,28,EUA,R12781
+Celtic,Liam Scales,Liam Scales,75,77,ZAG,28,Irlanda,R12782
+Celtic,Dane Murray,Dane Murray,68,78,ZAG,23,Escócia,R12783
+Celtic,Kieran Tierney,Kieran Tierney,77,77,LAT,29,Escócia,R12784
+Celtic,Landon Emenalo,Landon Emenalo,58,70,LAT,18,Inglaterra,R12785
+Celtic,Alistair Johnston,Alistair Johnston,78,81,LAT,28,Canadá,R12786
+Celtic,Colby Donovan,Colby Donovan,69,83,LAT,20,Escócia,R12787
+Celtic,Jordan Lotomba,Jordan Lotomba,71,71,LAT,28,Suíça,R12788
+Celtic,Anthony Ralston,Anthony Ralston,71,74,LAT,27,Escócia,R12789
+Celtic,Callum McGregor,Callum McGregor,79,79,VOL,33,Escócia,R12790
+Celtic,Mika Baur,Mika Baur,71,71,MEI,22,Alemanha,R12791
+Celtic,Oliver Sørensen,Oliver Sørensen,75,78,MEI,24,Dinamarca,R12792
+Celtic,Joël van den Berg,Joël van den Berg,67,79,MEI,19,Holanda,R12793
+Celtic,Luke McCowan,Luke McCowan,73,74,MEI,28,Escócia,R12794
+Celtic,Alex Oxlade-Chamberlain,Alex Oxlade-Chamberlain,72,72,MEI,33,Inglaterra,R12795
+Celtic,Benjamin Nygren,Benjamin Nygren,73,79,MEI,25,Suécia,R12796
+Celtic,Sebastian Tounekti,Sebastian Tounekti,69,76,ATA,24,Tunísia,R12797
+Celtic,Jota,Jota,77,78,ATA,27,Portugal,R12798
+Celtic,Haissem Hassan,Haissem Hassan,72,79,ATA,24,Egito,R12799
+Celtic,James Forrest,James Forrest,72,72,ATA,35,Escócia,R12800
+Celtic,Kasper Høgh,Kasper Høgh,79,81,ATA,25,Dinamarca,R12801
+Celtic,Camilo Durán,Camilo Durán,74,77,ATA,24,Colômbia,R12802
+Celtic,Shumaira Mheuka,Shumaira Mheuka,66,77,ATA,19,Inglaterra,R12803
+Celtic,Callum Osmand,Callum Osmand,63,80,ATA,21,Inglaterra,R12804
+RB Salzburg,Christian Zawieschitzky,Christian Zawieschitzky,69,80,GOL,19,Áustria,R12895
+RB Salzburg,Christian Früchtl,Christian Früchtl,68,69,GOL,26,Alemanha,R12896
+RB Salzburg,Nikola Sarcevic,Nikola Sarcevic,57,69,GOL,19,Áustria,R12897
+RB Salzburg,Kévin Boma,Kévin Boma,75,76,ZAG,23,Togo,R12898
+RB Salzburg,Valentin Zabransky,Valentin Zabransky,70,81,ZAG,19,Áustria,R12899
+RB Salzburg,Tim Drexler,Tim Drexler,69,80,ZAG,21,Alemanha,R12900
+RB Salzburg,John Mellberg,John Mellberg,65,78,ZAG,20,Suécia,R12901
+RB Salzburg,Anrie Chase,Anrie Chase,69,77,ZAG,22,Japão,R12902
+RB Salzburg,Dominik Schmid,Dominik Schmid,71,71,LAT,28,Suíça,R12903
+RB Salzburg,Frans Krätzig,Frans Krätzig,73,78,LAT,23,Alemanha,R12904
+RB Salzburg,Nikolas Veratschnig,Nikolas Veratschnig,73,75,LAT,23,Áustria,R12905
+RB Salzburg,Leandro Morgalla,Leandro Morgalla,70,73,LAT,22,Alemanha,R12906
+RB Salzburg,Stefan Lainer,Stefan Lainer,71,71,LAT,34,Áustria,R12907
+RB Salzburg,Soumaïla Diabaté,Soumaïla Diabaté,72,79,VOL,21,Mali,R12908
+RB Salzburg,Bartosz Mazurek,Bartosz Mazurek,71,71,MEI,19,Polônia,R12909
+RB Salzburg,Abubakr Barry,Abubakr Barry,68,72,MEI,26,The Gambia,R12910
+RB Salzburg,Umut Tohumcu,Umut Tohumcu,72,74,MEI,22,Alemanha,R12911
+RB Salzburg,Justin Omoregie,Justin Omoregie,66,73,MEI,23,Áustria,R12912
+RB Salzburg,Sota Kitano,Sota Kitano,74,76,MEI,22,Japão,R12913
+RB Salzburg,Filip Matijasevic,Filip Matijasevic,65,78,MEI,18,Sérvia,R12914
+RB Salzburg,Gaoussou Diakité,Gaoussou Diakité,69,77,MEI,21,Mali,R12915
+RB Salzburg,Yorbe Vertessen,Yorbe Vertessen,74,79,ATA,25,Bélgica,R12916
+RB Salzburg,Aboubacar Camara,Aboubacar Camara,69,76,ATA,20,Burkina Faso,R12917
+RB Salzburg,Johannes Moser,Johannes Moser,60,73,ATA,18,Áustria,R12918
+RB Salzburg,Edmund Baidoo,Edmund Baidoo,74,76,ATA,20,Gana,R12919
+RB Salzburg,Damir Redzic,Damir Redzic,73,74,ATA,23,Hungria,R12920
+RB Salzburg,Jesper Lindstrøm,Jesper Lindstrøm,73,74,ATA,26,Dinamarca,R12921
+RB Salzburg,Karim Konaté,Karim Konaté,76,85,ATA,22,Costa do Marfim,R12922
+RB Salzburg,Haris Tabakovic,Haris Tabakovic,73,73,ATA,32,Bósnia,R12923
+RB Salzburg,Enrique Aguilar,Enrique Aguilar,65,77,ATA,19,Suíça,R12924
+Shakhtar Donetsk,Dmytro Riznyk,Dmytro Riznyk,74,78,GOL,27,Ucrânia,R12925
+Shakhtar Donetsk,Kiril Fesyun,Kiril Fesyun,69,76,GOL,24,Ucrânia,R12926
+Shakhtar Donetsk,Denys Tvardovskyi,Denys Tvardovskyi,63,73,GOL,23,Ucrânia,R12927
+Shakhtar Donetsk,Tymur Puzankov,Tymur Puzankov,60,60,GOL,23,Ucrânia,R12928
+Shakhtar Donetsk,Mykola Matvienko,Mykola Matvienko,77,77,ZAG,30,Ucrânia,R12929
+Shakhtar Donetsk,Valeriy Bondar,Valeriy Bondar,75,79,ZAG,27,Ucrânia,R12930
+Shakhtar Donetsk,Alan Matturro,Alan Matturro,71,74,ZAG,22,Uruguai,R12931
+Shakhtar Donetsk,Marlon,Marlon,72,72,ZAG,31,Brasil,R12932
+Shakhtar Donetsk,Alaa Ghram,Alaa Ghram,67,75,ZAG,25,Tunísia,R12933
+Shakhtar Donetsk,Pedro Henrique,Pedro Henrique,72,80,LAT,24,Brasil,R12934
+Shakhtar Donetsk,Irakli Azarovi,Irakli Azarovi,70,79,LAT,24,Geórgia,R12935
+Shakhtar Donetsk,Viktor Korniyenko,Viktor Korniyenko,64,64,LAT,27,Ucrânia,R12936
+Shakhtar Donetsk,Vinícius Tobias,Vinícius Tobias,74,81,LAT,22,Brasil,R12937
+Shakhtar Donetsk,Oleksandr Karavaev,Oleksandr Karavaev,73,73,LAT,34,Ucrânia,R12938
+Shakhtar Donetsk,Marlon Gomes,Marlon Gomes,75,83,MEI,22,Brasil,R12939
+Shakhtar Donetsk,Dmytro Kryskiv,Dmytro Kryskiv,72,78,MEI,26,Ucrânia,R12940
+Shakhtar Donetsk,Yegor Nazaryna,Yegor Nazaryna,69,69,MEI,29,Ucrânia,R12941
+Shakhtar Donetsk,Viktor Tsukanov,Viktor Tsukanov,65,83,MEI,20,Ucrânia,R12942
+Shakhtar Donetsk,Isaque,Isaque,71,77,MEI,19,Brasil,R12943
+Shakhtar Donetsk,Oleg Ocheretko,Oleg Ocheretko,75,76,MEI,23,Ucrânia,R12944
+Shakhtar Donetsk,Newerton,Newerton,74,82,ATA,21,Brasil,R12945
+Shakhtar Donetsk,Eguinaldo,Eguinaldo,73,82,ATA,22,Brasil,R12946
+Shakhtar Donetsk,Ryan Roberto,Ryan Roberto,65,78,ATA,18,Brasil,R12947
+Shakhtar Donetsk,Gleiker Mendoza,Gleiker Mendoza,73,76,ATA,24,Venezuela,R12948
+Shakhtar Donetsk,Alisson,Alisson,80,80,ATA,21,Brasil,R12949
+Shakhtar Donetsk,Gabriel Carvalho,Gabriel Carvalho,69,69,ATA,19,Brasil,R12950
+Shakhtar Donetsk,Pedrinho,Pedrinho,73,73,ATA,28,Brasil,R12951
+Shakhtar Donetsk,Lucas Ferreira,Lucas Ferreira,71,82,ATA,20,Brasil,R12952
+Shakhtar Donetsk,Bruninho,Bruninho,67,81,ATA,18,Brasil,R12953
+Shakhtar Donetsk,Prosper Obah,Prosper Obah,72,74,ATA,22,Nigéria,R12954
+Shakhtar Donetsk,Maryan Shved,Maryan Shved,69,69,ATA,29,Ucrânia,R12955
+Shakhtar Donetsk,Kauã Elias,Kauã Elias,74,83,ATA,20,Brasil,R12956
+Shakhtar Donetsk,Luca Meirelles,Luca Meirelles,71,80,ATA,19,Brasil,R12957
+Shakhtar Donetsk,Lassina Traoré,Lassina Traoré,71,76,ATA,25,Burkina Faso,R12958
+Olympiacos,Stefan Ortega,Stefan Ortega,77,77,GOL,34,Alemanha,R12959
+Olympiacos,Balsa Popovic,Balsa Popovic,70,71,GOL,26,Montenegro,R12960
+Olympiacos,Dimitrios Stournaras,Dimitrios Stournaras,63,65,GOL,25,Grécia,R12961
+Olympiacos,Lorenzo Pirola,Lorenzo Pirola,75,83,ZAG,24,Itália,R12962
+Olympiacos,David Carmo,David Carmo,76,80,ZAG,27,Angola,R12963
+Olympiacos,Panagiotis Retsos,Panagiotis Retsos,77,78,ZAG,28,Grécia,R12964
+Olympiacos,Zinedin Smajlović,Zinedin Smajlović,74,79,ZAG,22,Bósnia,R12965
+Olympiacos,Nair Tiknizyan,Nair Tiknizyan,76,76,LAT,27,Armênia,R12966
+Olympiacos,Bruno Onyemaechi,Bruno Onyemaechi,72,75,LAT,27,Nigéria,R12967
+Olympiacos,Marcus Pedersen,Marcus Pedersen,73,74,LAT,26,Noruega,R12968
+Olympiacos,Manolis Saliakas,Manolis Saliakas,73,73,LAT,30,Grécia,R12969
+Olympiacos,Santiago Hezze,Santiago Hezze,78,83,VOL,25,Argentina,R12970
+Olympiacos,Lorenzo Scipioni,Lorenzo Scipioni,69,78,VOL,21,Argentina,R12971
+Olympiacos,Theofanis Bakoulas,Theofanis Bakoulas,65,79,VOL,21,Grécia,R12972
+Olympiacos,Christos Filis,Christos Filis,55,65,VOL,19,Grécia,R12973
+Olympiacos,Gustavo Puerta,Gustavo Puerta,80,80,MEI,23,Colômbia,R12974
+Olympiacos,Remo Freuler,Remo Freuler,76,76,MEI,34,Suíça,R12975
+Olympiacos,Gustavo Sá,Gustavo Sá,80,85,MEI,22,Portugal,R12976
+Olympiacos,Chiquinho,Chiquinho,78,78,MEI,31,Portugal,R12977
+Olympiacos,Yusuf Yazıcı,Yusuf Yazıcı,75,75,MEI,29,Turquia,R12978
+Olympiacos,Konstantinos Fortounis,Konstantinos Fortounis,68,68,MEI,34,Grécia,R12979
+Olympiacos,Jota Silva,Jota Silva,75,76,ATA,27,Portugal,R12980
+Olympiacos,Joel Roca,Joel Roca,72,81,ATA,21,Espanha,R12981
+Olympiacos,Leon Bailey,Leon Bailey,78,78,ATA,29,Jamaica,R12982
+Olympiacos,Gelson Martins,Gelson Martins,78,78,ATA,31,Portugal,R12983
+Olympiacos,Armando González,Armando González,79,80,ATA,23,México,R12984
+Olympiacos,Marius Mouandilmadji,Marius Mouandilmadji,73,74,ATA,28,Chad,R12985
+Olympiacos,Clayton,Clayton,76,76,ATA,27,Brasil,R12986
+Olympiacos,Ayoub El Kaabi,Ayoub El Kaabi,80,80,ATA,33,Marrocos,R12987
+Olympiacos,Roman Yaremchuk,Roman Yaremchuk,74,74,ATA,30,Ucrânia,R12988
+Slavia Praga,Nazar Domchak,Nazar Domchak,67,78,GOL,19,Ucrânia,R12989
+Slavia Praga,Jakub Markovic,Jakub Markovic,72,76,GOL,25,Tchéquia,R12990
+Slavia Praga,Ondrej Kolar,Ondrej Kolar,67,67,GOL,32,Tchéquia,R12991
+Slavia Praga,Stepan Chaloupek,Stepan Chaloupek,76,76,ZAG,23,Tchéquia,R12992
+Slavia Praga,David Zima,David Zima,74,77,ZAG,26,Tchéquia,R12993
+Slavia Praga,Igoh Ogbu,Igoh Ogbu,75,78,ZAG,26,Nigéria,R12994
+Slavia Praga,Ange N'Guessan,Ange N'Guessan,74,75,ZAG,23,França,R12995
+Slavia Praga,Tomas Vlcek,Tomas Vlcek,73,77,ZAG,25,Tchéquia,R12996
+Slavia Praga,Mikulas Konecny,Mikulas Konecny,68,76,ZAG,20,Tchéquia,R12997
+Slavia Praga,Tomas Holes,Tomas Holes,76,76,ZAG,33,Tchéquia,R12998
+Slavia Praga,David Jurásek,David Jurásek,73,77,LAT,26,Tchéquia,R12999
+Slavia Praga,Hamidou Kante,Hamidou Kante,63,68,LAT,21,Senegal,R13000
+Slavia Praga,Jakub Kolísek,Jakub Kolísek,61,71,LAT,19,Tchéquia,R13001
+Slavia Praga,Samuel Isife,Samuel Isife,73,75,LAT,22,Nigéria,R13002
+Slavia Praga,Elias Pitak,Elias Pitak,65,72,LAT,20,Tchéquia,R13003
+Slavia Praga,David Moses,David Moses,75,75,MEI,22,Nigéria,R13004
+Slavia Praga,Michal Sadílek,Michal Sadílek,76,78,MEI,27,Tchéquia,R13005
+Slavia Praga,Wiktor Nowak,Wiktor Nowak,72,74,MEI,22,Polônia,R13006
+Slavia Praga,Toumani Diakité,Toumani Diakité,67,76,MEI,20,Costa do Marfim,R13007
+Slavia Praga,Oskar Kubiak,Oskar Kubiak,66,74,MEI,20,Polônia,R13008
+Slavia Praga,Mubarak Suleiman,Mubarak Suleiman,66,77,MEI,19,Nigéria,R13009
+Slavia Praga,Lukas Provod,Lukas Provod,78,78,ATA,30,Tchéquia,R13010
+Slavia Praga,Danijel Sturm,Danijel Sturm,71,71,ATA,27,Eslovênia,R13011
+Slavia Praga,Emmanuel Ayaosi,Emmanuel Ayaosi,72,75,ATA,22,Nigéria,R13012
+Slavia Praga,Pavel Kacor,Pavel Kacor,67,75,ATA,20,Tchéquia,R13013
+Slavia Praga,Adonija Ouanda,Adonija Ouanda,66,72,ATA,21,Canadá,R13014
+Slavia Praga,Ivan Schranz,Ivan Schranz,73,73,ATA,33,Eslováquia,R13015
+Slavia Praga,Mojmír Chytil,Mojmír Chytil,74,76,ATA,27,Tchéquia,R13016
+Slavia Praga,Tomas Chory,Tomas Chory,75,75,ATA,31,Tchéquia,R13017
+Estrela Vermelha,Matheus,Matheus,74,74,GOL,34,Brasil,R13018
+Estrela Vermelha,Ivan Gutesa,Ivan Gutesa,68,71,GOL,24,Sérvia,R13019
+Estrela Vermelha,Milos Veljkovic,Milos Veljkovic,74,74,ZAG,31,Sérvia,R13020
+Estrela Vermelha,Franklin Tebo Uchenna,Franklin Tebo Uchenna,73,74,ZAG,26,Nigéria,R13021
+Estrela Vermelha,Stefan Gudelj,Stefan Gudelj,65,75,ZAG,20,Sérvia,R13022
+Estrela Vermelha,Yuta Nakayama,Yuta Nakayama,70,70,ZAG,29,Japão,R13023
+Estrela Vermelha,Derrick Luckassen,Derrick Luckassen,69,69,ZAG,31,Gana,R13024
+Estrela Vermelha,Adem Avdic,Adem Avdic,72,82,LAT,19,Sérvia,R13025
+Estrela Vermelha,Mihailo Ristic,Mihailo Ristic,73,73,LAT,31,Sérvia,R13026
+Estrela Vermelha,Tomás Händel,Tomás Händel,73,75,VOL,25,Portugal,R13027
+Estrela Vermelha,Rade Krunic,Rade Krunic,75,75,VOL,33,Bósnia,R13028
+Estrela Vermelha,Mahmudu Bajo,Mahmudu Bajo,70,72,VOL,22,The Gambia,R13029
+Estrela Vermelha,Matej Gashtarov,Matej Gashtarov,66,74,VOL,20,Macedônia do Norte,R13030
+Estrela Vermelha,Timi Max Elsnik,Timi Max Elsnik,75,75,MEI,28,Eslovênia,R13031
+Estrela Vermelha,Mohammed Abu Fani,Mohammed Abu Fani,72,72,MEI,28,Israel,R13032
+Estrela Vermelha,Vasilije Kostov,Vasilije Kostov,72,86,MEI,18,Sérvia,R13033
+Estrela Vermelha,Muhammed Cham,Muhammed Cham,74,75,MEI,26,Áustria,R13034
+Estrela Vermelha,Mirko Ivanic,Mirko Ivanic,77,77,MEI,33,Montenegro,R13035
+Estrela Vermelha,Luka Ilic,Luka Ilic,70,73,MEI,27,Sérvia,R13036
+Estrela Vermelha,Aleksandar Katai,Aleksandar Katai,72,72,MEI,35,Sérvia,R13037
+Estrela Vermelha,Ye-geon Kim,Ye-geon Kim,57,70,MEI,18,Coreia do Sul,R13038
+Estrela Vermelha,Vladimir Lucic,Vladimir Lucic,69,72,ATA,24,Sérvia,R13039
+Estrela Vermelha,Kristiyan Balov,Kristiyan Balov,66,74,ATA,20,Bulgária,R13040
+Estrela Vermelha,Osman Bukari,Osman Bukari,72,73,ATA,27,Gana,R13041
+Estrela Vermelha,Loizos Loizou,Loizos Loizou,71,72,ATA,23,Chipre,R13042
+Estrela Vermelha,Dimitrije Saric,Dimitrije Saric,58,72,ATA,18,Sérvia,R13043
+Estrela Vermelha,Bamba Dieng,Bamba Dieng,78,79,ATA,26,Senegal,R13044
+Estrela Vermelha,Marko Arnautovic,Marko Arnautovic,78,78,ATA,37,Áustria,R13045
+Copenhague,Diant Ramaj,Diant Ramaj,73,81,GOL,25,Alemanha,R13046
+Copenhague,Rúnar Alex Rúnarsson,Rúnar Alex Rúnarsson,67,67,GOL,31,Islândia,R13047
+Copenhague,Tobias Breum-Harild,Tobias Breum-Harild,51,63,GOL,19,Dinamarca,R13048
+Copenhague,Junnosuke Suzuki,Junnosuke Suzuki,72,75,ZAG,23,Japão,R13049
+Copenhague,Felix Beijmo,Felix Beijmo,73,73,ZAG,28,Suécia,R13050
+Copenhague,Asger Sørensen,Asger Sørensen,69,69,ZAG,30,Dinamarca,R13051
+Copenhague,Ákos Markgráf,Ákos Markgráf,65,70,ZAG,21,Hungria,R13052
+Copenhague,Marcos López,Marcos López,73,74,LAT,26,Peru,R13053
+Copenhague,Birger Meling,Birger Meling,70,70,LAT,31,Noruega,R13054
+Copenhague,Rodrigo Huescas,Rodrigo Huescas,75,76,LAT,23,México,R13055
+Copenhague,Kenay Myrie,Kenay Myrie,64,72,LAT,20,Costa Rica,R13056
+Copenhague,William Clem,William Clem,73,75,VOL,22,Dinamarca,R13057
+Copenhague,Magnus Mattsson,Magnus Mattsson,74,74,MEI,27,Dinamarca,R13058
+Copenhague,Mads Emil Madsen,Mads Emil Madsen,73,73,MEI,28,Dinamarca,R13059
+Copenhague,Alex Král,Alex Král,74,75,MEI,28,Tchéquia,R13060
+Copenhague,Hunor Németh,Hunor Németh,62,71,MEI,19,Hungria,R13061
+Copenhague,Thomas Delaney,Thomas Delaney,71,71,MEI,35,Dinamarca,R13062
+Copenhague,Marvin Nasnas,Marvin Nasnas,53,70,MEI,16,Dinamarca,R13063
+Copenhague,Maher Carrizo,Maher Carrizo,70,80,ATA,20,Argentina,R13064
+Copenhague,Thapelo Maseko,Thapelo Maseko,71,71,ATA,23,África do Sul,R13065
+Copenhague,Mohamed Elyounoussi,Mohamed Elyounoussi,76,76,ATA,32,Noruega,R13066
+Copenhague,Viktor Dadason,Viktor Dadason,67,78,ATA,18,Islândia,R13067
+Copenhague,Geovanni Vianney Ndjee,Geovanni Vianney Ndjee,60,70,ATA,19,Camarões,R13068
+Copenhague,Andreas Cornelius,Andreas Cornelius,66,66,ATA,33,Dinamarca,R13069
+Young Boys,Marvin Keller,Marvin Keller,72,81,GOL,24,Suíça,R13096
+Young Boys,Joël Mall,Joël Mall,65,65,GOL,35,Chipre,R13097
+Young Boys,Dario Marzino,Dario Marzino,57,59,GOL,30,Suíça,R13098
+Young Boys,Moritz Jenz,Moritz Jenz,76,79,ZAG,27,Alemanha,R13099
+Young Boys,Cédric Zesiger,Cédric Zesiger,76,79,ZAG,28,Suíça,R13100
+Young Boys,Gregory Wüthrich,Gregory Wüthrich,73,73,ZAG,31,Suíça,R13101
+Young Boys,Sandro Lauper,Sandro Lauper,70,70,ZAG,30,Suíça,R13102
+Young Boys,Loris Benito,Loris Benito,70,70,ZAG,34,Suíça,R13103
+Young Boys,Stefan Bukinac,Stefan Bukinac,71,74,LAT,21,Sérvia,R13104
+Young Boys,Lewin Blum,Lewin Blum,69,76,LAT,25,Suíça,R13105
+Young Boys,Isaac Schmidt,Isaac Schmidt,71,72,LAT,26,Suíça,R13106
+Young Boys,Ryan Andrews,Ryan Andrews,68,75,LAT,22,Inglaterra,R13107
+Young Boys,Saidy Janko,Saidy Janko,67,67,LAT,31,The Gambia,R13108
+Young Boys,Benjamin Kabeya,Benjamin Kabeya,59,61,LAT,25,Suíça,R13109
+Young Boys,Edimilson Fernandes,Edimilson Fernandes,74,74,VOL,30,Suíça,R13110
+Young Boys,Noë Tschanz,Noë Tschanz,58,66,VOL,20,Suíça,R13111
+Young Boys,Dominik Pech,Dominik Pech,68,77,MEI,20,Tchéquia,R13112
+Young Boys,Armin Gigovic,Armin Gigovic,72,79,MEI,24,Bósnia,R13113
+Young Boys,Christian Fassnacht,Christian Fassnacht,72,72,MEI,33,Suíça,R13114
+Young Boys,Edin Etoski,Edin Etoski,52,64,MEI,19,Suíça,R13115
+Young Boys,Alan Virginius,Alan Virginius,73,77,MEI,23,França,R13116
+Young Boys,Alvyn Sanches,Alvyn Sanches,78,84,MEI,23,Suíça,R13117
+Young Boys,Bahereba Guirassy,Bahereba Guirassy,70,79,ATA,20,França,R13118
+Young Boys,Samuel Essende,Samuel Essende,72,72,ATA,28,RD Congo,R13119
+Young Boys,Kaly Sène,Kaly Sène,72,74,ATA,25,Senegal,R13120
+Young Boys,Facinet Conte,Facinet Conte,63,76,ATA,21,Guiné,R13121
+Bodø/Glimt,Nikita Haikin,Nikita Haikin,74,75,GOL,31,Rússia,R13122
+Bodø/Glimt,Julian Faye Lund,Julian Faye Lund,66,69,GOL,27,Noruega,R13123
+Bodø/Glimt,Isak Sjong,Isak Sjong,56,75,GOL,19,Noruega,R13124
+Bodø/Glimt,Odin Bjørtuft,Odin Bjørtuft,70,74,ZAG,27,Noruega,R13125
+Bodø/Glimt,Villads Nielsen,Villads Nielsen,68,80,ZAG,21,Dinamarca,R13126
+Bodø/Glimt,Jostein Gundersen,Jostein Gundersen,71,72,ZAG,30,Noruega,R13127
+Bodø/Glimt,Haitam Aleesami,Haitam Aleesami,68,68,ZAG,35,Noruega,R13128
+Bodø/Glimt,Fredrik Bjørkan,Fredrik Bjørkan,74,75,LAT,28,Noruega,R13129
+Bodø/Glimt,Isak Dybvik Määttä,Isak Dybvik Määttä,67,73,LAT,25,Noruega,R13130
+Bodø/Glimt,Fredrik Sjøvold,Fredrik Sjøvold,76,76,LAT,23,Noruega,R13131
+Bodø/Glimt,Kasper Solhaug,Kasper Solhaug,53,63,LAT,19,Noruega,R13132
+Bodø/Glimt,Patrick Berg,Patrick Berg,77,80,VOL,28,Noruega,R13133
+Bodø/Glimt,Joshua Kitolano,Joshua Kitolano,71,73,VOL,25,Noruega,R13134
+Bodø/Glimt,Håkon Evjen,Håkon Evjen,73,77,MEI,26,Noruega,R13135
+Bodø/Glimt,Sondre Auklend,Sondre Auklend,74,77,MEI,23,Noruega,R13136
+Bodø/Glimt,Magnus Riisnæs,Magnus Riisnæs,68,79,MEI,22,Noruega,R13137
+Bodø/Glimt,Sondre Brunstad Fet,Sondre Brunstad Fet,70,70,MEI,29,Noruega,R13138
+Bodø/Glimt,Ulrik Saltnes,Ulrik Saltnes,72,72,MEI,34,Noruega,R13139
+Bodø/Glimt,Assan Sanyang,Assan Sanyang,52,63,MEI,18,The Gambia,R13140
+Bodø/Glimt,Jens Petter Hauge,Jens Petter Hauge,74,77,ATA,27,Noruega,R13141
+Bodø/Glimt,Ole Didrik Blomberg,Ole Didrik Blomberg,69,72,ATA,26,Noruega,R13142
+Bodø/Glimt,Joel Mvuka,Joel Mvuka,71,74,ATA,24,Noruega,R13143
+Bodø/Glimt,August Mikkelsen,August Mikkelsen,68,73,ATA,26,Noruega,R13144
+Bodø/Glimt,Ola Brynhildsen,Ola Brynhildsen,70,73,ATA,27,Noruega,R13145
+Bodø/Glimt,Andreas Helmersen,Andreas Helmersen,66,67,ATA,28,Noruega,R13146
+Dínamo Zagreb,Dominik Kotarski,Dominik Kotarski,77,81,GOL,26,Croácia,R13147
+Dínamo Zagreb,Ivan Nevistic,Ivan Nevistic,70,72,GOL,28,Croácia,R13148
+Dínamo Zagreb,Ivan Filipovic,Ivan Filipovic,65,65,GOL,32,Croácia,R13149
+Dínamo Zagreb,Danijel Zagorac,Danijel Zagorac,61,61,GOL,39,Croácia,R13150
+Dínamo Zagreb,Sergi Domínguez,Sergi Domínguez,74,80,ZAG,21,Espanha,R13151
+Dínamo Zagreb,Niko Galesic,Niko Galesic,70,74,ZAG,25,Croácia,R13152
+Dínamo Zagreb,Scott McKenna,Scott McKenna,75,77,ZAG,30,Escócia,R13153
+Dínamo Zagreb,Stjepan Radeljic,Stjepan Radeljic,72,72,ZAG,29,Bósnia,R13154
+Dínamo Zagreb,Borna Orlic,Borna Orlic,55,63,ZAG,20,Croácia,R13155
+Dínamo Zagreb,Matteo Pérez Vinlöf,Matteo Pérez Vinlöf,67,81,LAT,20,Suécia,R13156
+Dínamo Zagreb,Bruno Goda,Bruno Goda,70,70,LAT,28,Croácia,R13157
+Dínamo Zagreb,Moris Valincic,Moris Valincic,73,76,LAT,23,Croácia,R13158
+Dínamo Zagreb,Noa Mikic,Noa Mikic,62,79,LAT,19,Croácia,R13159
+Dínamo Zagreb,Paul Tabinas,Paul Tabinas,60,63,LAT,24,Philippines,R13160
+Dínamo Zagreb,Kirill Kravtsov,Kirill Kravtsov,68,71,VOL,24,Rússia,R13161
+Dínamo Zagreb,Josip Misic,Josip Misic,70,70,VOL,32,Croácia,R13162
+Dínamo Zagreb,Miha Zajc,Miha Zajc,72,72,MEI,32,Eslovênia,R13163
+Dínamo Zagreb,Egor Molchan,Egor Molchan,57,69,MEI,18,Belarus,R13164
+Dínamo Zagreb,Luka Stojkovic,Luka Stojkovic,76,80,MEI,23,Croácia,R13165
+Dínamo Zagreb,Luka Ivanušec,Luka Ivanušec,72,73,MEI,27,Croácia,R13166
+Dínamo Zagreb,Lukas Kacavenda,Lukas Kacavenda,71,75,MEI,23,Croácia,R13167
+Dínamo Zagreb,Robert Mudrazija,Robert Mudrazija,64,64,MEI,29,Croácia,R13168
+Dínamo Zagreb,Sven Sunta,Sven Sunta,59,69,MEI,19,Eslovênia,R13169
+Dínamo Zagreb,Arbër Hoxha,Arbër Hoxha,68,69,ATA,28,Albânia,R13170
+Dínamo Zagreb,Noah Nsoki,Noah Nsoki,62,73,ATA,19,França,R13171
+Dínamo Zagreb,Mislav Orsic,Mislav Orsic,68,68,ATA,33,Croácia,R13172
+Dínamo Zagreb,Mateo Lisica,Mateo Lisica,70,76,ATA,23,Croácia,R13173
+Dínamo Zagreb,Iker Almena,Iker Almena,66,78,ATA,22,Espanha,R13174
+Dínamo Zagreb,Dani Rodríguez,Dani Rodríguez,65,70,ATA,21,Espanha,R13175
+Dínamo Zagreb,Fran Topic,Fran Topic,68,77,ATA,22,Croácia,R13176
+Dínamo Zagreb,Dion Beljo,Dion Beljo,73,79,ATA,24,Croácia,R13177
+Dínamo Zagreb,Aleks Stojakovic,Aleks Stojakovic,67,69,ATA,22,Eslovênia,R13178
+Dínamo Zagreb,Smail Prevljak,Smail Prevljak,67,67,ATA,31,Bósnia,R13179
+Rangers,James Tavernier,James Tavernier,77,77,LAT,34,Inglaterra,R05765
+Rangers,Nicolas Raskin,Nicolas Raskin,77,82,VOL,25,Bélgica,R05766
+Rangers,Joseph Rothwell,Joseph Rothwell,74,74,VOL,31,Inglaterra,R05767
+Rangers,Mohamed Diomande,Mohamed Diomande,74,84,VOL,24,Costa do Marfim,R05768
+Rangers,Nedim Bajrami,Nedim Bajrami,73,76,MEI,27,Albânia,R05769
+Rangers,Connor Barron,Connor Barron,72,81,VOL,23,Escócia,R05770
+Rangers,Dujon Sterling,Dujon Sterling,73,77,LAT,26,Inglaterra,R05771
+Rangers,Lyall Cameron,Lyall Cameron,67,77,MEI,23,Escócia,R05772
+Rangers,John Souttar,John Souttar,73,74,ZAG,29,Escócia,R05773
+Rangers,Oliver Antman,Oliver Antman,75,81,MEI,24,Finlândia,R05774
+Rangers,Bojan Miovski,Bojan Miovski,72,75,ATA,27,Macedônia do Norte,R05775
+Rangers,Thelonious Aasgaard,Thelonious Aasgaard,68,75,MEI,24,Noruega,R05776
+Rangers,Maximilian Aarons,Maximilian Aarons,72,75,LAT,26,Inglaterra,R05777
+Rangers,Danilo,Danilo,73,75,ATA,27,Brasil,R05778
+Rangers,Rabbi Matondo,Rabbi Matondo,69,72,MEI,25,País de Gales,R05779
+Rangers,Djeidi Gassama,Djeidi Gassama,71,80,MEI,22,França,R05780
+Rangers,Youssef Chermiti,Youssef Chermiti,71,77,ATA,22,Portugal,R05781
+Rangers,Jayden Meghoma,Jayden Meghoma,64,78,LAT,20,Inglaterra,R05782
+Rangers,Nasser Djiga,Nasser Djiga,70,78,ZAG,23,Burkina Faso,R05783
+Rangers,Bailey Rice,Bailey Rice,61,83,VOL,19,Escócia,R05784
+Rangers,Clinton Nsiala,Clinton Nsiala,63,78,ZAG,22,França,R05785
+Rangers,Emmanuel Fernandez,Emmanuel Fernandez,64,71,ZAG,24,Inglaterra,R05786
+Rangers,Findlay Curtis,Findlay Curtis,63,84,ATA,19,Escócia,R05787
+Rangers,Liam Kelly,Liam Kelly,67,67,GOL,30,Escócia,R05788
+Sturm Graz,Otar Kiteishvili,Otar Kiteishvili,75,75,MEI,30,Geórgia,R05789
+Sturm Graz,Tomi Horvat,Tomi Horvat,73,76,MEI,27,Eslovênia,R05790
+Sturm Graz,Tochi Chukwuani,Tochi Chukwuani,68,77,MEI,23,Dinamarca,R05791
+Sturm Graz,Stefan Hierländer,Stefan Hierländer,65,65,MEI,35,Áustria,R05792
+Sturm Graz,Maurice Malone,Maurice Malone,70,74,ATA,25,Alemanha,R05793
+Sturm Graz,Dimitri Lavalée,Dimitri Lavalée,72,72,LAT,29,Bélgica,R05794
+Sturm Graz,Jon Gorenc Stanković,Jon Gorenc Stanković,74,74,VOL,30,Eslovênia,R05795
+Sturm Graz,Emir Karić,Emir Karić,66,66,LAT,29,Áustria,R05796
+Sturm Graz,Julius Beck,Julius Beck,60,77,MEI,21,Dinamarca,R05797
+Sturm Graz,Emanuel Aiwu,Emanuel Aiwu,68,72,ZAG,25,Áustria,R05798
+Sturm Graz,Seedyahmed Jatta,Seedyahmed Jatta,65,74,ATA,23,Noruega,R05799
+Sturm Graz,Jacob Hödl,Jacob Hödl,58,78,MEI,19,Áustria,R05800
+Sturm Graz,Filip Rózga,Filip Rózga,64,79,ATA,19,Polônia,R05801
+Sturm Graz,Alexandar Borković,Alexandar Borković,64,67,ZAG,27,Áustria,R05802
+Sturm Graz,Leon Grgić,Leon Grgić,64,78,ATA,20,Croácia,R05803
+Sturm Graz,Axel Kayombo,Axel Kayombo,64,79,ATA,20,França,R05804
+Sturm Graz,Kristjan Bendra,Kristjan Bendra,59,73,LAT,20,Eslovênia,R05805
+Sturm Graz,Niklas Geyrhofer,Niklas Geyrhofer,68,72,ZAG,26,Áustria,R05806
+Sturm Graz,Arjan Malić,Arjan Malić,63,78,LAT,20,Bósnia,R05807
+Sturm Graz,Belmin Beganović,Belmin Beganović,56,70,ATA,21,Bósnia,R05808
+Sturm Graz,Gabriel Haider,Gabriel Haider,58,66,ZAG,24,Áustria,R05809
+Sturm Graz,Matteo Bignetti,Matteo Bignetti,61,69,GOL,22,Áustria,R05810
+Sturm Graz,Daniil Khudyakov,Daniil Khudyakov,63,75,GOL,22,Rússia,R05811
+Sturm Graz,Elias Lorenz,Elias Lorenz,56,69,GOL,20,Áustria,R05812
+Dynamo Kyiv,Mykola Shaparenko,Mykola Shaparenko,78,79,MEI,27,Ucrânia,R05813
+Dynamo Kyiv,Volodymyr Brazhko,Volodymyr Brazhko,75,83,VOL,24,Ucrânia,R05814
+Dynamo Kyiv,Vitaliy Buyalskyi,Vitaliy Buyalskyi,76,76,MEI,33,Ucrânia,R05815
+Dynamo Kyiv,Oleksandr Pikhalyonok,Oleksandr Pikhalyonok,75,75,MEI,29,Ucrânia,R05816
+Dynamo Kyiv,Andriy Yarmolenko,Andriy Yarmolenko,73,73,MEI,36,Ucrânia,R05817
+Dynamo Kyiv,Oleksandr Karavaiev,Oleksandr Karavaiev,73,73,LAT,34,Ucrânia,R05818
+Dynamo Kyiv,Mykola Mykhailenko,Mykola Mykhailenko,68,75,MEI,25,Ucrânia,R05819
+Dynamo Kyiv,Vladyslav Dubinchak,Vladyslav Dubinchak,71,71,LAT,28,Ucrânia,R05820
+Dynamo Kyiv,Oleksandr Yatsyk,Oleksandr Yatsyk,69,77,MEI,23,Ucrânia,R05821
+Dynamo Kyiv,Kostiantyn Vivcharenko,Kostiantyn Vivcharenko,69,74,LAT,24,Ucrânia,R05822
+Dynamo Kyiv,Maksym Bragaru,Maksym Bragaru,69,76,MEI,24,Ucrânia,R05823
+Dynamo Kyiv,Valentyn Rubchynskyi,Valentyn Rubchynskyi,67,75,MEI,24,Ucrânia,R05824
+Dynamo Kyiv,Oleksandr Tymchyk,Oleksandr Tymchyk,72,72,LAT,29,Ucrânia,R05825
+Dynamo Kyiv,Á. Torres,Á. Torres,66,69,MEI,26,Colômbia,R05826
+Dynamo Kyiv,Nazar Voloshyn,Nazar Voloshyn,70,80,MEI,23,Ucrânia,R05827
+Dynamo Kyiv,Eduardo Guerrero,Eduardo Guerrero,69,72,ATA,26,Panamá,R05828
+Dynamo Kyiv,Denys Popov,Denys Popov,75,79,ZAG,27,Ucrânia,R05829
+Dynamo Kyiv,Eric Ramírez,Eric Ramírez,66,66,ATA,27,Venezuela,R05830
+Dynamo Kyiv,Vladyslav Kabaev,Vladyslav Kabaev,70,70,MEI,30,Ucrânia,R05831
+Dynamo Kyiv,Taras Mykhavko,Taras Mykhavko,70,83,ZAG,21,Ucrânia,R05832
+Dynamo Kyiv,Matviy Ponomarenko,Matviy Ponomarenko,65,82,ATA,20,Ucrânia,R05833
+Dynamo Kyiv,Vladislav Blănuță,Vladislav Blănuță,68,74,ATA,24,Romênia,R05834
+Dynamo Kyiv,Kristian Bilovar,Kristian Bilovar,68,74,ZAG,25,Ucrânia,R05835
+Dynamo Kyiv,Samba Diallo,Samba Diallo,63,71,MEI,23,Senegal,R05836
+Dynamo Kyiv,Aliou Thiaré,Aliou Thiaré,64,77,ZAG,22,Senegal,R05837
+Dynamo Kyiv,Ruslan Neshcheret,Ruslan Neshcheret,70,77,GOL,24,Ucrânia,R05838
+Dynamo Kyiv,Vyacheslav Surkis,Vyacheslav Surkis,54,66,GOL,20,Ucrânia,R05839
+Dynamo Kyiv,Valentyn Morgun,Valentyn Morgun,60,67,GOL,24,Ucrânia,R05840
+Dynamo Kyiv,Denys Ignatenko,Denys Ignatenko,60,69,GOL,23,Ucrânia,R05841
+PAOK,Mohamed Camara,Mohamed Camara,74,74,MEI,29,Guiné,R05842
+PAOK,Andrija Živković,Andrija Živković,78,78,MEI,30,Sérvia,R05843
+PAOK,Magomed Ozdoev,Magomed Ozdoev,74,74,MEI,33,Rússia,R05844
+PAOK,Rahman Baba,Rahman Baba,76,76,LAT,32,Gana,R05845
+PAOK,Greg Taylor,Greg Taylor,74,75,LAT,28,Escócia,R05846
+PAOK,Taison,Taison,75,75,MEI,38,Brasil,R05847
+PAOK,Soualiho Meïté,Soualiho Meïté,75,75,VOL,32,França,R05848
+PAOK,Jonjoe Kenny,Jonjoe Kenny,72,72,LAT,29,Inglaterra,R05849
+PAOK,Dimitrios Pelkas,Dimitrios Pelkas,72,72,MEI,32,Grécia,R05850
+PAOK,Kiril Despodov,Kiril Despodov,77,77,ATA,29,Bulgária,R05851
+PAOK,Tomasz Kędziora,Tomasz Kędziora,75,75,ZAG,32,Polônia,R05852
+PAOK,Alessandro Bianco,Alessandro Bianco,71,80,MEI,23,Itália,R05853
+PAOK,Giannis Michailidis,Giannis Michailidis,72,75,ZAG,26,Grécia,R05854
+PAOK,Fedor Chalov,Fedor Chalov,73,74,ATA,28,Rússia,R05855
+PAOK,Georgios Giakoumakis,Georgios Giakoumakis,75,75,ATA,31,Grécia,R05856
+PAOK,Joan Sastre,Joan Sastre,71,71,LAT,29,Espanha,R05857
+PAOK,Konstantinos Thymianis,Konstantinos Thymianis,68,74,VOL,25,Grécia,R05858
+PAOK,Alessandro Vogliacco,Alessandro Vogliacco,69,72,ZAG,27,Itália,R05859
+PAOK,Dejan Lovren,Dejan Lovren,72,72,ZAG,37,Croácia,R05860
+PAOK,Balde Mahamadou,Balde Mahamadou,61,80,MEI,19,Espanha,R05861
+PAOK,Dimitrios Chatsidis,Dimitrios Chatsidis,62,76,ATA,20,Grécia,R05862
+PAOK,Dimitrios Bataoulas,Dimitrios Bataoulas,62,78,ZAG,19,Grécia,R05863
+PAOK,Dimitrios Kottas,Dimitrios Kottas,63,78,ZAG,21,Grécia,R05864
+PAOK,Anestis Mythou,Anestis Mythou,61,80,ATA,19,Grécia,R05865
+PAOK,Jiří Pavlenka,Jiří Pavlenka,74,74,GOL,34,Tchéquia,R05866
+PAOK,Luka Gugeshashvili,Luka Gugeshashvili,70,73,GOL,27,Geórgia,R05867
+PAOK,Antonis Tsiftsis,Antonis Tsiftsis,65,70,GOL,27,Grécia,R05868
+Sparta Praga,Matěj Ryneš,Matěj Ryneš,73,78,MEI,25,Tchéquia,R05869
+Sparta Praga,Kasper Kairinen,Kasper Kairinen,75,75,MEI,27,Finlândia,R05870
+Sparta Praga,Á. Preciado,Á. Preciado,75,75,MEI,28,Equador,R05871
+Sparta Praga,Jaroslav Zelený,Jaroslav Zelený,72,72,ZAG,33,Tchéquia,R05872
+Sparta Praga,Lukáš Sadílek,Lukáš Sadílek,73,73,MEI,30,Tchéquia,R05873
+Sparta Praga,Lukáš Haraslín,Lukáš Haraslín,78,78,ATA,30,Eslováquia,R05874
+Sparta Praga,Patrik Vydra,Patrik Vydra,70,76,MEI,23,Tchéquia,R05875
+Sparta Praga,Pavel Kadeřábek,Pavel Kadeřábek,74,74,LAT,34,Tchéquia,R05876
+Sparta Praga,Magnus Andersen,Magnus Andersen,70,71,MEI,27,Dinamarca,R05877
+Sparta Praga,Veljko Birmančević,Veljko Birmančević,76,76,ATA,28,Sérvia,R05878
+Sparta Praga,Jan Kuchta,Jan Kuchta,73,73,ATA,29,Tchéquia,R05879
+Sparta Praga,Filip Panák,Filip Panák,74,74,ZAG,30,Tchéquia,R05880
+Sparta Praga,Sivert Mannsverk,Sivert Mannsverk,68,76,VOL,24,Noruega,R05881
+Sparta Praga,Elias Cobbaut,Elias Cobbaut,73,76,ZAG,28,Bélgica,R05882
+Sparta Praga,Martin Suchomel,Martin Suchomel,69,75,LAT,23,Tchéquia,R05883
+Sparta Praga,Emmanuel Uchenna,Emmanuel Uchenna,70,76,ZAG,22,Nigéria,R05884
+Sparta Praga,John Mercado,John Mercado,70,79,ATA,24,Equador,R05885
+Sparta Praga,Adam Ševínský,Adam Ševínský,67,74,ZAG,22,Tchéquia,R05886
+Sparta Praga,Dominik Hollý,Dominik Hollý,56,62,MEI,22,Eslováquia,R05887
+Sparta Praga,Garang Kuol,Garang Kuol,64,74,ATA,21,Austrália,R05888
+Sparta Praga,Kevin-Prince Milla,Kevin-Prince Milla,58,67,ATA,22,Camarões,R05889
+Sparta Praga,Santiago Eneme,Santiago Eneme,60,65,MEI,25,Guiné Equatorial,R05890
+Sparta Praga,Peter Vindahl,Peter Vindahl,75,77,GOL,28,Dinamarca,R05891
+Sparta Praga,Jakub Surovčík,Jakub Surovčík,65,73,GOL,24,Eslováquia,R05892
+Sparta Praga,Vojtěch Vorel,Vojtěch Vorel,69,71,GOL,30,Tchéquia,R05893

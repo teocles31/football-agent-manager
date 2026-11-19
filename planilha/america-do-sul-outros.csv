@@ -1,270 +1,270 @@
-clube,nome_original,nome,overall,potencial,posicao,idade,pais
-Olimpia,Gastón Olveira,Gastón Olveira,74,74,GOL,33,Paraguai
-Olimpia,Sebastián Lentinelly,Sebastián Lentinelly,66,66,GOL,29,Uruguai
-Olimpia,Lucas Verza,Lucas Verza,60,65,GOL,25,Paraguai
-Olimpia,Mateo Gamarra,Mateo Gamarra,73,74,ZAG,26,Paraguai
-Olimpia,Gustavo Vargas,Gustavo Vargas,71,73,ZAG,25,Paraguai
-Olimpia,Juan Vera,Juan Vera,66,66,ZAG,27,Paraguai
-Olimpia,Bryan Bentaberry,Bryan Bentaberry,67,67,ZAG,29,Uruguai
-Olimpia,Esteban Matus,Esteban Matus,68,71,LAT,24,Chile
-Olimpia,César Olmedo,César Olmedo,69,76,LAT,23,Paraguai
-Olimpia,Tim Payne,Tim Payne,69,69,LAT,32,Nova Zelândia
-Olimpia,Raúl Cáceres,Raúl Cáceres,66,66,LAT,35,Paraguai
-Olimpia,Richard Ortiz,Richard Ortiz,70,70,VOL,36,Paraguai
-Olimpia,Richard Sánchez,Richard Sánchez,72,72,MEI,30,Paraguai
-Olimpia,Juan Fernando Alfaro,Juan Fernando Alfaro,69,70,MEI,26,Argentina
-Olimpia,Alex Franco,Alex Franco,66,70,MEI,25,Paraguai
-Olimpia,Javier Dominguez,Javier Dominguez,68,70,MEI,26,Paraguai
-Olimpia,Sebastián Quintana,Sebastián Quintana,65,66,MEI,23,Paraguai
-Olimpia,Rubén Lezcano,Rubén Lezcano,73,75,MEI,22,Paraguai
-Olimpia,Eduardo Delmas,Eduardo Delmas,64,72,MEI,19,Paraguai
-Olimpia,Iván Leguizamón,Iván Leguizamón,72,78,ATA,24,Paraguai
-Olimpia,Pedro Zarza,Pedro Zarza,64,74,ATA,19,Paraguai
-Olimpia,Romeo Benítez,Romeo Benítez,65,68,ATA,24,Paraguai
-Olimpia,César Miño,César Miño,65,76,ATA,19,Paraguai
-Olimpia,Rodney Redes,Rodney Redes,70,71,ATA,26,Paraguai
-Olimpia,Fernando Cardozo,Fernando Cardozo,65,67,ATA,25,Paraguai
-Olimpia,Manuel Romero,Manuel Romero,64,66,ATA,25,Paraguai
-Olimpia,Franco Alfonso,Franco Alfonso,63,66,ATA,24,Argentina
-Olimpia,Derlis González,Derlis González,73,73,ATA,32,Paraguai
-Olimpia,Sebastián Ferreira,Sebastián Ferreira,67,67,ATA,28,Paraguai
-Olimpia,Tiago Caballero,Tiago Caballero,65,70,ATA,21,Paraguai
-Olimpia,Gabriel Ávalos,Gabriel Ávalos,73,73,ATA,36,Paraguai
-Olimpia,Braian Romero,Braian Romero,70,70,ATA,35,Argentina
-Olimpia,Hugo Sandoval,Hugo Sandoval,64,65,ATA,26,Paraguai
-Cerro Porteño,Manuel Roffo,Manuel Roffo,74,80,GOL,26,Argentina
-Cerro Porteño,Ángel Martínez,Ángel Martínez,66,69,GOL,24,Paraguai
-Cerro Porteño,Roberto Fernández,Roberto Fernández,70,70,GOL,38,Paraguai
-Cerro Porteño,Lucas Quintana,Lucas Quintana,71,74,ZAG,21,Paraguai
-Cerro Porteño,Lucas Merolla,Lucas Merolla,72,72,ZAG,31,Argentina
-Cerro Porteño,Alexis Cañete,Alexis Cañete,66,68,ZAG,23,Paraguai
-Cerro Porteño,Gustavo Velázquez,Gustavo Velázquez,73,73,ZAG,35,Paraguai
-Cerro Porteño,Abel Luciatti,Abel Luciatti,70,70,ZAG,33,Argentina
-Cerro Porteño,Blas Riveros,Blas Riveros,68,69,LAT,28,Paraguai
-Cerro Porteño,Marcelo Chaparro,Marcelo Chaparro,62,73,LAT,19,Paraguai
-Cerro Porteño,Guillermo Benítez,Guillermo Benítez,67,67,LAT,32,Argentina
-Cerro Porteño,Fabricio Domínguez,Fabricio Domínguez,69,69,LAT,28,Uruguai
-Cerro Porteño,Iván Ramírez,Iván Ramírez,69,69,LAT,31,Paraguai
-Cerro Porteño,Jorge Morel,Jorge Morel,69,70,VOL,28,Paraguai
-Cerro Porteño,Piris da Motta,Piris da Motta,69,69,VOL,32,Paraguai
-Cerro Porteño,Gastón Giménez,Gastón Giménez,70,70,VOL,35,Paraguai
-Cerro Porteño,Agustín Almendra,Agustín Almendra,72,73,MEI,26,Argentina
-Cerro Porteño,Cristhian Paredes,Cristhian Paredes,68,68,MEI,28,Paraguai
-Cerro Porteño,Ariel Gamarra,Ariel Gamarra,68,70,MEI,23,Paraguai
-Cerro Porteño,César Bobadilla,César Bobadilla,60,72,MEI,19,Paraguai
-Cerro Porteño,Amín Cristaldo,Amín Cristaldo,56,67,MEI,19,Paraguai
-Cerro Porteño,Carlos Chena,Carlos Chena,53,64,MEI,19,Paraguai
-Cerro Porteño,Mateo Klimowicz,Mateo Klimowicz,71,72,MEI,26,Alemanha
-Cerro Porteño,Carlos Franco,Carlos Franco,58,71,MEI,18,Paraguai
-Cerro Porteño,Ignacio Aliseda,Ignacio Aliseda,72,74,ATA,26,Argentina
-Cerro Porteño,Derlis Rodríguez,Derlis Rodríguez,68,68,ATA,29,Paraguai
-Cerro Porteño,Santiago Mosquera,Santiago Mosquera,68,68,ATA,31,Colômbia
-Cerro Porteño,Gabriel Aguayo,Gabriel Aguayo,69,78,ATA,21,Paraguai
-Cerro Porteño,Cecilio Domínguez,Cecilio Domínguez,73,73,ATA,32,Paraguai
-Cerro Porteño,Juan Iturbe,Juan Iturbe,71,71,ATA,33,Paraguai
-Cerro Porteño,Jonatan Torres,Jonatan Torres,72,72,ATA,29,Argentina
-Cerro Porteño,Pablo Vegetti,Pablo Vegetti,72,72,ATA,38,Argentina
-Cerro Porteño,Sergio Araujo,Sergio Araujo,69,69,ATA,34,Argentina
-Cerro Porteño,Freddy Noguera,Freddy Noguera,59,61,ATA,22,Paraguai
-Libertad,Rodrigo Morínigo,Rodrigo Morínigo,71,76,GOL,28,Paraguai
-Libertad,Ángel González,Ángel González,63,70,GOL,23,Paraguai
-Libertad,Victor Rojas,Victor Rojas,58,71,GOL,21,Paraguai
-Libertad,Robert Rojas,Robert Rojas,71,71,ZAG,30,Paraguai
-Libertad,Thiago Fernández,Thiago Fernández,59,71,ZAG,19,Paraguai
-Libertad,Nicolás Freire,Nicolás Freire,66,66,ZAG,32,Argentina
-Libertad,Néstor Giménez,Néstor Giménez,69,70,LAT,29,Paraguai
-Libertad,Matías Espinoza,Matías Espinoza,72,72,LAT,29,Paraguai
-Libertad,Alexis Fretes,Alexis Fretes,66,76,LAT,21,Paraguai
-Libertad,Estiven Villalba,Estiven Villalba,62,73,LAT,18,Paraguai
-Libertad,Alan Benítez,Alan Benítez,68,68,LAT,32,Paraguai
-Libertad,Álvaro Campuzano,Álvaro Campuzano,71,71,VOL,31,Paraguai
-Libertad,Hernesto Caballero,Hernesto Caballero,68,68,VOL,35,Paraguai
-Libertad,Agustín Manzur,Agustín Manzur,71,72,MEI,26,Palestine
-Libertad,Lucas Sanabria,Lucas Sanabria,70,73,MEI,27,Paraguai
-Libertad,Amín Molinas,Amín Molinas,64,69,MEI,21,Paraguai
-Libertad,Christian Martínez,Christian Martínez,57,62,MEI,21,Paraguai
-Libertad,Joaquín Bogarín,Joaquín Bogarín,62,75,MEI,19,Paraguai
-Libertad,Federico Carrizo,Federico Carrizo,69,69,MEI,35,Argentina
-Libertad,Elvio Vera,Elvio Vera,69,71,ATA,25,Paraguai
-Libertad,Hugo Fernández,Hugo Fernández,69,69,ATA,28,Paraguai
-Libertad,Pedro Villalba,Pedro Villalba,59,82,ATA,18,Paraguai
-Libertad,Rodrigo Villalba,Rodrigo Villalba,67,76,ATA,20,Paraguai
-Libertad,Iván Franco,Iván Franco,71,74,ATA,26,Paraguai
-Libertad,Marcelo Fernández,Marcelo Fernández,64,73,ATA,25,Paraguai
-Libertad,Iván Ramírez,Iván Ramírez,68,68,ATA,22,Paraguai
-Libertad,Gustavo Aguilar,Gustavo Aguilar,65,70,ATA,26,Paraguai
-Libertad,Rodrigo Acuña,Rodrigo Acuña,59,71,ATA,18,Paraguai
-Libertad,Lorenzo Melgarejo,Lorenzo Melgarejo,74,74,ATA,36,Paraguai
-Libertad,Luciano Nequecaur,Luciano Nequecaur,69,69,ATA,34,Argentina
-Universitario,Diego Romero,Diego Romero,69,71,GOL,25,Peru
-Universitario,Miguel Vargas,Miguel Vargas,66,67,GOL,30,Chile
-Universitario,Jhefferson Rodríguez,Jhefferson Rodríguez,53,63,GOL,20,Peru
-Universitario,Anderson Santamaría,Anderson Santamaría,71,71,ZAG,34,Peru
-Universitario,Williams Riveros,Williams Riveros,72,72,ZAG,33,Paraguai
-Universitario,Caín Fara,Caín Fara,67,67,ZAG,32,Argentina
-Universitario,Matías Di Benedetto,Matías Di Benedetto,70,70,ZAG,33,Argentina
-Universitario,Aldo Corzo,Aldo Corzo,71,71,ZAG,37,Peru
-Universitario,César Inga,César Inga,69,75,LAT,24,Peru
-Universitario,Jorge Gutiérrez,Jorge Gutiérrez,67,67,LAT,28,Panamá
-Universitario,Jorge Murrugarra,Jorge Murrugarra,67,68,VOL,29,Peru
-Universitario,Juan Manuel Requena,Juan Manuel Requena,67,70,VOL,27,Argentina
-Universitario,Diogo Vásquez,Diogo Vásquez,52,64,VOL,19,Peru
-Universitario,Sebastian Flores,Sebastian Flores,56,70,VOL,21,Peru
-Universitario,Jairo Concha,Jairo Concha,72,75,MEI,27,Peru
-Universitario,Adrián Quiroz,Adrián Quiroz,67,67,MEI,27,Peru
-Universitario,Jordan Guivin,Jordan Guivin,65,65,MEI,28,Peru
-Universitario,Horacio Calcaterra,Horacio Calcaterra,68,68,MEI,37,Peru
-Universitario,Andy Polo,Andy Polo,72,72,MEI,32,Peru
-Universitario,Piero Quispe,Piero Quispe,72,74,MEI,25,Peru
-Universitario,Fabián Cabanillas,Fabián Cabanillas,53,59,MEI,21,Peru
-Universitario,Bryan Reyna,Bryan Reyna,66,66,ATA,28,Peru
-Universitario,Héctor Fértoli,Héctor Fértoli,67,67,ATA,31,Argentina
-Universitario,Christopher Loayza,Christopher Loayza,54,64,ATA,19,Peru
-Universitario,Lisandro Alzugaray,Lisandro Alzugaray,67,67,ATA,36,Argentina
-Universitario,Álex Valera,Álex Valera,72,72,ATA,30,Peru
-Universitario,José Rivera,José Rivera,69,69,ATA,29,Peru
-Universitario,Edison Flores,Edison Flores,72,72,ATA,32,Peru
-Universitario,Gianluca Lapadula,Gianluca Lapadula,71,71,ATA,36,Peru
-Universitario,Nicolás Rengifo,Nicolás Rengifo,49,59,ATA,19,Peru
-Universitario,Jhon Guzmán,Jhon Guzmán,48,65,ATA,16,Peru
-Sporting Cristal,Diego Enríquez,Diego Enríquez,69,77,GOL,24,Peru
-Sporting Cristal,Renato Solís,Renato Solís,69,73,GOL,28,Peru
-Sporting Cristal,César Bautista,César Bautista,57,74,GOL,19,Peru
-Sporting Cristal,Tomás Dulanto,Tomás Dulanto,51,64,GOL,18,Peru
-Sporting Cristal,Rafael Lutiger,Rafael Lutiger,68,75,ZAG,25,Peru
-Sporting Cristal,Luis Abram,Luis Abram,68,68,ZAG,30,Peru
-Sporting Cristal,Miguel Araujo,Miguel Araujo,69,69,ZAG,32,Peru
-Sporting Cristal,Anderson Villacorta,Anderson Villacorta,60,66,ZAG,21,Peru
-Sporting Cristal,Leonardo Díaz,Leonardo Díaz,60,63,ZAG,22,Peru
-Sporting Cristal,Carlos Salgado,Carlos Salgado,51,64,ZAG,18,Peru
-Sporting Cristal,Cristiano,Cristiano,68,68,LAT,33,Brasil
-Sporting Cristal,Fabrizio Lora,Fabrizio Lora,53,59,LAT,21,Peru
-Sporting Cristal,Leandro Sosa,Leandro Sosa,68,68,LAT,32,Uruguai
-Sporting Cristal,Juan González,Juan González,64,64,LAT,30,Argentina
-Sporting Cristal,Joao Cuenca,Joao Cuenca,51,62,LAT,19,Peru
-Sporting Cristal,Duham Ballumbrosio,Duham Ballumbrosio,49,59,LAT,19,Peru
-Sporting Cristal,Gerson Castillo,Gerson Castillo,52,64,VOL,18,Peru
-Sporting Cristal,Martín Távara,Martín Távara,71,74,MEI,27,Peru
-Sporting Cristal,Ian Wisdom,Ian Wisdom,65,76,MEI,21,Peru
-Sporting Cristal,Catriel Cabellos,Catriel Cabellos,68,76,MEI,22,Peru
-Sporting Cristal,Yoshimar Yotún,Yoshimar Yotún,70,70,MEI,36,Peru
-Sporting Cristal,Lionel Herrera,Lionel Herrera,48,60,MEI,18,Peru
-Sporting Cristal,Christofer Gonzales,Christofer Gonzales,71,71,MEI,34,Peru
-Sporting Cristal,Gabriel,Gabriel,69,69,MEI,36,Brasil
-Sporting Cristal,Cristian Benavente,Cristian Benavente,66,66,MEI,32,Espanha
-Sporting Cristal,Yamir del Valle,Yamir del Valle,53,61,MEI,20,Peru
-Sporting Cristal,Maxloren Castro,Maxloren Castro,68,81,ATA,18,Peru
-Sporting Cristal,Juan Manuel Cuesta,Juan Manuel Cuesta,69,72,ATA,24,Colômbia
-Sporting Cristal,Josemaría Mellán,Josemaría Mellán,53,64,ATA,19,Peru
-Sporting Cristal,Santiago González,Santiago González,72,75,ATA,27,Argentina
-Sporting Cristal,Jair Moretti,Jair Moretti,54,63,ATA,19,Peru
-Sporting Cristal,Luis Iberico,Luis Iberico,70,70,ATA,28,Peru
-Sporting Cristal,Michael Hoyos,Michael Hoyos,69,69,ATA,35,Argentina
-Sporting Cristal,Írven Ávila,Írven Ávila,69,69,ATA,36,Peru
-Sporting Cristal,Hernán Barcos,Hernán Barcos,73,73,ATA,42,Argentina
-Colo-Colo,Gabriel Maureira,Gabriel Maureira,61,73,GOL,19,Chile
-Colo-Colo,Vozinha,Vozinha,75,75,GOL,40,Cabo Verde
-Colo-Colo,Fernando de Paul,Fernando de Paul,71,71,GOL,35,Chile
-Colo-Colo,Eduardo Villanueva,Eduardo Villanueva,60,75,GOL,22,Chile
-Colo-Colo,Iván Román,Iván Román,67,75,ZAG,20,Chile
-Colo-Colo,Jonathan Villagra,Jonathan Villagra,68,76,ZAG,25,Chile
-Colo-Colo,Joaquín Sosa,Joaquín Sosa,68,71,ZAG,24,Uruguai
-Colo-Colo,Javier Méndez,Javier Méndez,68,68,ZAG,31,Uruguai
-Colo-Colo,Miguel Toledo,Miguel Toledo,55,58,ZAG,22,Chile
-Colo-Colo,Diego Ulloa,Diego Ulloa,69,69,LAT,23,Chile
-Colo-Colo,Erick Wiemberg,Erick Wiemberg,68,68,LAT,32,Chile
-Colo-Colo,Jeyson Rojas,Jeyson Rojas,65,68,LAT,24,Chile
-Colo-Colo,Matías Fernández,Matías Fernández,67,67,LAT,31,Chile
-Colo-Colo,Víctor Méndez,Víctor Méndez,71,76,VOL,27,Chile
-Colo-Colo,Tomás Alarcón,Tomás Alarcón,69,72,VOL,27,Chile
-Colo-Colo,Álvaro Madrid,Álvaro Madrid,68,68,MEI,31,Chile
-Colo-Colo,Arturo Vidal,Arturo Vidal,73,73,MEI,39,Chile
-Colo-Colo,Bastián Silva,Bastián Silva,59,63,MEI,22,Chile
-Colo-Colo,Leandro Hernández,Leandro Hernández,67,75,MEI,21,Chile
-Colo-Colo,Lautaro Pastrán,Lautaro Pastrán,67,70,MEI,24,Chile
-Colo-Colo,Claudio Aquino,Claudio Aquino,77,77,MEI,35,Argentina
-Colo-Colo,Francisco Marchant,Francisco Marchant,64,79,ATA,20,Chile
-Colo-Colo,Marcos Bolados,Marcos Bolados,66,66,ATA,30,Chile
-Colo-Colo,Maximiliano Romero,Maximiliano Romero,72,72,ATA,27,Argentina
-Colo-Colo,Javier Correa,Javier Correa,72,72,ATA,34,Argentina
-Colo-Colo,Yastin Cuevas,Yastin Cuevas,59,70,ATA,18,Chile
-Universidad de Chile,Gabriel Castellón,Gabriel Castellón,72,72,GOL,33,Chile
-Universidad de Chile,Cristopher Toselli,Cristopher Toselli,70,70,GOL,38,Chile
-Universidad de Chile,Igor Lichnovsky,Igor Lichnovsky,71,71,ZAG,32,Chile
-Universidad de Chile,Nicolás Ramírez,Nicolás Ramírez,68,70,ZAG,29,Chile
-Universidad de Chile,Bianneider Tamayo,Bianneider Tamayo,62,67,ZAG,21,Venezuela
-Universidad de Chile,Matías Zaldivia,Matías Zaldivia,71,71,ZAG,35,Chile
-Universidad de Chile,Marcelo Morales,Marcelo Morales,72,72,LAT,23,Chile
-Universidad de Chile,Diego Vargas,Diego Vargas,57,67,LAT,20,Chile
-Universidad de Chile,Fabián Hormazábal,Fabián Hormazábal,69,69,LAT,30,Chile
-Universidad de Chile,Nicolás Fernández,Nicolás Fernández,66,69,LAT,27,Chile
-Universidad de Chile,Lucas Barrera,Lucas Barrera,60,69,VOL,20,Argentina
-Universidad de Chile,Marcelo Díaz,Marcelo Díaz,71,71,VOL,39,Chile
-Universidad de Chile,Israel Poblete,Israel Poblete,68,68,MEI,31,Chile
-Universidad de Chile,Tobías Reinhart,Tobías Reinhart,69,70,MEI,26,Argentina
-Universidad de Chile,Charles Aránguiz,Charles Aránguiz,74,74,MEI,37,Chile
-Universidad de Chile,Javier Altamirano,Javier Altamirano,71,74,MEI,27,Chile
-Universidad de Chile,Agustín Arce,Agustín Arce,67,71,MEI,21,Chile
-Universidad de Chile,Ignacio Vásquez,Ignacio Vásquez,63,77,ATA,20,Chile
-Universidad de Chile,Maximiliano Guerrero,Maximiliano Guerrero,67,70,ATA,26,Chile
-Universidad de Chile,Gonzalo Reyna,Gonzalo Reyna,64,78,ATA,20,Argentina
-Universidad de Chile,Juan Martín Lucero,Juan Martín Lucero,72,72,ATA,34,Argentina
-Universidad de Chile,Octavio Rivero,Octavio Rivero,69,69,ATA,34,Uruguai
-Universidad de Chile,Eduardo Vargas,Eduardo Vargas,67,67,ATA,36,Chile
-Bolívar,Juan José López,Juan José López,58,66,GOL,20,Bolívia
-Bolívar,Carlos Lampe,Carlos Lampe,72,72,GOL,39,Bolívia
-Bolívar,Diego Méndez,Diego Méndez,64,64,GOL,36,Bolívia
-Bolívar,Xavier Arreaga,Xavier Arreaga,69,69,ZAG,32,Equador
-Bolívar,Leonardo Zabala,Leonardo Zabala,64,67,ZAG,24,Bolívia
-Bolívar,José Sagredo,José Sagredo,68,68,ZAG,32,Bolívia
-Bolívar,Fernando Mena,Fernando Mena,56,69,ZAG,18,Bolívia
-Bolívar,Santiago Echeverría,Santiago Echeverría,67,67,ZAG,36,Argentina
-Bolívar,Heiden Butrón,Heiden Butrón,49,59,LAT,20,Bolívia
-Bolívar,Luis Paz,Luis Paz,67,74,LAT,22,Bolívia
-Bolívar,Escleizon Freita,Escleizon Freita,61,76,LAT,19,Bolívia
-Bolívar,Jesús Sagredo,Jesús Sagredo,65,65,LAT,32,Bolívia
-Bolívar,Ervin Vaca,Ervin Vaca,67,74,VOL,22,Bolívia
-Bolívar,Carlos Sejas,Carlos Sejas,63,66,VOL,22,Bolívia
-Bolívar,Matías Galindo,Matías Galindo,60,68,VOL,20,Bolívia
-Bolívar,Anderson Ayhuana,Anderson Ayhuana,54,71,VOL,20,Bolívia
-Bolívar,Robson Matheus,Robson Matheus,65,74,MEI,24,Bolívia
-Bolívar,Leonel Justiniano,Leonel Justiniano,67,67,MEI,34,Bolívia
-Bolívar,Erwin Saavedra,Erwin Saavedra,67,67,MEI,30,Bolívia
-Bolívar,Jhon Velásquez,Jhon Velásquez,68,73,MEI,23,Bolívia
-Bolívar,John García,John García,68,69,MEI,26,Bolívia
-Bolívar,Carlos Melgar,Carlos Melgar,69,69,MEI,32,Bolívia
-Bolívar,Lucas Chávez,Lucas Chávez,65,65,MEI,23,Bolívia
-Bolívar,Billy Arce,Billy Arce,64,64,ATA,28,Equador
-Bolívar,Pato Rodríguez,Pato Rodríguez,70,70,ATA,36,Argentina
-Bolívar,Damián Batallini,Damián Batallini,71,71,ATA,30,Argentina
-Bolívar,Dairon Asprilla,Dairon Asprilla,66,66,ATA,34,Colômbia
-Bolívar,Bruno Miranda,Bruno Miranda,68,68,ATA,28,Bolívia
-Bolívar,Dorny Romero,Dorny Romero,65,66,ATA,28,Dominican Republic
-Bolívar,Martín Cauteruccio,Martín Cauteruccio,75,75,ATA,39,Uruguai
-Always Ready,Alain Baroja,Alain Baroja,66,66,GOL,37,Venezuela
-Always Ready,Saidt Mustafá,Saidt Mustafá,64,64,GOL,36,Bolívia
-Always Ready,Enzo Rodriguez,Enzo Rodriguez,57,60,GOL,22,Bolívia
-Always Ready,Richet Gómez,Richet Gómez,67,67,ZAG,28,Bolívia
-Always Ready,Edisson Restrepo,Edisson Restrepo,64,64,ZAG,29,Colômbia
-Always Ready,Alex Rambal,Alex Rambal,67,67,ZAG,34,Colômbia
-Always Ready,Nicolás Villarroel,Nicolás Villarroel,57,67,ZAG,19,Bolívia
-Always Ready,Santiago Cuestas,Santiago Cuestas,53,64,ZAG,19,Bolívia
-Always Ready,Carlitos Rodriguez,Carlitos Rodriguez,64,67,LAT,21,Bolívia
-Always Ready,Damian Medina,Damian Medina,58,64,LAT,21,Bolívia
-Always Ready,Kenyhiro Estrada,Kenyhiro Estrada,52,64,LAT,18,Bolívia
-Always Ready,Alvaro Quiroga,Alvaro Quiroga,66,66,VOL,31,Bolívia
-Always Ready,Hector Galvis,Hector Galvis,51,64,VOL,18,Bolívia
-Always Ready,Ramon,Ramon,61,61,MEI,29,Brasil
-Always Ready,Fernando Saucedo,Fernando Saucedo,65,65,MEI,36,Bolívia
-Always Ready,Rai Lima,Rai Lima,57,58,MEI,26,Bolívia
-Always Ready,Kerdyn Lens,Kerdyn Lens,53,64,MEI,18,Bolívia
-Always Ready,Dario Torrico,Dario Torrico,67,68,MEI,26,Bolívia
-Always Ready,Jesús Maraude,Jesús Maraude,59,71,MEI,18,Bolívia
-Always Ready,Joel Amoroso,Joel Amoroso,67,67,MEI,38,Argentina
-Always Ready,Matías Collazo,Matías Collazo,50,65,MEI,17,Bolívia
-Always Ready,Javier Uzeda,Javier Uzeda,65,68,ATA,24,Bolívia
-Always Ready,Saúl Choquevillca,Saúl Choquevillca,50,65,ATA,16,Bolívia
-Always Ready,Carmelo Algarañaz,Carmelo Algarañaz,64,64,ATA,30,Bolívia
-Always Ready,Juan Godoy,Juan Godoy,67,67,ATA,33,Bolívia
-Always Ready,Enrique Triverio,Enrique Triverio,67,67,ATA,37,Argentina
-Always Ready,Jose Ojeda,Jose Ojeda,51,65,ATA,17,Bolívia
+clube,nome_original,nome,overall,potencial,posicao,idade,pais,id
+Olimpia,Gastón Olveira,Gastón Olveira,74,74,GOL,33,Paraguai,R13560
+Olimpia,Sebastián Lentinelly,Sebastián Lentinelly,66,66,GOL,29,Uruguai,R13561
+Olimpia,Lucas Verza,Lucas Verza,60,65,GOL,25,Paraguai,R13562
+Olimpia,Mateo Gamarra,Mateo Gamarra,73,74,ZAG,26,Paraguai,R13563
+Olimpia,Gustavo Vargas,Gustavo Vargas,71,73,ZAG,25,Paraguai,R13564
+Olimpia,Juan Vera,Juan Vera,66,66,ZAG,27,Paraguai,R13565
+Olimpia,Bryan Bentaberry,Bryan Bentaberry,67,67,ZAG,29,Uruguai,R13566
+Olimpia,Esteban Matus,Esteban Matus,68,71,LAT,24,Chile,R13567
+Olimpia,César Olmedo,César Olmedo,69,76,LAT,23,Paraguai,R13568
+Olimpia,Tim Payne,Tim Payne,69,69,LAT,32,Nova Zelândia,R13569
+Olimpia,Raúl Cáceres,Raúl Cáceres,66,66,LAT,35,Paraguai,R13570
+Olimpia,Richard Ortiz,Richard Ortiz,70,70,VOL,36,Paraguai,R13571
+Olimpia,Richard Sánchez,Richard Sánchez,72,72,MEI,30,Paraguai,R13572
+Olimpia,Juan Fernando Alfaro,Juan Fernando Alfaro,69,70,MEI,26,Argentina,R13573
+Olimpia,Alex Franco,Alex Franco,66,70,MEI,25,Paraguai,R13574
+Olimpia,Javier Dominguez,Javier Dominguez,68,70,MEI,26,Paraguai,R13575
+Olimpia,Sebastián Quintana,Sebastián Quintana,65,66,MEI,23,Paraguai,R13576
+Olimpia,Rubén Lezcano,Rubén Lezcano,73,75,MEI,22,Paraguai,R13577
+Olimpia,Eduardo Delmas,Eduardo Delmas,64,72,MEI,19,Paraguai,R13578
+Olimpia,Iván Leguizamón,Iván Leguizamón,72,78,ATA,24,Paraguai,R13579
+Olimpia,Pedro Zarza,Pedro Zarza,64,74,ATA,19,Paraguai,R13580
+Olimpia,Romeo Benítez,Romeo Benítez,65,68,ATA,24,Paraguai,R13581
+Olimpia,César Miño,César Miño,65,76,ATA,19,Paraguai,R13582
+Olimpia,Rodney Redes,Rodney Redes,70,71,ATA,26,Paraguai,R13583
+Olimpia,Fernando Cardozo,Fernando Cardozo,65,67,ATA,25,Paraguai,R13584
+Olimpia,Manuel Romero,Manuel Romero,64,66,ATA,25,Paraguai,R13585
+Olimpia,Franco Alfonso,Franco Alfonso,63,66,ATA,24,Argentina,R13586
+Olimpia,Derlis González,Derlis González,73,73,ATA,32,Paraguai,R13587
+Olimpia,Sebastián Ferreira,Sebastián Ferreira,67,67,ATA,28,Paraguai,R13588
+Olimpia,Tiago Caballero,Tiago Caballero,65,70,ATA,21,Paraguai,R13589
+Olimpia,Gabriel Ávalos,Gabriel Ávalos,73,73,ATA,36,Paraguai,R13590
+Olimpia,Braian Romero,Braian Romero,70,70,ATA,35,Argentina,R13591
+Olimpia,Hugo Sandoval,Hugo Sandoval,64,65,ATA,26,Paraguai,R13592
+Cerro Porteño,Manuel Roffo,Manuel Roffo,74,80,GOL,26,Argentina,R13593
+Cerro Porteño,Ángel Martínez,Ángel Martínez,66,69,GOL,24,Paraguai,R13594
+Cerro Porteño,Roberto Fernández,Roberto Fernández,70,70,GOL,38,Paraguai,R13595
+Cerro Porteño,Lucas Quintana,Lucas Quintana,71,74,ZAG,21,Paraguai,R13596
+Cerro Porteño,Lucas Merolla,Lucas Merolla,72,72,ZAG,31,Argentina,R13597
+Cerro Porteño,Alexis Cañete,Alexis Cañete,66,68,ZAG,23,Paraguai,R13598
+Cerro Porteño,Gustavo Velázquez,Gustavo Velázquez,73,73,ZAG,35,Paraguai,R13599
+Cerro Porteño,Abel Luciatti,Abel Luciatti,70,70,ZAG,33,Argentina,R13600
+Cerro Porteño,Blas Riveros,Blas Riveros,68,69,LAT,28,Paraguai,R13601
+Cerro Porteño,Marcelo Chaparro,Marcelo Chaparro,62,73,LAT,19,Paraguai,R13602
+Cerro Porteño,Guillermo Benítez,Guillermo Benítez,67,67,LAT,32,Argentina,R13603
+Cerro Porteño,Fabricio Domínguez,Fabricio Domínguez,69,69,LAT,28,Uruguai,R13604
+Cerro Porteño,Iván Ramírez,Iván Ramírez,69,69,LAT,31,Paraguai,R13605
+Cerro Porteño,Jorge Morel,Jorge Morel,69,70,VOL,28,Paraguai,R13606
+Cerro Porteño,Piris da Motta,Piris da Motta,69,69,VOL,32,Paraguai,R13607
+Cerro Porteño,Gastón Giménez,Gastón Giménez,70,70,VOL,35,Paraguai,R13608
+Cerro Porteño,Agustín Almendra,Agustín Almendra,72,73,MEI,26,Argentina,R13609
+Cerro Porteño,Cristhian Paredes,Cristhian Paredes,68,68,MEI,28,Paraguai,R13610
+Cerro Porteño,Ariel Gamarra,Ariel Gamarra,68,70,MEI,23,Paraguai,R13611
+Cerro Porteño,César Bobadilla,César Bobadilla,60,72,MEI,19,Paraguai,R13612
+Cerro Porteño,Amín Cristaldo,Amín Cristaldo,56,67,MEI,19,Paraguai,R13613
+Cerro Porteño,Carlos Chena,Carlos Chena,53,64,MEI,19,Paraguai,R13614
+Cerro Porteño,Mateo Klimowicz,Mateo Klimowicz,71,72,MEI,26,Alemanha,R13615
+Cerro Porteño,Carlos Franco,Carlos Franco,58,71,MEI,18,Paraguai,R13616
+Cerro Porteño,Ignacio Aliseda,Ignacio Aliseda,72,74,ATA,26,Argentina,R13617
+Cerro Porteño,Derlis Rodríguez,Derlis Rodríguez,68,68,ATA,29,Paraguai,R13618
+Cerro Porteño,Santiago Mosquera,Santiago Mosquera,68,68,ATA,31,Colômbia,R13619
+Cerro Porteño,Gabriel Aguayo,Gabriel Aguayo,69,78,ATA,21,Paraguai,R13620
+Cerro Porteño,Cecilio Domínguez,Cecilio Domínguez,73,73,ATA,32,Paraguai,R13621
+Cerro Porteño,Juan Iturbe,Juan Iturbe,71,71,ATA,33,Paraguai,R13622
+Cerro Porteño,Jonatan Torres,Jonatan Torres,72,72,ATA,29,Argentina,R13623
+Cerro Porteño,Pablo Vegetti,Pablo Vegetti,72,72,ATA,38,Argentina,R13624
+Cerro Porteño,Sergio Araujo,Sergio Araujo,69,69,ATA,34,Argentina,R13625
+Cerro Porteño,Freddy Noguera,Freddy Noguera,59,61,ATA,22,Paraguai,R13626
+Libertad,Rodrigo Morínigo,Rodrigo Morínigo,71,76,GOL,28,Paraguai,R13627
+Libertad,Ángel González,Ángel González,63,70,GOL,23,Paraguai,R13628
+Libertad,Victor Rojas,Victor Rojas,58,71,GOL,21,Paraguai,R13629
+Libertad,Robert Rojas,Robert Rojas,71,71,ZAG,30,Paraguai,R13630
+Libertad,Thiago Fernández,Thiago Fernández,59,71,ZAG,19,Paraguai,R13631
+Libertad,Nicolás Freire,Nicolás Freire,66,66,ZAG,32,Argentina,R13632
+Libertad,Néstor Giménez,Néstor Giménez,69,70,LAT,29,Paraguai,R13633
+Libertad,Matías Espinoza,Matías Espinoza,72,72,LAT,29,Paraguai,R13634
+Libertad,Alexis Fretes,Alexis Fretes,66,76,LAT,21,Paraguai,R13635
+Libertad,Estiven Villalba,Estiven Villalba,62,73,LAT,18,Paraguai,R13636
+Libertad,Alan Benítez,Alan Benítez,68,68,LAT,32,Paraguai,R13637
+Libertad,Álvaro Campuzano,Álvaro Campuzano,71,71,VOL,31,Paraguai,R13638
+Libertad,Hernesto Caballero,Hernesto Caballero,68,68,VOL,35,Paraguai,R13639
+Libertad,Agustín Manzur,Agustín Manzur,71,72,MEI,26,Palestine,R13640
+Libertad,Lucas Sanabria,Lucas Sanabria,70,73,MEI,27,Paraguai,R13641
+Libertad,Amín Molinas,Amín Molinas,64,69,MEI,21,Paraguai,R13642
+Libertad,Christian Martínez,Christian Martínez,57,62,MEI,21,Paraguai,R13643
+Libertad,Joaquín Bogarín,Joaquín Bogarín,62,75,MEI,19,Paraguai,R13644
+Libertad,Federico Carrizo,Federico Carrizo,69,69,MEI,35,Argentina,R13645
+Libertad,Elvio Vera,Elvio Vera,69,71,ATA,25,Paraguai,R13646
+Libertad,Hugo Fernández,Hugo Fernández,69,69,ATA,28,Paraguai,R13647
+Libertad,Pedro Villalba,Pedro Villalba,59,82,ATA,18,Paraguai,R13648
+Libertad,Rodrigo Villalba,Rodrigo Villalba,67,76,ATA,20,Paraguai,R13649
+Libertad,Iván Franco,Iván Franco,71,74,ATA,26,Paraguai,R13650
+Libertad,Marcelo Fernández,Marcelo Fernández,64,73,ATA,25,Paraguai,R13651
+Libertad,Iván Ramírez,Iván Ramírez,68,68,ATA,22,Paraguai,R13652
+Libertad,Gustavo Aguilar,Gustavo Aguilar,65,70,ATA,26,Paraguai,R13653
+Libertad,Rodrigo Acuña,Rodrigo Acuña,59,71,ATA,18,Paraguai,R13654
+Libertad,Lorenzo Melgarejo,Lorenzo Melgarejo,74,74,ATA,36,Paraguai,R13655
+Libertad,Luciano Nequecaur,Luciano Nequecaur,69,69,ATA,34,Argentina,R13656
+Universitario,Diego Romero,Diego Romero,69,71,GOL,25,Peru,R13657
+Universitario,Miguel Vargas,Miguel Vargas,66,67,GOL,30,Chile,R13658
+Universitario,Jhefferson Rodríguez,Jhefferson Rodríguez,53,63,GOL,20,Peru,R13659
+Universitario,Anderson Santamaría,Anderson Santamaría,71,71,ZAG,34,Peru,R13660
+Universitario,Williams Riveros,Williams Riveros,72,72,ZAG,33,Paraguai,R13661
+Universitario,Caín Fara,Caín Fara,67,67,ZAG,32,Argentina,R13662
+Universitario,Matías Di Benedetto,Matías Di Benedetto,70,70,ZAG,33,Argentina,R13663
+Universitario,Aldo Corzo,Aldo Corzo,71,71,ZAG,37,Peru,R13664
+Universitario,César Inga,César Inga,69,75,LAT,24,Peru,R13665
+Universitario,Jorge Gutiérrez,Jorge Gutiérrez,67,67,LAT,28,Panamá,R13666
+Universitario,Jorge Murrugarra,Jorge Murrugarra,67,68,VOL,29,Peru,R13667
+Universitario,Juan Manuel Requena,Juan Manuel Requena,67,70,VOL,27,Argentina,R13668
+Universitario,Diogo Vásquez,Diogo Vásquez,52,64,VOL,19,Peru,R13669
+Universitario,Sebastian Flores,Sebastian Flores,56,70,VOL,21,Peru,R13670
+Universitario,Jairo Concha,Jairo Concha,72,75,MEI,27,Peru,R13671
+Universitario,Adrián Quiroz,Adrián Quiroz,67,67,MEI,27,Peru,R13672
+Universitario,Jordan Guivin,Jordan Guivin,65,65,MEI,28,Peru,R13673
+Universitario,Horacio Calcaterra,Horacio Calcaterra,68,68,MEI,37,Peru,R13674
+Universitario,Andy Polo,Andy Polo,72,72,MEI,32,Peru,R13675
+Universitario,Piero Quispe,Piero Quispe,72,74,MEI,25,Peru,R13676
+Universitario,Fabián Cabanillas,Fabián Cabanillas,53,59,MEI,21,Peru,R13677
+Universitario,Bryan Reyna,Bryan Reyna,66,66,ATA,28,Peru,R13678
+Universitario,Héctor Fértoli,Héctor Fértoli,67,67,ATA,31,Argentina,R13679
+Universitario,Christopher Loayza,Christopher Loayza,54,64,ATA,19,Peru,R13680
+Universitario,Lisandro Alzugaray,Lisandro Alzugaray,67,67,ATA,36,Argentina,R13681
+Universitario,Álex Valera,Álex Valera,72,72,ATA,30,Peru,R13682
+Universitario,José Rivera,José Rivera,69,69,ATA,29,Peru,R13683
+Universitario,Edison Flores,Edison Flores,72,72,ATA,32,Peru,R13684
+Universitario,Gianluca Lapadula,Gianluca Lapadula,71,71,ATA,36,Peru,R13685
+Universitario,Nicolás Rengifo,Nicolás Rengifo,49,59,ATA,19,Peru,R13686
+Universitario,Jhon Guzmán,Jhon Guzmán,48,65,ATA,16,Peru,R13687
+Sporting Cristal,Diego Enríquez,Diego Enríquez,69,77,GOL,24,Peru,R13688
+Sporting Cristal,Renato Solís,Renato Solís,69,73,GOL,28,Peru,R13689
+Sporting Cristal,César Bautista,César Bautista,57,74,GOL,19,Peru,R13690
+Sporting Cristal,Tomás Dulanto,Tomás Dulanto,51,64,GOL,18,Peru,R13691
+Sporting Cristal,Rafael Lutiger,Rafael Lutiger,68,75,ZAG,25,Peru,R13692
+Sporting Cristal,Luis Abram,Luis Abram,68,68,ZAG,30,Peru,R13693
+Sporting Cristal,Miguel Araujo,Miguel Araujo,69,69,ZAG,32,Peru,R13694
+Sporting Cristal,Anderson Villacorta,Anderson Villacorta,60,66,ZAG,21,Peru,R13695
+Sporting Cristal,Leonardo Díaz,Leonardo Díaz,60,63,ZAG,22,Peru,R13696
+Sporting Cristal,Carlos Salgado,Carlos Salgado,51,64,ZAG,18,Peru,R13697
+Sporting Cristal,Cristiano,Cristiano,68,68,LAT,33,Brasil,R13698
+Sporting Cristal,Fabrizio Lora,Fabrizio Lora,53,59,LAT,21,Peru,R13699
+Sporting Cristal,Leandro Sosa,Leandro Sosa,68,68,LAT,32,Uruguai,R13700
+Sporting Cristal,Juan González,Juan González,64,64,LAT,30,Argentina,R13701
+Sporting Cristal,Joao Cuenca,Joao Cuenca,51,62,LAT,19,Peru,R13702
+Sporting Cristal,Duham Ballumbrosio,Duham Ballumbrosio,49,59,LAT,19,Peru,R13703
+Sporting Cristal,Gerson Castillo,Gerson Castillo,52,64,VOL,18,Peru,R13704
+Sporting Cristal,Martín Távara,Martín Távara,71,74,MEI,27,Peru,R13705
+Sporting Cristal,Ian Wisdom,Ian Wisdom,65,76,MEI,21,Peru,R13706
+Sporting Cristal,Catriel Cabellos,Catriel Cabellos,68,76,MEI,22,Peru,R13707
+Sporting Cristal,Yoshimar Yotún,Yoshimar Yotún,70,70,MEI,36,Peru,R13708
+Sporting Cristal,Lionel Herrera,Lionel Herrera,48,60,MEI,18,Peru,R13709
+Sporting Cristal,Christofer Gonzales,Christofer Gonzales,71,71,MEI,34,Peru,R13710
+Sporting Cristal,Gabriel,Gabriel,69,69,MEI,36,Brasil,R13711
+Sporting Cristal,Cristian Benavente,Cristian Benavente,66,66,MEI,32,Espanha,R13712
+Sporting Cristal,Yamir del Valle,Yamir del Valle,53,61,MEI,20,Peru,R13713
+Sporting Cristal,Maxloren Castro,Maxloren Castro,68,81,ATA,18,Peru,R13714
+Sporting Cristal,Juan Manuel Cuesta,Juan Manuel Cuesta,69,72,ATA,24,Colômbia,R13715
+Sporting Cristal,Josemaría Mellán,Josemaría Mellán,53,64,ATA,19,Peru,R13716
+Sporting Cristal,Santiago González,Santiago González,72,75,ATA,27,Argentina,R13717
+Sporting Cristal,Jair Moretti,Jair Moretti,54,63,ATA,19,Peru,R13718
+Sporting Cristal,Luis Iberico,Luis Iberico,70,70,ATA,28,Peru,R13719
+Sporting Cristal,Michael Hoyos,Michael Hoyos,69,69,ATA,35,Argentina,R13720
+Sporting Cristal,Írven Ávila,Írven Ávila,69,69,ATA,36,Peru,R13721
+Sporting Cristal,Hernán Barcos,Hernán Barcos,73,73,ATA,42,Argentina,R13722
+Colo-Colo,Gabriel Maureira,Gabriel Maureira,61,73,GOL,19,Chile,R13723
+Colo-Colo,Vozinha,Vozinha,75,75,GOL,40,Cabo Verde,R13724
+Colo-Colo,Fernando de Paul,Fernando de Paul,71,71,GOL,35,Chile,R13725
+Colo-Colo,Eduardo Villanueva,Eduardo Villanueva,60,75,GOL,22,Chile,R13726
+Colo-Colo,Iván Román,Iván Román,67,75,ZAG,20,Chile,R13727
+Colo-Colo,Jonathan Villagra,Jonathan Villagra,68,76,ZAG,25,Chile,R13728
+Colo-Colo,Joaquín Sosa,Joaquín Sosa,68,71,ZAG,24,Uruguai,R13729
+Colo-Colo,Javier Méndez,Javier Méndez,68,68,ZAG,31,Uruguai,R13730
+Colo-Colo,Miguel Toledo,Miguel Toledo,55,58,ZAG,22,Chile,R13731
+Colo-Colo,Diego Ulloa,Diego Ulloa,69,69,LAT,23,Chile,R13732
+Colo-Colo,Erick Wiemberg,Erick Wiemberg,68,68,LAT,32,Chile,R13733
+Colo-Colo,Jeyson Rojas,Jeyson Rojas,65,68,LAT,24,Chile,R13734
+Colo-Colo,Matías Fernández,Matías Fernández,67,67,LAT,31,Chile,R13735
+Colo-Colo,Víctor Méndez,Víctor Méndez,71,76,VOL,27,Chile,R13736
+Colo-Colo,Tomás Alarcón,Tomás Alarcón,69,72,VOL,27,Chile,R13737
+Colo-Colo,Álvaro Madrid,Álvaro Madrid,68,68,MEI,31,Chile,R13738
+Colo-Colo,Arturo Vidal,Arturo Vidal,73,73,MEI,39,Chile,R13739
+Colo-Colo,Bastián Silva,Bastián Silva,59,63,MEI,22,Chile,R13740
+Colo-Colo,Leandro Hernández,Leandro Hernández,67,75,MEI,21,Chile,R13741
+Colo-Colo,Lautaro Pastrán,Lautaro Pastrán,67,70,MEI,24,Chile,R13742
+Colo-Colo,Claudio Aquino,Claudio Aquino,77,77,MEI,35,Argentina,R13743
+Colo-Colo,Francisco Marchant,Francisco Marchant,64,79,ATA,20,Chile,R13744
+Colo-Colo,Marcos Bolados,Marcos Bolados,66,66,ATA,30,Chile,R13745
+Colo-Colo,Maximiliano Romero,Maximiliano Romero,72,72,ATA,27,Argentina,R13746
+Colo-Colo,Javier Correa,Javier Correa,72,72,ATA,34,Argentina,R13747
+Colo-Colo,Yastin Cuevas,Yastin Cuevas,59,70,ATA,18,Chile,R13748
+Universidad de Chile,Gabriel Castellón,Gabriel Castellón,72,72,GOL,33,Chile,R13749
+Universidad de Chile,Cristopher Toselli,Cristopher Toselli,70,70,GOL,38,Chile,R13750
+Universidad de Chile,Igor Lichnovsky,Igor Lichnovsky,71,71,ZAG,32,Chile,R13751
+Universidad de Chile,Nicolás Ramírez,Nicolás Ramírez,68,70,ZAG,29,Chile,R13752
+Universidad de Chile,Bianneider Tamayo,Bianneider Tamayo,62,67,ZAG,21,Venezuela,R13753
+Universidad de Chile,Matías Zaldivia,Matías Zaldivia,71,71,ZAG,35,Chile,R13754
+Universidad de Chile,Marcelo Morales,Marcelo Morales,72,72,LAT,23,Chile,R13755
+Universidad de Chile,Diego Vargas,Diego Vargas,57,67,LAT,20,Chile,R13756
+Universidad de Chile,Fabián Hormazábal,Fabián Hormazábal,69,69,LAT,30,Chile,R13757
+Universidad de Chile,Nicolás Fernández,Nicolás Fernández,66,69,LAT,27,Chile,R13758
+Universidad de Chile,Lucas Barrera,Lucas Barrera,60,69,VOL,20,Argentina,R13759
+Universidad de Chile,Marcelo Díaz,Marcelo Díaz,71,71,VOL,39,Chile,R13760
+Universidad de Chile,Israel Poblete,Israel Poblete,68,68,MEI,31,Chile,R13761
+Universidad de Chile,Tobías Reinhart,Tobías Reinhart,69,70,MEI,26,Argentina,R13762
+Universidad de Chile,Charles Aránguiz,Charles Aránguiz,74,74,MEI,37,Chile,R13763
+Universidad de Chile,Javier Altamirano,Javier Altamirano,71,74,MEI,27,Chile,R13764
+Universidad de Chile,Agustín Arce,Agustín Arce,67,71,MEI,21,Chile,R13765
+Universidad de Chile,Ignacio Vásquez,Ignacio Vásquez,63,77,ATA,20,Chile,R13766
+Universidad de Chile,Maximiliano Guerrero,Maximiliano Guerrero,67,70,ATA,26,Chile,R13767
+Universidad de Chile,Gonzalo Reyna,Gonzalo Reyna,64,78,ATA,20,Argentina,R13768
+Universidad de Chile,Juan Martín Lucero,Juan Martín Lucero,72,72,ATA,34,Argentina,R13769
+Universidad de Chile,Octavio Rivero,Octavio Rivero,69,69,ATA,34,Uruguai,R13770
+Universidad de Chile,Eduardo Vargas,Eduardo Vargas,67,67,ATA,36,Chile,R13771
+Bolívar,Juan José López,Juan José López,58,66,GOL,20,Bolívia,R13851
+Bolívar,Carlos Lampe,Carlos Lampe,72,72,GOL,39,Bolívia,R13852
+Bolívar,Diego Méndez,Diego Méndez,64,64,GOL,36,Bolívia,R13853
+Bolívar,Xavier Arreaga,Xavier Arreaga,69,69,ZAG,32,Equador,R13854
+Bolívar,Leonardo Zabala,Leonardo Zabala,64,67,ZAG,24,Bolívia,R13855
+Bolívar,José Sagredo,José Sagredo,68,68,ZAG,32,Bolívia,R13856
+Bolívar,Fernando Mena,Fernando Mena,56,69,ZAG,18,Bolívia,R13857
+Bolívar,Santiago Echeverría,Santiago Echeverría,67,67,ZAG,36,Argentina,R13858
+Bolívar,Heiden Butrón,Heiden Butrón,49,59,LAT,20,Bolívia,R13859
+Bolívar,Luis Paz,Luis Paz,67,74,LAT,22,Bolívia,R13860
+Bolívar,Escleizon Freita,Escleizon Freita,61,76,LAT,19,Bolívia,R13861
+Bolívar,Jesús Sagredo,Jesús Sagredo,65,65,LAT,32,Bolívia,R13862
+Bolívar,Ervin Vaca,Ervin Vaca,67,74,VOL,22,Bolívia,R13863
+Bolívar,Carlos Sejas,Carlos Sejas,63,66,VOL,22,Bolívia,R13864
+Bolívar,Matías Galindo,Matías Galindo,60,68,VOL,20,Bolívia,R13865
+Bolívar,Anderson Ayhuana,Anderson Ayhuana,54,71,VOL,20,Bolívia,R13866
+Bolívar,Robson Matheus,Robson Matheus,65,74,MEI,24,Bolívia,R13867
+Bolívar,Leonel Justiniano,Leonel Justiniano,67,67,MEI,34,Bolívia,R13868
+Bolívar,Erwin Saavedra,Erwin Saavedra,67,67,MEI,30,Bolívia,R13869
+Bolívar,Jhon Velásquez,Jhon Velásquez,68,73,MEI,23,Bolívia,R13870
+Bolívar,John García,John García,68,69,MEI,26,Bolívia,R13871
+Bolívar,Carlos Melgar,Carlos Melgar,69,69,MEI,32,Bolívia,R13872
+Bolívar,Lucas Chávez,Lucas Chávez,65,65,MEI,23,Bolívia,R13873
+Bolívar,Billy Arce,Billy Arce,64,64,ATA,28,Equador,R13874
+Bolívar,Pato Rodríguez,Pato Rodríguez,70,70,ATA,36,Argentina,R13875
+Bolívar,Damián Batallini,Damián Batallini,71,71,ATA,30,Argentina,R13876
+Bolívar,Dairon Asprilla,Dairon Asprilla,66,66,ATA,34,Colômbia,R13877
+Bolívar,Bruno Miranda,Bruno Miranda,68,68,ATA,28,Bolívia,R13878
+Bolívar,Dorny Romero,Dorny Romero,65,66,ATA,28,Dominican Republic,R13879
+Bolívar,Martín Cauteruccio,Martín Cauteruccio,75,75,ATA,39,Uruguai,R13880
+Always Ready,Alain Baroja,Alain Baroja,66,66,GOL,37,Venezuela,R13881
+Always Ready,Saidt Mustafá,Saidt Mustafá,64,64,GOL,36,Bolívia,R13882
+Always Ready,Enzo Rodriguez,Enzo Rodriguez,57,60,GOL,22,Bolívia,R13883
+Always Ready,Richet Gómez,Richet Gómez,67,67,ZAG,28,Bolívia,R13884
+Always Ready,Edisson Restrepo,Edisson Restrepo,64,64,ZAG,29,Colômbia,R13885
+Always Ready,Alex Rambal,Alex Rambal,67,67,ZAG,34,Colômbia,R13886
+Always Ready,Nicolás Villarroel,Nicolás Villarroel,57,67,ZAG,19,Bolívia,R13887
+Always Ready,Santiago Cuestas,Santiago Cuestas,53,64,ZAG,19,Bolívia,R13888
+Always Ready,Carlitos Rodriguez,Carlitos Rodriguez,64,67,LAT,21,Bolívia,R13889
+Always Ready,Damian Medina,Damian Medina,58,64,LAT,21,Bolívia,R13890
+Always Ready,Kenyhiro Estrada,Kenyhiro Estrada,52,64,LAT,18,Bolívia,R13891
+Always Ready,Alvaro Quiroga,Alvaro Quiroga,66,66,VOL,31,Bolívia,R13892
+Always Ready,Hector Galvis,Hector Galvis,51,64,VOL,18,Bolívia,R13893
+Always Ready,Ramon,Ramon,61,61,MEI,29,Brasil,R13894
+Always Ready,Fernando Saucedo,Fernando Saucedo,65,65,MEI,36,Bolívia,R13895
+Always Ready,Rai Lima,Rai Lima,57,58,MEI,26,Bolívia,R13896
+Always Ready,Kerdyn Lens,Kerdyn Lens,53,64,MEI,18,Bolívia,R13897
+Always Ready,Dario Torrico,Dario Torrico,67,68,MEI,26,Bolívia,R13898
+Always Ready,Jesús Maraude,Jesús Maraude,59,71,MEI,18,Bolívia,R13899
+Always Ready,Joel Amoroso,Joel Amoroso,67,67,MEI,38,Argentina,R13900
+Always Ready,Matías Collazo,Matías Collazo,50,65,MEI,17,Bolívia,R13901
+Always Ready,Javier Uzeda,Javier Uzeda,65,68,ATA,24,Bolívia,R13902
+Always Ready,Saúl Choquevillca,Saúl Choquevillca,50,65,ATA,16,Bolívia,R13903
+Always Ready,Carmelo Algarañaz,Carmelo Algarañaz,64,64,ATA,30,Bolívia,R13904
+Always Ready,Juan Godoy,Juan Godoy,67,67,ATA,33,Bolívia,R13905
+Always Ready,Enrique Triverio,Enrique Triverio,67,67,ATA,37,Argentina,R13906
+Always Ready,Jose Ojeda,Jose Ojeda,51,65,ATA,17,Bolívia,R13907
