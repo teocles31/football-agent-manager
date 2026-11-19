@@ -29,3 +29,22 @@ Em cerca de 1 minuto o site atualiza. Na próxima vez que o jogo for aberto, a m
 - **Sem internet**: o jogo usa os dados de sempre.
 
 Para desfazer uma mudança, volte o nome, o overall e o potencial aos valores de antes. Isso conta como uma nova alteração.
+
+## Categorias de base (`base.csv`)
+
+São os garotos das categorias de base dos clubes. Eles jogam o sub-20, a Copinha, a Youth League e o Mundial Sub-20. Os nomes vieram dos elencos da UEFA Youth League 2026/27, das seleções de base de 2025 (Mundial Sub-20, Mundial Sub-17, Sul-Americanos e Euros de base) e dos elencos sub-20 de 2026 dos clubes brasileiros (ogol.com.br). A divisão entre zagueiro e lateral, e entre volante e meia, foi estimada, então confira a posicao. O overall e o potencial são estimativas do jogo, então ajuste à vontade.
+
+Nesta planilha também dá para mudar a **posicao**: GOL, ZAG, LAT, VOL, MEI ou ATA.
+
+### Adicionar um garoto novo
+
+Crie uma linha nova com todas as colunas preenchidas:
+
+- **clube**: o nome do clube exatamente como aparece no jogo (por exemplo `Flamengo`, `Atlético-MG`, `Bayern de Munique`)
+- **nome_original** e **nome**: o nome do garoto, igual nas duas colunas
+- **overall** e **potencial**
+- **posicao**: GOL, ZAG, LAT, VOL, MEI ou ATA
+- **idade**: de 14 a 20
+- **pais**: em português, como no jogo (`Brasil`, `Argentina`, `Inglaterra`...)
+
+Ele entra na base do clube nas carreiras novas e, uma vez, nas carreiras em andamento.

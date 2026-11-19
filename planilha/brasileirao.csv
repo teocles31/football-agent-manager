@@ -46,7 +46,7 @@ Palmeiras,Andreas Pereira,Andreas Pereira,78,78,MEI,30,Brasil
 Palmeiras,Lucas Evangelista,Lucas Evangelista,77,77,MEI,31,Brasil
 Palmeiras,Larson,Larson,67,70,MEI,21,Brasil
 Palmeiras,Mauricio,Mauricio,77,79,MEI,25,Paraguai
-Palmeiras,Erick Belé,Erick Belé,64,73,MEI,19,Brasil
+Palmeiras,Erick Belé,Erick Belé,64,86,MEI,19,Brasil
 Palmeiras,Ramón Sosa,Ramón Sosa,77,77,ATA,27,Paraguai
 Palmeiras,Felipe Anderson,Felipe Anderson,76,76,ATA,33,Brasil
 Palmeiras,Jhon Arias,Jhon Arias,80,80,ATA,29,Colômbia
@@ -65,7 +65,7 @@ Cruzeiro,Lucas Villalba,Lucas Villalba,74,74,LAT,32,Argentina
 Cruzeiro,Kauã Moraes,Kauã Moraes,67,77,LAT,20,Brasil
 Cruzeiro,William,William,75,75,LAT,31,Brasil
 Cruzeiro,Fagner,Fagner,69,69,LAT,37,Brasil
-Cruzeiro,Zé Lucas,Zé Lucas,69,82,VOL,18,Brasil
+Cruzeiro,Zé Lucas,Zé Lucas,69,87,VOL,18,Brasil
 Cruzeiro,Lucas Romero,Lucas Romero,75,75,VOL,32,Argentina
 Cruzeiro,Lucas Silva,Lucas Silva,70,70,VOL,33,Brasil
 Cruzeiro,Gerson,Gerson,80,80,MEI,29,Brasil
@@ -102,7 +102,7 @@ Botafogo,Jhoan Hernández,Jhoan Hernández,56,65,LAT,20,Colômbia
 Botafogo,Vitinho,Vitinho,78,78,LAT,27,Brasil
 Botafogo,Mateo Ponte,Mateo Ponte,72,74,LAT,23,Uruguai
 Botafogo,Kadu Santos,Kadu Santos,62,66,LAT,21,Brasil
-Botafogo,Huguinho,Huguinho,68,77,VOL,19,Brasil
+Botafogo,Huguinho,Huguinho,68,84,VOL,19,Brasil
 Botafogo,Domingos Andrade,Domingos Andrade,70,71,VOL,23,Angola
 Botafogo,Allan,Allan,75,83,VOL,35,Brasil
 Botafogo,Wallace Davi,Wallace Davi,62,73,VOL,19,Brasil
@@ -247,7 +247,7 @@ São Paulo,Pablo Maia,Pablo Maia,74,77,VOL,24,Brasil
 São Paulo,Newton,Newton,74,75,VOL,26,Brasil
 São Paulo,Marcos Antônio,Marcos Antônio,80,81,MEI,26,Brasil
 São Paulo,Damián Bobadilla,Damián Bobadilla,78,80,MEI,25,Paraguai
-São Paulo,Djhordney,Djhordney,64,76,MEI,19,Brasil
+São Paulo,Djhordney,Djhordney,64,84,MEI,19,Brasil
 São Paulo,Danielzinho,Danielzinho,71,71,MEI,32,Brasil
 São Paulo,Cauly,Cauly,72,72,MEI,31,Brasil
 São Paulo,Pedro Ferreira,Pedro Ferreira,52,63,MEI,19,Brasil
@@ -266,7 +266,7 @@ Corinthians,Hugo Souza,Hugo Souza,78,80,GOL,27,Brasil
 Corinthians,Kauê,Kauê,67,70,GOL,22,Brasil
 Corinthians,Felipe Longo,Felipe Longo,62,67,GOL,21,Brasil
 Corinthians,João Pedro Tchoca,João Pedro Tchoca,72,75,ZAG,22,Brasil
-Corinthians,Iago Machado,Iago Machado,64,78,ZAG,17,Brasil
+Corinthians,Iago Machado,Iago Machado,64,87,ZAG,17,Brasil
 Corinthians,André Ramalho,André Ramalho,71,71,ZAG,34,Brasil
 Corinthians,Gustavo Henrique,Gustavo Henrique,69,69,ZAG,33,Brasil
 Corinthians,Gabriel Paulista,Gabriel Paulista,77,77,ZAG,35,Brasil
