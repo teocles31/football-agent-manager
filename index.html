@@ -4048,7 +4048,7 @@ function mSMAll(){const xs=G.smq.map(smRef).filter(Boolean),T=xs[0].T,mine=c=>G.
     const wa=x.w?x.w===x.a:x.ga>x.gb,wb=x.w?x.w===x.b:x.gb>x.ga;
     h+='<div class="tie'+(mine(x.a)||mine(x.b)?' mine':'')+'"><span class="'+(wa?'w':'')+'">'+crest(A,16)+'<span class="nm">'+esc(A.n)+'</span></span><b class="small-sc">'+x.ga+' – '+x.gb+(x.pen?' <small>(pên.)</small>':'')+'</b><span class="'+(wb?'w':'')+'"><span class="nm">'+esc(B.n)+'</span>'+crest(B,16)+'</span></div>';});
   return'<div class="sheet"><span class="eyebrow">'+esc(T.name+' '+T.lbl)+'</span><h2>Resultados da semana</h2><p class="small muted">'+xs.length+' jogo'+(xs.length>1?'s':'')+'. Em destaque, os times dos seus clientes.</p><div class="smq-all">'+h+'</div><div class="acts"><button class="btn pri" data-a="smskip">Continuar</button></div></div>';}
-function mSMQ(){if(ui.smAll&&G.smq.length)return mSMAll();const r=G.smq[0],x=smRef(r);if(!x){G.smq.shift();return mSMQ2();}const T=x.T,A=G.clubs[+x.a],B=G.clubs[+x.b],shown=ui.smShow,left=G.smq.length;
+function mSMQ(){if(G.smq.length&&G.smq.some(r=>smRef(r)))return mSMAll();const r=G.smq[0],x=smRef(r);if(!x){G.smq.shift();return mSMQ2();}const T=x.T,A=G.clubs[+x.a],B=G.clubs[+x.b],shown=ui.smShow,left=G.smq.length;
   const mine=c=>G.clients.some(id=>{const p=G.P[id];return p&&p.club===c.id;}),cl=c=>'<div class="smq-t'+(mine(c)?' mine':'')+'">'+crest(c,56)+'<b>'+esc(c.n)+'</b><span class="small muted">'+flagS(c.cn)+esc(c.cn)+'</span></div>';
   const gl=a=>a.length?'<div class="small">'+a.map(esc).join(', ')+'</div>':'';
   return'<div class="sheet"><span class="eyebrow">'+esc(T.name+' '+T.lbl)+' · '+fdate(x.d,true)+'</span><h2>'+esc(x.stage)+'</h2>'+(x.grp?'<p class="small muted">'+esc(x.grp)+'</p>':'')+
@@ -5452,7 +5452,7 @@ function mSlots(inGame){return'<div class="sheet slots"><span class="eyebrow">Fo
   (inGame?'<h3 class="menu-t">Opções</h3><div class="acts"><button class="btn" data-a="edit">Editar fotos e patrocinadores</button><button class="btn" data-a="slotsave">Salvar agora</button></div>':'')+
   '<h3 class="menu-t">Versão do jogo</h3><div class="updb"><div class="grow"><b>Atualizações</b><span class="small muted">'+esc(verTxt(APP_V))+'</span>'+(ui.upd?'<span class="small '+(ui.upd.k||'')+'">'+esc(ui.upd.t)+'</span>':'')+'</div><button class="btn pri" data-a="updchk"'+(ui.upd&&ui.upd.busy?' disabled':'')+'>Buscar atualização</button></div>'+(inGame?'<div class="acts"><button class="btn pri big" data-a="close">Voltar ao jogo</button></div>':'')+'</div>';}
 /* versão: o script de publicação grava a data e a hora em APP_V. O botão baixa a página publicada sem cache e, se ela for mais nova, salva e recarrega. */
-const APP_V='202611201219';
+const APP_V='202611201221';
 const verTxt=v=>/^\d{12}$/.test(v)?'Publicada em '+v.slice(6,8)+'/'+v.slice(4,6)+'/'+v.slice(0,4)+' às '+v.slice(8,10)+':'+v.slice(10,12):'Versão de teste';
 async function updChk(){ui.upd={t:'Procurando…',busy:1};render();
   try{const r=await fetch(location.pathname+'?chk='+Date.now(),{cache:'no-store'}),t=await r.text(),m=t.match(/const APP_V='(\d{12})'/),nv=m?m[1]:null;
