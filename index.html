@@ -2968,7 +2968,25 @@ function fitHint(p,c){const d=p.ovr-teamStr(c.id);if(d>=3)return['Titular prová
 const freeFit=(p,c)=>{const d=p.ovr-teamStr(c.id);return d>=-7||(p.age<=20&&p.pot>=teamStr(c.id)+3&&d>=-15);};
 
 /* ---------- propostas e pedidos ---------- */
-function genOffers(){G.offers=G.offers.filter(o=>{if(G.d>o.exp){news('A proposta do '+G.clubs[o.cid].n+' por '+(G.P[o.pid]?G.P[o.pid].name:'')+' expirou.','transf');return false;}return !!G.P[o.pid];});
+/* sondagem pelo celular: "mande uma proposta oficial" vira proposta de verdade no Mercado */
+function sondaOffer(p,c,late){if(!p||!c||!G.clients.includes(p.id)||isOwn(c))return null;const cur=club(p);
+  if(cur&&cur.id===c.id)return null;
+  if(G.offers.some(o=>o.pid===p.id&&o.cid===c.id))return'A proposta já está com você. É só acertarmos o contrato.';
+  const wait=why=>{G.sonP=(G.sonP||[]).filter(x=>!(x.pid===p.id&&x.cid===c.id));G.sonP.push({pid:p.id,cid:c.id,until:G.d+240});return why;};
+  if(p.loan)return wait('Entendido. Como ele está emprestado, voltamos a falar quando abrir a próxima janela.');
+  if(locked(p))return wait('Entendido. Ele acabou de assinar, então mandamos a proposta quando abrir a próxima janela.');
+  if(cur&&!winOpen(regOf(c)))return wait('Combinado! Nossa janela está fechada agora, mas a proposta oficial sai assim que ela abrir.');
+  let fee=0,cl=0,ask=0;
+  if(cur&&!isOwn(cur)){const y=yDeal(p,c);
+    if(y.no){news('Bastidores: '+y.why+'.','transf');p.cool=p.cool||{};p.cool[c.id]=G.d+56;return(late?null:'Fizemos a proposta, mas o '+cur.n+' recusou. Vamos continuar acompanhando o '+p.name+'.');}
+    fee=y.fee;cl=y.cl?1:0;ask=y.ask?1:0;}
+  else if(cur)fee=nice(value(p)*rnd(.95,1.2));
+  G.offers.push({id:G.nid++,pid:p.id,cid:c.id,fee,cl,ask,acc:cur?1:0,exp:G.d+21,tries:0});
+  news(!cur?'O '+c.n+' fez proposta para contratar '+p.name+'. Veja em Mercado.':cl?'O '+c.n+' pagou a multa rescisória de '+p.name+' ao '+cur.n+'. Falta acertar o contrato com você.':'O '+cur.n+' aceitou a proposta do '+c.n+' por '+p.name+'. Falta acertar o contrato com você.','transf');
+  return cl?'Pagamos a multa rescisória dele. Agora é com você: a proposta de contrato está no Mercado.':!cur?'Proposta enviada! Está no Mercado esperando você.':'Fechamos com o '+cur.n+' por '+fmtC(fee,c)+'. Agora é acertar o contrato: está no Mercado.';}
+function sondaWeek(){if(!G.sonP||!G.sonP.length)return;G.sonP=G.sonP.filter(x=>{const p=G.P[x.pid],c=G.clubs[x.cid];if(!p||!c||G.d>x.until||!G.clients.includes(p.id))return false;
+  const cur=club(p);if(p.loan||locked(p)||(cur&&!winOpen(regOf(c))))return true;sondaOffer(p,c,1);return false;});}
+function genOffers(){sondaWeek();G.offers=G.offers.filter(o=>{if(G.d>o.exp){news('A proposta do '+G.clubs[o.cid].n+' por '+(G.P[o.pid]?G.P[o.pid].name:'')+' expirou.','transf');return false;}return !!G.P[o.pid];});
   for(const id of G.clients){const p=G.P[id],cur=club(p);if(p.loan||locked(p)||p.injury>3||G.offers.filter(o=>o.pid===id).length>=2)continue;
     const t=seasonTot(p);if(Math.random()>(.06+p.fame/300+G.staff.assessor*.03+(t.ap>=3&&t.avg>=7?.07:0)+(cur?0:.1))*(mind('fam')?.9:1)*(lastDays()?1.6:1))continue;
     const v=value(p),cands=G.clubs.filter(c=>{if(cur&&c.id===cur.id)return false;if(G.offers.some(o=>o.pid===id&&o.cid===c.id)||(p.cool&&(p.cool[c.id]||0)>G.d)||isOwn(c))return false;
@@ -5499,7 +5517,7 @@ function mSlots(inGame){return'<div class="sheet slots"><span class="eyebrow">Fo
   (inGame?'<h3 class="menu-t">Opções</h3><div class="acts"><button class="btn" data-a="edit">Editar fotos e patrocinadores</button><button class="btn" data-a="slotsave">Salvar agora</button></div>':'')+
   '<h3 class="menu-t">Versão do jogo</h3><div class="updb"><div class="grow"><b>Atualizações</b><span class="small muted">'+esc(verTxt(APP_V))+'</span>'+(ui.upd?'<span class="small '+(ui.upd.k||'')+'">'+esc(ui.upd.t)+'</span>':'')+'</div><button class="btn pri" data-a="updchk"'+(ui.upd&&ui.upd.busy?' disabled':'')+'>Buscar atualização</button></div>'+(inGame?'<div class="acts"><button class="btn pri big" data-a="close">Voltar ao jogo</button></div>':'')+'</div>';}
 /* versão: o script de publicação grava a data e a hora em APP_V. O botão baixa a página publicada sem cache e, se ela for mais nova, salva e recarrega. */
-const APP_V='202611201343';
+const APP_V='202611201534';
 const verTxt=v=>/^\d{12}$/.test(v)?'Publicada em '+v.slice(6,8)+'/'+v.slice(4,6)+'/'+v.slice(0,4)+' às '+v.slice(8,10)+':'+v.slice(10,12):'Versão de teste';
 async function updChk(){ui.upd={t:'Procurando…',busy:1};render();
   try{const r=await fetch(location.pathname+'?chk='+Date.now(),{cache:'no-store'}),t=await r.text(),m=t.match(/const APP_V='(\d{12})'/),nv=m?m[1]:null;
@@ -5701,7 +5719,7 @@ const W2A={
   nbon(d){if(!G.neg)return;G.neg.my.bon=+d.v;render();},nso(d){if(!G.neg)return;G.neg.my.so=+d.v;render();},
   inbox(){(G.inbox||[]).forEach(m=>m.read=1);ui.stack=[];ui.modal={type:'inbox'};save();render();},
   msgrep(d){const m=(G.inbox||[]).find(x=>x.id===+d.m);if(!m||m.ans!=null)return;m.ans=+d.i;const fx=m.r[m.ans][1]||{},p=m.pid!=null?G.P[m.pid]:null;
-    msgFx(fx);if(p&&Object.keys(fx).some(k=>!['go','rel','cid'].includes(k)))applyFx(p,club(p),fx,0);else if(fx.R)addRep(fx.R);G.inbox=G.inbox.filter(x=>x!==m);if(G.goAfter){ui.modal=null;ui.tab=G.goAfter;G.goAfter=null;}G.phoneQ=(G.phoneQ||[]).filter(x=>x!==m.id);save();render();},
+    msgFx(fx,m);if(p&&Object.keys(fx).some(k=>!['go','rel','cid','of'].includes(k)))applyFx(p,club(p),fx,0);else if(fx.R)addRep(fx.R);G.inbox=G.inbox.filter(x=>x!==m);if(G.goAfter){ui.modal=null;ui.tab=G.goAfter;G.goAfter=null;}G.phoneQ=(G.phoneQ||[]).filter(x=>x!==m.id);save();render();},
   paperok(){G.paper=null;save();render();}
 };
 
@@ -5823,13 +5841,13 @@ function mPhone(){const q=G.phoneQ,m=(G.inbox||[]).find(x=>x.id===q[0]);if(!m){G
   return'<div class="phone"><div class="ph-notch"></div><div class="ph-top"><span>'+t+'</span><span>'+svgI('phone',12)+' 5G</span></div>'+
    '<div class="ph-head"><span class="ph-back">‹</span><span class="ph-av">'+(p?avatar(p,36):'<b>'+esc(ini)+'</b>')+'</span><div class="ph-who"><b>'+esc(m.from)+'</b><small>online</small></div></div>'+
    '<div class="ph-chat"><span class="ph-day">'+fdate(m.d,true)+'</span><div class="ph-b in"><span>'+esc(m.t)+'</span><i>'+t+'</i></div>'+
-    (m.ans!=null?'<div class="ph-b out"><span>'+esc(m.r[m.ans][0])+'</span><i>'+t+' ✓✓</i></div>':'')+'</div>'+
+    (m.ans!=null?'<div class="ph-b out"><span>'+esc(m.r[m.ans][0])+'</span><i>'+t+' ✓✓</i></div>':'')+(m.ans!=null&&m.re?'<div class="ph-b in"><span>'+esc(m.re)+'</span><i>'+t+'</i></div>':'')+'</div>'+
    (m.ans==null?'<div class="ph-reps">'+m.r.map((r,i)=>'<button class="ph-rep" data-a="phrep" data-m="'+m.id+'" data-i="'+i+'">'+esc(r[0])+'</button>').join('')+'</div>'+
      '<div class="ph-bar"><span>Escolha uma resposta</span><button class="ph-later" data-a="phlater">Depois</button></div>'
     :'<div class="ph-bar"><span>'+(left?left+' mensage'+(left>1?'ns':'m')+' nova'+(left>1?'s':''):'Sem mais mensagens')+'</span><button class="ph-next" data-a="phnext">'+(left?'Próxima':'Fechar')+'</button></div>')+'</div>';}
 const PHA={
   phrep(d){const m=(G.inbox||[]).find(x=>x.id===+d.m);if(!m||m.ans!=null)return;m.ans=+d.i;m.read=1;const fx=m.r[m.ans][1]||{},p=m.pid!=null?G.P[m.pid]:null;
-    msgFx(fx);if(p&&Object.keys(fx).some(k=>!['go','rel','cid'].includes(k)))applyFx(p,club(p),fx,0);else if(fx.R)addRep(fx.R);save();render();},
+    msgFx(fx,m);if(p&&Object.keys(fx).some(k=>!['go','rel','cid','of'].includes(k)))applyFx(p,club(p),fx,0);else if(fx.R)addRep(fx.R);save();render();},
   phnext(){if(G.phoneQ&&G.phoneQ.length<=1&&G.goAfter){ui.tab=G.goAfter;G.goAfter=null;}if(G.phoneQ){const id=G.phoneQ.shift();G.inbox=(G.inbox||[]).filter(x=>!(x.id===id&&x.ans!=null));}save();render();},
   phlater(){G.goAfter=null;(G.phoneQ||[]).forEach(id=>{const m=(G.inbox||[]).find(x=>x.id===id);if(m)m.read=0;});G.phoneQ=[];save();render();}
 };
@@ -5906,7 +5924,7 @@ function tipProspect(t){try{const ovr=ri(44,57),pos=t.pos||pick(POS),age=t.age||
   const k=newPlayer({name:genName('BR'),nat:'BR',pos,age,ovr,pot:ri(Math.max(62,ovr+6),Math.random()<.2?88:80),ag:-1,potErr:Math.max(3,9-2*G.staff.olheiro-G.me.olh),potOff:rnd(-1,1),found:G.d,region:'Indicação: '+t.from,obs:0});
   G.prospects.push(k.id);news(t.from+' indicou '+k.name+', '+POSN[k.pos].toLowerCase()+' de '+k.age+' anos que ele viu n'+t.src+'. Ele está na sua lista em Olheiros.','agencia');
   toast(k.name+' entrou na sua lista em Olheiros.');}catch(e){}}
-function msgFx(fx){if(fx.tip)tipProspect(fx.tip);if(fx.rel&&fx.cid!=null&&G.clubs[fx.cid])relAdd(G.clubs[fx.cid],fx.rel);if(fx.go)G.goAfter=fx.go;}
+function msgFx(fx,m){if(fx.of&&m)m.re=sondaOffer(G.P[m.pid],G.clubs[fx.cid]);if(fx.tip)tipProspect(fx.tip);if(fx.rel&&fx.cid!=null&&G.clubs[fx.cid])relAdd(G.clubs[fx.cid],fx.rel);if(fx.go)G.goAfter=fx.go;}
 const TIEA={yrok(){G.yrec=null;save();render();},otrgo(d){ui.tab='clube';ui.osub='tr';ui.otr={pos:d.v,age:'all',min:0,aff:0,src:'all'};ui.otrRun=true;render();window.scrollTo(0,0);}};
 
 /* ---- faces.js ---- */
@@ -6265,7 +6283,7 @@ Object.assign(MSG,{
  selecao:{q:p=>p.nt&&p.nt[0]>0,m:p=>({from:p.name,pid:p.id,t:V(['Vestir a camisa da seleção não tem preço, chefe!','Na seleção o nível é outro. Tô aprendendo muito.','Troquei de camisa com um craque no último jogo da seleção kkk']),r:[['Orgulho demais de você',{m:2,t:1}],['Agora é se firmar lá',{m:1}]]})},
  fisgada:{q:p=>p.injury===0&&(p.fat||0)>=2,m:p=>({from:p.name,pid:p.id,t:V(['Senti uma fisgada no treino. Acho que não é nada.','Tô com a coxa meio dura. Jogo assim mesmo?','Acordei com o tornozelo inchado, mas dá pra jogar.']),r:[['Avisa o departamento médico',{t:1,b:-1}],['Joga, mas com cuidado',Math.random()<.25?{i:2}:{m:1}]]})},
  critica:{q:p=>{const l=lastRt(p);return p.fame>=30&&l&&l.rt<6;},m:p=>({from:V(['Repórter do Diário da Bola','Comentarista da Rádio Gol']),t:V(['Na coletiva perguntaram se o '+p.name+' está em crise. Algum comentário?','A torcida vaiou o '+p.name+' ontem. Como ele está?','Estão dizendo que o '+p.name+' perdeu espaço. Procede?']),r:[['Ele está tranquilo e focado',{f:1}],['Crise? Que crise?',{f:2,m:-1}]],pid:p.id})},
- sonda:{q:p=>club(p)&&p.ovr>=70,m:p=>{const c=pick(G.clubs.filter(x=>x.id!==p.club&&!isOwn(x)&&prest(x)>=prest(club(p))-3));return{from:'Diretor do '+(c?c.n:'clube rival'),t:V(['Teríamos interesse no '+p.name+'. Ele toparia uma conversa?','Estamos acompanhando o '+p.name+' há meses. Qual a situação dele?','O '+p.name+' encaixaria muito bem aqui. Podemos falar?']),r:[['Mande uma proposta oficial',{f:1}],['Ele não está à venda',{t:2}]],pid:p.id};}},
+ sonda:{q:p=>club(p)&&p.ovr>=70&&!p.loan,m:p=>{const cs=G.clubs.filter(x=>x.id!==p.club&&!isOwn(x)&&prest(x)>=prest(club(p))-3),v=value(p),ok=cs.filter(x=>clientRoom(x,p)&&x.bud>=v*.8),c=pick(ok.length?ok:cs);return{from:'Diretor do '+(c?c.n:'clube rival'),t:V(['Teríamos interesse no '+p.name+'. Ele toparia uma conversa?','Estamos acompanhando o '+p.name+' há meses. Qual a situação dele?','O '+p.name+' encaixaria muito bem aqui. Podemos falar?']),r:[['Mande uma proposta oficial',c?{of:1,cid:c.id}:{f:1}],['Ele não está à venda',{t:2}]],pid:p.id};}},
  casa:{q:p=>p.wage>0,m:p=>({from:p.name,pid:p.id,t:V(['Comprei um apê novo perto do CT! Obrigado por tudo, chefe.','Dei uma casa pra minha mãe! Sonho realizado.','Comprei meu primeiro carro! Calma que não é nenhum foguete kkk']),r:[['Merecido!',{t:2}],['Agora é foco no campo',{m:1}]]})},
  nutri:{q:p=>club(p),m:p=>({from:'Nutricionista do '+clN(p),t:V(['O '+p.name+' precisa cortar o doce. O percentual de gordura subiu.','Montei uma dieta nova pro '+p.name+'. Ele precisa seguir à risca.','O '+p.name+' anda pulando o café da manhã no CT.']),r:[['Vou falar com ele',{t:-1,m:-1}],['Deixa que ele resolve',{}]],pid:p.id})},
  social:{q:p=>p.fame>=35,m:p=>({from:p.name,pid:p.id,t:V(['Quero fazer um evento beneficente na minha cidade natal. Me ajuda a organizar?','Vou visitar um hospital infantil na folga. Pode avisar a imprensa?','Queria abrir uma escolinha de futebol no meu bairro. O que acha?']),r:[['Claro, vamos fazer bonito',{f:3,t:2}],['Depois da temporada a gente vê',{t:-1}]]})},
