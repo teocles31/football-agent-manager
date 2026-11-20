@@ -2336,6 +2336,8 @@ function starterOvr(cid,pos){const k=SC[cid]||(SC[cid]={}),kk='s'+pos;if(k[kk]!=
 function starterOvr0(cid,pos){const a=squad(cid).filter(p=>p.pos===pos).map(p=>p.ovr).sort((x,y)=>y-x);return a[FORM[pos]-1]!=null?a[FORM[pos]-1]:50;}
 const prest=c=>Math.round(teamStr(c.id))+LG[c.lg].pb;
 const club=p=>p&&p.club!=null?G.clubs[p.club]:null;
+/* clube dono do contrato: durante um empréstimo é o clube de origem */
+const homeClub=p=>p&&p.loan?G.clubs[p.loan.from]:club(p);
 const isClient=p=>p&&p.ag===0;
 const regOf=c=>LG[c.lg].reg;
 const curMonth=()=>monthIdx(G.d);
@@ -2669,7 +2671,7 @@ function develop(){STR={};SC={};allP().forEach(p=>{const mine=p.ag===0,gap=p.pot
 /* ================= CONTRATOS (mensal) ================= */
 function monthly(){const mi=curMonth();
   allP().forEach(p=>{
-    if(p.loan&&mi>p.loan.end)endLoan(p);
+    if(p.loan&&(mi>p.loan.end||p.ce<mi))endLoan(p);
     /* garoto da base de clube brasileiro só sai depois da Copinha: o contrato que vence em dezembro é resolvido em fevereiro */
     if(p.club!=null&&p.ce<mi&&!(p.yb&&mi%12===0&&regOf(G.clubs[p.club])==='sa')){const c=club(p);
       if(p.ag===0){news('Acabou o contrato de '+p.name+' com o '+c.n+'. Ele está livre no mercado.','contrato');setClub(p,null);p.wage=0;p.morale=clamp(p.morale-10,0,100);}
@@ -2684,7 +2686,7 @@ function monthly(){const mi=curMonth();
         /* veterano ainda titular e de nível alto renova por 1 ou 2 anos (como Alisson, Modric, Thiago Silva) em vez de sair de graça */
         else if(p.age<=36&&p.ovr>=78&&rank<FORM[p.pos]&&Math.random()<.85){p.ce=alignCE(mi+ri(10,22),regOf(c));p.wage=nice(wageRef(p.ovr,c.lg)*rnd(.8,1));}
         else{if(p.ovr>=80)news(p.name+' deixou o '+c.n+' ao fim do contrato e está livre.','transf');setClub(p,null);p.wage=0;p.freeSince=mi;}}}
-    if(p.ag===0&&p.club!=null&&p.ce-mi===5&&!p.warned){p.warned=1;news('O contrato de '+p.name+' com o '+club(p).n+' acaba em 6 meses. Renove ou procure outro clube.','contrato');}
+    if(p.ag===0&&p.club!=null&&p.ce-mi===5&&!p.warned){p.warned=1;news('O contrato de '+p.name+' com o '+homeClub(p).n+' acaba em 6 meses. Renove ou procure outro clube.','contrato');}
     if(p.club==null&&p.ag!==0&&!G.prospects.includes(p.id)&&p.freeSince!=null&&(mi-p.freeSince>6&&p.age>=32||mi-p.freeSince>10&&(p.age>=29||p.ovr<76)||mi-p.freeSince>18)){delete G.P[p.id];dirty();}
   });
   G.clients.slice().forEach(id=>{const p=G.P[id];if(p&&mi>=p.repEnd){if(p.trust>=55){p.repEnd=mi+36;news(p.name+' renovou o contrato de representação com você por mais 3 anos.','agencia');}
@@ -3035,7 +3037,7 @@ function pitch(pid,cid){const p=G.P[pid],c=G.clubs[cid],cur=club(p);
     news(tx,'transf');pop({k:'good',ic:'deal',wait:1600,wt:'O '+c.n+' fazendo proposta ao '+cur.n+'…',ti:'Clubes acertados',tx:tx+' Agora é com você: acertar o contrato de '+p.name+'.'});openNeg(p,c,fee,'pitch',null,0);return;}
   if(cur)fee=nice(value(p));
   pop({k:'good',ic:'deal',wait:1300,wt:'Ligando para o '+c.n+'…',ti:'O '+c.n+' quer conversar',tx:'A diretoria abriu a mesa de negociação por '+p.name+'.'});openNeg(p,c,fee,'pitch',null,0);}
-function renew(pid){const p=G.P[pid],c=club(p);if(!c||p.loan||!useAP())return;
+function renew(pid){const p=G.P[pid],c=homeClub(p);if(!c||!useAP())return;
   if(p.ovr<teamStr(c.id)-8&&p.age>21){news('O '+c.n+' não tem interesse em renovar com '+p.name+'.','contrato');pop({k:'bad',ic:'no',wait:1100,wt:'Reunião no '+c.n+'…',ti:'Sem renovação',tx:'O '+c.n+' não tem interesse em renovar com '+p.name+'.'});p.cool[c.id]=G.d+42;save();render();return;}
   pop({k:'info',ic:'report',wait:1100,wt:'Reunião no '+c.n+'…',ti:'Mesa de renovação',tx:'O '+c.n+' quer conversar sobre o novo contrato de '+p.name+'.'});openNeg(p,c,0,'renew',null,0);}
 function openNeg(p,c,fee,kind,offerId,tries){return inCur(curOf(c),()=>openNeg0(p,c,fee,kind,offerId,tries));}
@@ -4933,7 +4935,7 @@ function calData(d1,d2){const m={},add=(d,k,t,mt)=>{if(d<d1||d>d2)return;(m[d]||
   G.clients.forEach(id=>{const p=G.P[id],c=club(p);if(!c)return;
     fixturesOf(c.id,d1,d2).forEach(f=>{const o=f.m?G.clubs[f.m[0]===c.id?f.m[1]:f.m[0]]:null;
       add(f.d,'jogo',p.name+': '+c.n+(o?(f.m[0]===c.id?' x ':' @ ')+o.n:'')+' · '+f.c.sh+(f.st?' ('+f.st.toLowerCase()+')':'')+(f.m&&f.m[2]>=0?' · '+f.m[2]+'–'+f.m[3]:''),calMt(f,c,p.name));});
-    if(!p.loan){const y=Math.floor(p.ce/12),mo=p.ce%12+1,ld=Math.round((Date.UTC(y,mo,0)-D0)/DAY);add(ld,'ctr','Acaba o contrato de '+p.name+' com o '+c.n);}});
+    {const y=Math.floor(p.ce/12),mo=p.ce%12+1,ld=Math.round((Date.UTC(y,mo,0)-D0)/DAY);add(ld,'ctr','Acaba o contrato de '+p.name+' com o '+homeClub(p).n);}});
   if(G.own){const c=ownC();fixturesOf(c.id,d1,d2).forEach(f=>{const o=f.m?G.clubs[f.m[0]===c.id?f.m[1]:f.m[0]]:null;add(f.d,'own',c.n+(o?(f.m[0]===c.id?' x ':' @ ')+o.n:'')+' · '+f.c.sh+(f.m&&f.m[2]>=0?' · '+f.m[2]+'–'+f.m[3]:''),calMt(f,c,'seu clube'));});}
   if(G.me.course)add(G.me.course.end,'cur','Termina o seu curso: '+COURSE_N[G.me.course.sk][G.me[G.me.course.sk]]);
   for(let d=d1;d<=d2;d++){const t=ymd(d),md=t.m*100+t.dd;
@@ -6269,7 +6271,7 @@ Object.assign(MSG,{
  jorn:{q:p=>p.fame>=30,m:p=>({from:V(['Repórter do Diário da Bola','Setorista da Rádio Gol','Blog Bastidores FC','Colunista do Lance Final']),t:V(['É verdade que tem clube grande de olho no '+p.name+'?','Vi o '+p.name+' saindo de um restaurante com dirigentes. Tem negociação?','Pode confirmar uma proposta pelo '+p.name+'?','Os torcedores querem saber: o '+p.name+' renova ou sai?']),r:[['Sem comentários',{}],['Tem gente interessada, sim',{f:2,r:-2}]],pid:p.id})},
  rival:{q:p=>p.ovr>=70&&p.trust<70,m:p=>({from:'Empresário da '+pick(G.ags.slice(1,12)).n,t:V(['Seu garoto '+p.name+' joga muito, hein. Se um dia ele quiser mudar de ares...','Tô sabendo que o '+p.name+' anda insatisfeito. Fica a dica kkk','Se o '+p.name+' quiser uma agência maior, minha porta tá aberta.','Bom dia! Só passando pra dizer que admiro muito o '+p.name+'.']),r:[['Ele está feliz comigo',{}],['Tira o olho do meu jogador',{R:.1}]],pid:p.id})},
  preparador:{q:p=>(p.fat||0)>=4,m:p=>({from:V(['Preparador físico do ','Departamento médico do ','Fisiologista do '])+clN(p),t:V([p.name+' está no limite físico. Recomendo poupá-lo uma semana.','Os números do GPS do '+p.name+' caíram muito. Ele precisa descansar.','O risco de lesão do '+p.name+' está alto. Sugerimos uma semana de folga.']),r:[['Concordo, poupa ele',{m:-1,b:-1}],['Ele aguenta, deixa jogar',Math.random()<.3?{i:1}:{}]]})},
- contrato:{q:p=>club(p)&&monthsLeft(p)<=6&&monthsLeft(p)>0,m:p=>({from:p.name,pid:p.id,t:V(['Chefe, meu contrato com o '+clN(p)+' tá acabando e ninguém me procurou ainda.','Faltam '+leftTxt(p)+' pro fim do contrato. Renovo ou a gente olha o mercado?','O '+clN(p)+' ainda não falou de renovação. Tô ficando ansioso.']),r:[['Já estou conversando com eles',{t:2}],['Calma, vamos ouvir o mercado',p.trait==='ambicioso'?{m:2}:{m:-1,t:1}]]})},
+ contrato:{q:p=>club(p)&&monthsLeft(p)<=6&&monthsLeft(p)>0,m:p=>({from:p.name,pid:p.id,t:V(['Chefe, meu contrato com o '+homeClub(p).n+' tá acabando e ninguém me procurou ainda.','Faltam '+leftTxt(p)+' pro fim do contrato. Renovo ou a gente olha o mercado?','O '+homeClub(p).n+' ainda não falou de renovação. Tô ficando ansioso.']),r:[['Já estou conversando com eles',{t:2}],['Calma, vamos ouvir o mercado',p.trait==='ambicioso'?{m:2}:{m:-1,t:1}]]})},
  saudade:{q:p=>{const c=club(p);return c&&regOf(c)==='eu'&&natName(p)==='Brasil';},m:p=>({from:p.name,pid:p.id,t:V(['Tô com saudade de casa, chefe. O frio aqui não é brincadeira.','Sinto falta do arroz e feijão da minha mãe kkk','A língua ainda é difícil. Às vezes me sinto sozinho no vestiário.','Primeiro inverno na Europa... nunca vi tanta neve!']),r:[['Vou ver se a família te visita',{m:3,t:1}],['Logo você se adapta, foco',{m:-1,t:1}]]})},
  niver:{q:p=>Math.random()<.4,m:p=>({from:p.name,pid:p.id,t:V(['Hoje é meu aniversário! Vai ter bolo no vestiário kkk','Mais um ano de vida, chefe! Obrigado por fazer parte.','Aniversário hoje! O grupo me deu um trote no treino kkk']),r:[['Parabéns, craque! Muitos anos de vida',{t:2}],[p.trait==='baladeiro'?'Parabéns! Juízo na festa, hein':'Parabéns! Comemora com a família',{m:1,t:1}]]})},
  marca:{q:p=>p.fame>=40,m:p=>({from:p.name,pid:p.id,t:V(['Uma marca de chuteira me mandou mensagem direto. Você cuida disso?','Me chamaram pra uma campanha de perfume kkk. Topo?','Uma empresa de energético quer meu rosto numa lata. Vale a pena?']),r:[['Deixa comigo, eu negocio',{t:2,f:1}],['Só se não atrapalhar os treinos',{f:2,m:-1}]]})},
@@ -6673,7 +6675,7 @@ function figCard(p){const c=club(p),t=seasonTot(p),tcost=nice(Math.max(300,wageR
    (tags.length?'<div class="acts">'+tags.join('')+'</div>':'')+
    '<div class="acts"><button class="btn" data-a="player" data-p="'+p.id+'">Estatísticas</button>'+
    (canOffer?'<button class="btn pri" data-a="pick" data-p="'+p.id+'">Oferecer a clube</button>':'')+(canLoan?'<button class="btn" data-a="loanpick" data-p="'+p.id+'">Emprestar</button>':'')+
-   (c&&!p.loan?'<button class="btn" data-a="renew" data-p="'+p.id+'"'+((p.cool[c.id]||0)>G.d?' disabled':'')+'>Renovar</button>':'')+
+   (c?'<button class="btn" data-a="renew" data-p="'+p.id+'"'+((p.cool[homeClub(p).id]||0)>G.d?' disabled':'')+'>'+(p.loan?'Renovar com o '+esc(homeClub(p).n):'Renovar')+'</button>':'')+
    (!c?'<button class="btn" data-a="tryout" data-p="'+p.id+'">Levar a peneiras</button>':'')+'<button class="btn" data-a="talk" data-p="'+p.id+'">Conversar</button><button class="btn" data-a="evo" data-p="'+p.id+'">Evolução</button>'+
    '<button class="btn danger" data-a="drop" data-p="'+p.id+'">Dispensar</button></div>'+(lk?'<p class="small muted">'+esc(p.name)+' acabou de assinar com o '+esc(c.n)+'. Ele só pode ser vendido a outro clube quando abrir a próxima janela, em '+fdate(p.lockTil,true)+'. Emprestar já pode.</p>':c&&!canOffer&&!p.loan?'<p class="small muted">"Oferecer a clube" aparece quando uma janela de transferências abrir. Próxima: '+fdate(Math.min(winOpen('eu')?9e9:winNext('eu'),winOpen('sa')?9e9:winNext('sa')),true)+'.</p>':'')+'</div></article>';}
 function vClientes(){const sb=offSeg();if(ui.csub==='off')return sb+vOff();if(ui.csub==='ex')return sb+vAlumni();const cs=G.clients.map(id=>G.P[id]).sort((a,b)=>b.ovr-a.ovr);
