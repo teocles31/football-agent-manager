@@ -203,7 +203,7 @@ table.squad td{padding:4px 8px}
   #view.enter>*{animation:enter .3s ease-out both}#view.enter>*:nth-child(2){animation-delay:.05s}#view.enter>*:nth-child(n+3){animation-delay:.1s}@keyframes enter{from{transform:translateY(8px)}}
   #view.enter .meter i{animation:grow .6s ease-out both .15s}@keyframes grow{from{width:0}}
   .fig,.clubcard,.mv{transition:transform .15s,box-shadow .15s}.fig:hover,.clubcard:hover,.mv:hover{transform:translateY(-2px);box-shadow:0 6px 18px -10px var(--shade)}
-  .btn{transition:transform .08s,border-color .15s}.btn.pulse{animation:pulse 1.4s ease-in-out infinite}@keyframes pulse{50%{box-shadow:0 0 0 6px rgba(244,198,31,.35)}}
+  .btn{transition:transform .08s,border-color .15s}/* brilho do botão: anima só a opacidade de uma camada (leve no iPhone; antes repintava a sombra a cada quadro) */.btn.pulse{position:relative}.btn.pulse::after{content:'';position:absolute;inset:0;border-radius:inherit;box-shadow:0 0 0 6px rgba(244,198,31,.35);opacity:0;animation:pulseO 1.4s ease-in-out infinite;pointer-events:none;will-change:opacity}@keyframes pulseO{50%{opacity:1}}@keyframes pulse{50%{box-shadow:0 0 0 6px rgba(244,198,31,.35)}}
   .choice{transition:transform .12s,border-color .12s}.choice:hover:not(:disabled){transform:translateX(3px)}
 }
 /* popup de resultado */
@@ -2318,12 +2318,16 @@ let KEY=slotKey(curSlot());
 let G=null,IDX=null,STR={},YIDX=null,SC={};
 const ui={tab:'painel',stack:[],modal:null,comp:null,sub:'tab',rd:null,q:'',dlg:null,mc:'Todos',pickLg:0,loanOpt:false,pm:null,pr:null,lastTab:null,loading:false,clg:0,nw:0};
 function dirty(){IDX=null;YIDX=null;STR={};SC={};}
+/* desempenho: tirar/mover um jogador mexe só no elenco dele, sem refazer o índice dos 20 mil jogadores */
+function idxOut(p){const c=p.club;if(c==null)return;const rm=a=>{if(a){const i=a.indexOf(p);if(i>=0)a.splice(i,1);}};if(IDX)rm(IDX[c]);if(YIDX)rm(YIDX[c]);delete STR[c];delete SC[c];}
+function delP(p){if(!p)return;idxOut(p);delete G.P[p.id];}
+function idxPromote(p){/* garoto da base subiu: sai do índice da base e entra no elenco */const c=p.club;if(c==null)return;if(YIDX&&YIDX[c]){const a=YIDX[c],i=a.indexOf(p);if(i>=0)a.splice(i,1);}if(IDX){const a=IDX[c]||(IDX[c]=[]);if(!a.includes(p))a.push(p);}delete STR[c];delete SC[c];}
 function idx(){if(!IDX){IDX={};for(const id in G.P){const p=G.P[id];if(p.club!=null&&!p.yb)(IDX[p.club]||(IDX[p.club]=[])).push(p);}}return IDX;}
 const squad=cid=>idx()[cid]||[];
 const allP=()=>Object.values(G.P);
 /* carteira de cada agência numa passada só (antes: uma passada pelos 14 mil jogadores por agência) */
 function agStats(){const by={};for(const id in G.P){const p=G.P[id];if(p.ag==null||p.ag<0)continue;const b=by[p.ag]||(by[p.ag]={n:0,v:0});b.n++;b.v+=value(p);}return G.ags.map((a,i)=>({a,i,n:by[i]?by[i].n:0,v:by[i]?by[i].v:0}));}
-function setClub(p,cid){if(p.yb){p.yb=0;p.cria=1;YIDX=null;}if(G&&!G._pre&&p.club!==cid){const h=p.ch||(p.ch=[]);h.push({d:G.d,c:cid,l:p.loan?1:0,f:h.length?undefined:p.club});if(h.length>16)h.splice(1,1);}idxMove(p,p.club,cid);p.club=cid;}
+function setClub(p,cid){if(p.yb){if(YIDX&&p.club!=null&&YIDX[p.club]){const a=YIDX[p.club],i=a.indexOf(p);if(i>=0)a.splice(i,1);}p.yb=0;p.cria=1;}if(G&&!G._pre&&p.club!==cid){const h=p.ch||(p.ch=[]);h.push({d:G.d,c:cid,l:p.loan?1:0,f:h.length?undefined:p.club});if(h.length>16)h.splice(1,1);}idxMove(p,p.club,cid);p.club=cid;}
 /* troca de clube sem reconstruir o índice inteiro: tira de um elenco, põe no outro e recalcula só a força dos dois */
 function idxMove(p,old,cid){if(old===cid)return;if(IDX){if(old!=null&&IDX[old]){const a=IDX[old],i=a.indexOf(p);if(i>=0)a.splice(i,1);}if(cid!=null)(IDX[cid]||(IDX[cid]=[])).push(p);}if(old!=null){delete STR[old];delete SC[old];}if(cid!=null){delete STR[cid];delete SC[cid];}}
 function teamStr(cid){if(STR[cid]!=null)return STR[cid];const sq=squad(cid),by={};sq.forEach(p=>(by[p.pos]||(by[p.pos]=[])).push(p.ovr));
@@ -2365,7 +2369,7 @@ function genName(nat){if(!NAMESET)NAMESET=new Set(allP().map(p=>p.name));const L
   for(let i=0;i<80;i++){const n=pick(F)+' '+pick(F)+' '+pick(S);if(!NAMESET.has(n)){NAMESET.add(n);return n;}}const n=pick(F)+' '+pick(S)+' '+pick(S)+' '+pick(S);NAMESET.add(n);return n;}
 function natFor(c){const L=LG[c.lg];let nat=L.ext?(NAT_OF[c.cn]||'XX'):L.nat;if(Math.random()<(L.id==='bra'?.03:L.ext?.15:.25))nat=pick(L.reg==='sa'?['BR','AR']:Object.keys(NAMES));return nat;}
 function newPlayer(o){const p=Object.assign({id:G.nid++,real:0,trait:pick(Object.keys(TRAIT)),morale:65,fame:0,club:null,wage:0,ce:0,ag:-1,injury:0,st:{},lr:[],fat:0,ovr:50,pot:50,age:20,pos:'MEI'},o);
-  if(p.av==null)p.av=hash(p.name)%20;if(p.pot<p.ovr)p.pot=p.ovr;if(p.pk==null)p.pk=p.ovr;G.P[p.id]=p;if(p.yb)YIDX=null;else if(IDX&&p.club!=null)(IDX[p.club]||(IDX[p.club]=[])).push(p);if(p.club!=null){delete STR[p.club];delete SC[p.club];}return p;}
+  if(p.av==null)p.av=hash(p.name)%20;if(p.pot<p.ovr)p.pot=p.ovr;if(p.pk==null)p.pk=p.ovr;G.P[p.id]=p;if(p.yb){if(YIDX&&p.club!=null)(YIDX[p.club]||(YIDX[p.club]=[])).push(p);}else if(IDX&&p.club!=null)(IDX[p.club]||(IDX[p.club]=[])).push(p);if(p.club!=null){delete STR[p.club];delete SC[p.club];}return p;}
 function agFor(p){if(p.age<=19&&Math.random()<.5)return -1;if(p.ovr<64&&Math.random()<.4)return -1;return clamp(Math.round((92-p.ovr)*1.3+rnd(-4,4)),1,G.ags.length-1);}
 function genFor(c,pos,kind){const s=c.str,nat=natFor(c);let age,ovr,pot;
   if(kind==='youth'){age=ri(17,19);ovr=s-ri(10,16);pot=clamp(s+ri(-3,9),ovr+3,95);}
@@ -2680,7 +2684,7 @@ function monthly(){const mi=curMonth();
         if(p.age>=19&&p.ovr>=ts-13&&squad(c.id).length<32){basePromote(p,'e assinou o primeiro contrato profissional');p.ce=alignCE(mi+ri(24,48),regOf(c));p.wage=nice(wageRef(p.ovr,c.lg)*.7);}
         else if(p.age<=21&&(p.pot>=ts-4||p.ovr>=ts-16)||p.age<=19){p.ce=alignCE(mi+ri(12,36),regOf(c));p.wage=nice(wageRef(p.ovr,c.lg)*.35);}
         else if(p.real||p.pot>=78){setClub(p,null);p.wage=0;p.freeSince=mi;}
-        else{delete G.P[p.id];dirty();}}
+        else delP(p);}
       else{const rank=squad(c.id).filter(x=>x.pos===p.pos&&x.ovr>p.ovr).length;
         if(p.age<34&&rank<TEMPLATE[p.pos]&&Math.random()<(rank<FORM[p.pos]?.97:.9)){ /* titular quase sempre renova */p.ce=alignCE(mi+ri(12,36),regOf(c));p.wage=nice(wageRef(p.ovr,c.lg)*rnd(.9,1.2));}
         /* ídolo ou identificado com o clube renova por mais 1 ou 2 anos */
@@ -2691,7 +2695,7 @@ function monthly(){const mi=curMonth();
         else if(p.age<=36&&p.ovr>=78&&rank<FORM[p.pos]&&Math.random()<.85){p.ce=alignCE(mi+ri(10,22),regOf(c));p.wage=nice(wageRef(p.ovr,c.lg)*rnd(.8,1));}
         else{if(p.ovr>=80)news(p.name+' deixou o '+c.n+' ao fim do contrato e está livre.','transf');setClub(p,null);p.wage=0;p.freeSince=mi;}}}
     if(p.ag===0&&p.club!=null&&p.ce-mi===5&&!p.warned){p.warned=1;news('O contrato de '+p.name+' com o '+homeClub(p).n+' acaba em 6 meses. Renove ou procure outro clube.','contrato');}
-    if(p.club==null&&p.ag!==0&&!G.prospects.includes(p.id)&&p.freeSince!=null&&(mi-p.freeSince>6&&p.age>=32||mi-p.freeSince>10&&(p.age>=29||p.ovr<76)||mi-p.freeSince>18)){delete G.P[p.id];dirty();}
+    if(p.club==null&&p.ag!==0&&!G.prospects.includes(p.id)&&p.freeSince!=null&&(mi-p.freeSince>6&&p.age>=32||mi-p.freeSince>10&&(p.age>=29||p.ovr<76)||mi-p.freeSince>18))delP(p);
   });
   G.clients.slice().forEach(id=>{const p=G.P[id];if(p&&mi>=p.repEnd){if(p.trust>=55){p.repEnd=mi+36;news(p.name+' renovou o contrato de representação com você por mais 3 anos.','agencia');}
     else{const r=rivalNear();news(p.name+' não renovou com sua agência e assinou com a '+G.ags[r].n+'.','agencia');dropClient(p,r);addRep(-2);}}});}
@@ -2973,7 +2977,7 @@ function potRange(p){const e=p.ag===0||p.potErr==null?(p.potErr||1):p.potErr;con
   const c=p.pot+(p.potOff||0)*err;const lo=Math.max(p.ovr,Math.round(c-err)),hi=Math.min(99,Math.round(c+err));return[lo,Math.max(lo,hi)];}
 function potTxt(p){const [a,b]=potRange(p);return a===b?String(a):a+'–'+b;}
 function dropClient(p,toAg){G.clients=G.clients.filter(i=>i!==p.id);G.offers=G.offers.filter(o=>o.pid!==p.id);G.events=G.events.filter(e=>e.pid!==p.id);
-  if(p.club==null&&!p.real){delete G.P[p.id];dirty();}else p.ag=toAg==null?-1:toAg;}
+  if(p.club==null&&!p.real)delP(p);else p.ag=toAg==null?-1:toAg;}
 function useAP(){if(G.ap<1){toast('Você já usou todas as ações desta semana. Avance a semana.');return false;}G.ap--;return true;}
 function fitHint(p,c){const d=p.ovr-teamStr(c.id);if(d>=3)return['Titular provável','good'];if(d>=-2)return['Briga por posição','info'];if(d>=-6)return['Reserva','warn'];
   if(p.age<=20&&potRange(p)[1]>=teamStr(c.id)+4&&d>=-15)return['Aposta da base','warn'];return['Abaixo do nível','bad'];}
@@ -3151,7 +3155,7 @@ function signDone(p,t){const pid=p.id;if(t.bonus>G.money){toast('Caixa insuficie
   news(p.name+' assinou com a '+G.agency+(prev>0?', deixando a '+G.ags[prev].n:'')+'. Contrato de '+yt+', comissão de '+t.comm+'%'+(t.bonus?', bônus de '+fmt(t.bonus):'')+'.','agencia');
   ui.modal=null;pop({k:'good',ic:'sign',wait:1400,wt:'Reunião com '+p.name+'…',ti:'Novo cliente!',tx:p.name+' assinou com a '+G.agency+': '+yt+', '+t.comm+'% de comissão.'});save();render();}
 function signFail(p){const pid=p.id;ui.modal=null;
-  if(G.prospects.includes(pid)&&Math.random()<.3){G.prospects=G.prospects.filter(i=>i!==pid);delete G.P[pid];dirty();news('O garoto ouviu sua proposta e fechou com outro empresário.','agencia');pop({k:'bad',ic:'no',wait:1400,wt:'Reunião com o garoto…',ti:'Perdeu o garoto',tx:'Ele fechou com outro empresário.'});}
+  if(G.prospects.includes(pid)&&Math.random()<.3){G.prospects=G.prospects.filter(i=>i!==pid);delP(G.P[pid]);news('O garoto ouviu sua proposta e fechou com outro empresário.','agencia');pop({k:'bad',ic:'no',wait:1400,wt:'Reunião com o garoto…',ti:'Perdeu o garoto',tx:'Ele fechou com outro empresário.'});}
   else{p.signCool=G.d+(p.real?56:14);news(p.name+' recusou sua proposta de representação.','agencia');pop({k:'bad',ic:'no',wait:1400,wt:'Reunião com '+p.name+'…',ti:'Sem acordo',tx:p.name+' não aceitou e pediu um tempo. Tente de novo mais tarde.'});}
   save();render();}
 /* contraproposta: o que ele pede para assinar (o bônus sobe até a chance passar de 75%) */
@@ -3188,7 +3192,7 @@ function clientsWeekly(){G.clients.slice().forEach(id=>{const p=G.P[id];if(!p)re
   if(p.boost>0)p.boost--;else if(p.boost<0)p.boost++;
   
   if(c&&p.injury===0&&p.morale<38&&Math.random()<.14&&!((p.evCool||0)>G.d)&&!G.events.length&&!recentT('reserva')){p.evCool=G.d+91;G.events.push({type:'reserva',pid:p.id});noteT('reserva');}});
-  G.prospects=G.prospects.filter(id=>{const p=G.P[id];if(!p)return false;if(G.d>p.found+(p.rival?28:42)){news(p.name+', que seu olheiro indicou, fechou com '+(p.rival?'a '+G.ags[p.rival].n:'outro empresário')+'.','agencia');delete G.P[id];dirty();return false;}return true;});}
+  G.prospects=G.prospects.filter(id=>{const p=G.P[id];if(!p)return false;if(G.d>p.found+(p.rival?28:42)){news(p.name+', que seu olheiro indicou, fechou com '+(p.rival?'a '+G.ags[p.rival].n:'outro empresário')+'.','agencia');delP(G.P[id]);return false;}return true;});}
 function dayTriggers(d){const t=ymd(d);
   if(t.dd===1)monthly();
   if(t.m===1&&t.dd===1)ageUp();
@@ -3813,7 +3817,7 @@ function tourEnd(T,fin){T.win=fin.w;ntReviewTour(T);const ru=fin.w===fin.a?fin.b
 function award(y,k,p,x){const c=club(p);G.aw.hist.unshift({y,k,n:p.name,pid:p.id,cl:c?c.n:'',x:x||''});honAdd(p,k+' '+y);
   if(p.ag===0){p.fame=clamp(p.fame+10,0,100);p.morale=clamp(p.morale+10,0,100);addRep(1.5);news(p.name+' ganhou o prêmio '+k+' '+y+'.','premio');
     G._gala||pop({k:'good',ic:'cup',ti:'Prêmio!',tx:p.name+' ganhou '+k+' '+y+'.',ch:[['Fama +10','good'],['Reputação +','good']]});}}
-function leagueAwards(c,s){const n=c.rounds.length,st=p=>p.st[c.id],sc=p=>bestSc(p,c,st(p)),all=allP().filter(p=>st(p)&&st(p)[0]>0),ps=all.filter(p=>st(p)[0]>=n*.5),by=a=>a.slice().sort((x,y)=>sc(y)-sc(x));
+function leagueAwards(c,s){const n=c.rounds.length,st=p=>p.st[c.id],scM=new Map(),sc=p=>{let v=scM.get(p);if(v==null){v=bestSc(p,c,st(p));scM.set(p,v);}return v;},all=allP().filter(p=>st(p)&&st(p)[0]>0),ps=all.filter(p=>st(p)[0]>=n*.5),by=a=>a.slice().sort((x,y)=>sc(y)-sc(x));
   if(!ps.length)return;const lbl=c.lbl,best=by(ps)[0],revK='Revelação ('+c.sh+')',rev=by(all.filter(p=>p.age<=23&&st(p)[0]>=n*.35&&!G.aw.hist.some(h=>h.pid===p.id&&h.k===revK)))[0],gk=ps.filter(p=>p.pos==='GOL').sort((a,b)=>st(b)[4]-st(a)[4]||sc(b)-sc(a))[0];
   award(lbl,'Melhor jogador ('+c.sh+')',best);{const tg=all.slice().sort((a,b)=>st(b)[1]-st(a)[1]||sc(b)-sc(a))[0],ta=all.slice().sort((a,b)=>st(b)[2]-st(a)[2]||sc(b)-sc(a))[0];if(tg&&st(tg)[1]>0)award(lbl,'Artilheiro ('+c.sh+')',tg,st(tg)[1]+' gols');if(ta&&st(ta)[2]>0)award(lbl,'Rei das assistências ('+c.sh+')',ta,st(ta)[2]+' assist.');}if(rev)award(lbl,'Revelação ('+c.sh+')',rev);if(gk)award(lbl,'Melhor goleiro ('+c.sh+')',gk);
   for(const pos in FORM)by(ps.filter(p=>p.pos===pos)).slice(0,FORM[pos]).forEach(p=>{honAdd(p,'Seleção do campeonato ('+c.sh+') '+lbl);
@@ -3858,7 +3862,7 @@ function hofAdd(p){const c=club(p),pk=Math.max(p.pk||0,p.ovr);if(pk<82&&p.fame<6
   G.hof.unshift({n:p.name,pos:p.pos,age:p.age,pk,y:ymd(G.d).y,cl:c?c.n:'',caps:p.nt?p.nt[0]:0,gl:p.nt?p.nt[1]:0,hon:(p.hon||[]).slice(-4),mine:p.ag===0?1:0});if(G.hof.length>400)G.hof.length=400;}
 function retireP(p,keepEv){const c=club(p),pos=p.pos;hofAdd(p);if(p.ag===0)alumAdd(p,c);
   if(p.ag===0){G.clients=G.clients.filter(i=>i!==p.id);G.offers=G.offers.filter(o=>o.pid!==p.id);if(!keepEv)G.events=G.events.filter(e=>e.pid!==p.id);}
-  delete G.P[p.id];dirty();if(c&&squad(c.id).length<22)baseFor(c,pos);}
+  delP(p);if(c&&squad(c.id).length<22)baseFor(c,pos);}
 /* vaga no elenco: sobe sempre um garoto da base do clube. Primeiro o melhor da posição, depois o de uma posição vizinha, depois o melhor de todos, mesmo que seja fraco. Jogador novo só nasce na base. */
 function baseFor(c,pos){let b=baseOf(c.id);if(!b.length){baseFill(c,isBRtop(c)?16:10);b=baseOf(c.id);}if(!b.length)return null;const sc=p=>p.ovr+p.pot*.25+(p.age>=17?3:0),by=ps=>b.filter(p=>p.pos===ps).sort((x,y)=>sc(y)-sc(x))[0];
   let p=by(pos);if(!p)for(const q of (NEAR_POS[pos]||[])){p=by(q);if(p)break;}if(!p)p=b.slice().sort((x,y)=>sc(y)-sc(x))[0];basePromote(p,'para ocupar uma vaga no elenco');return p;}
@@ -3943,7 +3947,7 @@ function vPainelWorld(){const live=liveTours(),nx=nextTour(),intl=G.clients.map(
 function baseOf(cid){if(!YIDX){YIDX={};for(const id in G.P){const p=G.P[id];if(p.yb&&p.club!=null)(YIDX[p.club]||(YIDX[p.club]=[])).push(p);}}return YIDX[cid]||[];}
 const BASE_POS=['GOL','GOL','ZAG','ZAG','ZAG','ZAG','LAT','LAT','LAT','VOL','VOL','VOL','MEI','MEI','MEI','MEI','ATA','ATA','ATA','ATA'];
 function baseKid(c,o){const p=newPlayer(Object.assign({club:c.id,yb:1,real:0},o));p.wage=nice(wageRef(p.ovr,c.lg)*.3);p.ce=alignCE(curMonth()+ri(14,40),regOf(c));
-  p.fame=clamp((p.ovr-56)*1.5,0,25);p.ag=Math.random()<.65?-1:clamp(Math.round((92-p.ovr)*1.1+rnd(-6,6)),1,G.ags.length-1);YIDX=null;return p;}
+  p.fame=clamp((p.ovr-56)*1.5,0,25);p.ag=Math.random()<.65?-1:clamp(Math.round((92-p.ovr)*1.1+rnd(-6,6)),1,G.ags.length-1);return p;}
 /* um garoto gerado para a base: 15 a 18 anos, nível pela força do clube */
 function baseGen(c,pos,age){age=age||ri(15,18);const ovr=clamp(Math.round(c.str-23-(19-age)*2.4+ri(-3,3)),42,66),r=Math.random();
   const pot=clamp(Math.round(69+(c.str-72)*.5+ri(-5,8)+(r<.06?8:0)),ovr+6,91);return baseKid(c,{name:genName(natFor(c)),nat:natFor(c),pos,age,ovr,pot,potErr:5,potOff:rnd(-.8,.8)});}
@@ -3957,7 +3961,7 @@ function baseSeed(){if(!G||G._base0||typeof BASE==='undefined')return;G._base0=1
     const k=baseKid(c,{name:n,pos,age:+age,ovr:+ovr,pot:Math.max(+ovr,+pot),real:1,nf:nf||'',potErr:4,potOff:rnd(-.6,.6)});if(k&&rid)k.rid=rid;});}
   G.clubs.forEach(c=>{if(baseOf(c.id).length||isBRtop(c))baseFill(c,16);});YIDX=null;}
 const isBRtop=c=>{const id=LG[c.lg].id;return id==='bra'||id==='bra2';};
-function basePromote(p,why){if(!p.yb)return;const c=club(p);p.yb=0;p.cria=1;dirty();YIDX=null;
+function basePromote(p,why){if(!p.yb)return;const c=club(p);p.yb=0;p.cria=1;idxPromote(p);
   if(p.ag===0){news(p.name+' subiu da base para o time principal do '+(c?c.n:'clube')+(why?' '+why:'')+'.','evolucao');pop({k:'good',ic:'train',ti:'Subiu para o profissional!',tx:p.name+' agora faz parte do elenco principal do '+(c?c.n:'clube')+'.'});}}
 /* virada da temporada: quem tem nível de time principal sobe (aos 20, ou antes se já estiver pronto); os demais seguem na base */
 function baseYear(region){const gone=[];G.clubs.forEach(c=>{if(regOf(c)!==region)return;const ts=teamStr(c.id);
@@ -4488,7 +4492,7 @@ function u20Week(d0){const played=new Set();for(const k in G.comps){const c=G.co
     if(p.ag!==0)return;const opp=M.opp;
     G.wlog.push({pid:p.id,d:d0+5,cs:'Sub-20',oppN:'Sub-20 do '+opp.n,home:M.home,gf,ga,rt,ng:g,na:a,sub:false,u20:1});
     const av=u.lr.reduce((s,x)=>s+x,0)/u.lr.length/10;
-    if(u.lr.length>=4&&av>=7.3&&!(p.boost>0)&&p.ovr>=teamStr(c.id)-14&&Math.random()<.15){if(p.yb){p.yb=0;p.cria=1;dirty();}p.boost=3;news('O técnico do '+c.n+' gostou do que viu no sub-20 e chamou '+p.name+' para o time principal.','evolucao');
+    if(u.lr.length>=4&&av>=7.3&&!(p.boost>0)&&p.ovr>=teamStr(c.id)-14&&Math.random()<.15){if(p.yb){p.yb=0;p.cria=1;idxPromote(p);}p.boost=3;news('O técnico do '+c.n+' gostou do que viu no sub-20 e chamou '+p.name+' para o time principal.','evolucao');
       pop({k:'good',ic:'train',ti:'Subiu para o profissional!',tx:p.name+' foi chamado do sub-20 do '+c.n+' para o time principal.',ch:[['Titular por 3 semanas','good']]});}});}
 function u20Stars(){const y=ymd(G.d).y;return allP().filter(p=>p.u20&&p.u20.y===y&&p.u20.ap>=4&&!isClient(p)&&p.age<=20).map(p=>({p,s:p.u20.rs/p.u20.ap/10+p.u20.gl*.08+p.u20.as*.04+(p.pot-70)*.02})).sort((a,b)=>b.s-a.s).slice(0,10).map(x=>x.p);}
 const u20Txt=p=>p.u20.ap+' jogos, '+p.u20.gl+' gols, '+p.u20.as+' assist., nota '+f1(p.u20.rs/p.u20.ap/10);
@@ -4688,7 +4692,7 @@ const EVOA={
       news(x.name+' aceitou ser mentor de '+p.name+' pelos próximos seis meses.','evolucao');pop({k:'good',ic:'coach',wait:1100,wt:'Conversando com '+x.name+'…',ti:'Mentor definido',tx:x.name+' vai acompanhar '+p.name+' de perto.',ch:[['Evolução +'+Math.round((f-1)*100)+'%','good']]});}
     else{(p.mentNo||(p.mentNo={}))[x.id]=G.d+7;pop({k:'bad',ic:'no',wait:1100,wt:'Conversando com '+x.name+'…',ti:'Recusou',tx:x.name+' disse que prefere cuidar da própria carreira agora. Dá para insistir na semana que vem.'});}save();render();},
   poschg(d){const p=G.P[d.p],np=d.v,c=club(p);if(!p||!POS_ADJ[p.pos].includes(np)||!useAP())return;
-    if(!c||Math.random()<posChance(p)){const old=p.pos;p.pos=np;if(p.age>=27){p.ovr--;if(p.pot>p.ovr+2)p.pot--;}p.adapt=10;p.posCd=G.d+365;dirty();
+    if(!c||Math.random()<posChance(p)){const old=p.pos;p.pos=np;if(p.age>=27){p.ovr--;if(p.pot>p.ovr+2)p.pot--;}p.adapt=10;p.posCd=G.d+365;if(p.club!=null){delete STR[p.club];delete SC[p.club];}
       news(p.name+' trocou a função de '+POSN[old]+' pela de '+POSN[np]+'.','evolucao');pop({k:'good',ic:'swap',wait:1100,wt:c?'Conversa com o técnico do '+c.n+'…':'Treinando a nova função…',ti:'Nova posição',tx:p.name+' agora joga como '+POSN[np]+'. Ele leva 10 semanas para se adaptar.',ch:[['Adaptação: 10 sem','warn']]});}
     else{p.posCd=G.d+56;pop({k:'bad',ic:'no',wait:1100,wt:'Conversa com o técnico do '+c.n+'…',ti:'Técnico vetou',tx:c.coach.n+' quer '+p.name+' na posição de origem. Tente de novo em 8 semanas.'});}save();render();},
   langc(d){const p=G.P[d.p],l=d.v;if(!p||!LANGN[l]||p.langC)return;const cost=langCost(p);if(G.money<cost){toast('Caixa insuficiente para o curso.');return;}if(!useAP())return;G.money-=cost;p.langC={l,end:G.d+84};
@@ -5080,8 +5084,8 @@ const CARDA={
       pop({k:'good',ic:'sign',wait:1500,wt:'Peneira no '+c.n+'…',ti:'Aprovado!',tx:p.name+' assinou com o '+c.n+(yt?' e vai jogar no sub-20.':'.'),ch:[['Contrato até '+fmonth(p.ce),'good'],['Moral +12','good']]});}
     else{p.morale=clamp(p.morale-4,0,100);pop({k:'bad',ic:'no',wait:1500,wt:'Peneira no '+c.n+'…',ti:'Não passou',tx:'O '+c.n+' não aprovou '+p.name+' desta vez. Tente outro clube daqui a 3 semanas.',ch:[['Moral -4','bad']]});}
     save();render();},
-  pdrop(d){const p=G.P[d.p];if(!p||!G.prospects.includes(p.id))return;G.prospects=G.prospects.filter(i=>i!==p.id);delete G.P[p.id];dirty();pop({k:'info',ic:'bin',ti:'Descartado',tx:p.name+' saiu da sua lista de observação.'});save();render();},
-  ydrop(d){const p=G.P[d.p],c=ownC();if(!p||!c||p.club!==c.id||isClient(p))return;setClub(p,null);p.wage=0;p.freeSince=curMonth();if(!p.real&&p.age<=20){delete G.P[p.id];dirty();}
+  pdrop(d){const p=G.P[d.p];if(!p||!G.prospects.includes(p.id))return;G.prospects=G.prospects.filter(i=>i!==p.id);delP(p);pop({k:'info',ic:'bin',ti:'Descartado',tx:p.name+' saiu da sua lista de observação.'});save();render();},
+  ydrop(d){const p=G.P[d.p],c=ownC();if(!p||!c||p.club!==c.id||isClient(p))return;setClub(p,null);p.wage=0;p.freeSince=curMonth();if(!p.real&&p.age<=20)delP(p);
     news('O '+c.n+' dispensou '+p.name+' da base.','clube');pop({k:'info',ic:'bin',ti:'Dispensado',tx:p.name+' deixou a base do '+c.n+'.'});save();render();}
 };
 
@@ -6180,7 +6184,8 @@ const NAVHA={tab(d){homeReset();ui.tab=d.t;render();window.scrollTo(0,0);},nxgo(
 
 /* ---- hof2.js ---- */
 /* ================= MELHOR JOGADOR: NOTA, REGULARIDADE, NÍVEL E CAMPANHA — NÃO SÓ GOLS ================= */
-function bestSc(p,c,s){const ap=s[0]||1,avg=s[3]/ap,tab=sortedTab(c),pos=tab.indexOf(p.club);
+const _tabPos={k:null,m:null};
+function bestSc(p,c,s){const ap=s[0]||1,avg=s[3]/ap,kk=c.id+'|'+G.d;if(_tabPos.k!==kk){_tabPos.k=kk;_tabPos.m=new Map(sortedTab(c).map((id,i)=>[id,i]));}const pos=_tabPos.m.has(p.club)?_tabPos.m.get(p.club):-1;
   return avg*.55+Math.min(s[1],40)*.04+Math.min(s[2],25)*.08+(p.ovr-75)*.3+(pos===0?2.2:pos>=0&&pos<4?1:0)+({GOL:1.6,ZAG:1.8,LAT:1.2,VOL:1.5,MEI:1.2,ATA:0}[p.pos]||0)+(hash(String(p.id)+c.id+G.d)%100)/40;}
 function gala(Y){const A=G.aw,y=String(Y),had=A.hist.some(a=>a.k==='Bola de Ouro'&&String(a.y)===y);gala0(Y);
   if(!had&&A.hist.some(a=>a.k==='Bola de Ouro'&&String(a.y)===y)&&A.top3){A.pods=A.pods||{};A.pods[y]=A.top3.map(x=>{const p=G.P[x.id],c=p&&club(p);return{id:x.id,n:p?p.name:'',cl:c?c.n:'',pos:p?p.pos:''};});}}
