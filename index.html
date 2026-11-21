@@ -5671,6 +5671,13 @@ function clauseChips(p){const t=[];if(p.bon)t.push('<span class="chip info">'+BO
 function negClauses(t){const sg=(a,v,opts)=>'<div class="seg sm">'+opts.map(o=>'<button data-a="'+a+'" data-v="'+o[0]+'" aria-pressed="'+((t[a==='nbon'?'bon':'so']||0)===o[0])+'">'+o[1]+'</button>').join('')+'</div>';
   return'<div class="field"><label>Bônus por metas</label>'+sg('nbon',t.bon,[[0,'Nenhum'],[1,'Moderado'],[2,'Alto']])+'<small>Ele ganha por gol, assistência e jogo sem sofrer gol, e você leva sua comissão sobre o bônus. O clube resiste um pouco.</small></div>'+
    '<div class="field"><label>Sua parte numa venda futura</label>'+sg('nso',t.so,[[0,'Nenhuma'],[5,'5%'],[10,'10%']])+'<small>Se ele for vendido nos próximos 4 anos, você recebe essa parte da taxa. O clube resiste bastante.</small></div>';}
+/* ---------- desde quando está no clube atual: volta de empréstimo não zera o tempo de casa ---------- */
+function clubSince(p){const h=p.ch||[];if(p.club==null)return null;let i=h.length-1;while(i>=0&&h[i].c!==p.club)i--;if(i<0)return null;
+  while(i>=1&&h[i-1].l&&!h[i].l&&(i>=2?h[i-2].c===p.club:h[0].f===p.club))i-=2;return i<0?null:h[i].d;}
+function sinceH(p){if(p.club==null)return'';const d=clubSince(p);
+  if(d==null)return'<div class="small muted">'+(p.yb?'Na base do clube':'No clube desde antes de 2026')+'</div>';
+  const t=ymd(d),m=Math.max(0,Math.floor((G.d-d)/30.44));
+  return'<div class="small muted">'+(p.loan?'Emprestado':'No clube')+' desde '+t.dd+' '+MES[t.m-1]+' '+t.y+(m>=1?' · há '+durTxt(m):'')+'</div>';}
 /* ---------- histórico de clubes por ano ---------- */
 function clubHistH(p){const h=(p.ch||[]).filter(x=>x.c!=null||x.l);const rows=[];
   if(!h.length){const c=club(p);return'<h3>Histórico de clubes</h3><p class="small muted">'+(c?esc(c.n)+' desde antes de 2026':'Sem clube')+'.</p>';}
@@ -6836,7 +6843,7 @@ function mPlayer(p){const c=club(p),t=seasonTot(p),own=ownC();
   else if(!G.prospects.includes(p.id)){const ch=signChance(p,0),cool=(p.signCool||0)>G.d;acts+='<button class="btn pri" data-a="sign" data-p="'+p.id+'"'+(cool||ch===0?' disabled':'')+'>'+(cool?'Pediu um tempo':ch===0?'Não atende você (reputação baixa)':'Negociar representação')+'</button>';}
   if(own&&c&&c.id!==own.id&&!isClient(p))acts+='<button class="btn" data-a="hireclub" data-p="'+p.id+'"'+(winOpen(regOf(own))&&settled(p)?'':' disabled')+'>Contratar para o '+esc(own.n)+' <small>'+fmt(nice(value(p)*1.15))+'</small></button>';
   return'<div class="sheet wide"><div class="pl-head">'+avatar(p,88)+'<div class="grow"><span class="eyebrow">'+POSN[p.pos]+' · '+p.age+' anos'+(natName(p)?' · '+flagS(natName(p))+esc(natName(p)):'')+'</span><h2>'+esc(p.name)+'</h2>'+
-   '<div class="pl-club small">'+(c?clubLink(c,18):'<b>Sem clube</b>')+(p.yb?'<span class="chip info">Categoria de base</span>':'')+(p.loan?'<span class="chip info">emprestado pelo '+esc(G.clubs[p.loan.from].n)+'</span>':'')+'</div>'+
+   '<div class="pl-club small">'+(c?clubLink(c,18):'<b>Sem clube</b>')+(p.yb?'<span class="chip info">Categoria de base</span>':'')+(p.loan?'<span class="chip info">emprestado pelo '+esc(G.clubs[p.loan.from].n)+'</span>':'')+'</div>'+sinceH(p)+
    '<div class="small muted">'+(p.ag===0?'Sua agência':p.ag>0?'Empresário: <button class="lnk" data-a="agency" data-i="'+p.ag+'">'+esc(G.ags[p.ag].n)+'</button>':'Sem empresário')+'</div>'+
    '<div class="pl-ovr">'+ovrB(p.ovr,'xl')+'<div class="pl-pot"><span class="lbl">Potencial</span><b>'+potTxt(p)+'</b></div></div></div></div>'+
    '<div class="kpis">'+[['Valor',fmt(value(p))],['Salário',c?fmt(p.wage)+'/sem':'—'],['Contrato',c?'até '+fmonth(p.ce)+'<small>faltam '+monthsLeft(p)+' meses</small>':'livre'],['Fama',Math.round(p.fame)]].map(k=>'<div class="kpi"><span>'+k[0]+'</span><b>'+k[1]+'</b></div>').join('')+'</div>'+
