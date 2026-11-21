@@ -2953,23 +2953,40 @@ function news(t,cat){if(!G)return;G.news.unshift({d:G.d,t,cat:cat||'geral'});if(
    Só o resumo da carreira (nome, data, caixa) fica no localStorage, para a tela de carreiras abrir na hora. */
 const HAS_IDB=typeof indexedDB!=='undefined'&&typeof window!=='undefined'&&!window.__noIDB;
 const SDB={db:null,
-  open(){if(this.db)return Promise.resolve(this.db);return new Promise(res=>{try{const r=indexedDB.open('fam-saves',1);r.onupgradeneeded=()=>r.result.createObjectStore('s');r.onsuccess=()=>{this.db=r.result;res(this.db);};r.onerror=()=>res(null);r.onblocked=()=>res(null);}catch(e){res(null);}});},
-  async op(mode,fn){const db=await this.open();if(!db)throw new Error('sem IndexedDB');return new Promise((res,rej)=>{try{const t=db.transaction('s',mode),st=t.objectStore('s'),rq=fn(st);t.oncomplete=()=>res(rq&&rq.result);t.onerror=()=>rej(t.error);t.onabort=()=>rej(t.error);}catch(e){rej(e);}});},
+  /* o iPhone derruba a conexão do banco quando o app fica em segundo plano: se cair, reabre e tenta de novo uma vez */
+  open(){if(this.db)return Promise.resolve(this.db);return new Promise(res=>{try{const r=indexedDB.open('fam-saves',1);r.onupgradeneeded=()=>r.result.createObjectStore('s');r.onsuccess=()=>{const db=r.result;db.onclose=()=>{if(this.db===db)this.db=null;};db.onversionchange=()=>{try{db.close();}catch(e){}if(this.db===db)this.db=null;};this.db=db;res(db);};r.onerror=()=>res(null);r.onblocked=()=>res(null);}catch(e){res(null);}});},
+  async op(mode,fn,again){const db=await this.open();if(!db)throw new Error('sem IndexedDB');
+    try{return await new Promise((res,rej)=>{try{const t=db.transaction('s',mode),st=t.objectStore('s'),rq=fn(st);t.oncomplete=()=>res(rq&&rq.result);t.onerror=()=>rej(t.error);t.onabort=()=>rej(t.error);}catch(e){rej(e);}});}
+    catch(e){if(again)throw e;try{db.close();}catch(_){}if(this.db===db)this.db=null;return this.op(mode,fn,true);}},
   get(k){return this.op('readonly',st=>st.get(k));},put(k,v){return this.op('readwrite',st=>st.put(v,k));},del(k){return this.op('readwrite',st=>st.delete(k));}};
-async function gz(str){if(typeof CompressionStream==='undefined')return str;return await new Response(new Blob([str]).stream().pipeThrough(new CompressionStream('gzip'))).blob();}
-async function ungz(v){if(typeof v==='string')return v;return await new Response(v.stream().pipeThrough(new DecompressionStream('gzip'))).text();}
+/* compactado como ArrayBuffer: o Safari de alguns iPhones falha ao gravar Blob no banco */
+async function gz(str){if(typeof CompressionStream==='undefined')return str;return await new Response(new Blob([str]).stream().pipeThrough(new CompressionStream('gzip'))).arrayBuffer();}
+async function ungz(v){if(typeof v==='string')return v;const b=v instanceof Blob?v:new Blob([v]);return await new Response(b.stream().pipeThrough(new DecompressionStream('gzip'))).text();}
+/* quando o save falha: diz o motivo provável uma vez por sessão e tenta de novo sozinho */
+let _svWarn=false,_svRetry=null;
+async function saveFail(){if(!_svRetry)_svRetry=setTimeout(()=>{_svRetry=null;if(G)saveNow();},30000);if(_svWarn)return;_svWarn=true;
+  let low=false;try{if(navigator.storage&&navigator.storage.estimate){const e=await navigator.storage.estimate();low=e.quota!=null&&e.usage!=null&&e.quota-e.usage<30e6;}}catch(e){}
+  pop({k:'bad',ic:'no',ti:'O jogo não conseguiu salvar',tx:low?'O aparelho está sem espaço. Libere espaço no iPhone (Ajustes, Geral, Armazenamento). O jogo tenta salvar de novo sozinho.':'O navegador bloqueou o save. Se você abriu o jogo pelo WhatsApp, Instagram ou numa aba anônima, abra o link no Safari normal. O jogo tenta salvar de novo sozinho.'});}
 let _svT=null,_svBusy=null,_svAgain=false;
 function saveMeta(){try{if(G)localStorage.setItem(KEY+'-meta',JSON.stringify(slotMetaOf(G)));}catch(e){}}
 function save(){if(!G)return;saveMeta();if(!HAS_IDB){try{localStorage.setItem(KEY,JSON.stringify(G));}catch(e){}return;}clearTimeout(_svT);_svT=setTimeout(()=>{/* espera as animações acabarem e a tela ficar parada: montar o save trava a tela por um instante no celular */if(typeof requestIdleCallback==='function')requestIdleCallback(()=>{if(_svT)saveNow();},{timeout:2500});else saveNow();},1400);}
 async function saveNow(){clearTimeout(_svT);_svT=null;if(!G||!HAS_IDB)return;if(_svBusy){_svAgain=true;return _svBusy;}
   const k=KEY,str=JSON.stringify(G);
-  _svBusy=(async()=>{try{await SDB.put(k,await gz(str));try{localStorage.removeItem(k);}catch(e){}}
-    catch(e){try{localStorage.setItem(k,str);}catch(e2){toast('Não foi possível salvar: o aparelho está sem espaço.');}}})();
+  if(!saveNow._p){saveNow._p=1;try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist();}catch(e){}}
+  /* 1) compactado no banco; 2) sem compactar no banco; 3) localStorage, se couber; só então avisa */
+  _svBusy=(async()=>{let ok=false;
+    try{await SDB.put(k,await gz(str));ok=true;}catch(e){}
+    if(!ok){try{await SDB.put(k,str);ok=true;}catch(e){}}
+    if(ok){try{localStorage.removeItem(k);}catch(e){}_svWarn=false;return;}
+    if(str.length<4.5e6){try{localStorage.setItem(k,str);return;}catch(e){}}
+    saveFail();})();
   await _svBusy;_svBusy=null;if(_svAgain){_svAgain=false;return saveNow();}}
 if(typeof document!=='undefined'&&document.addEventListener){document.addEventListener('visibilitychange',()=>{if(document.hidden&&_svT)saveNow();});
   window.addEventListener&&window.addEventListener('pagehide',()=>{if(_svT)saveNow();});}
-async function loadA(){if(HAS_IDB){try{const v=await SDB.get(KEY);if(v!=null){const g=JSON.parse(await ungz(v));if(g&&g.v===3){G=g;migrate();return g;}}}catch(e){}}
-  const g=load();if(g&&HAS_IDB){saveMeta();await saveNow();}return g;}
+async function loadA(){let gi=null;if(HAS_IDB){try{const v=await SDB.get(KEY);if(v!=null){const g=JSON.parse(await ungz(v));if(g&&g.v===3)gi=g;}}catch(e){}}
+  let gl=null;try{const s=localStorage.getItem(KEY);if(s){const g=JSON.parse(s);if(g&&g.v===3)gl=g;}}catch(e){}
+  /* se o banco falhou numa semana e o save foi para o localStorage, vale o mais recente */
+  const g=gi&&gl?(gl.d>gi.d?gl:gi):(gi||gl);if(!g)return null;G=g;migrate();if(g===gl&&HAS_IDB){saveMeta();await saveNow();}return g;}
 async function delSave(k){try{localStorage.removeItem(k);localStorage.removeItem(k+'-meta');}catch(e){}if(HAS_IDB){try{await SDB.del(k);}catch(e){}}}
 function load(){try{const s=localStorage.getItem(KEY);if(s){const g=JSON.parse(s);if(g&&g.v===3){G=g;migrate();return g;}}}catch(e){}return null;}
 function seasonTot(p){let ap=0,gl=0,as=0,rs=0,cs=0,mv=0;for(const k in p.st){const s=p.st[k];ap+=s[0];gl+=s[1];as+=s[2];rs+=s[3];cs+=s[4];mv+=s[5];}return{ap,gl,as,avg:ap?rs/ap/10:0,cs,mv};}
