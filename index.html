@@ -723,7 +723,7 @@ html,body{touch-action:manipulation}
 .el-list{padding:4px 12px}.el-gh{display:flex;justify-content:space-between;align-items:center;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink2);padding:12px 0 4px;border-bottom:1px solid var(--line)}
 .el-r2{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.el-r2:last-child{border-bottom:0}.el-r2 .grow{min-width:0;display:flex;flex-direction:column;gap:3px}
 .el-n{display:flex;align-items:center;gap:8px;min-width:0}.el-n b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}.el-n .ovr{flex:none}
-.el-tags{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:2px}
+.el-tags{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:2px}.el-acts{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:8px}
 .ctr{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;white-space:nowrap}.ctr-b{width:44px;height:6px;border-radius:3px;background:var(--line);overflow:hidden;display:inline-block}.ctr-b i{display:block;height:100%;border-radius:3px}
 .ctr.hi{color:var(--good)}.ctr.hi i{background:var(--good)}.ctr.mid{color:var(--ink2)}.ctr.mid i{background:var(--info)}.ctr.lo{color:var(--ink2)}.ctr.lo i{background:var(--ink2)}
 .warnk{color:var(--warn);font-weight:600}
@@ -5900,13 +5900,19 @@ function ownFree(p){const c=ownC();if(!c||p.club!=null)return;if(!winOpen(regOf(
   const a=ctrAsk(p,c,true);ui.stack=[];ui.modal={type:'ctr',pid:p.id,fee:0,kind:'free',ask:a,off:{w:nice(a.w*.9),l:nice(a.l*.8),y:a.y},pat:3,log:[p.name+' está livre e topou ouvir a proposta do '+c.n+'.']};save();render();}
 function mCtr(){const m=ui.modal,p=G.P[m.pid],c=ownC(),o=m.off,a=m.ask;
   const row=(k,lbl,val,sub)=>'<div class="ctr-r"><span class="lbl">'+lbl+'</span><div class="ctr-c"><button class="btn sm" data-a="ctrstep" data-k="'+k+'" data-v="-1" aria-label="Diminuir">−</button><b>'+val+'</b><button class="btn sm" data-a="ctrstep" data-k="'+k+'" data-v="1" aria-label="Aumentar">+</button></div><small class="muted">'+sub+'</small></div>';
-  return'<div class="sheet"><span class="eyebrow">Contrato · '+(m.kind==='free'?'jogador livre':'transferência de '+fmt(m.fee))+'</span><div class="neg-h">'+avatar(p,48)+'<h2>'+esc(p.name)+' × '+esc(c.n)+'</h2></div>'+
+  return'<div class="sheet"><span class="eyebrow">Contrato · '+(m.kind==='renew'?'renovação':m.kind==='free'?'jogador livre':'transferência de '+fmt(m.fee))+'</span><div class="neg-h">'+avatar(p,48)+'<h2>'+esc(p.name)+' × '+esc(c.n)+'</h2></div>'+
    '<p class="small muted">'+p.pos+' · '+p.age+' anos · nível '+p.ovr+' · paciência: <span class="pat">'+'●'.repeat(Math.max(0,m.pat))+'</span></p>'+
    '<div class="log">'+m.log.map((l,i)=>'<p class="'+(i%2?'me':'')+'">'+esc(l)+'</p>').join('')+'</div>'+
    row('w','Salário por semana',fmt(o.w),'O empresário dele pede '+fmt(a.w)+'.')+row('l','Luvas',fmt(o.l),'Pedido: '+fmt(a.l)+'. Sai do caixa do clube.')+row('y','Duração',durTxt(o.y*12),'Ele prefere '+durTxt(a.y*12)+'.')+
    '<p class="small">Custo total na assinatura: <b>'+fmt(m.fee+o.l)+'</b> · caixa do clube: '+fmt(c.bud)+'</p>'+
    '<div class="acts"><button class="btn pri" data-a="ctrsend"'+(c.bud<m.fee+o.l?' disabled':'')+'>Enviar proposta</button><button class="btn" data-a="ctrquit">Desistir</button></div></div>';}
 function ctrSend(){const m=ui.modal,p=G.P[m.pid],c=ownC(),o=m.off,a=m.ask;if(c.bud<m.fee+o.l){toast('Caixa do clube insuficiente.');return;}
+  if(m.kind==='renew'){const sc=.62*(o.w/a.w)+.26*(a.l?o.l/a.l:1)+.12*(1-Math.min(1,Math.abs(o.y-a.y)/3));
+    if(sc>=.97){c.bud-=o.l;p.wage=o.w;p.ce=contractEnd(c,o.y);p.warned=0;p.morale=clamp((p.morale||60)+5,0,100);ui.modal=null;news(p.name+' renovou com o '+c.n+' até '+fmonth(p.ce)+'.','clube');
+      pop({k:'good',ic:'deal',ti:'Renovado!',tx:p.name+' renovou até '+fmonth(p.ce)+'.',ch:[['Salário '+fmt(o.w)+'/sem','warn'],...(o.l?[['-'+fmt(o.l)+' de luvas','bad']]:[])]});save();render();return;}
+    m.pat--;m.log.push('Ofereci '+fmt(o.w)+'/sem, luvas de '+fmt(o.l)+' e '+o.y+' ano(s).');
+    if(m.pat<=0){p.renCool=G.d+42;ui.modal=null;news(p.name+' não aceitou renovar com o '+c.n+'.','clube');pop({k:'bad',ic:'no',ti:'Sem acordo',tx:p.name+' recusou a renovação. Dá para tentar de novo em 6 semanas.'});save();render();return;}
+    a.w=nice(a.w*.97);m.log.push(sc>=.9?'Estamos perto. Ele baixa o pedido para '+fmt(a.w)+'/sem.':'Está longe do que ele quer. Novo pedido: '+fmt(a.w)+'/sem.');render();return;}
   const sc=.62*(o.w/a.w)+.26*(a.l?o.l/a.l:1)+.12*(1-Math.min(1,Math.abs(o.y-a.y)/3))+(prest(c)>=prest(club(p)||c)?.03:0);
   if(sc>=.97){const src=club(p);c.bud-=m.fee+o.l;if(src&&m.fee){src.bud+=Math.round(m.fee*.9);soPay&&soPay(p,m.fee,c);}setClub(p,c.id);p.movedW=G.d;p.wage=o.w;p.ce=contractEnd(c,o.y);p.freeSince=null;
     G.own.mood=clamp(G.own.mood+clamp(1+p.fame/12,1,10),0,100);G.moves.unshift({d:G.d,pid:p.id,n:p.name,pos:p.pos,age:p.age,ovr:p.ovr,from:src?src.id:-1,to:c.id,fee:m.fee,k:m.fee?'':'livre'});
@@ -5915,10 +5921,25 @@ function ctrSend(){const m=ui.modal,p=G.P[m.pid],c=ownC(),o=m.off,a=m.ask;if(c.b
   m.pat--;m.log.push('Ofereci '+fmt(o.w)+'/sem, luvas de '+fmt(o.l)+' e '+o.y+' ano(s).');
   if(m.pat<=0){p.clubCool=G.d+42;ui.modal=null;news(p.name+' não aceitou o contrato do '+c.n+'.','clube');pop({k:'bad',ic:'no',ti:'Sem acordo',tx:p.name+' recusou o contrato. Nada foi pago.'});save();render();return;}
   a.w=nice(a.w*.97);m.log.push(sc>=.9?'Estamos perto. Ele baixa o pedido para '+fmt(a.w)+'/sem.':'Está longe do que ele quer. Novo pedido: '+fmt(a.w)+'/sem.');render();}
+/* ---------- botões de cada jogador no Elenco do seu clube ---------- */
+function elActs(p,o){if(isClient(p)||p.loan||p.lent)return'';const x=o&&o.sale&&o.sale[p.id],fresh=p.movedW&&G.d-p.movedW<180,rc=(p.renCool||0)>G.d;
+  return'<div class="el-acts"><button class="btn sm" data-a="oren" data-p="'+p.id+'"'+(rc?' disabled title="Ele pediu um tempo"':'')+'>'+(rc?'Renovar · aguarde':'Renovar contrato')+'</button>'+
+   (x?'<span class="chip good">À venda · '+fmt(x.price)+'</span><button class="btn sm" data-a="saleoff" data-p="'+p.id+'">Retirar</button>':fresh?'<span class="small muted">Chegou há pouco, não pode ser vendido</span>':'<button class="btn sm" data-a="osell" data-p="'+p.id+'">Vender</button>')+'</div>';}
+/* renovar com jogador do próprio clube: mesma mesa de contrato da contratação, sem taxa de transferência */
+function ownRenew(p){const c=ownC();if(!c||p.club!==c.id||isClient(p)||p.loan)return;if((p.renCool||0)>G.d){toast(p.name+' pediu um tempo antes de falar de contrato.');return;}if(!useAP())return;
+  const a=ctrAsk(p,c,false);a.w=Math.max(a.w,nice((p.wage||0)*1.08));a.l=nice(a.l*.5);
+  ui.stack=[];ui.modal={type:'ctr',pid:p.id,fee:0,kind:'renew',ask:a,off:{w:Math.max(nice(a.w*.9),p.wage||0),l:nice(a.l*.8),y:a.y},pat:3,log:[p.name+' quer ouvir a proposta de renovação. Contrato atual até '+fmonth(p.ce)+', ganhando '+fmt(p.wage||0)+'/sem.']};save();render();}
+function mOSell(){const p=G.P[ui.modal.pid],c=ownC();if(!p||!c||p.club!==c.id){ui.modal=null;return'';}const v=value(p),t=cTrust(p),win=winOpen(regOf(c));
+  return'<div class="sheet"><span class="eyebrow">Vender jogador · '+esc(c.n)+'</span><div class="neg-h">'+avatar(p,48)+'<div class="grow"><h2>'+esc(p.name)+'</h2><div class="small muted">'+POSN[p.pos]+' · '+p.age+' anos · nível '+p.ovr+' · valor '+fmt(v)+'</div></div></div>'+
+   (t>=72?'<p class="small warnk">'+esc(c.coach.n)+' confia muito nele. Vender abala a relação com o técnico e o time rende menos por algumas semanas.</p>':'')+
+   '<div class="evb c-good"><h3>'+icoS('money')+'Colocar à venda</h3><p class="small muted">Escolha o preço. Mais barato sai rápido; mais caro pode demorar ou não sair. Os clubes fazem propostas toda semana com a janela aberta. Gasta 1 ação.</p><div class="sale-b">'+
+    SALEP.map((q,k)=>'<button class="btn sm" data-a="saleon" data-p="'+p.id+'" data-k="'+k+'"'+(G.ap<1?' disabled':'')+'>'+fmt(nice(v*q[0]))+'<small>'+q[1]+'</small></button>').join('')+'</div></div>'+
+   '<div class="evb c-warn"><h3>'+icoS('deal')+'Vender agora</h3><p class="small muted">Oferece ao mercado na hora, pelo valor de mercado (variação de 10% para baixo a 15% para cima). Precisa da janela aberta e de algum clube interessado.</p><div class="acts"><button class="btn" data-a="sellp" data-p="'+p.id+'"'+(win?'':' disabled')+'>'+(win?'Oferecer ao mercado':'Janela fechada')+'</button></div></div>'+
+   '<div class="acts"><button class="btn" data-a="close">Cancelar</button></div></div>';}
 /* ---------- venda com preço definido ---------- */
 const SALEP=[[.85,'15% abaixo'],[1,'Valor de mercado'],[1.15,'15% acima']];
 function saleList(p,k){const o=G.own,c=ownC();if(!o||p.club!==c.id||p.loan||isClient(p))return;if(p.movedW&&G.d-p.movedW<180){toast(p.name+' chegou há menos de 6 meses e não pode ser vendido.');return;}if(!useAP())return;
-  (o.sale=o.sale||{})[p.id]={k,price:nice(value(p)*SALEP[k][0]),since:G.d};news(p.name+' foi colocado à venda pelo '+c.n+' por '+fmt(o.sale[p.id].price)+'.','clube');save();render();}
+  (o.sale=o.sale||{})[p.id]={k,price:nice(value(p)*SALEP[k][0]),since:G.d};if(ui.modal&&ui.modal.type==='osell')ui.modal=null;news(p.name+' foi colocado à venda pelo '+c.n+' por '+fmt(o.sale[p.id].price)+'.','clube');save();render();}
 function saleWeek(){const o=G.own;if(!o||!o.sale)return;const c=ownC();if(!winOpen(regOf(c)))return;
   for(const id in o.sale){const p=G.P[id],x=o.sale[id];if(!p||p.club!==c.id){delete o.sale[id];continue;}
     const r=x.price/Math.max(1,value(p)),ch=clamp(.62-(r-.85)*1.6,.05,.7),buyers=G.clubs.filter(b=>b.id!==c.id&&!isOwn(b)&&b.bud>=x.price&&winOpen(regOf(b))&&wouldBuy(b,p));
@@ -5966,7 +5987,8 @@ function cAct(k){const o=G.own,c=ownC();if(!o)return;o.cact=o.cact||{};if((o.cac
   else{const sq=squad(c.id),ok=Math.random()<.55;sq.forEach(p=>p.morale=clamp((p.morale||60)+(ok?4:-5),0,100));c.tb=ok?{v:.9,until:G.d+21}:{v:-.6,until:G.d+21};t=ok?'O elenco respondeu à cobrança do presidente.':'Os líderes do elenco não gostaram do tom da cobrança.';ch=ok?[['Elenco mais focado por 3 sem','good']]:[['Elenco irritado por 3 sem','bad']];}
   news(t,'clube');pop({k:ch[0][1]==='good'?'good':'bad',ic:'coach',wait:1100,wt:'Reunião no CT…',ti:k==='cobra'?'Cobrança ao técnico':k==='elogia'?'Apoio ao técnico':'Cobrança ao elenco',tx:t,ch});save();render();}
 const CLUB2A={ctrstep(d){const m=ui.modal;if(!m||m.type!=='ctr')return;const o=m.off,a=m.ask,v=+d.v;if(d.k==='w')o.w=clamp(nice(o.w*(1+.05*v)),nice(a.w*.5),nice(a.w*1.6));else if(d.k==='l')o.l=clamp(nice(o.l+a.l*.1*v),0,nice(a.l*2.5));else o.y=clamp(o.y+v,1,5);render();},
-  ctrsend(){ctrSend();},ctrquit(){const m=ui.modal;if(m&&m.type==='ctr'){const p=G.P[m.pid];news('O '+ownC().n+' desistiu de contratar '+(p?p.name:'o jogador')+'.','clube');}ui.modal=null;render();},
+  ctrsend(){ctrSend();},ctrquit(){const m=ui.modal;if(m&&m.type==='ctr'&&m.kind!=='renew'){const p=G.P[m.pid];news('O '+ownC().n+' desistiu de contratar '+(p?p.name:'o jogador')+'.','clube');}ui.modal=null;render();},
+  oren(d){ownRenew(G.P[+d.p]);},osell(d){ui.stack=[];ui.modal={type:'osell',pid:+d.p};render();},
   saleon(d){saleList(G.P[+d.p],+d.k);},saleoff(d){const o=G.own;if(o&&o.sale)delete o.sale[d.p];save();render();},
   cact(d){cAct(d.k);},wkv(d){ui.wkv=d.v;render();}};
 
@@ -6353,9 +6375,9 @@ function ownElenco(o,c){const sq=squad(c.id).sort((a,b)=>POS.indexOf(a.pos)-POS.
      msg=n>mx?(n-mx)+' acima do limite':n+b<f?'Faltam titulares':n+b<f+1?'Sem reserva':'Completo';let bx='';for(let i=0;i<Math.max(mx,n);i++)bx+='<i class="'+(i>=mx?'ov':i<n?'on':i<n+b?'yb':'')+'"></i>';
     return'<div class="pf '+st+'"><div class="pf-h"><b>'+POSPL[k].replace(/^./,m=>m.toUpperCase())+'</b><span>'+n+'<small>/'+mx+'</small></span></div><div class="pf-bar">'+bx+'</div><span class="pf-s">'+msg+'</span>'+(b?'<span class="pf-y">+'+b+' da base</span>':'')+'</div>';};
   const row=p=>{const t=cTrust(p),L=ctrL(t);return'<div class="el-r2">'+avatar(p,38)+'<div class="grow"><div class="el-n">'+ovrB(p.ovr)+'<b>'+plLink(p)+'</b></div>'+
-     '<div class="small muted segs"><span>'+p.age+' anos</span> · <span>valor '+fmt(value(p))+'</span> · <span>'+fmt(p.wage||0)+'/sem</span></div>'+
+     '<div class="small muted segs"><span>'+p.age+' anos</span> · <span>valor '+fmt(value(p))+'</span> · <span>'+fmt(p.wage||0)+'/sem</span> · <span'+(monthsLeft(p)<=6?' class="warnk"':'')+'>contrato até '+fmonth(p.ce)+'</span></div>'+
      '<div class="el-tags">'+(p.injury>0?'<span class="chip bad">Lesionado · '+p.injury+' sem</span>':xi.has(p)?'<span class="chip good">Titular</span>':'<span class="chip">Reserva</span>')+(p.age<=20?'<span class="chip info">Base</span>':'')+(p.loan?'<span class="chip info">Emprestado</span>':'')+(isClient(p)?'<span class="chip good">Seu cliente</span>':'')+
-     '<span class="ctr '+L[0]+'"><span class="ctr-b"><i style="width:'+t+'%"></i></span>'+L[1]+'</span></div>'+grpMvBtn(p)+'</div></div>';};
+     '<span class="ctr '+L[0]+'"><span class="ctr-b"><i style="width:'+t+'%"></i></span>'+L[1]+'</span></div>'+elActs(p,o)+grpMvBtn(p)+'</div></div>';};
   let h='<section><div class="sec-h"><h2>Elenco</h2><p>Cada quadradinho é uma vaga de profissional (acima de 20 anos). Os garotos da base (até 20 anos) aparecem em tom mais claro e não contam no limite.</p></div><div class="pf-grid">'+POS.map(tile).join('')+'</div></section>'+
    '<section><div class="sec-h"><h2>Jogadores</h2><p>Valor, idade, salário, quem é titular hoje e quanto '+esc(c.coach.n)+' confia em cada um. Vender alguém com confiança alta abala a relação com o técnico e o time rende menos por algumas semanas.</p></div><div class="card el-list">'+
    POS.map(k=>{const L=sq.filter(p=>p.pos===k);return L.length?'<div class="el-gh">'+POSPL[k].replace(/^./,m=>m.toUpperCase())+'<span>'+L.length+'</span></div>'+L.map(row).join(''):'';}).join('')+'</div></section>';
@@ -7115,7 +7137,7 @@ function renderModal(){const el=$('#modal');let h='';
     if(G.events.length){const e=G.events[0],d=evDef(e),pp=G.P[e.pid];h='<div class="sheet"><span class="eyebrow">Decisão da semana'+(G.events.length>1?' · 1 de '+G.events.length:'')+'</span>'+(pp?'<div class="neg-h">'+avatar(pp,44)+'<h2>'+esc(d.title)+'</h2></div>':'<h2>'+esc(d.title)+'</h2>')+'<p>'+esc(d.text)+'</p><div class="choices">'+d.choices.map((c,i)=>'<button class="choice" data-a="ev" data-i="'+i+'"'+(c.can===false?' disabled':'')+'><b>'+esc(c.label)+'</b><span>'+esc(c.sub||'')+'</span></button>').join('')+'</div></div>';}}
   if(!h&&G&&ui.modal){const m=ui.modal;
     if(m.type==='info')h='<div class="sheet">'+(m.stamp?'<div class="stamp">'+esc(m.stamp)+'</div>':'')+'<h2>'+esc(m.title)+'</h2>'+m.html+'<div class="acts"><button class="btn pri" data-a="close">Continuar</button></div></div>';
-    else if(m.type==='pick')h=mPick();else if(m.type==='evo')h=mEvo();else if(m.type==='resc')h=mResc();else if(m.type==='ag')h=mAgPop3(m.k);else if(m.type==='tryout')h=mTryout();else if(m.type==='fin')h=mFin();else if(m.type==='biz')h=mBiz();else if(m.type==='sign')h=mSign();else if(m.type==='slots')h=mSlots(true);else if(m.type==='faces')h=mFaces();else if(m.type==='edit')h=mEdit();else if(m.type==='art')h=mArticle();else if(m.type==='grpmv')h=mGrpMv();else if(m.type==='ctr')h=inCur(curOf(ownC()),mCtr);else if(m.type==='inbox')h=mInbox();
+    else if(m.type==='pick')h=mPick();else if(m.type==='evo')h=mEvo();else if(m.type==='resc')h=mResc();else if(m.type==='osell')h=mOSell();else if(m.type==='ag')h=mAgPop3(m.k);else if(m.type==='tryout')h=mTryout();else if(m.type==='fin')h=mFin();else if(m.type==='biz')h=mBiz();else if(m.type==='sign')h=mSign();else if(m.type==='slots')h=mSlots(true);else if(m.type==='faces')h=mFaces();else if(m.type==='edit')h=mEdit();else if(m.type==='art')h=mArticle();else if(m.type==='grpmv')h=mGrpMv();else if(m.type==='ctr')h=inCur(curOf(ownC()),mCtr);else if(m.type==='inbox')h=mInbox();
     else if(m.type==='drop'){const p=G.P[m.pid];h='<div class="sheet"><h2>Dispensar '+esc(p.name)+'?</h2><p>Você deixa de representá-lo e perde as comissões. Sua reputação cai 1 ponto.</p><div class="acts"><button class="btn danger" data-a="dropok" data-p="'+p.id+'">Dispensar</button><button class="btn" data-a="close">Cancelar</button></div></div>';}
     else if(m.type==='sellclub'){const c=ownC();h='<div class="sheet"><h2>Vender o '+esc(c.n)+'?</h2><p>Você vende seus '+G.own.pct+'% e recebe <b>'+fmt(sellVal(c))+'</b>.</p><div class="acts"><button class="btn danger" data-a="sellok">Vender</button><button class="btn" data-a="close">Cancelar</button></div></div>';}}
   if(!h&&G&&ui.stack.length){const top=ui.stack[ui.stack.length-1];if(top.t==='p'&&G.P[top.id])h=inCur(curOfP(G.P[top.id]),()=>mPlayer(G.P[top.id]));else if(top.t==='c')h=inCur(curOf(G.clubs[top.id]),()=>mClub(G.clubs[top.id]));else if(top.t==='a'&&G.ags[top.id])h=mAgency(top.id);else if(top.t==='n'&&G.nt.sq[top.n])h=mNation(top.n);else ui.stack=[];}
@@ -7171,7 +7193,7 @@ const A={
     c.bud-=ind;const old=c.coach.n;G.fc=(G.fc||[]).filter(x=>x.n!==k.n);swapCoach(c,Object.assign({},k));o.cands.splice(+d.i,1);news(old+' foi demitido. '+k.n+' é o novo técnico do '+c.n+'.','clube');pop({k:'good',ic:'coach',wait:1100,wt:'Demitindo '+old+'…',ti:'Novo técnico',tx:k.n+' assume o '+c.n+'.',ch:[['Nível '+k.r,'good'],[STYLES[k.st][0],'info'],[PERS[k.pe][0],'warn']]});save();render();},
   upbase(){const o=G.own,c=ownC();if(o.base>=3)return;const cost=nice(eurVal(teamStr(c.id))*6*[.3,.6,1.2][o.base]);if(c.bud<cost)return;c.bud-=cost;o.base++;news('A base do '+c.n+' foi ampliada.','clube');pop({k:'good',ic:'build',wait:1100,wt:'Obras na base…',ti:'Base ampliada',tx:'A base do '+c.n+' está no nível '+o.base+'.'});save();render();},
   upest(){const o=G.own,c=ownC();if(o.est>=3)return;const cost=nice(eurVal(teamStr(c.id))*6*[.5,1,2][o.est]);if(c.bud<cost)return;c.bud-=cost;o.est++;o.mood=clamp(o.mood+5,0,100);news('O estádio do '+c.n+' foi reformado.','clube');pop({k:'good',ic:'build',wait:1100,wt:'Obras no estádio…',ti:'Estádio reformado',tx:'O estádio do '+c.n+' está no nível '+o.est+'.'});save();render();},
-  sellp(d){sellFromClub(G.P[d.p]);save();render();},
+  sellp(d){if(ui.modal&&ui.modal.type==='osell')ui.modal=null;sellFromClub(G.P[d.p]);save();render();},
   ctab(d){ui.ctab={id:+d.c,t:d.v};render();const m=document.querySelector('.club-p .club-tabs');if(m&&m.getBoundingClientRect().top<0)m.scrollIntoView({block:'start'});},
   hireclub(d){hireForClub(G.P[d.p]);},
   nat(d){ui.nat=d.n;ui.comp='N';ui.tab='ligas';ui.stack=[];render();},
