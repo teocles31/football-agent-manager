@@ -2759,7 +2759,11 @@ function wouldBuy(c,p){const src=club(p),avg=teamStr(c.id),need=starterOvr(c.id,
 /* permanência mínima: quem acabou de chegar não é revendido logo, e quanto melhor o jogador, mais tempo ele fica.
    No Transfermarkt, titular de time grande quase nunca muda duas vezes em menos de dois anos. */
 const minStay=p=>p.ovr>=84?1095:p.ovr>=78?730:400;
-const settled=p=>!p.movedW||G.d-p.movedW>minStay(p);
+const settled=p=>!p.movedW||p.movedW>G.d||G.d-p.movedW>minStay(p);
+/* para o seu clube a regra é outra: só não dá para tirar quem chegou há menos de 6 meses;
+   depois disso compra normal, mas quem ainda está no período de adaptação custa 30% a mais (o clube acabou de investir nele) */
+const ownFresh=p=>!!p.movedW&&p.movedW<=G.d&&G.d-p.movedW<180;
+const ownFee=p=>nice(value(p)*1.15*(settled(p)?1:1.3));
 function nextWinOpen(reg,from){for(let i=1;i<400;i++)if(winOpen(reg,from+i)&&!winOpen(reg,from+i-1))return from+i;return from+180;}
 const locked=p=>(p.lockTil||0)>G.d;
 function logMove(m){if(G._log)G._log.push(m);}
@@ -3302,9 +3306,9 @@ function sellFromClub(p){const c=ownC();if(p.loan){toast('Jogador emprestado nã
   const b=pick(buyers),fee=nice(value(p)*rnd(.9,1.15));b.bud-=fee;c.bud+=fee;setClub(p,b.id);p.ce=contractEnd(b,ri(2,5));p.wage=nice(wageRef(p.ovr,b.lg)*rnd(.9,1.2));p.movedW=G.d;
   G.moves.unshift({d:G.d,pid:p.id,n:p.name,pos:p.pos,age:p.age,ovr:p.ovr,from:c.id,to:b.id,fee,k:''});news('O '+c.n+' vendeu '+p.name+' ao '+b.n+' por '+fmt(fee)+'.','clube');pop({k:'good',ic:'money',wait:1200,wt:'Oferecendo '+p.name+' ao mercado…',ti:'Vendido!',tx:p.name+' vai para o '+b.n+'.',ch:[['+'+fmt(fee)+' no caixa do clube','good']]});}
 function hireForClub0(p){const c=ownC(),cur=club(p);if(!c||!cur||cur.id===c.id||p.ag===0)return;
-  if(!winOpen(regOf(c))){toast('A janela de '+LG[c.lg].cn+' está fechada.');return;}const fee=nice(value(p)*1.15);
+  if(!winOpen(regOf(c))){toast('A janela de '+LG[c.lg].cn+' está fechada.');return;}const fee=ownFee(p);
   if(c.bud<fee){toast('O caixa do clube não cobre '+fmt(fee)+'. Faça um aporte.');return;}if((p.clubCool||0)>G.d){toast(p.name+' já recusou. Tente em algumas semanas.');return;}
-  if(!settled(p)){toast(p.name+' acabou de chegar ao '+cur.n+' e não muda de clube de novo tão cedo.');return;}
+  if(ownFresh(p)){toast(p.name+' chegou ao '+cur.n+' há menos de 6 meses e ainda não pode sair.');return;}
   if(!useAP())return;if(prest(c)<prest(cur)-4&&p.age<31&&squad(cur.id).filter(x=>x.pos===p.pos&&x.ovr>p.ovr).length<FORM[p.pos]){p.clubCool=G.d+42;pop({k:'bad',ic:'no',wait:1300,wt:'Proposta ao '+cur.n+'…',ti:'Recusou',tx:p.name+' não quer trocar o '+cur.n+' por um clube menor agora.'});news(p.name+' recusou o '+c.n+'.','clube');save();render();return;}
   c.bud-=fee;cur.bud+=Math.round(fee*.9);setClub(p,c.id);p.movedW=G.d;p.wage=nice(wageRef(p.ovr,c.lg)*rnd(.95,1.2));p.ce=contractEnd(c,ri(2,5));G.own.mood=clamp(G.own.mood+clamp(2+p.fame/12,2,10),0,100);
   G.moves.unshift({d:G.d,pid:p.id,n:p.name,pos:p.pos,age:p.age,ovr:p.ovr,from:cur.id,to:c.id,fee,k:''});news('O '+c.n+' contratou '+p.name+' junto ao '+cur.n+' por '+fmt(fee)+'.','clube');pop({k:'good',ic:'club',wait:1300,wt:'Proposta ao '+cur.n+'…',ti:'Reforço contratado!',tx:p.name+' é reforço do '+c.n+'.',ch:[['-'+fmt(fee)+' do caixa do clube','bad']]});save();render();}
@@ -5738,7 +5742,7 @@ Object.assign(MOM,{
 function otrF(){return ui.otr||(ui.otr={pos:'all',age:'all',min:0,aff:0,src:'all'});}
 function otrList(c){const f=otrF(),sc=teamStr(c.id),mine=new Set(squad(c.id).map(p=>p.id));
   return allP().filter(p=>!mine.has(p.id)&&p.ag!==0&&!G.prospects.includes(p.id)&&!p.loan&&p.age>=17&&(f.pos==='all'||p.pos===f.pos)&&
-    (f.age==='all'||p.age<=+f.age)&&p.ovr>=(f.min||Math.max(55,Math.round(sc)-8))&&(f.min||p.ovr<=Math.round(sc)+8)&&(f.src==='all'||(f.src==='free'?p.club==null:f.src==='loan'?loanable(p,c):p.club!=null))&&(!f.lg||f.lg==='all'||(p.club!=null&&'L'+G.clubs[p.club].lg===f.lg))&&(!f.aff||(p.club==null||c.bud>=nice(value(p)*1.15))))
+    (f.age==='all'||p.age<=+f.age)&&p.ovr>=(f.min||Math.max(55,Math.round(sc)-8))&&(f.min||p.ovr<=Math.round(sc)+8)&&(f.src==='all'||(f.src==='free'?p.club==null:f.src==='loan'?loanable(p,c):p.club!=null))&&(!f.lg||f.lg==='all'||(p.club!=null&&'L'+G.clubs[p.club].lg===f.lg))&&(!f.aff||(p.club==null||c.bud>=ownFee(p))))
    .sort((a,b)=>b.ovr-a.ovr||a.age-b.age).slice(0,30);}
 /* filtros da busca: selects organizados em grade */
 function otrFilters(c,f){const sel=(k,lbl,opts)=>'<label class="of-f"><span>'+lbl+'</span><select class="otr-sel" data-k="'+k+'">'+opts.map(o=>'<option value="'+o[0]+'"'+(String(f[k]==null?'all':f[k])===String(o[0])?' selected':'')+'>'+esc(o[1])+'</option>').join('')+'</select></label>';
@@ -5753,10 +5757,10 @@ function ownTr(o,c){const f=otrF(),open=winOpen(regOf(c)),sc=Math.round(teamStr(
   const seg=(k,opts)=>'<div class="seg sm">'+opts.map(x=>'<button data-a="otrf" data-k="'+k+'" data-v="'+x[0]+'" aria-pressed="'+(String(f[k])===String(x[0]))+'">'+x[1]+'</button>').join('')+'</div>';
   let h='<section><div class="sec-h"><h2>Transferências</h2><p>Pesquise reforços, compre e venda. Janela de '+esc(LG[c.lg].cn)+': <b>'+(open?'aberta até '+fdate(winNext(regOf(c))-1):'fechada, abre em '+fdate(winNext(regOf(c)),true))+'</b>. Caixa do clube: <b>'+fmt(c.bud)+'</b>. Nível do time: '+sc+'.</p></div>'+
    otrFilters(c,f)+
-   '<button class="btn pri big otr-go" data-a="otrrun">Pesquisar atletas</button>'+(!ui.otrRun?'<div class="card otr-empty"><p class="small muted">Escolha os filtros acima e toque em <b>Pesquisar atletas</b>.</p></div>':otrCar(list.map(p=>{const cur=club(p),free=!cur,fee=free?0:nice(value(p)*1.15),ok=open&&(free||(c.bud>=fee&&settled(p)&&!((p.clubCool||0)>G.d))),
-     why=!open?'Janela fechada':!free&&!settled(p)?'Acabou de mudar de clube':!free&&(p.clubCool||0)>G.d?'Recusou há pouco':!free&&c.bud<fee?'Caixa insuficiente':'';
+   '<button class="btn pri big otr-go" data-a="otrrun">Pesquisar atletas</button>'+(!ui.otrRun?'<div class="card otr-empty"><p class="small muted">Escolha os filtros acima e toque em <b>Pesquisar atletas</b>.</p></div>':otrCar(list.map(p=>{const cur=club(p),free=!cur,fee=free?0:ownFee(p),ok=open&&(free||(c.bud>=fee&&!ownFresh(p)&&!((p.clubCool||0)>G.d))),
+     why=!open?'Janela fechada':!free&&ownFresh(p)?'Chegou ao clube há menos de 6 meses':!free&&(p.clubCool||0)>G.d?'Recusou há pouco':!free&&c.bud<fee?'Caixa insuficiente':'';
      return'<div>'+avatar(p,34)+ovrB(p.ovr)+'<div class="grow"><b>'+plLink(p)+'</b> <span class="chip">'+p.pos+'</span><div class="small muted segs"><span>'+p.age+' anos</span> · '+(natName(p)?'<span>'+flagS(natName(p))+esc(natName(p))+'</span> · ':'')+'<span>'+(cur?esc(cur.n):'sem clube')+'</span> · <span>pot. '+potTxt(p)+'</span>'+(cur?' · <span>valor '+fmt(value(p))+'</span>':'')+'</div></div>'+
-      '<div class="otr-a"><b class="small">'+(free?'Livre':fmt(fee))+'</b><button class="btn sm '+(ok?'pri':'')+'" data-a="'+(free?'ownfree':'hireclub')+'" data-p="'+p.id+'"'+(ok?'':' disabled title="'+esc(why)+'"')+'>Contratar</button>'+(!free&&loanable(p,c)?'<button class="btn sm" data-a="ownloan" data-p="'+p.id+'"'+(open&&c.bud>=loanFee(p)?'':' disabled')+'>Emprestar <small>'+fmt(loanFee(p))+'</small></button>':'')+(ok||(!free&&loanable(p,c)&&open&&c.bud>=loanFee(p))?'':'<span class="small muted">'+esc(why)+'</span>')+'</div></div>';})))+'</section>';
+      '<div class="otr-a"><b class="small">'+(free?'Livre':fmt(fee))+(!free&&!settled(p)&&!ownFresh(p)?' <small class="warnk">+30% recém-chegado</small>':'')+'</b><button class="btn sm '+(ok?'pri':'')+'" data-a="'+(free?'ownfree':'hireclub')+'" data-p="'+p.id+'"'+(ok?'':' disabled title="'+esc(why)+'"')+'>Contratar</button>'+(!free&&loanable(p,c)?'<button class="btn sm" data-a="ownloan" data-p="'+p.id+'"'+(open&&c.bud>=loanFee(p)?'':' disabled')+'>Emprestar <small>'+fmt(loanFee(p))+'</small></button>':'')+(ok||(!free&&loanable(p,c)&&open&&c.bud>=loanFee(p))?'':'<span class="small muted">'+esc(why)+'</span>')+'</div></div>';})))+'</section>';
   h+=saleH(c,open);
   h+=ownLoansH(c);const mv=G.moves.filter(m=>m.to===c.id||m.from===c.id).slice(0,8);
   if(mv.length)h+='<section><div class="sec-h"><h2>Movimentações do clube</h2></div><div class="card list">'+mv.map(m=>{const inn=m.to===c.id,o2=G.clubs[inn?m.from:m.to];return'<div><span class="chip '+(inn?'good':'warn')+'">'+(inn?'Chegou':'Saiu')+'</span><div class="grow"><b>'+esc(m.n)+'</b> <span class="small muted">'+m.pos+' · '+(inn?'do ':'para o ')+(o2?esc(o2.n):'mercado')+' · '+fdate(m.d)+'</span></div><span class="small">'+(m.fee?fmt(m.fee):m.k||'livre')+'</span></div>';}).join('')+'</div></section>';
@@ -5890,9 +5894,9 @@ function loanable(p,c){const src=club(p);if(!src||src.id===c.id||p.loan||p.ag===
 function ctrAsk(p,c,free){const src=club(p),W=nice(wageRef(p.ovr,c.lg)*rnd(1,1.18)*(src&&prest(src)>prest(c)?1.1:1)*(p.age<=19?.7:1));
   const y=p.age<=24?4:p.age<=29?3:p.age<=32?2:1;return{w:Math.max(300,W),l:nice(Math.max(300,W)*(free?8:4)),y};}
 function hireForClub(p){const c=ownC(),cur=club(p);if(!c||!cur||cur.id===c.id||p.ag===0)return;
-  if(!winOpen(regOf(c))){toast('A janela de '+LG[c.lg].cn+' está fechada.');return;}const fee=nice(value(p)*1.15);
+  if(!winOpen(regOf(c))){toast('A janela de '+LG[c.lg].cn+' está fechada.');return;}const fee=ownFee(p);
   if(c.bud<fee){toast('O caixa do clube não cobre '+fmt(fee)+'. Faça um aporte.');return;}if((p.clubCool||0)>G.d){toast(p.name+' já recusou. Tente em algumas semanas.');return;}
-  if(!settled(p)){toast(p.name+' acabou de chegar ao '+cur.n+' e não muda de clube de novo tão cedo.');return;}
+  if(ownFresh(p)){toast(p.name+' chegou ao '+cur.n+' há menos de 6 meses e ainda não pode sair.');return;}
   if(!useAP())return;if(prest(c)<prest(cur)-4&&p.age<31&&squad(cur.id).filter(x=>x.pos===p.pos&&x.ovr>p.ovr).length<FORM[p.pos]){p.clubCool=G.d+42;pop({k:'bad',ic:'no',wait:1300,wt:'Proposta ao '+cur.n+'…',ti:'Recusou',tx:p.name+' não quer trocar o '+cur.n+' por um clube menor agora.'});save();render();return;}
   const a=ctrAsk(p,c,false);ui.stack=[];ui.modal={type:'ctr',pid:p.id,fee,kind:'buy',ask:a,off:{w:nice(a.w*.9),l:nice(a.l*.8),y:a.y},pat:3,log:['O '+cur.n+' aceitou os '+fmt(fee)+'. Agora é acertar o contrato com '+p.name+'.']};
   pop({k:'good',ic:'deal',wait:1200,wt:'Proposta ao '+cur.n+'…',ti:'Clube aceitou',tx:'O '+cur.n+' topou vender. Falta acertar o contrato com o jogador.'});save();render();}
@@ -6993,7 +6997,7 @@ function mPlayer(p){const c=club(p),t=seasonTot(p),own=ownC();
   let acts='';
   if(isClient(p))acts+='<button class="btn" data-a="tab" data-t="clientes">Ver na carteira</button>';
   else if(!G.prospects.includes(p.id)){const ch=signChance(p,0),cool=(p.signCool||0)>G.d;acts+='<button class="btn pri" data-a="sign" data-p="'+p.id+'"'+(cool||ch===0?' disabled':'')+'>'+(cool?'Pediu um tempo':ch===0?'Não atende você (reputação baixa)':'Negociar representação')+'</button>';}
-  if(own&&c&&c.id!==own.id&&!isClient(p))acts+='<button class="btn" data-a="hireclub" data-p="'+p.id+'"'+(winOpen(regOf(own))&&settled(p)?'':' disabled')+'>Contratar para o '+esc(own.n)+' <small>'+fmt(nice(value(p)*1.15))+'</small></button>';
+  if(own&&c&&c.id!==own.id&&!isClient(p))acts+='<button class="btn" data-a="hireclub" data-p="'+p.id+'"'+(winOpen(regOf(own))&&!ownFresh(p)?'':' disabled')+'>Contratar para o '+esc(own.n)+' <small>'+fmt(ownFee(p))+'</small></button>';
   return'<div class="sheet wide"><div class="pl-head">'+avatar(p,88)+'<div class="grow"><span class="eyebrow">'+POSN[p.pos]+' · '+p.age+' anos'+(natName(p)?' · '+flagS(natName(p))+esc(natName(p)):'')+'</span><h2>'+esc(p.name)+'</h2>'+
    '<div class="pl-club small">'+(c?clubLink(c,18):'<b>Sem clube</b>')+(p.yb?'<span class="chip info">Categoria de base</span>':'')+(p.loan?'<span class="chip info">emprestado pelo '+esc(G.clubs[p.loan.from].n)+'</span>':'')+idolChip(p)+'</div>'+
    '<div class="small muted">'+(p.ag===0?'Sua agência':p.ag>0?'Empresário: <button class="lnk" data-a="agency" data-i="'+p.ag+'">'+esc(G.ags[p.ag].n)+'</button>':'Sem empresário')+'</div>'+
