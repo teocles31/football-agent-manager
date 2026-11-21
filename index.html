@@ -551,7 +551,7 @@ html body .agb .grow{width:100%;gap:2px;flex:none}
 html body .agb b{font-size:17px;line-height:1.1;padding-right:14px}
 html body .agb small{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;line-height:1.3;font-size:12px}
 /* ===== card do atleta: idade, país e potencial sempre numa linha própria, abaixo do nome ===== */
-html body .fig-b p.small:has(.lnk.club){display:flex;align-items:center;flex-wrap:wrap;gap:2px 5px}
+html body .fig-b p.small:has(.lnk.club){display:flex;align-items:center;flex-wrap:wrap;gap:2px 5px}html body .fig-b .fig-ct{flex-basis:100%;min-width:0}
 html body .fig-b .lnk.club{overflow:visible;line-height:1.3}
 /* ===== pack de faces ===== */
 img.av.face{object-fit:cover;background:#d9dee0;display:block}
@@ -2683,6 +2683,8 @@ function monthly(){const mi=curMonth();
         else{delete G.P[p.id];dirty();}}
       else{const rank=squad(c.id).filter(x=>x.pos===p.pos&&x.ovr>p.ovr).length;
         if(p.age<34&&rank<TEMPLATE[p.pos]&&Math.random()<(rank<FORM[p.pos]?.97:.9)){ /* titular quase sempre renova */p.ce=alignCE(mi+ri(12,36),regOf(c));p.wage=nice(wageRef(p.ovr,c.lg)*rnd(.9,1.2));}
+        /* ídolo ou identificado com o clube renova por mais 1 ou 2 anos */
+        else if(idolLv(p)>=1&&p.age<=35&&Math.random()<.9){p.ce=alignCE(mi+ri(12,24),regOf(c));p.wage=nice(wageRef(p.ovr,c.lg)*rnd(.9,1.1));}
         /* jogador bom no auge não sai de graça só por estar no banco: o clube renova (como Jonathan David, Richarlison) */
         else if(p.age<=30&&p.ovr>=teamStr(c.id)-3&&Math.random()<.85){p.ce=alignCE(mi+ri(18,42),regOf(c));p.wage=nice(wageRef(p.ovr,c.lg)*rnd(.9,1.15));}
         /* veterano ainda titular e de nível alto renova por 1 ou 2 anos (como Alisson, Modric, Thiago Silva) em vez de sair de graça */
@@ -2743,6 +2745,7 @@ function wouldBuy(c,p){const src=club(p),avg=teamStr(c.id),need=starterOvr(c.id,
     /* titular ou convocado não desce para clube bem menor; só no fim da carreira (Pulgar do Flamengo não vai para o Mirassol) */
     if(pc<ps-3&&(starter||sel||p.ovr>=80)&&p.age<33)return false;if(pc<ps-8&&p.age<32)return false;
     if(starter&&pc<=ps+3&&p.age<31&&monthsLeft(p)>12&&Math.random()<.93)return false;
+    {const il=idolLv(p);if(il===2&&p.age<34&&Math.random()<.92)return false;if(il===1&&Math.random()<.5)return false;}
     /* craque titular quase nunca troca de clube */
     if(starter&&p.ovr>=85&&monthsLeft(p)>12&&Math.random()<.85)return false;
     /* gigantes quase nunca vendem titular para outro gigante, e rival direto do mesmo país menos ainda */
@@ -2771,7 +2774,9 @@ function aiLoans(c){/* clube grande empresta jovem sem espaço para clube menor 
   const d=wpick(dest,d=>near(d)/(1+Math.abs(p.ovr-teamStr(d.id))));if(!d)return;
   p.loanN=(p.loanN||0)+1;p.loan={from:c.id,opt:false,fee:0,end};doTransfer(p,d,0,'empréstimo');c.lo=(c.lo||0)+1;d.li=(d.li||0)+1;}
 /* jogador livre só assina com clube do nível dele: no máximo 6 pontos acima da força do time (ninguém de 86 vai para um time de 70) */
-const freeFits=(c,p)=>p.ovr<=teamStr(c.id)+6;
+/* quem o clube acabou de liberar não volta para lá no mesmo ano */
+function relBy(p){const h=p.ch||[],n=h.length;if(p.club!=null||!n||h[n-1].c!=null)return null;return{c:n>=2?h[n-2].c:h[0].f,d:h[n-1].d};}
+const freeFits=(c,p)=>{if(p.ovr>teamStr(c.id)+6)return false;const r=relBy(p);return!(r&&r.c===c.id&&G.d-r.d<365);};
 function aiMarket(){const free=allP().filter(p=>p.club==null&&p.ag!==0&&!G.prospects.includes(p.id));let pool=null;
   /* jogador bom sem contrato não fica parado: assina de graça com um clube à altura, em qualquer época do ano */
   free.slice().sort((a,b)=>b.ovr-a.ovr).slice(0,20).forEach(p=>{if(Math.random()>.15)return;
@@ -3076,7 +3081,7 @@ function negBluff0(){const n=G.neg,p=G.P[n.pid];if(n.bluff)return;n.bluff=true;c
   else{n.pat--;if(n.pat<=0){negCollapse();save();render();return;}n.log.push({w:'c',t:'Ligamos para o mercado inteiro. Não existe outra proposta. Não tente isso de novo.'});}save();render();}
 function negLeave(){const n=G.neg,p=G.P[n.pid];if(n.offerId){const o=G.offers.find(o=>o.id===n.offerId);if(o)o.tries++;}else p.cool[n.cid]=G.d+21;G.neg=null;save();render();}
 function closeDeal(t){return inCur(negCur(),()=>closeDeal0(t));}
-function closeDeal0(t){const n=G.neg,p=G.P[n.pid],c=G.clubs[n.cid],old=club(p),move=n.kind!=='renew';if(move&&n.fee>0)soPay(p,n.fee,c);p.bon=t.bon||0;if(t.so)p.sellOn={pct:t.so,until:G.d+1460};
+function closeDeal0(t){const n=G.neg,p=G.P[n.pid],c=G.clubs[n.cid],old=club(p),move=n.kind!=='renew',oil=move&&old?idolLv(p):0;if(move&&n.fee>0)soPay(p,n.fee,c);p.bon=t.bon||0;if(t.so)p.sellOn={pct:t.so,until:G.d+1460};
   const gain=Math.round(t.luvas*t.comm/100*fxMul(c));let feeC=0;
   if(n.fee>0){c.bud-=n.fee;if(old)old.bud+=Math.round(n.fee*.9);feeC=Math.round(n.fee*feePct()*fxMul(c));}
   G.money+=gain+feeC;G.stats.earned+=gain+feeC;G.stats.deals++;if(n.fee>G.stats.bigFee)G.stats.bigFee=n.fee;
@@ -3089,9 +3094,19 @@ function closeDeal0(t){const n=G.neg,p=G.P[n.pid],c=G.clubs[n.cid],old=club(p),m
   if(isOwn(c)&&negCost(t).total>1.25){news('O conselho fiscal do '+c.n+' questionou o contrato generoso que o dono deu ao próprio cliente.','clube');addRep(-1.5);G.own.mood=clamp(G.own.mood-4,0,100);}
   G.offers=G.offers.filter(o=>o.pid!==p.id);
   news((move?(n.fee?'Transferência fechada: '+p.name+' troca o '+old.n+' pelo '+c.n+' por '+fmt(n.fee):p.name+' assinou com o '+c.n):p.name+' renovou com o '+c.n)+'. Contrato até '+fmonth(p.ce)+'. Você embolsou '+fmt(gain+feeC)+'.','transf');
-  relAdd(c,move?8:5);if(old&&old!==c&&n.fee>0)relAdd(old,3);G.tut.deal=true;G.neg=null;
+  relAdd(c,move?8:5);if(old&&old!==c&&n.fee>0)relAdd(old,3);if(oil){relAdd(old,oil===2?-6:-2);news('A torcida do '+old.n+' lamenta a saída de '+p.name+(oil===2?', ídolo do clube. A diretoria ficou chateada com você.':', identificado com o clube.'),'transf');}G.tut.deal=true;G.neg=null;
   ui.modal={type:'info',stamp:'Fechado',title:'Negócio fechado',html:'<p>'+esc(p.name)+(move?' é jogador do ':' renovou com o ')+esc(c.n)+'.</p><p>Salário: <b>'+fmt(t.wage)+'</b> por semana, contrato até <b>'+fmonth(p.ce)+'</b> ('+leftTxt(p)+').</p><p>Você recebe agora <b>'+fmt(gain+feeC)+'</b>'+(feeC?' (luvas '+fmt(gain)+' + comissão da venda '+fmt(feeC)+')':'')+' e <b>'+fmt(t.wage*t.comm/100)+'</b> por semana.</p>'};
   addRep(rg);save();render();}
+/* encerrar empréstimo: o jogador volta ao clube dono, desde que não seja titular onde está e a janela do clube dono esteja aberta */
+function recall(pid){const p=G.P[pid],L=p&&p.loan,dest=club(p);if(!L||!dest)return;const par=G.clubs[L.from];
+  if(!winOpen(regOf(par))){toast('A janela de '+LG[par.lg].cn+' está fechada. O empréstimo só pode ser encerrado com a janela aberta.');return;}
+  if(!useAP())return;const st=p.ovr>=starterOvr(dest.id,p.pos)&&!(p.boost<0);
+  if(st||Math.random()>.85){p.rcCool=G.d+28;const why=st?'O '+dest.n+' conta com '+p.name+' como titular e não abre mão do empréstimo.':'O '+dest.n+' não aceitou encerrar o empréstimo agora.';
+    pop({k:'bad',ic:'no',wait:1200,wt:'Ligando para o '+dest.n+'…',ti:'Empréstimo mantido',tx:why+' Tente de novo em 4 semanas.'});save();render();return;}
+  p.loan=null;setClub(p,par.id);p.morale=clamp(p.morale+4,0,100);relAdd(dest,-3);
+  G.moves.unshift({d:G.d,pid:p.id,n:p.name,pos:p.pos,age:p.age,ovr:p.ovr,from:dest.id,to:par.id,fee:0,k:'fim de empréstimo'});
+  news('Empréstimo encerrado: '+p.name+' deixou o '+dest.n+' e voltou ao '+par.n+'.','transf');
+  pop({k:'good',ic:'deal',wait:1200,wt:'Ligando para o '+dest.n+'…',ti:'Empréstimo encerrado',tx:p.name+' volta ao '+par.n+'. Agora você pode oferecê-lo ou emprestá-lo de novo quando abrir uma janela.'});save();render();}
 function loan(pid,cid){const p=G.P[pid],c=G.clubs[cid],cur=club(p);if(!cur||p.loan)return;
   if(!winOpen(regOf(c))){toast('A janela de '+LG[c.lg].cn+' está fechada.');return;}
   const end=regOf(c)==='eu'?alignCE(curMonth(),'eu'):Math.floor(curMonth()/12)*12+11;
@@ -3165,6 +3180,9 @@ function scout0(rid){const r=REGIONS.find(x=>x.id===rid);if(G.rep<r.rep){toast('
 function clientsWeekly(){G.clients.slice().forEach(id=>{const p=G.P[id];if(!p)return;const c=club(p),games=G.wlog.filter(x=>x.pid===id),played=games.some(x=>!x.sub);
   if(c&&p.injury===0){if(played)p.morale+=2;else if(games.length)p.morale-=1;else if(fixturesOf(c.id,G.d-7,G.d-1).some(f=>f.m&&f.m[2]>=0))p.morale+=(p.age<=20&&p.ovr<teamStr(c.id)-4?-1:(p.trait==='ambicioso'?-4:-3));
     if(p.trait==='ambicioso'&&p.ovr>teamStr(c.id)+5)p.morale-=2;}
+  {const il=idolLv(p);if(il&&Math.random()<(il===2?.8:.4))p.morale+=1;if(il===2)p.fame=clamp(p.fame+.15,0,100);
+    if(il>(p.idol||0)){if(c)news(il===2?p.name+' virou ídolo da torcida do '+c.n+'. Ele ganha moral e fama toda semana, e o clube resiste muito mais a vendê-lo.':p.name+' completou 3 anos no '+c.n+' e já é identificado com o clube. A torcida gosta dele e o clube segura mais.','agencia');}
+    p.idol=il;}
   if(!c){p.morale-=1;p.freeW=(p.freeW||0)+1;if(p.freeW>4)p.trust-=1;}
   p.morale=clamp(p.morale,0,100);if(p.morale<30)p.trust-=1;p.trust=clamp(p.trust,0,100);p.potErr=Math.max(1,(p.potErr||1)*.97);
   if(p.boost>0)p.boost--;else if(p.boost<0)p.boost++;
@@ -4659,6 +4677,7 @@ const EVOA={
   ssub(d){ui.ssub=d.v;render();},
   agency(d){ui.modal=null;ui.stack.push({t:'a',id:+d.i});render();},
   evo(d){ui.stack=[];ui.modal={type:'evo',pid:+d.p};render();},
+  recall(d){recall(+d.p);},
   evonav(d){const L=evoList(),i=L.indexOf(G.P[ui.modal&&ui.modal.pid]);if(L.length<2)return;const p=L[((i<0?0:i)+(+d.d)+L.length)%L.length];ui.modal={type:'evo',pid:p.id};render();const sh=document.querySelector('.sheet');if(sh&&sh.parentElement)sh.parentElement.scrollTop=0;},
   cerok(){if(G.cer)G.cer.shift();save();render();},
   goN(){ui.ssub='rk';ui.tab='selecoes';ui.stack=[];render();window.scrollTo(0,0);},
@@ -5032,10 +5051,10 @@ const chevI=up=>'<svg viewBox="0 0 24 24" width="20" height="20" fill="none" str
 function figCard2(p){const open=!!(ui.figOpen&&ui.figOpen[p.id]);
   if(open)return figCard(p).replace('<article class="fig">','<article class="fig open"><button class="figtog" data-a="figtog" data-p="'+p.id+'" aria-expanded="true" aria-label="Recolher card de '+esc(p.name)+'">'+chevI(1)+'</button>');
   const c=club(p),tags=[];if(p.injury>0)tags.push('<span class="chip bad">'+esc(p.injT||'Lesionado')+' · '+p.injury+' sem</span>');if(locked(p))tags.push('<span class="chip warn">Recém-contratado</span>');
-  if(p.promise)tags.push('<span class="chip bad">Promessa de saída</span>');if(c&&monthsLeft(p)<=6)tags.push('<span class="chip warn">Contrato: '+monthsLeft(p)+' meses</span>');
+  if(p.promise)tags.push('<span class="chip bad">Promessa de saída</span>');if(idolLv(p))tags.push(idolChip(p));if(c&&monthsLeft(p)<=6)tags.push('<span class="chip warn">Contrato: '+monthsLeft(p)+' meses</span>');
   return'<article class="fig mini"><button class="figtog" data-a="figtog" data-p="'+p.id+'" aria-expanded="false" aria-label="Expandir card de '+esc(p.name)+'">'+chevI(0)+'</button><div class="fig-n">'+avatar(p,44)+'<b>'+p.ovr+'</b><span>'+p.pos+'</span></div><div class="fig-b">'+
    '<h3>'+plLink(p)+'<small>'+p.age+' anos · '+natTag(p)+'pot. '+potTxt(p)+'</small></h3>'+
-   '<p class="small">'+(c?clubLink(c,16)+' · até '+fmonth(p.ce)+(p.noCl?' · sem multa':clauseOf(p)?' · multa '+fmt(clauseOf(p)):''):'<b>Sem clube</b>')+'</p>'+statStrip(p)+
+   '<p class="small">'+(c?clubLink(c,16)+'<span class="fig-ct">'+sinceShort(p)+' · até '+fmonth(p.ce)+(p.noCl?' · sem multa':clauseOf(p)?' · multa '+fmt(clauseOf(p)):'')+'</span>':'<b>Sem clube</b>')+'</p>'+statStrip(p)+
    '<div class="meters two">'+meter('Moral',p.morale)+meter('Confiança',p.trust)+'</div>'+(tags.length?'<div class="acts">'+tags.join('')+'</div>':'')+
    (!c?'<div class="acts"><button class="btn pri sm" data-a="pick" data-p="'+p.id+'">Oferecer a clube</button><button class="btn sm" data-a="tryout" data-p="'+p.id+'">Levar a peneiras</button></div>':'')+'</div></article>';}
 /* peneira: clube que testa o jogador mesmo abaixo do nível. Garoto até 20 anos entra na base com contrato de formação;
@@ -5679,6 +5698,17 @@ function negClauses(t){const sg=(a,v,opts)=>'<div class="seg sm">'+opts.map(o=>'
 /* ---------- desde quando está no clube atual: volta de empréstimo não zera o tempo de casa ---------- */
 function clubSince(p){const h=p.ch||[];if(p.club==null)return null;let i=h.length-1;while(i>=0&&h[i].c!==p.club)i--;if(i<0)return null;
   while(i>=1&&h[i-1].l&&!h[i].l&&(i>=2?h[i-2].c===p.club:h[0].f===p.club))i-=2;return i<0?null:h[i].d;}
+/* ídolo do clube: anos seguidos no mesmo clube (quem já estava lá no início conta desde o começo do jogo).
+   3 anos = identificado com o clube; 5 anos sendo titular = ídolo da torcida */
+function idolLv(p){if(!p||p.club==null||p.loan||p.yb)return 0;const d=clubSince(p),y=(G.d-(d==null?0:d))/365;
+  if(y>=5&&p.ovr>=starterOvr(p.club,p.pos)-2)return 2;return y>=3?1:0;}
+const IDOL_N=['','Identificado com o clube','Ídolo da torcida'];
+const idolChip=p=>{const l=idolLv(p);return l?'<span class="chip '+(l===2?'warn':'good')+'">'+IDOL_N[l]+'</span>':'';};
+/* versão curta para o card recolhido: "desde nov/2026" */
+function sinceShort(p){if(p.club==null)return'';const d=clubSince(p);if(d==null)return'Desde antes de 2026';const t=ymd(d);return(p.loan?'Emprestado desde ':'Desde ')+MES[t.m-1]+'/'+t.y;}
+/* texto curto para o card da carteira */
+function sinceTxt(p){if(p.club==null)return'';const d=clubSince(p);if(d==null)return p.yb?'na base do clube':'no clube desde antes de 2026';
+  const t=ymd(d),z=n=>(n<10?'0':'')+n;return(p.loan?'emprestado desde ':'no clube desde ')+z(t.dd)+'/'+z(t.m)+'/'+t.y;}
 /* card "No clube" do perfil, ao lado do contrato */
 function sinceK(p){if(p.club==null)return null;const d=clubSince(p),lb=p.loan?'Emprestado desde':'No clube desde';
   if(d==null)return p.yb?['No clube','na base<small>categoria de base</small>']:[lb,'antes de 2026<small>já estava no início do jogo</small>'];
@@ -6685,16 +6715,16 @@ function renderHeader(){
 
 /* ================= CLIENTES E OLHEIROS ================= */
 function figCard(p){const c=club(p),t=seasonTot(p),tcost=nice(Math.max(300,wageRef(p.ovr,c?c.lg:0)*.5));
-  const tags=[];if(p.injury>0)tags.push('<span class="chip bad">'+esc(p.injT||'Lesionado')+' · '+p.injury+' sem</span>');if(p.training>0)tags.push('<span class="chip good">Treino '+p.training+' sem</span>');if(p.promise)tags.push('<span class="chip bad">Promessa de saída</span>');if(p.boost>0)tags.push('<span class="chip good">Titular garantido</span>');if(p.boost<0)tags.push('<span class="chip warn">Fora do time</span>');if(p.loan)tags.push('<span class="chip info">Emprestado pelo '+esc(G.clubs[p.loan.from].n)+'</span>');evoTags(p).forEach(x=>tags.push(x));if((p.suspTil||0)>G.d)tags.push('<span class="chip bad">Suspenso até '+fdate(p.suspTil)+'</span>');if(isIntl(p))tags.push('<span class="chip good">Seleção · '+esc(natName(p))+'</span>');if(locked(p))tags.push('<span class="chip warn">Recém-contratado · venda liberada em '+fdate(p.lockTil)+'</span>');
+  const tags=[];if(p.injury>0)tags.push('<span class="chip bad">'+esc(p.injT||'Lesionado')+' · '+p.injury+' sem</span>');if(p.training>0)tags.push('<span class="chip good">Treino '+p.training+' sem</span>');if(p.promise)tags.push('<span class="chip bad">Promessa de saída</span>');if(p.boost>0)tags.push('<span class="chip good">Titular garantido</span>');if(p.boost<0)tags.push('<span class="chip warn">Fora do time</span>');if(idolLv(p))tags.push(idolChip(p));if(p.loan)tags.push('<span class="chip info">Emprestado pelo '+esc(G.clubs[p.loan.from].n)+'</span>');evoTags(p).forEach(x=>tags.push(x));if((p.suspTil||0)>G.d)tags.push('<span class="chip bad">Suspenso até '+fdate(p.suspTil)+'</span>');if(isIntl(p))tags.push('<span class="chip good">Seleção · '+esc(natName(p))+'</span>');if(locked(p))tags.push('<span class="chip warn">Recém-contratado · venda liberada em '+fdate(p.lockTil)+'</span>');
   const lk=locked(p),canOffer=!p.loan&&!lk&&(!c||anyWin()),canLoan=c&&!p.loan&&anyWin();
   return'<article class="fig"><div class="fig-n">'+avatar(p,58)+'<b>'+p.ovr+'</b><span>'+p.pos+'</span><small>pot. '+potTxt(p)+'</small></div><div class="fig-b">'+
    '<h3>'+plLink(p)+'<small>'+p.age+' anos · '+natTag(p)+TRAIT[p.trait][0]+'</small></h3>'+
-   '<p class="small">'+(c?clubLink(c,16)+' · '+fmt(p.wage)+'/sem · contrato até <b>'+fmonth(p.ce)+'</b> ('+leftTxt(p)+')'+(p.noCl?' · sem multa':clauseOf(p)?' · multa '+fmt(clauseOf(p)):'')+' · você leva '+p.comm+'%':'<b>Sem clube</b> · aguardando você achar um contrato')+'</p>'+
+   '<p class="small">'+(c?clubLink(c,16)+'<span class="fig-ct">'+sinceTxt(p).replace(/^./,x=>x.toUpperCase())+' · '+fmt(p.wage)+'/sem · contrato até <b>'+fmonth(p.ce)+'</b> ('+leftTxt(p)+')'+(p.noCl?' · sem multa':clauseOf(p)?' · multa '+fmt(clauseOf(p)):'')+' · você leva '+p.comm+'%</span>':'<b>Sem clube</b> · aguardando você achar um contrato')+'</p>'+
    '<div class="meters">'+meter('Moral',p.morale)+meter('Confiança',p.trust)+meter('Fama',p.fame)+'</div>'+
    '<p class="small muted">Valor '+fmt(value(p))+' · '+fmtN(offOf(p).fol)+' seguidores</p>'+statSheet(p)+
    (tags.length?'<div class="acts">'+tags.join('')+'</div>':'')+
    '<div class="acts"><button class="btn" data-a="player" data-p="'+p.id+'">Estatísticas</button>'+
-   (canOffer?'<button class="btn pri" data-a="pick" data-p="'+p.id+'">Oferecer a clube</button>':'')+(canLoan?'<button class="btn" data-a="loanpick" data-p="'+p.id+'">Emprestar</button>':'')+
+   (canOffer?'<button class="btn pri" data-a="pick" data-p="'+p.id+'">Oferecer a clube</button>':'')+(canLoan?'<button class="btn" data-a="loanpick" data-p="'+p.id+'">Emprestar</button>':'')+(p.loan&&c?'<button class="btn" data-a="recall" data-p="'+p.id+'"'+((p.rcCool||0)>G.d?' disabled':'')+'>Encerrar empréstimo</button>':'')+
    (c?'<button class="btn" data-a="renew" data-p="'+p.id+'"'+((p.cool[homeClub(p).id]||0)>G.d?' disabled':'')+'>'+(p.loan?'Renovar com o '+esc(homeClub(p).n):'Renovar')+'</button>':'')+
    (!c?'<button class="btn" data-a="tryout" data-p="'+p.id+'">Levar a peneiras</button>':'')+'<button class="btn" data-a="talk" data-p="'+p.id+'">Conversar</button><button class="btn" data-a="evo" data-p="'+p.id+'">Evolução</button>'+
    '<button class="btn danger" data-a="drop" data-p="'+p.id+'">Dispensar</button></div>'+(lk?'<p class="small muted">'+esc(p.name)+' acabou de assinar com o '+esc(c.n)+'. Ele só pode ser vendido a outro clube quando abrir a próxima janela, em '+fdate(p.lockTil,true)+'. Emprestar já pode.</p>':c&&!canOffer&&!p.loan?'<p class="small muted">"Oferecer a clube" aparece quando uma janela de transferências abrir. Próxima: '+fdate(Math.min(winOpen('eu')?9e9:winNext('eu'),winOpen('sa')?9e9:winNext('sa')),true)+'.</p>':'')+'</div></article>';}
@@ -6851,7 +6881,7 @@ function mPlayer(p){const c=club(p),t=seasonTot(p),own=ownC();
   else if(!G.prospects.includes(p.id)){const ch=signChance(p,0),cool=(p.signCool||0)>G.d;acts+='<button class="btn pri" data-a="sign" data-p="'+p.id+'"'+(cool||ch===0?' disabled':'')+'>'+(cool?'Pediu um tempo':ch===0?'Não atende você (reputação baixa)':'Negociar representação')+'</button>';}
   if(own&&c&&c.id!==own.id&&!isClient(p))acts+='<button class="btn" data-a="hireclub" data-p="'+p.id+'"'+(winOpen(regOf(own))&&settled(p)?'':' disabled')+'>Contratar para o '+esc(own.n)+' <small>'+fmt(nice(value(p)*1.15))+'</small></button>';
   return'<div class="sheet wide"><div class="pl-head">'+avatar(p,88)+'<div class="grow"><span class="eyebrow">'+POSN[p.pos]+' · '+p.age+' anos'+(natName(p)?' · '+flagS(natName(p))+esc(natName(p)):'')+'</span><h2>'+esc(p.name)+'</h2>'+
-   '<div class="pl-club small">'+(c?clubLink(c,18):'<b>Sem clube</b>')+(p.yb?'<span class="chip info">Categoria de base</span>':'')+(p.loan?'<span class="chip info">emprestado pelo '+esc(G.clubs[p.loan.from].n)+'</span>':'')+'</div>'+
+   '<div class="pl-club small">'+(c?clubLink(c,18):'<b>Sem clube</b>')+(p.yb?'<span class="chip info">Categoria de base</span>':'')+(p.loan?'<span class="chip info">emprestado pelo '+esc(G.clubs[p.loan.from].n)+'</span>':'')+idolChip(p)+'</div>'+
    '<div class="small muted">'+(p.ag===0?'Sua agência':p.ag>0?'Empresário: <button class="lnk" data-a="agency" data-i="'+p.ag+'">'+esc(G.ags[p.ag].n)+'</button>':'Sem empresário')+'</div>'+
    '<div class="pl-ovr">'+ovrB(p.ovr,'xl')+'<div class="pl-pot"><span class="lbl">Potencial</span><b>'+potTxt(p)+'</b></div></div></div></div>'+
    '<div class="kpis pk">'+[['Valor',fmt(value(p))],['Salário',c?fmt(p.wage)+'/sem':'—'],['Contrato',c?'até '+fmonth(p.ce)+'<small>faltam '+monthsLeft(p)+' meses</small>':'livre'],sinceK(p),['Fama',Math.round(p.fame)]].filter(Boolean).map(k=>'<div class="kpi"><span>'+k[0]+'</span><b>'+k[1]+'</b></div>').join('')+'</div>'+
