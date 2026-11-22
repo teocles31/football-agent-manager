@@ -3051,7 +3051,11 @@ function ySell(p,buyer,bid){const cur=club(p);if(!cur||isOwn(cur))return{r:'ok',
 /* lance do comprador: perto do valor; clube rico e decidido às vezes paga a multa direto */
 function yBid(p,buyer){const cur=club(p),v=value(p);if(clauseOf(p)>0&&buyer.bud>=clauseOf(p)&&prest(buyer)>=prest(cur)&&clauseOf(p)<=v*2.2&&Math.random()<.35)return clauseOf(p);return nice(v*rnd(.9,1.15)*(lastDays()?1.08:1));}
 /* negociação clube x clube; devolve {fee,cl} se fechou, null se não */
-function yDeal(p,buyer){const cur=club(p);let bid=yBid(p,buyer);if(buyer.bud<bid)bid=nice(buyer.bud*.95);let r=ySell(p,buyer,bid);
+function yDeal(p,buyer){const cur=club(p);
+  /* comprador é o seu clube: você decide pagar o que o outro clube pede (ou a multa, se for menor), desde que o caixa cubra */
+  if(isOwn(buyer)&&cur&&!isOwn(cur)){const cl=clauseOf(p),ask=yAsk(p,cur),fee=cl>0&&cl<ask?cl:ask;if(buyer.bud>=fee)return{fee,cl:fee===cl?1:0,ask:fee===cl?0:1,bid:fee};
+    return{no:1,bid:buyer.bud,ask:fee,why:'o '+cur.n+' pede '+fmtC(fee,cur)+' e o caixa do '+buyer.n+' não cobre. Faça um aporte em Clube, Visão geral'};}
+  let bid=yBid(p,buyer);if(buyer.bud<bid)bid=nice(buyer.bud*.95);let r=ySell(p,buyer,bid);
   if(r.r==='more'){if(buyer.bud>=r.ask&&Math.random()<.6)return{fee:r.ask,ask:1,bid};return{no:1,bid,ask:r.ask,why:'o '+cur.n+' pediu '+fmtC(r.ask,cur)+' e o '+buyer.n+' não chegou lá'};}
   if(r.r==='no')return{no:1,bid,ask:r.ask,why:'o '+cur.n+' recusou a proposta de '+fmtC(bid,buyer)+' do '+buyer.n+(xiOf(cur.id).includes(p)?': ele é titular e o clube não quer vender':monthsLeft(p)>=24?': ainda há '+leftTxt(p)+' de contrato':'')};
   return{fee:r.fee,cl:r.cl,bid};}
@@ -3062,9 +3066,11 @@ function pitch(pid,cid){const p=G.P[pid],c=G.clubs[cid],cur=club(p);
   if(cur&&!winOpen(regOf(c))){toast('A janela de '+LG[c.lg].cn+' está fechada.');return;}
   if(!useAP())return;G.tut.pitch=true;ui.modal=null;
   let fee=0;const d=p.ovr-teamStr(c.id);let why='';
-  if(!isOwn(c)&&!clientRoom(c,p))why='o '+c.n+' já tem '+posCnt(c,p.pos)+' '+POSPL[p.pos]+' no profissional e '+p.name+' não é melhor que nenhum deles';else if(cur){if(prest(c)<prest(cur)-4)why=p.name+' não quer trocar o '+cur.n+' por um clube menor';else if(!wouldBuy(c,p)&&d<-1)why='o '+c.n+' acha que ele não melhora o elenco';else if(c.bud<value(p)*.85)why='o '+c.n+' não tem caixa para pagar o '+cur.n;}
+  /* seu próprio clube: a diretoria é você. Só pesam o caixa do clube e a vontade do jogador */
+  if(isOwn(c)){if(cur&&prest(c)<prest(cur)-8&&p.age<29&&(p.trust||0)<70)why=p.name+' não quer trocar o '+cur.n+' por um clube bem menor, nem a seu pedido';else if(cur&&c.bud<value(p)*.85)why='o caixa do '+c.n+' não cobre a compra. Faça um aporte em Clube, Visão geral';}
+  else if(!clientRoom(c,p))why='o '+c.n+' já tem '+posCnt(c,p.pos)+' '+POSPL[p.pos]+' no profissional e '+p.name+' não é melhor que nenhum deles';else if(cur){if(prest(c)<prest(cur)-4)why=p.name+' não quer trocar o '+cur.n+' por um clube menor';else if(!wouldBuy(c,p)&&d<-1)why='o '+c.n+' acha que ele não melhora o elenco';else if(c.bud<value(p)*.85)why='o '+c.n+' não tem caixa para pagar o '+cur.n;}
   else if(!freeFit(p,c))why='o '+c.n+' avaliou que ele está abaixo do nível do elenco';
-  if(!why&&Math.random()>clamp(.8+G.rep/400+(d>=3?.15:0)+(c.need===p.pos?.15:0)+(isOwn(c)?.3:0)+.03*G.me.rel+clubPull(c)+(relOf(c)-50)/250+(langsOf(p).includes(clubL(c))&&clubL(c)!==natL(p)?.06:0),.3,.98))why='a diretoria do '+c.n+' não retornou suas ligações';
+  if(!why&&!isOwn(c)&&Math.random()>clamp(.8+G.rep/400+(d>=3?.15:0)+(c.need===p.pos?.15:0)+(isOwn(c)?.3:0)+.03*G.me.rel+clubPull(c)+(relOf(c)-50)/250+(langsOf(p).includes(clubL(c))&&clubL(c)!==natL(p)?.06:0),.3,.98))why='a diretoria do '+c.n+' não retornou suas ligações';
   if(why){relAdd(c,-2);p.cool[cid]=G.d+Math.round(42*(1-.1*G.me.rel));news('Sem acordo: '+why+'.','transf');pop({k:'bad',ic:'no',wait:1300,wt:'Ligando para o '+c.n+'…',ti:'Sem acordo',tx:why.charAt(0).toUpperCase()+why.slice(1)+'.'});save();render();return;}
   if(cur&&!isOwn(cur)){const y=yDeal(p,c);
     if(y.no){relAdd(c,-1);p.cool[cid]=G.d+35;news('Sem acordo entre clubes: '+y.why+'.','transf');pop({k:'bad',ic:'no',wait:1600,wt:'O '+c.n+' fazendo proposta ao '+cur.n+'…',ti:'O '+cur.n+' não liberou',tx:y.why.charAt(0).toUpperCase()+y.why.slice(1)+'.'});save();render();return;}
