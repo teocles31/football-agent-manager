@@ -723,7 +723,7 @@ html,body{touch-action:manipulation}
 .el-list{padding:4px 12px}.el-gh{display:flex;justify-content:space-between;align-items:center;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink2);padding:12px 0 4px;border-bottom:1px solid var(--line)}
 .el-r2{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.el-r2:last-child{border-bottom:0}.el-r2 .grow{min-width:0;display:flex;flex-direction:column;gap:3px}
 .el-n{display:flex;align-items:center;gap:8px;min-width:0}.el-n b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}.el-n .ovr{flex:none}
-.el-tags{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:2px}.el-acts{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:8px}
+.el-tags{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:2px}.sp-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}.sp-g .card{margin:0}.el-acts{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:8px}
 .ctr{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;white-space:nowrap}.ctr-b{width:44px;height:6px;border-radius:3px;background:var(--line);overflow:hidden;display:inline-block}.ctr-b i{display:block;height:100%;border-radius:3px}
 .ctr.hi{color:var(--good)}.ctr.hi i{background:var(--good)}.ctr.mid{color:var(--ink2)}.ctr.mid i{background:var(--info)}.ctr.lo{color:var(--ink2)}.ctr.lo i{background:var(--ink2)}
 .warnk{color:var(--warn);font-weight:600}
@@ -4800,6 +4800,19 @@ const PRICE=[['Popular',.7,.15,.25],['Normal',1,0,0],['Caro',1.3,-.12,-.15],['Pr
 const PLAN=[['Popular',1.25,.75,.12],['Padrão',1,1,0],['Premium',.8,1.3,-.1]];
 const SPM_B=['Banco Ponta','Operadora Sinal+','Construtora Alicerce','Aérea Rumo','Seguradora Escudo','Fintech Lastro','Montadora Trilha','Supermercados Cesta'];
 const B_UP=[8,16,30,50,80],E_UP=[15,30,55,90,140],C_UP=[10,20,40,70];
+/* cotas de patrocínio além do master: chave, nome, explicação, categorias de marca, fatia da receita de referência */
+const SPK=[['uni','Material esportivo','Fornecedora do uniforme. Paga menos que o master, mas a loja vende 10% a mais.',['chut'],.08],
+ ['manga','Manga da camisa','A marca vai na manga do uniforme em todos os jogos.',['ban','tel','aut','gam','sup','beb'],.05],
+ ['costas','Costas da camisa','A marca vai nas costas, acima do número.',['emp','ban','tel','beb','gam','mod'],.04],
+ ['nome','Nome do estádio','Naming rights: a marca dá nome ao estádio. Quanto melhor o estádio, mais paga. Exige arena moderna (estádio nível 2).',['emp','ban','tel','aut'],.07]];
+function spUsed(){const o=G.own,u=[];if(o.spm&&o.spm.until>G.d)u.push(o.spm.b);for(const k in o.sps||{}){const x=o.sps[k];if(x&&x.until>G.d)u.push(x.b);}return u;}
+/* clube grande atrai marca global; clube pequeno, marca nacional */
+function spBrands(cats){const pr=prest(ownC()),tmin=pr>=85?1:pr>=72?2:3,used=spUsed();let L=BR.filter(b=>cats.includes(b.cat)&&b.t>=tmin).map(b=>bN(b.id)).filter(n=>!used.includes(n));
+  if(L.length<3)L=BR.filter(b=>cats.includes(b.cat)).map(b=>bN(b.id)).filter(n=>!used.includes(n));if(L.length<3)L=L.concat(SPM_B.filter(n=>!used.includes(n)));return shuffle(L);}
+function spOffers(k){const o=G.own,c=ownC(),d=SPK.find(x=>x[0]===k);ownInit();const f=clamp((prest(c)-60)/30,.5,1.4)*(.8+o.mood/250)*(k==='nome'?1+.25*o.est:1),v=o.rev*d[4]*f,b=spBrands(d[3]);
+  (o.spOffs=o.spOffs||{})[k]=[{b:b[0],w:nice(v*1.15),wk:52,k:'Contrato curto'},{b:b[1],w:nice(v),wk:156,k:'Contrato longo'},{b:b[2],w:nice(v*.88),wk:104,k:'Com bônus por título',bon:nice(v*.88*20)}];(o.spCd=o.spCd||{})[k]=G.d+28;}
+const spOn=(o,k)=>{const x=o.sps&&o.sps[k];return x&&x.until>G.d?x:null;};
+const spxW=o=>SPK.reduce((t,d)=>{const x=spOn(o,d[0]);return t+(x?x.w:0);},0);
 function ownInit(){const o=G.own;if(!o)return;const c=ownC();if(o.price==null)o.price=1;if(o.plan==null)o.plan=1;if(o.ct==null)o.ct=0;if(o.est==null)o.est=0;if(o.base==null)o.base=0;
   if(!o.rev)o.rev=nice((wageBill(c)+coachWage(c))*1.08);
   if(!o.m0){o.m0=Math.round(Math.max(3000,(c.str-55)*1500*(LG[c.lg].fame/2.5)));o.mem=Math.round(o.m0*(.5+o.mood/100));}
@@ -4814,31 +4827,36 @@ function clubFin(){const o=G.own,c=ownC();ownInit();const R=o.rev,est=o.est,pr=P
   const occ=clamp(.42+o.mood/170+(pos?clamp((n/2-pos)/n*.3,-.12,.15):0)+pr[2]-.03*est,.15,1);
   const bil=Math.round(R*.44*(1+.3*est)*occ*pr[1]/.78*homes),tv=Math.round(R*.35),soc=Math.round(R*.15*o.mem/o.m0*pl[2]);
   const top=squad(c.id).map(p=>p.fame||0).sort((a,b)=>b-a).slice(0,5),fm=top.reduce((s,x)=>s+x,0)/Math.max(1,top.length);
-  const loja=Math.round(R*.08*(.6+fm/80)),spm=o.spm&&o.spm.until>G.d?o.spm.w:0;
+  const loja=Math.round(R*.08*(.6+fm/80)*(spOn(o,'uni')?1.1:1)),spm=o.spm&&o.spm.until>G.d?o.spm.w:0,spx=spxW(o);
   const sal=wageBill(c),tec=coachWage(c),mest=Math.round(R*.03*est),mbase=Math.round(R*[0,.02,.04,.06,.09,.12][o.base]),mct=Math.round(R*[0,.02,.04,.07,.1][o.ct]);
-  const inc=bil+tv+soc+loja+spm,out=sal+tec+mest+mbase+mct;
-  return{bil,tv,soc,loja,spm,sal,tec,mest,mbase,mct,inc,out,net:inc-out,occ,homes,att:homes?Math.round(capOf(c)*occ):0};}
+  const inc=bil+tv+soc+loja+spm+spx,out=sal+tec+mest+mbase+mct;
+  return{bil,tv,soc,loja,spm,spx,sal,tec,mest,mbase,mct,inc,out,net:inc-out,occ,homes,att:homes?Math.round(capOf(c)*occ):0};}
 function ownWeek2(){const o=G.own,c=ownC();ownInit();const pl=PLAN[o.plan];
   o.mem=Math.round(o.mem+(o.m0*(.5+o.mood/100)*(1+.12*o.est)*pl[1]-o.mem)*.04);
   const f=clubFin();o.lastFin=f;c.bud+=f.net;o.mood=clamp(o.mood+(55-o.mood)*.03+PRICE[o.price][3]+pl[3]+(f.homes&&f.occ>.9?.15:0),0,100);
   const L=curLeague(c.lg);if(L&&(!o.goal||o.goal.lid!==L.id))ownGoal();
-  if(o.spm&&o.spm.until<=G.d){news('Acabou o contrato do '+c.n+' com o patrocinador master '+o.spm.b+'. Escolha um novo em Clube, Finanças.','clube');o.spm=null;o.spmOff=null;}}
+  if(o.spm&&o.spm.until<=G.d){news('Acabou o contrato do '+c.n+' com o patrocinador master '+o.spm.b+'. Escolha um novo em Clube, Patrocínios.','clube');o.spm=null;o.spmOff=null;}
+  SPK.forEach(d=>{const x=o.sps&&o.sps[d[0]];if(x&&x.until<=G.d){news('Acabou o patrocínio de '+d[1].toLowerCase()+' do '+c.n+' com a '+dispB(x.b)+'. Escolha outro em Clube, Patrocínios.','clube');o.sps[d[0]]=null;if(o.spOffs)o.spOffs[d[0]]=null;}});}
 function ownSeason(pos,s,L){const o=G.own;if(!o)return;ownInit();const g=o.goal;if(!g||g.lid!==L.id)return;const met=pos<=g.t,fail=pos>g.t+4;
   o.rev=nice(o.rev*(met?1.06:fail?.95:1.01));o.mood=clamp(o.mood+(met?10:fail?-12:0),0,100);if(met)addRep(1);else if(fail)addRep(-1);
   o.hist.unshift({lbl:g.lbl,t:g.t,pos,met});if(o.hist.length>10)o.hist.length=10;
   s.awards.push('Meta do '+ownC().n+': '+goalTxt(g).toLowerCase()+'. Terminou em '+pos+'º: '+(met?'meta batida, a receita do clube cresce 6%.':fail?'fracasso, a receita cai 5% e a torcida cobra.':'abaixo da meta, sem grandes estragos.'));}
 function spmOffers(){const o=G.own,c=ownC();ownInit();const f=clamp((prest(c)-60)/30,.5,1.4)*(.8+o.mood/250),R=o.rev,b=shuffle(SPM_B.slice());
   o.spmOff=[{b:b[0],w:nice(R*.22*f*1.15),wk:52,k:'Contrato curto'},{b:b[1],w:nice(R*.2*f),wk:156,k:'Contrato longo'},{b:b[2],w:nice(R*.17*f),wk:104,k:'Com bônus por título',bon:nice(R*.17*f*26)}];o.spmCd=G.d+28;}
-function titleBonus0(cl){const o=G.own;if(o&&o.spm&&o.spm.bon&&o.spm.until>G.d){cl.bud+=o.spm.bon;news('O patrocinador master '+o.spm.b+' pagou '+fmt(o.spm.bon)+' de bônus pelo título do '+cl.n+'.','clube');}}
+function titleBonus0(cl){const o=G.own;if(o&&o.spm&&o.spm.bon&&o.spm.until>G.d){cl.bud+=o.spm.bon;news('O patrocinador master '+o.spm.b+' pagou '+fmt(o.spm.bon)+' de bônus pelo título do '+cl.n+'.','clube');}
+  if(o)SPK.forEach(d=>{const x=spOn(o,d[0]);if(x&&x.bon){cl.bud+=x.bon;news('A '+dispB(x.b)+' ('+d[1].toLowerCase()+') pagou '+fmt(x.bon)+' de bônus pelo título do '+cl.n+'.','clube');}});}
 const ownUpCost=(k,l)=>nice(G.own.rev*(k==='base'?B_UP:k==='est'?E_UP:C_UP)[l]);
 const finRow=(l,v,mx,cls)=>'<div class="finr"><span>'+l+'</span><b class="'+(cls||'')+'">'+fmt(v)+'</b><i style="--w:'+Math.round(v/Math.max(1,mx)*100)+'%"></i></div>';
 
 /* ---------- telas ---------- */
 function vClube2(){if(!G.own)return vClubePaths()+vRel();ownInit();const o=G.own,c=ownC(),pres=o.role==='pres',fin=o.lastFin||clubFin(),pos=leaguePos(c.id);let sub=ui.osub||'geral';
-  const tabs=[['geral','Visão geral'],['fin','Finanças'],['elenco','Elenco'],['tr','Transferências'],['base','Base'],['est','Estádio e CT']];if(!tabs.some(t=>t[0]===sub))sub='geral';
+  if(sub==='base')sub='est';const tabs=[['geral','Visão geral'],['elenco','Elenco'],['tr','Transferências'],['fin','Finanças'],['spn','Patrocínios'],['est','Estrutura e base']];if(!tabs.some(t=>t[0]===sub))sub='geral';
   const h='<section class="own-h">'+crest(c,52)+'<div class="grow"><span class="eyebrow">'+esc(LG[c.lg].n)+' · '+(pres?'presidente eleito, mandato até '+fdate(o.term,true):'dono, com '+o.pct+'% das ações')+'</span><h2>'+esc(c.n)+'</h2></div></section>'+
-   '<div class="otabs">'+tabs.map(t=>'<button class="otab" data-a="osub" data-v="'+t[0]+'" aria-pressed="'+(sub===t[0])+'">'+svgI({geral:'club',fin:'money',elenco:'staff',tr:'deal',base:'train',est:'build'}[t[0]],20)+'<span>'+t[1]+'</span></button>').join('')+'</div>';
-  return h+({geral:ownGeral,fin:ownFinV,elenco:ownElenco,tr:ownTr,base:ownBase,est:ownEst}[sub])(o,c,fin,pos,pres)+(sub==='geral'?coachRepH2(o,c)+'<section><div class="sec-h"><h2>Time titular de '+esc(c.coach.n)+'</h2><p>Os 11 que o técnico escalaria hoje. Lesionados e suspensos ficam de fora.</p></div>'+pitchHTML(xiOf(c.id))+'</section>'+vRel():'');}
+   '<div class="otabs">'+tabs.map(t=>'<button class="otab" data-a="osub" data-v="'+t[0]+'" aria-pressed="'+(sub===t[0])+'">'+svgI({geral:'club',fin:'money',elenco:'staff',tr:'deal',spn:'sign',est:'build'}[t[0]],20)+'<span>'+t[1]+'</span></button>').join('')+'</div>';
+  if(sub==='geral'){const ro=!!(ui.fold&&ui.fold.orel);
+    return h+ownGeral(o,c,fin,pos,pres)+coachRepH2(o,c)+'<section><div class="sec-h"><h2>Time titular de '+esc(c.coach.n)+'</h2><p>Os 11 que o técnico escalaria hoje. Lesionados e suspensos ficam de fora.</p></div>'+pitchHTML(xiOf(c.id))+'</section>'+ownSoc(o,c,pres)+
+     '<section class="card">'+cardH('deal','Relação com os clubes','<span class="przh">'+tglB('fold',ro,'relações','orel')+'</span>')+(ro?vRel():'<p class="small muted">Como cada diretoria vê a sua agência. Abra para ver a lista.</p>')+'</section>';}
+  return h+({fin:ownFinV,elenco:ownElenco,tr:ownTr,spn:ownSpV,est:(o,c,fin)=>ownEst(o,c,fin)+ownBase(o,c)}[sub])(o,c,fin,pos,pres);}
 function ownGeral(o,c,fin,pos,pres){const mood=o.mood>=70?'Arquibancada cheia e cantando':o.mood>=45?'Apoio morno':o.mood>=25?'Vaias no intervalo':'Protestos na porta',g=o.goal;
   let h='<div class="kpis tint">'+[['Posição',pos?pos+'º':'—',c.fm?c.fm.split('').join(' '):'sem jogos'],['Nível do time',Math.round(teamStr(c.id)),'Técnico '+c.coach.r],['Caixa do clube',fmt(c.bud),'Semana: '+(fin.net>=0?'+':'-')+fmt(Math.abs(fin.net))],['Torcida',Math.round(o.mood)+'/100',mood]].map(k=>'<div class="kpi"><span>'+k[0]+'</span><b>'+k[1]+'</b><small>'+esc(String(k[2]))+'</small></div>').join('')+'</div>';
   if(g){const on=pos&&pos<=g.t,bad=pos&&pos>g.t+4;
@@ -4846,6 +4864,8 @@ function ownGeral(o,c,fin,pos,pres){const mood=o.mood>=70?'Arquibancada cheia e 
      '<b class="big2">'+goalTxt(g)+'</b><p class="small muted">'+esc(g.lbl)+'. O elenco é o '+(expRank(c)||'?')+'º mais forte da liga. Hoje o time está em '+(pos||'—')+'º. Bater a meta faz a receita crescer 6% e anima a torcida; terminar 5 posições abaixo derruba a receita em 5%.</p>'+
      (o.hist.length?'<div class="acts">'+o.hist.slice(0,4).map(x=>'<span class="chip '+(x.met?'good':'bad')+'">'+esc(x.lbl.replace(/^.* /,''))+': '+x.pos+'º (meta '+x.t+'º)</span>').join('')+'</div>':'')+'</section>';}
   h+='<section class="card c-purple">'+cardH('coach','Técnico','<button class="btn sm" data-a="osub" data-v="elenco">Trocar</button>')+coachCard(c)+'</section>';
+  return h;}
+function ownSoc(o,c,pres){let h='';
   h+='<section class="card">'+cardH('money',pres?'Presidência':'Sociedade')+'<div class="acts"><button class="btn" data-a="aporte"'+(G.money<100?' disabled':'')+'>'+(pres?'Doar':'Aportar')+' <small>'+fmt(nice(G.money*.25))+' da agência</small></button>'+
    (pres?'':'<button class="btn" data-a="retirar"'+((o.wd||0)>=2||c.bud<100?' disabled':'')+'>Retirar dividendos <small>'+fmt(nice(Math.max(0,c.bud)*.25*o.pct/100))+'</small></button>')+
    (!pres&&o.pct<100?'<button class="btn" data-a="buymore">Comprar +'+Math.min(5,100-o.pct)+'% <small>'+fmt(nice(clubPrice(c)/100*Math.min(5,100-o.pct)*1.1))+'</small></button>':'')+
@@ -4853,21 +4873,32 @@ function ownGeral(o,c,fin,pos,pres){const mood=o.mood>=70?'Arquibancada cheia e 
    '<p class="small muted">'+(pres?'Associação não distribui lucro: como presidente você não retira dividendos. A assembleia aprova a SAF com mais facilidade quando a torcida está feliz (chance hoje: '+Math.round(clamp((o.mood-35)/50,.1,.95)*100)+'%).':'Sua fatia nos dividendos é de '+o.pct+'%. Retirar dinheiro do clube irrita a torcida.')+'</p>'+
    '<div class="acts">'+(pres?'<button class="btn danger" data-a="resign">Renunciar à presidência</button>':'<button class="btn danger" data-a="sellclub">Vender suas ações por '+fmt(sellVal(c))+'</button>')+'</div></section>';
   return h;}
-function ownFinV(o,c,fin){const ri=[['Bilheteria'+(fin.homes?' ('+fin.homes+' jogo'+(fin.homes>1?'s':'')+' em casa)':' (sem jogo em casa)'),fin.bil],['Direitos de TV',fin.tv],['Sócio-torcedor',fin.soc],['Patrocinador master',fin.spm],['Loja e licenciamento',fin.loja]],
+function ownFinV(o,c,fin){const ri=[['Bilheteria'+(fin.homes?' ('+fin.homes+' jogo'+(fin.homes>1?'s':'')+' em casa)':' (sem jogo em casa)'),fin.bil],['Direitos de TV',fin.tv],['Sócio-torcedor',fin.soc],['Patrocinador master',fin.spm],['Outros patrocínios',fin.spx||0],['Loja e licenciamento',fin.loja]],
     de=[['Salários do elenco',fin.sal],['Comissão técnica',fin.tec],['Manutenção do estádio',fin.mest],['Categorias de base',fin.mbase],['Centro de treinamento',fin.mct]],mx=Math.max(...ri.map(x=>x[1]),...de.map(x=>x[1]));
-  let h='<div class="dcols"><section class="card c-good">'+cardH('money','Receitas da semana','<b class="up">+'+fmt(fin.inc)+'</b>')+ri.map(x=>finRow(x[0],x[1],mx,'')).join('')+'</section>'+
+  let h='<div class="kpis tint">'+[['Receitas',fmt(fin.inc),'na semana'],['Despesas',fmt(fin.out),'na semana'],['Resultado',(fin.net>=0?'+':'-')+fmt(Math.abs(fin.net)),fin.net>=0?'lucro':'prejuízo'],['Caixa do clube',fmt(c.bud),'disponível']].map(k=>'<div class="kpi"><span>'+k[0]+'</span><b>'+k[1]+'</b><small>'+k[2]+'</small></div>').join('')+'</div>'+
+   '<div class="dcols"><section class="card c-good">'+cardH('money','Receitas da semana','<b class="up">+'+fmt(fin.inc)+'</b>')+ri.map(x=>finRow(x[0],x[1],mx,'')).join('')+'</section>'+
    '<section class="card c-bad">'+cardH('report','Despesas da semana','<b class="dn">-'+fmt(fin.out)+'</b>')+de.map(x=>finRow(x[0],x[1],mx,'')).join('')+
    '<div class="finr tot"><span>Resultado</span><b class="'+(fin.net>=0?'up':'dn')+'">'+(fin.net>=0?'+':'-')+fmt(Math.abs(fin.net))+'</b></div><p class="small muted">Caixa do clube: <b>'+fmt(c.bud)+'</b>. Receita de referência: '+fmt(o.rev)+' por semana.</p></section></div>';
   const pl=c.przL||[],po=!!(ui.fold&&ui.fold.oprz);h+='<section class="card prz">'+cardH('cup','Premiações','<span class="przh"><b class="up">+'+fmt(c.przS||0)+'</b>'+tglB('fold',po,'premiações','oprz')+'</span>')+(!po?'<p class="small muted">Total da temporada. '+(pl.length?pl.length+' premiaç'+(pl.length>1?'ões':'ão')+' recebida'+(pl.length>1?'s':'')+'. Última: '+esc(pl[0].w)+' (+'+fmt(pl[0].v)+').':'Nenhuma premiação recebida ainda.')+'</p></section>':'<p class="small muted">Total da temporada. A liga paga pela posição no fim da temporada. Copas e continentais pagam por fase alcançada e pelo título. O dinheiro entra no caixa do clube.</p>'+(pl.length?'<div class="list">'+pl.slice(0,8).map(x=>'<div><span class="small muted">'+fdate(x.d)+'</span><span class="grow small">'+esc(x.w.charAt(0).toUpperCase()+x.w.slice(1))+'</span><b class="val up">+'+fmt(x.v)+'</b></div>').join('')+'</div>':'<p class="small muted">Nenhuma premiação recebida ainda.</p>')+'</section>');
-  h+='<div class="dcols"><section class="card c-info">'+cardH('club','Ingressos e sócios')+'<span class="lbl">Preço do ingresso</span><div class="seg sm">'+PRICE.map((p,i)=>'<button data-a="oprice" data-v="'+i+'" aria-pressed="'+(o.price===i)+'">'+p[0]+'</button>').join('')+'</div>'+
+  h+='<section class="card c-info">'+cardH('club','Ingressos e sócios')+'<span class="lbl">Preço do ingresso</span><div class="seg sm">'+PRICE.map((p,i)=>'<button data-a="oprice" data-v="'+i+'" aria-pressed="'+(o.price===i)+'">'+p[0]+'</button>').join('')+'</div>'+
    '<p class="small muted">'+(fin.homes?'Último jogo em casa: '+fin.att.toLocaleString('pt-BR')+' torcedores, '+Math.round(fin.occ*100)+'% da capacidade.':'Ocupação prevista: '+Math.round(fin.occ*100)+'%.')+' '+(o.price===0?'Ingresso barato enche o estádio e agrada a torcida.':o.price>=2?'Ingresso caro rende mais por torcedor, mas esvazia o estádio e irrita a torcida.':'Preço equilibrado.')+'</p>'+
    '<span class="lbl">Plano de sócio-torcedor</span><div class="seg sm">'+PLAN.map((p,i)=>'<button data-a="oplan" data-v="'+i+'" aria-pressed="'+(o.plan===i)+'">'+p[0]+'</button>').join('')+'</div>'+
    '<p class="small muted"><b>'+o.mem.toLocaleString('pt-BR')+' sócios</b>. O número sobe com o humor da torcida e com o estádio. Plano popular atrai mais sócios pagando menos; premium o contrário.</p></section>';
-  h+='<section class="card c-purple">'+cardH('deal','Patrocinador master');
-  if(o.spm&&o.spm.until>G.d)h+='<b class="big2">'+esc(dispB(o.spm.b))+'</b><p class="small">'+fmt(o.spm.w)+' por semana até '+fdate(o.spm.until,true)+(o.spm.bon?'. Bônus de '+fmt(o.spm.bon)+' por título.':'.')+'</p>';
-  else{if(!o.spmOff)spmOffers();h+='<p class="small muted">A camisa está sem patrocinador master. Escolha uma proposta:</p><div class="list">'+o.spmOff.map((x,i)=>'<div><div class="grow"><b>'+esc(x.b)+'</b> <span class="chip">'+x.k+'</span><div class="small muted">'+fmt(x.w)+'/sem por '+durTxt(x.wk/52*12)+(x.bon?' · bônus de '+fmt(x.bon)+' por título':'')+'</div></div><button class="btn pri sm" data-a="ospm" data-i="'+i+'">Assinar</button></div>').join('')+'</div>'+
-    '<button class="btn sm" data-a="ospmnew"'+((o.spmCd||0)>G.d?' disabled':'')+'>'+((o.spmCd||0)>G.d?'Novas propostas em '+fdate(o.spmCd):'Ouvir outras propostas')+'</button>';}
-  return h+'</section></div>';}
+  return h;}
+function ownSpV(o,c){const act=[o.spm&&o.spm.until>G.d?o.spm:null].concat(SPK.map(d=>spOn(o,d[0]))),n=act.filter(Boolean).length,tot=act.reduce((t,x)=>t+(x?x.w:0),0),fin=o.lastFin||clubFin();
+  let h='<div class="kpis tint">'+[['Patrocínios',fmt(tot)+'<small>/sem</small>','somando todas as cotas'],['Cotas fechadas',n+' de '+(SPK.length+1),n<SPK.length+1?'ainda há espaço na camisa':'tudo vendido'],['Peso na receita',Math.round(tot/Math.max(1,fin.inc)*100)+'%','das receitas da semana']].map(k=>'<div class="kpi"><span>'+k[0]+'</span><b>'+k[1]+'</b><small>'+k[2]+'</small></div>').join('')+'</div>'+
+   '<p class="small muted">Cada cota é um contrato separado. Assinar gasta 1 ação. O valor depende do prestígio do clube e do humor da torcida; contrato curto paga mais por semana, o longo dá segurança, e o com bônus paga extra a cada título.</p>';
+  const offL=(L,act)=>'<div class="list">'+L.map((x,i)=>'<div><div class="grow"><b>'+esc(dispB(x.b))+'</b> <span class="chip">'+x.k+'</span><div class="small muted">'+fmt(x.w)+'/sem por '+durTxt(x.wk/52*12)+(x.bon?' · bônus de '+fmt(x.bon)+' por título':'')+'</div></div><button class="btn pri sm" '+act(i)+'>Assinar</button></div>').join('')+'</div>';
+  const on=x=>'<b class="big2">'+esc(dispB(x.b))+'</b><p class="small">'+fmt(x.w)+' por semana até '+fdate(x.until,true)+(x.bon?'. Bônus de '+fmt(x.bon)+' por título.':'.')+'</p>';
+  h+='<div class="sp-g"><section class="card c-purple">'+cardH('deal','Patrocinador master','<span class="chip '+(act[0]?'good':'warn')+'">'+(act[0]?'Fechado':'Vago')+'</span>')+'<p class="small muted">A marca principal, no peito da camisa. É a cota que mais paga.</p>';
+  if(act[0])h+=on(o.spm);else{if(!o.spmOff)spmOffers();h+=offL(o.spmOff,i=>'data-a="ospm" data-i="'+i+'"')+'<button class="btn sm" data-a="ospmnew"'+((o.spmCd||0)>G.d?' disabled':'')+'>'+((o.spmCd||0)>G.d?'Novas propostas em '+fdate(o.spmCd):'Ouvir outras propostas')+'</button>';}
+  h+='</section>';
+  SPK.forEach(d=>{const k=d[0],x=spOn(o,k),lock=k==='nome'&&o.est<2,cd=(o.spCd&&o.spCd[k]||0)>G.d;
+    h+='<section class="card">'+cardH(k==='nome'?'build':k==='uni'?'train':'sign',d[1],'<span class="chip '+(x?'good':lock?'':'warn')+'">'+(x?'Fechado':lock?'Bloqueado':'Vago')+'</span>')+'<p class="small muted">'+esc(d[2])+'</p>';
+    if(x)h+=on(x);else if(lock)h+='<p class="small">O estádio precisa chegar a <b>'+esc(EST_N[2])+'</b>. Hoje: '+esc(EST_N[o.est])+'.</p><button class="btn sm" data-a="osub" data-v="est">Ver estrutura</button>';
+    else{if(!(o.spOffs&&o.spOffs[k]))spOffers(k);h+=offL(o.spOffs[k],i=>'data-a="osp" data-k="'+k+'" data-i="'+i+'"')+'<button class="btn sm" data-a="ospnew" data-k="'+k+'"'+(cd?' disabled':'')+'>'+(cd?'Novas propostas em '+fdate(o.spCd[k]):'Ouvir outras propostas')+'</button>';}
+    h+='</section>';});
+  return h+'</div>';}
 function ownElenco0(o,c){const sq=squad(c.id).sort((a,b)=>POS.indexOf(a.pos)-POS.indexOf(b.pos)||b.ovr-a.ovr),cnt={},yb={};sq.forEach(p=>{if(p.age>20)cnt[p.pos]=(cnt[p.pos]||0)+1;else yb[p.pos]=(yb[p.pos]||0)+1;});
   let h='<section><div class="sec-h"><h2>Elenco</h2><p>Toque num jogador para ver o perfil completo. Compras, vendas e empréstimos ficam em Transferências.</p></div>'+
    '<div class="acts">'+POS.map(p=>'<span class="chip '+((cnt[p]||0)>POS_MAX[p]?'bad':(cnt[p]||0)+(yb[p]||0)<FORM[p]+1?'warn':'')+'">'+p+' '+(cnt[p]||0)+'/'+POS_MAX[p]+(yb[p]?' <small>+'+yb[p]+' base</small>':'')+'</span>').join('')+'</div><p class="small muted">Profissionais por posição e o limite de cada uma. <b>Base</b> são os jogadores de até 20 anos, que não contam no limite. <span class="chip warn">laranja</span> falta gente para o time titular mais um reserva · <span class="chip bad">vermelho</span> passou do limite.</p><div class="card list">'+
@@ -4903,6 +4934,9 @@ const OWNA={
   ospm(d){const o=G.own,c=ownC(),x=o&&o.spmOff&&o.spmOff[+d.i];if(!x)return;if(!useAP())return;o.spm=Object.assign({},x,{until:G.d+x.wk*7});o.spmOff=null;news('A '+x.b+' é o novo patrocinador master do '+c.n+': '+fmt(x.w)+' por semana.','clube');
     pop({k:'good',ic:'deal',wait:1200,wt:'Assinando com a '+x.b+'…',ti:'Patrocínio fechado',tx:'A marca da '+x.b+' vai estampar a camisa do '+c.n+'.',ch:[['+'+fmt(x.w)+'/sem','good']]});save();render();},
   ospmnew(){const o=G.own;if(!o||(o.spmCd||0)>G.d)return;if(!useAP())return;spmOffers();save();render();},
+  osp(d){const o=G.own,c=ownC(),k=d.k,x=o&&o.spOffs&&o.spOffs[k]&&o.spOffs[k][+d.i],dd=SPK.find(z=>z[0]===k);if(!x||!dd)return;if(!useAP())return;(o.sps=o.sps||{})[k]=Object.assign({},x,{until:G.d+x.wk*7});o.spOffs[k]=null;
+    news('A '+dispB(x.b)+' fechou o patrocínio de '+dd[1].toLowerCase()+' do '+c.n+': '+fmt(x.w)+' por semana.','clube');pop({k:'good',ic:'deal',wait:1200,wt:'Assinando com a '+dispB(x.b)+'…',ti:'Patrocínio fechado',tx:dd[1]+': '+dispB(x.b)+'.',ch:[['+'+fmt(x.w)+'/sem','good']]});save();render();},
+  ospnew(d){const o=G.own,k=d.k;if(!o||(o.spCd&&o.spCd[k]||0)>G.d)return;if(!useAP())return;spOffers(k);save();render();},
   oup(d){const o=G.own,c=ownC(),k=d.k,mx=k==='ct'?4:5,l=o[k];if(l>=mx)return;const cost=ownUpCost(k,l);if(c.bud<cost){toast('O caixa do clube não cobre a obra. Faça um aporte.');return;}if(!useAP())return;
     c.bud-=cost;o[k]=l+1;if(k==='est')o.mood=clamp(o.mood+5,0,100);const nm=(k==='base'?BASE_N:k==='est'?EST_N:CT_N)[l+1];news('Obra concluída no '+c.n+': '+nm+'.','clube');
     pop({k:'good',ic:'build',wait:1300,wt:'Obras no '+c.n+'…',ti:nm,tx:(k==='base'?'Categorias de base':k==='est'?'Estádio':'Centro de treinamento')+' no nível '+(l+1)+'.',ch:[['-'+fmt(cost)+' do clube','bad']]});save();render();},
@@ -5930,13 +5964,39 @@ function ctrSend(){const m=ui.modal,p=G.P[m.pid],c=ownC(),o=m.off,a=m.ask;if(c.b
 /* ---------- botões de cada jogador no Elenco do seu clube ---------- */
 function elActs(p,o){if(isClient(p)||p.loan||p.lent)return'';const x=o&&o.sale&&o.sale[p.id],fresh=p.movedW&&G.d-p.movedW<180,rc=(p.renCool||0)>G.d;
   return'<div class="el-acts"><button class="btn sm" data-a="oren" data-p="'+p.id+'"'+(rc?' disabled title="Ele pediu um tempo"':'')+'>'+(rc?'Negociar · aguarde':'Negociar contrato')+'</button>'+
-   (x?'<span class="chip good">À venda · '+fmt(x.price)+'</span><button class="btn sm" data-a="saleoff" data-p="'+p.id+'">Retirar</button>':fresh?'<span class="small muted">Chegou há pouco, não pode ser vendido</span>':'<button class="btn sm" data-a="osell" data-p="'+p.id+'">Vender</button>')+'</div>';}
+   '<button class="btn sm danger" data-a="orsc" data-p="'+p.id+'">Rescindir</button>'+(x?'<span class="chip good">À venda · '+fmt(x.price)+'</span><button class="btn sm" data-a="saleoff" data-p="'+p.id+'">Retirar</button>':fresh?'<span class="small muted">Chegou há pouco, não pode ser vendido</span>':'<button class="btn sm" data-a="osell" data-p="'+p.id+'">Vender</button>')+'</div>';}
 /* negociar contrato com jogador do próprio clube: mesma mesa da contratação, sem taxa de transferência.
    Dá para aumentar ou reduzir o salário; quem ganha acima do mercado aceita corte se receber luvas ou um contrato mais longo. */
 function ownRenew(p){const c=ownC();if(!c||p.club!==c.id||isClient(p)||p.loan)return;if((p.renCool||0)>G.d){toast(p.name+' pediu um tempo antes de falar de contrato.');return;}if(!useAP())return;
   const a=ctrAsk(p,c,false),cur=p.wage||0,over=cur>a.w;a.w=over?nice(Math.max(a.w,cur*.85)):nice(Math.max(a.w,cur*1.08));a.l=nice(a.l*.5);
   ui.stack=[];ui.modal={type:'ctr',pid:p.id,fee:0,kind:'renew',ask:a,cur,off:{w:cur||a.w,l:nice(a.l*.8),y:a.y},pat:3,
     log:['Contrato atual: '+fmt(cur)+'/sem até '+fmonth(p.ce)+'. '+(over?p.name+' ganha acima do mercado e aceita conversar sobre um salário menor, se vier com luvas ou um contrato mais longo.':p.name+' quer um aumento para continuar.')]};save();render();}
+/* rescisão pelo clube: em comum acordo o jogador aceita sair recebendo metade do que falta (até 12 meses);
+   unilateral sempre funciona, mas o clube paga tudo o que falta (até 24 meses) e mexe com técnico e torcida */
+const orLeft=p=>Math.max(1,monthsLeft(p));
+const orFeeA=p=>nice((p.wage||0)*4.33*Math.min(12,orLeft(p))*.5),orFeeU=p=>nice((p.wage||0)*4.33*Math.min(24,orLeft(p)));
+function orChance(p,c){const st=xiOf(c.id).includes(p);return clamp(.2+(st?0:.4)+(p.age>=30?.15:0)+(monthsLeft(p)<=6?.2:0)-(idolLv(p)===2?.2:0),.05,.95);}
+function mORsc(){const p=G.P[ui.modal.pid],c=ownC();if(!p||!c||p.club!==c.id){ui.modal=null;return'';}const fa=orFeeA(p),fu=orFeeU(p),ch=orChance(p,c),cd=(p.orCd||0)>G.d,noAP=G.ap<1,tr=cTrust(p),il=idolLv(p);
+  return'<div class="sheet"><span class="eyebrow">Rescisão de contrato · '+esc(c.n)+' · 1 ação</span><div class="neg-h">'+avatar(p,48)+'<div class="grow"><h2>'+esc(p.name)+'</h2><div class="small muted">'+fmt(p.wage||0)+'/sem · contrato até '+fmonth(p.ce)+' ('+leftTxt(p)+')</div></div></div>'+
+   '<p class="small">Depois da rescisão ele fica sem clube e libera a vaga e o salário no elenco.</p>'+
+   '<div class="evb c-good"><h3>'+icoS('deal')+'Comum acordo</h3><p class="small">'+esc(p.name)+' precisa aceitar. O clube paga <b>'+fmt(fa)+'</b> (metade do que falta do contrato, até 12 meses), e ninguém sai prejudicado.</p>'+
+    '<p class="small muted">Chance de ele aceitar: <b>'+Math.round(ch*100)+'%</b>. Reserva, veterano ou contrato no fim aceitam mais fácil.</p>'+(cd?'<p class="small nok">Ele recusou há pouco. Nova conversa a partir de '+fdate(p.orCd,true)+'.</p>':'')+
+    '<div class="acts"><button class="btn pri" data-a="orscdo" data-p="'+p.id+'" data-v="acordo"'+(cd||noAP||c.bud<fa?' disabled':'')+'>Propor acordo</button></div></div>'+
+   '<div class="evb c-warn"><h3>'+icoS('no')+'Unilateral</h3><p class="small">Sempre funciona. O clube paga <b>'+fmt(fu)+'</b> (tudo o que falta do contrato, até 24 meses).</p><ul class="small resc-l">'+
+    (tr>=72?'<li>'+esc(c.coach.n)+' confia muito nele: a relação com o técnico cai e o time rende menos por algumas semanas.</li>':'')+
+    '<li>A torcida não gosta'+(il===2?', e muito: ele é ídolo do clube':'')+'.</li></ul>'+
+    '<div class="acts"><button class="btn danger" data-a="orscdo" data-p="'+p.id+'" data-v="force"'+(noAP||c.bud<fu?' disabled':'')+'>Rescindir mesmo assim</button></div>'+(c.bud<fu?'<p class="small nok">Caixa do clube insuficiente.</p>':'')+'</div>'+
+   '<div class="acts"><button class="btn" data-a="close">Cancelar</button></div></div>';}
+function orscDo(pid,kind){const p=G.P[pid],c=ownC(),o=G.own;if(!p||!c||p.club!==c.id||isClient(p))return;
+  if(kind==='acordo'){const fa=orFeeA(p);if((p.orCd||0)>G.d||c.bud<fa||!useAP())return;ui.modal=null;
+    if(Math.random()<orChance(p,c)){c.bud-=fa;if(o.sale)delete o.sale[p.id];setClub(p,null);p.wage=0;p.freeSince=curMonth();news(p.name+' e o '+c.n+' rescindiram o contrato em comum acordo. O clube pagou '+fmt(fa)+'.','clube');
+      pop({k:'good',ic:'deal',wait:1200,wt:'Conversando com '+p.name+'…',ti:'Rescisão amigável',tx:p.name+' aceitou e deixou o clube.',ch:[['-'+fmt(fa)+' do clube','bad']]});}
+    else{p.orCd=G.d+56;pop({k:'bad',ic:'no',wait:1200,wt:'Conversando com '+p.name+'…',ti:'Ele recusou',tx:p.name+' quer cumprir o contrato. Tente de novo em 8 semanas, ou rescinda de forma unilateral.'});}
+    save();render();return;}
+  const fu=orFeeU(p);if(c.bud<fu||!useAP())return;ui.modal=null;const tr=cTrust(p),il=idolLv(p);c.bud-=fu;if(o.sale)delete o.sale[p.id];
+  const hc=sellHit(p,c,tr)||[];o.mood=clamp(o.mood-(il===2?8:2),0,100);setClub(p,null);p.wage=0;p.freeSince=curMonth();p.morale=clamp((p.morale||60)-10,0,100);
+  news('O '+c.n+' rescindiu unilateralmente o contrato de '+p.name+' e pagou '+fmt(fu)+'.','clube');
+  pop({k:'bad',ic:'no',wait:1200,wt:'Rompendo o contrato…',ti:'Contrato rescindido',tx:p.name+' não é mais jogador do '+c.n+'.',ch:[['-'+fmt(fu)+' do clube','bad'],['Torcida -'+(il===2?8:2),'bad']].concat(hc)});save();render();}
 function mOSell(){const p=G.P[ui.modal.pid],c=ownC();if(!p||!c||p.club!==c.id){ui.modal=null;return'';}const v=value(p),t=cTrust(p),win=winOpen(regOf(c));
   return'<div class="sheet"><span class="eyebrow">Vender jogador · '+esc(c.n)+'</span><div class="neg-h">'+avatar(p,48)+'<div class="grow"><h2>'+esc(p.name)+'</h2><div class="small muted">'+POSN[p.pos]+' · '+p.age+' anos · nível '+p.ovr+' · valor '+fmt(v)+'</div></div></div>'+
    (t>=72?'<p class="small warnk">'+esc(c.coach.n)+' confia muito nele. Vender abala a relação com o técnico e o time rende menos por algumas semanas.</p>':'')+
@@ -5996,7 +6056,7 @@ function cAct(k){const o=G.own,c=ownC();if(!o)return;o.cact=o.cact||{};if((o.cac
   news(t,'clube');pop({k:ch[0][1]==='good'?'good':'bad',ic:'coach',wait:1100,wt:'Reunião no CT…',ti:k==='cobra'?'Cobrança ao técnico':k==='elogia'?'Apoio ao técnico':'Cobrança ao elenco',tx:t,ch});save();render();}
 const CLUB2A={ctrstep(d){const m=ui.modal;if(!m||m.type!=='ctr')return;const o=m.off,a=m.ask,v=+d.v;if(d.k==='w')o.w=clamp(nice(o.w*(1+.05*v)),nice(a.w*.5),nice(a.w*1.6));else if(d.k==='l')o.l=clamp(nice(o.l+a.l*.1*v),0,nice(a.l*2.5));else o.y=clamp(o.y+v,1,5);render();},
   ctrsend(){ctrSend();},ctrquit(){const m=ui.modal;if(m&&m.type==='ctr'&&m.kind!=='renew'){const p=G.P[m.pid];news('O '+ownC().n+' desistiu de contratar '+(p?p.name:'o jogador')+'.','clube');}ui.modal=null;render();},
-  oren(d){ownRenew(G.P[+d.p]);},osell(d){ui.stack=[];ui.modal={type:'osell',pid:+d.p};render();},
+  oren(d){ownRenew(G.P[+d.p]);},orsc(d){ui.stack=[];ui.modal={type:'orsc',pid:+d.p};render();},orscdo(d){orscDo(+d.p,d.v);},osell(d){ui.stack=[];ui.modal={type:'osell',pid:+d.p};render();},
   saleon(d){saleList(G.P[+d.p],+d.k);},saleoff(d){const o=G.own;if(o&&o.sale)delete o.sale[d.p];save();render();},
   cact(d){cAct(d.k);},wkv(d){ui.wkv=d.v;render();}};
 
@@ -6741,8 +6801,9 @@ function grpReq(){const n=(G.owns||[]).length;return n>=GRP_MAX?'Máximo de '+GR
 /* faixa do grupo no topo da aba Clube */
 function grpBar(){const os=G.owns||[];if(!os.length)return'';const tot=os.reduce((t,o)=>t+G.clubs[o.cid].bud,0),net=os.reduce((t,o)=>t+(o.lastFin?o.lastFin.net||0:0),0),md=Math.round(os.reduce((t,o)=>t+o.mood,0)/os.length);
   const cur=ui.grpNew?-1:G.own.cid,full=os.length>=GRP_MAX;
-  return'<section class="card grp">'+cardH('club','Seu grupo','<span class="chip">'+os.length+' de '+GRP_MAX+' clubes</span>')+
-   '<div class="kpis">'+[['Caixa',fmt(tot)],['Semana',(net>=0?'+':'-')+fmt(Math.abs(net))],['Torcida',md+'/100']].map(k=>'<div class="kpi"><span>'+k[0]+'</span><b>'+k[1]+'</b></div>').join('')+'</div>'+
+  const go=!!(ui.fold&&ui.fold.ogrp);
+  return'<section class="card grp">'+cardH('club','Seu grupo','<span class="przh"><span class="chip">'+os.length+' de '+GRP_MAX+' clubes</span>'+tglB('fold',go,'resumo do grupo','ogrp')+'</span>')+
+   (go?'<div class="kpis">'+[['Caixa',fmt(tot)],['Semana',(net>=0?'+':'-')+fmt(Math.abs(net))],['Torcida',md+'/100']].map(k=>'<div class="kpi"><span>'+k[0]+'</span><b>'+k[1]+'</b></div>').join('')+'</div>':'')+
    '<div class="otabs grp-t n'+os.length+'">'+os.map(o=>{const c=G.clubs[o.cid],pos=leaguePos(c.id);return'<button class="otab" data-a="grpsel" data-c="'+c.id+'" aria-pressed="'+(cur===c.id)+'">'+crest(c,24)+'<span>'+esc(c.n)+'</span><small>'+(pos?pos+'º · ':'')+(o.role==='pres'?'Presidente':'Dono '+o.pct+'%')+'</small></button>';}).join('')+
    '<button class="otab" data-a="grpnew" aria-pressed="'+(cur===-1)+'"'+(full?' disabled':'')+'>'+svgI('sign',22)+'<span>Novo clube</span><small>'+esc(grpReq())+'</small></button></div></section>';}
 function vClubeG(){if(!G.own)return vClube2();ownInit();const bar=grpBar();
@@ -7145,7 +7206,7 @@ function renderModal(){const el=$('#modal');let h='';
     if(G.events.length){const e=G.events[0],d=evDef(e),pp=G.P[e.pid];h='<div class="sheet"><span class="eyebrow">Decisão da semana'+(G.events.length>1?' · 1 de '+G.events.length:'')+'</span>'+(pp?'<div class="neg-h">'+avatar(pp,44)+'<h2>'+esc(d.title)+'</h2></div>':'<h2>'+esc(d.title)+'</h2>')+'<p>'+esc(d.text)+'</p><div class="choices">'+d.choices.map((c,i)=>'<button class="choice" data-a="ev" data-i="'+i+'"'+(c.can===false?' disabled':'')+'><b>'+esc(c.label)+'</b><span>'+esc(c.sub||'')+'</span></button>').join('')+'</div></div>';}}
   if(!h&&G&&ui.modal){const m=ui.modal;
     if(m.type==='info')h='<div class="sheet">'+(m.stamp?'<div class="stamp">'+esc(m.stamp)+'</div>':'')+'<h2>'+esc(m.title)+'</h2>'+m.html+'<div class="acts"><button class="btn pri" data-a="close">Continuar</button></div></div>';
-    else if(m.type==='pick')h=mPick();else if(m.type==='evo')h=mEvo();else if(m.type==='resc')h=mResc();else if(m.type==='osell')h=mOSell();else if(m.type==='ag')h=mAgPop3(m.k);else if(m.type==='tryout')h=mTryout();else if(m.type==='fin')h=mFin();else if(m.type==='biz')h=mBiz();else if(m.type==='sign')h=mSign();else if(m.type==='slots')h=mSlots(true);else if(m.type==='faces')h=mFaces();else if(m.type==='edit')h=mEdit();else if(m.type==='art')h=mArticle();else if(m.type==='grpmv')h=mGrpMv();else if(m.type==='ctr')h=inCur(curOf(ownC()),mCtr);else if(m.type==='inbox')h=mInbox();
+    else if(m.type==='pick')h=mPick();else if(m.type==='evo')h=mEvo();else if(m.type==='resc')h=mResc();else if(m.type==='osell')h=inCur(curOf(ownC()),mOSell);else if(m.type==='orsc')h=inCur(curOf(ownC()),mORsc);else if(m.type==='ag')h=mAgPop3(m.k);else if(m.type==='tryout')h=mTryout();else if(m.type==='fin')h=mFin();else if(m.type==='biz')h=mBiz();else if(m.type==='sign')h=mSign();else if(m.type==='slots')h=mSlots(true);else if(m.type==='faces')h=mFaces();else if(m.type==='edit')h=mEdit();else if(m.type==='art')h=mArticle();else if(m.type==='grpmv')h=mGrpMv();else if(m.type==='ctr')h=inCur(curOf(ownC()),mCtr);else if(m.type==='inbox')h=mInbox();
     else if(m.type==='drop'){const p=G.P[m.pid];h='<div class="sheet"><h2>Dispensar '+esc(p.name)+'?</h2><p>Você deixa de representá-lo e perde as comissões. Sua reputação cai 1 ponto.</p><div class="acts"><button class="btn danger" data-a="dropok" data-p="'+p.id+'">Dispensar</button><button class="btn" data-a="close">Cancelar</button></div></div>';}
     else if(m.type==='sellclub'){const c=ownC();h='<div class="sheet"><h2>Vender o '+esc(c.n)+'?</h2><p>Você vende seus '+G.own.pct+'% e recebe <b>'+fmt(sellVal(c))+'</b>.</p><div class="acts"><button class="btn danger" data-a="sellok">Vender</button><button class="btn" data-a="close">Cancelar</button></div></div>';}}
   if(!h&&G&&ui.stack.length){const top=ui.stack[ui.stack.length-1];if(top.t==='p'&&G.P[top.id])h=inCur(curOfP(G.P[top.id]),()=>mPlayer(G.P[top.id]));else if(top.t==='c')h=inCur(curOf(G.clubs[top.id]),()=>mClub(G.clubs[top.id]));else if(top.t==='a'&&G.ags[top.id])h=mAgency(top.id);else if(top.t==='n'&&G.nt.sq[top.n])h=mNation(top.n);else ui.stack=[];}
