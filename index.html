@@ -2858,7 +2858,11 @@ function fillTo(list,n,pool){const s=new Set(list);for(const id of pool){if(list
 function uclTeams(q){const ext=qStr(6,40);return fillTo(q(1,5).concat(q(2,5),q(3,4),q(4,4),q(5,3),q(LGI('por'),3),q(LGI('ned'),2),q(LGI('tur'),2),q(LGI('bel'),1),ext.slice(0,7)),36,ext.concat(q(LGI('ned'),4),q(LGI('por'),5),q(LGI('tur'),4),q(1,8),q(2,8)));}
 function recordPositions(region){for(const k in G.comps){const c=G.comps[k];if(c.t!=='L'||c.reg!==region)continue;sortedTab(c).forEach((cid,i)=>G.clubs[cid].lp=i+1);}}
 function rolloverBR(Y){const cdb=curComp('K',0),cw=cdb?cdb.win:null;archive('sa');retireRegen('sa');budgets('sa');
-  const br=clubsOf(0).map(c=>c.id).sort((a,b)=>(G.clubs[a].lp||99)-(G.clubs[b].lp||99));let q=br.slice(0,6);if(cw!=null&&!q.includes(cw))q.push(cw);let i=6;while(q.length<7&&i<br.length)q.push(br[i++]);
+  const br=clubsOf(0).map(c=>c.id).sort((a,b)=>(G.clubs[a].lp||99)-(G.clubs[b].lp||99));let q=br.slice(0,5);
+  /* 6ª vaga: campeão da Copa do Brasil; se ele já entrou pela liga, vai para o vice; se os dois já entraram, para o 6º da liga */
+  {const fin=cdb&&cdb.ko&&cdb.ko.length?cdb.ko[cdb.ko.length-1]:null,t=fin&&fin.ties&&fin.ties[0],cr=t&&cw!=null?(t.w===t.a?t.b:t.a):null;
+   const slot=cw!=null&&!q.includes(cw)?cw:cr!=null&&!q.includes(cr)?cr:br.find(id=>!q.includes(id));if(slot!=null)q.push(slot);
+   if(cdb)cdb.libSlot=slot;}
   const xs=qStr(7,30),lq=fillTo(q.concat(qPos(LGI('arg'),6),qPos(LGI('uru'),3),qPos(LGI('col'),4),qPos(LGI('ecu'),3),xs.slice(0,9)),32,xs.concat(qPos(LGI('arg'),12),br));
   promote('sa');
   for(const li of RLG().filter(i=>LG[i].reg==='sa')){const lg=mkLeague(li,Y);G.comps[lg.id]=lg;if(!LG[li].top){const cup=mkCupX(li,Y);if(cup)G.comps[cup.id]=cup;}}
@@ -4815,15 +4819,17 @@ const PLAN=[['Popular',1.25,.75,.12],['Padrão',1,1,0],['Premium',.8,1.3,-.1]];
 const SPM_B=['Banco Ponta','Operadora Sinal+','Construtora Alicerce','Aérea Rumo','Seguradora Escudo','Fintech Lastro','Montadora Trilha','Supermercados Cesta'];
 const B_UP=[8,16,30,50,80],E_UP=[15,30,55,90,140],C_UP=[10,20,40,70];
 /* cotas de patrocínio além do master: chave, nome, explicação, categorias de marca, fatia da receita de referência */
-const SPK=[['uni','Material esportivo','Fornecedora do uniforme. Paga menos que o master, mas a loja vende 10% a mais.',['chut'],.08],
- ['manga','Manga da camisa','A marca vai na manga do uniforme em todos os jogos.',['ban','tel','aut','gam','sup','beb'],.05],
- ['costas','Costas da camisa','A marca vai nas costas, acima do número.',['emp','ban','tel','beb','gam','mod'],.04],
- ['nome','Nome do estádio','Naming rights: a marca dá nome ao estádio. Quanto melhor o estádio, mais paga. Exige arena moderna (estádio nível 2).',['emp','ban','tel','aut'],.07]];
+const SPK=[['uni','Material esportivo','Fornecedora do uniforme. Paga menos que o master, mas a loja vende 10% a mais.',['chut'],.07],
+ ['manga','Manga da camisa','A marca vai na manga do uniforme em todos os jogos.',['ban','tel','aut','gam','sup','beb'],.022],
+ ['costas','Costas da camisa','A marca vai nas costas, acima do número.',['emp','ban','tel','beb','gam','mod'],.03],
+ ['nome','Nome do estádio','Naming rights: a marca dá nome ao estádio. Quanto melhor o estádio, mais paga. Exige arena moderna (estádio nível 2).',['emp','ban','tel','aut'],.045]];
+/* peso do tamanho do clube: gigante atrai contrato muitas vezes maior que clube pequeno (como Flamengo x clube de meio de tabela) */
+const spSize=c=>clamp(Math.pow(Math.max(0,prest(c)-50)/35,2),.12,2.2);
 function spUsed(){const o=G.own,u=[];if(o.spm&&o.spm.until>G.d)u.push(o.spm.b);for(const k in o.sps||{}){const x=o.sps[k];if(x&&x.until>G.d)u.push(x.b);}return u;}
 /* clube grande atrai marca global; clube pequeno, marca nacional */
 function spBrands(cats){const pr=prest(ownC()),tmin=pr>=85?1:pr>=72?2:3,used=spUsed();let L=BR.filter(b=>cats.includes(b.cat)&&b.t>=tmin).map(b=>bN(b.id)).filter(n=>!used.includes(n));
   if(L.length<3)L=BR.filter(b=>cats.includes(b.cat)).map(b=>bN(b.id)).filter(n=>!used.includes(n));if(L.length<3)L=L.concat(SPM_B.filter(n=>!used.includes(n)));return shuffle(L);}
-function spOffers(k){const o=G.own,c=ownC(),d=SPK.find(x=>x[0]===k);ownInit();const f=clamp((prest(c)-60)/30,.5,1.4)*(.8+o.mood/250)*(k==='nome'?1+.25*o.est:1),v=o.rev*d[4]*f,b=spBrands(d[3]);
+function spOffers(k){const o=G.own,c=ownC(),d=SPK.find(x=>x[0]===k);ownInit();const f=spSize(c)*(.8+o.mood/250)*(k==='nome'?1+.25*o.est:1),v=o.rev*d[4]*f,b=spBrands(d[3]);
   (o.spOffs=o.spOffs||{})[k]=spMk(b,v);(o.spCd=o.spCd||{})[k]=G.d+28;}
 /* três formatos: à vista (paga tudo na assinatura, com desconto), em duas parcelas, ou parcelas mensais altas com bônus por título */
 function spMk(b,v){return[{b:b[0],mode:'v',wk:52,tot:nice(v*52*.88),k:'À vista'},{b:b[1],mode:'2',wk:104,tot:nice(v*104*.95),k:'Em 2 parcelas'},{b:b[2],mode:'m',wk:156,tot:nice(v*156),bon:nice(v*20),k:'Mensal + bônus por título'}];}
@@ -4866,8 +4872,8 @@ function ownSeason(pos,s,L){const o=G.own;if(!o)return;ownInit();const g=o.goal;
   o.rev=nice(o.rev*(met?1.06:fail?.95:1.01));o.mood=clamp(o.mood+(met?10:fail?-12:0),0,100);if(met)addRep(1);else if(fail)addRep(-1);
   o.hist.unshift({lbl:g.lbl,t:g.t,pos,met});if(o.hist.length>10)o.hist.length=10;
   s.awards.push('Meta do '+ownC().n+': '+goalTxt(g).toLowerCase()+'. Terminou em '+pos+'º: '+(met?'meta batida, a receita do clube cresce 6%.':fail?'fracasso, a receita cai 5% e a torcida cobra.':'abaixo da meta, sem grandes estragos.'));}
-function spmOffers(){const o=G.own,c=ownC();ownInit();const f=clamp((prest(c)-60)/30,.5,1.4)*(.8+o.mood/250),R=o.rev,b=shuffle(SPM_B.slice());
-  o.spmOff=spMk(b,R*.2*f);o.spmCd=G.d+28;}
+function spmOffers(){const o=G.own,c=ownC();ownInit();const f=spSize(c)*(.8+o.mood/250),R=o.rev,b=spBrands(['emp','ban','tel','aut','beb','gam']);
+  o.spmOff=spMk(b,R*.26*f);o.spmCd=G.d+28;}
 function titleBonus0(cl){const o=G.own;if(o&&o.spm&&o.spm.bon&&o.spm.until>G.d){cl.bud+=o.spm.bon;news('O patrocinador master '+o.spm.b+' pagou '+fmt(o.spm.bon)+' de bônus pelo título do '+cl.n+'.','clube');}
   if(o)SPK.forEach(d=>{const x=spOn(o,d[0]);if(x&&x.bon){cl.bud+=x.bon;news('A '+dispB(x.b)+' ('+d[1].toLowerCase()+') pagou '+fmt(x.bon)+' de bônus pelo título do '+cl.n+'.','clube');}});}
 const ownUpCost=(k,l)=>nice(G.own.rev*(k==='base'?B_UP:k==='est'?E_UP:C_UP)[l]);
@@ -7080,12 +7086,13 @@ function statsView(c){const played=c.rounds?c.rounds.filter(r=>r.done).length:4,
     h+='<div class="card lb"><h3>Técnicos (aproveitamento)</h3>'+o.slice(0,8).map((x,i)=>'<div class="lb-row"><span class="pos">'+(i+1)+'</span>'+crest(x.cl,24)+'<div class="grow"><b>'+esc(x.cl.coach.n)+'</b><div class="small muted">'+esc(x.cl.n)+' · nota '+x.cl.coach.r+' · '+coachLine(x.cl.coach)+'</div></div><b class="val">'+Math.round(x.pct*100)+'%</b></div>').join('')+'</div>';}
   return h+'</div>';}
 /* zonas reais de cada liga: vaga continental, acesso e rebaixamento */
-const UCL_N={eng:5,esp:5,ita:4,ger:4,fra:3,por:3,ned:2,tur:2,bel:1},LIB_N={bra:6,arg:6,col:4,uru:3,ecu:3};
+const UCL_N={eng:5,esp:5,ita:4,ger:4,fra:3,por:3,ned:2,tur:2,bel:1},LIB_N={bra:5,arg:6,col:4,uru:3,ecu:3};
 function lgZones(c){const L=LG[c.li],id=L&&L.id,z={cont:0,cn:'',down:0,up:0};if(!id)return z;
   if(UCL_N[id]){z.cont=UCL_N[id];z.cn='Champions League';}else if(LIB_N[id]){z.cont=LIB_N[id];z.cn='Libertadores';}
   if(PROMO[id])z.down=PROMO[id];if(L.top){z.up=PROMO[L.top]||2;}return z;}
 const zoneCls=c=>{const z=lgZones(c);return(i,n)=>i<z.cont?'zc':i<z.up?'zp':z.down&&i>=n-z.down?'zr':'';};
 function zoneLeg(c){const z=lgZones(c),t=[];if(z.cont)t.push('<span class="zl zc"></span>'+z.cont+' primeiros: '+z.cn);if(z.up)t.push('<span class="zl zp"></span>'+z.up+' primeiros: acesso à '+esc(LG[LGI(LG[c.li].top)].s));
+  if(LG[c.li]&&LG[c.li].id==='bra')t.push('6ª vaga: campeão da Copa do Brasil (se já estiver no G5, vai para o vice; se os dois estiverem, para o 6º)');
   if(z.down)t.push('<span class="zl zr"></span>'+z.down+' últimos: rebaixados');return t.length?'<p class="small muted zleg">'+t.join(' · ')+'</p>':'';}
 function tableView(c,ids,zones){const o=sortedTab(c,ids),mine=new Set(G.clients.map(id=>G.P[id].club));(G.owns||[]).forEach(o=>mine.add(o.cid));
   return'<div class="tbw"><table><thead><tr><th>#</th><th>Clube</th><th class="r">J</th><th class="r">V</th><th class="r">E</th><th class="r">D</th><th class="r">GP</th><th class="r">GC</th><th class="r">SG</th><th class="r">Pts</th><th>Forma</th></tr></thead><tbody>'+
