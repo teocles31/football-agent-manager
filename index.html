@@ -5942,31 +5942,42 @@ function hireForClub(p){const c=ownC(),cur=club(p);if(!c||!cur||cur.id===c.id||p
   pop({k:'good',ic:'deal',wait:1200,wt:'Proposta ao '+cur.n+'…',ti:'Clube aceitou',tx:'O '+cur.n+' topou vender. Falta acertar o contrato com o jogador.'});save();render();}
 function ownFree(p){const c=ownC();if(!c||p.club!=null)return;if(!winOpen(regOf(c))){toast('A janela de '+LG[c.lg].cn+' está fechada.');return;}if(!useAP())return;
   const a=ctrAsk(p,c,true);ui.stack=[];ui.modal={type:'ctr',pid:p.id,fee:0,kind:'free',ask:a,off:{w:nice(a.w*.9),l:nice(a.l*.8),y:a.y},pat:3,log:[p.name+' está livre e topou ouvir a proposta do '+c.n+'.']};save();render();}
+/* mesa de contrato: cada item conta; pagar acima num item compensa só um pouco a falta em outro */
+function ctrEval(o,a,bonus){const dy=Math.abs(o.y-a.y),sc=.62*Math.min(1.25,o.w/a.w)+.26*(a.l?Math.min(1.5,o.l/a.l):1)+.12*(1-Math.min(1,dy*.25))+(bonus||0);
+  return{sc,ok:sc>=.97,w:o.w>=a.w,l:o.l>=a.l,y:dy===0};}
+/* resposta depois de uma recusa: diz o que falta e cede um pouco só no item pendente */
+function ctrReply(e,o,a){const miss=[];if(!e.w)miss.push('salário');if(!e.l)miss.push('luvas');if(!e.y)miss.push('duração');let cede='';
+  if(!e.w){const nw=Math.max(o.w,nice(a.w*.97));if(nw<a.w){a.w=nw;cede='Ele baixa o salário pedido para '+fmt(a.w)+'/sem.';}}
+  else if(!e.l){const nl=Math.max(o.l,nice(a.l*.9));if(nl<a.l){a.l=nl;cede='Ele baixa as luvas pedidas para '+fmt(a.l)+'.';}}
+  else if(!e.y){a.y+=o.y>a.y?1:-1;cede='Ele aceita conversar sobre '+durTxt(a.y*12)+'.';}
+  return(e.sc>=.9?'Estamos perto. ':'Ainda está longe. ')+(miss.length?'Falta acertar: '+miss.join(', ')+'. ':'')+(e.w?'O salário está bom. ':'')+cede;}
 function mCtr(){const m=ui.modal,p=G.P[m.pid],c=ownC(),o=m.off,a=m.ask;
+  const e=ctrEval(o,a),st=ok=>ok?' <b class="okk">✓ atende</b>':' <b class="warnk">abaixo do pedido</b>';
   const row=(k,lbl,val,sub)=>'<div class="ctr-r"><span class="lbl">'+lbl+'</span><div class="ctr-c"><button class="btn sm" data-a="ctrstep" data-k="'+k+'" data-v="-1" aria-label="Diminuir">−</button><b>'+val+'</b><button class="btn sm" data-a="ctrstep" data-k="'+k+'" data-v="1" aria-label="Aumentar">+</button></div><small class="muted">'+sub+'</small></div>';
   return'<div class="sheet"><span class="eyebrow">Contrato · '+(m.kind==='renew'?'negociação':m.kind==='free'?'jogador livre':'transferência de '+fmt(m.fee))+'</span><div class="neg-h">'+avatar(p,48)+'<h2>'+esc(p.name)+' × '+esc(c.n)+'</h2></div>'+
    '<p class="small muted">'+p.pos+' · '+p.age+' anos · nível '+p.ovr+' · paciência: <span class="pat">'+'●'.repeat(Math.max(0,m.pat))+'</span></p>'+
    '<div class="log">'+m.log.map((l,i)=>'<p class="'+(i%2?'me':'')+'">'+esc(l)+'</p>').join('')+'</div>'+
-   row('w','Salário por semana',fmt(o.w),(m.kind==='renew'?'Hoje ganha '+fmt(m.cur||0)+'. Ele pede ':'O empresário dele pede ')+fmt(a.w)+'.')+row('l','Luvas',fmt(o.l),'Pedido: '+fmt(a.l)+'. Sai do caixa do clube.')+row('y','Duração',durTxt(o.y*12),'Ele prefere '+durTxt(a.y*12)+'.')+
+   row('w','Salário por semana',fmt(o.w),(m.kind==='renew'?'Hoje ganha '+fmt(m.cur||0)+'. Ele pede ':'Ele pede ')+fmt(a.w)+'.'+st(e.w))+row('l','Luvas',fmt(o.l),'Pedido: '+fmt(a.l)+'. Sai do caixa do clube.'+st(e.l))+row('y','Duração',durTxt(o.y*12),'Ele prefere '+durTxt(a.y*12)+'.'+(e.y?' <b class="okk">✓ atende</b>':' <b class="warnk">diferente</b>'))+
+   '<p class="small muted">Pagar acima num item compensa só um pouco o que falta em outro. Com tudo atendido, ele assina.</p>'+
    '<p class="small">Custo total na assinatura: <b>'+fmt(m.fee+o.l)+'</b> · caixa do clube: '+fmt(c.bud)+'</p>'+
    '<div class="acts"><button class="btn pri" data-a="ctrsend"'+(c.bud<m.fee+o.l?' disabled':'')+'>Enviar proposta</button><button class="btn" data-a="ctrquit">Desistir</button></div></div>';}
 function ctrSend(){const m=ui.modal,p=G.P[m.pid],c=ownC(),o=m.off,a=m.ask;if(c.bud<m.fee+o.l){toast('Caixa do clube insuficiente.');return;}
-  if(m.kind==='renew'){const sc=.62*(o.w/a.w)+.26*(a.l?o.l/a.l:1)+.12*(1-Math.min(1,Math.abs(o.y-a.y)/3));
-    if(sc>=.97){const w0=m.cur||p.wage||0,cut=w0>0&&o.w<w0;c.bud-=o.l;p.wage=o.w;p.ce=contractEnd(c,o.y);p.warned=0;
+  if(m.kind==='renew'){const e=ctrEval(o,a);
+    if(e.ok){const w0=m.cur||p.wage||0,cut=w0>0&&o.w<w0;c.bud-=o.l;p.wage=o.w;p.ce=contractEnd(c,o.y);p.warned=0;
       /* corte de salário aceito ainda incomoda um pouco; aumento anima */p.morale=clamp((p.morale||60)+(cut?-Math.min(10,Math.round((w0-o.w)/w0*40)):5),0,100);ui.modal=null;
       news(p.name+' acertou novo contrato com o '+c.n+' até '+fmonth(p.ce)+(cut?', com redução de salário':'')+'.','clube');
       pop({k:'good',ic:'deal',ti:'Contrato acertado!',tx:p.name+' assinou até '+fmonth(p.ce)+'.',ch:[['Salário '+fmt(w0)+' → '+fmt(o.w)+'/sem',cut?'good':'warn'],...(o.l?[['-'+fmt(o.l)+' de luvas','bad']]:[])]});save();render();return;}
     m.pat--;m.log.push('Ofereci '+fmt(o.w)+'/sem, luvas de '+fmt(o.l)+' e '+o.y+' ano(s).');
     if(m.pat<=0){p.renCool=G.d+42;ui.modal=null;news(p.name+' não aceitou o novo contrato do '+c.n+'. O contrato atual continua valendo.','clube');pop({k:'bad',ic:'no',ti:'Sem acordo',tx:p.name+' recusou. O contrato atual continua valendo. Dá para tentar de novo em 6 semanas.'});save();render();return;}
-    a.w=nice(a.w*.97);m.log.push(sc>=.9?'Estamos perto. Ele baixa o pedido para '+fmt(a.w)+'/sem.':'Está longe do que ele quer. Novo pedido: '+fmt(a.w)+'/sem.');render();return;}
-  const sc=.62*(o.w/a.w)+.26*(a.l?o.l/a.l:1)+.12*(1-Math.min(1,Math.abs(o.y-a.y)/3))+(prest(c)>=prest(club(p)||c)?.03:0);
-  if(sc>=.97){const src=club(p);c.bud-=m.fee+o.l;if(src&&m.fee){src.bud+=Math.round(m.fee*.9);soPay&&soPay(p,m.fee,c);}setClub(p,c.id);p.movedW=G.d;p.wage=o.w;p.ce=contractEnd(c,o.y);p.freeSince=null;
+    m.log.push(ctrReply(e,o,a));render();return;}
+  const e=ctrEval(o,a,prest(c)>=prest(club(p)||c)?.03:0);
+  if(e.ok){const src=club(p);c.bud-=m.fee+o.l;if(src&&m.fee){src.bud+=Math.round(m.fee*.9);soPay&&soPay(p,m.fee,c);}setClub(p,c.id);p.movedW=G.d;p.wage=o.w;p.ce=contractEnd(c,o.y);p.freeSince=null;
     G.own.mood=clamp(G.own.mood+clamp(1+p.fame/12,1,10),0,100);G.moves.unshift({d:G.d,pid:p.id,n:p.name,pos:p.pos,age:p.age,ovr:p.ovr,from:src?src.id:-1,to:c.id,fee:m.fee,k:m.fee?'':'livre'});
     news('O '+c.n+' contratou '+p.name+(src?' junto ao '+src.n+' por '+fmt(m.fee):', que estava sem clube')+'. Contrato de '+o.y+' ano(s).','clube');ui.modal=null;
     pop({k:'good',ic:'club',ti:'Reforço contratado!',tx:p.name+' assinou com o '+c.n+'.',ch:[['Salário '+fmt(o.w)+'/sem','warn'],['-'+fmt(m.fee+o.l)+' do clube','bad']]});save();render();return;}
   m.pat--;m.log.push('Ofereci '+fmt(o.w)+'/sem, luvas de '+fmt(o.l)+' e '+o.y+' ano(s).');
   if(m.pat<=0){p.clubCool=G.d+42;ui.modal=null;news(p.name+' não aceitou o contrato do '+c.n+'.','clube');pop({k:'bad',ic:'no',ti:'Sem acordo',tx:p.name+' recusou o contrato. Nada foi pago.'});save();render();return;}
-  a.w=nice(a.w*.97);m.log.push(sc>=.9?'Estamos perto. Ele baixa o pedido para '+fmt(a.w)+'/sem.':'Está longe do que ele quer. Novo pedido: '+fmt(a.w)+'/sem.');render();}
+  m.log.push(ctrReply(e,o,a));render();}
 /* ---------- botões de cada jogador no Elenco do seu clube ---------- */
 function elActs(p,o){if(isClient(p)||p.loan||p.lent)return'';const x=o&&o.sale&&o.sale[p.id],fresh=p.movedW&&G.d-p.movedW<180,rc=(p.renCool||0)>G.d;
   return'<div class="el-acts"><button class="btn sm" data-a="oren" data-p="'+p.id+'"'+(rc?' disabled title="Ele pediu um tempo"':'')+'>'+(rc?'Negociar · aguarde':'Negociar contrato')+'</button>'+
