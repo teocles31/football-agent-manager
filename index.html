@@ -3337,7 +3337,7 @@ function ownRev(){const o=G.own,c=ownC();return nice(o.rev*(1+.25*o.est)*(.7+o.m
 function ownProfit(){const c=ownC();return ownRev()-wageBill(c)-coachWage(c);}
 function ownWeek(){const o=G.own;if(!o)return;const c=ownC();ownWeek2();obraWeek();saleWeek();lendWeek();coachRepWeek();clubBidWeek();if(c.bud<0)o.mood=clamp(o.mood-2,0,100);
   if(G.d<=(o.evCool||0)||Math.random()>.1)return;let t=null;
-  if(o.mood<25)t={type:'protesto'};else{const pool=[];if(!o.naming)pool.push({type:'naming'});pool.push({type:'tecnico'});
+  if(o.mood<25)t={type:'protesto'};else{const pool=[];if(!o.naming)pool.push({type:'naming'});{const rn=realNeed(c);if(rn&&winOpen(regOf(c))){const L=Object.values(G.P).filter(p=>p.pos===rn.pos&&p.club!=null&&p.club!==c.id&&!isOwn(club(p))&&!p.loan&&p.ag!==0&&!ownFresh(p)&&p.ovr>=rn.lv-1&&p.ovr<=rn.lv+6&&p.age<=31&&ownFee(p)<=c.bud&&!(prest(c)<prest(club(p))-4&&p.age<31)&&!((p.clubCool||0)>G.d)).sort((a,b)=>(b.ovr+(b.pot-b.ovr)*.2)-(a.ovr+(a.pot-a.ovr)*.2)).slice(0,6);const p=L.length?pick(L):null;if(p)pool.push({type:'tecnico',pid:p.id});}}
     const cl=G.clients.map(id=>G.P[id]).filter(p=>p.club===c.id&&!p.loan&&p.comm>0);if(cl.length)pool.push({type:'conflito',pid:pick(cl).id});t=pick(pool);}
   if(t){o.evCool=G.d+42;G.events.push(t);}}
 function sellFromClub(p){const c=ownC();if(p.loan){toast('Jogador emprestado não pode ser vendido.');return;}if(!winOpen(regOf(c))){toast('A janela está fechada.');return;}
@@ -3705,9 +3705,12 @@ const EV={
  naming(){const o=G.own,c=ownC(),amt=nice(eurVal(teamStr(c.id))*6*.4);return{title:'Nome do estádio à venda',text:'Uma empresa oferece '+fmt(amt)+' para batizar o estádio do '+c.n+' por cinco anos.',choices:[
    {label:'Aceitar '+fmt(amt),sub:'Entra no caixa do clube. Parte da torcida torce o nariz.',run(){c.bud+=amt;o.naming=true;o.mood=clamp(o.mood-5,0,100);return{t:'Contrato assinado.',chips:[['+'+fmt(amt)+' no clube','good'],['Torcida -5','bad']]};}},
    {label:'Recusar',sub:'O nome histórico fica.',run(){o.naming=true;o.mood=clamp(o.mood+5,0,100);return{t:'A torcida agradeceu com uma faixa.',chips:[['Torcida +5','good']]};}}]};},
- tecnico(){const o=G.own,c=ownC(),cost=nice(eurVal(teamStr(c.id))*6*.12);return{title:'O técnico pede reforço',text:c.coach.n+' quer um jogador de rodízio. Custa '+fmt(cost)+' do caixa do clube.',choices:[
-   {label:'Liberar '+fmt(cost),sub:'O vestiário sente que o dono está junto.',can:c.bud>=cost,run(){c.bud-=cost;o.mood=clamp(o.mood+6,0,100);c.coach.r=Math.min(93,c.coach.r+1);return{t:'O técnico agradeceu em coletiva.',chips:[['-'+fmt(cost)+' no clube','bad'],['Técnico +1','good']]};}},
-   {label:'Negar',sub:'O elenco é esse.',run(){o.mood=clamp(o.mood-4,0,100);return{t:'O técnico reclamou para a imprensa.',chips:[['Torcida -4','bad']]};}}]};},
+ tecnico(e){const o=G.own,c=ownC(),p=e&&G.P[e.pid];if(!c||!p||p.club===c.id||p.club==null)return{title:'Indicação do técnico',text:'O jogador indicado já não está disponível.',choices:[{label:'Ok',run(){return{t:'Sem novidades.',chips:[]};}}]};
+   const src=club(p),fee=ownFee(p),rn=realNeed(c);
+   return{title:'O técnico indica um reforço',text:c.coach.n+': "Presidente, '+(rn?'precisamos de um '+POSN[p.pos]+' ('+rn.why+'). ':'')+'Acompanhei o '+p.name+' ('+p.age+' anos, nível '+p.ovr+', '+esc(src.n)+'). Acho que ele resolve. O '+src.n+' deve pedir perto de '+fmt(fee)+'." Caixa do clube: '+fmt(c.bud)+'.',choices:[
+    {label:'Ir atrás dele',sub:'Abre a negociação com o '+src.n+'. Gasta 1 ação do clube.',can:c.bud>=fee,run(){G.evHire=p.id;o.crel=clamp((o.crel==null?60:o.crel)+3,0,100);return{t:'Você autorizou a negociação. Ao continuar, abre a proposta pelo '+p.name+'.',chips:[['Relação com o técnico +3','good']]};}},
+    {label:'Ver o perfil antes',sub:'Sem compromisso.',run(){G.evProf=p.id;return{t:'Você pediu para ver o perfil do jogador.',chips:[]};}},
+    {label:'Não agora',sub:'O técnico vai ter que se virar com o elenco.',run(){o.crel=clamp((o.crel==null?60:o.crel)-3,0,100);return{t:'O técnico entendeu, mas não gostou.',chips:[['Relação com o técnico -3','bad']]};}}]};},
  conflito(e){const p=G.P[e.pid],c=ownC();return{title:'Dono e empresário ao mesmo tempo',text:'Uma coluna pergunta quem negocia o salário de '+p.name+' no '+c.n+': o dono ou o empresário. Os dois são você.',choices:[
    {label:'Abrir mão da comissão dele',sub:'Você deixa de ganhar sobre o salário.',run(){p.comm=0;addRep(2);return{t:'A decisão foi elogiada.',chips:[['Comissão 0%','warn'],['Reputação +2','good']]};}},
    {label:'Ignorar',sub:'Custa um pouco de reputação.',run(){addRep(-1.5);return{t:'A coluna voltou ao tema mais duas vezes.',chips:[['Reputação -1,5','bad']]};}}]};}
@@ -7635,7 +7638,7 @@ const A={
   ev(d){const e=G.events[0],def=evDef(e),ch=def.choices[+d.i];if(!ch||ch.can===false)return;const r=ch.run(),ei=G.events.indexOf(e);if(ei>=0)G.events.splice(ei,1);
     G.evRes=typeof r==='string'?{title:def.title,text:r,chips:[]}:{title:def.title,text:r.t,chips:r.chips||[],ok:r.ok};save();render();},
   popok(){popNext();},
-  evok(){G.evRes=null;save();render();},
+  evok(){G.evRes=null;const h=G.evHire,pr=G.evProf;G.evHire=null;G.evProf=null;if(h&&G.P[h]){ui.tab='clube';G._apC=1;try{hireForClub(G.P[h]);}finally{G._apC=0;}}else if(pr&&G.P[pr]){ui.stack=[{t:'p',id:pr}];}save();render();},
   wkok(){G.lastWk=G.wk;G.wk=null;save();render();},
   sumok(){G.summ.shift();save();render();},
   hire(d){const k=d.s,l=G.staff[k];if(l>=3)return;const cost=STAFF_UP[l];if(G.money<cost){toast('Caixa insuficiente.');return;}G.money-=cost;G.staff[k]++;news('Você '+(l?'promoveu':'contratou')+' seu '+STAFF.find(x=>x.id===k).n.toLowerCase()+'.','agencia');pop({k:'good',ic:'staff',ti:l?'Funcionário promovido':'Funcionário contratado',tx:STAFF.find(x=>x.id===k).n+' agora no nível '+G.staff[k]+'.'});save();render();},
