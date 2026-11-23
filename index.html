@@ -2547,17 +2547,26 @@ function initClient(p){p.ag=0;if(p.ovr0==null)p.ovr0=p.ovr;p.trust=p.trust||60;p
 const GW={ATA:3.2,MEI:2.2,VOL:1,LAT:.7,ZAG:.6,GOL:0}, AW={MEI:3,ATA:2,LAT:1.6,VOL:1.1,ZAG:.4,GOL:.1};
 /* monta o time titular: cada posição com os seus; se faltar alguém (lesão, suspensão, venda), entra quem joga mais perto daquela função
    (zagueiro improvisado é volante ou lateral, nunca um atacante; sem goleiro, o mais fraco da linha vai para o gol). p._r guarda a função em campo para o desenho do time. */
-const NEAR_POS={GOL:[],ZAG:['VOL','LAT','MEI','ATA'],LAT:['ZAG','VOL','MEI','ATA'],VOL:['ZAG','MEI','LAT','ATA'],MEI:['VOL','ATA','LAT','ZAG'],ATA:['MEI','VOL','LAT','ZAG']};
-function fillXI(by,sc){const xi=[],gap=[];
+/* improviso só dentro do habitual de cada posição (zagueiro vira volante ou lateral; atacante nunca vai para a defesa) */
+const NEAR_POS={GOL:[],ZAG:['VOL','LAT'],LAT:['ZAG','VOL','MEI'],VOL:['ZAG','MEI','LAT'],MEI:['VOL','ATA','LAT'],ATA:['MEI']};
+/* ordem para cobrir um desfalque: 1) titular da posição; 2) garoto da base da mesma posição; 3) improviso habitual no elenco;
+   4) improviso habitual com a base; 5) só se não houver ninguém, o mais próximo que sobrar */
+function fillXI(by,sc,cid){const xi=[],gap=[];
   for(const pos in FORM){const a=by[pos]||[];for(let i=0;i<FORM[pos];i++){if(a.length){const p=a.shift();p._r=pos;xi.push(p);}else gap.push(pos);}}
-  for(const pos of gap){let p=null;for(const n of NEAR_POS[pos]){const a=by[n]||[];if(a.length){p=a.shift();break;}}
-    if(!p){const r=Object.values(by).flat().filter(x=>x.pos!=='GOL').sort((x,y)=>pos==='GOL'?sc(x)-sc(y):sc(y)-sc(x))[0];if(r){p=r;by[r.pos].splice(by[r.pos].indexOf(r),1);}}
+  if(!gap.length)return xi;
+  const yb={};if(cid!=null)baseOf(cid).filter(p=>!p.injury&&!((p.suspTil||0)>G.d)&&p.age>=16).sort((a,b)=>(b.ovr+(b.pot-b.ovr)*.1)-(a.ovr+(a.pot-a.ovr)*.1)).forEach(p=>{if(p._s==null)p._s=p.ovr-1.5;(yb[p.pos]||(yb[p.pos]=[])).push(p);});
+  const take=(pool,pos)=>{const a=pool[pos]||[];return a.length?a.shift():null;};
+  for(const pos of gap){let p=take(yb,pos);
+    if(!p)for(const n of NEAR_POS[pos]){p=take(by,n);if(p)break;}
+    if(!p)for(const n of NEAR_POS[pos]){p=take(yb,n);if(p)break;}
+    if(!p){const order={GOL:['ZAG','VOL','LAT','MEI','ATA'],ZAG:['VOL','LAT','MEI','ATA'],LAT:['ZAG','VOL','MEI','ATA'],VOL:['ZAG','MEI','LAT','ATA'],MEI:['VOL','ATA','LAT','ZAG'],ATA:['MEI','VOL','LAT','ZAG']}[pos];
+      for(const n of order){p=take(by,n)||take(yb,n);if(p)break;}}
     if(p){p._r=pos;xi.push(p);}}
   return xi;}
 function lineup(cid){const av=squad(cid).filter(p=>!p.injury&&!(p.boost<0)&&!p.lent&&!((p.suspTil||0)>G.d));
   const frm=G.clubs[cid].coach.pe==='frm';const sc=p=>p.ovr-debtPen(p)+(p.boost>0?30:0)-(p.adapt>0?4:0)-(p.fat||0)*1.6+Math.random()*1.5-(p.age<=19&&!frm?1.5:0);
   const by={};av.forEach(p=>{p._s=sc(p);(by[p.pos]||(by[p.pos]=[])).push(p);});Object.values(by).forEach(a=>a.sort((x,y)=>y._s-x._s));
-  const xi=fillXI(by,p=>p._s);const rest=Object.values(by).flat().filter(p=>p.pos!=='GOL').sort((x,y)=>y._s-x._s);
+  const xi=fillXI(by,p=>p._s,cid);const rest=Object.values(by).flat().filter(p=>p.pos!=='GOL').sort((x,y)=>y._s-x._s);
   const avg=xi.reduce((s,p)=>s+p.ovr,0)/Math.max(1,xi.length);
   return{xi,subs:rest.slice(0,3),avg,age:xi.reduce((s,p)=>s+p.age,0)/Math.max(1,xi.length),str:avg-(11-xi.length)*3+coachB(G.clubs[cid])};}
 function updTab(c,h,a,hg,ag){const H=c.tab[h],A=c.tab[a];if(!H||!A)return;H[0]++;A[0]++;H[4]+=hg;H[5]+=ag;A[4]+=ag;A[5]+=hg;
@@ -5769,7 +5778,7 @@ const natTag=p=>{const n=natName(p);return n?flagS(n)+esc(n)+' · ':'';};
 /* titulares do momento, sem o sorteio usado na partida */
 function xiOf(cid){const av=squad(cid).filter(p=>!p.injury&&!(p.boost<0)&&!p.lent&&!((p.suspTil||0)>G.d));const sc=p=>p.ovr+(p.boost>0?30:0)-(p.adapt>0?4:0)-(p.fat||0)*1.6;
   const by={};av.forEach(p=>(by[p.pos]||(by[p.pos]=[])).push(p));Object.values(by).forEach(a=>a.sort((x,y)=>sc(y)-sc(x)));
-  return fillXI(by,sc);}
+  return fillXI(by,sc,cid);}
 const shortN=n=>{const w=String(n).split(' ');if(w.length<2||n.length<=13)return n;const l=w[w.length-1];return/^(Junior|Júnior|Jr.?|Filho|Neto|Sobrinho)$/i.test(l)?w[0]+(/^J/i.test(l)?' Jr.':''):l;};
 function pitchHTML(xi,lbl){const by={};xi.forEach(p=>{const r=p._r||p.pos;(by[r]||(by[r]=[])).push(p);});const take=pos=>(by[pos]||[]).splice(0,1)[0];
   const lat=by.LAT||[],zag=by.ZAG||[],def=[lat[0],...zag,lat[1]].filter(Boolean);
