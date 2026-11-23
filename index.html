@@ -2528,7 +2528,7 @@ function initWorld(name,mode){
   if(mode===1)news('Você herdou a carteira de contatos de um agente aposentado: sua reputação já abre portas no Brasileirão e em parte da Europa.','agencia');
   news('A janela de transferências da Europa está aberta até '+fdate(winNext('eu'),true)+'. A do Brasil e da América do Sul abre em '+fdate(winNext('sa'),true)+'. Champions League começa em setembro.','liga');
   G.alumni=[];G.nt=newNT();G.aw=newAW();G.hof=[];G.gen={};G.exs={olh:0};ntBuild();
-  G.lvlMax=lvlIdx();G.ap=apMax();
+  G.lvlMax=lvlIdx();G.ap=apMax();G.apA=apMax();
   G.adjA=adjSigs(); /* a carreira já nasce com os valores da planilha */
 }
 /* homônimos: na base de dados, alguns xarás de craques herdaram a nota do craque (um goleiro "João Pedro" com a nota do
@@ -3305,7 +3305,7 @@ function nextWeek(){if(G&&G.smPend&&G.smPend.length&&!(G.smq&&G.smq.length))smFl
   decWeek();
   if(G.money<0){G.debt++;if(G.debt>=6)G.over=true;else news('A agência está no vermelho há '+G.debt+' semana'+(G.debt>1?'s':'')+'. Com 6 semanas seguidas, você quebra.','agencia');}else G.debt=0;
   {const bz=(G.last.inc-i0)-(G.last.exp-e0),oth=Math.round(G.money-mFx-bz);if(oth>0)G.last.inc+=oth;else G.last.exp+=-oth;G.last.br={com:i0,fx:e0,bz:Math.round(bz),oth};}
-  finLog(d0);G.wk=weekReport(snap,rep0,off0,d0);G.wk.br=G.last.br;ui.wkv='ag';G.ap=apMax();save();render();}
+  finLog(d0);G.wk=weekReport(snap,rep0,off0,d0);G.wk.br=G.last.br;ui.wkv='ag';apReset();save();render();}
 function weekReport(snap,rep0,off0,d0){
   const items=G.clients.map(id=>{const p=G.P[id],s0=snap[id];if(!p||!s0)return null;const c=club(p),chips=[];
     const games=G.wlog.filter(x=>x.pid===id).map(g=>({cs:g.cs,oid:g.oppN||g.opp,me:g.u20?'Sub-20 do '+(c?c.n:''):g.oppN?natName(p):(g.cl!=null?g.cl:c&&c.id),opp:g.oppN||G.clubs[g.opp].n,home:g.home,gf:g.gf,ga:g.ga,rt:g.rt,ng:g.ng,na:g.na,sub:g.sub,d:g.d}));
@@ -6949,7 +6949,14 @@ function ownInstall(){try{if(!G)return;const d=Object.getOwnPropertyDescriptor(G
   if(!Object.getOwnPropertyDescriptor(G,'own'))Object.defineProperty(G,'own',{configurable:true,enumerable:false,
     get(){return this.owns[this.ownI]||this.owns[0]||null;},
     set(v){if(v==null){const cur=this.owns[this.ownI]||this.owns[0];this.owns=this.owns.filter(x=>x!==cur);this.ownI=0;}
-      else{const i=this.owns.indexOf(v);if(i<0){this.owns.push(v);this.ownI=this.owns.length-1;}else this.ownI=i;}}});}catch(e){}}
+      else{const i=this.owns.indexOf(v);if(i<0){this.owns.push(v);this.ownI=this.owns.length-1;}else this.ownI=i;}}});
+  /* ações separadas: a agência tem as dela e cada clube seu tem as próprias. G.ap lê e grava no mundo em que você está */
+  const da=Object.getOwnPropertyDescriptor(G,'ap');if(!da||da.enumerable){const v=da?G.ap:apMax();delete G.ap;if(G.apA==null)G.apA=v;
+    Object.defineProperty(G,'ap',{configurable:true,enumerable:false,
+      get(){const o=apClubCtx(this);return o?(o.ap==null?apMax():o.ap):(this.apA==null?apMax():this.apA);},
+      set(v){const o=apClubCtx(this);if(o)o.ap=v;else this.apA=v;}});}}catch(e){}}
+function apClubCtx(g){return g&&g.owns&&g.owns.length&&(g._apC||ui.tab==='clube'&&!ui.grpNew)?g.own:null;}
+function apReset(){if(!G)return;G.apA=apMax();(G.owns||[]).forEach(o=>o.ap=apMax());}
 initWorld=(f=>function(){const r=f.apply(this,arguments);ownInstall();return r;})(initWorld);
 function selOwn(cid){const i=(G.owns||[]).findIndex(o=>o.cid===cid);if(i>=0)G.ownI=i;}
 function withOwn(o,fn){const cur=G.own;const i=G.owns.indexOf(o);if(i<0)return;G.ownI=i;try{fn();}finally{const j=G.owns.indexOf(cur);G.ownI=j<0?0:j;}}
@@ -7600,6 +7607,8 @@ const A={
 
 Object.assign(A,OFFA,EVOA,OWNA,MINDA,CALA,NAVA,CARDA,CMA,FINA,BIZA,NTCA,TIDYA,FLAGA,PROGA,BIZLA,OTRA,W2A,OLA,CLUB2A,PHA,TIEA,FACEA,RDA,NAVHA,HOFA,SCPA,BRA,SPMA,EDA,VPA,ARTA,GRPA,GMVA,MUSA,CRA,{slots:SLOTA.slots,slotsave:SLOTA.slotsave,slotgo:SLOTA.slotgo,slotnew:SLOTA.slotnew,slotback:SLOTA.slotback,slotdel:SLOTA.slotdel,slotdelok:SLOTA.slotdelok,updchk:SLOTA.updchk});
 A.world=d=>{if(d.v==='cl'){if(ui.tab!=='clube')ui.agTab=ui.tab;ui.tab='clube';ui.grpNew=false;if(!ui.osub)ui.osub='geral';}else ui.tab=ui.agTab&&ui.agTab!=='clube'?ui.agTab:'painel';ui.stack=[];ui.modal=null;render();window.scrollTo(0,0);};
+/* contratações do seu clube gastam ações do clube, mesmo feitas pelo perfil de um jogador na agência */
+['hireclub','ownfree','ownloan','ownlbuy'].forEach(k=>{const f=A[k];if(!f)return;A[k]=function(d){if(!G)return f(d);G._apC=1;try{return f(d);}finally{G._apC=0;}};});
 A.cwcomp=d=>{ui.tab='ligas';ui.agTab='ligas';ui.comp=d.k;ui.rd=null;ui.stack=[];ui.modal=null;render();window.scrollTo(0,0);};
 {const _nx=A.next;A.next=d=>{const w=needW();if(w&&G&&!flowBlocked()){A.world({v:w});if(w==='cl')ui.osub='geral';render();return;}return _nx(d);};}
 /* ---- rolagem.js ---- */
