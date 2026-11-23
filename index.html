@@ -2347,7 +2347,7 @@ function starterOvr(cid,pos){const k=SC[cid]||(SC[cid]={}),kk='s'+pos;if(k[kk]!=
 function starterOvr0(cid,pos){const a=squad(cid).filter(p=>p.pos===pos).map(p=>p.ovr).sort((x,y)=>y-x);return a[FORM[pos]-1]!=null?a[FORM[pos]-1]:50;}
 /* glória recente: títulos das últimas 4 temporadas somam prestígio (até +4) e valorizam a marca; o efeito some com o tempo */
 const GLW=t=>/Super Mundial/.test(t)?3:/Champions|Libertadores/.test(t)?2.5:/Youth|Copinha|Sub-?20/.test(t)?0:/Copa|Cup|Coupe|Pokal|Coppa|Taça|Rey|Trophy/.test(t)?.7:1.5;
-function gloryUpd(){if(!G)return;const Y=ymd(G.d).y;G.clubs.forEach(c=>{let s=0;(c.tro||[]).forEach(t=>{const m=String(t).match(/(\d{4})(?:\/\d{2})?$/);if(!m)return;const a=Y-(+m[1]);if(a<0||a>3)return;s+=GLW(String(t))*(1-a*.25);});c.gl=Math.min(4,Math.round(s));});}
+function gloryUpd(){if(!G)return;if(!G.spRef&&G.clubs&&G.clubs.length)spRef(G.clubs[0]);const Y=ymd(G.d).y;G.clubs.forEach(c=>{let s=0;(c.tro||[]).forEach(t=>{const m=String(t).match(/(\d{4})(?:\/\d{2})?$/);if(!m)return;const a=Y-(+m[1]);if(a<0||a>3)return;s+=GLW(String(t))*(1-a*.25);});c.gl=Math.min(4,Math.round(s));});}
 const prest=c=>Math.round(teamStr(c.id))+LG[c.lg].pb+(c.gl||0);
 const club=p=>p&&p.club!=null?G.clubs[p.club]:null;
 /* clube dono do contrato: durante um empréstimo é o clube de origem */
@@ -2851,7 +2851,7 @@ function rolloverEU(Y){archive('eu');retireRegen('eu');budgets('eu');
 const PROMO={eng:3,esp:3,ita:3,ger:2,fra:2,por:2,bra:4};
 function promote(region){let any=0;LG.forEach((L2,li2)=>{if(!L2.top||L2.reg!==region)return;const li1=LGI(L2.top),c1=clubsOf(li1),c2=clubsOf(li2);if(c1.length<4||c2.length<4)return;
     const n=PROMO[L2.top]||2,dn=c1.slice().sort((a,b)=>(b.lp||0)-(a.lp||0)).slice(0,n),up=c2.slice().sort((a,b)=>(a.lp||99)-(b.lp||99)).slice(0,n);
-    dn.forEach(c=>{c.lg=li2;c.lp=null;});up.forEach(c=>{c.lg=li1;c.lp=null;});any=1;
+    dn.forEach(c=>{c.lg=li2;c.lp=null;if(isOwn(c))spRelCut(c);});up.forEach(c=>{c.lg=li1;c.lp=null;if(isOwn(c))spUpCut(c);});any=1;
     news('Acesso: '+up.map(c=>c.n).join(', ')+' sobe'+(up.length>1?'m':'')+' para '+(LG[li1].s.match(/^(Brasileirão|Campeonato)/)?'o ':'a ')+LG[li1].s+'. Caem: '+dn.map(c=>c.n).join(', ')+'.','liga');
     dn.concat(up).forEach(c=>{if(isOwn(c))news((up.includes(c)?'Seu clube, o '+c.n+', subiu para ':'Seu clube, o '+c.n+', caiu para ')+(up.includes(c)?LG[li1].s:LG[li2].s)+'.','clube');});});
   if(any)dirty();}
@@ -4833,9 +4833,17 @@ const spSize=c=>clamp(Math.pow(Math.max(0,prest(c)-50)/35,2),.12,2.2);
 const SP_TOP={bra:220e6,bra2:10e6,eng:500e6,eng2:25e6,esp:430e6,esp2:8e6,ita:250e6,ita2:6e6,ger:380e6,ger2:12e6,fra:420e6,fra2:5e6,por:60e6,por2:3e6,ned:60e6,bel:30e6,tur:70e6,arg:35e6,uru:5e6,col:10e6,ecu:6e6,mex:60e6,usa:45e6,sau:90e6,xeu:20e6,xsa:5e6};
 /* a referência de cada liga fica fixa (o topo no início do jogo): quem cresce passa do teto, quem cai perde valor.
    Abaixo da referência cada ponto pesa ~30%; acima, ~10%. Títulos recentes valorizam a marca em até 40%. */
-function spRef(c){const id=LG[c.lg].id;G.spRef=G.spRef||{};if(G.spRef[id]==null)G.spRef[id]=clubsOf(c.lg).reduce((m,x)=>Math.max(m,Math.round(teamStr(x.id))+LG[x.lg].pb),0);return G.spRef[id];}
+function spRef(c){const id=LG[c.lg].id;if(!G.spRef){G.spRef={};LG.forEach((L,li)=>{const cs=clubsOf(li);if(cs.length)G.spRef[L.id]=cs.reduce((m,x)=>Math.max(m,Math.round(teamStr(x.id))+L.pb),0);});}if(G.spRef[id]==null)G.spRef[id]=clubsOf(c.lg).reduce((m,x)=>Math.max(m,Math.round(teamStr(x.id))+LG[x.lg].pb),0);return G.spRef[id];}
 const spBrand=c=>1+.1*(c.gl||0);
-function spYear(c){const top=SP_TOP[LG[c.lg].id]||10e6,d=prest(c)-spRef(c);return Math.max(3e5,top*(d<0?Math.exp(.34*d):Math.exp(.1*d))*spBrand(c));}
+/* momento na liga: quem briga contra o rebaixamento vale bem menos; quem está no topo, um pouco mais */
+function spForm(c){const L=curLeague(c.lg);if(!L||!L.tab||!L.tab[c.id])return{f:1,t:''};const tb=sortedTab(L),n=tb.length,pos=tb.indexOf(c.id),j=L.tab[c.id][0],dn=PROMO[LG[c.lg].id]||0;
+  if(j<6)return{f:1,t:''};if(dn&&pos>=n-dn)return{f:.6,t:'zona de rebaixamento: -40%'};if(pos>=n/2)return{f:.85,t:'metade de baixo da tabela: -15%'};if(pos<4)return{f:1.1,t:'entre os 4 primeiros: +10%'};return{f:1,t:''};}
+function spYear(c){const top=SP_TOP[LG[c.lg].id]||10e6,d=prest(c)-spRef(c);return Math.max(3e5,top*(d<0?Math.exp(.34*d):Math.exp(.1*d))*spBrand(c)*spForm(c).f);}
+/* cláusula de rebaixamento: as parcelas que faltam de todo patrocínio caem pela metade */
+function spRelCut(c){const o=ownOf(c);if(!o)return;let cut=0;[o.spm].concat(SPK.map(d=>o.sps&&o.sps[d[0]])).forEach(x=>{if(!x||x.until<=G.d)return;
+  if(x.pay)x.pay.forEach(p=>{if(!p.ok){const v=Math.round(p.v/2);cut+=p.v-v;p.v=v;}});else if(x.w){cut+=Math.round(x.w/2)*Math.max(0,Math.round((x.until-G.d)/7));x.w=Math.round(x.w/2);}x.tot=x.pay?x.pay.reduce((t,p)=>t+p.v,0):x.tot;});
+  o.spmOff=null;o.spOffs=null;if(cut>0)news('Cláusula de rebaixamento: os patrocinadores do '+c.n+' reduziram pela metade o que ainda faltava pagar ('+fmt(cut)+' a menos).','clube');}
+function spUpCut(c){const o=ownOf(c);if(o){o.spmOff=null;o.spOffs=null;}}
 function spUsed(){const o=G.own,u=[];if(o.spm&&o.spm.until>G.d)u.push(o.spm.b);for(const k in o.sps||{}){const x=o.sps[k];if(x&&x.until>G.d)u.push(x.b);}return u;}
 /* clube grande atrai marca global; clube pequeno, marca nacional */
 function spBrands(cats){const pr=prest(ownC()),tmin=pr>=85?1:pr>=72?2:3,used=spUsed();let L=BR.filter(b=>cats.includes(b.cat)&&b.t>=tmin).map(b=>bN(b.id)).filter(n=>!used.includes(n));
@@ -4932,7 +4940,7 @@ function ownFinV(o,c,fin,part){const ri=[['Bilheteria'+(fin.homes?' ('+fin.homes
   return h;}
 function ownSpV(o,c){const act=[o.spm&&o.spm.until>G.d?o.spm:null].concat(SPK.map(d=>spOn(o,d[0]))),n=act.filter(Boolean).length,
     tot=act.reduce((t,x)=>t+(x?(x.tot||Math.round((x.w||0)*(x.wk||52))):0),0),left=act.reduce((t,x)=>t+(x?(x.pay?spLeft(x):Math.max(0,Math.round((x.until-G.d)/7))*(x.w||0)):0),0);
-  let h='<div class="kpis tint">'+[['Contratos ativos',fmt(tot),'valor total somado'],['A receber',fmt(left),'ainda vai entrar'],['Cotas fechadas',n+' de '+(SPK.length+1),n<SPK.length+1?'há espaço na camisa':'tudo vendido'],['Força da marca','prestígio '+prest(c),(c.gl?'+'+Math.round((spBrand(c)-1)*100)+'% por títulos recentes':'sem títulos recentes')]].map(k=>'<div class="kpi"><span>'+k[0]+'</span><b>'+k[1]+'</b><small>'+k[2]+'</small></div>').join('')+'</div>';
+  let h='<div class="kpis tint">'+[['Contratos ativos',fmt(tot),'valor total somado'],['A receber',fmt(left),'ainda vai entrar'],['Cotas fechadas',n+' de '+(SPK.length+1),n<SPK.length+1?'há espaço na camisa':'tudo vendido'],['Força da marca','prestígio '+prest(c),[c.gl?'títulos recentes: +'+Math.round((spBrand(c)-1)*100)+'%':'',spForm(c).t].filter(Boolean).join(' · ')||'sem títulos nem momento especial']].map(k=>'<div class="kpi"><span>'+k[0]+'</span><b>'+k[1]+'</b><small>'+k[2]+'</small></div>').join('')+'</div>';
   const offL=(L,act)=>'<div class="list">'+L.map((x,i)=>'<div class="sp-o"><div class="grow"><b>'+esc(dispB(x.b))+'</b> <span class="chip">'+x.k+'</span><div class="sp-t">'+fmt(x.tot)+' <small>em '+durTxt(x.wk/52*12)+'</small></div><div class="small muted">'+spPlan(x)+(x.bon?' · bônus de '+fmt(x.bon)+' por título':'')+'</div></div><button class="btn pri sm" '+act(i)+'>Assinar</button></div>').join('')+'</div>';
   const on=x=>{if(!x.pay)return'<b class="big2">'+esc(dispB(x.b))+'</b><p class="small">'+fmt(x.w)+' por semana até '+fdate(x.until,true)+(x.bon?'. Bônus de '+fmt(x.bon)+' por título.':'.')+'</p>';
     const nx=x.pay.find(p=>!p.ok),rc=x.rcv||0;return'<b class="big2">'+esc(dispB(x.b))+'</b><div class="sp-t">'+fmt(x.tot)+' <small>até '+fdate(x.until,true)+'</small></div><p class="small">'+spPlan(x)+(x.bon?'. Bônus de '+fmt(x.bon)+' por título':'')+'.</p>'+
@@ -7165,7 +7173,7 @@ const HELP={
  meta:['Meta da temporada','A diretoria define a meta pela força do elenco comparada à da liga.\n\nBater a meta: a receita de referência do clube sobe 6%, a torcida se anima e sua reputação sobe.\nTerminar 5 posições abaixo: a receita cai 5%, a torcida cobra e a reputação cai.'],
  comp:['Competições da temporada','Todos os torneios que o clube disputa agora e a situação em cada um. Copas e continentais pagam premiação por fase; a liga paga pela posição final.'],
  stf:['Comissão de apoio','Cada profissional vai do nível 1 ao 5. Os clubes da IA têm uma comissão do tamanho do prestígio deles; ter profissionais acima disso dá vantagem nos jogos.\n\nAuxiliar, analista, treinador de goleiros e psicólogo mexem no jogo. Preparador físico e nutricionista reduzem cansaço e lesões. O médico encurta as lesões.'],
- spn:['Patrocínios','O valor das propostas segue o tamanho do clube: prestígio (força do elenco e títulos recentes) e humor da torcida. Clube que cresce e ganha títulos recebe propostas cada vez maiores; clube que cai perde valor.\n\nCada cota é um contrato separado, com o valor total já definido.\n\nÀ vista: o dinheiro todo entra na assinatura, com desconto.\nEm 2 parcelas: metade na assinatura e metade no meio do contrato.\nMensal: parcelas a cada 4 semanas, contrato mais longo e bônus a cada título.\n\nO valor sobe com o prestígio do clube e o humor da torcida. Assinar gasta 1 ação.'],
+ spn:['Patrocínios','O valor das propostas segue o tamanho e o momento do clube: prestígio (força do elenco e títulos recentes), divisão, posição na tabela e humor da torcida. Clube que cresce e ganha títulos recebe propostas cada vez maiores. Na zona de rebaixamento as propostas caem 40%.\n\nRebaixado: os contratos em andamento cortam pela metade as parcelas que faltam, e as novas propostas passam a ser de Série B.\n\nCada cota é um contrato separado, com o valor total já definido.\n\nÀ vista: o dinheiro todo entra na assinatura, com desconto.\nEm 2 parcelas: metade na assinatura e metade no meio do contrato.\nMensal: parcelas a cada 4 semanas, contrato mais longo e bônus a cada título.\n\nO valor sobe com o prestígio do clube e o humor da torcida. Assinar gasta 1 ação.'],
  spm:['Patrocinador master','É a marca no peito da camisa e a cota que mais paga. Clube grande atrai marca global. O dinheiro entra no caixa do clube.'],
  sp_uni:['Material esportivo','A fornecedora do uniforme. Paga menos que o master, mas faz a loja vender 10% a mais enquanto o contrato durar.'],
  sp_manga:['Manga da camisa','Cota menor, com a marca na manga do uniforme.'],
