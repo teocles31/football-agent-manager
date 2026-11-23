@@ -879,6 +879,8 @@ main.wrap{padding-bottom:calc(var(--plh) + var(--tbh) + 28px + env(safe-area-ins
  .placar .wrap{gap:8px}.placar .btn.big{padding:9px 12px!important;font-size:15px!important}
 }
 @media (max-width:420px){.jst{display:none}}
+.stf-ch{display:flex;flex-wrap:wrap;gap:4px;margin:4px 0 2px}
+.coach-chem{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin:6px 0}
 </style>
 <header class="topo"><div class="wrap" id="marca"></div><div class="band"><div class="wrap" id="band"></div></div></header><nav class="tabs" aria-label="Seções"><div class="wrap" id="tabs"></div></nav>
 <main class="wrap" id="view"></main>
@@ -2969,6 +2971,8 @@ function coachCard(c){const k=c.coach,pct=coachPct(k),ten=Math.max(0,Math.round(
   return'<div class="coachc"><div class="coach-h">'+avatarS(k,48,c,'coach')+'<span class="ovr">'+k.r+'</span><div class="grow"><b>'+esc(k.n)+'</b><div class="small muted">'+(k.age?k.age+' anos · ':'')+'no cargo há '+(ten>=24?Math.floor(ten/12)+' anos':ten+' '+(ten===1?'mês':'meses'))+(pct!=null?' · '+pct+'% de aproveitamento em '+k.g+' jogos':'')+'</div></div></div>'+
    '<div class="acts"><span class="chip info" title="'+esc(STYLES[k.st][1])+'">'+STYLES[k.st][0]+'</span><span class="chip warn" title="'+esc(PERS[k.pe][1])+'">'+PERS[k.pe][0]+'</span></div>'+
    '<p class="small muted">'+esc(STYLES[k.st][0]+': '+STYLES[k.st][1]+'. '+PERS[k.pe][0]+': '+PERS[k.pe][1]+'.')+'</p>'+
+   (()=>{const q=chemSum(c);if(!q)return'';const L=q.v>=.75?3:q.v>=.25?2:q.v>-.15?1:0;
+     return'<div class="coach-chem"><span class="chip '+CHEM_L[L][1]+'">'+CHEM_L[L][0]+' com a comissão</span><span class="small muted">Combina com '+q.g+' de '+q.n+(q.b?', atrito com '+q.b:'')+' · '+(q.v>=0?'+':'')+f1(q.v)+' por jogo</span></div>';})()+
    '<div class="meters">'+meter('Diretoria',c.cf.d)+meter('Torcida',c.cf.t)+meter('Vestiário',c.cf.e)+'</div></div>';}
 
 /* ---- agency.js ---- */
@@ -3628,7 +3632,7 @@ function vClube(){if(!G.own)return vClubePaths();
    sq.map(p=>'<div class="el-r">'+avatar(p,30)+'<b class="grow">'+plLink(p)+'</b><span class="chip">'+p.pos+'</span></div>').join('')+'</div></section>';
   o.cands=(o.cands||[]).filter(k=>!G.clubs.some(x=>x.coach.n===k.n));if(!o.cands.length)o.cands=genCoaches(c);
   h+='<section><div class="sec-h"><h2>Comissão técnica</h2><p>A nota do técnico soma até ±3 ao nível do time. Estilo e personalidade mudam o jeito de o time render. Trocar custa 10 semanas de salário do atual.</p></div><div class="card c-purple">'+coachCard(c)+'</div><div class="card list">'+
-   o.cands.map((k,i)=>'<div>'+avatarS(k,36,c,'coach')+'<span class="ovr">'+k.r+'</span><div class="grow"><b>'+esc(k.n)+'</b> <span class="chip info">'+STYLES[k.st][0]+'</span> <span class="chip warn">'+PERS[k.pe][0]+'</span><div class="small muted">'+(k.real?'Livre no mercado · ':'')+'pede '+fmt(coachWage(c,k.r))+'/sem · '+esc(STYLES[k.st][1])+'; '+esc(PERS[k.pe][1])+'</div></div><button class="btn" data-a="coach" data-i="'+i+'">Contratar</button></div>').join('')+'</div></section>';
+   o.cands.map((k,i)=>'<div>'+avatarS(k,36,c,'coach')+'<span class="ovr">'+k.r+'</span><div class="grow"><b>'+esc(k.n)+'</b> <span class="chip info">'+STYLES[k.st][0]+'</span> <span class="chip warn">'+PERS[k.pe][0]+'</span>'+coachChem(c,k)+'<div class="small muted">'+(k.real?'Livre no mercado · ':'')+'pede '+fmt(coachWage(c,k.r))+'/sem · '+esc(STYLES[k.st][1])+'; '+esc(PERS[k.pe][1])+'</div></div><button class="btn" data-a="coach" data-i="'+i+'">Contratar</button></div>').join('')+'</div></section>';
   const bc=o.base<3?nice(eurVal(teamStr(c.id))*6*[.3,.6,1.2][o.base]):0,ec=o.est<3?nice(eurVal(teamStr(c.id))*6*[.5,1,2][o.est]):0;
   h+='<section><div class="sec-h"><h2>Estrutura</h2></div><div class="card list"><div><span class="ovr">'+o.base+'</span><div class="grow"><b>Categorias de base</b><div class="small muted">Sobe '+(o.base||'nenhum')+' garoto(s) por temporada, com prioridade para você representar.</div></div>'+(o.base<3?'<button class="btn" data-a="upbase"'+(c.bud<bc?' disabled':'')+'>Ampliar <small>'+fmt(bc)+'</small></button>':'<span class="chip good">Máximo</span>')+'</div>'+
    '<div><span class="ovr">'+o.est+'</span><div class="grow"><b>Estádio</b><div class="small muted">Cada nível aumenta a receita em 25%.</div></div>'+(o.est<3?'<button class="btn" data-a="upest"'+(c.bud<ec?' disabled':'')+'>Reformar <small>'+fmt(ec)+'</small></button>':'<span class="chip good">Máximo</span>')+'</div></div></section>'+
@@ -4975,7 +4979,7 @@ function ownElenco0(o,c){const sq=squad(c.id).sort((a,b)=>POS.indexOf(a.pos)-POS
    sq.map(p=>'<div class="el-r">'+avatar(p,30)+'<b class="grow">'+plLink(p)+'</b><span class="chip">'+p.pos+'</span></div>').join('')+'</div></section>';
   o.cands=(o.cands||[]).filter(k=>!G.clubs.some(x=>x.coach.n===k.n));if(!o.cands.length)o.cands=genCoaches(c);
   h+='<section><div class="sec-h"><h2>Comissão técnica</h2><p>A nota do técnico soma até ±3 ao nível do time. Trocar custa 10 semanas de salário do atual.</p></div><div class="card c-purple">'+coachCard(c)+'</div><div class="card list">'+
-   o.cands.map((k,i)=>'<div>'+avatarS(k,36,c,'coach')+'<span class="ovr">'+k.r+'</span><div class="grow"><b>'+esc(k.n)+'</b> <span class="chip info">'+STYLES[k.st][0]+'</span> <span class="chip warn">'+PERS[k.pe][0]+'</span><div class="small muted">'+(k.real?'Livre no mercado · ':'')+'pede '+fmt(coachWage(c,k.r))+'/sem · '+esc(STYLES[k.st][1])+'; '+esc(PERS[k.pe][1])+'</div></div><button class="btn" data-a="coach" data-i="'+i+'">Contratar</button></div>').join('')+'</div></section>';
+   o.cands.map((k,i)=>'<div>'+avatarS(k,36,c,'coach')+'<span class="ovr">'+k.r+'</span><div class="grow"><b>'+esc(k.n)+'</b> <span class="chip info">'+STYLES[k.st][0]+'</span> <span class="chip warn">'+PERS[k.pe][0]+'</span>'+coachChem(c,k)+'<div class="small muted">'+(k.real?'Livre no mercado · ':'')+'pede '+fmt(coachWage(c,k.r))+'/sem · '+esc(STYLES[k.st][1])+'; '+esc(PERS[k.pe][1])+'</div></div><button class="btn" data-a="coach" data-i="'+i+'">Contratar</button></div>').join('')+'</div></section>';
   return h;}
 function upBtn(k,l,max,lv){if(l>=max)return'<span class="chip good">Nível máximo</span>';const cost=ownUpCost(k,l);return'<div class="next"><span class="lbl">Próximo nível</span><b>'+esc(lv[l+1])+'</b><span class="small muted">obra '+fmt(cost)+', paga pelo caixa do clube</span></div><button class="btn pri" data-a="oup" data-k="'+k+'"'+(ownC().bud<cost?' disabled':'')+'>Investir</button>';}
 function ownBase(o,c){const ys=squad(c.id).filter(p=>p.age<=20).sort((a,b)=>b.pot-a.pot),pc=nice(o.rev*.3),y=ymd(G.d).y;
@@ -5744,7 +5748,7 @@ function mSlots(inGame){return'<div class="sheet slots"><span class="eyebrow">Fo
   (inGame?'<h3 class="menu-t">Opções</h3><div class="acts"><button class="btn" data-a="edit">Editar fotos e patrocinadores</button><button class="btn" data-a="slotsave">Salvar agora</button></div>':'')+
   '<h3 class="menu-t">Versão do jogo</h3><div class="updb"><div class="grow"><b>Atualizações</b><span class="small muted">'+esc(verTxt(APP_V))+'</span>'+(ui.upd?'<span class="small '+(ui.upd.k||'')+'">'+esc(ui.upd.t)+'</span>':'')+'</div><button class="btn pri" data-a="updchk"'+(ui.upd&&ui.upd.busy?' disabled':'')+'>Buscar atualização</button></div>'+(inGame?'<div class="acts"><button class="btn pri big" data-a="close">Voltar ao jogo</button></div>':'')+'</div>';}
 /* versão: o script de publicação grava a data e a hora em APP_V. O botão baixa a página publicada sem cache e, se ela for mais nova, salva e recarrega. */
-const APP_V='202611222351';
+const APP_V='202611230900';
 const verTxt=v=>/^\d{12}$/.test(v)?'Publicada em '+v.slice(6,8)+'/'+v.slice(4,6)+'/'+v.slice(0,4)+' às '+v.slice(8,10)+':'+v.slice(10,12):'Versão de teste';
 async function updChk(){ui.upd={t:'Procurando…',busy:1};render();
   try{const r=await fetch(location.pathname+'?chk='+Date.now(),{cache:'no-store'}),t=await r.text(),m=t.match(/const APP_V='(\d{12})'/),nv=m?m[1]:null;
@@ -6165,9 +6169,10 @@ const CLUB2A={ctrstep(d){const m=ui.modal;if(!m||m.type!=='ctr')return;const o=m
   ctrsend(){ctrSend();},ctrquit(){const m=ui.modal;if(m&&m.type==='ctr'&&m.kind!=='renew'){const p=G.P[m.pid];news('O '+ownC().n+' desistiu de contratar '+(p?p.name:'o jogador')+'.','clube');}ui.modal=null;render();},
   oren(d){ownRenew(G.P[+d.p]);},oact(d){ui.stack=[];ui.modal={type:'oact',pid:+d.p};render();},help(d){ui.modal={type:'help',k:d.k,back:ui.modal};render();},
   stfopen(d){const c=ownC(),o=G.own;if(!o)return;stfInit(o,c);const lvs=shuffle([1,2,3,4,5]).slice(0,4).sort((a,b)=>a-b);
-    ui.stack=[];ui.modal={type:'stf',k:d.k,c:lvs.map(lv=>{const nm=stfName(c,d.k);return{n:nm.n,f:nm.f,lv,w:nice(stfW(c,lv)*rnd(.9,1.15))};})};render();},
+    const sts=STF_ST.includes(d.k)?shuffle([c.coach.st].concat(shuffle(Object.keys(STYLES).filter(x=>x!==c.coach.st)).slice(0,3))):[];
+    ui.stack=[];ui.modal={type:'stf',k:d.k,c:lvs.map((lv,i)=>{const nm=stfName(c,d.k);return{n:nm.n,f:nm.f,lv,w:nice(stfW(c,lv)*rnd(.9,1.15)),st:sts[i]};})};render();},
   stfhire(d){const m=ui.modal,c=ownC(),o=G.own,x=m&&m.c[+d.i];if(!x||!o)return;const cur=o.stf[m.k],fee=x.w*4+(cur&&cur.lv?cur.w*8:0);if(c.bud<fee)return;if(!useAP())return;
-    c.bud-=fee;o.stf[m.k]={n:x.n,f:x.f||0,lv:x.lv,w:x.w};const dd=STF.find(z=>z[0]===m.k);ui.modal=null;news('O '+c.n+' contratou '+x.n+' para '+dd[1].toLowerCase()+' ('+STF_LV[x.lv].toLowerCase()+').','clube');
+    c.bud-=fee;o.stf[m.k]={n:x.n,f:x.f||0,lv:x.lv,w:x.w,st:x.st};const dd=STF.find(z=>z[0]===m.k);ui.modal=null;news('O '+c.n+' contratou '+x.n+' para '+dd[1].toLowerCase()+' ('+STF_LV[x.lv].toLowerCase()+').','clube');
     pop({k:'good',ic:'staff',ti:x.f?'Contratada':'Contratado',tx:x.n+' assume '+dd[1].toLowerCase()+' do '+c.n+'.',ch:[['-'+fmt(fee)+' do clube','bad'],['Salário '+fmt(x.w)+'/sem','warn']]});save();render();},
   stffire(d){const c=ownC(),o=G.own,x=o&&o.stf&&o.stf[d.k];if(!x||!x.lv)return;const fee=x.w*8;if(c.bud<fee){toast('O caixa do clube não cobre a multa de '+fmt(fee)+'.');return;}
     c.bud-=fee;const dd=STF.find(z=>z[0]===d.k);o.stf[d.k]={n:'',lv:0,w:0};news('O '+c.n+' dispensou '+x.n+' ('+dd[1].toLowerCase()+').','clube');pop({k:'info',ic:'staff',ti:'Dispensado',tx:x.n+' deixou o clube. O cargo está vago.',ch:[['-'+fmt(fee)+' de multa','bad']]});save();render();},orsc(d){ui.stack=[];ui.modal={type:'orsc',pid:+d.p};render();},orscdo(d){orscDo(+d.p,d.v);},osell(d){ui.stack=[];ui.modal={type:'osell',pid:+d.p};render();},
@@ -6615,7 +6620,7 @@ function ownElenco(o,c,part){const sq=squad(c.id).sort((a,b)=>POS.indexOf(a.pos)
   h+='<section><div class="sec-h"><h2>Técnico</h2><p>A nota do técnico soma até ±3 ao nível do time.</p></div><div class="card c-purple">'+coachCard(c)+
    (srch?'':'<div class="acts"><button class="btn danger" data-a="coachfire">Demitir e procurar substituto</button></div>')+'</div>'+
    (!srch?'':'<div class="card"><div class="card-h"><h3>Procurando substituto</h3><button class="btn sm" data-a="coachfire" data-v="0">Manter '+esc(c.coach.n)+'</button></div><p class="small muted">'+esc(c.coach.n)+' só deixa o clube quando você contratar o novo técnico. A multa é de '+fmt(coachWage(c)*10)+' (10 semanas de salário).</p></div><div class="card list">'+
-   o.cands.map((k,i)=>'<div>'+avatarS(k,36,c,'coach')+'<span class="ovr">'+k.r+'</span><div class="grow"><b>'+esc(k.n)+'</b> <span class="chip info">'+STYLES[k.st][0]+'</span> <span class="chip warn">'+PERS[k.pe][0]+'</span><div class="small muted">'+(k.real?'Livre no mercado · ':'')+'pede '+fmt(coachWage(c,k.r))+'/sem · '+esc(STYLES[k.st][1])+'; '+esc(PERS[k.pe][1])+'</div></div><button class="btn" data-a="coach" data-i="'+i+'">Contratar</button></div>').join('')+'</div>')+'</section>';
+   o.cands.map((k,i)=>'<div>'+avatarS(k,36,c,'coach')+'<span class="ovr">'+k.r+'</span><div class="grow"><b>'+esc(k.n)+'</b> <span class="chip info">'+STYLES[k.st][0]+'</span> <span class="chip warn">'+PERS[k.pe][0]+'</span>'+coachChem(c,k)+'<div class="small muted">'+(k.real?'Livre no mercado · ':'')+'pede '+fmt(coachWage(c,k.r))+'/sem · '+esc(STYLES[k.st][1])+'; '+esc(PERS[k.pe][1])+'</div></div><button class="btn" data-a="coach" data-i="'+i+'">Contratar</button></div>').join('')+'</div>')+'</section>';
   return h+(part==='com'?stfH(o,c):'');}
 
 /* ================= O CAPITÃO PASSA DEMANDAS À DIRETORIA (RARO) ================= */
@@ -7009,6 +7014,36 @@ const FEM={BR:'Ana,Mariana,Juliana,Fernanda,Camila,Beatriz,Larissa,Patrícia,Ren
 /* psicóloga, nutricionista e médica: metade das profissionais são mulheres */
 const STF_FEM={psi:.5,nut:.5,med:.4};
 function stfName(c,k){const nat=stfNat(c),fem=Math.random()<(STF_FEM[k]||0);if(!fem)return{n:genName(nat),f:0};const L=NAMES[nat]||NAMES.XX,S=L[1].split(','),F=(FEM[nat]||FEM.XX).split(',');return{n:pick(F)+' '+pick(S),f:1};}
+
+/* química: auxiliar, analista, preparador físico e treinador de goleiros têm estilo de jogo.
+   Mesmo estilo do técnico = ótima; estilos que se completam = boa; opostos (ofensivo x retranca) = ruim.
+   Técnico paizão segura os atritos; explosivo cria atrito à toa. */
+const STF_ST=['aux','ana','fis','gol'];
+const CHEM_OK={ofe:['pre','pos'],pos:['ofe','equ'],con:['ret','pre'],ret:['con','equ'],pre:['ofe','con'],equ:['pos','ret']};
+const CHEM_NO={ofe:['ret'],ret:['ofe','pre'],pos:['con'],con:['pos'],pre:['ret'],equ:[]};
+const CHEM_L=[['Química ruim','bad'],['Química neutra',''],['Química boa','info'],['Química ótima','good']];
+const CHEM_V=[-.3,0,.15,.3];
+function chemOf(st,k){if(!k||!st||!STYLES[st]||!CHEM_OK[k.st])return 1;let v=st===k.st?3:CHEM_OK[k.st].includes(st)?2:CHEM_NO[k.st].includes(st)?0:1;
+  if(k.pe==='pai'&&v===0)v=1;if(k.pe==='exp'&&v===1)v=0;return v;}
+function stfSt(o){if(!o||!o.stf)return;const c=G.clubs[o.cid],a=c&&c.ach&&c.ach.st;STF_ST.forEach(k=>{const x=o.stf[k];if(x&&x.lv&&!x.st)x.st=(a&&a[k])||pick(Object.keys(STYLES));});}
+/* clube da IA: técnico novo traz o auxiliar de confiança (quase sempre do mesmo estilo); o resto da comissão já estava lá.
+   Com o tempo a diretoria troca quem não combina, então a química melhora devagar. */
+function aiStf(c){const k=c.coach;if(!k||!CHEM_OK[k.st])return null;if(!c.ach||c.ach.k!==k.n){const all=Object.keys(STYLES),st={};
+    STF_ST.forEach(r=>{st[r]=r==='aux'&&Math.random()<.6?k.st:Math.random()<.2?pick([k.st].concat(CHEM_OK[k.st])):pick(all);});c.ach={k:k.n,st,d:G.d};}
+  else if(G.d-(c.ach.d||0)>=180){c.ach.d=G.d;const bad=STF_ST.filter(r=>chemOf(c.ach.st[r],k)<=1);if(bad.length&&Math.random()<.5)c.ach.st[pick(bad)]=pick([k.st].concat(CHEM_OK[k.st]));}
+  return c.ach.st;}
+function aiChemFx(c){const st=aiStf(c);return st?STF_ST.reduce((t,r)=>t+CHEM_V[chemOf(st[r],c.coach)],0):0;}
+/* resumo para o card do técnico, serve para clube seu e da IA */
+function chemSum(c){const o=ownOf(c);let L;if(o){stfSt(o);L=chemOn(o).map(r=>chemOf(o.stf[r].st,c.coach));}else{const st=aiStf(c);L=st?STF_ST.map(r=>chemOf(st[r],c.coach)):[];}
+  if(!L.length)return null;const v=L.reduce((t,x)=>t+CHEM_V[x],0);return{v,g:L.filter(x=>x>=2).length,n:L.length,b:L.filter(x=>x===0).length};}
+const chemOn=(o,k)=>STF_ST.filter(r=>o&&o.stf&&o.stf[r]&&o.stf[r].lv);
+function chemFx(c,k){const o=ownOf(c);if(!o||!o.stf)return 0;stfSt(o);k=k||c.coach;return chemOn(o).reduce((t,r)=>t+CHEM_V[chemOf(o.stf[r].st,k)],0);}
+function chemPct(c,k){const o=ownOf(c),L=chemOn(o);if(!L.length)return 0;k=k||c.coach;return Math.round(L.reduce((t,r)=>t+chemOf(o.stf[r].st,k),0)/(L.length*3)*100);}
+const chemGood=(c,k)=>{const o=ownOf(c);return chemOn(o).filter(r=>chemOf(o.stf[r].st,k)>=2).length;};
+const chemChip=v=>'<span class="chip '+CHEM_L[v][1]+'">'+CHEM_L[v][0]+'</span>';
+const stChip=st=>st&&STYLES[st]?'<span class="chip info">'+STYLES[st][0]+'</span>':'';
+function coachChem(c,k){const o=ownOf(c);if(!o||!o.stf)return'';stfSt(o);const n=chemOn(o).length;if(!n)return'';const g=chemGood(c,k);
+  return' <span class="chip '+(g>=Math.ceil(n*.75)?'good':g>=n/2?'info':'bad')+'">Química boa com '+g+' de '+n+' da comissão</span>';}
 const STF_LV=['Vago','Iniciante','Experiente','Qualificado','Elite','Referência mundial'];
 const stfAI=c=>clamp(Math.round((prest(c)-56)/9),1,5);
 const stfW=(c,lv)=>{const o=ownOf(c),R=o&&o.rev?o.rev:nice(wageRef(70,c.lg)*20);return nice(R*[0,.004,.008,.013,.02,.03][lv]);};
@@ -7021,6 +7056,7 @@ function matchFx(c,lu,opp,ko,home){const P=[],add=(l,v)=>{if(Math.abs(v)>=.05)P.
   add('Auxiliar técnico',.25*(lv('aux')-2.5));
   if(opp&&opp.str>lu.str+1)add('Análise do adversário',.3*(lv('ana')-2.5));
   add('Treinador de goleiros',.2*(lv('gol')-2.5));
+  add('Química da comissão com o técnico',o?chemFx(c):aiChemFx(c));
   add(ko?'Psicólogo (mata-mata)':'Psicólogo',(ko?.35:.1)*(lv('psi')-2.5));
   const xi=lu.xi||[],n=Math.max(1,xi.length),mor=xi.reduce((t,p)=>t+(p.morale==null?65:p.morale),0)/n,fat=xi.reduce((t,p)=>t+(p.fat||0),0)/n;
   add('Moral dos jogadores',clamp((mor-65)/10,-2.5,2));
@@ -7034,15 +7070,18 @@ function cwForm(c){const lu=lineup(c.id),f=matchFx(c,lu,null,false,true),base=Ma
   return'<section class="card">'+cardH('report','Como o time chega aos jogos','<span class="przh"><span class="chip '+(f.d>=.5?'good':f.d<=-.5?'bad':'')+'">'+(f.d>=0?'+':'')+f1(f.d)+'</span>'+hq('fx')+'</span>')+
    '<p class="small muted">Nível dos titulares: '+f1(base)+'. Somam ou tiram força:</p>'+
    '<div class="list cw-fx">'+f.parts.sort((a,b)=>b[1]-a[1]).map(x=>'<div><span class="grow small">'+esc(x[0])+'</span><b class="'+(x[1]>0?'up':'dn')+'">'+(x[1]>0?'+':'')+f1(x[1])+'</b></div>').join('')+'</div></section>';}
-function stfH(o,c){stfInit(o,c);const tot=stfBill(o);
-  return'<section><div class="sec-h"><h2>Comissão de apoio '+hq('stf')+'</h2><p>Folha da comissão: <b>'+fmt(tot)+'/sem</b>.</p></div><div class="stf-g">'+
+function stfH(o,c){stfInit(o,c);stfSt(o);const tot=stfBill(o),cf=chemFx(c),pc=chemPct(c);
+  return'<section><div class="sec-h"><h2>Comissão de apoio '+hq('stf')+'</h2><p>Folha da comissão: <b>'+fmt(tot)+'/sem</b>.</p></div>'+
+   '<div class="card chem">'+cardH('coach','Química com o técnico','<span class="chip '+(cf>=.3?'good':cf<=-.3?'bad':'')+'">'+(cf>=0?'+':'')+f1(cf)+'</span>')+'<div class="meters">'+meter('Química',pc)+'</div>'+
+   '<p class="small muted">'+esc(c.coach.n)+' joga no estilo <b>'+esc(STYLES[c.coach.st][0].toLowerCase())+'</b>. Auxiliar, analista, preparador físico e treinador de goleiros também têm estilo: mesmo estilo do técnico dá química ótima, estilos que se completam dão boa e estilos opostos atrapalham. '+(c.coach.pe==='pai'?'Como ele é paizão, segura os atritos.':c.coach.pe==='exp'?'Como ele é explosivo, cria atrito até com quem é neutro.':'')+'</p></div>'+
+   '<div class="stf-g">'+
    STF.map(d=>{const x=o.stf[d[0]];return'<div class="card stf">'+cardH(d[2],d[1],x&&x.lv?pips(x.lv,5):'<span class="chip warn">Vago</span>')+
-    (x&&x.lv?'<div class="stf-p">'+avatarS(x,44,c,d[0])+'<div><b>'+esc(x.n)+'</b><div class="small muted">'+STF_LV[x.lv]+' · '+fmt(x.w)+'/sem</div></div></div>':'<span class="small muted">Ninguém no cargo. O clube perde rendimento.</span>')+'<p class="small">'+esc(d[3])+'</p>'+
+    (x&&x.lv?'<div class="stf-p">'+avatarS(x,44,c,d[0])+'<div><b>'+esc(x.n)+'</b><div class="small muted">'+STF_LV[x.lv]+' · '+fmt(x.w)+'/sem</div>'+(x.st?'<div class="stf-ch">'+stChip(x.st)+chemChip(chemOf(x.st,c.coach))+'</div>':'')+'</div></div>':'<span class="small muted">Ninguém no cargo. O clube perde rendimento.</span>')+'<p class="small">'+esc(d[3])+'</p>'+
     '<div class="acts"><button class="btn sm pri" data-a="stfopen" data-k="'+d[0]+'">'+(x&&x.lv?'Trocar':'Contratar')+'</button>'+(x&&x.lv?'<button class="btn sm danger" data-a="stffire" data-k="'+d[0]+'">Dispensar</button>':'')+'</div></div>';}).join('')+'</div></section>';}
 function mStf(){const m=ui.modal,c=ownC(),o=G.own,d=STF.find(z=>z[0]===m.k);if(!o||!d){ui.modal=null;return'';}const cur=o.stf[m.k];
   return'<div class="sheet"><span class="eyebrow">Comissão de apoio · '+esc(c.n)+'</span><h2>'+esc(d[1])+'</h2><p class="small muted">'+esc(d[3])+(cur&&cur.lv?' Hoje: '+esc(cur.n)+', '+STF_LV[cur.lv].toLowerCase()+'.':'')+'</p>'+
-   '<p class="small">Contratar gasta 1 ação e paga 4 semanas de salário como luvas, do caixa do clube.'+(cur&&cur.lv?' Quem sai recebe 8 semanas de salário.':'')+'</p><div class="list">'+
-   m.c.map((x,i)=>'<div>'+avatarS(x,36,c,m.k)+'<div class="grow"><b>'+esc(x.n)+'</b> '+pips(x.lv,5)+'<div class="small muted">'+STF_LV[x.lv]+' · '+fmt(x.w)+'/sem · luvas '+fmt(x.w*4)+'</div></div><button class="btn sm pri" data-a="stfhire" data-i="'+i+'"'+(c.bud<x.w*4+(cur&&cur.lv?cur.w*8:0)||G.ap<1?' disabled':'')+'>Contratar</button></div>').join('')+
+   '<p class="small">Contratar gasta 1 ação e paga 4 semanas de salário como luvas, do caixa do clube.'+(STF_ST.includes(m.k)?' O chip de química mostra como o estilo de cada um combina com o de '+esc(c.coach.n)+' ('+esc(STYLES[c.coach.st][0].toLowerCase())+').':'')+(cur&&cur.lv?' Quem sai recebe 8 semanas de salário.':'')+'</p><div class="list">'+
+   m.c.map((x,i)=>'<div>'+avatarS(x,36,c,m.k)+'<div class="grow"><b>'+esc(x.n)+'</b> '+pips(x.lv,5)+(x.st?'<div class="stf-ch">'+stChip(x.st)+chemChip(chemOf(x.st,c.coach))+'</div>':'')+'<div class="small muted">'+STF_LV[x.lv]+' · '+fmt(x.w)+'/sem · luvas '+fmt(x.w*4)+'</div></div><button class="btn sm pri" data-a="stfhire" data-i="'+i+'"'+(c.bud<x.w*4+(cur&&cur.lv?cur.w*8:0)||G.ap<1?' disabled':'')+'>Contratar</button></div>').join('')+
    '</div><div class="acts"><button class="btn" data-a="close">Cancelar</button></div></div>';}
 function vClubW(){if(!G._mwFix||!G._susFix)gloryUpd();const o=G.own,c=ownC(),pres=o.role==='pres',fin=o.lastFin||clubFin(),pos=leaguePos(c.id);let sub=ui.osub||'geral';if(sub==='base')sub='est';if(!CLUB_NAV.some(t=>t[0]===sub))sub='geral';
   const nv=CLUB_NAV.find(t=>t[0]===sub),subs=CW_SUB[sub];let ss=null;
@@ -7266,7 +7305,7 @@ const HELP={
  fx:['Como o time chega aos jogos','Mostra o que soma ou tira força do time em cada partida, além do nível dos jogadores. Cada ponto vale como se o time inteiro fosse 1 ponto melhor.\n\nVocê mexe nisso com: comissão de apoio, centro de treinamento, preço do ingresso (humor da torcida), poucas contratações de uma vez (entrosamento) e rodízio para não cansar o elenco.'],
  meta:['Meta da temporada','A diretoria define a meta pela força do elenco comparada à da liga.\n\nBater a meta: a receita de referência do clube sobe 6%, a torcida se anima e sua reputação sobe.\nTerminar 5 posições abaixo: a receita cai 5%, a torcida cobra e a reputação cai.'],
  comp:['Competições da temporada','Todos os torneios que o clube disputa agora e a situação em cada um. Copas e continentais pagam premiação por fase; a liga paga pela posição final.'],
- stf:['Comissão de apoio','Cada profissional vai do nível 1 ao 5. Os clubes da IA têm uma comissão do tamanho do prestígio deles; ter profissionais acima disso dá vantagem nos jogos.\n\nAuxiliar, analista, treinador de goleiros e psicólogo mexem no jogo. Preparador físico e nutricionista reduzem cansaço e lesões. O médico encurta as lesões.'],
+ stf:['Comissão de apoio','Cada profissional vai do nível 1 ao 5. Os clubes da IA têm uma comissão do tamanho do prestígio deles; ter profissionais acima disso dá vantagem nos jogos. Eles também têm química: técnico novo traz o auxiliar de confiança, mas o resto da comissão pode não combinar com ele, e a diretoria vai ajustando com o tempo.\n\nAuxiliar, analista, treinador de goleiros e psicólogo mexem no jogo. Preparador físico e nutricionista reduzem cansaço e lesões. O médico encurta as lesões.\n\nQuímica: auxiliar, analista, preparador físico e treinador de goleiros têm estilo de jogo. Se combina com o do técnico, o time rende mais em todo jogo; estilos opostos (ofensivo e retranca, posse e contra-ataque, pressão alta e retranca) tiram rendimento. Ao trocar de técnico, a química muda junto: os candidatos mostram com quantos da comissão combinam.'],
  spn:['Patrocínios','O valor das propostas segue o tamanho e o momento do clube: prestígio (força do elenco e títulos recentes), divisão, posição na tabela e humor da torcida. Clube que cresce e ganha títulos recebe propostas cada vez maiores. Na zona de rebaixamento as propostas caem 40%.\n\nRebaixado: os contratos em andamento cortam pela metade as parcelas que faltam, e as novas propostas passam a ser de Série B.\n\nCada cota é um contrato separado, com o valor total já definido.\n\nÀ vista: o dinheiro todo entra na assinatura, com desconto.\nEm 2 parcelas: metade na assinatura e metade no meio do contrato.\nMensal: parcelas a cada 4 semanas, contrato mais longo e bônus a cada título.\n\nO valor sobe com o prestígio do clube e o humor da torcida. Assinar gasta 1 ação.'],
  spm:['Patrocinador master','É a marca no peito da camisa e a cota que mais paga. Clube grande atrai marca global. O dinheiro entra no caixa do clube.'],
  sp_uni:['Material esportivo','A fornecedora do uniforme. Paga menos que o master, mas faz a loja vender 10% a mais enquanto o contrato durar.'],
