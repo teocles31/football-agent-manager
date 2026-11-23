@@ -4840,6 +4840,8 @@ function spForm(c){const L=curLeague(c.lg);if(!L||!L.tab||!L.tab[c.id])return{f:
   if(j<6)return{f:1,t:''};if(dn&&pos>=n-dn)return{f:.6,t:'zona de rebaixamento: -40%'};if(pos>=n/2)return{f:.85,t:'metade de baixo da tabela: -15%'};if(pos<4)return{f:1.1,t:'entre os 4 primeiros: +10%'};return{f:1,t:''};}
 function spYear(c){const top=SP_TOP[LG[c.lg].id]||10e6,d=prest(c)-spRef(c);return Math.max(3e5,top*(d<0?Math.exp(.34*d):Math.exp(.1*d))*spBrand(c)*spForm(c).f);}
 /* cláusula de rebaixamento: as parcelas que faltam de todo patrocínio caem pela metade */
+/* proposta sem valor total (formato antigo, semanal) é descartada e refeita */
+function spFix(o){const bad=L=>!L||!L.length||L.some(x=>!(x&&x.tot>0));if(o.spmOff&&bad(o.spmOff))o.spmOff=null;if(o.spOffs)for(const k in o.spOffs)if(o.spOffs[k]&&bad(o.spOffs[k]))o.spOffs[k]=null;}
 function spRelCut(c){const o=ownOf(c);if(!o)return;let cut=0;[o.spm].concat(SPK.map(d=>o.sps&&o.sps[d[0]])).forEach(x=>{if(!x||x.until<=G.d)return;
   if(x.pay)x.pay.forEach(p=>{if(!p.ok){const v=Math.round(p.v/2);cut+=p.v-v;p.v=v;}});else if(x.w){cut+=Math.round(x.w/2)*Math.max(0,Math.round((x.until-G.d)/7));x.w=Math.round(x.w/2);}x.tot=x.pay?x.pay.reduce((t,p)=>t+p.v,0):x.tot;});
   o.spmOff=null;o.spOffs=null;if(cut>0)news('Cláusula de rebaixamento: os patrocinadores do '+c.n+' reduziram pela metade o que ainda faltava pagar ('+fmt(cut)+' a menos).','clube');}
@@ -4938,7 +4940,7 @@ function ownFinV(o,c,fin,part){const ri=[['Bilheteria'+(fin.homes?' ('+fin.homes
    '<span class="lbl">Plano de sócio-torcedor</span><div class="seg sm">'+PLAN.map((p,i)=>'<button data-a="oplan" data-v="'+i+'" aria-pressed="'+(o.plan===i)+'">'+p[0]+'</button>').join('')+'</div>'+
    '<p class="small muted"><b>'+o.mem.toLocaleString('pt-BR')+' sócios</b>. O número sobe com o humor da torcida e com o estádio. Plano popular atrai mais sócios pagando menos; premium o contrário.</p></section>';
   return h;}
-function ownSpV(o,c){const act=[o.spm&&o.spm.until>G.d?o.spm:null].concat(SPK.map(d=>spOn(o,d[0]))),n=act.filter(Boolean).length,
+function ownSpV(o,c){spFix(o);const act=[o.spm&&o.spm.until>G.d?o.spm:null].concat(SPK.map(d=>spOn(o,d[0]))),n=act.filter(Boolean).length,
     tot=act.reduce((t,x)=>t+(x?(x.tot||Math.round((x.w||0)*(x.wk||52))):0),0),left=act.reduce((t,x)=>t+(x?(x.pay?spLeft(x):Math.max(0,Math.round((x.until-G.d)/7))*(x.w||0)):0),0);
   let h='<div class="kpis tint">'+[['Contratos ativos',fmt(tot),'valor total somado'],['A receber',fmt(left),'ainda vai entrar'],['Cotas fechadas',n+' de '+(SPK.length+1),n<SPK.length+1?'há espaço na camisa':'tudo vendido'],['Força da marca','prestígio '+prest(c),[c.gl?'títulos recentes: +'+Math.round((spBrand(c)-1)*100)+'%':'',spForm(c).t].filter(Boolean).join(' · ')||'sem títulos nem momento especial']].map(k=>'<div class="kpi"><span>'+k[0]+'</span><b>'+k[1]+'</b><small>'+k[2]+'</small></div>').join('')+'</div>';
   const offL=(L,act)=>'<div class="list">'+L.map((x,i)=>'<div class="sp-o"><div class="grow"><b>'+esc(dispB(x.b))+'</b> <span class="chip">'+x.k+'</span><div class="sp-t">'+fmt(x.tot)+' <small>em '+durTxt(x.wk/52*12)+'</small></div><div class="small muted">'+spPlan(x)+(x.bon?' · bônus de '+fmt(x.bon)+' por título':'')+'</div></div><button class="btn pri sm" '+act(i)+'>Assinar</button></div>').join('')+'</div>';
@@ -4987,10 +4989,10 @@ const OWNA={
   oss(d){(ui.oss=ui.oss||{})[d.k]=d.v;render();window.scrollTo(0,0);},
   oprice(d){const o=G.own;if(!o)return;o.price=+d.v;save();render();},
   oplan(d){const o=G.own;if(!o)return;o.plan=+d.v;save();render();},
-  ospm(d){const o=G.own,c=ownC(),x=o&&o.spmOff&&o.spmOff[+d.i];if(!x)return;if(!useAP())return;const sg=spSign(x,c);o.spm=sg.y;o.spmOff=null;news('A '+dispB(x.b)+' é o novo patrocinador master do '+c.n+': '+fmt(x.tot)+' em '+durTxt(x.wk/52*12)+' ('+x.k.toLowerCase()+').','clube');
+  ospm(d){const o=G.own,c=ownC(),x=o&&o.spmOff&&o.spmOff[+d.i];if(!x||!(x.tot>0)){if(o){o.spmOff=null;render();}return;}if(!useAP())return;const sg=spSign(x,c);o.spm=sg.y;o.spmOff=null;news('A '+dispB(x.b)+' é o novo patrocinador master do '+c.n+': '+fmt(x.tot)+' em '+durTxt(x.wk/52*12)+' ('+x.k.toLowerCase()+').','clube');
     pop({k:'good',ic:'deal',wait:1200,wt:'Assinando com a '+dispB(x.b)+'…',ti:'Patrocínio fechado',tx:'A marca da '+dispB(x.b)+' vai estampar a camisa do '+c.n+'. Contrato de '+fmt(x.tot)+'.',ch:sg.now?[['+'+fmt(sg.now)+' no caixa agora','good']]:[['1ª parcela em 4 semanas','warn']]});save();render();},
   ospmnew(){const o=G.own;if(!o||(o.spmCd||0)>G.d)return;if(!useAP())return;spmOffers();save();render();},
-  osp(d){const o=G.own,c=ownC(),k=d.k,x=o&&o.spOffs&&o.spOffs[k]&&o.spOffs[k][+d.i],dd=SPK.find(z=>z[0]===k);if(!x||!dd)return;if(!useAP())return;const sg=spSign(x,c);(o.sps=o.sps||{})[k]=sg.y;o.spOffs[k]=null;
+  osp(d){const o=G.own,c=ownC(),k=d.k,x=o&&o.spOffs&&o.spOffs[k]&&o.spOffs[k][+d.i],dd=SPK.find(z=>z[0]===k);if(!x||!dd)return;if(!(x.tot>0)){o.spOffs[k]=null;render();return;}if(!useAP())return;const sg=spSign(x,c);(o.sps=o.sps||{})[k]=sg.y;o.spOffs[k]=null;
     news('A '+dispB(x.b)+' fechou o patrocínio de '+dd[1].toLowerCase()+' do '+c.n+': '+fmt(x.tot)+' em '+durTxt(x.wk/52*12)+' ('+x.k.toLowerCase()+').','clube');pop({k:'good',ic:'deal',wait:1200,wt:'Assinando com a '+dispB(x.b)+'…',ti:'Patrocínio fechado',tx:dd[1]+': '+dispB(x.b)+'. Contrato de '+fmt(x.tot)+'.',ch:sg.now?[['+'+fmt(sg.now)+' no caixa agora','good']]:[['1ª parcela em 4 semanas','warn']]});save();render();},
   ospnew(d){const o=G.own,k=d.k;if(!o||(o.spCd&&o.spCd[k]||0)>G.d)return;if(!useAP())return;spOffers(k);save();render();},
   oup(d){const o=G.own,c=ownC(),k=d.k,mx=k==='ct'?4:5,l=o[k];if(l>=mx)return;const cost=ownUpCost(k,l);if(c.bud<cost){toast('O caixa do clube não cobre a obra. Faça um aporte.');return;}if(!useAP())return;
