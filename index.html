@@ -2434,7 +2434,7 @@ function value(p){let v=eurVal(p.ovr)*6;const a=p.age;
   if(a<=24)v*=1+clamp(p.pot-p.ovr,0,25)/40;
   if(p.club!=null){const ml=monthsLeft(p);if(ml<12)v*=.45+ml/22;}
   v*=1+(p.fame||0)/500;return nice(v);}
-function alignCE(mi,reg){const y=Math.floor(mi/12);return reg==='eu'?(mi%12<=5?y*12+5:(y+1)*12+5):y*12+11;}
+function alignCE(mi,reg){const y=Math.floor(mi/12);if(G&&G.uni)reg='sa';return reg==='eu'?(mi%12<=5?y*12+5:(y+1)*12+5):y*12+11;}
 const contractEnd=(c,years)=>alignCE(curMonth()+years*12-1,regOf(c));
 
 /* ================= GERAÇÃO DE JOGADORES ================= */
@@ -5296,6 +5296,8 @@ function mgrSAInit(top,cdb,lib){delete G.comps[cdb.id];delete G.comps[lib.id];
   for(const li of RLG().filter(i=>LG[i].reg==='sa'&&!LG[i].top)){const cup=mkCupX(li,2026);if(cup)G.comps[cup.id]=cup;}
   const xs=qStr(7,30),lq=fillTo(top(0,6).concat(top(LGI('arg'),6),top(LGI('uru'),3),top(LGI('col'),4),top(LGI('ecu'),3),xs.slice(0,9)),32,xs.concat(top(LGI('arg'),12),top(0,20)));
   const lb=mkLIB(2026,lq,false);G.comps[lb.id]=lb;mgrShiftSA(2026);G.uni=1;
+  /* contratos e empréstimos acabam em dezembro, junto com a temporada */
+  allP().forEach(p=>{if(p.ce!=null&&p.ce%12!==11)p.ce=Math.floor(p.ce/12)*12+11;if(p.loan&&p.loan.end!=null&&p.loan.end%12!==11)p.loan.end=Math.floor(p.loan.end/12)*12+11;});
   let d=dayOf(2026,1,12);while(ymd(d).w!==1)d--;G.d=d;G.clubs.forEach(c=>{if(c.coach)c.coach.since=G.d;});}
 /* fim de temporada no calendário único: um resumão do futebol mundial */
 function mgrSeasonEnd(y){const lbl=String(y),n0=G.summ.length;seasonSummary('eu',lbl);seasonSummary('sa',lbl);const P=G.summ.splice(n0);if(!P.length)return;const s=P[0];
@@ -6477,7 +6479,7 @@ const W2A={
 /* ================= CLUBE PRÓPRIO: PEDIR JOGADOR EMPRESTADO ================= */
 function loanable0(p,c){const src=club(p);return!!(src&&src.id!==c.id&&!p.loan&&p.ag!==0&&!isOwn(src)&&(!p.movedW||G.d-p.movedW>120)&&squad(src.id).length>20&&(p.age<=23||p.ovr<starterOvr(src.id,p.pos)));}
 const loanFee=p=>nice(Math.max(500,value(p)*.06));
-const loanEnd=c=>regOf(c)==='eu'?alignCE(curMonth(),'eu'):Math.floor(curMonth()/12)*12+11;
+const loanEnd=c=>regOf(c)==='eu'&&!(G&&G.uni)?alignCE(curMonth(),'eu'):Math.floor(curMonth()/12)*12+11;
 function ownLoanIn(p){const c=ownC(),src=club(p);if(!c||!src||!loanable(p,c))return;if(!winOpen(regOf(c))){toast('A janela de '+LG[c.lg].cn+' está fechada.');return;}
   const fee=loanFee(p);if(c.bud<fee){toast('O caixa do clube não cobre a taxa de '+fmt(fee)+'.');return;}if((p.clubCool||0)>G.d){toast('O '+src.n+' já recusou. Tente em algumas semanas.');return;}if(!useAP())return;
   const starts=p.ovr>=starterOvr(c.id,p.pos)-2,ch=clamp(.55+(p.age<=21?.15:0)+(starts?.15:0)-(prest(src)<prest(c)?.3:0)-(prest(src)<prest(c)?.2:0),.1,.92)*(regOf(src)!==regOf(c)?.35:1);
