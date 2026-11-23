@@ -677,6 +677,28 @@ html,body{touch-action:manipulation}
 .pt-rl i.cap{background:#f4c61f;color:#2b2200;border-color:#2b2200}.pt-rl i svg{width:9px;height:9px}
 .rl-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.rl-g button{display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 2px;font-size:11.5px;line-height:1.15}
 .rl-g button .rli{width:24px;height:24px;border-radius:50%;background:#102a22;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px}.rl-g button .rli.cap{background:#f4c61f;color:#2b2200}.rl-g button .rli svg{width:15px;height:15px}
+.lv-subs{border:2px solid var(--gold);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:10px;background:color-mix(in srgb,var(--gold) 6%,var(--surface))}
+.lv-sh{display:flex;align-items:center;justify-content:space-between}.lv-sh b{font-family:var(--f-d);font-size:19px;text-transform:uppercase;letter-spacing:.04em}
+.lv-cnt{font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--surface2)}
+.lv-tip{margin:0;font-size:13.5px;opacity:.8}
+.lv-out,.lv-bp{display:flex;align-items:center;gap:9px;padding:9px 10px;border-radius:12px;min-width:0}
+.lv-out{background:color-mix(in srgb,#d64545 12%,var(--surface));border:1px solid color-mix(in srgb,#d64545 40%,transparent)}
+.lv-out .grow,.lv-bp .grow{min-width:0;display:flex;flex-direction:column;gap:2px}.lv-out b,.lv-bp b{font-size:14.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lv-out small,.lv-bp small{font-size:12px;opacity:.85;display:flex;align-items:center;gap:5px;flex-wrap:wrap}.lv-out .chip,.lv-bp .chip{font-size:10px;padding:1px 6px}
+.lv-tag{flex:none;font-size:10.5px;font-weight:800;letter-spacing:.08em;padding:3px 7px;border-radius:6px;color:#fff}.lv-tag.out{background:#d64545}.lv-tag.in{background:#2e8f4f}
+.lv-fn{display:flex;align-items:center;gap:5px;flex-wrap:wrap}.lv-fn>span{font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.7;margin-right:2px}
+.lv-fb{display:flex;align-items:center;gap:4px;padding:4px 8px 4px 4px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:11.5px;font-weight:700;cursor:pointer}
+.lv-fb i{display:flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:#102a22;color:#fff;font-style:normal;font-size:11px;font-weight:800}.lv-fb i svg{width:12px;height:12px}.lv-fb i.cap{background:#f4c61f;color:#2b2200}
+.lv-fb.on{border-color:var(--gold);background:color-mix(in srgb,var(--gold) 25%,var(--surface))}
+.lv-in-h{display:flex;align-items:center;gap:8px;margin-top:2px}
+.lv-bn{display:flex;flex-direction:column;gap:6px}
+.lv-bp{width:100%;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;text-align:left;cursor:pointer}
+.lv-bp:active{transform:scale(.99)}.lv-go2{flex:none;background:var(--gold);color:#2b2200;font-weight:800;font-size:13px;padding:7px 12px;border-radius:9px}
+.lv-more{background:none;border:0;color:var(--teal);font:inherit;font-size:13px;font-weight:700;text-decoration:underline;cursor:pointer;align-self:center;padding:4px}
+.lv-tc{border:1px solid var(--line);border-radius:12px;padding:4px 12px 10px;display:flex;flex-direction:column;gap:6px}
+.lv-tch{display:flex;align-items:center;gap:8px;background:none;border:0;color:inherit;font:inherit;text-align:left;padding:8px 0;cursor:pointer;width:100%}.lv-tch .grow{display:flex;flex-direction:column}.lv-tch b{font-size:14px}.lv-tch small{font-size:12px;opacity:.7}
+.lv-chips{display:flex;flex-wrap:wrap;gap:5px}.lv-chips button{padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:12px;font-weight:700;cursor:pointer}
+.lv-chips button[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:#2b2200}
 .sheet.live{padding-top:12px;gap:9px;animation:none!important}
 .lv-tk{height:62px;overflow:hidden;font-size:12.5px;line-height:1.35;border:1px solid var(--line);border-radius:8px;padding:5px 8px;background:var(--bg)}
 .lv-tk div{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:.7}.lv-tk div:first-child{font-weight:700;opacity:1}.lv-tk b{display:inline-block;min-width:26px}
@@ -5538,12 +5560,26 @@ function mLive(){const L=G.live,H=G.clubs[L.sd[0].c],A=G.clubs[L.sd[1].c],mi=lvM
   if(ui.lvOpp)h+='<p class="small muted lv-hint">'+esc(G.clubs[O.c].n)+' joga no estilo <b>'+esc(STYLES[O.st][0].toLowerCase())+'</b>: '+esc(STYLES[O.st][1])+'. Substituições: '+O.subs+'/5.</p>';
   else if(end)h+='';
   else if(!L.pause)h+='<p class="small muted lv-hint">Pause para mudar o estilo, o esquema ou fazer substituições.</p>';
-  else{const sel=ui.lvOut&&S.on.some(y=>y.id===ui.lvOut)?ui.lvOut:null,xo=sel?S.on.find(y=>y.id===sel):null;
-    h+='<div class="lv-tac"><div class="card-h"><h3>Substituições · '+S.subs+'/5</h3></div>'+
-     (sel?'<span class="lbl">Funções de '+esc(shortN(G.P[sel].name))+'</span>'+rlBtns(G.own,sel):'')+(S.subs>=5?'<p class="small muted">Você já fez as 5 substituições.</p>':sel?'<p class="small">Sai <b>'+esc(G.P[sel].name)+'</b> ('+xo.r+'). Quem entra?</p>':'<p class="small muted">Toque num jogador no campo para trocar ou dar uma função (capitão, pênalti, falta, escanteio).</p>')+
-     '<div class="list">'+S.bench.filter(id=>!xo||ui.lvAll||(G.P[id]&&G.P[id].pos===xo.r)).map(id=>{const p=G.P[id];if(!p)return'';const pp=xo?posPen(p,xo.r):0;return'<div class="lv-pl"><span class="chip pchip" style="--pc:'+PC[p.pos]+'">'+p.pos+'</span><span class="grow"><b>'+esc(shortN(p.name))+'</b> '+(p.ovr-pp)+(pp?' <small class="nok">fora da posição</small>':'')+'</span>'+(sel&&S.subs<5?'<button class="btn sm pri" data-a="lvin" data-p="'+id+'">Entrar</button>':'')+'</div>';}).join('')+(xo&&!ui.lvAll&&!S.bench.some(id=>G.P[id]&&G.P[id].pos===xo.r)?'<p class="small muted">Nenhum '+POSN[xo.r]+' no banco.</p>':'')+'</div>'+(xo&&S.bench.some(id=>G.P[id]&&G.P[id].pos!==xo.r)?'<div class="acts"><button class="btn sm" data-a="lvall">'+(ui.lvAll?'Só '+POSPL[xo.r]:'Ver outras posições')+'</button></div>':'')+
-     '<span class="lbl">Estilo de jogo</span><div class="seg lv-sts">'+Object.keys(STYLES).map(x=>'<button data-a="lvst" data-v="'+x+'" aria-pressed="'+(S.st===x)+'">'+esc(STYLES[x][0])+'</button>').join('')+'</div><span class="small muted">'+esc(STYLES[S.st][1])+'.</span>'+
-     '<span class="lbl">Esquema</span><div class="seg mg-fm">'+FORM_K.map(x=>'<button data-a="lvfm" data-v="'+x+'" aria-pressed="'+((S.fm||'442')===x)+'">'+FORMS[x][0]+'</button>').join('')+'</div><span class="small muted">Valem só para este jogo.</span></div>';}
+  else{const sel=ui.lvOut&&S.on.some(y=>y.id===ui.lvOut)?ui.lvOut:null,xo=sel?S.on.find(y=>y.id===sel):null,q=sel?G.P[sel]:null;
+    const enb=id=>{const v=Math.round(S.en[id]==null?100:S.en[id]);return'<span class="lv-en"><i class="'+(v<55?'lo':'')+'" style="width:'+v+'%"></i></span>';};
+    /* 1) substituição: o principal */
+    let sb='<section class="lv-subs"><div class="lv-sh"><b>Substituição</b><span class="lv-cnt">'+S.subs+'/5 trocas</span></div>';
+    if(!sel)sb+='<p class="lv-tip">👆 Toque num jogador no campo para tirar ou dar uma função.</p>';
+    else{const pp0=posPen(q,xo.r);
+      sb+='<div class="lv-out"><span class="lv-tag out">SAI</span>'+avatar(q,36)+'<div class="grow"><b>'+esc(q.name)+'</b><small><span class="chip pchip" style="--pc:'+PC[q.pos]+'">'+xo.r+'</span> nível '+(q.ovr-pp0)+' · nota '+lvRt(S,q.id,L.sc[mi],L.sc[1-mi]).toFixed(1)+'</small></div>'+enb(q.id)+'<button class="mn-x" data-a="lvout" data-p="'+sel+'" aria-label="Cancelar">✕</button></div>'+
+       '<div class="lv-fn"><span>Funções</span>'+RL.map(x=>'<button class="lv-fb'+(G.own[x[0]]===sel?' on':'')+'" data-a="mgrole" data-k="'+x[0]+'" data-p="'+sel+'" title="'+x[1]+'"><i class="'+(x[0]==='cap'?'cap':'')+'">'+x[2]+'</i>'+x[1]+'</button>').join('')+'</div>';
+      if(S.subs>=5)sb+='<p class="lv-tip">Você já fez as 5 substituições.</p>';
+      else{const B=S.bench.filter(id=>ui.lvAll||(G.P[id]&&G.P[id].pos===xo.r));
+        sb+='<div class="lv-in-h"><span class="lv-tag in">ENTRA</span><span class="small muted">'+(ui.lvAll?'todos do banco':POSPL[xo.r]+' do banco')+'</span></div><div class="lv-bn">'+
+         (B.map(id=>{const p=G.P[id];if(!p)return'';const pp=posPen(p,xo.r);return'<button class="lv-bp" data-a="lvin" data-p="'+id+'">'+avatar(p,34)+'<span class="grow"><b>'+esc(p.name)+'</b><small><span class="chip pchip" style="--pc:'+PC[p.pos]+'">'+p.pos+'</span> nível '+(p.ovr-pp)+(pp?' · <span class="nok">fora da posição</span>':'')+'</small></span>'+enb(id)+'<span class="lv-go2">Entrar</span></button>';}).join('')||'<p class="lv-tip">Nenhum '+POSN[xo.r]+' no banco.</p>')+'</div>'+
+         (S.bench.some(id=>G.P[id]&&G.P[id].pos!==xo.r)?'<button class="lv-more" data-a="lvall">'+(ui.lvAll?'Mostrar só '+POSPL[xo.r]:'Ver outras posições (improvisar)')+'</button>':'');}}
+    sb+='</section>';
+    /* 2) tática: secundária e recolhida */
+    const fo2=(ui.fold||{}).lvtac,fm=S.fm||'442';
+    sb+='<section class="lv-tc"><button class="lv-tch" data-a="fold" data-p="lvtac" aria-expanded="'+!!fo2+'"><span class="grow"><b>Tática</b><small>'+esc(STYLES[S.st][0])+' · '+FORMS[fm][0]+'</small></span>'+chevI(fo2?1:0)+'</button>'+
+     (fo2?'<span class="lbl">Estilo</span><div class="lv-chips">'+Object.keys(STYLES).map(x=>'<button data-a="lvst" data-v="'+x+'" aria-pressed="'+(S.st===x)+'">'+esc(STYLES[x][0])+'</button>').join('')+'</div><span class="small muted">'+esc(STYLES[S.st][1])+'.</span>'+
+      '<span class="lbl">Esquema</span><div class="lv-chips">'+FORM_K.map(x=>'<button data-a="lvfm" data-v="'+x+'" aria-pressed="'+(fm===x)+'">'+FORMS[x][0]+'</button>').join('')+'</div><span class="small muted">Valem só para este jogo.</span>':'')+'</section>';
+    h+=sb;}
   if(end)h+='<div class="lv-foot"><button class="btn pri big" data-a="lvdone">Continuar</button></div>';
   if((L.oth||[]).length)h+='<div class="lv-sec"><div class="card-h"><h3>Rodada · placar ao vivo</h3>'+tglB('fold',fo.lvrod,'rodada','lvrod')+'</div>'+(fo.lvrod?'<div id="lv-rod">'+lvRodH(L)+'</div>':'')+'</div>';
   h+='<div class="lv-sec"><div class="card-h"><h3>Todos os lances</h3>'+tglB('fold',fo.lvall,'todos os lances','lvall')+'</div>'+(fo.lvall?'<div id="lv-all">'+lvAllH(L)+'</div>':'')+'</div>';
