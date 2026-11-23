@@ -2415,7 +2415,7 @@ const fmonth=mi=>MES[((mi%12)+12)%12]+'/'+Math.floor(mi/12);
 const START=dayOf(2026,8,3);
 const cd=(Y,a)=>dayOf(Y+(a[2]||0),a[0],a[1]);
 const inR=(d,rs)=>rs.some(r=>d>=r[0]&&d<=r[1]);
-function winOpen(reg,d){const t=ymd(d==null?G.d:d),v=t.m*100+t.dd;return WIN[G&&G.uni?'sa':reg].some(w=>v>=w[0]*100+w[1]&&v<=w[2]*100+w[3]);}
+function winOpen(reg,d){const t=ymd(d==null?G.d:d),v=t.m*100+t.dd;return WIN[reg].some(w=>v>=w[0]*100+w[1]&&v<=w[2]*100+w[3]);}
 function winNext(reg){const o=winOpen(reg);for(let i=1;i<400;i++){if(winOpen(reg,G.d+i)!==o)return G.d+i;}return null;}
 const anyWin=()=>winOpen('eu')||winOpen('sa');
 
@@ -7787,7 +7787,7 @@ function renderHeader(){
   $('#band').innerHTML=wsw+'<div class="stat"><span>'+fdate(G.d,true)+'</span><b>'+fdate(G.d)+' – '+fdate(G.d+6)+'</b></div>'+
    (inC?'<div class="stat"><span>Posição</span><b>'+(leaguePos(oc.id)?leaguePos(oc.id)+'º':'—')+' <small>'+esc(LG[oc.lg].s||'')+'</small></b></div><div class="stat"><span>Torcida</span><b>'+Math.round(G.own.mood)+'<small>/100</small></b></div>':
    '<div class="stat" id="st-rep"><span>Reputação</span><b>'+Math.floor(G.rep)+' <small>'+rank()+'º</small></b></div>'+
-   '<div class="stat" title="Cotação do euro e do dólar nesta semana"><span>Câmbio</span><b>€ '+f2(fxNow().eur)+' <small>US$ '+f2(fxNow().usd)+'</small></b></div>')+'<div class="wins">'+(G.uni?wchip('sa','da bola'):wchip('eu','Europa')+wchip('sa','Brasil'))+'</div>';
+   '<div class="stat" title="Cotação do euro e do dólar nesta semana"><span>Câmbio</span><b>€ '+f2(fxNow().eur)+' <small>US$ '+f2(fxNow().usd)+'</small></b></div>')+'<div class="wins">'+wchip('eu','Europa')+wchip('sa','Brasil')+'</div>';
   $('#placar').innerHTML=(inC?'<div class="cashp"><span>Clube:</span><b class="'+(oc.bud<0?'neg':'')+'">'+fmtC(oc.bud,oc)+'</b></div>':'<div class="cashp" id="st-money"><span>Caixa:</span><b class="'+(G.money<0?'neg':'')+'">'+fmt(G.money)+'</b></div>')+
    (AP_FREE?'<div class="apw col" title="Ações ilimitadas na fase de testes"><span>Ações</span><b style="font-size:20px;line-height:1">∞</b></div>':'<div class="apw col" title="Ações restantes nesta semana"><span>Ações</span><div class="dots">'+dots+'</div></div>')+
    (ui.evHide&&G.events.length&&!G.wk&&!G.neg&&!G.evRes?'<button class="btn pri big pulse" data-a="evshow">Ver decisão</button>':'<button class="btn pri big'+(G.ap===0&&!bl?' pulse':'')+'" data-a="next"'+(bl?' disabled':'')+'>'+(ui.loading?'Jogando…':nw==='cl'?'Ir para o clube →':nw==='ag'?'Ir para a agência →':G.mgr?'Próximo jogo':G.lw?'Continuar semana':'Avançar semana')+'</button>');
