@@ -2440,11 +2440,15 @@ const leftTxt=p=>durTxt(monthsLeft(p));
 /* ================= DINHEIRO ================= */
 const eurVal=o=>500000*Math.pow(1.2,o-60);
 const wageRef=(o,li)=>2000*Math.pow(1.17,o-60)*6*LG[li].wm;
-function value(p){let v=eurVal(p.ovr)*6;const a=p.age;
-  v*=a<=19?1.5:a<=21?1.35:a<=23?1.2:a<=27?1:a<=29?.8:a<=31?.55:a<=33?.3:.12;
-  if(a<=24)v*=1+clamp(p.pot-p.ovr,0,25)/40;
+/* valor de mercado com parâmetro: acima de 80 cada ponto vale 17% (antes 20%), bônus de jovem e fama limitados,
+   peso da liga (Brasil e América do Sul valem menos que a Europa, como no mercado real) e teto de R$ 1,2 bilhão */
+const VAL_MAX=1.2e9;
+function valLg(p){const c=p.club!=null?G.clubs[p.club]:null;return c?clamp(.65+LG[c.lg].wm*.4,.72,1.05):1;}
+function value(p){const o=p.ovr;let v=500000*6*Math.pow(1.2,Math.min(o,80)-60)*Math.pow(1.17,Math.max(0,o-80));const a=p.age;
+  let y=a<=19?1.5:a<=21?1.35:a<=23?1.2:a<=27?1:a<=29?.8:a<=31?.55:a<=33?.3:.12;
+  if(a<=24)y*=1+clamp(p.pot-p.ovr,0,25)/40;v*=Math.min(y,1.9);
   if(p.club!=null){const ml=monthsLeft(p);if(ml<12)v*=.45+ml/22;}
-  v*=1+(p.fame||0)/500;return nice(v);}
+  v*=(1+Math.min(p.fame||0,100)/800)*valLg(p);return nice(Math.min(v,VAL_MAX));}
 function alignCE(mi,reg){const y=Math.floor(mi/12);if(G&&G.uni)reg='sa';return reg==='eu'?(mi%12<=5?y*12+5:(y+1)*12+5):y*12+11;}
 const contractEnd=(c,years)=>alignCE(curMonth()+years*12-1,regOf(c));
 
@@ -4948,11 +4952,12 @@ const SP_TOP={bra:220e6,bra2:10e6,eng:500e6,eng2:25e6,esp:430e6,esp2:8e6,ita:250
 /* a referência de cada liga fica fixa (o topo no início do jogo): quem cresce passa do teto, quem cai perde valor.
    Abaixo da referência cada ponto pesa ~30%; acima, ~10%. Títulos recentes valorizam a marca em até 40%. */
 function spRef(c){const id=LG[c.lg].id;if(!G.spRef){G.spRef={};LG.forEach((L,li)=>{const cs=clubsOf(li);if(cs.length)G.spRef[L.id]=cs.reduce((m,x)=>Math.max(m,Math.round(teamStr(x.id))+L.pb),0);});}if(G.spRef[id]==null)G.spRef[id]=clubsOf(c.lg).reduce((m,x)=>Math.max(m,Math.round(teamStr(x.id))+LG[x.lg].pb),0);return G.spRef[id];}
-const spBrand=c=>1+.1*(c.gl||0);
+const spBrand=c=>1+.04*(c.gl||0);
 /* momento na liga: quem briga contra o rebaixamento vale bem menos; quem está no topo, um pouco mais */
 function spForm(c){const L=curLeague(c.lg);if(!L||!L.tab||!L.tab[c.id])return{f:1,t:''};const tb=sortedTab(L),n=tb.length,pos=tb.indexOf(c.id),j=L.tab[c.id][0],dn=PROMO[LG[c.lg].id]||0;
   if(j<6)return{f:1,t:''};if(dn&&pos>=n-dn)return{f:.6,t:'zona de rebaixamento: -40%'};if(pos>=n/2)return{f:.85,t:'metade de baixo da tabela: -15%'};if(pos<4)return{f:1.1,t:'entre os 4 primeiros: +10%'};return{f:1,t:''};}
-function spYear(c){const top=SP_TOP[LG[c.lg].id]||10e6,d=prest(c)-spRef(c);return Math.max(3e5,top*(d<0?Math.exp(.34*d):Math.exp(.1*d))*spBrand(c)*spForm(c).f);}
+/* acima do topo da liga cresce pouco e tem teto: no máximo 15% a mais que o maior patrocínio da liga, mais títulos e momento */
+function spYear(c){const top=SP_TOP[LG[c.lg].id]||10e6,d=prest(c)-spRef(c);return Math.max(3e5,top*(d<0?Math.exp(.34*d):Math.min(1.15,Math.exp(.03*d)))*spBrand(c)*spForm(c).f);}
 /* cláusula de rebaixamento: as parcelas que faltam de todo patrocínio caem pela metade */
 /* proposta sem valor total (formato antigo, semanal) é descartada e refeita */
 function spFix(o){const bad=L=>!L||!L.length||L.some(x=>!(x&&x.tot>0));if(o.spmOff&&bad(o.spmOff))o.spmOff=null;if(o.spOffs)for(const k in o.spOffs)if(o.spOffs[k]&&bad(o.spOffs[k]))o.spOffs[k]=null;}
