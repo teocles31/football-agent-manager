@@ -855,7 +855,8 @@ html body .seg:has(>button:nth-of-type(12):last-of-type){grid-template-columns:r
 html body .ssh-tabs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,70px),1fr));gap:6px}
 html body .ssh-tabs button{min-height:32px;border-radius:8px;font-size:12px;font-weight:700;padding:4px}
 /* ===== carreiras salvas ===== */
-.slots .mn{gap:14px}.mn h2{margin:0}
+.slots .pre-c{display:flex;flex-direction:column;gap:6px;border-left:4px solid var(--gold)}
+.mn{gap:14px}.mn h2{margin:0}
 .mn-hero{position:relative;border-radius:14px;padding:16px;background:linear-gradient(135deg,#0f3d2e,#145c43);color:#fff;display:flex;flex-direction:column;gap:12px;overflow:hidden}
 .mn-hero:after{content:'';position:absolute;right:-30px;top:-30px;width:140px;height:140px;border-radius:50%;border:18px solid rgba(255,255,255,.06)}
 .mn-hero .mn-id{display:flex;align-items:center;gap:12px;min-width:0;position:relative;z-index:1}.mn-hero .mn-id .grow{min-width:0}
@@ -2806,6 +2807,7 @@ function develop(){STR={};SC={};allP().forEach(p=>{const mine=p.ag===0,gap=p.pot
 /* ================= CONTRATOS (mensal) ================= */
 function monthly(){const mi=curMonth();gloryUpd();
   allP().forEach(p=>{
+    if(p.pre)preMonth(p,mi);else if(G.own)preAI(p,mi);
     if(p.loan&&(mi>p.loan.end||p.ce<mi))endLoan(p);
     /* garoto da base de clube brasileiro só sai depois da Copinha: o contrato que vence em dezembro é resolvido em fevereiro */
     if(p.club!=null&&p.ce<mi&&!(p.yb&&mi%12===0&&regOf(G.clubs[p.club])==='sa')){const c=club(p);
@@ -6425,7 +6427,7 @@ function otrInfo(p,c){const cur=club(p),free=!cur,fee=free?0:ownFee(p),open=winO
 function otrPage(L,c){const N=20,np=Math.max(1,Math.ceil(L.length/N)),pg=clamp(ui.otrPg||0,0,np-1),S=ui.otrSort||'ovr';
   if(!L.length)return'<div class="card otr-empty"><p class="small muted">Ninguém com esses filtros. Afrouxe a busca.</p></div>';
   const row=p=>{const x=otrInfo(p,c);return'<button class="otr-r" data-a="otract" data-p="'+p.id+'">'+ovrB(p.ovr)+avatar(p,30)+'<span class="otr-m"><b>'+esc(p.name)+'</b><small>'+p.pos+' · '+p.age+' anos · '+(x.cur?esc(x.cur.n):'sem clube')+'</small></span>'+
-    '<span class="otr-p"><b>'+(x.free?'Livre':fmt(x.fee))+'</b><small class="'+(x.ok?'okk':'muted')+'">'+(x.ok?(x.extra?'+30% recém-chegado':'pot. '+potTxt(p)):x.why)+'</small></span><span class="el-go">›</span></button>';};
+    '<span class="otr-p"><b>'+(x.free?'Livre':fmt(x.fee))+'</b><small class="'+(x.ok||preOk(p,c)?'okk':'muted')+'">'+(preOk(p,c)?'pré-contrato':x.ok?(x.extra?'+30% recém-chegado':'pot. '+potTxt(p)):x.why)+'</small></span><span class="el-go">›</span></button>';};
   const nav='<div class="otr-nav"><button class="btn sm" data-a="otrpg" data-d="-1"'+(pg?'':' disabled')+' aria-label="Página anterior">‹</button><span class="small">Página <b>'+(pg+1)+'</b> de '+np+'</span><button class="btn sm" data-a="otrpg" data-d="1"'+(pg<np-1?'':' disabled')+' aria-label="Próxima página">›</button></div>';
   return'<div class="otr-top"><p class="small muted otr-cnt"><b>'+L.length+'</b> atletas encontrados</p><div class="seg sm otr-srt">'+[['ovr','Nível'],['pot','Potencial'],['fee','Preço'],['age','Idade']].map(o=>'<button data-a="otrsort" data-v="'+o[0]+'" aria-pressed="'+(S===o[0])+'">'+o[1]+'</button>').join('')+'</div></div>'+
    '<div class="card otr-list">'+L.slice(pg*N,pg*N+N).map(row).join('')+'</div>'+(np>1?nav:'');}
@@ -6433,6 +6435,7 @@ function mOtrAct(){const p=G.P[ui.modal.pid],c=ownC();if(!p||!c){ui.modal=null;r
   return'<div class="sheet"><span class="eyebrow">Mercado · '+esc(c.n)+'</span><div class="neg-h">'+avatar(p,52)+'<div class="grow"><h2>'+esc(p.name)+'</h2><div class="small muted">'+POSN[p.pos]+' · '+p.age+' anos · '+(natName(p)?flagS(natName(p))+esc(natName(p)):'')+'</div></div></div>'+
    '<div class="kpis">'+[['Nível',p.ovr],['Potencial',potTxt(p)],['Clube atual',x.cur?esc(x.cur.n):'sem clube'],['Preço',x.free?'Livre':fmt(x.fee)]].map(k=>'<div class="kpi"><span>'+k[0]+'</span><b class="small-b">'+k[1]+'</b></div>').join('')+'</div>'+
    (x.extra?'<p class="small warnk">Chegou ao clube atual há pouco: o preço tem 30% a mais.</p>':'')+(!x.ok&&x.why?'<p class="small nok">'+esc(x.why)+'.</p>':'')+
+   (preOk(p,c)?(()=>{const it=preInt(p,c);return'<div class="card pre-c"><div class="mg-row"><b class="grow">Pré-contrato</b><span class="chip '+it.lbl[1]+'">Interesse '+it.lbl[0].toLowerCase()+'</span></div><p class="small">Contrato com o '+esc(x.cur.n)+' acaba em <b>'+fmonth(p.ce)+'</b>. Ele pode assinar agora e chegar depois, <b>sem taxa</b>.'+(it.ok?(it.pro.length?' Pesa a favor: '+esc(it.pro.join(', '))+'.':''):' Hoje ele '+esc(it.why)+'.')+'</p><div class="acts"><button class="btn pri" data-a="ownpre" data-p="'+p.id+'"'+((p.clubCool||0)>G.d?' disabled':'')+'>'+((p.clubCool||0)>G.d?'Recusou há pouco':'Propor pré-contrato')+'</button></div></div>';})():p.pre&&p.pre.c===c.id?'<p class="small okk">Pré-contrato assinado: chega em '+fmonth(p.ce+1)+'.</p>':'')+
    '<div class="acts"><button class="btn pri" data-a="'+(x.free?'ownfree':'hireclub')+'" data-p="'+p.id+'"'+(x.ok?'':' disabled')+'>Contratar</button>'+(x.lo?'<button class="btn" data-a="ownloan" data-p="'+p.id+'"'+(x.lok?'':' disabled')+'>Emprestar <small>'+fmt(loanFee(p))+'</small></button>':'')+'</div>'+
    '<div class="acts"><button class="btn" data-a="player" data-p="'+p.id+'">Ver perfil completo</button><button class="btn" data-a="close">Fechar</button></div></div>';}
 function otrCar(rows){if(!rows.length)return'<div class="card otr-empty"><p class="small muted">Ninguém com esses filtros. Afrouxe a busca.</p></div>';const pg=[];for(let i=0;i<rows.length;i+=5)pg.push(rows.slice(i,i+5));
@@ -6442,6 +6445,8 @@ function ownTr(o,c,part){const f=otrF(),open=winOpen(regOf(c)),sc=Math.round(tea
   let h='<section><div class="sec-h"><h2>Transferências '+hq('busca')+'</h2><p>Pesquise reforços, compre e venda. Janela de '+esc(LG[c.lg].cn)+': <b>'+(open?'aberta até '+fdate(winNext(regOf(c))-1):'fechada, abre em '+fdate(winNext(regOf(c)),true))+'</b>. Caixa do clube: <b>'+fmt(c.bud)+'</b>. Nível do time: '+sc+'.</p></div>'+
    otrFilters(c,f)+
    '<button class="btn pri big otr-go" data-a="otrrun">Pesquisar atletas</button>'+(!ui.otrRun?'<div class="card otr-empty"><p class="small muted">Escolha os filtros acima e toque em <b>Pesquisar atletas</b>.</p></div>':otrPage(list,c))+'</section>';
+  {const inc=Object.values(G.P).filter(p=>p.pre&&p.pre.c===c.id),out=squad(c.id).filter(p=>p.pre);
+    if(inc.length||out.length)h=h.replace('<section><div class="sec-h"><h2>Transferências','<section><div class="sec-h"><h2>Pré-contratos</h2><p>Chegam ou saem sem taxa, no fim do contrato atual.</p></div><div class="card list">'+inc.map(p=>'<div>'+avatar(p,30)+ovrB(p.ovr)+'<div class="grow"><b>'+plLink(p)+'</b> <span class="chip pchip" style="--pc:'+PC[p.pos]+'">'+p.pos+'</span><div class="small okk">chega em '+fmonth(p.ce+1)+' · do '+esc(club(p).n)+'</div></div></div>').join('')+out.map(p=>'<div>'+avatar(p,30)+ovrB(p.ovr)+'<div class="grow"><b>'+plLink(p)+'</b> <span class="chip pchip" style="--pc:'+PC[p.pos]+'">'+p.pos+'</span><div class="small nok">sai em '+fmonth(p.ce+1)+' · vai para o '+esc((G.clubs[p.pre.c]||{}).n||'')+'</div></div></div>').join('')+'</div></section><section><div class="sec-h"><h2>Transferências');}
   if(part==='busca')return h;if(part==='venda')return saleH(c,open);
   if(part==='emp'){const L=Object.keys(o.lend||{}).map(id=>G.P[id]).filter(p=>p&&p.club===c.id),out=Object.values(G.P).filter(p=>p.loan&&p.loan.from===c.id);
     return'<section><div class="sec-h"><h2>Disponíveis para empréstimo</h2><p>Coloque jogadores na lista pelo Elenco (toque no jogador → Emprestar). Clubes interessados levam quando a janela abrir.</p></div><div class="card list">'+
@@ -6580,6 +6585,35 @@ function loanable(p,c){const src=club(p);if(!src||src.id===c.id||p.loan||p.ag===
 /* ---------- contratação com negociação de contrato ---------- */
 function ctrAsk(p,c,free){const src=club(p),W=nice(wageRef(p.ovr,c.lg)*rnd(1,1.18)*(src&&prest(src)>prest(c)?1.1:1)*(p.age<=19?.7:1));
   const y=p.age<=24?4:p.age<=29?3:p.age<=32?2:1;return{w:Math.max(300,W),l:nice(Math.max(300,W)*(free?8:4)),y};}
+/* ================= PRÉ-CONTRATO =================
+   Regra da FIFA (RSTP, art. 18.3) e da CBF: nos últimos 6 meses de contrato o jogador pode assinar com outro clube,
+   sem taxa de transferência. Ele termina o contrato atual e só depois chega. Se for vendido antes, o pré-contrato cai.
+   O jogador só aceita se o clube for atraente: tamanho do clube, liga, espaço no time, idade e salário. */
+const preOk=(p,c)=>{const cur=club(p);return!!(c&&cur&&cur.id!==c.id&&!isOwn(cur)&&!isClient(p)&&!p.loan&&!p.pre&&p.ce>=curMonth()&&monthsLeft(p)<=6);};
+function preInt(p,c){const cur=club(p),dp=prest(c)-prest(cur),dl=LG[c.lg].rep-LG[cur.lg].rep,st=p.ovr>=starterOvr(c.id,p.pos)-1,ys=p.age>=31;
+  let sc=.5+dp*.06+dl*.05+(st?.15:-.25)+(ys?.15:p.age<=23?-.05:0);sc=clamp(sc,0,1);
+  const why=dp<=-4?'acha o '+c.n+' pequeno para a carreira dele':dl<=-2?'quer seguir numa liga mais forte':!st?'não teria espaço como titular no '+c.n:'prefere esperar propostas melhores';
+  const pro=[dp>=3?'clube maior que o atual':dp>=-1?'clube do mesmo tamanho':null,dl>=1?'liga mais forte':null,st?'seria titular':null,ys?'quer garantir os próximos anos':null].filter(Boolean);
+  return{sc,ok:sc>=.45,why,pro,lbl:sc>=.7?['Alto','good']:sc>=.45?['Médio','warn']:['Baixo','bad']};}
+function preStart(p){const c=ownC();if(!preOk(p,c)){toast('Pré-contrato só nos últimos 6 meses do contrato atual.');return;}if((p.clubCool||0)>G.d){toast(p.name+' já recusou. Tente em algumas semanas.');return;}
+  if(!useAP())return;const it=preInt(p,c),cur=club(p);
+  if(!it.ok){p.clubCool=G.d+42;news(p.name+' recusou o pré-contrato do '+c.n+': '+it.why+'.','clube');pop({k:'bad',ic:'no',wait:1100,wt:'Conversando com '+p.name+'…',ti:'Recusou o pré-contrato',tx:p.name+' '+it.why+'.'});save();render();return;}
+  const a=ctrAsk(p,c,true),dp=prest(cur)-prest(c);if(dp>0){a.w=nice(a.w*(1+dp*.03));a.l=nice(a.l*(1+dp*.03));}
+  ui.stack=[];ui.modal={type:'ctr',pid:p.id,fee:0,kind:'pre',ask:a,off:{w:nice(a.w*.9),l:nice(a.l*.8),y:a.y},pat:3,log:[p.name+' topou conversar sobre um pré-contrato'+(it.pro.length?' ('+it.pro.join(', ')+')':'')+'. Ele termina o contrato com o '+cur.n+' em '+fmonth(p.ce)+' e chega depois, sem taxa.']};save();render();}
+/* clubes da IA também assinam pré-contrato com jogadores do seu clube que estão no fim do contrato */
+function preAI(p,mi){const own=club(p);if(!own||!isOwn(own)||p.pre||p.loan||p.lent||p.ce<mi||p.ce-mi>5||p.age>32||p.yb||p.ovr<teamStr(own.id)-5)return;
+  if(p.ce-mi===5&&!p.preW){p.preW=1;news('O contrato de '+p.name+' com o '+own.n+' acaba em '+fmonth(p.ce)+'. A partir de agora outros clubes podem assinar pré-contrato com ele. Renove para não perder de graça.','clube');}
+  if(Math.random()>.12)return;const ds=G.clubs.filter(d=>d.id!==own.id&&!isOwn(d)&&prest(d)>=prest(own)+1&&squad(d.id).length<34&&p.ovr>=starterOvr(d.id,p.pos)-4&&!LG[d.lg].ext);
+  const d=wpick(ds,d=>1/(1+Math.abs(prest(d)-prest(own)-4)));if(!d)return;p.pre={c:d.id,from:own.id,w:nice((p.wage||wageRef(p.ovr,d.lg))*1.2),y:p.age<=27?4:2,d:G.d,ai:1};
+  news(p.name+' assinou pré-contrato com o '+d.n+' e deixa o '+own.n+' quando o contrato acabar, em '+fmonth(p.ce)+'.','clube');
+  pop({k:'bad',ic:'deal',ti:'Pré-contrato assinado',tx:p.name+' vai para o '+d.n+' de graça no fim do contrato ('+fmonth(p.ce)+'). Se quiser algum dinheiro, venda antes.'});}
+/* no fim do contrato o pré-contrato vale; se o jogador mudou de clube antes, cai */
+function preMonth(p,mi){if(!p.pre)return;const nc=G.clubs[p.pre.c];
+  if(!nc||p.club!==p.pre.from){if(nc&&(isOwn(nc)||!p.pre.ai))news('O pré-contrato de '+p.name+' com o '+nc.n+' foi cancelado: ele mudou de clube antes.','clube');delete p.pre;return;}
+  if(p.ce>=mi)return;const from=club(p),x=p.pre;delete p.pre;setClub(p,nc.id);p.wage=x.w;p.ce=contractEnd(nc,x.y);p.movedW=G.d;p.freeSince=null;p.lockTil=0;
+  G.moves.unshift({d:G.d,pid:p.id,n:p.name,pos:p.pos,age:p.age,ovr:p.ovr,from:from?from.id:-1,to:nc.id,fee:0,k:'pré-contrato'});
+  news(p.name+' chegou ao '+nc.n+': acabou o contrato com o '+(from?from.n:'clube antigo')+' e começou a valer o pré-contrato.',isOwn(nc)||(from&&isOwn(from))?'clube':'transf');
+  if(isOwn(nc))pop({k:'good',ic:'club',ti:'Reforço chegou',tx:p.name+' já é jogador do '+nc.n+', pelo pré-contrato.'});}
 function hireForClub(p){const c=ownC(),cur=club(p);if(!c||!cur||cur.id===c.id||p.ag===0)return;
   if(!winOpen(regOf(c))){toast('A janela de '+LG[c.lg].cn+' está fechada.');return;}const fee=ownFee(p);
   if(c.bud<fee){toast('O caixa do clube não cobre '+fmt(fee)+'. Faça um aporte.');return;}if((p.clubCool||0)>G.d){toast(p.name+' já recusou. Tente em algumas semanas.');return;}
@@ -6601,7 +6635,7 @@ function ctrReply(e,o,a){const miss=[];if(!e.w)miss.push('salário');if(!e.l)mis
 function mCtr(){const m=ui.modal,p=G.P[m.pid],c=ownC(),o=m.off,a=m.ask;
   const e=ctrEval(o,a),st=ok=>ok?' <b class="okk">✓ atende</b>':' <b class="warnk">abaixo do pedido</b>';
   const row=(k,lbl,val,sub)=>'<div class="ctr-r"><span class="lbl">'+lbl+'</span><div class="ctr-c"><button class="btn sm" data-a="ctrstep" data-k="'+k+'" data-v="-1" aria-label="Diminuir">−</button><b>'+val+'</b><button class="btn sm" data-a="ctrstep" data-k="'+k+'" data-v="1" aria-label="Aumentar">+</button></div><small class="muted">'+sub+'</small></div>';
-  return'<div class="sheet"><span class="eyebrow">Contrato · '+(m.kind==='renew'?'negociação':m.kind==='free'?'jogador livre':'transferência de '+fmt(m.fee))+'</span><div class="neg-h">'+avatar(p,48)+'<h2>'+esc(p.name)+' × '+esc(c.n)+'</h2></div>'+
+  return'<div class="sheet"><span class="eyebrow">Contrato · '+(m.kind==='renew'?'negociação':m.kind==='pre'?'pré-contrato, chega em '+fmonth(p.ce+1):m.kind==='free'?'jogador livre':'transferência de '+fmt(m.fee))+'</span><div class="neg-h">'+avatar(p,48)+'<h2>'+esc(p.name)+' × '+esc(c.n)+'</h2></div>'+
    '<p class="small muted">'+p.pos+' · '+p.age+' anos · nível '+p.ovr+' · paciência: <span class="pat">'+'●'.repeat(Math.max(0,m.pat))+'</span></p>'+
    '<div class="log">'+m.log.map((l,i)=>'<p class="'+(i%2?'me':'')+'">'+esc(l)+'</p>').join('')+'</div>'+
    row('w','Salário por semana',fmt(o.w),(m.kind==='renew'?'Hoje ganha '+fmt(m.cur||0)+'. Ele pede ':'Ele pede ')+fmt(a.w)+'.'+st(e.w))+row('l','Luvas',fmt(o.l),'Pedido: '+fmt(a.l)+'. Sai do caixa do clube.'+st(e.l))+row('y','Duração',durTxt(o.y*12),'Ele prefere '+durTxt(a.y*12)+'.'+(e.y?' <b class="okk">✓ atende</b>':' <b class="warnk">diferente</b>'))+
@@ -6617,6 +6651,13 @@ function ctrSend(){const m=ui.modal,p=G.P[m.pid],c=ownC(),o=m.off,a=m.ask;if(c.b
     m.pat--;m.log.push('Ofereci '+fmt(o.w)+'/sem, luvas de '+fmt(o.l)+' e '+o.y+' ano(s).');
     if(m.pat<=0){p.renCool=G.d+42;ui.modal=null;news(p.name+' não aceitou o novo contrato do '+c.n+'. O contrato atual continua valendo.','clube');pop({k:'bad',ic:'no',ti:'Sem acordo',tx:p.name+' recusou. O contrato atual continua valendo. Dá para tentar de novo em 6 semanas.'});save();render();return;}
     m.log.push(ctrReply(e,o,a));render();return;}
+  if(m.kind==='pre'){const e=ctrEval(o,a,prest(c)>=prest(club(p)||c)?.03:0);
+    if(e.ok){const cur=club(p);c.bud-=o.l;p.pre={c:c.id,from:cur.id,w:o.w,y:o.y,d:G.d};G.own.mood=clamp(G.own.mood+clamp(p.fame/20,0,4),0,100);ui.modal=null;
+      news('O '+c.n+' assinou pré-contrato com '+p.name+', do '+cur.n+'. Ele chega em '+fmonth(p.ce+1)+', sem taxa, com contrato de '+o.y+' ano(s).','clube');
+      pop({k:'good',ic:'deal',ti:'Pré-contrato assinado!',tx:p.name+' termina o contrato com o '+cur.n+' e chega ao '+c.n+' em '+fmonth(p.ce+1)+'.',ch:[['Salário '+fmt(o.w)+'/sem','warn'],...(o.l?[['-'+fmt(o.l)+' de luvas','bad']]:[]),['Sem taxa de transferência','good']]});save();render();return;}
+    m.pat--;m.log.push('Ofereci '+fmt(o.w)+'/sem, luvas de '+fmt(o.l)+' e '+o.y+' ano(s).');
+    if(m.pat<=0){p.clubCool=G.d+42;ui.modal=null;news(p.name+' não aceitou o pré-contrato do '+c.n+'.','clube');pop({k:'bad',ic:'no',ti:'Sem acordo',tx:p.name+' recusou o pré-contrato. Nada foi pago.'});save();render();return;}
+    m.log.push(ctrReply(e,o,a));render();return;}
   const e=ctrEval(o,a,prest(c)>=prest(club(p)||c)?.03:0);
   if(e.ok){const src=club(p);c.bud-=m.fee+o.l;if(src&&m.fee){src.bud+=Math.round(m.fee*.9);soPay&&soPay(p,m.fee,c);}setClub(p,c.id);p.movedW=G.d;p.wage=o.w;p.ce=contractEnd(c,o.y);p.freeSince=null;
     G.own.mood=clamp(G.own.mood+clamp(1+p.fame/12,1,10),0,100);G.moves.unshift({d:G.d,pid:p.id,n:p.name,pos:p.pos,age:p.age,ovr:p.ovr,from:src?src.id:-1,to:c.id,fee:m.fee,k:m.fee?'':'livre'});
@@ -6631,7 +6672,7 @@ function elActs(p,o){if(isClient(p)||p.loan||p.lent)return'';const x=o&&o.sale&&
    (o&&o.lend&&o.lend[p.id]?'<span class="chip info">Na lista de empréstimo</span>':'<button class="btn sm" data-a="olend" data-p="'+p.id+'">Emprestar</button>')+'<button class="btn sm danger" data-a="orsc" data-p="'+p.id+'">Rescindir</button>'+(x?'<span class="chip good">À venda · '+fmt(x.price)+'</span><button class="btn sm" data-a="saleoff" data-p="'+p.id+'">Retirar</button>':fresh?'<span class="small muted">Chegou há pouco, não pode ser vendido</span>':'<button class="btn sm" data-a="osell" data-p="'+p.id+'">Vender</button>')+'</div>';}
 /* negociar contrato com jogador do próprio clube: mesma mesa da contratação, sem taxa de transferência.
    Dá para aumentar ou reduzir o salário; quem ganha acima do mercado aceita corte se receber luvas ou um contrato mais longo. */
-function ownRenew(p){const c=ownC();if(!c||p.club!==c.id||isClient(p)||p.loan)return;if((p.renCool||0)>G.d){toast(p.name+' pediu um tempo antes de falar de contrato.');return;}if(!useAP())return;
+function ownRenew(p){const c=ownC();if(!c||p.club!==c.id||isClient(p)||p.loan)return;if(p.pre){toast(p.name+' já assinou pré-contrato com o '+((G.clubs[p.pre.c]||{}).n||'outro clube')+'.');return;}if((p.renCool||0)>G.d){toast(p.name+' pediu um tempo antes de falar de contrato.');return;}if(!useAP())return;
   const a=ctrAsk(p,c,false),cur=p.wage||0,over=cur>a.w;a.w=over?nice(Math.max(a.w,cur*.85)):nice(Math.max(a.w,cur*1.08));a.l=nice(a.l*.5);
   ui.stack=[];ui.modal={type:'ctr',pid:p.id,fee:0,kind:'renew',ask:a,cur,off:{w:cur||a.w,l:nice(a.l*.8),y:a.y},pat:3,
     log:['Contrato atual: '+fmt(cur)+'/sem até '+fmonth(p.ce)+'. '+(over?p.name+' ganha acima do mercado e aceita conversar sobre um salário menor, se vier com luvas ou um contrato mais longo.':p.name+' quer um aumento para continuar.')]};save();render();}
@@ -7208,7 +7249,7 @@ function ownElenco(o,c,part){const sq=squad(c.id).sort((a,b)=>POS.indexOf(a.pos)
      msg=n>mx?(n-mx)+' acima do limite':n+b<f?'Faltam titulares':n+b<f+1?'Sem reserva':'Completo';let bx='';for(let i=0;i<Math.max(mx,n);i++)bx+='<i class="'+(i>=mx?'ov':i<n?'on':i<n+b?'yb':'')+'"></i>';
     return'<div class="pf '+st+'"><div class="pf-h"><b>'+POSPL[k].replace(/^./,m=>m.toUpperCase())+'</b><span>'+n+'<small>/'+mx+'</small></span></div><div class="pf-bar">'+bx+'</div><span class="pf-s">'+msg+'</span>'+(b?'<span class="pf-y">+'+b+' da base</span>':'')+'</div>';};
   const row=p=>{const t=cTrust(p),L=ctrL(t),inj=p.injury>0,st=xi.has(p),x=o.sale&&o.sale[p.id],end=monthsLeft(p)<=6;
-    return'<button class="el-c psx" style="--pc:'+PC[p.pos]+'" data-a="oact" data-p="'+p.id+'">'+ovrB(p.ovr)+avatar(p,30)+'<span class="el-m"><b>'+esc(p.name)+'</b><small>'+p.age+' anos · <span class="'+(end?'warnk':'')+'">até '+fmonth(p.ce)+'</span>'+(x?' · <span class="okk">à venda</span>':'')+(o.lend&&o.lend[p.id]?' · <span class="okk">p/ empréstimo</span>':'')+'</small></span>'+
+    return'<button class="el-c psx" style="--pc:'+PC[p.pos]+'" data-a="oact" data-p="'+p.id+'">'+ovrB(p.ovr)+avatar(p,30)+'<span class="el-m"><b>'+esc(p.name)+'</b><small>'+p.age+' anos · <span class="'+(end?'warnk':'')+'">até '+fmonth(p.ce)+'</span>'+(x?' · <span class="okk">à venda</span>':'')+(p.pre?' · <span class="nok">pré-contrato com o '+esc((G.clubs[p.pre.c]||{}).n||'')+'</span>':'')+(o.lend&&o.lend[p.id]?' · <span class="okk">p/ empréstimo</span>':'')+'</small></span>'+
      '<span class="el-s"><span class="el-st">'+(inj?'<i class="dot bad" title="Lesionado"></i>DM':st?'<i class="dot good"></i>Titular':G.mgr?((o.bench||[]).includes(p.id)?'<i class="dot info"></i>Reserva':'<i class="dot"></i>Suplente'):p.age<=20?'<i class="dot info"></i>Base':'<i class="dot"></i>Reserva')+'</span><span class="ctr '+L[0]+'" title="Confiança do técnico: '+L[1]+'"><span class="ctr-b"><i style="width:'+t+'%"></i></span></span></span><span class="el-go">›</span></button>';};
   let h='<section><div class="sec-h"><h2>Elenco</h2><p>Cada quadradinho é uma vaga de profissional (acima de 20 anos). A base não conta no limite.</p></div><div class="pf-grid">'+POS.map(tile).join('')+'</div></section>'+
    '<section><div class="sec-h"><h2>Jogadores <span class="small muted">'+sq.length+'</span></h2><p>Toque num jogador para negociar contrato, vender, rescindir ou ver o perfil. A barrinha é a confiança de '+esc(c.coach.n)+' nele.</p></div><div class="card el-list el-lite">'+
@@ -7997,6 +8038,7 @@ function mPlayer(p){const c=club(p),t=seasonTot(p),own=ownC();
   let acts='';
   if(isClient(p))acts+='<button class="btn" data-a="tab" data-t="clientes">Ver na carteira</button>';
   else if(!G.prospects.includes(p.id)){const ch=signChance(p,0),cool=(p.signCool||0)>G.d;acts+='<button class="btn pri" data-a="sign" data-p="'+p.id+'"'+(cool||ch===0?' disabled':'')+'>'+(cool?'Pediu um tempo':ch===0?'Não atende você (reputação baixa)':'Negociar representação')+'</button>';}
+  if(own&&c&&preOk(p,own))acts+='<button class="btn pri" data-a="ownpre" data-p="'+p.id+'">Pré-contrato com o '+esc(own.n)+' <small>sem taxa</small></button>';
   if(own&&c&&c.id!==own.id&&!isClient(p))acts+='<button class="btn" data-a="hireclub" data-p="'+p.id+'"'+(winOpen(regOf(own))&&!ownFresh(p)?'':' disabled')+'>Contratar para o '+esc(own.n)+' <small>'+fmt(ownFee(p))+'</small></button>';
   return'<div class="sheet wide"><div class="pl-head">'+avatar(p,88)+'<div class="grow"><span class="eyebrow">'+POSN[p.pos]+' · '+p.age+' anos'+(natName(p)?' · '+flagS(natName(p))+esc(natName(p)):'')+'</span><h2>'+esc(p.name)+'</h2>'+
    '<div class="pl-club small">'+(c?clubLink(c,18):'<b>Sem clube</b>')+(p.yb?'<span class="chip info">Categoria de base</span>':'')+(p.loan?'<span class="chip info">emprestado pelo '+esc(G.clubs[p.loan.from].n)+'</span>':'')+idolChip(p)+'</div>'+
@@ -8211,7 +8253,7 @@ const A={
   upest(){const o=G.own,c=ownC();if(o.est>=3)return;const cost=nice(eurVal(teamStr(c.id))*6*[.5,1,2][o.est]);if(c.bud<cost)return;c.bud-=cost;o.est++;o.mood=clamp(o.mood+5,0,100);news('O estádio do '+c.n+' foi reformado.','clube');pop({k:'good',ic:'build',wait:1100,wt:'Obras no estádio…',ti:'Estádio reformado',tx:'O estádio do '+c.n+' está no nível '+o.est+'.'});save();render();},
   sellp(d){if(ui.modal&&ui.modal.type==='osell')ui.modal=null;sellFromClub(G.P[d.p]);save();render();},
   ctab(d){ui.ctab={id:+d.c,t:d.v};render();const m=document.querySelector('.club-p .club-tabs');if(m&&m.getBoundingClientRect().top<0)m.scrollIntoView({block:'start'});},
-  hireclub(d){hireForClub(G.P[d.p]);},
+  hireclub(d){hireForClub(G.P[d.p]);},ownpre(d){const p=G.P[+d.p];if(p)preStart(p);},
   nat(d){ui.nat=d.n;ui.comp='N';ui.tab='ligas';ui.stack=[];render();},
   goN(){ui.comp='N';ui.tab='ligas';ui.stack=[];render();window.scrollTo(0,0);},
   goA(){ui.comp='A';ui.tab='ligas';ui.stack=[];render();window.scrollTo(0,0);}
@@ -8220,7 +8262,7 @@ const A={
 Object.assign(A,MGRA,LVA,OFFA,EVOA,OWNA,MINDA,CALA,NAVA,CARDA,CMA,FINA,BIZA,NTCA,TIDYA,FLAGA,PROGA,BIZLA,OTRA,W2A,OLA,CLUB2A,PHA,TIEA,FACEA,RDA,NAVHA,HOFA,SCPA,BRA,SPMA,EDA,VPA,ARTA,GRPA,GMVA,MUSA,CRA,{slots:SLOTA.slots,slotsave:SLOTA.slotsave,slotgo:SLOTA.slotgo,slotnew:SLOTA.slotnew,slotback:SLOTA.slotback,slotdel:SLOTA.slotdel,slotdelok:SLOTA.slotdelok,updchk:SLOTA.updchk});
 A.world=d=>{if(d.v==='cl'){if(ui.tab!=='clube')ui.agTab=ui.tab;ui.tab='clube';ui.grpNew=false;if(!ui.osub)ui.osub='geral';}else ui.tab=ui.agTab&&ui.agTab!=='clube'?ui.agTab:'painel';ui.stack=[];ui.modal=null;render();window.scrollTo(0,0);};
 /* contratações do seu clube gastam ações do clube, mesmo feitas pelo perfil de um jogador na agência */
-['hireclub','ownfree','ownloan','ownlbuy'].forEach(k=>{const f=A[k];if(!f)return;A[k]=function(d){if(!G)return f(d);G._apC=1;try{return f(d);}finally{G._apC=0;}};});
+['hireclub','ownfree','ownloan','ownlbuy','ownpre'].forEach(k=>{const f=A[k];if(!f)return;A[k]=function(d){if(!G)return f(d);G._apC=1;try{return f(d);}finally{G._apC=0;}};});
 A.cwcomp=d=>{ui.tab='ligas';ui.agTab='ligas';ui.comp=d.k;ui.rd=null;ui.stack=[];ui.modal=null;render();window.scrollTo(0,0);};
 {const _nx=A.next;A.next=d=>{const w=needW();if(w&&G&&!flowBlocked()){A.world({v:w});if(w==='cl')ui.osub='geral';render();return;}return _nx(d);};}
 /* ---- rolagem.js ---- */
