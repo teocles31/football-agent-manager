@@ -2350,7 +2350,7 @@ function starterOvr(cid,pos){const k=SC[cid]||(SC[cid]={}),kk='s'+pos;if(k[kk]!=
 function starterOvr0(cid,pos){const a=squad(cid).filter(p=>p.pos===pos).map(p=>p.ovr).sort((x,y)=>y-x);return a[FORM[pos]-1]!=null?a[FORM[pos]-1]:50;}
 /* glória recente: títulos das últimas 4 temporadas somam prestígio (até +4) e valorizam a marca; o efeito some com o tempo */
 const GLW=t=>/Super Mundial/.test(t)?3:/Champions|Libertadores/.test(t)?2.5:/Youth|Copinha|Sub-?20/.test(t)?0:/Copa|Cup|Coupe|Pokal|Coppa|Taça|Rey|Trophy/.test(t)?.7:1.5;
-function gloryUpd(){if(!G)return;if(!G._susFix){G._susFix=1;allP().forEach(p=>{if((p.suspTil||0)>G.d+14)p.suspTil=0;});}if(!G.spRef&&G.clubs&&G.clubs.length)spRef(G.clubs[0]);const Y=ymd(G.d).y;G.clubs.forEach(c=>{let s=0;(c.tro||[]).forEach(t=>{const m=String(t).match(/(\d{4})(?:\/\d{2})?$/);if(!m)return;const a=Y-(+m[1]);if(a<0||a>3)return;s+=GLW(String(t))*(1-a*.25);});c.gl=Math.min(4,Math.round(s));});}
+function gloryUpd(){if(!G)return;if(!G._mwFix){G._mwFix=1;allP().forEach(p=>{if(p.club==null||p.loan||!p.movedW)return;const d=clubSince(p);if(d==null){if((p.ch||[]).some(x=>x.l))p.movedW=null;}else if(d<p.movedW-30)p.movedW=d;});}if(!G._susFix){G._susFix=1;allP().forEach(p=>{if((p.suspTil||0)>G.d+14)p.suspTil=0;});}if(!G.spRef&&G.clubs&&G.clubs.length)spRef(G.clubs[0]);const Y=ymd(G.d).y;G.clubs.forEach(c=>{let s=0;(c.tro||[]).forEach(t=>{const m=String(t).match(/(\d{4})(?:\/\d{2})?$/);if(!m)return;const a=Y-(+m[1]);if(a<0||a>3)return;s+=GLW(String(t))*(1-a*.25);});c.gl=Math.min(4,Math.round(s));});}
 const prest=c=>Math.round(teamStr(c.id))+LG[c.lg].pb+(c.gl||0);
 const club=p=>p&&p.club!=null?G.clubs[p.club]:null;
 /* clube dono do contrato: durante um empréstimo é o clube de origem */
@@ -2723,7 +2723,7 @@ function monthly(){const mi=curMonth();gloryUpd();
   G.clients.slice().forEach(id=>{const p=G.P[id];if(p&&mi>=p.repEnd){if(p.trust>=55){p.repEnd=mi+36;news(p.name+' renovou o contrato de representação com você por mais 3 anos.','agencia');}
     else{const r=rivalNear();news(p.name+' não renovou com sua agência e assinou com a '+G.ags[r].n+'.','agencia');dropClient(p,r);addRep(-2);}}});}
 const rivalNear=()=>clamp(Math.round(rnd(1,G.ags.length-1)),1,G.ags.length-1);
-function endLoan(p){const L=p.loan,dest=club(p),par=G.clubs[L.from];p.loan=null;setClub(p,par.id);
+function endLoan(p){const L=p.loan,dest=club(p),par=G.clubs[L.from];p.loan=null;setClub(p,par.id);if(p.lmw!=null){p.movedW=p.lmw||null;p.lmw=null;}
   if(p.ag===0){const t=seasonTot(p),fee=Math.min(L.fee,value(p)*1.2);
     if(L.opt&&t.ap>=12&&t.avg>=6.8&&dest&&dest.bud>=fee){G.offers.push({id:G.nid++,pid:p.id,cid:dest.id,fee:nice(fee),exp:G.d+35,tries:0});news('O '+dest.n+' quer exercer a opção de compra de '+p.name+' por '+fmt(fee)+'. Veja em Mercado.','transf');}
     else news(p.name+' voltou do empréstimo para o '+par.n+'.','transf');}}
@@ -2786,12 +2786,13 @@ const settled=p=>!p.movedW||p.movedW>G.d||G.d-p.movedW>minStay(p);
 /* para o seu clube a regra é outra: só não dá para tirar quem chegou há menos de 6 meses;
    depois disso compra normal, mas quem ainda está no período de adaptação custa 30% a mais (o clube acabou de investir nele) */
 const ownFresh=p=>!!p.movedW&&p.movedW<=G.d&&G.d-p.movedW<180;
-const ownFee=p=>nice(value(p)*1.15*(settled(p)?1:1.3));
+const ownRecent=p=>!!p.movedW&&p.movedW<=G.d&&G.d-p.movedW<365;
+const ownFee=p=>nice(value(p)*1.15*(ownRecent(p)?1.3:1));
 function nextWinOpen(reg,from){for(let i=1;i<400;i++)if(winOpen(reg,from+i)&&!winOpen(reg,from+i-1))return from+i;return from+180;}
 const locked=p=>(p.lockTil||0)>G.d;
 function logMove(m){if(G._log)G._log.push(m);}
 function doTransfer(p,c,fee,kind){const src=club(p);if(fee>0)soPay(p,fee,c);if(src){src.bud+=Math.round(fee*.9);}c.bud-=fee;if(kind!=='empréstimo')c.arr=(c.arr||0)+1;
-  setClub(p,c.id);p.movedW=G.d;p.wage=nice(wageRef(p.ovr,c.lg)*rnd(.9,1.2)*(p.age<=19?.6:1));if(kind!=='empréstimo')p.ce=contractEnd(c,ri(2,5));p.freeSince=null;
+  if(kind==='empréstimo')p.lmw=p.movedW||0;setClub(p,c.id);p.movedW=G.d;p.wage=nice(wageRef(p.ovr,c.lg)*rnd(.9,1.2)*(p.age<=19?.6:1));if(kind!=='empréstimo')p.ce=contractEnd(c,ri(2,5));p.freeSince=null;
   const m={d:G.d,pid:p.id,n:p.name,pos:p.pos,age:p.age,ovr:p.ovr,from:src?src.id:-1,to:c.id,fee,k:kind||''};G.moves.unshift(m);logMove(m);if(G.moves.length>150)G.moves.length=150;
   if(fee>=3e8&&!G._pre)news('Mercado da bola: '+p.name+' troca o '+(src?src.n:'mercado')+' pelo '+c.n+' por '+fmt(fee)+'.','transf');}
 /* sorteio ponderado: o melhor jogador nem sempre vai para o clube mais rico */
@@ -2825,7 +2826,7 @@ function aiMarket(){const free=allP().filter(p=>p.club==null&&p.ag!==0&&!G.prosp
     /* jogador livre também reforça elenco: quem está sem contrato e serve ao banco assina de graça */
     if(free.length&&sq.length<27&&(c.arr||0)<5&&Math.random()<.03){const nf=needOf(c),lim=starterOvr(c.id,nf.pos)-5,fs=free.filter(p=>p.pos===nf.pos&&roomFor(c,p.pos)&&p.ovr>=lim&&freeFits(c,p)&&fitW(c,p)>.08);
       const fa=wpick(fs.sort((a,b)=>b.ovr-a.ovr).slice(0,6),p=>fitW(c,p)*(p.ovr-lim+2));if(fa){free.splice(free.indexOf(fa),1);doTransfer(fa,c,0,'livre');continue;}}
-    if((c.arr||0)>=5||Math.random()>.3)continue;
+    if((c.arr||0)>=3||Math.random()>.2)continue;
     const nd=needOf(c),pc=prest(c),cap=feeCap(c);if(cap<=0)continue;
     /* mercado por posição e com corte barato antes do wouldBuy: antes cada clube varria os ~19 mil jogadores */
     pool=pool||(()=>{const m={};for(const id in G.P){const p=G.P[id];if(p.club!=null&&p.ag!==0&&!p.loan&&!p.injury&&settled(p)&&!isOwn(club(p)))(m[p.pos]||(m[p.pos]=[])).push(p);}return m;})();
@@ -3161,7 +3162,7 @@ function recall(pid){const p=G.P[pid],L=p&&p.loan,dest=club(p);if(!L||!dest)retu
   if(!useAP())return;const st=p.ovr>=starterOvr(dest.id,p.pos)&&!(p.boost<0);
   if(st||Math.random()>.85){p.rcCool=G.d+28;const why=st?'O '+dest.n+' conta com '+p.name+' como titular e não abre mão do empréstimo.':'O '+dest.n+' não aceitou encerrar o empréstimo agora.';
     pop({k:'bad',ic:'no',wait:1200,wt:'Ligando para o '+dest.n+'…',ti:'Empréstimo mantido',tx:why+' Tente de novo em 4 semanas.'});save();render();return;}
-  p.loan=null;setClub(p,par.id);p.morale=clamp(p.morale+4,0,100);relAdd(dest,-3);
+  p.loan=null;setClub(p,par.id);if(p.lmw!=null){p.movedW=p.lmw||null;p.lmw=null;}p.morale=clamp(p.morale+4,0,100);relAdd(dest,-3);
   G.moves.unshift({d:G.d,pid:p.id,n:p.name,pos:p.pos,age:p.age,ovr:p.ovr,from:dest.id,to:par.id,fee:0,k:'fim de empréstimo'});
   news('Empréstimo encerrado: '+p.name+' deixou o '+dest.n+' e voltou ao '+par.n+'.','transf');
   pop({k:'good',ic:'deal',wait:1200,wt:'Ligando para o '+dest.n+'…',ti:'Empréstimo encerrado',tx:p.name+' volta ao '+par.n+'. Agora você pode oferecê-lo ou emprestá-lo de novo quando abrir uma janela.'});save();render();}
@@ -3965,7 +3966,7 @@ function intake(region,Y){if(region!=='sa')baseYear(region);const born=[];G.club
       p.pot=Math.max(p.ovr+4,r<.03?ri(88,95):r<.13?ri(82,89):clamp(c.str+ri(-6,7),60,90));p.gen=Y;p.fame=0;p.pk=p.ovr;p.wage=nice(wageRef(p.ovr,c.lg)*.4);born.push(p);}
     if(!isOwn(c))trimSquad(c);});
   born.sort((a,b)=>b.pot-a.pot);G.gen=G.gen||{};G.gen[region]={y:Y,ids:born.slice(0,8).map(p=>p.id)};const j=born[0];
-  if(j)news('A safra de '+Y+' subiu aos elencos '+(region==='eu'?'da Europa':'do Brasil e da América do Sul')+'. A joia mais comentada é '+j.name+', '+POSN[j.pos]+' de '+j.age+' anos do '+club(j).n+'. Veja em Olheiros.','liga');}
+  if(j)news('A safra de '+Y+' subiu aos elencos '+(region==='eu'?'da Europa':'do Brasil e da América do Sul')+'. A joia mais comentada é '+j.name+', '+POSN[j.pos]+' de '+j.age+' anos'+(club(j)?' do '+club(j).n:'')+'. Veja em Olheiros.','liga');}
 function gemList(){const out=[];['eu','sa'].forEach(r=>{const g=G.gen&&G.gen[r];if(g)g.ids.forEach(id=>{const p=G.P[id];if(p&&p.age<=20&&!isClient(p))out.push(p);});});return out.sort((a,b)=>b.pot-a.pot);}
 EV.aposenta=function(e){const p=G.P[e.pid],c=club(p),nm=p.name,can1=p.age<37&&!p.oneMore,gate=nice(Math.max(2000,(p.wage||1000)*(1+p.fame/25)));
   const bye=()=>{news(nm+' pendurou as chuteiras aos '+p.age+' anos.','agencia');if(p.fame>50)addRep(1);retireP(p,true);};
@@ -5859,7 +5860,7 @@ if(typeof document!=='undefined'&&document.addEventListener)document.addEventLis
 /* lista de busca do seu clube: linhas do mesmo tamanho, 20 por página, ordenação, e um painel com as ações */
 function otrInfo(p,c){const cur=club(p),free=!cur,fee=free?0:ownFee(p),open=winOpen(regOf(c)),ok=open&&(free||(c.bud>=fee&&!ownFresh(p)&&!((p.clubCool||0)>G.d))),
   why=!open?'Janela fechada':!free&&ownFresh(p)?'Chegou ao clube há menos de 6 meses':!free&&(p.clubCool||0)>G.d?'Recusou há pouco':!free&&c.bud<fee?'Caixa insuficiente':'',lo=!free&&loanable(p,c);
-  return{cur,free,fee,ok,why,lo,lok:lo&&open&&c.bud>=loanFee(p),extra:!free&&!settled(p)&&!ownFresh(p)};}
+  return{cur,free,fee,ok,why,lo,lok:lo&&open&&c.bud>=loanFee(p),extra:!free&&ownRecent(p)&&!ownFresh(p)};}
 function otrPage(L,c){const N=20,np=Math.max(1,Math.ceil(L.length/N)),pg=clamp(ui.otrPg||0,0,np-1),S=ui.otrSort||'ovr';
   if(!L.length)return'<div class="card otr-empty"><p class="small muted">Ninguém com esses filtros. Afrouxe a busca.</p></div>';
   const row=p=>{const x=otrInfo(p,c);return'<button class="otr-r" data-a="otract" data-p="'+p.id+'">'+ovrB(p.ovr)+avatar(p,30)+'<span class="otr-m"><b>'+esc(p.name)+'</b><small>'+p.pos+' · '+p.age+' anos · '+(x.cur?esc(x.cur.n):'sem clube')+'</small></span>'+
@@ -7043,7 +7044,7 @@ function mStf(){const m=ui.modal,c=ownC(),o=G.own,d=STF.find(z=>z[0]===m.k);if(!
    '<p class="small">Contratar gasta 1 ação e paga 4 semanas de salário como luvas, do caixa do clube.'+(cur&&cur.lv?' Quem sai recebe 8 semanas de salário.':'')+'</p><div class="list">'+
    m.c.map((x,i)=>'<div>'+avatarS(x,36,c,m.k)+'<div class="grow"><b>'+esc(x.n)+'</b> '+pips(x.lv,5)+'<div class="small muted">'+STF_LV[x.lv]+' · '+fmt(x.w)+'/sem · luvas '+fmt(x.w*4)+'</div></div><button class="btn sm pri" data-a="stfhire" data-i="'+i+'"'+(c.bud<x.w*4+(cur&&cur.lv?cur.w*8:0)||G.ap<1?' disabled':'')+'>Contratar</button></div>').join('')+
    '</div><div class="acts"><button class="btn" data-a="close">Cancelar</button></div></div>';}
-function vClubW(){const o=G.own,c=ownC(),pres=o.role==='pres',fin=o.lastFin||clubFin(),pos=leaguePos(c.id);let sub=ui.osub||'geral';if(sub==='base')sub='est';if(!CLUB_NAV.some(t=>t[0]===sub))sub='geral';
+function vClubW(){if(!G._mwFix||!G._susFix)gloryUpd();const o=G.own,c=ownC(),pres=o.role==='pres',fin=o.lastFin||clubFin(),pos=leaguePos(c.id);let sub=ui.osub||'geral';if(sub==='base')sub='est';if(!CLUB_NAV.some(t=>t[0]===sub))sub='geral';
   const nv=CLUB_NAV.find(t=>t[0]===sub),subs=CW_SUB[sub];let ss=null;
   let h='<div class="cw-h">'+crest(c,40)+'<div class="grow"><span class="eyebrow">'+esc(c.n)+' · '+(pres?'presidente':'dono, '+o.pct+'% das ações')+'</span><h2>'+icoS(nv[2])+esc(nv[1])+'</h2><p class="small muted">'+esc(CW_TIP[sub])+'</p></div></div>';
   if(subs){ss=(ui.oss||{})[sub]||subs[0][0];if(!subs.some(x=>x[0]===ss))ss=subs[0][0];
@@ -7279,7 +7280,7 @@ const HELP={
  ct:['Centro de treinamento','Cada nível reduz em 10% o risco de lesão, acelera em 4% a evolução de quem tem até 21 anos e soma força nos jogos. Custa manutenção semanal.'],
  base:['Categorias de base','A cada dois níveis sobe mais um garoto por temporada, com potencial maior. Cada nível faz os jovens de até 21 anos evoluírem 6% mais rápido e libera peneiras melhores. Garotos da casa aceitam você como empresário com mais facilidade.'],
  venda:['Vender jogadores','Escolha o preço. Mais barato sai rápido; mais caro pode demorar ou não sair. Os clubes fazem propostas toda semana com a janela aberta.\n\nVender quem o técnico confia muito abala a relação com ele, e o time rende menos por algumas semanas.'],
- busca:['Contratar','Use os filtros e toque em Pesquisar. Quem chegou ao clube atual há menos de 6 meses não pode sair. Quem chegou há pouco mais que isso custa 30% a mais.\n\nMuitas contratações de uma vez derrubam o entrosamento do time por algumas semanas.'],
+ busca:['Contratar','Use os filtros e toque em Pesquisar. Quem chegou ao clube atual há menos de 6 meses não pode sair. Entre 6 meses e 1 ano, o clube pede 30% a mais. Depois disso, preço normal. Volta de empréstimo não conta como chegada.\n\nMuitas contratações de uma vez derrubam o entrosamento do time por algumas semanas.'],
  tab:['Classificação','Azul: vaga no torneio continental. Verde: acesso à divisão de cima. Vermelho: rebaixamento. A torcida e a meta da temporada acompanham a sua posição.']
 };
 const hq=k=>HELP[k]?'<button class="hq" data-a="help" data-k="'+k+'" aria-label="O que é isso?" title="O que é isso?">?</button>':'';
