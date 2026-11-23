@@ -2663,6 +2663,8 @@ function przView(c,fk){const P=przTab(c),own=new Set((G.owns||[]).map(o=>o.cid))
 function resolveTie(t){let a=0,b=0;t.m.forEach(m=>{if(m[0]===t.a){a+=m[2];b+=m[3];}else{a+=m[3];b+=m[2];}});t.ga=a;t.gb=b;
   if(a!==b)t.w=a>b?t.a:t.b;else{t.w=Math.random()<.5?t.a:t.b;t.pen=1;}}
 function advance0(c,k){const st=c.ko[k];const w=st.ties.map(t=>t.w);c.pool=st.pre?(c.byes||[]).concat(w):w;
+  /* a fase seguinte é sorteada assim que esta termina: os confrontos já aparecem na tela */
+  if(k<c.ko.length-1&&!c.ko[k+1].ties&&!(c.t==='U'&&k+1<=1)){try{drawStage(c,k+1);przDraw(c,k+1);}catch(e){}}
   if(k===c.ko.length-1){c.win=w[0];przChamp(c,c.win);const cl=G.clubs[c.win];cl.tro.push(c.name+' '+c.lbl);news(cl.n+' é campeão '+compDe(c.name)+' '+c.name+' '+c.lbl+'.','liga');
     if(isOwn(cl)){addRep(4);titleBonus(cl);const oo=ownOf(cl);oo.mood=clamp(oo.mood+20,0,100);}
     squad(cl.id).forEach(p=>{if(p.ag===0){G.stats.ctit=(G.stats.ctit||0)+1;p.fame=clamp(p.fame+6,0,100);addRep(1);news(p.name+' conquistou a '+c.name+' com o '+cl.n+'.','liga');}});
@@ -6508,7 +6510,9 @@ const compDe=n=>COMP_M.test(String(n))?'do':'da';
 function newsFix(){try{if(!G||!G.news||G._nfx)return;G.news.forEach(n=>{n.t=String(n.t).replace(/é campeão da (\S+)/g,(m,w)=>'é campeão '+compDe(w)+' '+w);});G._nfx=1;}catch(e){}}
 function polFix(){try{if(G&&G.pol&&isOwn(G.clubs[G.pol.cid])&&!G._pfx){const o=G.clubs[G.pol.cid];G._pfx=1;if(o)news('Você deixou o quadro de sócios do '+o.n+', que ainda cobrava mensalidade.','clube');G.pol=null;}}catch(e){}}
 let _mk='';function mdlTop(){try{const t=ui.stack[ui.stack.length-1],M=ui.modal,m=document.querySelector('.modal'),hd=m&&m.querySelector('h1,h2,h3'),e0=G&&G.events&&G.events[0],k=JSON.stringify([t&&t.t,t&&t.id,M&&M.type,M&&(M.pid!=null?M.pid:M.k),!!(G&&G.ntc),!!(G&&G.paper),!!(G&&G.yrec),G&&G.cer&&G.cer.length,e0&&[e0.type,e0.pid],!!(G&&G.wk),!!(G&&G.neg),!!(G&&G.evRes),G&&G.summ&&G.summ.length,!!(G&&G.over),G&&G.phoneQ&&G.phoneQ.length,hd&&hd.textContent.slice(0,60)]);if(k!==_mk){_mk=k;if(m)m.scrollTop=0;}}catch(e){}}
-function render(){ownInstall();evOwnSel();polFix();newsFix();render0();rdInit();vpInit();apLock();mdlTop();}
+/* saves em andamento: fase terminada com a seguinte ainda sem sorteio é sorteada agora */
+function koCatchUp(){if(!G||!G.comps)return;for(const k in G.comps){const c=G.comps[k];if(!c.ko||c.win!=null)continue;for(let i=0;i<c.ko.length-1;i++){const a=c.ko[i],b=c.ko[i+1];if(a.ties&&a.ties.length&&a.ties.every(t=>t.w!=null)&&!b.ties&&!(c.t==='U'&&i+1<=1)&&c.pool&&c.pool.length){try{drawStage(c,i+1);przDraw(c,i+1);}catch(e){}}}}}
+function render(){ownInstall();if(G&&!G._koFix){G._koFix=1;koCatchUp();}evOwnSel();polFix();newsFix();render0();rdInit();vpInit();apLock();mdlTop();}
 const RDA={rdgo(d){try{const el=document.querySelector('#view .rd-car');if(!el)return;const base=ui.rd!=null?ui.rd:Math.round(el.scrollLeft/el.clientWidth),i=base+(+d.v),n=el.children.length;const j=Math.max(0,Math.min(n-1,i));ui.rd=j;el.scrollTo({left:j*el.clientWidth,behavior:'smooth'});}catch(e){}}};
 
 /* ---- crep2.js ---- */
