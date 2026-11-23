@@ -4982,16 +4982,19 @@ function ownElenco0(o,c){const sq=squad(c.id).sort((a,b)=>POS.indexOf(a.pos)-POS
    o.cands.map((k,i)=>'<div>'+avatarS(k,36,c,'coach')+'<span class="ovr">'+k.r+'</span><div class="grow"><b>'+esc(k.n)+'</b> <span class="chip info">'+STYLES[k.st][0]+'</span> <span class="chip warn">'+PERS[k.pe][0]+'</span>'+coachChem(c,k)+'<div class="small muted">'+(k.real?'Livre no mercado · ':'')+'pede '+fmt(coachWage(c,k.r))+'/sem · '+esc(STYLES[k.st][1])+'; '+esc(PERS[k.pe][1])+'</div></div><button class="btn" data-a="coach" data-i="'+i+'">Contratar</button></div>').join('')+'</div></section>';
   return h;}
 function upBtn(k,l,max,lv){if(l>=max)return'<span class="chip good">Nível máximo</span>';const cost=ownUpCost(k,l);return'<div class="next"><span class="lbl">Próximo nível</span><b>'+esc(lv[l+1])+'</b><span class="small muted">obra '+fmt(cost)+', paga pelo caixa do clube</span></div><button class="btn pri" data-a="oup" data-k="'+k+'"'+(ownC().bud<cost?' disabled':'')+'>Investir</button>';}
-function ownBase(o,c){const ys=squad(c.id).filter(p=>p.age<=20).sort((a,b)=>b.pot-a.pot),pc=nice(o.rev*.3),y=ymd(G.d).y;
+function ownBase(o,c){const ys=baseOf(c.id).slice().sort((a,b)=>b.pot-a.pot),yp=squad(c.id).filter(p=>p.age<=21).sort((a,b)=>b.pot-a.pot),xi=new Set(xiOf(c.id)),pc=nice(o.rev*.3),y=ymd(G.d).y;
   let h='<div class="dcols"><section class="card c-good">'+cardH('staff','Categorias de base',hq('base'))+pips(o.base,5)+'<b class="big2">'+esc(BASE_N[o.base])+'</b>'+
    '<p class="small muted">A cada dois níveis sobe mais um garoto da base por temporada, com potencial maior. Cada nível faz os jovens de até 21 anos do clube evoluírem 6% mais rápido e libera peneiras melhores. Garotos da casa aceitam você como empresário com mais facilidade.</p>'+upBtn('base',o.base,5,BASE_N)+'</section>'+
    '<section class="card c-info">'+cardH('scout','Peneira')+'<p class="small">Uma tarde de testes com centenas de garotos. Os aprovados entram direto na base do '+esc(c.n)+'.</p>'+
    '<p class="small muted">Custa '+fmt(pc)+' do caixa do clube e 1 ação. Uma peneira a cada 8 semanas. Quanto melhor a base, maior a chance de achar uma joia.</p>'+
    '<button class="btn pri" data-a="openeira"'+(o.base<1||(o.penCd||0)>G.d||c.bud<pc||G.ap<1?' disabled':'')+'>'+(o.base<1?'Exige categorias de base':(o.penCd||0)>G.d?'Próxima peneira em '+fdate(o.penCd):'Fazer peneira')+'</button></section></div>';
-  h+='<section><div class="sec-h"><h2>Garotos da base</h2><p>Quem não joga no profissional atua no sub-20. Subir um garoto garante 4 semanas de titular.</p></div><div class="card list">'+
+  h+='<section><div class="sec-h"><h2>Garotos da base <span class="small muted">'+ys.length+'</span></h2><p>Jogam o sub-20. Promover é uma decisão para sempre: o garoto assina como profissional, entra no elenco principal, ganha 4 semanas de titular e não volta mais para a base. Gasta 1 ação.</p></div><div class="card list">'+
    (ys.map(p=>'<div>'+avatar(p,34)+ovrB(p.ovr)+'<div class="grow"><b>'+plLink(p)+'</b> <span class="chip">'+p.pos+'</span> <span class="small muted">'+p.age+' anos · potencial '+potTxt(p)+'</span>'+(p.u20&&p.u20.ap&&p.u20.y===y?'<div class="small">Sub-20: '+u20Txt(p)+'</div>':'')+'</div>'+
-     (p.boost>0?'<span class="chip good">No profissional</span>':'<button class="btn sm" data-a="opromo" data-p="'+p.id+'"'+((p.promoCd||0)>G.d?' disabled':'')+'>Subir ao profissional</button>')+
-     (isClient(p)?'<span class="chip good">Seu cliente</span>':'<button class="btn sm" data-a="sign" data-p="'+p.id+'">Agenciar</button><button class="btn sm danger" data-a="ydrop" data-p="'+p.id+'">Dispensar</button>')+'</div>').join('')||'<div class="muted">Nenhum garoto de até 20 anos no elenco.</div>')+'</div></section>';
+     '<button class="btn sm pri" data-a="opromo" data-p="'+p.id+'"'+(G.ap<1?' disabled':'')+'>Promover</button>'+
+     (isClient(p)?'<span class="chip good">Seu cliente</span>':'<button class="btn sm" data-a="sign" data-p="'+p.id+'">Agenciar</button><button class="btn sm danger" data-a="ydrop" data-p="'+p.id+'">Dispensar</button>')+'</div>').join('')||'<div class="muted">Nenhum garoto na base. Faça uma peneira ou invista nas categorias de base.</div>')+'</div></section>';
+  h+='<section><div class="sec-h"><h2>Jovens no profissional <span class="small muted">'+yp.length+'</span></h2><p>Até 21 anos, já no elenco principal. Não voltam mais para a base. Se um reserva precisa jogar, você pode pedir minutos ao técnico.</p></div><div class="card list">'+
+   (yp.map(p=>'<div>'+avatar(p,34)+ovrB(p.ovr)+'<div class="grow"><b>'+plLink(p)+'</b> <span class="chip">'+p.pos+'</span> <span class="small muted">'+p.age+' anos · potencial '+potTxt(p)+'</span></div>'+
+     (xi.has(p)?'<span class="chip good">Titular</span>':p.boost>0?'<span class="chip good">Jogando · '+p.boost+' sem</span>':'<button class="btn sm" data-a="omins" data-p="'+p.id+'"'+((p.promoCd||0)>G.d||G.ap<1?' disabled':'')+'>'+((p.promoCd||0)>G.d?'Pedido feito':'Pedir minutos')+'</button>')+'</div>').join('')||'<div class="muted">Nenhum jovem de até 21 anos no elenco principal.</div>')+'</div></section>';
   return h;}
 function ownEst(o,c,fin,part){const pr=PRICE[o.price];
   const est='<section class="card c-gold">'+cardH('club','Estádio',hq('est'))+pips(o.est,5)+'<b class="big2">'+esc(EST_N[o.est])+'</b>'+
@@ -5021,8 +5024,12 @@ const OWNA={
       y.pk=y.ovr;y.home=1;y.ag=-1;y.fame=0;y.wage=nice(wageRef(y.ovr,c.lg)*.3);y.gen=ymd(G.d).y;out.push(y);}
     news('A peneira do '+c.n+' aprovou '+out.map(y=>y.name+' ('+POSN[y.pos]+', '+y.age+' anos)').join(' e ')+'.','clube');
     pop({k:'good',ic:'scout',wait:1500,wt:'Peneira no CT do '+c.n+'…',ti:out.length+' aprovado'+(out.length>1?'s':''),tx:out.map(y=>y.name+' · '+y.pos+' · potencial '+potTxt(y)).join(' · '),ch:[['-'+fmt(pc)+' do clube','bad']]});save();render();},
-  opromo(d){const p=G.P[d.p],c=ownC();if(!p||!c||p.club!==c.id)return;if(!useAP())return;p.boost=4;p.promoCd=G.d+84;p.morale=clamp(p.morale+8,0,100);news(p.name+' foi promovido ao time principal do '+c.n+'.','clube');
-    pop({k:'good',ic:'train',ti:'Subiu ao profissional',tx:p.name+' vai ter 4 semanas de titular no '+c.n+'.'});save();render();}
+  opromo(d){const p=G.P[d.p],c=ownC();if(!p||!c||p.club!==c.id)return;if(!p.yb){toast(p.name+' já é jogador profissional.');return;}if(!useAP())return;
+    basePromote(p,'por decisão da diretoria');p.boost=4;p.promoCd=G.d+84;p.morale=clamp(p.morale+10,0,100);p.wage=Math.max(p.wage||0,nice(wageRef(p.ovr,c.lg)*.6));p.ce=Math.max(p.ce||0,contractEnd(c,3));
+    if(G.own){G.own.mood=clamp(G.own.mood+2,0,100);}news(p.name+' foi promovido ao time principal do '+c.n+' e assinou o primeiro contrato profissional.','clube');
+    pop({k:'good',ic:'train',ti:'Promovido ao profissional',tx:p.name+' agora é jogador do elenco principal do '+c.n+', com 4 semanas de titular garantidas. Não volta mais para a base.',ch:[['Contrato até '+fmonth(p.ce),'good'],['Salário '+fmt(p.wage)+'/sem','warn']]});save();render();},
+  omins(d){const p=G.P[d.p],c=ownC();if(!p||!c||p.club!==c.id||p.yb)return;if((p.promoCd||0)>G.d)return;if(!useAP())return;p.boost=3;p.promoCd=G.d+84;p.morale=clamp(p.morale+5,0,100);
+    news('A diretoria do '+c.n+' pediu ao técnico mais minutos para '+p.name+'.','clube');pop({k:'good',ic:'train',ti:'Pedido feito',tx:c.coach.n+' vai dar 3 semanas de titular a '+p.name+'.'});save();render();}
 };
 
 /* ---- mind.js ---- */
@@ -6171,17 +6178,17 @@ function realNeed(c){const avg=teamStr(c.id),sq=squad(c.id).filter(p=>!p.lent&&!
 function coachRepWeek(){const o=G.own;if(!o)return;const c=ownC();o.crel=o.crel==null?60:o.crel;
   (G.wlog||[]).filter(x=>x.own&&x.pl).forEach(g=>g.pl.forEach(x=>{const r=(o.rt=o.rt||{})[x[0]]||(o.rt[x[0]]=[]);r.push(x[1]);if(r.length>6)r.shift();}));
   if((o.crepD||-99)>G.d-14)return;o.crepD=G.d;const nd=needOf(c),sq=squad(c.id),inj=sq.filter(p=>p.injury>0),fm=Object.entries(o.rt||{}).map(([id,r])=>({p:G.P[id],a:r.reduce((s,v)=>s+v,0)/r.length,n:r.length})).filter(x=>x.p&&x.p.club===c.id&&x.n>=2).sort((a,b)=>b.a-a.a);
-  const yb=sq.filter(p=>p.age<=19).sort((a,b)=>b.pot-a.pot)[0],L=[];
+  const yb=baseOf(c.id).filter(p=>p.age>=16).sort((a,b)=>b.pot-a.pot)[0],L=[];
   {const rn=realNeed(c);L.push(['Demanda',rn?'Precisamos de um '+POSN[rn.pos]+' com nível '+rn.lv+' ou mais: '+rn.why+'.':'O elenco está completo. Não preciso de reforço agora.']);}
   if(fm[0])L.push(['Em alta',fm[0].p.name+' vem jogando muito bem (média '+f1(fm[0].a)+').']);
   if(fm.length>2&&fm[fm.length-1].a<6.3)L.push(['Preocupa',fm[fm.length-1].p.name+' caiu de rendimento (média '+f1(fm[fm.length-1].a)+').']);
   L.push(['Departamento médico',inj.length?inj.length+' lesionado(s): '+inj.slice(0,3).map(p=>p.name+' ('+p.injury+' sem)').join(', ')+'.':'Ninguém lesionado. O grupo está inteiro.']);
-  if(yb&&yb.pot>=teamStr(c.id))L.push(['Sugestão','O garoto '+yb.name+' ('+yb.age+' anos) tem futuro. Gostaria de dar mais minutos a ele.']);
+  if(yb&&yb.pot>=teamStr(c.id))L.push(['Sugestão','O garoto '+yb.name+' ('+yb.age+' anos), da base, tem futuro. Gostaria de tê-lo no elenco principal.']);
   L.push(['Clima',o.crel>=70?'Sinto confiança da diretoria. Obrigado pelo apoio.':o.crel>=40?'A relação com a diretoria está boa, mas a cobrança é grande.':'Sinto que perdi a confiança da diretoria. Gostaria de conversar.']);
   o.crep={d:G.d,n:c.coach.n,L,pos:(realNeed(c)||{}).pos||null,lv:Math.round(teamStr(c.id)),yid:yb&&yb.pot>=teamStr(c.id)?yb.id:null,best:fm[0]?{id:fm[0].p.id,a:fm[0].a}:null,worst:fm.length>2&&fm[fm.length-1].a<6.3?{id:fm[fm.length-1].p.id,a:fm[fm.length-1].a}:null,inj:inj.map(p=>p.id)};news(c.coach.n+' entregou o relatório quinzenal do elenco do '+c.n+'.','clube');}
 function coachRepH(o,c){const r=o.crep,cd=k=>(o.cact&&o.cact[k]||0)>G.d,b=(k,l,sub)=>'<button class="btn" data-a="cact" data-k="'+k+'"'+(cd(k)||G.ap<1?' disabled':'')+'>'+l+' <small>'+(cd(k)?'feito nesta quinzena':sub)+'</small></button>';
   return'<section class="card c-teal">'+cardH('coach','Relatório do técnico','<span class="small muted">'+(r?fdate(r.d)+' · '+esc(r.n):'chega a cada 2 semanas')+'</span>')+
-   (r?'<div class="crep">'+r.L.map(x=>'<div class="crep-r"><span class="chip">'+esc(x[0])+'</span><p class="small">'+esc(x[1])+'</p></div>').join('')+'</div>':'<p class="small muted">O primeiro relatório chega em até duas semanas.</p>')+(r&&r.pos?'<div class="acts"><button class="btn sm" data-a="otrgo" data-v="'+r.pos+'">Buscar '+POSN[r.pos]+' no mercado</button>'+(r.yid&&G.P[r.yid]&&G.P[r.yid].club===c.id&&!((G.P[r.yid].promoCd||0)>G.d)?'<button class="btn sm" data-a="opromo" data-p="'+r.yid+'">Promover '+esc(G.P[r.yid].name)+' <small>1 ação</small></button>':'')+'</div>':'')+
+   (r?'<div class="crep">'+r.L.map(x=>'<div class="crep-r"><span class="chip">'+esc(x[0])+'</span><p class="small">'+esc(x[1])+'</p></div>').join('')+'</div>':'<p class="small muted">O primeiro relatório chega em até duas semanas.</p>')+(r&&r.pos?'<div class="acts"><button class="btn sm" data-a="otrgo" data-v="'+r.pos+'">Buscar '+POSN[r.pos]+' no mercado</button>'+(r.yid&&G.P[r.yid]&&G.P[r.yid].club===c.id&&G.P[r.yid].yb?'<button class="btn sm" data-a="opromo" data-p="'+r.yid+'">Promover '+esc(G.P[r.yid].name)+' <small>1 ação</small></button>':'')+'</div>':'')+
    '<div class="meters one">'+meter('Relação com o técnico',Math.round(o.crel==null?60:o.crel))+'</div>'+
    '<div class="acts">'+b('cobra','Cobrar resultados','1 ação')+b('elogia','Parabenizar o técnico','1 ação')+b('elenco','Cobrar o elenco','1 ação')+'</div></section>';}
 function cAct(k){const o=G.own,c=ownC();if(!o)return;o.cact=o.cact||{};if((o.cact[k]||0)>G.d)return;if(!useAP())return;o.cact[k]=G.d+14;o.crel=o.crel==null?60:o.crel;let t,ch=[];
@@ -6515,7 +6522,7 @@ function coachRepH2(o,c){const r=o.crep,rel=Math.round(o.crel==null?60:o.crel),c
   if(!('best' in r))return'<section class="card c-teal crep2">'+cardH('coach','Relatório do técnico')+head+'<div class="crep">'+r.L.map(x=>'<div class="crep-r"><span class="chip">'+esc(x[0])+'</span><p class="small">'+esc(x[1])+'</p></div>').join('')+'</div>'+acts+'</section>';
   const P=id=>G.P[id],pl=(p,sub)=>p?'<div class="cr-pl">'+avatar(p,30)+'<div class="grow"><b>'+plLink(p)+'</b><span class="small muted">'+sub+'</span></div></div>':'',
    tile=(cls,ic,t,body)=>'<div class="cr-t '+cls+'"><span class="cr-tt">'+svgI(ic,15)+t+'</span>'+body+'</div>';
-  const inj=(r.inj||[]).map(P).filter(p=>p&&p.club===c.id&&p.injury>0),yb=r.yid&&P(r.yid)&&P(r.yid).club===c.id?P(r.yid):null;
+  const inj=(r.inj||[]).map(P).filter(p=>p&&p.club===c.id&&p.injury>0),yb=r.yid&&P(r.yid)&&P(r.yid).club===c.id&&P(r.yid).yb?P(r.yid):null;
   const tiles=
    (()=>{const rn=realNeed(c);if(rn)return tile('need','scout','Precisa de','<b class="cr-big">'+POSN[rn.pos].replace(/^./,m=>m.toUpperCase())+'</b><span class="small muted">nível '+rn.lv+' ou mais · '+esc(rn.why)+'</span><button class="btn sm" data-a="otrgo" data-v="'+rn.pos+'">Buscar no mercado</button>');
      const nw=r.pos?G.moves.find(m=>m.to===c.id&&m.d>=r.d&&m.pos===r.pos):null;
@@ -6523,7 +6530,7 @@ function coachRepH2(o,c){const r=o.crep,rel=Math.round(o.crel==null?60:o.crel),c
    tile('good','train','Em alta',r.best&&P(r.best.id)?pl(P(r.best.id),'média '+f1(r.best.a)):'<span class="small muted">Ninguém se destacou ainda.</span>')+
    tile('bad','no','Preocupa',r.worst&&P(r.worst.id)?pl(P(r.worst.id),'média '+f1(r.worst.a)):'<span class="small muted">Ninguém abaixo do esperado.</span>')+
    tile('med','report','Departamento médico',inj.length?inj.slice(0,3).map(p=>pl(p,(p.injT||'Lesionado')+' · '+p.injury+' sem')).join('')+(inj.length>3?'<span class="small muted">e mais '+(inj.length-3)+'</span>':''):'<b class="cr-big ok">Ninguém</b><span class="small muted">grupo inteiro</span>');
-  const sug=yb?'<div class="cr-sug">'+avatar(yb,34)+'<div class="grow"><span class="cr-tt">'+svgI('star',15)+'Sugestão</span><span class="small">Dar minutos ao garoto <b>'+esc(yb.name)+'</b> ('+yb.age+' anos, pot. '+potTxt(yb)+')</span></div>'+(!((yb.promoCd||0)>G.d)?'<button class="btn sm pri" data-a="opromo" data-p="'+yb.id+'">Promover</button>':'<span class="chip good">Promovido</span>')+'</div>':'';
+  const sug=yb?'<div class="cr-sug">'+avatar(yb,34)+'<div class="grow"><span class="cr-tt">'+svgI('star',15)+'Sugestão</span><span class="small">Promover o garoto da base <b>'+esc(yb.name)+'</b> ('+yb.age+' anos, pot. '+potTxt(yb)+')</span></div><button class="btn sm pri" data-a="opromo" data-p="'+yb.id+'">Promover</button></div>':'';
   return'<section class="card c-teal crep2">'+cardH('coach','Relatório do técnico')+head+'<div class="cr-grid">'+tiles+'</div>'+sug+acts+'</section>';}
 
 /* ---- navhome.js ---- */
