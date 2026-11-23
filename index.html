@@ -4955,9 +4955,9 @@ function ownFinV(o,c,fin,part){const ri=[['Bilheteria'+(fin.homes?' ('+fin.homes
   const pl=c.przL||[],po=part==='prz'||!!(ui.fold&&ui.fold.oprz),isCur=x=>c.przT!=null?x.d>c.przT:(c.przS||0)>0,cur=pl.filter(isCur),old=pl.filter(x=>!isCur(x)),
     oldT=c.przP!=null?c.przP:old.reduce((t,x)=>t+x.v,0),oldL=c.przPL?'Temporada '+esc(c.przPL):'Temporada passada',
     li=L=>'<div class="list">'+L.slice(0,8).map(x=>'<div><span class="small muted">'+fdate(x.d)+'</span><span class="grow small">'+esc(x.w.charAt(0).toUpperCase()+x.w.slice(1))+'</span><b class="val up">+'+fmt(x.v)+'</b></div>').join('')+'</div>';
-  if(part!=='tor')h+='<section class="card prz">'+cardH('cup','Premiações','<span class="przh"><b class="up">+'+fmt(c.przS||0)+'</b>'+hq('prz')+tglB('fold',po,'premiações','oprz')+'</span>')+
+  if(part!=='tor')h+='<section class="card prz">'+cardH('cup','Premiações','<span class="przh"><b class="up">+'+fmt((c.przS||0)||oldT)+((c.przS||0)||!oldT?'':' <small class="muted">'+(c.przPL?esc(c.przPL):'última temp.')+'</small>')+'</b>'+hq('prz')+tglB('fold',po,'premiações','oprz')+'</span>')+
    (!po?'<p class="small muted">Nesta temporada: '+(cur.length?cur.length+' premiaç'+(cur.length>1?'ões':'ão')+'. Última: '+esc(cur[0].w)+' (+'+fmt(cur[0].v)+').':'nenhuma premiação ainda.')+(oldT?' '+oldL+': +'+fmt(oldT)+'.':'')+'</p></section>':
-    '<p class="small muted">A liga paga pela posição no fim da temporada. Copas e continentais pagam por fase alcançada e pelo título. O dinheiro entra no caixa do clube.</p>'+
+    '<p class="small muted">Cada prêmio entra no caixa do clube na hora em que é conquistado. A liga paga pela posição final; copas e continentais pagam por fase alcançada e pelo título. A temporada vira quando a liga termina.</p>'+
     '<div class="prz-s"><b>Esta temporada</b><b class="up">+'+fmt(c.przS||0)+'</b></div>'+(cur.length?li(cur):'<p class="small muted">Nenhuma premiação nesta temporada ainda.</p>')+
     (old.length||oldT?'<div class="prz-s"><b>'+oldL+'</b><b class="up">+'+fmt(oldT)+'</b></div>'+(old.length?li(old):''):'')+'</section>');
   if(part==='prz')return h;
@@ -7367,7 +7367,7 @@ const HELP={
  sp_costas:['Costas da camisa','Cota menor, com a marca nas costas, acima do número.'],
  sp_nome:['Nome do estádio','Naming rights: a marca dá nome ao estádio. Só libera com o estádio no nível 2 (arena moderna), e quanto melhor o estádio, mais a marca paga.'],
  tor:['Ingressos e sócios','Preço do ingresso: barato enche o estádio e agrada a torcida; caro rende mais por torcedor, mas esvazia e irrita.\n\nPlano de sócio: popular atrai mais sócios pagando menos; premium o contrário.\n\nA torcida feliz empurra o time em casa e aumenta os sócios.'],
- prz:['Premiações','Dinheiro que o clube ganha por resultado: posição final na liga, fases alcançadas nas copas e continentais, e títulos.'],
+ prz:['Premiações','Dinheiro que o clube ganha por resultado: posição final na liga, fases alcançadas nas copas e continentais, e títulos.\n\nO dinheiro entra no caixa do clube no mesmo dia em que o prêmio é conquistado.\n\nA temporada vira quando a liga termina: os prêmios ganhos até ali ficam no extrato daquela temporada, e o contador da nova começa do zero.'],
  soc:['Sociedade','Aportar: tira dinheiro da agência e põe no caixa do clube.\nRetirar dividendos: leva para a agência a sua parte do caixa, mas irrita a torcida. Dá para fazer 2 vezes por temporada.\nVender ações: você sai do clube e recebe o valor da sua parte.'],
  est:['Estádio','Cada nível aumenta a capacidade em 30%, atrai mais sócios, valoriza o clube e libera o naming rights no nível 2. Custa manutenção semanal.'],
  ct:['Centro de treinamento','Cada nível reduz em 10% o risco de lesão, acelera em 4% a evolução de quem tem até 21 anos e soma força nos jogos. Custa manutenção semanal.'],
