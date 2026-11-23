@@ -880,6 +880,7 @@ main.wrap{padding-bottom:calc(var(--plh) + var(--tbh) + 28px + env(safe-area-ins
 }
 @media (max-width:420px){.jst{display:none}}
 .stf-ch{display:flex;flex-wrap:wrap;gap:4px;margin:4px 0 2px}
+.coach-chem{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin:6px 0}
 </style>
 <header class="topo"><div class="wrap" id="marca"></div><div class="band"><div class="wrap" id="band"></div></div></header><nav class="tabs" aria-label="Seções"><div class="wrap" id="tabs"></div></nav>
 <main class="wrap" id="view"></main>
@@ -2969,6 +2970,8 @@ function coachCard(c){const k=c.coach,pct=coachPct(k),ten=Math.max(0,Math.round(
   return'<div class="coachc"><div class="coach-h">'+avatarS(k,48,c,'coach')+'<span class="ovr">'+k.r+'</span><div class="grow"><b>'+esc(k.n)+'</b><div class="small muted">'+(k.age?k.age+' anos · ':'')+'no cargo há '+(ten>=24?Math.floor(ten/12)+' anos':ten+' '+(ten===1?'mês':'meses'))+(pct!=null?' · '+pct+'% de aproveitamento em '+k.g+' jogos':'')+'</div></div></div>'+
    '<div class="acts"><span class="chip info" title="'+esc(STYLES[k.st][1])+'">'+STYLES[k.st][0]+'</span><span class="chip warn" title="'+esc(PERS[k.pe][1])+'">'+PERS[k.pe][0]+'</span></div>'+
    '<p class="small muted">'+esc(STYLES[k.st][0]+': '+STYLES[k.st][1]+'. '+PERS[k.pe][0]+': '+PERS[k.pe][1]+'.')+'</p>'+
+   (()=>{const q=chemSum(c);if(!q)return'';const L=q.v>=.75?3:q.v>=.25?2:q.v>-.15?1:0;
+     return'<div class="coach-chem"><span class="chip '+CHEM_L[L][1]+'">'+CHEM_L[L][0]+' com a comissão</span><span class="small muted">Combina com '+q.g+' de '+q.n+(q.b?', atrito com '+q.b:'')+' · '+(q.v>=0?'+':'')+f1(q.v)+' por jogo</span></div>';})()+
    '<div class="meters">'+meter('Diretoria',c.cf.d)+meter('Torcida',c.cf.t)+meter('Vestiário',c.cf.e)+'</div></div>';}
 
 /* ---- agency.js ---- */
@@ -5744,7 +5747,7 @@ function mSlots(inGame){return'<div class="sheet slots"><span class="eyebrow">Fo
   (inGame?'<h3 class="menu-t">Opções</h3><div class="acts"><button class="btn" data-a="edit">Editar fotos e patrocinadores</button><button class="btn" data-a="slotsave">Salvar agora</button></div>':'')+
   '<h3 class="menu-t">Versão do jogo</h3><div class="updb"><div class="grow"><b>Atualizações</b><span class="small muted">'+esc(verTxt(APP_V))+'</span>'+(ui.upd?'<span class="small '+(ui.upd.k||'')+'">'+esc(ui.upd.t)+'</span>':'')+'</div><button class="btn pri" data-a="updchk"'+(ui.upd&&ui.upd.busy?' disabled':'')+'>Buscar atualização</button></div>'+(inGame?'<div class="acts"><button class="btn pri big" data-a="close">Voltar ao jogo</button></div>':'')+'</div>';}
 /* versão: o script de publicação grava a data e a hora em APP_V. O botão baixa a página publicada sem cache e, se ela for mais nova, salva e recarrega. */
-const APP_V='202611230851';
+const APP_V='202611230900';
 const verTxt=v=>/^\d{12}$/.test(v)?'Publicada em '+v.slice(6,8)+'/'+v.slice(4,6)+'/'+v.slice(0,4)+' às '+v.slice(8,10)+':'+v.slice(10,12):'Versão de teste';
 async function updChk(){ui.upd={t:'Procurando…',busy:1};render();
   try{const r=await fetch(location.pathname+'?chk='+Date.now(),{cache:'no-store'}),t=await r.text(),m=t.match(/const APP_V='(\d{12})'/),nv=m?m[1]:null;
@@ -7021,7 +7024,17 @@ const CHEM_L=[['Química ruim','bad'],['Química neutra',''],['Química boa','in
 const CHEM_V=[-.3,0,.15,.3];
 function chemOf(st,k){if(!k||!st||!STYLES[st]||!CHEM_OK[k.st])return 1;let v=st===k.st?3:CHEM_OK[k.st].includes(st)?2:CHEM_NO[k.st].includes(st)?0:1;
   if(k.pe==='pai'&&v===0)v=1;if(k.pe==='exp'&&v===1)v=0;return v;}
-function stfSt(o){if(!o||!o.stf)return;STF_ST.forEach(k=>{const x=o.stf[k];if(x&&x.lv&&!x.st)x.st=pick(Object.keys(STYLES));});}
+function stfSt(o){if(!o||!o.stf)return;const c=G.clubs[o.cid],a=c&&c.ach&&c.ach.st;STF_ST.forEach(k=>{const x=o.stf[k];if(x&&x.lv&&!x.st)x.st=(a&&a[k])||pick(Object.keys(STYLES));});}
+/* clube da IA: técnico novo traz o auxiliar de confiança (quase sempre do mesmo estilo); o resto da comissão já estava lá.
+   Com o tempo a diretoria troca quem não combina, então a química melhora devagar. */
+function aiStf(c){const k=c.coach;if(!k||!CHEM_OK[k.st])return null;if(!c.ach||c.ach.k!==k.n){const all=Object.keys(STYLES),st={};
+    STF_ST.forEach(r=>{st[r]=r==='aux'&&Math.random()<.6?k.st:Math.random()<.2?pick([k.st].concat(CHEM_OK[k.st])):pick(all);});c.ach={k:k.n,st,d:G.d};}
+  else if(G.d-(c.ach.d||0)>=180){c.ach.d=G.d;const bad=STF_ST.filter(r=>chemOf(c.ach.st[r],k)<=1);if(bad.length&&Math.random()<.5)c.ach.st[pick(bad)]=pick([k.st].concat(CHEM_OK[k.st]));}
+  return c.ach.st;}
+function aiChemFx(c){const st=aiStf(c);return st?STF_ST.reduce((t,r)=>t+CHEM_V[chemOf(st[r],c.coach)],0):0;}
+/* resumo para o card do técnico, serve para clube seu e da IA */
+function chemSum(c){const o=ownOf(c);let L;if(o){stfSt(o);L=chemOn(o).map(r=>chemOf(o.stf[r].st,c.coach));}else{const st=aiStf(c);L=st?STF_ST.map(r=>chemOf(st[r],c.coach)):[];}
+  if(!L.length)return null;const v=L.reduce((t,x)=>t+CHEM_V[x],0);return{v,g:L.filter(x=>x>=2).length,n:L.length,b:L.filter(x=>x===0).length};}
 const chemOn=(o,k)=>STF_ST.filter(r=>o&&o.stf&&o.stf[r]&&o.stf[r].lv);
 function chemFx(c,k){const o=ownOf(c);if(!o||!o.stf)return 0;stfSt(o);k=k||c.coach;return chemOn(o).reduce((t,r)=>t+CHEM_V[chemOf(o.stf[r].st,k)],0);}
 function chemPct(c,k){const o=ownOf(c),L=chemOn(o);if(!L.length)return 0;k=k||c.coach;return Math.round(L.reduce((t,r)=>t+chemOf(o.stf[r].st,k),0)/(L.length*3)*100);}
@@ -7042,7 +7055,7 @@ function matchFx(c,lu,opp,ko,home){const P=[],add=(l,v)=>{if(Math.abs(v)>=.05)P.
   add('Auxiliar técnico',.25*(lv('aux')-2.5));
   if(opp&&opp.str>lu.str+1)add('Análise do adversário',.3*(lv('ana')-2.5));
   add('Treinador de goleiros',.2*(lv('gol')-2.5));
-  if(o)add('Química da comissão com o técnico',chemFx(c));
+  add('Química da comissão com o técnico',o?chemFx(c):aiChemFx(c));
   add(ko?'Psicólogo (mata-mata)':'Psicólogo',(ko?.35:.1)*(lv('psi')-2.5));
   const xi=lu.xi||[],n=Math.max(1,xi.length),mor=xi.reduce((t,p)=>t+(p.morale==null?65:p.morale),0)/n,fat=xi.reduce((t,p)=>t+(p.fat||0),0)/n;
   add('Moral dos jogadores',clamp((mor-65)/10,-2.5,2));
@@ -7291,7 +7304,7 @@ const HELP={
  fx:['Como o time chega aos jogos','Mostra o que soma ou tira força do time em cada partida, além do nível dos jogadores. Cada ponto vale como se o time inteiro fosse 1 ponto melhor.\n\nVocê mexe nisso com: comissão de apoio, centro de treinamento, preço do ingresso (humor da torcida), poucas contratações de uma vez (entrosamento) e rodízio para não cansar o elenco.'],
  meta:['Meta da temporada','A diretoria define a meta pela força do elenco comparada à da liga.\n\nBater a meta: a receita de referência do clube sobe 6%, a torcida se anima e sua reputação sobe.\nTerminar 5 posições abaixo: a receita cai 5%, a torcida cobra e a reputação cai.'],
  comp:['Competições da temporada','Todos os torneios que o clube disputa agora e a situação em cada um. Copas e continentais pagam premiação por fase; a liga paga pela posição final.'],
- stf:['Comissão de apoio','Cada profissional vai do nível 1 ao 5. Os clubes da IA têm uma comissão do tamanho do prestígio deles; ter profissionais acima disso dá vantagem nos jogos.\n\nAuxiliar, analista, treinador de goleiros e psicólogo mexem no jogo. Preparador físico e nutricionista reduzem cansaço e lesões. O médico encurta as lesões.\n\nQuímica: auxiliar, analista, preparador físico e treinador de goleiros têm estilo de jogo. Se combina com o do técnico, o time rende mais em todo jogo; estilos opostos (ofensivo e retranca, posse e contra-ataque, pressão alta e retranca) tiram rendimento. Ao trocar de técnico, a química muda junto: os candidatos mostram com quantos da comissão combinam.'],
+ stf:['Comissão de apoio','Cada profissional vai do nível 1 ao 5. Os clubes da IA têm uma comissão do tamanho do prestígio deles; ter profissionais acima disso dá vantagem nos jogos. Eles também têm química: técnico novo traz o auxiliar de confiança, mas o resto da comissão pode não combinar com ele, e a diretoria vai ajustando com o tempo.\n\nAuxiliar, analista, treinador de goleiros e psicólogo mexem no jogo. Preparador físico e nutricionista reduzem cansaço e lesões. O médico encurta as lesões.\n\nQuímica: auxiliar, analista, preparador físico e treinador de goleiros têm estilo de jogo. Se combina com o do técnico, o time rende mais em todo jogo; estilos opostos (ofensivo e retranca, posse e contra-ataque, pressão alta e retranca) tiram rendimento. Ao trocar de técnico, a química muda junto: os candidatos mostram com quantos da comissão combinam.'],
  spn:['Patrocínios','O valor das propostas segue o tamanho e o momento do clube: prestígio (força do elenco e títulos recentes), divisão, posição na tabela e humor da torcida. Clube que cresce e ganha títulos recebe propostas cada vez maiores. Na zona de rebaixamento as propostas caem 40%.\n\nRebaixado: os contratos em andamento cortam pela metade as parcelas que faltam, e as novas propostas passam a ser de Série B.\n\nCada cota é um contrato separado, com o valor total já definido.\n\nÀ vista: o dinheiro todo entra na assinatura, com desconto.\nEm 2 parcelas: metade na assinatura e metade no meio do contrato.\nMensal: parcelas a cada 4 semanas, contrato mais longo e bônus a cada título.\n\nO valor sobe com o prestígio do clube e o humor da torcida. Assinar gasta 1 ação.'],
  spm:['Patrocinador master','É a marca no peito da camisa e a cota que mais paga. Clube grande atrai marca global. O dinheiro entra no caixa do clube.'],
  sp_uni:['Material esportivo','A fornecedora do uniforme. Paga menos que o master, mas faz a loja vender 10% a mais enquanto o contrato durar.'],
