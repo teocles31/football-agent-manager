@@ -2381,7 +2381,7 @@ const fmonth=mi=>MES[((mi%12)+12)%12]+'/'+Math.floor(mi/12);
 const START=dayOf(2026,8,3);
 const cd=(Y,a)=>dayOf(Y+(a[2]||0),a[0],a[1]);
 const inR=(d,rs)=>rs.some(r=>d>=r[0]&&d<=r[1]);
-function winOpen(reg,d){const t=ymd(d==null?G.d:d),v=t.m*100+t.dd;return WIN[reg].some(w=>v>=w[0]*100+w[1]&&v<=w[2]*100+w[3]);}
+function winOpen(reg,d){const t=ymd(d==null?G.d:d),v=t.m*100+t.dd;return WIN[G&&G.uni?'eu':reg].some(w=>v>=w[0]*100+w[1]&&v<=w[2]*100+w[3]);}
 function winNext(reg){const o=winOpen(reg);for(let i=1;i<400;i++){if(winOpen(reg,G.d+i)!==o)return G.d+i;}return null;}
 const anyWin=()=>winOpen('eu')||winOpen('sa');
 
@@ -3356,10 +3356,10 @@ function clientsWeekly(){G.clients.slice().forEach(id=>{const p=G.P[id];if(!p)re
 function dayTriggers(d){const t=ymd(d);
   if(t.dd===1)monthly();
   if(t.m===1&&t.dd===1)ageUp();
-  if(t.m===1&&t.dd===2)rolloverBR(t.y);
-  if(t.m===7&&t.dd===1&&G.noEU!==t.y)rolloverEU(t.y);
-  if(t.m===6&&t.dd===5&&G.noEU!==t.y)seasonSummary('eu',(t.y-1)+'/'+String(t.y).slice(2));
-  if(t.m===12&&t.dd===14)seasonSummary('sa',String(t.y));
+  if(t.m===1&&t.dd===2&&!G.uni)rolloverBR(t.y);
+  if(t.m===7&&t.dd===1&&G.noEU!==t.y){rolloverEU(t.y);if(G.uni){rolloverBR(t.y);mgrShiftSA(t.y);}}
+  if(t.m===6&&t.dd===5&&G.noEU!==t.y){if(G.uni)mgrSeasonEnd(t.y);else seasonSummary('eu',(t.y-1)+'/'+String(t.y).slice(2));}
+  if(t.m===12&&t.dd===14&&!G.uni)seasonSummary('sa',String(t.y));
   ['eu','sa'].forEach(reg=>{const a=winOpen(reg,d),b=winOpen(reg,d-1);if(a&&!b){G.clubs.forEach(c=>{if(regOf(c)===reg){c.arr=0;c.lo=0;c.li=0;}});news('Abriu a janela de transferências '+(reg==='eu'?'na Europa':'no Brasil e na América do Sul')+'.','transf');}
     if(!a&&b){news('Fechou a janela de transferências '+(reg==='eu'?'na Europa':'no Brasil e na América do Sul')+'.','transf');G.clients.forEach(id=>{const p=G.P[id];const c=club(p);if(p.promise&&c&&regOf(c)===reg){p.promise=null;p.trust=clamp(p.trust-25,0,100);p.morale=clamp(p.morale-15,0,100);news('A janela fechou e você não cumpriu a promessa de transferir '+p.name+'. Ele está furioso.','agencia');}});}});
   worldDay(d,t);}
@@ -4871,14 +4871,16 @@ function mCer(c){if(c.k==='title')return mTitle(c);const pc=x=>{const pl=c.pod.i
    '<div class="podium">'+[1,0,2].filter(i=>c.pod[i]).map(i=>pc(c.pod[i])).join('')+'</div>'+
    (c.aw.length?'<div class="aw-cards">'+c.aw.map((a,i)=>'<div class="awc'+(a.me?' me':'')+'" style="--dl:'+(1.7+i*.25).toFixed(2)+'s"><span class="awi">'+svgI(a.ic,24)+'</span><span class="awk">'+esc(a.k)+'</span>'+(a.sub?'<span class="aws">'+esc(a.sub)+'</span>':'')+(a.p?cerAv(a.p,52):'')+'<b>'+esc(a.n)+'</b>'+(a.cl?'<span class="aws">'+esc(a.cl)+'</span>':'')+(a.me?'<span class="mineb">'+(a.me===2?'Sua agência':'Seu cliente')+'</span>':'')+'</div>').join('')+'</div>':'')+
    '<div class="acts cer-a"><button class="btn pri big" data-a="cerok">Encerrar a cerimônia</button></div></div>';}
-function mSumm(s){let h='<div class="sheet cer sm">'+confetti(16)+'<div class="cer-h"><span class="cer-ey">Fim da temporada '+esc(s.lbl)+' · '+(s.region==='eu'?'Europa':'Brasil e América do Sul')+'</span><h2>Balanço do ano</h2></div>';
-  if(s.cc&&s.cc.length)h+='<h3 class="cer-t">Campeões</h3><div class="champs">'+s.cc.map((x,i)=>{const cl=G.clubs[x.cid];return'<div class="chc" style="--dl:'+(.2+i*.12).toFixed(2)+'s">'+(cl?crest(cl,40):'')+'<span class="aws">'+esc(x.n)+'</span><b>'+esc(cl?cl.n:'—')+'</b></div>';}).join('')+'</div>';
+function mSumm(s){let h='<div class="sheet cer sm">'+confetti(16)+'<div class="cer-h"><span class="cer-ey">Fim da temporada '+esc(s.lbl)+' · '+(s.region==='all'?'futebol mundial':s.region==='eu'?'Europa':'Brasil e América do Sul')+'</span><h2>'+(s.region==='all'?'Resumão da temporada':'Balanço do ano')+'</h2></div>';
+  if(s.mine){const m=s.mine,cl=G.clubs[m.cid];h+='<h3 class="cer-t">Sua temporada</h3><div class="lgcards"><div class="lgc"><b class="lgn">'+(cl?crest(cl,24)+' ':'')+esc(m.n)+'</b><p class="small">'+(m.pos?m.pos+'º no '+esc(m.lg)+'. ':'')+m.g+' jogos, '+(m.g?Math.round(m.pts/(m.g*3)*100):0)+'% de aproveitamento. Seu nível de técnico: '+m.r+'.'+(m.tro.length?' Títulos: '+esc(m.tro.join(', '))+'.':'')+'</p></div></div>';}
+  if(s.cc&&s.cc.length)h+='<h3 class="cer-t">Campeões</h3><div class="champs">'+s.cc.map((x,i)=>{const cl=G.clubs[x.cid];return'<div class="chc" style="--dl:'+(.2+Math.min(i,10)*.12).toFixed(2)+'s">'+(cl?crest(cl,40):'')+'<span class="aws">'+esc(x.n)+'</span><b>'+esc(cl?cl.n:'—')+'</b></div>';}).join('')+'</div>';
   else if(s.champs.length)h+='<p class="small">'+s.champs.map(esc).join('<br>')+'</p>';
-  if(s.cards&&s.cards.length)h+='<h3 class="cer-t">Prêmios da temporada</h3><div class="lgcards">'+s.cards.map((x,i)=>'<div class="lgc" style="--dl:'+(.5+i*.2).toFixed(2)+'s"><b class="lgn">'+esc(x.lg)+'</b>'+
+  if(s.cards&&s.cards.length)h+='<h3 class="cer-t">Prêmios da temporada</h3><div class="lgcards">'+s.cards.map((x,i)=>'<div class="lgc" style="--dl:'+(.5+Math.min(i,8)*.2).toFixed(2)+'s"><b class="lgn">'+esc(x.lg)+'</b>'+
     [['Melhor jogador','star',x.best],['Artilheiro','cup',x.top],['Revelação','ball',x.rev],['Melhor goleiro','glove',x.gk],['Técnico','coach',x.coach]].filter(r=>r[2]).map(r=>'<div class="lgr"><span class="awi sm">'+svgI(r[1],15)+'</span>'+(r[2].pid!=null?cerAv(r[2],32):'')+'<div class="grow"><span class="aws">'+r[0]+(r[2].gl?' · '+r[2].gl+' gols':'')+'</span><b>'+esc(r[2].n)+'</b></div>'+(r[2].mine?'<span class="mineb">Seu</span>':'')+'</div>').join('')+'</div>').join('')+'</div>';
   else if(s.prizes&&s.prizes.length)h+='<p class="small">'+s.prizes.map(esc).join('<br>')+'</p>';
   if(s.tops.length&&!(s.cards&&s.cards.length))h+='<h3 class="cer-t">Artilheiros</h3><p class="small">'+s.tops.map(esc).join('<br>')+'</p>';
   if(s.lines.length)h+='<h3 class="cer-t">Seus clientes</h3><p class="small">'+s.lines.map(esc).join('<br>')+'</p>';
+  if(s.world&&s.world.length)h+='<h3 class="cer-t">Artilheiros do mundo</h3><div class="lgcards"><div class="lgc">'+s.world.map((x,i)=>'<div class="lgr"><span class="aws">'+(i+1)+'º</span>'+cerAv(x,28)+'<div class="grow"><b>'+esc(x.n)+'</b><span class="aws">'+esc(x.cl)+'</span></div><b>'+x.g+' gols</b></div>').join('')+'</div></div>';
   if(s.awards.length)h+='<h3 class="cer-t">Destaques</h3><p class="small">'+s.awards.map(esc).join('<br>')+'</p>';
   return h+'<div class="acts cer-a"><button class="btn pri big" data-a="sumok">Continuar</button></div></div>';}
 
@@ -5284,14 +5286,24 @@ const FORMS={'442':['4-4-2',{GOL:1,ZAG:2,LAT:2,VOL:2,MEI:2,ATA:2},[1,1],'Equilib
   '541':['5-4-1',{GOL:1,ZAG:3,LAT:2,VOL:2,MEI:2,ATA:1},[.86,.83],'Fechado atrás: sofre pouco e faz pouco. Bom contra time mais forte.']};
 const FORM_K=['442','433','4231','352','541'];
 let MGR_SA=false;
-/* Manager num clube da América do Sul: o mundo começa no início da temporada 2026, tudo zerado (Brasileirão, Copa do Brasil e Libertadores completos).
-   A Europa já começa no início da 2026/27 em agosto, então de janeiro a julho os europeus só treinam e negociam. */
+/* Manager: calendário único, como no Brasfoot. Todas as ligas e copas do mundo começam juntas em agosto e terminam em maio.
+   As competições da América do Sul usam o próprio formato, só com as datas encaixadas na temporada europeia. */
+function mgrShift(c){const ds=[];(c.rounds||[]).forEach(r=>ds.push(r.d));(c.ko||[]).forEach(st=>st.d.forEach(x=>ds.push(x)));if(!ds.length||c._sh)return;
+  const Y=c.Y,first=dayOf(Y,8,c.t==='L'?8:19),end=dayOf(Y+1,5,24),a=Math.min(...ds),b=Math.max(...ds),f=b-a>end-first?(end-first)/(b-a):1,mp=x=>first+Math.round((x-a)*f);
+  (c.rounds||[]).forEach(rd=>rd.d=mp(rd.d));(c.ko||[]).forEach(st=>st.d=st.d.map(mp));c.lbl=seasonLbl('eu',Y);c._sh=1;}
+function mgrShiftSA(Y){for(const k in G.comps){const c=G.comps[k];if(c.reg==='sa'&&c.Y===Y)mgrShift(c);}}
 function mgrSAInit(top,cdb,lib){delete G.comps[cdb.id];delete G.comps[lib.id];
   for(const li of RLG().filter(i=>LG[i].reg==='sa'&&!LG[i].top)){const cup=mkCupX(li,2026);if(cup)G.comps[cup.id]=cup;}
   const xs=qStr(7,30),lq=fillTo(top(0,6).concat(top(LGI('arg'),6),top(LGI('uru'),3),top(LGI('col'),4),top(LGI('ecu'),3),xs.slice(0,9)),32,xs.concat(top(LGI('arg'),12),top(0,20)));
-  const lb=mkLIB(2026,lq,false);G.comps[lb.id]=lb;
-  let d0=1e9;for(const k in G.comps){const c=G.comps[k];if(c.reg!=='sa')continue;(c.rounds||[]).forEach(r=>{if(r.d<d0)d0=r.d;});(c.ko||[]).forEach(st=>st.d.forEach(x=>{if(x<d0)d0=x;}));}
-  let d=Math.max(dayOf(2026,1,5),d0-1);while(ymd(d).w!==1)d--;G.d=d;G.noEU=2026;G.clubs.forEach(c=>{if(c.coach)c.coach.since=G.d;});}
+  const lb=mkLIB(2026,lq,false);G.comps[lb.id]=lb;mgrShiftSA(2026);G.uni=1;
+  for(const k in G.comps){const c=G.comps[k],ds=[];(c.rounds||[]).forEach(r=>ds.push(r.d));(c.ko||[]).forEach(st=>st.d.forEach(x=>ds.push(x)));if(ds.length&&Math.min(...ds)<START)mgrShift(c);}}
+/* fim de temporada no calendário único: um resumão do futebol mundial */
+function mgrSeasonEnd(y){const lbl=(y-1)+'/'+String(y).slice(2),n0=G.summ.length;seasonSummary('eu',lbl);seasonSummary('sa',lbl);const P=G.summ.splice(n0);if(!P.length)return;const s=P[0];
+  P.slice(1).forEach(x=>['champs','tops','lines','awards','prizes','cc','cards'].forEach(k=>{if(x[k])s[k]=(s[k]||[]).concat(x[k]);}));s.region='all';
+  const lc=Object.values(G.comps).filter(c=>c.t==='L'&&c.Y===y-1),tot={};lc.forEach(c=>allP().forEach(p=>{const st=p.st&&p.st[c.id];if(st&&st[1])tot[p.id]=(tot[p.id]||0)+st[1];}));
+  s.world=Object.keys(tot).map(id=>G.P[id]).filter(Boolean).sort((a,b)=>tot[b.id]-tot[a.id]).slice(0,10).map(p=>({pid:p.id,n:p.name,cl:club(p)?club(p).n:'',g:tot[p.id]}));
+  const o=G.own;if(o){const c=ownC(),L=lc.find(x=>x.li===c.lg),pos=L?sortedTab(L).indexOf(c.id)+1:0,me=c.coach;s.mine={n:c.n,cid:c.id,pos,lg:L?L.sh:'',g:me.g,pts:me.pts,r:me.r,tro:(c.tro||[]).filter(t=>t.includes(String(y-1))||t.includes(lbl))};}
+  G.summ.push(s);}
 const mgrSlots=fm=>{const F=(FORMS[fm]||FORMS['442'])[1],S=[];POS.forEach(p=>{for(let i=0;i<(F[p]||0);i++)S.push(p);});return S;};
 const mgrOwn=c=>G&&G.mgr&&c?ownOf(c):null;
 const mgrFmOf=c=>{const o=mgrOwn(c);return o?FORMS[o.fm]||FORMS['442']:null;};
@@ -5584,7 +5596,7 @@ const MGRA={
   gmode(d){const el=$('#ag-name');if(el&&ui.gmode===d.v)ui.agn=el.value;else ui.agn=null;ui.gmode=d.v;render();},
   mgclub(d){const el=$('#ag-name');if(el)ui.agn=el.value;ui.mgc=+d.v;render();},
   mgstart(){const el=$('#ag-name'),nm=((el&&el.value)||'').trim().slice(0,30)||'Treinador',id=ui.mgc;if(id==null)return;
-    MGR_SA=!!(LG[ui.mglg||0]&&LG[ui.mglg||0].reg==='sa');try{initWorld(nm,0);}finally{MGR_SA=false;}G.mgr=1;G.money=0;G.clients.forEach(i=>{const p=G.P[i];if(p){p.ag=ri(1,G.ags.length-1);p.comm=0;}});G.clients=[];G.prospects=[];G.offers=[];G.missions=[];
+    MGR_SA=true;try{initWorld(nm,0);}finally{MGR_SA=false;}G.mgr=1;G.money=0;G.clients.forEach(i=>{const p=G.P[i];if(p){p.ag=ri(1,G.ags.length-1);p.comm=0;}});G.clients=[];G.prospects=[];G.offers=[];G.missions=[];
     G.news=G.news.filter(n=>n.cat!=='agencia'&&!/^A janela de transferências da Europa está aberta/.test(n.t));const c=G.clubs[id];
     {const me={n:nm,r:62,st:'equ',pe:'mot',age:40,ng:LG[c.lg].reg==='sa'?'BR':'EU',me:1};mgrSk(me);mgrR(me);mgrTake(c,me);}
     news(nm+' é o novo técnico do '+c.n+'. A diretoria quer: '+(G.own.goal?goalTxt(G.own.goal).toLowerCase():'um bom trabalho')+'.','clube');
@@ -7697,7 +7709,7 @@ function renderHeader(){
   $('#band').innerHTML=wsw+'<div class="stat"><span>'+fdate(G.d,true)+'</span><b>'+fdate(G.d)+' – '+fdate(G.d+6)+'</b></div>'+
    (inC?'<div class="stat"><span>Posição</span><b>'+(leaguePos(oc.id)?leaguePos(oc.id)+'º':'—')+' <small>'+esc(LG[oc.lg].s||'')+'</small></b></div><div class="stat"><span>Torcida</span><b>'+Math.round(G.own.mood)+'<small>/100</small></b></div>':
    '<div class="stat" id="st-rep"><span>Reputação</span><b>'+Math.floor(G.rep)+' <small>'+rank()+'º</small></b></div>'+
-   '<div class="stat" title="Cotação do euro e do dólar nesta semana"><span>Câmbio</span><b>€ '+f2(fxNow().eur)+' <small>US$ '+f2(fxNow().usd)+'</small></b></div>')+'<div class="wins">'+wchip('eu','Europa')+wchip('sa','Brasil')+'</div>';
+   '<div class="stat" title="Cotação do euro e do dólar nesta semana"><span>Câmbio</span><b>€ '+f2(fxNow().eur)+' <small>US$ '+f2(fxNow().usd)+'</small></b></div>')+'<div class="wins">'+(G.uni?wchip('eu','da bola'):wchip('eu','Europa')+wchip('sa','Brasil'))+'</div>';
   $('#placar').innerHTML=(inC?'<div class="cashp"><span>Clube:</span><b class="'+(oc.bud<0?'neg':'')+'">'+fmtC(oc.bud,oc)+'</b></div>':'<div class="cashp" id="st-money"><span>Caixa:</span><b class="'+(G.money<0?'neg':'')+'">'+fmt(G.money)+'</b></div>')+
    '<div class="apw col" title="Ações restantes nesta semana"><span>Ações</span><div class="dots">'+dots+'</div></div>'+
    (ui.evHide&&G.events.length&&!G.wk&&!G.neg&&!G.evRes?'<button class="btn pri big pulse" data-a="evshow">Ver decisão</button>':'<button class="btn pri big'+(G.ap===0&&!bl?' pulse':'')+'" data-a="next"'+(bl?' disabled':'')+'>'+(ui.loading?'Jogando…':nw==='cl'?'Ir para o clube →':nw==='ag'?'Ir para a agência →':G.mgr?'Próximo jogo':G.lw?'Continuar semana':'Avançar semana')+'</button>');
