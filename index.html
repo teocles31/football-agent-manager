@@ -2350,7 +2350,7 @@ function starterOvr(cid,pos){const k=SC[cid]||(SC[cid]={}),kk='s'+pos;if(k[kk]!=
 function starterOvr0(cid,pos){const a=squad(cid).filter(p=>p.pos===pos).map(p=>p.ovr).sort((x,y)=>y-x);return a[FORM[pos]-1]!=null?a[FORM[pos]-1]:50;}
 /* glória recente: títulos das últimas 4 temporadas somam prestígio (até +4) e valorizam a marca; o efeito some com o tempo */
 const GLW=t=>/Super Mundial/.test(t)?3:/Champions|Libertadores/.test(t)?2.5:/Youth|Copinha|Sub-?20/.test(t)?0:/Copa|Cup|Coupe|Pokal|Coppa|Taça|Rey|Trophy/.test(t)?.7:1.5;
-function gloryUpd(){if(!G)return;if(!G.spRef&&G.clubs&&G.clubs.length)spRef(G.clubs[0]);const Y=ymd(G.d).y;G.clubs.forEach(c=>{let s=0;(c.tro||[]).forEach(t=>{const m=String(t).match(/(\d{4})(?:\/\d{2})?$/);if(!m)return;const a=Y-(+m[1]);if(a<0||a>3)return;s+=GLW(String(t))*(1-a*.25);});c.gl=Math.min(4,Math.round(s));});}
+function gloryUpd(){if(!G)return;if(!G._susFix){G._susFix=1;allP().forEach(p=>{if((p.suspTil||0)>G.d+14)p.suspTil=0;});}if(!G.spRef&&G.clubs&&G.clubs.length)spRef(G.clubs[0]);const Y=ymd(G.d).y;G.clubs.forEach(c=>{let s=0;(c.tro||[]).forEach(t=>{const m=String(t).match(/(\d{4})(?:\/\d{2})?$/);if(!m)return;const a=Y-(+m[1]);if(a<0||a>3)return;s+=GLW(String(t))*(1-a*.25);});c.gl=Math.min(4,Math.round(s));});}
 const prest=c=>Math.round(teamStr(c.id))+LG[c.lg].pb+(c.gl||0);
 const club=p=>p&&p.club!=null?G.clubs[p.club]:null;
 /* clube dono do contrato: durante um empréstimo é o clube de origem */
@@ -2547,7 +2547,7 @@ function initClient(p){p.ag=0;if(p.ovr0==null)p.ovr0=p.ovr;p.trust=p.trust||60;p
 const GW={ATA:3.2,MEI:2.2,VOL:1,LAT:.7,ZAG:.6,GOL:0}, AW={MEI:3,ATA:2,LAT:1.6,VOL:1.1,ZAG:.4,GOL:.1};
 /* monta o time titular: cada posição com os seus; se faltar alguém (lesão, suspensão, venda), entra quem joga mais perto daquela função
    (zagueiro improvisado é volante ou lateral, nunca um atacante; sem goleiro, o mais fraco da linha vai para o gol). p._r guarda a função em campo para o desenho do time. */
-const NEAR_POS={GOL:[],ZAG:['VOL','LAT'],LAT:['ZAG','VOL','MEI'],VOL:['ZAG','MEI','LAT'],MEI:['VOL','ATA','LAT'],ATA:['MEI','VOL','LAT']};
+const NEAR_POS={GOL:[],ZAG:['VOL','LAT','MEI','ATA'],LAT:['ZAG','VOL','MEI','ATA'],VOL:['ZAG','MEI','LAT','ATA'],MEI:['VOL','ATA','LAT','ZAG'],ATA:['MEI','VOL','LAT','ZAG']};
 function fillXI(by,sc){const xi=[],gap=[];
   for(const pos in FORM){const a=by[pos]||[];for(let i=0;i<FORM[pos];i++){if(a.length){const p=a.shift();p._r=pos;xi.push(p);}else gap.push(pos);}}
   for(const pos of gap){let p=null;for(const n of NEAR_POS[pos]){const a=by[n]||[];if(a.length){p=a.shift();break;}}
@@ -5312,8 +5312,8 @@ const FINA={finpop(){ui.stack=[];ui.modal={type:'fin'};render();}};
    o terceiro amarelo tira 1 semana. Na estatística: s[6] amarelos, s[7] vermelhos, s[8] jogos como titular. */
 const YC={GOL:.04,ZAG:.19,LAT:.15,VOL:.21,MEI:.12,ATA:.1};
 function cardsFor(p,s,sub){if(!sub)s[8]=(s[8]||0)+1;const m=sub?.35:1,y=Math.random()<YC[p.pos]*m,r=Math.random()<.007*m||(y&&Math.random()<.04);
-  if(y){s[6]=(s[6]||0)+1;p.ycs=(p.ycs||0)+1;if(p.ycs>=3&&!r){p.ycs=0;p.suspTil=Math.max(p.suspTil||0,G.d+7);if(p.ag===0&&!G._pre)news(p.name+' recebeu o terceiro cartão amarelo e cumpre suspensão na próxima semana.','geral');}}
-  if(r){s[7]=(s[7]||0)+1;const w=Math.random()<.3?2:1;p.suspTil=Math.max(p.suspTil||0,G.d+7*w);if(p.ag===0&&!G._pre)news(p.name+' foi expulso e está suspenso por '+w+' semana'+(w>1?'s':'')+'.','geral');}}
+  if(y){s[6]=(s[6]||0)+1;p.ycs=(p.ycs||0)+1;if(p.ycs>=3&&!r&&!G._pre){p.ycs=0;p.suspTil=Math.max(p.suspTil||0,G.d+7);if(p.ag===0&&!G._pre)news(p.name+' recebeu o terceiro cartão amarelo e cumpre suspensão na próxima semana.','geral');}}
+  if(r){s[7]=(s[7]||0)+1;const w=Math.random()<.3?2:1;if(!G._pre)p.suspTil=Math.max(p.suspTil||0,G.d+7*w);if(p.ag===0&&!G._pre)news(p.name+' foi expulso e está suspenso por '+w+' semana'+(w>1?'s':'')+'.','geral');}}
 function statAgg(p,k){if(k==='u20'){const u=p.u20||{ap:0,gl:0,as:0,rs:0};return{ap:u.ap,gs:u.ap,gl:u.gl,as:u.as,yc:0,rc:0,avg:u.ap?u.rs/u.ap/10:0};}
   let ap=0,gs=0,gl=0,as=0,rs=0,yc=0,rc=0;Object.keys(p.st).forEach(c=>{if(k!=='tot'&&c!==k)return;const s=p.st[c];ap+=s[0];gl+=s[1];as+=s[2];rs+=s[3];yc+=s[6]||0;rc+=s[7]||0;gs+=s[8]!=null?s[8]:s[0];});
   return{ap,gs,gl,as,yc,rc,avg:ap?rs/ap/10:0};}
