@@ -2713,6 +2713,9 @@ function processDay(day,pre){G._pre=pre;
   for(const key in G.comps){const c=G.comps[key];
     if(c.rounds)c.rounds.forEach(r=>{if(r.d===day&&!r.done){r.m.forEach(m=>play(c,m,false,true,day,pre));r.done=1;if(c.t==='U'||c.t==='B')przRound(c,r);
       if(c.t==='L'&&r===c.rounds[c.rounds.length-1]){const ch=G.clubs[sortedTab(c)[0]];ch.tro.push(c.name+' '+c.lbl);c.win=ch.id;if(isOwn(ch))titleBonus(ch);if(!pre){squad(ch.id).forEach(p=>{if(p.ag===0)G.stats.ctit=(G.stats.ctit||0)+1;});const pi=squad(ch.id).filter(p=>p.ag===0).map(p=>p.id);if(pi.length||isOwn(ch))titleCer({eye:'Título de liga',comp:c.name+' '+c.lbl,kind:'club',win:ch.id,fin:'Campeão com '+((c.tab[ch.id]||[])[6]||0)+' pontos',pids:pi,own:isOwn(ch)});}news(ch.n+' é campeão '+compDe(c.name)+' '+c.name+' '+c.lbl+'.','liga');}}});
+    /* fase de grupos (ou de liga) terminou: o mata-mata é sorteado na hora, como na copa nacional */
+    if(c.ko&&c.rounds&&c.win==null&&!c.ko[0].ties&&c.rounds.every(r=>r.done)){try{drawStage(c,0);przDraw(c,0);
+      if(c.ko[0].ties&&c.ko[0].ties.length)news('Sorteio d'+(/^(Oitavas|Quartas)/.test(c.ko[0].n)?'as ':'o ')+c.ko[0].n.toLowerCase()+' '+compDe(c.name)+' '+c.name+': os confrontos já estão em Competições.','liga');}catch(e){}}
     if(c.ko)c.ko.forEach((s,k)=>s.d.forEach((dd,leg)=>{if(dd!==day)return;if(!s.ties){if(!canDraw(c,k))return;drawStage(c,k);przDraw(c,k);}
       s.ties.forEach(t=>{if(t.m[leg]&&t.m[leg][2]<0)play(c,t.m[leg],s.d.length===1&&s.n==='Final',false,day,pre);});
       if(leg===s.d.length-1){s.ties.forEach(resolveTie);advance(c,k);}}));}
@@ -3381,7 +3384,7 @@ function ownRev(){const o=G.own,c=ownC();return nice(o.rev*(1+.25*o.est)*(.7+o.m
 function ownProfit(){const c=ownC();return ownRev()-wageBill(c)-coachWage(c);}
 function ownWeek(){const o=G.own;if(!o)return;const c=ownC();ownWeek2();obraWeek();saleWeek();lendWeek();if(!G.mgr)coachRepWeek();clubBidWeek();if(c.bud<0)o.mood=clamp(o.mood-2,0,100);
   if(G.d<=(o.evCool||0)||Math.random()>.1)return;let t=null;
-  if(o.mood<25)t={type:'protesto'};else{const pool=[];if(!o.naming)pool.push({type:'naming'});{const rn=realNeed(c);if(rn&&winOpen(regOf(c))&&!G.mgr){const L=Object.values(G.P).filter(p=>p.pos===rn.pos&&p.club!=null&&p.club!==c.id&&!isOwn(club(p))&&!p.loan&&p.ag!==0&&!ownFresh(p)&&p.ovr>=rn.lv-1&&p.ovr<=rn.lv+6&&p.age<=31&&ownFee(p)<=c.bud&&!(prest(c)<prest(club(p))-4&&p.age<31)&&!((p.clubCool||0)>G.d)).sort((a,b)=>(b.ovr+(b.pot-b.ovr)*.2)-(a.ovr+(a.pot-a.ovr)*.2)).slice(0,6);const p=L.length?pick(L):null;if(p)pool.push({type:'tecnico',pid:p.id});}}
+  if(o.mood<25)t={type:'protesto'};else{const pool=[];if(!o.naming)pool.push({type:'naming'});{const rn=realNeed(c);if(rn&&winOpen(regOf(c))&&!G.mgr){const L=Object.values(G.P).filter(p=>p.pos===rn.pos&&p.club!=null&&p.club!==c.id&&!isOwn(club(p))&&!p.loan&&p.ag!==0&&!ownFresh(p)&&p.ovr>=rn.lv-1&&p.ovr<=rn.lv+6&&p.age<=31&&ownFee(p)<=c.bud&&tecOk(c,p)&&!((p.clubCool||0)>G.d)).sort((a,b)=>(b.ovr+(b.pot-b.ovr)*.2)-(a.ovr+(a.pot-a.ovr)*.2)).slice(0,6);const p=L.length?pick(L):null;if(p)pool.push({type:'tecnico',pid:p.id});}}
     const cl=G.clients.map(id=>G.P[id]).filter(p=>p.club===c.id&&!p.loan&&p.comm>0);if(cl.length)pool.push({type:'conflito',pid:pick(cl).id});t=pick(pool);}
   if(t){o.evCool=G.d+42;G.events.push(t);}}
 function sellFromClub(p){const c=ownC();if(p.loan){toast('Jogador emprestado não pode ser vendido.');return;}if(!winOpen(regOf(c))){toast('A janela está fechada.');return;}
@@ -6102,7 +6105,7 @@ function mSlots(inGame){return'<div class="sheet slots"><span class="eyebrow">Fo
   (inGame?'<h3 class="menu-t">Opções</h3><div class="acts"><button class="btn" data-a="edit">Editar fotos e patrocinadores</button><button class="btn" data-a="slotsave">Salvar agora</button></div>':'')+
   '<h3 class="menu-t">Versão do jogo</h3><div class="updb"><div class="grow"><b>Atualizações</b><span class="small muted">'+esc(verTxt(APP_V))+'</span>'+(ui.upd?'<span class="small '+(ui.upd.k||'')+'">'+esc(ui.upd.t)+'</span>':'')+'</div><button class="btn pri" data-a="updchk"'+(ui.upd&&ui.upd.busy?' disabled':'')+'>Buscar atualização</button></div>'+(inGame?'<div class="acts"><button class="btn pri big" data-a="close">Voltar ao jogo</button></div>':'')+'</div>';}
 /* versão: o script de publicação grava a data e a hora em APP_V. O botão baixa a página publicada sem cache e, se ela for mais nova, salva e recarrega. */
-const APP_V='202611231101';
+const APP_V='202611231557';
 const verTxt=v=>/^\d{12}$/.test(v)?'Publicada em '+v.slice(6,8)+'/'+v.slice(4,6)+'/'+v.slice(0,4)+' às '+v.slice(8,10)+':'+v.slice(10,12):'Versão de teste';
 async function updChk(){ui.upd={t:'Procurando…',busy:1};render();
   try{const r=await fetch(location.pathname+'?chk='+Date.now(),{cache:'no-store'}),t=await r.text(),m=t.match(/const APP_V='(\d{12})'/),nv=m?m[1]:null;
@@ -6518,6 +6521,18 @@ function teamWeekH(w){const c=ownC(),gs=(w.own&&w.own.games)||[];if(!gs.length)r
 /* ---------- relatório quinzenal do técnico e ações do presidente ---------- */
 /* o técnico só pede reforço quando falta gente de verdade: menos jogadores disponíveis que titulares + 1 reserva,
    ou titulares da posição bem abaixo do nível do time. Calculado na hora: contratou, a demanda some. */
+/* indicação do técnico precisa ser crível: clube bem mais forte só libera jogador para cá se ele for voltar para o país dele
+   no fim da carreira ou se já for veterano */
+const LG_PAY={eng:5,esp:4,ita:4,ger:4,fra:4,sau:4,por:3,ned:3,tur:3,bel:3,xeu:3,usa:3,mex:3,eng2:3,bra:2,arg:2,ger2:2,esp2:2,ita2:2,fra2:2};
+const lgPay=li=>LG_PAY[LG[li].id]||1;
+const SA_NF=new Set(['Brasil','Argentina','Uruguai','Colômbia','Equador','Paraguai','Chile','Peru','Bolívia','Venezuela']);
+/* liga que paga mais só libera jogador para liga que paga menos se ele estiver voltando para casa ou já for veterano */
+function tecOk(c,p){const src=club(p);if(!src)return false;const gap=prest(src)-prest(c),td=lgPay(src.lg)-lgPay(c.lg);
+  const sa=li=>/^(bra|bra2|arg|uru|col|ecu|xsa)$/.test(LG[li].id);
+  if(td<0||(td===0&&sa(src.lg)===sa(c.lg)))return gap<=3;const cn=LG[c.lg].cn;
+  if(p.nf===cn&&p.age>=30&&gap<=9)return true;
+  if(SA_NF.has(cn)&&SA_NF.has(p.nf)&&p.age>=30&&gap<=5)return true;
+  return p.age>=32&&gap<=6&&td<=1&&sa(src.lg)===sa(c.lg);}
 function realNeed(c){const avg=teamStr(c.id),sq=squad(c.id).filter(p=>!p.lent&&!(p.loan&&p.loan.from===c.id));let best=null;
   POS.forEach(pos=>{const all=sq.filter(p=>p.pos===pos),av=all.filter(p=>!(p.injury>4)),f=FORM[pos],short=f+1-av.length,st=av.slice().sort((a,b)=>b.ovr-a.ovr).slice(0,f),lv=st.length?st.reduce((t,p)=>t+p.ovr,0)/st.length:0,gap=avg-lv;
     let sc=0,why='';if(short>0){sc=10+short*3;why=short>=2||av.length<f?'faltam jogadores na posição':'falta um reserva na posição';}else if(gap>=4){sc=gap;why='os titulares estão abaixo do nível do time';}
