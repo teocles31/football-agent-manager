@@ -4819,17 +4819,21 @@ const PLAN=[['Popular',1.25,.75,.12],['Padrão',1,1,0],['Premium',.8,1.3,-.1]];
 const SPM_B=['Banco Ponta','Operadora Sinal+','Construtora Alicerce','Aérea Rumo','Seguradora Escudo','Fintech Lastro','Montadora Trilha','Supermercados Cesta'];
 const B_UP=[8,16,30,50,80],E_UP=[15,30,55,90,140],C_UP=[10,20,40,70];
 /* cotas de patrocínio além do master: chave, nome, explicação, categorias de marca, fatia da receita de referência */
-const SPK=[['uni','Material esportivo','Fornecedora do uniforme. Paga menos que o master, mas a loja vende 10% a mais.',['chut'],.07],
- ['manga','Manga da camisa','A marca vai na manga do uniforme em todos os jogos.',['ban','tel','aut','gam','sup','beb'],.022],
- ['costas','Costas da camisa','A marca vai nas costas, acima do número.',['emp','ban','tel','beb','gam','mod'],.03],
- ['nome','Nome do estádio','Naming rights: a marca dá nome ao estádio. Quanto melhor o estádio, mais paga. Exige arena moderna (estádio nível 2).',['emp','ban','tel','aut'],.045]];
+const SPK=[['uni','Material esportivo','Fornecedora do uniforme. Paga menos que o master, mas a loja vende 10% a mais.',['chut'],.35],
+ ['manga','Manga da camisa','A marca vai na manga do uniforme em todos os jogos.',['ban','tel','aut','gam','sup','beb'],.05],
+ ['costas','Costas da camisa','A marca vai nas costas, acima do número.',['emp','ban','tel','beb','gam','mod'],.09],
+ ['nome','Nome do estádio','Naming rights: a marca dá nome ao estádio. Quanto melhor o estádio, mais paga. Exige arena moderna (estádio nível 2).',['emp','ban','tel','aut'],.08]];
 /* peso do tamanho do clube: gigante atrai contrato muitas vezes maior que clube pequeno (como Flamengo x clube de meio de tabela) */
 const spSize=c=>clamp(Math.pow(Math.max(0,prest(c)-50)/35,2),.12,2.2);
+/* master por ano, em reais, calibrado com contratos reais: o maior de cada liga (Flamengo ~R$ 220 mi, Real Madrid ~R$ 430 mi)
+   e cada ponto de prestígio abaixo do topo da liga reduz o valor em cerca de 30% (Mirassol fica perto de R$ 20 mi) */
+const SP_TOP={bra:220e6,bra2:10e6,eng:500e6,eng2:25e6,esp:430e6,esp2:8e6,ita:250e6,ita2:6e6,ger:380e6,ger2:12e6,fra:420e6,fra2:5e6,por:60e6,por2:3e6,ned:60e6,bel:30e6,tur:70e6,arg:35e6,uru:5e6,col:10e6,ecu:6e6,mex:60e6,usa:45e6,sau:90e6,xeu:20e6,xsa:5e6};
+function spYear(c){const top=SP_TOP[LG[c.lg].id]||10e6,mx=clubsOf(c.lg).reduce((m,x)=>Math.max(m,prest(x)),0);return Math.max(3e5,top*Math.exp(-.34*Math.max(0,mx-prest(c))));}
 function spUsed(){const o=G.own,u=[];if(o.spm&&o.spm.until>G.d)u.push(o.spm.b);for(const k in o.sps||{}){const x=o.sps[k];if(x&&x.until>G.d)u.push(x.b);}return u;}
 /* clube grande atrai marca global; clube pequeno, marca nacional */
 function spBrands(cats){const pr=prest(ownC()),tmin=pr>=85?1:pr>=72?2:3,used=spUsed();let L=BR.filter(b=>cats.includes(b.cat)&&b.t>=tmin).map(b=>bN(b.id)).filter(n=>!used.includes(n));
   if(L.length<3)L=BR.filter(b=>cats.includes(b.cat)).map(b=>bN(b.id)).filter(n=>!used.includes(n));if(L.length<3)L=L.concat(SPM_B.filter(n=>!used.includes(n)));return shuffle(L);}
-function spOffers(k){const o=G.own,c=ownC(),d=SPK.find(x=>x[0]===k);ownInit();const f=spSize(c)*(.8+o.mood/250)*(k==='nome'?1+.25*o.est:1),v=o.rev*d[4]*f,b=spBrands(d[3]);
+function spOffers(k){const o=G.own,c=ownC(),d=SPK.find(x=>x[0]===k);ownInit();const f=(.8+o.mood/250)*(k==='nome'?1+.25*o.est:1),v=spYear(c)/52*d[4]*f,b=spBrands(d[3]);
   (o.spOffs=o.spOffs||{})[k]=spMk(b,v);(o.spCd=o.spCd||{})[k]=G.d+28;}
 /* três formatos: à vista (paga tudo na assinatura, com desconto), em duas parcelas, ou parcelas mensais altas com bônus por título */
 function spMk(b,v){return[{b:b[0],mode:'v',wk:52,tot:nice(v*52*.88),k:'À vista'},{b:b[1],mode:'2',wk:104,tot:nice(v*104*.95),k:'Em 2 parcelas'},{b:b[2],mode:'m',wk:156,tot:nice(v*156),bon:nice(v*20),k:'Mensal + bônus por título'}];}
@@ -4844,7 +4848,7 @@ const spLeft=x=>x&&x.pay?x.pay.reduce((t,p)=>t+(p.ok?0:p.v),0):0;
 function spPayWeek(o){[o.spm].concat(SPK.map(d=>o.sps&&o.sps[d[0]])).forEach(x=>{if(x&&x.pay)x.pay.forEach(p=>{if(!p.ok&&p.d<=G.d){p.ok=1;x.rcv=(x.rcv||0)+p.v;}});});}
 const spOn=(o,k)=>{const x=o.sps&&o.sps[k];return x&&x.until>G.d?x:null;};
 const spxW=o=>SPK.reduce((t,d)=>t+spDue(o.sps&&o.sps[d[0]]),0);
-function ownInit(){const o=G.own;if(!o)return;const c=ownC();stfInit(o,c);if(o.spmOff&&o.spmOff[0]&&o.spmOff[0].tot==null)o.spmOff=null;if(o.spOffs)for(const k in o.spOffs){const L=o.spOffs[k];if(L&&L[0]&&L[0].tot==null)o.spOffs[k]=null;}if(o.price==null)o.price=1;if(o.plan==null)o.plan=1;if(o.ct==null)o.ct=0;if(o.est==null)o.est=0;if(o.base==null)o.base=0;
+function ownInit(){const o=G.own;if(!o)return;const c=ownC();stfInit(o,c);if(!o.spV2){o.spV2=1;o.spmOff=null;o.spOffs=null;}if(o.spmOff&&o.spmOff[0]&&o.spmOff[0].tot==null)o.spmOff=null;if(o.spOffs)for(const k in o.spOffs){const L=o.spOffs[k];if(L&&L[0]&&L[0].tot==null)o.spOffs[k]=null;}if(o.price==null)o.price=1;if(o.plan==null)o.plan=1;if(o.ct==null)o.ct=0;if(o.est==null)o.est=0;if(o.base==null)o.base=0;
   if(!o.rev)o.rev=nice((wageBill(c)+coachWage(c))*1.08);
   if(!o.m0){o.m0=Math.round(Math.max(3000,(c.str-55)*1500*(LG[c.lg].fame/2.5)));o.mem=Math.round(o.m0*(.5+o.mood/100));}
   o.hist=o.hist||[];if(!o.goal)ownGoal();}
@@ -4872,8 +4876,8 @@ function ownSeason(pos,s,L){const o=G.own;if(!o)return;ownInit();const g=o.goal;
   o.rev=nice(o.rev*(met?1.06:fail?.95:1.01));o.mood=clamp(o.mood+(met?10:fail?-12:0),0,100);if(met)addRep(1);else if(fail)addRep(-1);
   o.hist.unshift({lbl:g.lbl,t:g.t,pos,met});if(o.hist.length>10)o.hist.length=10;
   s.awards.push('Meta do '+ownC().n+': '+goalTxt(g).toLowerCase()+'. Terminou em '+pos+'º: '+(met?'meta batida, a receita do clube cresce 6%.':fail?'fracasso, a receita cai 5% e a torcida cobra.':'abaixo da meta, sem grandes estragos.'));}
-function spmOffers(){const o=G.own,c=ownC();ownInit();const f=spSize(c)*(.8+o.mood/250),R=o.rev,b=spBrands(['emp','ban','tel','aut','beb','gam']);
-  o.spmOff=spMk(b,R*.26*f);o.spmCd=G.d+28;}
+function spmOffers(){const o=G.own,c=ownC();ownInit();const f=(.8+o.mood/250),b=spBrands(['emp','ban','tel','aut','beb','gam']);
+  o.spmOff=spMk(b,spYear(c)/52*f);o.spmCd=G.d+28;}
 function titleBonus0(cl){const o=G.own;if(o&&o.spm&&o.spm.bon&&o.spm.until>G.d){cl.bud+=o.spm.bon;news('O patrocinador master '+o.spm.b+' pagou '+fmt(o.spm.bon)+' de bônus pelo título do '+cl.n+'.','clube');}
   if(o)SPK.forEach(d=>{const x=spOn(o,d[0]);if(x&&x.bon){cl.bud+=x.bon;news('A '+dispB(x.b)+' ('+d[1].toLowerCase()+') pagou '+fmt(x.bon)+' de bônus pelo título do '+cl.n+'.','clube');}});}
 const ownUpCost=(k,l)=>nice(G.own.rev*(k==='base'?B_UP:k==='est'?E_UP:C_UP)[l]);
