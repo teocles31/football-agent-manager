@@ -5008,11 +5008,11 @@ function ownBase(o,c){const ys=baseOf(c.id).slice().sort((a,b)=>b.pot-a.pot),yp=
    '<section class="card c-info">'+cardH('scout','Peneira')+'<p class="small">Uma tarde de testes com centenas de garotos. Os aprovados entram direto na base do '+esc(c.n)+'.</p>'+
    '<p class="small muted">Custa '+fmt(pc)+' do caixa do clube e 1 ação. Uma peneira a cada 8 semanas. Quanto melhor a base, maior a chance de achar uma joia.</p>'+
    '<button class="btn pri" data-a="openeira"'+(o.base<1||(o.penCd||0)>G.d||c.bud<pc||G.ap<1?' disabled':'')+'>'+(o.base<1?'Exige categorias de base':(o.penCd||0)>G.d?'Próxima peneira em '+fdate(o.penCd):'Fazer peneira')+'</button></section></div>';
-  h+='<section><div class="sec-h"><h2>Garotos da base <span class="small muted">'+ys.length+'</span></h2><p>Jogam o sub-20. Promover é uma decisão para sempre: o garoto assina como profissional, entra no elenco principal, ganha 4 semanas de titular e não volta mais para a base. Gasta 1 ação.</p></div><div class="card list">'+
+  h+='<section><div class="sec-h"><h2>Garotos da base <span class="small muted">'+ys.length+'</span></h2><p>Jogam o sub-20. Promover é uma decisão para sempre: o garoto assina como profissional, entra no elenco principal e não volta mais para a base. Se ele joga ou não, quem decide é o técnico. Gasta 1 ação.</p></div><div class="card list">'+
    (ys.map(p=>'<div>'+avatar(p,34)+ovrB(p.ovr)+'<div class="grow"><b>'+plLink(p)+'</b> <span class="chip">'+p.pos+'</span> <span class="small muted">'+p.age+' anos · potencial '+potTxt(p)+'</span>'+(p.u20&&p.u20.ap&&p.u20.y===y?'<div class="small">Sub-20: '+u20Txt(p)+'</div>':'')+'</div>'+
      '<button class="btn sm pri" data-a="opromo" data-p="'+p.id+'"'+(G.ap<1?' disabled':'')+'>Promover</button>'+
      (isClient(p)?'<span class="chip good">Seu cliente</span>':'<button class="btn sm" data-a="sign" data-p="'+p.id+'">Agenciar</button><button class="btn sm danger" data-a="ydrop" data-p="'+p.id+'">Dispensar</button>')+'</div>').join('')||'<div class="muted">Nenhum garoto na base. Faça uma peneira ou invista nas categorias de base.</div>')+'</div></section>';
-  h+='<section><div class="sec-h"><h2>Jovens no profissional <span class="small muted">'+yp.length+'</span></h2><p>Até 21 anos, já no elenco principal. Não voltam mais para a base. Se um reserva precisa jogar, você pode pedir minutos ao técnico.</p></div><div class="card list">'+
+  h+='<section><div class="sec-h"><h2>Jovens no profissional <span class="small muted">'+yp.length+'</span></h2><p>Até 21 anos, já no elenco principal. Não voltam mais para a base. Você pode pedir ao técnico mais chances para um reserva, mas quem decide é ele.</p></div><div class="card list">'+
    (yp.map(p=>'<div>'+avatar(p,34)+ovrB(p.ovr)+'<div class="grow"><b>'+plLink(p)+'</b> <span class="chip">'+p.pos+'</span> <span class="small muted">'+p.age+' anos · potencial '+potTxt(p)+'</span></div>'+
      (xi.has(p)?'<span class="chip good">Titular</span>':p.boost>0?'<span class="chip good">Jogando · '+p.boost+' sem</span>':'<button class="btn sm" data-a="omins" data-p="'+p.id+'"'+((p.promoCd||0)>G.d||G.ap<1?' disabled':'')+'>'+((p.promoCd||0)>G.d?'Pedido feito':'Pedir minutos')+'</button>')+'</div>').join('')||'<div class="muted">Nenhum jovem de até 21 anos no elenco principal.</div>')+'</div></section>';
   return h;}
@@ -5045,11 +5045,13 @@ const OWNA={
     news('A peneira do '+c.n+' aprovou '+out.map(y=>y.name+' ('+POSN[y.pos]+', '+y.age+' anos)').join(' e ')+'.','clube');
     pop({k:'good',ic:'scout',wait:1500,wt:'Peneira no CT do '+c.n+'…',ti:out.length+' aprovado'+(out.length>1?'s':''),tx:out.map(y=>y.name+' · '+y.pos+' · potencial '+potTxt(y)).join(' · '),ch:[['-'+fmt(pc)+' do clube','bad']]});save();render();},
   opromo(d){const p=G.P[d.p],c=ownC();if(!p||!c||p.club!==c.id)return;if(!p.yb){toast(p.name+' já é jogador profissional.');return;}if(!useAP())return;
-    basePromote(p,'por decisão da diretoria');p.boost=4;p.promoCd=G.d+84;p.morale=clamp(p.morale+10,0,100);p.wage=Math.max(p.wage||0,nice(wageRef(p.ovr,c.lg)*.6));p.ce=Math.max(p.ce||0,contractEnd(c,3));
+    basePromote(p,'por decisão da diretoria');p.morale=clamp(p.morale+10,0,100);p.wage=Math.max(p.wage||0,nice(wageRef(p.ovr,c.lg)*.6));p.ce=Math.max(p.ce||0,contractEnd(c,3));
     if(G.own){G.own.mood=clamp(G.own.mood+2,0,100);}news(p.name+' foi promovido ao time principal do '+c.n+' e assinou o primeiro contrato profissional.','clube');
-    pop({k:'good',ic:'train',ti:'Promovido ao profissional',tx:p.name+' agora é jogador do elenco principal do '+c.n+', com 4 semanas de titular garantidas. Não volta mais para a base.',ch:[['Contrato até '+fmonth(p.ce),'good'],['Salário '+fmt(p.wage)+'/sem','warn']]});save();render();},
-  omins(d){const p=G.P[d.p],c=ownC();if(!p||!c||p.club!==c.id||p.yb)return;if((p.promoCd||0)>G.d)return;if(!useAP())return;p.boost=3;p.promoCd=G.d+84;p.morale=clamp(p.morale+5,0,100);
-    news('A diretoria do '+c.n+' pediu ao técnico mais minutos para '+p.name+'.','clube');pop({k:'good',ic:'train',ti:'Pedido feito',tx:c.coach.n+' vai dar 3 semanas de titular a '+p.name+'.'});save();render();}
+    pop({k:'good',ic:'train',ti:'Promovido ao profissional',tx:p.name+' agora é jogador do elenco principal do '+c.n+'. Quem decide se ele joga é o técnico. Não volta mais para a base.',ch:[['Contrato até '+fmonth(p.ce),'good'],['Salário '+fmt(p.wage)+'/sem','warn']]});save();render();},
+  omins(d){const p=G.P[d.p],c=ownC();if(!p||!c||p.club!==c.id||p.yb)return;if((p.promoCd||0)>G.d)return;if(!useAP())return;p.promoCd=G.d+84;const o=G.own,rel=o&&o.crel!=null?o.crel:60,gap=starterOvr(c.id,p.pos)-p.ovr,ch=clamp(.35+(rel-50)/100-gap*.06,.05,.9);
+    news('A diretoria do '+c.n+' pediu ao técnico mais minutos para '+p.name+'.','clube');
+    if(Math.random()<ch){p.boost=2;p.morale=clamp(p.morale+5,0,100);pop({k:'good',ic:'train',ti:'Técnico topou',tx:c.coach.n+' vai dar mais chances a '+p.name+' nos próximos jogos.'});}
+    else{if(o)o.crel=clamp(rel-2,0,100);pop({k:'bad',ic:'no',ti:'Técnico não topou',tx:c.coach.n+' acha que '+p.name+' ainda não está pronto e manteve o time. A relação com ele caiu um pouco.'});}save();render();}
 };
 
 /* ---- mind.js ---- */
