@@ -2544,7 +2544,16 @@ const clubsOf=li=>G.clubs.filter(c=>c.lg===li);
 function ntBreaks(L,Y){if(L.reg==='eu')return EU_BREAKS.map(r=>[cd(Y,r[0]),cd(Y,r[1])]);
   const b=EU_BREAKS.map(r=>[dayOf(Y,r[0][0],r[0][1]),dayOf(Y,r[1][0],r[1][1])]);if(Y%4===2||Y%4===0)b.push([dayOf(Y,6,Y===2026?1:8),dayOf(Y,7,Y===2026?19:14)]);return b;}
 /* temporada já criada: tira das pausas as rodadas que ainda não foram jogadas */
-function ntReflow(){try{if(!G||G._ntb)return;G._ntb=1;const ko=new Set();for(const k in G.comps){const c=G.comps[k];(c.ko||[]).forEach(s=>[].concat(s.d||[]).forEach(d=>{ko.add(d-1);ko.add(d);ko.add(d+1);}));}
+/* Manager (calendário único): a correção das pausas de seleção não vale aqui. Ela mexia nas rodadas e juntava turno e returno.
+   Saves já afetados: as rodadas ainda não jogadas voltam para a ordem certa (primeiro quem ainda não se enfrentou, depois os returnos). */
+function uniFix(){try{if(!G||!G.uni||G._uniFix)return;G._uniFix=1;G._ntb=1;
+  for(const k in G.comps){const c=G.comps[k];if(c.t!=='L'||!c.rounds||c.rounds.length<4)continue;
+    const key=m=>m.map(x=>x[0]+'-'+x[1]).sort().join('|'),mir=m=>m.map(x=>x[1]+'-'+x[0]).sort().join('|');
+    const fut=c.rounds.filter(r=>!r.done&&r.d>G.d);if(fut.length<2)continue;const doneK=new Set(c.rounds.filter(r=>!fut.includes(r)).map(r=>key(r.m)));
+    const used=new Set(),A=[],B=[],C=[];
+    fut.forEach(r=>{if(used.has(r))return;if(doneK.has(mir(r.m))){B.push(r);used.add(r);return;}const p=fut.find(x=>x!==r&&!used.has(x)&&key(x.m)===mir(r.m));used.add(r);if(p){used.add(p);A.push(r);C.push(p);}else A.push(r);});
+    const dates=fut.map(r=>r.d).sort((a,b)=>a-b),ord=A.concat(B,C);ord.forEach((r,i)=>r.d=dates[i]);c.rounds.sort((a,b)=>a.d-b.d);}}catch(e){}}
+function ntReflow(){try{if(!G||G._ntb)return;G._ntb=1;if(G.uni)return;const ko=new Set();for(const k in G.comps){const c=G.comps[k];(c.ko||[]).forEach(s=>[].concat(s.d||[]).forEach(d=>{ko.add(d-1);ko.add(d);ko.add(d+1);}));}
   for(const k in G.comps){const c=G.comps[k];if(c.t!=='L'||!LG[c.li]||LG[c.li].reg==='eu')continue;const brk=ntBreaks(LG[c.li],c.Y),cf=CAL[LG[c.li].id],en=cf?cd(c.Y,cf.en):c.rounds[c.rounds.length-1].d,used=new Set(c.rounds.map(r=>r.d));
     c.rounds.forEach(r=>{if(r.d<=G.d||!inR(r.d,brk)||r.m.some(x=>x[2]>=0))return;
       for(let d=G.d+1;d<=en+21;d++){const w=ymd(d).w;if((w===3||w===6)&&!inR(d,brk)&&!used.has(d)&&!ko.has(d)&&!used.has(d-1)&&!used.has(d+1)){used.delete(r.d);r.d=d;used.add(d);break;}}});
@@ -2662,7 +2671,7 @@ function initWorld(name,mode){
   if(mode===1)news('Você herdou a carteira de contatos de um agente aposentado: sua reputação já abre portas no Brasileirão e em parte da Europa.','agencia');
   news('A janela de transferências da Europa está aberta até '+fdate(winNext('eu'),true)+'. A do Brasil e da América do Sul abre em '+fdate(winNext('sa'),true)+'. Champions League começa em setembro.','liga');
   G.alumni=[];G.nt=newNT();G.aw=newAW();G.hof=[];G.gen={};G.exs={olh:0};ntBuild();
-  G.lvlMax=lvlIdx();G.ap=apMax();G.apA=apMax();
+  G._ntb=1;G._uniFix=1;G.lvlMax=lvlIdx();G.ap=apMax();G.apA=apMax();
   G.adjA=adjSigs(); /* a carreira já nasce com os valores da planilha */
 }
 /* homônimos: na base de dados, alguns xarás de craques herdaram a nota do craque (um goleiro "João Pedro" com a nota do
@@ -3570,7 +3579,7 @@ function natNameFix(){if(!G||G._nnFix2)return;G._nnFix2=1;const fn={},sn={};for(
   Object.values(G.P).forEach(p=>{if(p.real||p.nf||!p.name)return;const w=p.name.split(' '),f=w[0],ls=w.slice(1),sc={};(fn[f]||[]).forEach(k=>sc[k]=(sc[k]||0)+1);ls.forEach(l=>(sn[l]||[]).forEach(k=>sc[k]=(sc[k]||0)+1));
     const best=Object.keys(sc).sort((a,b)=>sc[b]-sc[a])[0];if(!best||(sc[p.nat]||0)>=sc[best])return;p.nat=best;});}
 function nameFix(){if(G._nameFix)return;G._nameFix=1;NAMESET=null;Object.values(G.P).forEach(p=>{if(!p.real&&p.ag!==0&&/ \d+$/.test(p.name)){p.name=genName(p.nat||'XX');p.fk=null;}});DUPN=null;DUP2=null;}
-function migrate(){try{natNameFix();}catch(e){}baseSeed();dataFix();fakeFix();fakeFix2();nameFix();dupFix();ridFix();ownInstall();ntReflow();porAdd();porReal();porAdj();porSync();fcSync();G.me=G.me||newMe();evoMigrate();G.office=G.office||newOffice();G.fc=G.fc||[];if(G.inv===undefined)G.inv=null;if(G.pol===undefined)G.pol=null;
+function migrate(){try{natNameFix();}catch(e){}baseSeed();dataFix();fakeFix();fakeFix2();nameFix();dupFix();ridFix();ownInstall();uniFix();ntReflow();porAdd();porReal();porAdj();porSync();fcSync();G.me=G.me||newMe();evoMigrate();G.office=G.office||newOffice();G.fc=G.fc||[];if(G.inv===undefined)G.inv=null;if(G.pol===undefined)G.pol=null;
   if(G.own){G.own.role=G.own.role||'dono';if(G.own.pct==null)G.own.pct=100;}
   G.clubs.forEach(c=>{c.cf=c.cf||newCf();c.sack=c.sack||0;});if(!G.rc)applyRealCoaches(true);
   if(!G.hfix)fixHomonyms();
