@@ -3416,8 +3416,12 @@ function ridFix(){if(!G||G._rid)return;G._rid=1;const by={};Object.values(G.P).f
       if(c.length>1){const cur=c.filter(p=>club(p)&&club(p).n===cn);if(cur.length)c=cur;}if(c.length>1)c=c.filter(p=>p.pos===x[1]);if(c.length>1)c=c.filter(p=>!!(p.yb||p.cria)===isB);
       if(c.length===1){c[0].rid=rid;n++;}else if(c.length>1)amb++;});}};
   give(REAL,7,false);if(typeof BASE!=='undefined')give(BASE,6,true);G._ridN=[n,amb];}
+/* nome que não combina com a nacionalidade: a nacionalidade passa a ser a do nome (o nome que você já conhece não muda) */
+function natNameFix(){if(!G||G._nnFix2)return;G._nnFix2=1;const fn={},sn={};for(const k in NAMES){NAMES[k][0].split(',').forEach(f=>(fn[f]=fn[f]||[]).push(k));NAMES[k][1].split(',').forEach(x=>(sn[x]=sn[x]||[]).push(k));}
+  Object.values(G.P).forEach(p=>{if(p.real||p.nf||!p.name)return;const w=p.name.split(' '),f=w[0],ls=w.slice(1),sc={};(fn[f]||[]).forEach(k=>sc[k]=(sc[k]||0)+1);ls.forEach(l=>(sn[l]||[]).forEach(k=>sc[k]=(sc[k]||0)+1));
+    const best=Object.keys(sc).sort((a,b)=>sc[b]-sc[a])[0];if(!best||(sc[p.nat]||0)>=sc[best])return;p.nat=best;});}
 function nameFix(){if(G._nameFix)return;G._nameFix=1;NAMESET=null;Object.values(G.P).forEach(p=>{if(!p.real&&p.ag!==0&&/ \d+$/.test(p.name)){p.name=genName(p.nat||'XX');p.fk=null;}});DUPN=null;DUP2=null;}
-function migrate(){baseSeed();dataFix();fakeFix();fakeFix2();nameFix();dupFix();ridFix();ownInstall();ntReflow();porAdd();porReal();porAdj();porSync();fcSync();G.me=G.me||newMe();evoMigrate();G.office=G.office||newOffice();G.fc=G.fc||[];if(G.inv===undefined)G.inv=null;if(G.pol===undefined)G.pol=null;
+function migrate(){try{natNameFix();}catch(e){}baseSeed();dataFix();fakeFix();fakeFix2();nameFix();dupFix();ridFix();ownInstall();ntReflow();porAdd();porReal();porAdj();porSync();fcSync();G.me=G.me||newMe();evoMigrate();G.office=G.office||newOffice();G.fc=G.fc||[];if(G.inv===undefined)G.inv=null;if(G.pol===undefined)G.pol=null;
   if(G.own){G.own.role=G.own.role||'dono';if(G.own.pct==null)G.own.pct=100;}
   G.clubs.forEach(c=>{c.cf=c.cf||newCf();c.sack=c.sack||0;});if(!G.rc)applyRealCoaches(true);
   if(!G.hfix)fixHomonyms();
@@ -4049,7 +4053,7 @@ function baseKid(c,o){const p=newPlayer(Object.assign({club:c.id,yb:1,real:0},o)
   p.fame=clamp((p.ovr-56)*1.5,0,25);p.ag=Math.random()<.65?-1:clamp(Math.round((92-p.ovr)*1.1+rnd(-6,6)),1,G.ags.length-1);return p;}
 /* um garoto gerado para a base: 15 a 18 anos, nível pela força do clube */
 function baseGen(c,pos,age){age=age||ri(15,18);const ovr=clamp(Math.round(c.str-23-(19-age)*2.4+ri(-3,3)),42,66),r=Math.random();
-  const pot=clamp(Math.round(69+(c.str-72)*.5+ri(-5,8)+(r<.06?8:0)),ovr+6,91);return baseKid(c,{name:genName(natFor(c)),nat:natFor(c),pos,age,ovr,pot,potErr:5,potOff:rnd(-.8,.8)});}
+  const pot=clamp(Math.round(69+(c.str-72)*.5+ri(-5,8)+(r<.06?8:0)),ovr+6,91);const nat=natFor(c);return baseKid(c,{name:genName(nat),nat,pos,age,ovr,pot,potErr:5,potOff:rnd(-.8,.8)});}
 function baseFill(c,n){const b=baseOf(c.id);if(b.length>=n)return;const have={};b.forEach(p=>have[p.pos]=(have[p.pos]||0)+1);
   const need=BASE_POS.slice();b.forEach(p=>{const i=need.indexOf(p.pos);if(i>=0)need.splice(i,1);});
   for(let k=b.length;k<n;k++)baseGen(c,need.length?need.shift():pick(POS));}
