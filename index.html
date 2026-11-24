@@ -999,11 +999,11 @@ html:has(#modal:not([hidden])),html:has(#modal:not([hidden])) body{overflow:hidd
 #modal{overscroll-behavior:contain}
 /* ===== tela de jogo: própria, sem rolagem ===== */
 #modal.lvfull{padding:0;background:var(--bg);overflow:hidden;align-items:stretch}
-#modal.lvfull .sheet.live{width:100%;max-width:640px;height:100vh;height:100dvh;margin:0 auto;border:0;border-radius:0;padding:calc(8px + env(safe-area-inset-top,0px)) 12px calc(8px + env(safe-area-inset-bottom,0px));gap:6px;overflow:hidden;position:relative}
-#modal.lvfull .lv-cn{margin:0;font-size:10.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#modal.lvfull .sheet.live{width:100%;max-width:640px;height:100vh;height:100dvh;margin:0 auto;border:0;border-radius:0;padding:calc(22px + env(safe-area-inset-top,0px)) 12px calc(10px + env(safe-area-inset-bottom,0px));gap:10px;overflow:hidden;position:relative}
+#modal.lvfull .lv-cn{margin:0 0 2px;font-size:11.5px;font-weight:700;opacity:.9;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;filter:none;text-shadow:none}
 #modal.lvfull .lv-sb{gap:6px}#modal.lvfull .lv-t b{font-size:13.5px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 #modal.lvfull .lv-sc b{font-size:30px}#modal.lvfull .lv-sc span{font-size:11.5px;max-width:150px}
-#modal.lvfull .lv-dom{margin:2px 0 0;height:5px}
+#modal.lvfull .lv-dom{margin:4px 0 2px;height:5px}
 #modal.lvfull .lv-tk{height:auto;min-height:34px;max-height:46px;font-size:12px!important;display:flex;align-items:center;padding:4px 10px;font-size:12.5px}
 #modal.lvfull .lv-tk>div{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 #modal.lvfull .lv-pw{flex:1;min-height:0;display:flex;flex-direction:column}
@@ -1029,7 +1029,7 @@ html:has(#modal:not([hidden])),html:has(#modal:not([hidden])) body{overflow:hidd
 .lv-pop{position:absolute;inset:0;z-index:12;background:rgba(0,0,0,.55);display:flex;align-items:flex-end;justify-content:center;padding:12px}
 .lv-popb{width:100%;max-height:80%;overflow-y:auto;background:var(--surface);border-radius:16px;border-top:4px solid var(--gold);padding:14px;display:flex;flex-direction:column;gap:8px;animation:up .18s ease-out}
 .lv-popb h3{margin:0}.lv-popb .btn{margin-top:6px}
-@media (max-height:720px){#modal.lvfull .lv-p .pt-pos{display:none}#modal.lvfull .lv-cn{display:none}}
+@media (max-height:720px){#modal.lvfull .lv-p .pt-pos{display:none}}@media (max-height:640px){#modal.lvfull .lv-cn{display:none}#modal.lvfull .sheet.live{gap:7px;padding-top:calc(12px + env(safe-area-inset-top,0px))}}
 @media (max-height:640px){#modal.lvfull .lv-p .lv-en{display:none}#modal.lvfull .lv-dom{display:none}}
 .wins,#marca .wins{display:flex;flex-direction:column;align-items:stretch;gap:4px}
 .wins .janela{justify-content:flex-start}
