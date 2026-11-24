@@ -651,6 +651,8 @@ html,body{touch-action:manipulation}
 .mgm button{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:10px;border:1px solid var(--line);border-radius:var(--r);background:var(--bg);color:var(--ink);font:inherit;text-align:left;cursor:pointer;min-width:0}
 .mgm button svg{color:var(--teal)}.mgm button b{font-size:14.5px}.mgm button small{font-size:11.5px;line-height:1.3;opacity:.8}
 .mgm button[aria-pressed="true"]{border:2px solid var(--gold);padding:9px;background:color-mix(in srgb,var(--gold) 14%,var(--bg))}
+.mg-step{font-size:12px;letter-spacing:.06em;text-transform:uppercase;opacity:.8;margin:2px 0}.mg-step b{color:var(--gold)}
+.mg-prof{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}.mg-prof .grow{display:flex;flex-direction:column;min-width:0}.mg-prof b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mg-prof small{font-size:12.5px;opacity:.75}
 .mg-lgs{width:100%;padding:9px;border:1px solid var(--line);border-radius:var(--r);background:var(--bg);color:var(--ink);font:inherit;margin:4px 0 8px}
 .mgcl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;max-height:290px;overflow:auto;padding:2px}
 .mgcl button{display:flex;align-items:center;gap:7px;padding:7px;border:1px solid var(--line);border-radius:var(--r);background:var(--bg);color:var(--ink);font:inherit;text-align:left;cursor:pointer;min-width:0}
@@ -5660,15 +5662,21 @@ function mgrClubList(li){let id=0;for(let i=0;i<li;i++)id+=CLUBS[LG[i].id].split
 const mgrExp=(rk,n)=>rk<=2?'Favorito ao título':rk<=5?'Briga pelo topo':rk>n-4?'Luta para não cair':'Meio de tabela';
 function mgrNews(){const open=(ui.fold||{}).mgnews,L=G.news.filter(n=>n.cat!=='agencia').slice(0,open?12:3);
   return'<section class="card">'+cardH('report','Notícias','<span class="przh">'+tglB('fold',open,'notícias','mgnews')+'</span>')+'<div class="list">'+L.map(n=>'<div><span class="small muted">'+fdate(n.d)+'</span><span class="small grow">'+esc(n.t)+'</span></div>').join('')+'</div></section>';}
-function mgrStartH(nm){const lgs=LG.map((L,i)=>[L,i]).filter(x=>!x[0].ext),li=ui.mglg!=null?ui.mglg:0,cl=mgrClubList(li).filter((x,k,a)=>MGR_FREE||k>=a.length/2),sel=cl.find(x=>x.id===ui.mgc);
-  return'<p class="small">Você comanda o time: esquema, estilo e os 11 titulares. Também contrata, vende e cuida das finanças do clube. A diretoria cobra resultado: se o time for mal, você é demitido e procura outro clube.</p>'+
-   '<div class="field"><label for="ag-name">Seu nome de técnico</label><input type="text" id="ag-name" maxlength="30" placeholder="Ex.: Professor Silva" value="'+esc(nm)+'"></div>'+
-   '<span class="lbl">Seu estilo de jogo</span><div class="lv-chips">'+Object.keys(STYLES).map(x=>'<button data-a="mgpst" data-v="'+x+'" aria-pressed="'+(ui.mgst===x)+'">'+esc(STYLES[x][0])+'</button>').join('')+'</div>'+(ui.mgst?'<span class="small muted">'+esc(STYLES[ui.mgst][0])+': '+esc(STYLES[ui.mgst][1])+'.</span>':'')+
-   '<span class="lbl">Sua personalidade</span><div class="lv-chips">'+Object.keys(PERS).map(x=>'<button data-a="mgppe" data-v="'+x+'" aria-pressed="'+(ui.mgpe===x)+'">'+esc(PERS[x][0])+'</button>').join('')+'</div>'+(ui.mgpe?'<span class="small muted">'+esc(PERS[ui.mgpe][0])+': '+esc(PERS[ui.mgpe][1])+'.</span>':'')+
+function mgrStartH(nm){
+  if(ui.mgstep!==2){const ok=ui.mgst&&ui.mgpe;
+    return'<div class="mg-step"><b>Passo 1 de 2</b> · Seu perfil de técnico</div>'+
+     '<p class="small">Você comanda o time: esquema, estilo e os 11 titulares. Também contrata, vende e cuida das finanças do clube. A diretoria cobra resultado: se o time for mal, você é demitido e procura outro clube.</p>'+
+     '<div class="field"><label for="ag-name">Seu nome de técnico</label><input type="text" id="ag-name" maxlength="30" placeholder="Ex.: Professor Silva" value="'+esc(nm)+'"></div>'+
+     '<span class="lbl">Seu estilo de jogo</span><div class="lv-chips">'+Object.keys(STYLES).map(x=>'<button data-a="mgpst" data-v="'+x+'" aria-pressed="'+(ui.mgst===x)+'">'+esc(STYLES[x][0])+'</button>').join('')+'</div>'+(ui.mgst?'<span class="small muted">'+esc(STYLES[ui.mgst][0])+': '+esc(STYLES[ui.mgst][1])+'.</span>':'')+
+     '<span class="lbl">Sua personalidade</span><div class="lv-chips">'+Object.keys(PERS).map(x=>'<button data-a="mgppe" data-v="'+x+'" aria-pressed="'+(ui.mgpe===x)+'">'+esc(PERS[x][0])+'</button>').join('')+'</div>'+(ui.mgpe?'<span class="small muted">'+esc(PERS[ui.mgpe][0])+': '+esc(PERS[ui.mgpe][1])+'.</span>':'')+
+     '<button class="btn pri big st-go" data-a="mgnext"'+(ok?'':' disabled')+'>'+(!ui.mgst?'Escolha seu estilo':!ui.mgpe?'Escolha sua personalidade':'Continuar: escolher o clube')+'</button>';}
+  const lgs=LG.map((L,i)=>[L,i]).filter(x=>!x[0].ext),li=ui.mglg!=null?ui.mglg:0,cl=mgrClubList(li).filter((x,k,a)=>MGR_FREE||k>=a.length/2),sel=cl.find(x=>x.id===ui.mgc);
+  return'<div class="mg-step"><b>Passo 2 de 2</b> · Seu primeiro clube</div>'+
+   '<div class="mg-prof">'+svgI('coach',22)+'<span class="grow"><b>'+esc((nm||'').trim()||'Treinador')+'</b><small>'+esc(STYLES[ui.mgst][0])+' · '+esc(PERS[ui.mgpe][0])+'</small></span><button class="btn sm" data-a="mgback">Editar</button></div>'+
    '<span class="lbl">Liga</span><select class="mg-lgs" id="mg-lg">'+lgs.map(x=>'<option value="'+x[1]+'"'+(x[1]===li?' selected':'')+'>'+esc(x[0].n+' · '+x[0].cn)+'</option>').join('')+'</select>'+
    '<span class="lbl">Clube</span><div class="mgcl">'+cl.map((x,k)=>'<button data-a="mgclub" data-v="'+x.id+'" aria-pressed="'+(x.id===ui.mgc)+'">'+crest(x,24)+'<span><b>'+esc(x.n)+'</b><small>'+mgrExp(k+1,cl.length)+'</small></span></button>').join('')+'</div>'+
    (sel?'<div class="mg-info"><b>'+esc(sel.n)+'</b> · '+esc(mgrExp(cl.indexOf(sel)+1,cl.length)).toLowerCase()+'. É o '+(cl.indexOf(sel)+1)+'º elenco mais forte da liga.</div>':'')+
-   '<button class="btn pri big st-go" data-a="mgstart"'+(sel&&ui.mgst&&ui.mgpe?'':' disabled')+'>'+(!ui.mgst?'Escolha seu estilo':!ui.mgpe?'Escolha sua personalidade':sel?'Assumir o '+esc(sel.n):'Escolha um clube')+'</button>';}
+   '<button class="btn pri big st-go" data-a="mgstart"'+(sel?'':' disabled')+'>'+(sel?'Assumir o '+esc(sel.n):'Escolha um clube')+'</button>';}
 /* assume o clube como técnico */
 function mgrTake(c,me){takeControl(c,'mgr',0);const o=G.own;o.term=0;o.mg={bc:62,since:G.d,warn:0,prev:62};o.fm=o.fm||'442';o.xi=null;o.cap=null;o.pen=null;o.cands=[];
   me.since=G.d;me.g=0;me.pts=0;c.coach=me;c.cf=newCf();c.sack=0;o.xi=mgrCur(c);o.bench=mgrAutoBench(c);rlAuto(o,c);}
@@ -5747,16 +5755,18 @@ function mMgSlot(){const m=ui.modal,c=ownC(),o=G.own;if(!c||!o){ui.modal=null;re
       (p===cur?'<span class="chip good">Na vaga</span>':'<button class="btn sm pri" data-a="mgpick" data-i="'+m.i+'" data-p="'+p.id+'"'+(ok?'':' disabled')+'>Escalar</button>')+'</div>';}).join('')+(L.length?'':'<div class="small muted">Nenhum '+POSN[pos]+' no elenco.</div>')+'</div><div class="acts">'+(more||ui.slotAll?'<button class="btn" data-a="slotall">'+(ui.slotAll?'Só '+POSPL[pos]:'Ver outras posições')+'</button>':'')+'<button class="btn" data-a="close">Fechar</button></div></div>';}
 function mgrCur(c){return mgrMap(c).map(p=>p?p.id:null);}
 const MGRA={
-  gmode(d){const el=$('#ag-name');if(el&&ui.gmode===d.v)ui.agn=el.value;else ui.agn=null;ui.gmode=d.v;render();},
+  gmode(d){const el=$('#ag-name');if(el&&ui.gmode===d.v)ui.agn=el.value;else{ui.agn=null;ui.mgstep=1;}ui.gmode=d.v;render();},
   mgclub(d){const el=$('#ag-name');if(el)ui.agn=el.value;ui.mgc=+d.v;render();},
+  mgnext(){const el=$('#ag-name');if(el)ui.agn=el.value;if(!ui.mgst||!ui.mgpe)return;ui.mgstep=2;render();window.scrollTo(0,0);},
+  mgback(){ui.mgstep=1;render();window.scrollTo(0,0);},
   mgpst(d){const el=$('#ag-name');if(el)ui.agn=el.value;if(STYLES[d.v])ui.mgst=d.v;render();},
   mgppe(d){const el=$('#ag-name');if(el)ui.agn=el.value;if(PERS[d.v])ui.mgpe=d.v;render();},
-  mgstart(){const el=$('#ag-name'),nm=((el&&el.value)||'').trim().slice(0,30)||'Treinador',id=ui.mgc,st=ui.mgst,pe=ui.mgpe;if(id==null||!STYLES[st]||!PERS[pe])return;
+  mgstart(){const el=$('#ag-name'),nm=((el?el.value:ui.agn)||'').trim().slice(0,30)||'Treinador',id=ui.mgc,st=ui.mgst,pe=ui.mgpe;if(id==null||!STYLES[st]||!PERS[pe])return;
     MGR_SA=true;try{initWorld(nm,0);}finally{MGR_SA=false;}G.mgr=1;G.money=0;G.clients.forEach(i=>{const p=G.P[i];if(p){p.ag=ri(1,G.ags.length-1);p.comm=0;}});G.clients=[];G.prospects=[];G.offers=[];G.missions=[];
     G.news=G.news.filter(n=>n.cat!=='agencia'&&!/^A janela de transferências/.test(n.t));news('A temporada 2026 começa junto no mundo todo: ligas e copas vão de janeiro a novembro.','liga');const c=G.clubs[id];
     {const me={n:nm,r:62,st,pe,age:40,ng:LG[c.lg].reg==='sa'?'BR':'EU',me:1};mgrSk(me);mgrR(me);mgrTake(c,me);}
     news(nm+' é o novo técnico do '+c.n+'. A diretoria quer: '+(G.own.goal?goalTxt(G.own.goal).toLowerCase():'um bom trabalho')+'.','clube');
-    ui.agn=null;ui.mgc=null;ui.mgst=null;ui.mgpe=null;ui.gmode=null;ui.newSlot=null;ui.tab='clube';ui.osub='time';save();render();window.scrollTo(0,0);},
+    ui.agn=null;ui.mgc=null;ui.mgst=null;ui.mgpe=null;ui.mgstep=1;ui.gmode=null;ui.newSlot=null;ui.tab='clube';ui.osub='time';save();render();window.scrollTo(0,0);},
   mgfm(d){const o=G.own,c=ownC();if(!o||!FORMS[d.v])return;if(o.xi){const old=mgrSlots(o.fm),ids=o.xi,by={};old.forEach((p,i)=>{if(ids[i]!=null)(by[p]||(by[p]=[])).push(ids[i]);});
       o.xi=mgrSlots(d.v).map(p=>{const a=by[p];const id=a&&a.length?a.shift():null;return id;});
       /* quem sobrou entra nas vagas vazias perto da posição dele */
