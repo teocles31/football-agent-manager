@@ -6525,7 +6525,7 @@ function mSlots(inGame){const dk=typeof themeNow==='function'&&themeNow()==='dar
    (inGame?'<button class="mn-row" data-a="edit"><span class="mn-ic">'+MN_I.img+'</span><span class="grow"><b>Fotos e patrocinadores</b><small>Escudos, rostos e marcas personalizadas</small></span><span class="chev">›</span></button>':'')+'</div>';
   return h+'</div>';}
 /* versão: o script de publicação grava a data e a hora em APP_V. O botão baixa a página publicada sem cache e, se ela for mais nova, salva e recarrega. */
-const APP_V='202611232357';
+const APP_V='202611240911';
 const verTxt=v=>/^\d{12}$/.test(v)?'Publicada em '+v.slice(6,8)+'/'+v.slice(4,6)+'/'+v.slice(0,4)+' às '+v.slice(8,10)+':'+v.slice(10,12):'Versão de teste';
 async function updChk(){ui.upd={t:'Procurando…',busy:1};render();
   try{const r=await fetch(location.pathname+'?chk='+Date.now(),{cache:'no-store'}),t=await r.text(),m=t.match(/const APP_V='(\d{12})'/),nv=m?m[1]:null;
