@@ -5001,9 +5001,14 @@ const EVOA={
    Receita semanal dividida como num clube de verdade: TV, bilheteria (só nas semanas com jogo em casa), sócio-torcedor,
    patrocinador master e loja. Despesas: folha, técnico e a manutenção de estádio, base e CT. "R" é a receita de referência
    do clube, que cresce quando a meta da temporada é batida e encolhe quando o time fracassa. */
-const EST_N=['Estádio acanhado','Estádio reformado','Arena moderna','Arena multiuso','Arena padrão FIFA','Arena-símbolo'];
-const BASE_N=['Sem categorias de base','Sub-17 e sub-20 básicos','Centro de formação','Academia certificada','Academia de referência','Cantera de elite'];
-const CT_N=['Campo alugado','CT básico','CT com academia','CT moderno','CT de elite'];
+const EST_N=['Estrutura básica','Reformado','Modernizado','Arena moderna','Padrão FIFA','Referência mundial'];
+const BASE_N=['Base iniciante','Sub-17 e sub-20 básicos','Centro de formação','Academia certificada','Academia de referência','Cantera de elite'];
+const CT_N=['CT simples','CT básico','CT com academia','CT moderno','CT de elite'];
+/* nível de partida: o clube já chega com o estádio, o CT e a base que tem de verdade (gigante começa lá em cima).
+   O que já existe não custa manutenção extra nem muda a capacidade inicial: só o que você evoluir conta. */
+const infStart=c=>{const s=c.str;return[s>=84?4:s>=76?3:s>=71?2:s>=65?1:0,s>=83?3:s>=76?2:1,s>=80?3:s>=72?2:1];};
+function lvFix(o,c){if(!o||!c||o.lv0)return;o.lv0=1;const z=infStart(c);o.est0=z[0];o.ct0=z[1];o.base0=z[2];
+  ['est','ct','base'].forEach((k,i)=>{o[k]=Math.max(o[k]||0,z[i]);const x=o.obras&&o.obras[k];if(x&&x.lv<=o[k]){c.bud+=x.cost||0;delete o.obras[k];}});}
 /* nome, multiplicador do preço, efeito na ocupação, humor da torcida por semana */
 const PRICE=[['Popular',.7,.15,.25],['Normal',1,0,0],['Caro',1.3,-.12,-.15],['Premium',1.6,-.25,-.35]];
 /* nome, efeito no número de sócios, efeito na mensalidade, humor por semana */
@@ -5014,7 +5019,7 @@ const B_UP=[8,16,30,50,80],E_UP=[15,30,55,90,140],C_UP=[10,20,40,70];
 const SPK=[['uni','Material esportivo','Fornecedora do uniforme. Paga menos que o master, mas a loja vende 10% a mais.',['chut'],.35],
  ['manga','Manga da camisa','A marca vai na manga do uniforme em todos os jogos.',['ban','tel','aut','gam','sup','beb'],.05],
  ['costas','Costas da camisa','A marca vai nas costas, acima do número.',['emp','ban','tel','beb','gam','mod'],.09],
- ['nome','Nome do estádio','Naming rights: a marca dá nome ao estádio. Quanto melhor o estádio, mais paga. Exige arena moderna (estádio nível 2).',['emp','ban','tel','aut'],.08]];
+ ['nome','Nome do estádio','Naming rights: a marca dá nome ao estádio. Quanto melhor o estádio, mais paga. Exige estádio modernizado (nível 2).',['emp','ban','tel','aut'],.08]];
 /* peso do tamanho do clube: gigante atrai contrato muitas vezes maior que clube pequeno (como Flamengo x clube de meio de tabela) */
 const spSize=c=>clamp(Math.pow(Math.max(0,prest(c)-50)/35,2),.12,2.2);
 /* master por ano, em reais, calibrado com contratos reais: o maior de cada liga (Flamengo ~R$ 220 mi, Real Madrid ~R$ 430 mi)
@@ -5055,11 +5060,11 @@ const spLeft=x=>x&&x.pay?x.pay.reduce((t,p)=>t+(p.ok?0:p.v),0):0;
 function spPayWeek(o){[o.spm].concat(SPK.map(d=>o.sps&&o.sps[d[0]])).forEach(x=>{if(x&&x.pay)x.pay.forEach(p=>{if(!p.ok&&p.d<=G.d){p.ok=1;x.rcv=(x.rcv||0)+p.v;}});});}
 const spOn=(o,k)=>{const x=o.sps&&o.sps[k];return x&&x.until>G.d?x:null;};
 const spxW=o=>SPK.reduce((t,d)=>t+spDue(o.sps&&o.sps[d[0]]),0);
-function ownInit(){const o=G.own;if(!o)return;const c=ownC();stfInit(o,c);if(!o.spV2){o.spV2=1;o.spmOff=null;o.spOffs=null;}if(o.spmOff&&o.spmOff[0]&&o.spmOff[0].tot==null)o.spmOff=null;if(o.spOffs)for(const k in o.spOffs){const L=o.spOffs[k];if(L&&L[0]&&L[0].tot==null)o.spOffs[k]=null;}if(o.price==null)o.price=1;if(o.plan==null)o.plan=1;if(o.ct==null)o.ct=0;if(o.est==null)o.est=0;if(o.base==null)o.base=0;
+function ownInit(){const o=G.own;if(!o)return;const c=ownC();stfInit(o,c);if(!o.spV2){o.spV2=1;o.spmOff=null;o.spOffs=null;}if(o.spmOff&&o.spmOff[0]&&o.spmOff[0].tot==null)o.spmOff=null;if(o.spOffs)for(const k in o.spOffs){const L=o.spOffs[k];if(L&&L[0]&&L[0].tot==null)o.spOffs[k]=null;}if(o.price==null)o.price=1;if(o.plan==null)o.plan=1;if(o.ct==null)o.ct=0;if(o.est==null)o.est=0;if(o.base==null)o.base=0;lvFix(o,c);
   if(!o.rev)o.rev=nice((wageBill(c)+coachWage(c))*1.08);
   if(!o.m0){o.m0=Math.round(Math.max(3000,(c.str-55)*1500*(LG[c.lg].fame/2.5)));o.mem=Math.round(o.m0*(.5+o.mood/100));}
   o.hist=o.hist||[];if(!o.goal)ownGoal();}
-const capOf=c=>{const o=ownOf(c)||{};return Math.round((12000+Math.max(0,c.str-60)*1500)*(1+.3*(o.est||0))*(o.obras&&o.obras.est?.8:1)/500)*500;};
+const capOf=c=>{const o=ownOf(c)||{};return Math.round((12000+Math.max(0,c.str-60)*1500)*(1+.3*Math.max(0,(o.est||0)-(o.est0||0)))*(o.obras&&o.obras.est?.8:1)/500)*500;};
 function expRank(c){const L=curLeague(c.lg);if(!L)return null;return Object.keys(L.tab).map(Number).sort((a,b)=>teamStr(b)-teamStr(a)).indexOf(c.id)+1;}
 function ownGoal(){const o=G.own,c=ownC(),L=curLeague(c.lg);if(!L)return;const e=expRank(c)||10,n=Object.keys(L.tab).length;
   o.goal={lid:L.id,lbl:L.name+' '+L.lbl,t:e<=1?1:e<=4?e:Math.min(e,n-4),n};}
@@ -5070,7 +5075,7 @@ function clubFin(){const o=G.own,c=ownC();ownInit();const R=o.rev,est=o.est,pr=P
   const bil=Math.round(R*.44*(1+.3*est)*occ*pr[1]/.78*homes),tv=Math.round(R*.35),soc=Math.round(R*.15*o.mem/o.m0*pl[2]);
   const top=squad(c.id).map(p=>p.fame||0).sort((a,b)=>b-a).slice(0,5),fm=top.reduce((s,x)=>s+x,0)/Math.max(1,top.length);
   const loja=Math.round(R*.08*(.6+fm/80)*(spOn(o,'uni')?1.1:1)),spm=spDue(o.spm),spx=spxW(o);
-  const sal=wageBill(c),tec=coachWage(c),mest=Math.round(R*.03*est),mbase=Math.round(R*[0,.02,.04,.06,.09,.12][o.base]),mct=Math.round(R*[0,.02,.04,.07,.1][o.ct]);
+  const sal=wageBill(c),tec=coachWage(c),mest=Math.round(R*.03*Math.max(0,est-(o.est0||0))),mbase=Math.round(R*Math.max(0,[0,.02,.04,.06,.09,.12][o.base]-[0,.02,.04,.06,.09,.12][o.base0||0])),mct=Math.round(R*Math.max(0,[0,.02,.04,.07,.1][o.ct]-[0,.02,.04,.07,.1][o.ct0||0]));
   const stf=stfBill(o),ar=arInc(o,homes),inc=bil+tv+soc+loja+spm+spx+ar,out=sal+tec+stf+mest+mbase+mct;
   return{ar,bil,tv,soc,loja,spm,spx,stf,sal,tec,mest,mbase,mct,inc,out,net:inc-out,occ,homes,att:homes?Math.round(capOf(c)*occ):0};}
 function ownWeek2(){const o=G.own,c=ownC();ownInit();const pl=PLAN[o.plan];
@@ -5183,7 +5188,7 @@ const OBRA_W={est:[16,22,30,40,52],ct:[8,12,16,22],base:[6,10,14,18,24]};
 const obraOf=(o,k)=>o&&o.obras&&o.obras[k]||null;
 const OBRA_N={est:'Estádio',ct:'Centro de treinamento',base:'Categorias de base'};
 function obraWeek(){const o=G.own;if(!o||!o.obras)return;const c=ownC();for(const k in o.obras){const x=o.obras[k];if(!x||x.end>G.d)continue;
-    o[k]=x.lv;delete o.obras[k];if(k==='est')o.mood=clamp(o.mood+6,0,100);const nm=(k==='base'?BASE_N:k==='est'?EST_N:CT_N)[x.lv];
+    o[k]=Math.max(o[k]||0,x.lv);delete o.obras[k];if(k==='est')o.mood=clamp(o.mood+6,0,100);const nm=(k==='base'?BASE_N:k==='est'?EST_N:CT_N)[x.lv];
     news('Obra entregue no '+c.n+': '+nm+'.','clube');pop({k:'good',ic:'build',ti:'Obra entregue',tx:OBRA_N[k]+' do '+c.n+' agora é '+nm+'.',ch:k==='est'?[['Torcida +6','good']]:[]});}}
 function upBtn(k,l,max,lv){const x=obraOf(G.own,k);if(x){const tot=Math.max(1,x.end-x.st),pc=clamp(Math.round((G.d-x.st)/tot*100),0,100);
     return'<div class="next"><span class="lbl">Em obras</span><b>'+esc(lv[x.lv])+'</b><span class="small muted">entrega em '+fdate(x.end,true)+' · faltam '+Math.max(1,Math.ceil((x.end-G.d)/7))+' semanas</span></div><div class="sp-bar"><i><b style="width:'+pc+'%"></b></i></div>'+(k==='est'?'<p class="small warnk">Durante a obra, o estádio recebe 20% menos torcedores.</p>':'');}
@@ -5205,9 +5210,9 @@ function ownBase(o,c,part){const ys=baseOf(c.id).slice().sort((a,b)=>b.pot-a.pot
      (xi.has(p)?'<span class="chip good">Titular</span>':p.boost>0?'<span class="chip good">Jogando · '+p.boost+' sem</span>':'<button class="btn sm" data-a="omins" data-p="'+p.id+'"'+((p.promoCd||0)>G.d||G.ap<1?' disabled':'')+'>'+((p.promoCd||0)>G.d?'Pedido feito':'Pedir minutos')+'</button>')+'</div>').join('')||'<div class="muted">Nenhum jovem de até 21 anos no elenco principal.</div>')+'</div></section>';
   return h+pen;}
 function ownEst(o,c,fin,part){const pr=PRICE[o.price];
-  const est='<section class="card c-gold">'+cardH('club','Estádio',hq('est'))+pips(o.est,5)+'<b class="big2">'+esc(EST_N[o.est])+'</b>'+
+  const est='<section class="card c-gold">'+cardH('club',stadOf(c),hq('est'))+pips(o.est,5)+'<b class="big2">'+esc(EST_N[o.est])+'</b>'+
    '<div class="kpis"><div class="kpi"><span>Capacidade</span><b>'+capOf(c).toLocaleString('pt-BR')+'</b></div><div class="kpi"><span>Ocupação</span><b>'+Math.round(fin.occ*100)+'%</b><small>ingresso '+pr[0].toLowerCase()+'</small></div></div>'+
-   '<p class="small muted">Cada nível aumenta a capacidade em 30%, atrai mais sócios e valoriza o clube. Custa manutenção semanal.</p>'+upBtn('est',o.est,5,EST_N)+'</section>',ct='<section class="card c-teal">'+cardH('train','Centro de treinamento',hq('ct'))+pips(o.ct,4)+'<b class="big2">'+esc(CT_N[o.ct])+'</b>'+
+   '<p class="small muted">Você evolui o estádio do clube. Cada reforma aumenta a capacidade em 30%, atrai mais sócios e valoriza o clube. Custa manutenção semanal.</p>'+upBtn('est',o.est,5,EST_N)+'</section>',ct='<section class="card c-teal">'+cardH('train','Centro de treinamento',hq('ct'))+pips(o.ct,4)+'<b class="big2">'+esc(CT_N[o.ct])+'</b>'+
    '<p class="small muted">Cada nível reduz em 10% o risco de lesão dos jogadores do clube e acelera em 4% a evolução de quem tem até 21 anos. Custa manutenção semanal.</p>'+upBtn('ct',o.ct,4,CT_N)+'</section>';
   return part==='estadio'?est:part==='ct'?ct:'<div class="dcols">'+est+ct+'</div>';}
 
@@ -8117,11 +8122,11 @@ const HELP={
  sp_uni:['Material esportivo','A fornecedora do uniforme. Paga menos que o master, mas faz a loja vender 10% a mais enquanto o contrato durar.'],
  sp_manga:['Manga da camisa','Cota menor, com a marca na manga do uniforme.'],
  sp_costas:['Costas da camisa','Cota menor, com a marca nas costas, acima do número.'],
- sp_nome:['Nome do estádio','Naming rights: a marca dá nome ao estádio. Só libera com o estádio no nível 2 (arena moderna), e quanto melhor o estádio, mais a marca paga.'],
+ sp_nome:['Nome do estádio','Naming rights: a marca dá nome ao estádio. Só libera com o estádio no nível 2 (modernizado), e quanto melhor o estádio, mais a marca paga.'],
  tor:['Ingressos e sócios','Preço do ingresso: barato enche o estádio e agrada a torcida; caro rende mais por torcedor, mas esvazia e irrita.\n\nPlano de sócio: popular atrai mais sócios pagando menos; premium o contrário.\n\nA torcida feliz empurra o time em casa e aumenta os sócios.'],
  prz:['Premiações','Dinheiro que o clube ganha por resultado: posição final na liga, fases alcançadas nas copas e continentais, e títulos.\n\nO dinheiro entra no caixa do clube no mesmo dia em que o prêmio é conquistado.\n\nA temporada vira quando a liga termina: os prêmios ganhos até ali ficam no extrato daquela temporada, e o contador da nova começa do zero.'],
  soc:['Sociedade','Aportar: tira dinheiro da agência e põe no caixa do clube.\nRetirar dividendos: leva para a agência a sua parte do caixa, mas irrita a torcida. Dá para fazer 2 vezes por temporada.\nVender ações: você sai do clube e recebe o valor da sua parte.'],
-  est:['Estádio','Obras levam de 16 a 52 semanas, conforme o nível, e durante a obra o estádio recebe 20% menos torcedores. Cada nível aumenta a capacidade em 30%, atrai mais sócios, valoriza o clube e libera o naming rights no nível 2. Custa manutenção semanal.'],
+  est:['Estádio','Obras levam de 16 a 52 semanas, conforme o nível, e durante a obra o estádio recebe 20% menos torcedores. O clube já começa com o estádio que tem de verdade; cada reforma aumenta a capacidade em 30%, atrai mais sócios, valoriza o clube e libera o naming rights no nível 2. Custa manutenção semanal.'],
  ct:['Centro de treinamento','Obras levam de 8 a 22 semanas. O efeito só vale quando a obra é entregue. Cada nível reduz em 10% o risco de lesão, acelera em 4% a evolução de quem tem até 21 anos e soma força nos jogos. Custa manutenção semanal.'],
  base:['Categorias de base','Obras levam de 6 a 24 semanas. O efeito só vale quando a obra é entregue. A cada dois níveis sobe mais um garoto por temporada, com potencial maior. Cada nível faz os jovens de até 21 anos evoluírem 6% mais rápido e libera peneiras melhores. Garotos da casa aceitam você como empresário com mais facilidade.'],
  venda:['Vender jogadores','Escolha o preço. Mais barato sai rápido; mais caro pode demorar ou não sair. Os clubes fazem propostas toda semana com a janela aberta.\n\nVender quem o técnico confia muito abala a relação com ele, e o time rende menos por algumas semanas.'],
