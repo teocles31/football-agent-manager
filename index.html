@@ -668,6 +668,7 @@ html,body{touch-action:manipulation}
 .wl-st{font-style:normal;color:#e0a800}.wl-b.on{border-color:var(--gold);background:color-mix(in srgb,var(--gold) 22%,var(--surface))}
 .wl-n{display:flex;flex-direction:column;align-items:flex-start;gap:1px;background:none;border:0;padding:0;color:inherit;font:inherit;text-align:left;cursor:pointer;max-width:100%;min-width:0}.wl-n b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}.wl-n small{font-size:10.5px;opacity:.75;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
 .tac-rd{margin:2px 0 4px;padding:7px 9px;border-radius:9px;background:var(--surface2);font-size:12.5px}
+.lig-sw{margin-bottom:12px}
 .rel-ks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:10px}
 .rel-k{border:1px solid var(--line);border-radius:12px;padding:9px 11px;display:flex;flex-direction:column;min-width:0;background:var(--surface)}.rel-k span{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;opacity:.7}.rel-k b{font-size:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rel-k small{font-size:12px;opacity:.8}
 .rel-f{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin-bottom:6px}.rel-f button{flex:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:12.5px;font-weight:700;cursor:pointer;white-space:nowrap}.rel-f button[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:#2b2200}
@@ -2932,7 +2933,7 @@ function develop(){STR={};SC={};allP().forEach(p=>{const mine=p.ag===0,gap=p.pot
   potDyn(p);if(mine&&p.training>0)p.training--;p.wkg=0;});}
 
 /* ================= CONTRATOS (mensal) ================= */
-function monthly(){const mi=curMonth();gloryUpd();
+function monthly(){const mi=curMonth();gloryUpd();try{ntMonthly();}catch(e){}
   allP().forEach(p=>{
     if(p.pre)preMonth(p,mi);else if(G.own)preAI(p,mi);
     if(p.loan&&(mi>p.loan.end||p.ce<mi))endLoan(p);
@@ -4093,7 +4094,7 @@ function ntStats(n,opp,xi,gf,ga,T,day){const ng=new Map();for(let k=0;k<gf;k++){
     if(p.ag===0){G.wlog.push({pid:p.id,d:day,cs:T?T.sh:'Seleção',oppN:opp,home:true,gf,ga,rt,ng:g,na:0,sub:false});
       p.fame=clamp(p.fame+(T?1.2:.4)+(rt>=7.5?1:0),0,100);
       if(Math.random()<.006){p.injury=Math.max(p.injury,ri(1,5));news(p.name+' se machucou defendendo a seleção ('+n+') e fica fora por '+p.injury+' semana(s).','lesao');}}});}
-function ntPlay(a,b,sqA,sqB,T,day){const A=ntXI(sqA),B=ntXI(sqB),R=G.nt.rank,d=clamp((A.str-B.str)+((R[a]||1500)-(R[b]||1500))/120,-14,14);
+function ntPlay(a,b,sqA,sqB,T,day){const A=ntXI(sqA),B=ntXI(sqB),R=G.nt.rank,me=G.mgrNT?mgrMe():null,cb=n=>me&&G.mgrNT===n?(me.r-75)*.15:0,d=clamp((A.str-B.str)+((R[a]||1500)-(R[b]||1500))/120+cb(a)-cb(b),-14,14);
   const ga=poisson(1.28*Math.exp(d/20)),gb=poisson(1.28*Math.exp(-d/20));
   ntStats(a,b,A.xi,ga,gb,T,day);ntStats(b,a,B.xi,gb,ga,T,day);
   const e=1/(1+Math.pow(10,((R[b]||1500)-(R[a]||1500))/400)),r=ga>gb?1:ga<gb?0:.5,k=T?40:22;
@@ -4967,7 +4968,8 @@ function mEvo(){const p=G.P[ui.modal.pid];if(!p){ui.modal=null;return'';}const c
     h+='<div class="acts">'+opt.map(l=>'<button class="btn'+(l===cl?' pri':'')+'" data-a="langc" data-p="'+p.id+'" data-v="'+l+'"'+(G.money<cost||noAP?' disabled':'')+'>'+LANGN[l]+'</button>').join('')+'</div><p class="small muted">Curso de 12 semanas: '+fmt(cost)+'.</p>';}
   return h+'</div><div class="acts"><button class="btn" data-a="close">Fechar</button></div></div>';}
 
-function vSelecoes(){const tours=G.nt.tours||[],opts=[['rk','Ranking e convocados']].concat(tours.map((T,i)=>['T'+i,T.name+' '+T.Y]),[['aw','Prêmios e Hall da fama']]);
+function vSelecoes(){if(G.mgr)return ligSw('sel')+ntMeH()+vSelecoes0();return vSelecoes0();}
+function vSelecoes0(){const tours=G.nt.tours||[],opts=[['rk','Ranking e convocados']].concat(tours.map((T,i)=>['T'+i,T.name+' '+T.Y]),[['aw','Prêmios e Hall da fama']]);
   let s=ui.ssub||'rk';if(!opts.some(o=>o[0]===s))s='rk';
   return'<section><div class="seg">'+opts.map(o=>'<button data-a="ssub" data-v="'+o[0]+'" aria-pressed="'+(s===o[0])+'">'+esc(o[1])+'</button>').join('')+'</div></section>'+(s==='aw'?vAwards():s[0]==='T'?vTour(tours[+s.slice(1)]):vNations2());}
 
@@ -5566,7 +5568,7 @@ const negF=()=>{const me=mgrMe();return me&&me.sk?1-.025*(me.sk.neg-1):1;};
 titleBonus=(f=>function(cl){f(cl);const me=mgrMe();if(me&&G.own.cid===cl.id){mgrXP(me,30);news(me.n+' ganhou 30 de experiência pelo título.','clube');}})(titleBonus);
 function mgrCoach(o,c){const me=c.coach;mgrSk(me);mgrR(me);const k=me.sk,ask=me.ask||{};
   let h='<section class="card c-purple">'+cardH('coach','Seu técnico','<span class="chip info">Nível '+me.r+'</span>')+
-   '<div class="coach-h">'+avatarS(me,48,c,'coach')+'<div class="grow"><b>'+esc(me.n)+'</b><div class="small muted">'+(me.sp?'<b class="okk">'+me.sp+' ponto'+(me.sp>1?'s':'')+' para gastar</b>':'Nenhum ponto livre')+'</div></div></div>'+
+   '<div class="coach-h">'+avatarS(me,48,c,'coach')+'<div class="grow"><b>'+esc(me.n)+'</b><div class="small muted">'+flagS(mgrNac(me))+esc(mgrNac(me))+(G.mgrNT?' · técnico de '+esc(G.mgrNT):'')+'</div><div class="small muted">'+(me.sp?'<b class="okk">'+me.sp+' ponto'+(me.sp>1?'s':'')+' para gastar</b>':'Nenhum ponto livre')+'</div></div></div>'+
    '<div class="meters one">'+meter('Experiência · '+me.xp+' de '+XP_PT+' para o próximo ponto',me.xp/XP_PT*100)+'</div>'+
    '<p class="small muted">Vitória +4, empate +2, derrota +1, meta da temporada batida +30, título +30. Cada '+XP_PT+' de experiência vira 1 ponto. Melhorar custa o nível atual da habilidade em pontos.</p></section>';
   h+='<section><div class="sec-h"><h2>Habilidades</h2><p>Nível do técnico: '+me.r+'. Tática pesa mais; as outras somam um pouco.</p></div><div class="sk-g">'+SKS.map(x=>{const lv=k[x[0]],cost=lv;
@@ -5813,12 +5815,13 @@ function mgrStartH(nm){
     return'<div class="mg-step"><b>Passo 1 de 2</b> · Seu perfil de técnico</div>'+
      '<p class="small">Você comanda o time: esquema, estilo e os 11 titulares. Também contrata, vende e cuida das finanças do clube. A diretoria cobra resultado: se o time for mal, você é demitido e procura outro clube.</p>'+
      '<div class="field"><label for="ag-name">Seu nome de técnico</label><input type="text" id="ag-name" maxlength="30" placeholder="Ex.: Professor Silva" value="'+esc(nm)+'"></div>'+
+     '<label class="of-f" style="margin:4px 0 2px"><span>Sua nacionalidade</span><select class="mg-nac" id="mg-nac">'+['Brasil'].concat(Object.keys(NT_C).filter(x=>x!=='Brasil').sort((a,b)=>a.localeCompare(b))).map(x=>'<option'+((ui.mgnac||'Brasil')===x?' selected':'')+'>'+esc(x)+'</option>').join('')+'</select></label><p class="small muted" style="margin:0">Seleções preferem técnicos do próprio país. Fora dele, só seleções mais fracas chamam.</p>'+
      '<span class="lbl">Seu estilo de jogo</span><div class="lv-chips">'+Object.keys(STYLES).map(x=>'<button data-a="mgpst" data-v="'+x+'" aria-pressed="'+(ui.mgst===x)+'">'+esc(STYLES[x][0])+'</button>').join('')+'</div>'+(ui.mgst?'<span class="small muted">'+esc(STYLES[ui.mgst][0])+': '+esc(STYLES[ui.mgst][1])+'.</span>':'')+
      '<span class="lbl">Sua personalidade</span><div class="lv-chips">'+Object.keys(PERS).map(x=>'<button data-a="mgppe" data-v="'+x+'" aria-pressed="'+(ui.mgpe===x)+'">'+esc(PERS[x][0])+'</button>').join('')+'</div>'+(ui.mgpe?'<span class="small muted">'+esc(PERS[ui.mgpe][0])+': '+esc(PERS[ui.mgpe][1])+'.</span>':'')+
      '<button class="btn pri big st-go" data-a="mgnext"'+(ok?'':' disabled')+'>'+(!ui.mgst?'Escolha seu estilo':!ui.mgpe?'Escolha sua personalidade':'Continuar: escolher o clube')+'</button>';}
   const lgs=LG.map((L,i)=>[L,i]).filter(x=>!x[0].ext),li=ui.mglg!=null?ui.mglg:0,cl=mgrClubList(li).filter((x,k,a)=>MGR_FREE||k>=a.length/2),sel=cl.find(x=>x.id===ui.mgc);
   return'<div class="mg-step"><b>Passo 2 de 2</b> · Seu primeiro clube</div>'+
-   '<div class="mg-prof">'+svgI('coach',22)+'<span class="grow"><b>'+esc((nm||'').trim()||'Treinador')+'</b><small>'+esc(STYLES[ui.mgst][0])+' · '+esc(PERS[ui.mgpe][0])+'</small></span><button class="btn sm" data-a="mgback">Editar</button></div>'+
+   '<div class="mg-prof">'+svgI('coach',22)+'<span class="grow"><b>'+esc((nm||'').trim()||'Treinador')+'</b><small>'+flagS(ui.mgnac||'Brasil')+esc(ui.mgnac||'Brasil')+' · '+esc(STYLES[ui.mgst][0])+' · '+esc(PERS[ui.mgpe][0])+'</small></span><button class="btn sm" data-a="mgback">Editar</button></div>'+
    '<span class="lbl">Liga</span><select class="mg-lgs" id="mg-lg">'+lgs.map(x=>'<option value="'+x[1]+'"'+(x[1]===li?' selected':'')+'>'+esc(x[0].n+' · '+x[0].cn)+'</option>').join('')+'</select>'+
    '<span class="lbl">Clube</span><div class="mgcl">'+cl.map((x,k)=>'<button data-a="mgclub" data-v="'+x.id+'" aria-pressed="'+(x.id===ui.mgc)+'">'+crest(x,24)+'<span><b>'+esc(x.n)+'</b><small>'+mgrExp(k+1,cl.length)+'</small></span></button>').join('')+'</div>'+
    (sel?'<div class="mg-info"><b>'+esc(sel.n)+'</b> · '+esc(mgrExp(cl.indexOf(sel)+1,cl.length)).toLowerCase()+'. É o '+(cl.indexOf(sel)+1)+'º elenco mais forte da liga.</div>':'')+
@@ -5848,7 +5851,13 @@ ownSeason=(f=>function(pos,s,L){const o=G.own;f(pos,s,L);if(!G.mgr||!o||!o.mg)re
   const fail=pos>g.t+4;if(g.met)mgrXP(me,30+(pos<=g.t-3?15:0));o.mg.bc=clamp(o.mg.bc+(g.met?15:fail?-25:-5),0,100);
   if(fail&&o.mg.bc<=30){mgrFire();return;}
   if(g.met&&Math.random()<.75){const L2=mgrOffers(c,true);if(L2.length)G.mgOff={k:'up',from:c.id,L:L2.map(x=>x.id)};}})(ownSeason);
-function mMgOff(){const m=G.mgOff,fr=G.clubs[m.from],fired=m.k==='fired',L=m.L.map(id=>G.clubs[id]).filter(c=>c&&!isOwn(c));
+function mNtOff(){const m=G.mgOff,n=m.n,sq=G.nt.sq[n]||[],x=ntXI(sq),me=mgrMe(),home=mgrNac(me)===n,c=ownC();
+  return'<div class="sheet"><span class="eyebrow">Convite de seleção</span><h2>'+flagS(n)+esc(n)+' quer você como técnico</h2>'+
+   '<p>'+(home?'A federação do seu país quer '+esc(me.n)+' no comando.':'Uma seleção estrangeira gostou do seu trabalho.')+' O técnico anterior saiu '+esc(m.why||'')+'.</p>'+
+   '<div class="kpis"><div class="kpi"><span>Ranking</span><b>'+(ntList().indexOf(n)+1)+'º</b></div><div class="kpi"><span>Nível do time</span><b>'+Math.round(x.str)+'</b><small>seu nível de técnico: '+me.r+'</small></div></div>'+
+   '<p class="small muted">Você segue no '+esc(c?c.n:'clube')+' e acumula a seleção. Os convocados são chamados pelo jogo; o seu nível de técnico pesa nos jogos dela. Se a seleção for mal, você pode ser demitido.</p>'+
+   '<div class="acts"><button class="btn pri" data-a="mgntacc">Aceitar a seleção</button><button class="btn" data-a="mgntno">Recusar</button></div></div>';}
+function mMgOff(){const m=G.mgOff;if(m&&m.k==='nt')return mNtOff();const fr=G.clubs[m.from],fired=m.k==='fired',L=m.L.map(id=>G.clubs[id]).filter(c=>c&&!isOwn(c));
   const job=m.k==='job';
   return'<div class="sheet"><span class="eyebrow">'+(fired?'Demitido':job?'Pedido de emprego':'Proposta de emprego')+'</span><h2>'+(fired?'O '+esc(fr.n)+' demitiu você':job?'O '+esc((L[0]||fr).n)+' aceitou você':'Clubes maiores querem você')+'</h2>'+
    '<p>'+(fired?'A diretoria perdeu a confiança. Estes clubes procuraram você para assumir o time:':job?'A diretoria topou. Se assumir, você deixa o '+esc(fr.n)+'.':'Sua temporada no '+esc(fr.n)+' chamou atenção. Aceite um novo desafio ou fique.')+'</p>'+
@@ -5911,16 +5920,16 @@ function mgrSavesH(o,c){const S=o.sv||[null,null,null];
 const MGRA={
   gmode(d){const el=$('#ag-name');if(el&&ui.gmode===d.v)ui.agn=el.value;else{ui.agn=null;ui.mgstep=1;}ui.gmode=d.v;render();},
   mgclub(d){const el=$('#ag-name');if(el)ui.agn=el.value;ui.mgc=+d.v;render();},
-  mgnext(){const el=$('#ag-name');if(el)ui.agn=el.value;if(!ui.mgst||!ui.mgpe)return;ui.mgstep=2;render();window.scrollTo(0,0);},
+  mgnext(){const el=$('#ag-name');if(el)ui.agn=el.value;{const nc=$('#mg-nac');if(nc)ui.mgnac=nc.value;}if(!ui.mgst||!ui.mgpe)return;ui.mgstep=2;render();window.scrollTo(0,0);},
   mgback(){ui.mgstep=1;render();window.scrollTo(0,0);},
-  mgpst(d){const el=$('#ag-name');if(el)ui.agn=el.value;if(STYLES[d.v])ui.mgst=d.v;render();},
-  mgppe(d){const el=$('#ag-name');if(el)ui.agn=el.value;if(PERS[d.v])ui.mgpe=d.v;render();},
+  mgpst(d){const el=$('#ag-name');if(el)ui.agn=el.value;{const nc=$('#mg-nac');if(nc)ui.mgnac=nc.value;}if(STYLES[d.v])ui.mgst=d.v;render();},
+  mgppe(d){const el=$('#ag-name');if(el)ui.agn=el.value;{const nc=$('#mg-nac');if(nc)ui.mgnac=nc.value;}if(PERS[d.v])ui.mgpe=d.v;render();},
   mgstart(){const el=$('#ag-name'),nm=((el?el.value:ui.agn)||'').trim().slice(0,30)||'Treinador',id=ui.mgc,st=ui.mgst,pe=ui.mgpe;if(id==null||!STYLES[st]||!PERS[pe])return;
     MGR_SA=true;try{initWorld(nm,0);}finally{MGR_SA=false;}G.mgr=1;G.money=0;G.clients.forEach(i=>{const p=G.P[i];if(p){p.ag=ri(1,G.ags.length-1);p.comm=0;}});G.clients=[];G.prospects=[];G.offers=[];G.missions=[];
     G.news=G.news.filter(n=>n.cat!=='agencia'&&!/^A janela de transferências/.test(n.t));news('A temporada 2026 começa junto no mundo todo: ligas e copas vão de janeiro a novembro.','liga');const c=G.clubs[id];
-    {const me={n:nm,r:62,st,pe,age:40,ng:LG[c.lg].reg==='sa'?'BR':'EU',me:1};mgrSk(me);mgrR(me);mgrTake(c,me);}
+    {const me={n:nm,nac:ui.mgnac||'Brasil',r:62,st,pe,age:40,ng:LG[c.lg].reg==='sa'?'BR':'EU',me:1};mgrSk(me);mgrR(me);mgrTake(c,me);}
     news(nm+' é o novo técnico do '+c.n+'. A diretoria quer: '+(G.own.goal?goalTxt(G.own.goal).toLowerCase():'um bom trabalho')+'.','clube');
-    ui.agn=null;ui.mgc=null;ui.mgst=null;ui.mgpe=null;ui.mgstep=1;ui.gmode=null;ui.newSlot=null;ui.tab='clube';ui.osub='time';save();render();window.scrollTo(0,0);},
+    ui.agn=null;ui.mgc=null;ui.mgst=null;ui.mgpe=null;ui.mgnac=null;ui.mgstep=1;ui.gmode=null;ui.newSlot=null;ui.tab='clube';ui.osub='time';save();render();window.scrollTo(0,0);},
   mgfm(d){const o=G.own,c=ownC();if(!o||!FORMS[d.v])return;if(o.xi){const old=mgrSlots(o.fm),ids=o.xi,by={};old.forEach((p,i)=>{if(ids[i]!=null)(by[p]||(by[p]=[])).push(ids[i]);});
       o.xi=mgrSlots(d.v).map(p=>{const a=by[p];const id=a&&a.length?a.shift():null;return id;});
       /* quem sobrou entra nas vagas vazias perto da posição dele */
@@ -5947,6 +5956,11 @@ const MGRA={
   mgbi(d){const o=G.own,c=ownC();if(!o||!c)return;const B=mgrBench(c);if(B.length>=8||B.includes(+d.p))return;B.push(+d.p);save();render();},
   mgacc(d){const nc=G.clubs[+d.c];if(!G.mgOff||!nc||isOwn(nc))return;const was=G.mgOff.k;G.mgOff=null;mgrMove(nc);
     pop({k:'good',ic:'coach',ti:'Novo clube',tx:'Você é o técnico do '+nc.n+'. Monte o time na aba Time.'});ui.tab='clube';ui.osub='time';save();render();window.scrollTo(0,0);},
+  mgntacc(){const m=G.mgOff,me=mgrMe();if(!m||m.k!=='nt'||!me)return;const n=m.n,old=ntCo(n);G.mgOff=null;G.mgrNT=n;(G.ntCo=G.ntCo||{})[n]={n:me.n,from:'técnico do '+ownC().n,me:1};(G.ntCoS=G.ntCoS||{})[n]=G.d;if(G.ntF)G.ntF[n]='';
+    news('Seleção ('+n+'): '+(old?old[0]+' deixa o cargo. ':'')+me.n+' é o novo técnico.','selecao');pop({k:'good',ic:'flag',ti:'Técnico da seleção!',tx:'Você agora treina '+n+'. Veja em Ligas → Seleções.'});save();render();},
+  mgntno(){const m=G.mgOff;if(!m||m.k!=='nt')return;G.mgOff=null;news(mgrMe().n+' recusou o convite da seleção de '+m.n+'.','selecao');ntSack(m.n,m.why,true);save();render();},
+  mgntquit(){const n=G.mgrNT;if(!n)return;ntSack(n,'a pedido',true);G.mgrNT=null;save();render();},
+  ligsel(d){ui.tab=d.v==='sel'?'selecoes':'ligas';render();window.scrollTo(0,0);},
   mgstay(){const o=G.own;if(!G.mgOff)return;const k=G.mgOff.k;G.mgOff=null;if(k==='job'){save();render();return;}if(o&&o.mg)o.mg.bc=clamp(o.mg.bc+5,0,100);news(ownC().coach.n+' recusou propostas e segue no '+ownC().n+'. A diretoria gostou.','clube');save();render();}
 };
 addEventListener('change',e=>{const t=e.target;if(!t||!G&&t.id!=='mg-lg')return;
@@ -6411,7 +6425,21 @@ function ntCandidates(n){const out=[];G.clubs.forEach(c=>{if(c.cn!==n||!c.coach|
     const good=(pos!=null?pos<=Math.max(5,Math.round(sz*.35)):true)&&loss<=2&&(G.d-(k.since||0))>=70;
     if(good)out.push({c,k,sc:k.r+(pos!=null?(sz-pos)*.6:0)+wins*1.5+(k.real?2:0)});});
   return out.sort((a,b)=>b.sc-a.sc);}
-function ntSack(n,why){if(G._pre)return;const old=ntCo(n);if(!old)return;const cand=ntCandidates(n);let nw,from;
+/* ===== o seu técnico na seleção =====
+   Seleções preferem técnicos do próprio país: a sua pode chamar você se o seu nível estiver à altura do time dela.
+   Fora do seu país, só seleções mais fracas (e, para quem não é europeu, fora da Europa) fazem convite. */
+const mgrNac=me=>me?(me.nac||(G.own?G.clubs[G.own.cid].cn:'')||'Brasil'):'';
+function ntMonthly(){const me=mgrMe();if(!me||G.mgrNT||G.mgOff||!G.nt||!G.nt.sq)return;const c=ownC(),pos=leaguePos(c.id),f=(c.fm||'').slice(-6),W=f.split('').filter(x=>x==='V').length;
+  const hot=(pos!=null&&pos<=4)||W>=4;if(!hot||Math.random()>.12)return;
+  const L=ntList().filter(n=>n!==mgrNac(me)&&ntWants(n)&&(ntInterim(n)||((G.ntF&&G.ntF[n])||'').slice(-6).split('').filter(x=>x==='D').length>=3));if(L.length)ntOffer(pick(L),'depois de uma fase ruim');}
+function ntReq(n){const sq=G.nt.sq[n];return clamp(Math.round((sq?ntXI(sq).str:70)-6),60,84);}
+function ntWants(n){const me=mgrMe();if(!me||G.mgrNT||G._pre)return false;const nac=mgrNac(me),home=nac===n,idx=ntList().indexOf(n),eu=confOf(nac)==='EU';
+  if(home)return me.r>=ntReq(n)&&(ntCandidates(n)[0]||{sc:0}).sc<=me.r+6;
+  if(idx<25)return false;if(!eu&&confOf(n)==='EU')return false;return me.r>=ntReq(n)+2;}
+function ntOffer(n,why){G.mgOff={k:'nt',n,why,from:G.own.cid,L:[]};news('A seleção de '+n+' procura '+mgrMe().n+' para ser o novo técnico.','selecao');}
+function ntSack(n,why,skipMe){if(G._pre)return;const old=ntCo(n);if(!old)return;
+  if(!skipMe&&G.mgr&&!G.mgOff&&ntWants(n)){ntOffer(n,why);return;}
+  const wasMe=G.mgrNT===n;const cand=ntCandidates(n);let nw,from;
   if(cand.length){const x=wpick(cand.slice(0,3),y=>y.sc-60)||cand[0],c=x.c,k=x.k;nw=k.n;from='ex-'+c.n;
     const rep=ntClubReplace(c,old);G.fc=(G.fc||[]).filter(y=>y!==k);
     news(c.n+' perde o técnico para a seleção: '+k.n+' sai e '+rep.n+' assume o clube.','liga');
@@ -6421,6 +6449,7 @@ function ntSack(n,why){if(G._pre)return;const old=ntCo(n);if(!old)return;const c
   if(!ntHiredOld){const z=G.clubs.find(c=>c.cn===n)||G.clubs[0],fk=newCoach(78,z);fk.n=old[0].replace(/ \(interino\)/,'');fk.real=1;(G.fc=G.fc||[]).push(fk);}ntHiredOld=false;
   (G.ntCo=G.ntCo||{})[n]={n:nw,from};(G.ntCoS=G.ntCoS||{})[n]=G.d;if(G.ntF)G.ntF[n]='';
   news('Seleção ('+n+'): '+old[0]+' deixa o cargo '+why+'. '+nw+' ('+from+') é o novo técnico.','selecao');
+  if(wasMe){G.mgrNT=null;pop({k:'bad',ic:'flag',ti:'Fora da seleção',tx:'Você deixou a seleção de '+n+' '+why+'. '+nw+' assume.'});}
   if(n===HOME_NT)pop({k:'info',ic:'flag',ti:'Técnico novo na seleção',tx:nw+' ('+from+') assume o Brasil no lugar de '+old[0]+'.'});}
 function ntReview(){if(G._pre||!G.nt)return;ntList().forEach(n=>{const f=(G.ntF&&G.ntF[n])||'',l6=f.slice(-6),L=l6.split('').filter(x=>x==='D').length,W=l6.split('').filter(x=>x==='V').length,yrs=(G.d-ntCoSince(n))/365;
   if(ntInterim(n)&&Math.random()<.6)return ntSack(n,'ao fim do período como interino');
@@ -8256,7 +8285,7 @@ function renderHeader(){
    (ui.evHide&&G.events.length&&!G.wk&&!G.neg&&!G.evRes?'<button class="btn pri big pulse" data-a="evshow">Ver decisão</button>':'<button class="btn pri big'+(G.ap===0&&!bl?' pulse':'')+'" data-a="next"'+(bl?' disabled':'')+'>'+(ui.loading?'Jogando…':nw==='cl'?'Ir para o clube →':nw==='ag'?'Ir para a agência →':G.mgr?'Próximo jogo':G.lw?'Continuar semana':'Avançar semana')+'</button>');
   const T=[['painel','Painel'],['clientes','Clientes',G.clients.length+'/'+cap()],['olheiros','Olheiros',G.prospects.length||''],['mercado','Mercado',(G.offers.length+G.missions.length)||''],['ligas','Ligas'],['selecoes','Seleções'],['clube','Clube'],['agencia','Agência']];
   if(inC){const sb=ui.osub==='base'?'est':(ui.osub||'geral'),cl=ui.tab==='clube';$('#tabs').innerHTML=cwNav().map(t=>'<button data-a="osub" data-v="'+t[0]+'" aria-current="'+(cl&&sb===t[0])+'">'+svgI(t[2],18)+'<span>'+t[1]+'</span></button>').join('')+
-    (G.mgr?'<button data-a="tab" data-t="ligas" aria-current="'+(ui.tab==='ligas')+'">'+tabIco('ligas')+'<span>Ligas</span></button>':'');return;}
+    (G.mgr?'<button data-a="tab" data-t="ligas" aria-current="'+(ui.tab==='ligas'||ui.tab==='selecoes')+'">'+tabIco('ligas')+'<span>Ligas</span></button>':'');return;}
   $('#tabs').innerHTML=T.filter(t=>!(own&&t[0]==='clube')).map(t=>'<button data-a="tab" data-t="'+t[0]+'" aria-current="'+(ui.tab===t[0])+'">'+tabIco(t[0])+'<span>'+t[1]+'</span>'+(t[2]?'<em>'+t[2]+'</em>':'')+'</button>').join('');}
 
 /* ================= CLIENTES E OLHEIROS ================= */
@@ -8331,7 +8360,12 @@ function koView(c){return'<div class="ko">'+c.ko.map(s=>'<div class="card"><div 
 /* ligas agrupadas por país (1ª divisão e logo abaixo a 2ª); "outros clubes" no fim */
 function lgOrd(list){const cnI={};LG.forEach((L,i)=>{if(cnI[L.cn]==null)cnI[L.cn]=i;});const k=i=>{const L=LG[i],o=L.id==='xeu'||L.id==='xsa'?1e3+i:cnI[L.cn];return o*10+(L.top?1:0);};return list.slice().sort((a,b)=>k(a)-k(b));}
 function lgSel(act,cur,list,lbl){list=lgOrd(list);return'<label class="selb lgsel"><span class="lbl">'+(lbl||'Liga')+'</span><select data-sel="lg" data-act="'+act+'" aria-label="'+(lbl||'Liga')+'">'+list.map(i=>'<option value="'+i+'"'+(i===cur?' selected':'')+'>'+(flagOf(LG[i].cn)?flagOf(LG[i].cn)+' ':'')+esc(LG[i].s)+'</option>').join('')+'</select></label>';}
-function vLigas(){const keys=COMPKEYS(),YT=ui.comp&&ui.comp[0]==='Y'&&G.yt?G.yt[+ui.comp.slice(1)]:null;if(!ui.comp||'NAT'.includes(ui.comp[0])||(ui.comp[0]==='Y'&&!YT))ui.comp='L'+(ui.dlg||0);const sp='NAT'.includes(ui.comp[0]),c=sp?null:compByKey(ui.comp);
+const ligSw=v=>G.mgr?'<div class="seg cw-seg lig-sw"><button data-a="ligsel" data-v="lig" aria-pressed="'+(v==='lig')+'">Ligas e copas</button><button data-a="ligsel" data-v="sel" aria-pressed="'+(v==='sel')+'">Seleções</button></div>':'';
+function ntMeH(){const me=mgrMe();if(!me)return'';const n=G.mgrNT,nac=mgrNac(me);
+  if(n)return'<section class="card c-gold">'+cardH('flag','Sua seleção')+'<p>'+flagS(n)+'<b>'+esc(me.n)+'</b> treina '+esc(n)+' · '+(ntList().indexOf(n)+1)+'º no ranking · nível do time '+Math.round(ntXI(G.nt.sq[n]||[]).str)+'.</p><p class="small muted">Os jogos da seleção são simulados; o seu nível de técnico ('+me.r+') pesa no resultado.</p><div class="acts"><button class="btn" data-a="mgntquit">Deixar a seleção</button></div></section>';
+  const req=G.nt.sq[nac]?ntReq(nac):null;
+  return'<section class="card">'+cardH('flag','Seleção')+'<p class="small">Você é '+flagS(nac)+esc(nac)+'. '+(req?'Para a sua seleção chamar você, o seu nível de técnico precisa estar perto de <b>'+req+'</b> (hoje: '+me.r+') e ela precisa trocar de técnico.':'A seleção do seu país não está no jogo.')+' Seleções mais fracas de fora também podem chamar quem está em ótima fase.</p></section>';}
+function vLigas(){if(G.mgr&&!ui.ligNoSw){ui.ligNoSw=1;const h=vLigas();ui.ligNoSw=0;return ligSw('lig')+h;}const keys=COMPKEYS(),YT=ui.comp&&ui.comp[0]==='Y'&&G.yt?G.yt[+ui.comp.slice(1)]:null;if(!ui.comp||'NAT'.includes(ui.comp[0])||(ui.comp[0]==='Y'&&!YT))ui.comp='L'+(ui.dlg||0);const sp='NAT'.includes(ui.comp[0]),c=sp?null:compByKey(ui.comp);
   let h='<section><div class="sec-h"><h2>Competições</h2><p>Toque em um clube para ver elenco e informações. Toque em um jogador para ver as estatísticas.</p></div>'+
    '<div class="search"><input type="search" id="q" placeholder="Buscar jogador ou clube" value="'+esc(ui.q)+'" autocomplete="off"><div id="qres">'+searchRes()+'</div></div>';
   const groups={};keys.forEach(k=>(groups[k[2]]||(groups[k[2]]=[])).push(k));
