@@ -2665,9 +2665,19 @@ function porAdj(){try{const pi=LGI('por');if(!G||G._porA||pi<0)return;G._porA=1;
 function porSync(){try{const pi=LGI('por');if(!G||G._porF||pi<0)return;G._porF=1;G.clubs.filter(c=>c.lg===pi&&REAL[c.n]).forEach(c=>{const m={};REAL[c.n].split(';').forEach(r=>{const f=r.split(',');m[f[0]]=f;});
   squad(c.id).forEach(p=>{const f=m[p.name];if(!f||!p.real||p.ag===0)return;p.ovr=+f[3];p.pot=Math.max(+f[3],+f[4]);if((p.pk||0)<p.ovr)p.pk=p.ovr;p.pos=f[1];});});dirty();G.clubs.filter(c=>c.lg===pi).forEach(c=>c.str=Math.round(teamStr(c.id)));}catch(e){}}
 /* saves existentes: overall e potencial oficiais (EA FC 26) para os jogadores reais; clientes mantêm a evolução que tiveram com você */
+/* correção: garotos da base que, numa atualização antiga, herdaram o nível de um jogador famoso de mesmo nome
+   (ex.: o volante Beto, da base do Juventude, ganhou o 79 do atacante Beto da Fiorentina). Voltam ao nível da base, com a evolução normal do tempo. */
+function baseNameFix(){try{if(!G||G._bnf)return;G._bnf=1;const glob={},dup=new Set();for(const cn in REAL)REAL[cn].split(';').forEach(r=>{const x=r.split(',');if(glob[x[0]])dup.add(x[0]);glob[x[0]]=x;});
+  const byRid={},byCN={};for(const cn in BASE)BASE[cn].split(';').forEach(r=>{const x=r.split(',');if(!x[0])return;if(x[6])byRid[x[6]]=x;byCN[cn+'|'+x[0]]=x;});
+  const wk=Math.max(0,(G.d-dayOf(2026,1,1))/7),fixed=[],gone=new Set();
+  allP().forEach(p=>{if(!p.real)return;const b=(p.rid&&byRid[p.rid])||byCN[(pOrg(p)||'')+'|'+(p.on||p.name)];if(!b)return;const g=glob[p.on||p.name];if(!g||dup.has(p.on||p.name))return;
+    const bo=+b[3],bp=Math.max(+b[3],+b[4]),go=+g[3];if(go<bo+8||p.ovr<go-3)return;
+    const no=Math.min(bp,bo+Math.floor(wk*.12));p.ovr=no;p.pot=Math.max(bp,no);p.pk=Math.max(no,Math.min(p.pk||no,no));p.fame=Math.min(p.fame||0,10);gone.add(p.id);fixed.push(p);});
+  if(!fixed.length)return;if(G.nt&&G.nt.sq)for(const n in G.nt.sq)G.nt.sq[n]=G.nt.sq[n].filter(id=>!gone.has(id));dirty();G.clubs.forEach(c=>c.str=Math.round(teamStr(c.id)));
+  news('Correção de dados: '+fixed.slice(0,4).map(p=>p.name).join(', ')+(fixed.length>4?' e mais '+(fixed.length-4):'')+' tinha'+(fixed.length>1?'m':'')+' recebido por engano o nível de um jogador famoso com o mesmo nome. Voltou ao nível certo da base.','liga');}catch(e){}}
 function fcSync(){try{if(!G||G._fc26)return;G._fc26=1;const pi=LGI('por'),glob={},dup=new Set();for(const cn in REAL)REAL[cn].split(';').forEach(r=>{const f=r.split(',');if(glob[f[0]])dup.add(f[0]);glob[f[0]]=f;});
   const per={};allP().forEach(p=>{if(!p.real||p.ag===0)return;const c=club(p);let f=null;if(c&&REAL[c.n]){per[c.n]=per[c.n]||Object.fromEntries(REAL[c.n].split(';').map(r=>{const x=r.split(',');return[x[0],x];}));f=per[c.n][p.name];}
-    if(!f&&!dup.has(p.name))f=glob[p.name];if(!f)return;p.ovr=+f[3];p.pot=Math.max(+f[3],+f[4]);if((p.pk||0)<p.ovr)p.pk=p.ovr;if(c&&c.lg===pi)p.pos=f[1];});
+    if(!f&&!dup.has(p.name)&&!(p.yb||p.cria||String(p.rid||'')[0]==='B'))f=glob[p.name];if(!f||(p.rid&&f[7]&&p.rid!==f[7]))return;p.ovr=+f[3];p.pot=Math.max(+f[3],+f[4]);if((p.pk||0)<p.ovr)p.pk=p.ovr;if(c&&c.lg===pi)p.pos=f[1];});
   dirty();G.clubs.forEach(c=>c.str=Math.round(teamStr(c.id)));}catch(e){}}
 function mkLeague(li,Y){const L=LG[li],cf=CAL[L.id],ids=clubsOf(li).map(c=>c.id);
   let brk=ntBreaks(L,Y).concat(cf.wb.map(r=>[cd(Y,r[0]),cd(Y,r[1])]));
@@ -3665,7 +3675,7 @@ function natNameFix(){if(!G||G._nnFix2)return;G._nnFix2=1;const fn={},sn={};for(
   Object.values(G.P).forEach(p=>{if(p.real||p.nf||!p.name)return;const w=p.name.split(' '),f=w[0],ls=w.slice(1),sc={};(fn[f]||[]).forEach(k=>sc[k]=(sc[k]||0)+1);ls.forEach(l=>(sn[l]||[]).forEach(k=>sc[k]=(sc[k]||0)+1));
     const best=Object.keys(sc).sort((a,b)=>sc[b]-sc[a])[0];if(!best||(sc[p.nat]||0)>=sc[best])return;p.nat=best;});}
 function nameFix(){if(G._nameFix)return;G._nameFix=1;NAMESET=null;Object.values(G.P).forEach(p=>{if(!p.real&&p.ag!==0&&/ \d+$/.test(p.name)){p.name=genName(p.nat||'XX');p.fk=null;}});DUPN=null;DUP2=null;}
-function migrate(){try{natNameFix();}catch(e){}baseSeed();dataFix();fakeFix();fakeFix2();nameFix();dupFix();ridFix();ownInstall();uniFix();ntReflow();try{schAll();}catch(e){}porAdd();porReal();porAdj();porSync();fcSync();G.me=G.me||newMe();evoMigrate();G.office=G.office||newOffice();G.fc=G.fc||[];if(G.inv===undefined)G.inv=null;if(G.pol===undefined)G.pol=null;
+function migrate(){try{natNameFix();}catch(e){}baseSeed();dataFix();fakeFix();fakeFix2();nameFix();dupFix();ridFix();ownInstall();uniFix();ntReflow();baseNameFix();try{schAll();}catch(e){}porAdd();porReal();porAdj();porSync();fcSync();G.me=G.me||newMe();evoMigrate();G.office=G.office||newOffice();G.fc=G.fc||[];if(G.inv===undefined)G.inv=null;if(G.pol===undefined)G.pol=null;
   if(G.own){G.own.role=G.own.role||'dono';if(G.own.pct==null)G.own.pct=100;}
   G.clubs.forEach(c=>{c.cf=c.cf||newCf();c.sack=c.sack||0;});if(!G.rc)applyRealCoaches(true);
   if(!G.hfix)fixHomonyms();
