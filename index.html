@@ -699,9 +699,11 @@ html,body{touch-action:manipulation}
 .lv-out .grow,.lv-bp .grow{min-width:0;display:flex;flex-direction:column;gap:2px}.lv-out b,.lv-bp b{font-size:14.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .lv-out small,.lv-bp small{font-size:12px;opacity:.85;display:flex;align-items:center;gap:5px;flex-wrap:wrap}.lv-out .chip,.lv-bp .chip{font-size:10px;padding:1px 6px}
 .lv-tag{flex:none;font-size:10.5px;font-weight:800;letter-spacing:.08em;padding:3px 7px;border-radius:6px;color:#fff}.lv-tag.out{background:#d64545}.lv-tag.in{background:#2e8f4f}
-.lv-fn{display:flex;align-items:center;gap:5px;flex-wrap:wrap}.lv-fn>span{font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.7;margin-right:2px}
-.lv-fb{display:flex;align-items:center;gap:4px;padding:4px 8px 4px 4px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:11.5px;font-weight:700;cursor:pointer}
+.lv-fn{display:flex;flex-direction:column;gap:7px;padding:10px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.lv-fn>span{font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.7}
+.lv-fg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.lv-fb{display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 2px;min-width:0;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:11.5px;font-weight:700;cursor:pointer}
 .lv-fb i{display:flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:#102a22;color:#fff;font-style:normal;font-size:11px;font-weight:800}.lv-fb i svg{width:12px;height:12px}.lv-fb i.cap{background:#f4c61f;color:#2b2200}
+.lv-fb small{font-size:11px;font-weight:700;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.lv-fb i{width:26px!important;height:26px!important;font-size:13px!important}.lv-fb i svg{width:15px!important;height:15px!important}
 .lv-fb.on{border-color:var(--gold);background:color-mix(in srgb,var(--gold) 25%,var(--surface))}
 .lv-in-h{display:flex;align-items:center;gap:8px;margin-top:2px}
 .lv-bn{display:flex;flex-direction:column;gap:6px}
@@ -5632,7 +5634,7 @@ function mLive(){const L=G.live,H=G.clubs[L.sd[0].c],A=G.clubs[L.sd[1].c],mi=lvM
     if(!sel)sb+='<p class="lv-tip">👆 Toque num jogador no campo para tirar ou dar uma função.</p>';
     else{const pp0=posPen(q,xo.r);
       sb+='<div class="lv-out"><span class="lv-tag out">SAI</span>'+avatar(q,36)+'<div class="grow"><b>'+esc(q.name)+'</b><small><span class="chip pchip" style="--pc:'+PC[q.pos]+'">'+xo.r+'</span> nível '+(q.ovr-pp0)+' · nota '+lvRt(S,q.id,L.sc[mi],L.sc[1-mi]).toFixed(1)+'</small></div>'+enb(q.id)+'<button class="mn-x" data-a="lvout" data-p="'+sel+'" aria-label="Cancelar">✕</button></div>'+
-       '<div class="lv-fn"><span>Funções</span>'+RL.map(x=>'<button class="lv-fb'+(rlOn(G.own,x[0],sel)?' on':'')+'" data-a="mgrole" data-k="'+x[0]+'" data-p="'+sel+'" title="'+x[1]+'"><i class="'+(x[0]==='cap'?'cap':'')+'">'+x[2]+'</i>'+rlLbl(G.own,x[0],sel,x[1])+'</button>').join('')+'</div>';
+       '<div class="lv-fn"><span>Funções do jogador</span><div class="lv-fg">'+RL.map(x=>'<button class="lv-fb'+(rlOn(G.own,x[0],sel)?' on':'')+'" data-a="mgrole" data-k="'+x[0]+'" data-p="'+sel+'" title="'+x[1]+'"><i class="'+(x[0]==='cap'?'cap':'')+'">'+x[2]+'</i><small>'+rlLbl(G.own,x[0],sel,x[1])+'</small></button>').join('')+'</div></div>';
       if(S.subs>=5)sb+='<p class="lv-tip">Você já fez as 5 substituições.</p>';
       else{const B=S.bench.filter(id=>ui.lvAll||(G.P[id]&&G.P[id].pos===xo.r));
         sb+='<div class="lv-in-h"><span class="lv-tag in">ENTRA</span><span class="small muted">'+(ui.lvAll?'todos do banco':POSPL[xo.r]+' do banco')+'</span></div><div class="lv-bn">'+
