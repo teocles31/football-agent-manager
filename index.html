@@ -690,6 +690,12 @@ html,body{touch-action:manipulation}
 .pt-rl i.cap{background:#f4c61f;color:#2b2200;border-color:#2b2200}.pt-rl i svg{width:9px;height:9px}
 .rl-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.rl-g button{display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 2px;font-size:11.5px;line-height:1.15}
 .rl-g button .rli{width:24px;height:24px;border-radius:50%;background:#102a22;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px}.rl-g button .rli.cap{background:#f4c61f;color:#2b2200}.rl-g button .rli svg{width:15px;height:15px}
+.lv-pw{position:relative}
+.lv-ov{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:flex-start;padding:6px;border-radius:16px;background:rgba(6,20,15,.55);overflow-y:auto;overscroll-behavior:contain;animation:lvov .16s ease-out}
+.lv-ov.bot{justify-content:flex-end}.lv-ov>.lv-subs{flex:none;max-height:100%;overflow-y:auto;background:var(--surface);box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.lv-ov .lv-subs{padding:10px;gap:8px}.lv-ov .lv-sh b{font-size:16px}.lv-ov .lv-out,.lv-ov .lv-bp{padding:6px 8px}.lv-ov .lv-fn{padding:7px 0;gap:5px}.lv-ov .lv-fb{padding:5px 2px;gap:2px}.lv-ov .lv-fb i{width:22px!important;height:22px!important}.lv-ov .lv-out .grow b,.lv-ov .lv-bp b{font-size:13.5px}
+.lv-subs.lv-dim{border:1px solid var(--line);background:var(--surface)}
+@keyframes lvov{from{opacity:0}to{opacity:1}}
 .lv-subs{border:2px solid var(--gold);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:10px;background:color-mix(in srgb,var(--gold) 6%,var(--surface))}
 .lv-sh{display:flex;align-items:center;justify-content:space-between}.lv-sh b{font-family:var(--f-d);font-size:19px;text-transform:uppercase;letter-spacing:.04em}
 .lv-cnt{font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--surface2)}
@@ -5624,14 +5630,14 @@ function mLive(){const L=G.live,H=G.clubs[L.sd[0].c],A=G.clubs[L.sd[1].c],mi=lvM
    '<div class="lv-tk" id="lv-tk">'+lvTick(L)+'</div>';
   if(!end)h+='<div class="lv-ctl"><button class="btn big lv-go'+(L.pause?' pri':' run')+'" data-a="lvplay">'+(L.pause?'▶ '+(L.phase==='pre'?'Começar o jogo':L.phase==='int'?'Começar o 2º tempo':'Seguir'):'⏸ Pausar')+'</button><div class="lv-sub"><span class="lbl">Velocidade</span>'+
    '<div class="seg">'+[[1,'1x'],[2,'2x'],[3,'4x']].map(x=>'<button data-a="lvspd" data-v="'+x[0]+'" aria-pressed="'+((L.spd||1)===x[0])+'">'+x[1]+'</button>').join('')+'</div><button class="lv-end" data-a="lvskip">Pular para o fim</button></div></div>';
-  h+='<div class="lv-pitch" id="lv-pitch">'+lvPitchH(L)+'</div>';
+  h+='<div class="lv-pw"><div class="lv-pitch" id="lv-pitch">'+lvPitchH(L)+'</div><!--lvov--></div>';
   if(ui.lvOpp)h+='<p class="small muted lv-hint">'+esc(G.clubs[O.c].n)+' joga no estilo <b>'+esc(STYLES[O.st][0].toLowerCase())+'</b>: '+esc(STYLES[O.st][1])+'. Substituições: '+O.subs+'/5.</p>';
   else if(end)h+='';
   else if(!L.pause)h+='<p class="small muted lv-hint">Pause para mudar o estilo, o esquema ou fazer substituições.</p>';
   else{const sel=ui.lvOut&&S.on.some(y=>y.id===ui.lvOut)?ui.lvOut:null,xo=sel?S.on.find(y=>y.id===sel):null,q=sel?G.P[sel]:null;
     const enb=id=>{const v=Math.round(S.en[id]==null?100:S.en[id]);return'<span class="lv-en"><i class="'+(v<55?'lo':'')+'" style="width:'+v+'%"></i></span>';};
     /* 1) substituição: o principal */
-    let sb='<section class="lv-subs"><div class="lv-sh"><b>Substituição</b><span class="lv-cnt">'+S.subs+'/5 trocas</span></div>';
+    let sb='<section class="lv-subs" data-a="lvnop"><div class="lv-sh"><b>Substituição</b><span class="lv-cnt">'+S.subs+'/5 trocas</span></div>';
     if(!sel)sb+='<p class="lv-tip">👆 Toque num jogador no campo para tirar ou dar uma função.</p>';
     else{const pp0=posPen(q,xo.r);
       sb+='<div class="lv-out"><span class="lv-tag out">SAI</span>'+avatar(q,36)+'<div class="grow"><b>'+esc(q.name)+'</b><small><span class="chip pchip" style="--pc:'+PC[q.pos]+'">'+xo.r+'</span> nível '+(q.ovr-pp0)+' · nota '+lvRt(S,q.id,L.sc[mi],L.sc[1-mi]).toFixed(1)+'</small></div>'+enb(q.id)+'<button class="mn-x" data-a="lvout" data-p="'+sel+'" aria-label="Cancelar">✕</button></div>'+
@@ -5642,6 +5648,8 @@ function mLive(){const L=G.live,H=G.clubs[L.sd[0].c],A=G.clubs[L.sd[1].c],mi=lvM
          (B.map(id=>{const p=G.P[id];if(!p)return'';const pp=posPen(p,xo.r);return'<button class="lv-bp" data-a="lvin" data-p="'+id+'">'+avatar(p,34)+'<span class="grow"><b>'+esc(p.name)+'</b><small><span class="chip pchip" style="--pc:'+PC[p.pos]+'">'+p.pos+'</span> nível '+(p.ovr-pp)+' · '+srI(p)+(pp?' · <span class="nok">fora da posição</span>':'')+'</small></span>'+enb(id)+'<span class="lv-go2">Entrar</span></button>';}).join('')||'<p class="lv-tip">Nenhum '+POSN[xo.r]+' no banco.</p>')+'</div>'+
          (S.bench.some(id=>G.P[id]&&G.P[id].pos!==xo.r)?'<button class="lv-more" data-a="lvall">'+(ui.lvAll?'Mostrar só '+POSPL[xo.r]:'Ver outras posições (improvisar)')+'</button>':'');}}
     sb+='</section>';
+    /* com jogador escolhido, o cartão abre por cima do campinho (sem rolar a tela); defensores abrem embaixo, meias e atacantes em cima */
+    if(sel){h=h.replace('<!--lvov-->','<div class="lv-ov'+(['GOL','ZAG','LAT','VOL'].includes(xo.r)?' bot':'')+'" data-a="lvout" data-p="'+sel+'">'+sb+'</div>');sb='<section class="lv-subs lv-dim"><div class="lv-sh"><b>Substituição</b><span class="lv-cnt">'+S.subs+'/5 trocas</span></div><p class="lv-tip">✋ '+esc(shortN(q.name))+' selecionado: escolha no cartão sobre o campo.</p></section>';}
     /* 2) tática: secundária e recolhida */
     const fo2=(ui.fold||{}).lvtac,fm=S.fm||'442';
     sb+='<section class="lv-tc"><button class="lv-tch" data-a="fold" data-p="lvtac" aria-expanded="'+!!fo2+'"><span class="grow"><b>Tática</b><small>'+esc(STYLES[S.st][0])+' · '+FORMS[fm][0]+'</small></span>'+chevI(fo2?1:0)+'</button>'+
@@ -5661,6 +5669,7 @@ const LVA={
   lvall(){ui.lvAll=!ui.lvAll;render();},
   lvpk(d){const L=G.live;if(!L||!L.pause||L.phase==='end'||ui.lvOpp)return;ui.lvAll=false;ui.lvOut=ui.lvOut===+d.p?null:+d.p;render();},
   lvopp(){ui.lvOpp=!ui.lvOpp;ui.lvOut=null;render();},
+  lvnop(){},
   lvout(d){const L=G.live;if(!L)return;ui.lvOut=ui.lvOut===+d.p?null:+d.p;L.pause=1;render();},
   lvin(d){const L=G.live;if(!L||ui.lvOut==null)return;const i=lvMy(L);if(lvSub(L,i,ui.lvOut,+d.p))ui.lvOut=null;save();render();},
   lvfm(d){const L=G.live;if(!L||!FORMS[d.v])return;const S=L.sd[lvMy(L)];S.fm=d.v;lvRoles(S,d.v);lvEv(L,lvMy(L),'tat','📋 '+esc(G.clubs[S.c].n)+' muda para o '+FORMS[d.v][0]+'.');save();render();},
