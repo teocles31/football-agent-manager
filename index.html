@@ -5662,10 +5662,12 @@ function mgrNews(){const open=(ui.fold||{}).mgnews,L=G.news.filter(n=>n.cat!=='a
 function mgrStartH(nm){const lgs=LG.map((L,i)=>[L,i]).filter(x=>!x[0].ext),li=ui.mglg!=null?ui.mglg:0,cl=mgrClubList(li).filter((x,k,a)=>MGR_FREE||k>=a.length/2),sel=cl.find(x=>x.id===ui.mgc);
   return'<p class="small">Você comanda o time: esquema, estilo e os 11 titulares. Também contrata, vende e cuida das finanças do clube. A diretoria cobra resultado: se o time for mal, você é demitido e procura outro clube.</p>'+
    '<div class="field"><label for="ag-name">Seu nome de técnico</label><input type="text" id="ag-name" maxlength="30" placeholder="Ex.: Professor Silva" value="'+esc(nm)+'"></div>'+
+   '<span class="lbl">Seu estilo de jogo</span><div class="lv-chips">'+Object.keys(STYLES).map(x=>'<button data-a="mgpst" data-v="'+x+'" aria-pressed="'+(ui.mgst===x)+'">'+esc(STYLES[x][0])+'</button>').join('')+'</div>'+(ui.mgst?'<span class="small muted">'+esc(STYLES[ui.mgst][0])+': '+esc(STYLES[ui.mgst][1])+'.</span>':'')+
+   '<span class="lbl">Sua personalidade</span><div class="lv-chips">'+Object.keys(PERS).map(x=>'<button data-a="mgppe" data-v="'+x+'" aria-pressed="'+(ui.mgpe===x)+'">'+esc(PERS[x][0])+'</button>').join('')+'</div>'+(ui.mgpe?'<span class="small muted">'+esc(PERS[ui.mgpe][0])+': '+esc(PERS[ui.mgpe][1])+'.</span>':'')+
    '<span class="lbl">Liga</span><select class="mg-lgs" id="mg-lg">'+lgs.map(x=>'<option value="'+x[1]+'"'+(x[1]===li?' selected':'')+'>'+esc(x[0].n+' · '+x[0].cn)+'</option>').join('')+'</select>'+
    '<span class="lbl">Clube</span><div class="mgcl">'+cl.map((x,k)=>'<button data-a="mgclub" data-v="'+x.id+'" aria-pressed="'+(x.id===ui.mgc)+'">'+crest(x,24)+'<span><b>'+esc(x.n)+'</b><small>'+mgrExp(k+1,cl.length)+'</small></span></button>').join('')+'</div>'+
    (sel?'<div class="mg-info"><b>'+esc(sel.n)+'</b> · '+esc(mgrExp(cl.indexOf(sel)+1,cl.length)).toLowerCase()+'. É o '+(cl.indexOf(sel)+1)+'º elenco mais forte da liga.</div>':'')+
-   '<button class="btn pri big st-go" data-a="mgstart"'+(sel?'':' disabled')+'>'+(sel?'Assumir o '+esc(sel.n):'Escolha um clube')+'</button>';}
+   '<button class="btn pri big st-go" data-a="mgstart"'+(sel&&ui.mgst&&ui.mgpe?'':' disabled')+'>'+(!ui.mgst?'Escolha seu estilo':!ui.mgpe?'Escolha sua personalidade':sel?'Assumir o '+esc(sel.n):'Escolha um clube')+'</button>';}
 /* assume o clube como técnico */
 function mgrTake(c,me){takeControl(c,'mgr',0);const o=G.own;o.term=0;o.mg={bc:62,since:G.d,warn:0,prev:62};o.fm=o.fm||'442';o.xi=null;o.cap=null;o.pen=null;o.cands=[];
   me.since=G.d;me.g=0;me.pts=0;c.coach=me;c.cf=newCf();c.sack=0;o.xi=mgrCur(c);o.bench=mgrAutoBench(c);rlAuto(o,c);}
@@ -5746,12 +5748,14 @@ function mgrCur(c){return mgrMap(c).map(p=>p?p.id:null);}
 const MGRA={
   gmode(d){const el=$('#ag-name');if(el&&ui.gmode===d.v)ui.agn=el.value;else ui.agn=null;ui.gmode=d.v;render();},
   mgclub(d){const el=$('#ag-name');if(el)ui.agn=el.value;ui.mgc=+d.v;render();},
-  mgstart(){const el=$('#ag-name'),nm=((el&&el.value)||'').trim().slice(0,30)||'Treinador',id=ui.mgc;if(id==null)return;
+  mgpst(d){const el=$('#ag-name');if(el)ui.agn=el.value;if(STYLES[d.v])ui.mgst=d.v;render();},
+  mgppe(d){const el=$('#ag-name');if(el)ui.agn=el.value;if(PERS[d.v])ui.mgpe=d.v;render();},
+  mgstart(){const el=$('#ag-name'),nm=((el&&el.value)||'').trim().slice(0,30)||'Treinador',id=ui.mgc,st=ui.mgst,pe=ui.mgpe;if(id==null||!STYLES[st]||!PERS[pe])return;
     MGR_SA=true;try{initWorld(nm,0);}finally{MGR_SA=false;}G.mgr=1;G.money=0;G.clients.forEach(i=>{const p=G.P[i];if(p){p.ag=ri(1,G.ags.length-1);p.comm=0;}});G.clients=[];G.prospects=[];G.offers=[];G.missions=[];
     G.news=G.news.filter(n=>n.cat!=='agencia'&&!/^A janela de transferências/.test(n.t));news('A temporada 2026 começa junto no mundo todo: ligas e copas vão de janeiro a novembro.','liga');const c=G.clubs[id];
-    {const me={n:nm,r:62,st:'equ',pe:'mot',age:40,ng:LG[c.lg].reg==='sa'?'BR':'EU',me:1};mgrSk(me);mgrR(me);mgrTake(c,me);}
+    {const me={n:nm,r:62,st,pe,age:40,ng:LG[c.lg].reg==='sa'?'BR':'EU',me:1};mgrSk(me);mgrR(me);mgrTake(c,me);}
     news(nm+' é o novo técnico do '+c.n+'. A diretoria quer: '+(G.own.goal?goalTxt(G.own.goal).toLowerCase():'um bom trabalho')+'.','clube');
-    ui.agn=null;ui.mgc=null;ui.gmode=null;ui.newSlot=null;ui.tab='clube';ui.osub='time';save();render();window.scrollTo(0,0);},
+    ui.agn=null;ui.mgc=null;ui.mgst=null;ui.mgpe=null;ui.gmode=null;ui.newSlot=null;ui.tab='clube';ui.osub='time';save();render();window.scrollTo(0,0);},
   mgfm(d){const o=G.own,c=ownC();if(!o||!FORMS[d.v])return;if(o.xi){const old=mgrSlots(o.fm),ids=o.xi,by={};old.forEach((p,i)=>{if(ids[i]!=null)(by[p]||(by[p]=[])).push(ids[i]);});
       o.xi=mgrSlots(d.v).map(p=>{const a=by[p];const id=a&&a.length?a.shift():null;return id;});
       /* quem sobrou entra nas vagas vazias perto da posição dele */
