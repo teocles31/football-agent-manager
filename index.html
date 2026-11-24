@@ -653,6 +653,12 @@ html,body{touch-action:manipulation}
 .mgm button[aria-pressed="true"]{border:2px solid var(--gold);padding:9px;background:color-mix(in srgb,var(--gold) 14%,var(--bg))}
 .mg-step{font-size:12px;letter-spacing:.06em;text-transform:uppercase;opacity:.8;margin:2px 0}.mg-step b{color:var(--gold)}
 .mg-prof{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}.mg-prof .grow{display:flex;flex-direction:column;min-width:0}.mg-prof b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mg-prof small{font-size:12.5px;opacity:.75}
+.mg-warn{background:color-mix(in srgb,#d64545 14%,var(--surface));border:1px solid color-mix(in srgb,#d64545 45%,transparent);border-radius:12px;padding:10px 12px;font-size:13.5px;font-weight:600;margin:0 0 10px}
+.pt-ph{width:34px;height:34px;border-radius:10px;border:2px dashed #ffb0b0;background:rgba(214,69,69,.35);color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;line-height:1}
+.pt-empty b{color:#ffd6d6}.pt-why{display:block;font-size:10px;line-height:1.15;color:#ffd6d6;max-width:74px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sv-l{display:flex;flex-direction:column;gap:8px}.sv-i{display:flex;align-items:center;gap:10px;padding:9px 10px;border:1px solid var(--line);border-radius:12px}
+.sv-n{flex:none;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--gold);color:#2b2200;font-weight:800}
+.sv-i .grow{display:flex;flex-direction:column;min-width:0}.sv-i small{font-size:12px;opacity:.8}.sv-b{display:flex;gap:6px;flex:none}
 .mg-lgs{width:100%;padding:9px;border:1px solid var(--line);border-radius:var(--r);background:var(--bg);color:var(--ink);font:inherit;margin:4px 0 8px}
 .mgcl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;max-height:290px;overflow:auto;padding:2px}
 .mgcl button{display:flex;align-items:center;gap:7px;padding:7px;border:1px solid var(--line);border-radius:var(--r);background:var(--bg);color:var(--ink);font:inherit;text-align:left;cursor:pointer;min-width:0}
@@ -3463,7 +3469,7 @@ function nextWeek(){if(G&&G.smPend&&G.smPend.length&&!(G.smq&&G.smq.length))smFl
 function mgrAdvance(){let g=0;while(g++<10){const k0=G.d+'|'+(G.lw?G.lw.d:'-');nextWeek();if(G.live)return;if(flowBlocked())return;if(G.d+'|'+(G.lw?G.lw.d:'-')===k0)return;
     if(!fixturesOf(G.own.cid,G.d,G.d+42).some(f=>f.m)&&g>=2){toast('Sem jogos do '+ownC().n+' nas próximas semanas.');return;}}}
 function nwRun(){const w=G.lw,{snap,rep0,off0,d0,mFx,i0,e0}=w;
-  for(let d=w.d;d<d0+7;d++){G.d=d;if(w.trg!==d){dayTriggers(d);w.trg=d;}if(G.mgr&&G.own){const x=lvFind(d);if(x){w.d=d;lvStart(x);save();render();return;}}processDay(d,false);}
+  for(let d=w.d;d<d0+7;d++){G.d=d;if(w.trg!==d){dayTriggers(d);w.trg=d;}if(G.mgr&&G.own){const x=lvFind(d);if(x){w.d=d;if(mgrGaps(ownC()).length){save();mgrXIBlock();return;}lvStart(x);save();render();return;}}processDay(d,false);}
   G.lw=null;G.liveRes={};G.lvPen={};G.d=d0+7;
   const mg=!!G.mgr;weeklyHealth();u20Week(d0);develop();if(!mg)clientsWeekly();aiMarket();aiCoaches();if(!mg){genOffers();genMissions();}forEachOwn(ownWeek);if(!mg){careerWeek();pathWeek();offWeek();evoWeek();mindWeek();bizWeek();progWeek();bonWeek();inboxWeek();}if(!mg)paperWeek(d0);rumWeek();if(!mg){repWeek();yearWeek();}forEachOwn(capWeek);if(!mg)spBonWeek();if(mg)forEachOwn(mgrWeek);
   G.ags.forEach((a,i)=>{if(i>0)a.rep=clamp(a.rep+rnd(-.12,.14),5,98);});
@@ -5425,7 +5431,14 @@ function rlAuto(o,c){const xi=mgrMap(c).filter(Boolean);if(!xi.length)return;con
 const mgrFmOf=c=>{const o=mgrOwn(c);return o?FORMS[o.fm]||FORMS['442']:null;};
 /* jogador fora da posição rende menos */
 function posPen(p,r){r=r||p._r;if(!r||r===p.pos)return 0;if(r==='GOL'||p.pos==='GOL')return 25;return NEAR_POS[r].includes(p.pos)?3:7;}
-const mgrAv=cid=>squad(cid).filter(p=>!p.injury&&!p.lent&&!((p.suspTil||0)>G.d));
+const mgrAv=cid=>squad(cid).filter(p=>!p.injury&&!p.lent&&!((p.suspTil||0)>G.d)&&condOf(p)>=50);
+/* por que o jogador não pode jogar (vazio = pode) */
+const mgrWhy=(p,c)=>!p?'saiu do clube':p.club!==c.id?'saiu do clube':p.lent?'emprestado':p.injury>0?(p.injT||'lesionado').toLowerCase():(p.suspTil||0)>G.d?'suspenso':condOf(p)<50?'exausto':'';
+/* vagas vazias da escalação do técnico (só conta quando a escalação é sua) */
+function mgrGaps(c){const o=ownOf(c);if(!o||!o.xi)return[];const xi=mgrMap(c);return xi.map((p,i)=>p?-1:i).filter(i=>i>=0);}
+/* trava: com escalação incompleta não avança para o jogo */
+function mgrXIBlock(){const c=ownC();if(!G.mgr||!c)return false;const g=mgrGaps(c);if(!g.length)return false;
+  toast('Escalação incompleta: '+g.length+' vaga'+(g.length>1?'s':'')+' vazia'+(g.length>1?'s':'')+'. Complete o time para jogar.');ui.tab='clube';ui.osub='time';(ui.oss=ui.oss||{}).time='esc';render();window.scrollTo(0,0);return true;}
 /* média de notas na temporada (todas as competições do ano), para a aba Time */
 function seasonAvg(p){const c=club(p),L=c?curLeague(c.lg):null,Y=L?L.Y:null;let n=0,t=0;for(const k in p.st){const cp=G.comps[k];if(!cp||(Y!=null&&cp.Y!==Y))continue;const x=p.st[k];n+=x[0];t+=x[3];}return n?{a:t/n/10,n}:null;}
 const seasonChip=p=>{const s=seasonAvg(p);return'<span class="pt-sr'+(s?(s.a>=7.2?' hi':s.a<6.3?' lo':''):' nd')+'" title="'+(s?'Média na temporada: '+f1(s.a)+' em '+s.n+' jogos':'Sem nota: não jogou na temporada')+'">'+(s?f1(s.a):'S/N')+'</span>';};
@@ -5441,7 +5454,7 @@ function mgrBench(c){const o=ownOf(c);if(!o)return[];const xi=new Set(mgrMap(c).
 /* os 11 do técnico: quem você escolheu; vaga de lesionado ou suspenso é preenchida sozinha */
 function mgrXI(c,av,sc){const o=ownOf(c),S=mgrSlots(o.fm),avS=new Set(av),used=new Set(),xi=new Array(S.length).fill(null),gaps=[];
   S.forEach((pos,i)=>{const p=o.xi&&G.P[o.xi[i]];if(p&&avS.has(p)&&!used.has(p)&&p.club===c.id){used.add(p);p._r=pos;xi[i]=p;}else gaps.push(i);});
-  if(gaps.length){const by={};av.filter(p=>!used.has(p)).forEach(p=>(by[p.pos]||(by[p.pos]=[])).push(p));Object.values(by).forEach(a=>a.sort((x,y)=>sc(y)-sc(x)));
+  if(gaps.length&&!o.xi){const by={};av.filter(p=>!used.has(p)).forEach(p=>(by[p.pos]||(by[p.pos]=[])).push(p));Object.values(by).forEach(a=>a.sort((x,y)=>sc(y)-sc(x)));
     const F={};POS.forEach(p=>{const n=gaps.filter(i=>S[i]===p).length;if(n)F[p]=n;});const fill=fillXI(by,sc,c.id,F);
     gaps.forEach(i=>{const k=fill.findIndex(p=>p._r===S[i]);if(k>=0)xi[i]=fill.splice(k,1)[0];});}
   return xi;}
@@ -5715,7 +5728,7 @@ function mgrNextH(c){const F=fixturesOf(c.id,G.d,G.d+240),f=F.find(x=>x.m&&(x.m[
   const t=(x,lbl)=>'<div class="nx-t">'+(x?crest(x,40)+'<b>'+(x===c?esc(x.n):'<button class="lnk" data-a="club" data-c="'+x.id+'">'+esc(x.n)+'</button>')+'</b>':'<span class="crest" style="width:40px;height:46px"></span><b>A definir</b>')+'<span class="small muted">'+lbl+'</span></div>';
   return'<section class="card nx-card c-gold">'+cardH('cup','Próximo jogo','<span class="chip">'+(dd===0?'hoje':dd===1?'amanhã':'em '+dd+' dias')+'</span>')+
    '<div class="nx-vs">'+(home||!op?t(c,'seu time')+'<span class="nx-x">x</span>'+t(op,pos?pos+'º na liga':''):t(op,pos?pos+'º na liga':'')+'<span class="nx-x">x</span>'+t(c,'seu time'))+'</div>'+
-   '<p class="small muted" style="text-align:center">'+esc(f.c.name+' '+(f.c.lbl||''))+(f.st?' · '+esc(f.st):'')+' · '+fdate(f.d,true)+(f.m&&f.m[5]!=null?' às '+hm(f.m[5]):'')+'</p>'+(f.m?'<p class="nx-std">🏟 '+esc(stadOf(G.clubs[f.m[0]]))+(home?' · em casa':' · fora de casa')+'</p>':'')+
+   '<p class="small muted" style="text-align:center">'+esc(f.c.name+' '+(f.c.lbl||''))+(f.st?' · '+esc(f.st):'')+' · '+fdate(f.d,true)+(f.m&&f.m[5]!=null?' às '+hm(f.m[5]):'')+'</p>'+(f.m?'<p class="nx-std">🏟 '+esc(stadOf(G.clubs[f.m[0]]))+(home?' · em casa':' · fora de casa')+'</p>':'')+(()=>{const g=mgrGaps(ownC());return g.length?'<p class="mg-warn" style="margin:8px 0 0">⚠ Escalação incompleta: '+g.length+(g.length>1?' vagas vazias':' vaga vazia')+'. Complete na aba Time.</p>':'';})()+
    '<div class="acts"><button class="btn pri big" data-a="next"'+(flowBlocked()?' disabled':'')+'>Jogar</button></div></section>';}
 function mgrBoardH(o,c){const m=o.mg,bc=Math.round(m.bc),k=c.coach,pct=coachPct(k),t=bc>=65?['good','Diretoria satisfeita']:bc>=40?['warn','Diretoria atenta']:bc>=25?['bad','Cargo ameaçado']:['bad','Última chance'];
   return'<section class="card c-purple">'+cardH('coach','Diretoria','<span class="chip '+t[0]+'">'+t[1]+'</span>')+'<div class="meters one">'+meter('Confiança da diretoria',bc)+'</div>'+
@@ -5724,8 +5737,8 @@ function mgrBoardH(o,c){const m=o.mg,bc=Math.round(m.bc),k=c.coach,pct=coachPct(
 /* aba Time */
 function mgrMap(c){const o=ownOf(c),S=mgrSlots(o.fm);return mgrXI(c,mgrAv(c.id),p=>p.ovr-(p.adapt>0?4:0)-(p.fat||0)*1.6);}
 function mgrPitch(c){const o=ownOf(c),S=mgrSlots(o.fm),xi=mgrMap(c),F=FORMS[o.fm]||FORMS['442'];
-  const slot=i=>{const p=xi[i];if(!p)return'<button class="pt-p pt-btn imp" data-a="mgslot" data-i="'+i+'"><span class="pt-o">?</span><b>Vaga</b><span class="pt-pos">'+S[i]+'</span></button>';
-    const pp=posPen(p,S[i]),auto=o.xi&&o.xi[i]!==p.id;
+  const slot=i=>{const p=xi[i];if(!p){const q=o.xi&&o.xi[i]!=null?G.P[o.xi[i]]:null,why=q?mgrWhy(q,c):'';const sw=why==='saiu do clube'?'vendido':/les|contus|fratur|ruptur|torç|estir/.test(why)?'lesionado':why;return'<button class="pt-p pt-btn pt-empty" data-a="mgslot" data-i="'+i+'"><span class="pt-ph">+</span><b>Vazia</b><span class="pt-pos">'+S[i]+'</span>'+(q?'<span class="pt-why">'+esc(shortN(q.name))+'<br>'+esc(sw)+'</span>':'')+'</button>';}
+    const pp=posPen(p,S[i]),auto=!o.xi;
     return'<button class="pt-p pt-btn'+(pp?' imp':'')+'" data-a="mgslot" data-i="'+i+'">'+seasonChip(p)+rlIcons(o,p.id,xi.filter(Boolean).map(q=>q.id))+avatar(p,34)+'<span class="pt-o">'+(p.ovr-pp)+'</span><b>'+esc(shortN(p.name))+'</b>'+condBar(p)+'<span class="pt-pos">'+(pp?S[i]+' ('+p.pos+')':S[i])+(auto?' · auto':'')+'</span></button>';};
   const idx=pos=>S.map((x,i)=>x===pos?i:-1).filter(i=>i>=0),lat=idx('LAT'),def=[lat[0],...idx('ZAG'),lat[1]].filter(i=>i!=null);
   const rows=[idx('ATA'),idx('MEI'),idx('VOL'),def,idx('GOL')];
@@ -5736,7 +5749,8 @@ function mgrTime(o,c){if(o.fk===undefined)rlAuto(o,c);const F=FORMS[o.fm]||FORMS
   const cond=p=>{const v=condOf(p);return'<span class="cond" title="Condição '+v+'%"><i class="'+(v<60?'lo':'')+'" style="width:'+v+'%"></i></span>';};
   const sel=(key,lbl)=>'<div class="mg-row"><label for="mg-'+key+'">'+lbl+'</label><select class="mg-sel" id="mg-'+key+'" data-k="'+key+'"><option value="">Ninguém</option>'+xi.map(p=>'<option value="'+p.id+'"'+(o[key]===p.id?' selected':'')+'>'+esc(p.name)+' · '+p.pos+' '+p.ovr+'</option>').join('')+'</select></div>';
   let h='<section><div class="sec-h"><h2>Titulares</h2><p>Toque numa posição para escolher o jogador. A barrinha embaixo do nome é a condição física: quem jogou muito está cansado e rende menos. Fora da posição, o número já mostra o nível na vaga.</p></div>'+
-   mgrPitch(c)+'<div class="acts"><button class="btn" data-a="mgauto">Escalação automática</button></div></section>';
+   (()=>{const g=mgrGaps(c);return g.length?'<div class="mg-warn">⚠ Escalação incompleta: '+g.length+' vaga'+(g.length>1?'s vazias':' vazia')+'. Toque na vaga e escolha outro jogador. Sem o time completo, não dá para avançar para o jogo.</div>':'';})()+
+   mgrPitch(c)+'<div class="acts"><button class="btn" data-a="mgauto">Escalação automática</button></div></section>'+mgrSavesH(o,c);
   h+='<section><div class="sec-h"><h2>Banco de reservas <span class="small muted">'+B.length+'/8</span></h2><p>Só quem está no banco pode entrar durante o jogo.</p></div><div class="card list bn-l">'+
    (B.map(id=>{const p=G.P[id];return'<div>'+avatar(p,30)+ovrB(p.ovr)+'<div class="grow"><b>'+plLink(p)+'</b> <span class="chip pchip" style="--pc:'+PC[p.pos]+'">'+p.pos+'</span> '+srI(p)+' '+st(p)+'</div>'+cond(p)+'<button class="btn sm" data-a="mgbo" data-p="'+id+'">Tirar</button></div>';}).join('')||'<div class="small muted">Ninguém no banco. Leve jogadores da lista de suplentes.</div>')+'</div></section>';
   const sup=squad(c.id).filter(p=>!p.lent&&!xs.has(p.id)&&!bs.has(p.id)).sort((a,b)=>POS.indexOf(a.pos)-POS.indexOf(b.pos)||b.ovr-a.ovr);
@@ -5750,10 +5764,16 @@ function mMgSlot(){const m=ui.modal,c=ownC(),o=G.own;if(!c||!o){ui.modal=null;re
   const av=new Set(mgrAv(c.id)),rk=p=>p.pos===pos?0:NEAR_POS[pos].includes(p.pos)?1:2;
   const L0=squad(c.id).filter(p=>!p.lent).sort((a,b)=>rk(a)-rk(b)||(b.ovr-posPen(b,pos))-(a.ovr-posPen(a,pos))),L=ui.slotAll?L0:L0.filter(p=>p.pos===pos),more=L0.length>L.length;
   return'<div class="sheet"><span class="eyebrow">Escalação · '+esc((FORMS[o.fm]||FORMS['442'])[0])+'</span><h2>'+(cur?esc(cur.name):'Escolher '+POSN[pos])+'</h2>'+(cur?'<span class="lbl">Funções</span>'+rlBtns(o,cur.id)+'<span class="lbl">Trocar por</span>':'')+'<p class="small muted">'+(ui.slotAll?'Todas as posições. Fora da posição, o número já mostra o nível na vaga.':POSPL[pos].replace(/^./,x=>x.toUpperCase())+' do elenco.')+' Se ele já é titular em outra vaga, os dois trocam de lugar.</p><div class="card list mg-pick">'+
-   L.map(p=>{const ok=av.has(p),pp=posPen(p,pos),j=xi.indexOf(p),st=p.injury>0?'<span class="chip bad">'+esc(p.injT||'Lesionado')+'</span>':(p.suspTil||0)>G.d?'<span class="chip bad">Suspenso</span>':(p.fat||0)>=1.5?'<span class="chip warn">Cansado</span>':'';
+   L.map(p=>{const ok=av.has(p),pp=posPen(p,pos),j=xi.indexOf(p),st=p.injury>0?'<span class="chip bad">'+esc(p.injT||'Lesionado')+'</span>':(p.suspTil||0)>G.d?'<span class="chip bad">Suspenso</span>':condOf(p)<50?'<span class="chip bad">Exausto</span>':(p.fat||0)>=1.5?'<span class="chip warn">Cansado</span>':'';
      return'<div>'+avatar(p,30)+ovrB(p.ovr-pp)+'<div class="grow"><b>'+esc(p.name)+'</b> <span class="chip">'+p.pos+'</span> '+st+'<div class="small muted">'+p.age+' anos · '+srI(p)+(pp?' · fora da posição (−'+pp+')':'')+(j>=0?' · titular de '+S[j]:(o.bench||[]).includes(p.id)?' · no banco':'')+'</div></div>'+
       (p===cur?'<span class="chip good">Na vaga</span>':'<button class="btn sm pri" data-a="mgpick" data-i="'+m.i+'" data-p="'+p.id+'"'+(ok?'':' disabled')+'>Escalar</button>')+'</div>';}).join('')+(L.length?'':'<div class="small muted">Nenhum '+POSN[pos]+' no elenco.</div>')+'</div><div class="acts">'+(more||ui.slotAll?'<button class="btn" data-a="slotall">'+(ui.slotAll?'Só '+POSPL[pos]:'Ver outras posições')+'</button>':'')+'<button class="btn" data-a="close">Fechar</button></div></div>';}
 function mgrCur(c){return mgrMap(c).map(p=>p?p.id:null);}
+/* ===== escalações gravadas: 3 modelos para usar em momentos diferentes ===== */
+function mgrSavesH(o,c){const S=o.sv||[null,null,null];
+  return'<section class="card">'+cardH('report','Escalações gravadas')+'<p class="small muted">Grave até 3 escalações (esquema, titulares e banco) e use quando quiser. Quem estiver lesionado, suspenso, exausto, vendido ou emprestado deixa a vaga vazia para você completar.</p><div class="sv-l">'+
+   [0,1,2].map(i=>{const x=S[i];if(!x)return'<div class="sv-i"><span class="sv-n">'+(i+1)+'</span><span class="grow"><b>Escalação '+(i+1)+'</b><small>Vazia</small></span><button class="btn sm" data-a="mgsvsave" data-i="'+i+'">Gravar atual</button></div>';
+     const out=x.xi.filter(id=>{const p=G.P[id];return !p||mgrWhy(p,c);}).length,F=FORMS[x.fm]||FORMS['442'];
+     return'<div class="sv-i"><span class="sv-n">'+(i+1)+'</span><span class="grow"><b>'+esc(x.n||'Escalação '+(i+1))+'</b><small>'+esc(F[0])+' · gravada em '+fdate(x.d)+(out?' · <span class="nok nw">'+out+' fora</span>':'')+'</small></span><span class="sv-b"><button class="btn sm pri" data-a="mgsvuse" data-i="'+i+'">Usar</button><button class="btn sm" data-a="mgsvsave" data-i="'+i+'">Regravar</button></span></div>';}).join('')+'</div></section>';}
 const MGRA={
   gmode(d){const el=$('#ag-name');if(el&&ui.gmode===d.v)ui.agn=el.value;else{ui.agn=null;ui.mgstep=1;}ui.gmode=d.v;render();},
   mgclub(d){const el=$('#ag-name');if(el)ui.agn=el.value;ui.mgc=+d.v;render();},
@@ -5776,6 +5796,12 @@ const MGRA={
   mgauto(){const o=G.own,c=ownC();if(o){o.xi=null;o.xi=mgrCur(c);o.bench=mgrAutoBench(c);rlAuto(o,c);capPrune(o,c);}save();render();},
   mgslot(d){ui.slotAll=false;ui.modal={type:'mgslot',i:+d.i};render();},
   slotall(){ui.slotAll=!ui.slotAll;render();},
+  mgsvsave(d){const o=G.own,c=ownC(),i=+d.i;if(!o||!c||!(i>=0&&i<3))return;if(!o.xi)o.xi=mgrCur(c);const B=mgrBench(c);
+    (o.sv=o.sv||[null,null,null])[i]={n:'Escalação '+(i+1),fm:o.fm,xi:o.xi.slice(),bench:B.slice(),d:G.d};toast('Escalação '+(i+1)+' gravada.');save();render();},
+  mgsvuse(d){const o=G.own,c=ownC(),i=+d.i,x=o&&o.sv&&o.sv[i];if(!x||!c)return;const out=[];
+    o.fm=FORMS[x.fm]?x.fm:'442';o.xi=x.xi.map(id=>{const p=G.P[id];if(!p)return null;const w=mgrWhy(p,c);if(w){out.push(shortN(p.name)+' ('+w+')');return id;}return id;});
+    const xs=new Set(o.xi);o.bench=x.bench.filter(id=>{const p=G.P[id];return p&&!xs.has(id)&&!mgrWhy(p,c);}).slice(0,8);capPrune(o,c);
+    toast(out.length?'Escalação '+(i+1)+' em campo. Vaga vazia: '+out.join(', ')+'.':'Escalação '+(i+1)+' em campo.');save();render();},
   mgpick(d){const o=G.own,c=ownC(),i=+d.i,p=G.P[+d.p];if(!o||!c||!p||p.club!==c.id)return;mgrBench(c);if(!o.xi)o.xi=mgrCur(c);const j=o.xi.indexOf(p.id),old=o.xi[i];o.xi[i]=p.id;if(j>=0&&j!==i)o.xi[j]=old;
     const b=o.bench.indexOf(p.id);if(b>=0){if(old!=null&&j<0)o.bench[b]=old;else o.bench.splice(b,1);}capPrune(o,c);ui.modal=null;save();render();},
   mgrole(d){const o=G.own,pid=+d.p;if(!o||!RL.some(x=>x[0]===d.k))return;
@@ -8462,7 +8488,7 @@ function apLock(){try{if(!G)return;if(G.owns&&G.owns.length)document.querySelect
 
 /* ================= RENDER, CARREGAMENTO, ANIMAÇÕES ================= */
 const LOAD_MSG=['Rodada em andamento','Olheiros ligando','Diretorias fazendo contas','Imprensa apurando','Vestiários fervendo','Telefone tocando'];
-function startLoading(){const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches,dur=reduce?450:1500;ui.loading=true;
+function startLoading(){if(G&&G.mgr&&G.own&&mgrXIBlock())return;const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches,dur=reduce?450:1500;ui.loading=true;
   const msgs=shuffle(LOAD_MSG.slice()),el=$('#loading');
   el.innerHTML='<div class="ld-box"><span class="eyebrow">'+fdate(G.d)+' a '+fdate(G.d+6)+'</span><div class="ld-pitch"><i class="ld-ball"></i></div><b id="ld-t">'+msgs[0]+'…</b><div class="ld-bar"><i style="animation-duration:'+dur+'ms"></i></div></div>';
   el.hidden=false;renderHeader();let k=0;const it=setInterval(()=>{k++;const t=$('#ld-t');if(t)t.textContent=msgs[k%msgs.length]+'…';},380);
