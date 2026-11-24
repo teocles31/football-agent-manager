@@ -5595,7 +5595,7 @@ function lvPens(){const L=G.live,o=G.own,ks=L.sd.map(S=>{let ps=S.on.map(x=>G.P[
   for(;n<20;n++){const i=n%2,r=Math.floor(n/2),ps=ks[i];if(!ps.length)break;const p=ps[r%ps.length],g=gk[1-i],ok=Math.random()<clamp(.75+(p.ovr-(g?g.ovr:60))*.004,.55,.9);if(ok)sc[i]++;
     lvEv(L,i,ok?'gol':'ch',(ok?'✅ ':'❌ ')+esc(shortN(p.name))+' ('+esc(G.clubs[L.sd[i].c].n)+') '+(ok?'converte.':'perde o pênalti.'));
     if(i===1){if(r<4&&(sc[0]>sc[1]+(5-r-1)||sc[1]>sc[0]+(5-r-1)))break;if(r>=4&&sc[0]!==sc[1])break;}}
-  const w=sc[0]>sc[1]?L.sd[0].c:L.sd[1].c;L.pw=w;lvEv(L,-1,'sys','Pênaltis: '+sc[0]+' a '+sc[1]+'. '+esc(G.clubs[w].n)+' se classifica!');L.phase='end';L.pause=1;}
+  const w=sc[0]>sc[1]?L.sd[0].c:L.sd[1].c;L.pw=w;L.ps=sc.slice();lvEv(L,-1,'sys','Pênaltis: '+sc[0]+' a '+sc[1]+'. '+esc(G.clubs[w].n)+' se classifica!');L.phase='end';L.pause=1;}
 function lvFinish(){const L=G.live;if(!L||L.phase!=='end')return;(G.liveRes=G.liveRes||{})[L.k]={sc:L.sc.slice(),str:L.str,sd:L.sd.map(S=>({st:S.st0,used:S.used,g:S.g,a:S.a,yc:S.yc,rc:S.rc,inj:S.inj,rb:S.rb}))};
   if(L.pw!=null&&L.tie)(G.lvPen=G.lvPen||{})[L.tie.a+'|'+L.tie.b]=L.pw;G.live=null;ui.lvOut=null;clearInterval(LVT);LVT=null;
   const w=G.lw;if(w){processDay(w.d,false);w.d++;}ui.tab='clube';ui.osub='geral';ui.lvOpp=false;save();render();window.scrollTo(0,0);}
@@ -5611,7 +5611,7 @@ function lvRoles(S,fm){const need=mgrSlots(fm);while(need.length>S.on.length){co
 function lvDraw(){const L=G&&G.live,q=id=>document.getElementById(id);if(!L)return;if(!q('lv-sc')){render();return;}
   q('lv-sc').textContent=L.sc[0]+' – '+L.sc[1];q('lv-clk').textContent=lvClk(L);const dm=q('lv-dom');if(dm){const w=Math.round(L.dom*100);dm.innerHTML='<i style="width:'+w+'%"></i><i style="width:'+(100-w)+'%"></i>';}
   q('lv-tk').innerHTML=lvTick(L);q('lv-pitch').innerHTML=lvPitchH(L);const rd=q('lv-rod');if(rd)rd.innerHTML=lvRodH(L);const al=q('lv-all');if(al)al.innerHTML=lvAllH(L);}
-const lvClk=L=>L.phase==='pre'?'Antes do jogo':L.phase==='int'?'Intervalo':L.phase==='end'?'Fim de jogo':L.phase==='pens'?'Pênaltis':L.min+"'";
+const lvClk=L=>L.phase==='pre'?'Antes do jogo':L.phase==='int'?'Intervalo':L.phase==='end'?(L.ps?'Pênaltis: '+L.ps[0]+' – '+L.ps[1]+' · '+G.clubs[L.pw].n+' passa':'Fim de jogo'):L.phase==='pens'?'Pênaltis':L.min+"'";
 function lvTick(L){const E=L.ev.slice(0,3);return E.length?E.map(e=>'<div>'+(e.k==='sys'?'':'<b>'+e.m+"'</b> ")+e.t+'</div>').join(''):'<div>A bola vai rolar. Confira o time e a tática.</div>';}
 function lvAllH(L){const mi=lvMy(L);return L.ev.map(e=>e.k==='sys'?'<div class="lv-e sys">'+e.t+'</div>':'<div class="lv-e '+e.k+(e.i===mi?' me':'')+'"><b>'+e.m+"'</b><span>"+e.t+'</span></div>').join('')||'<p class="small muted">Nenhum lance ainda.</p>';}
 function lvRodH(L){const H=L.sd[0].c,A=L.sd[1].c,mm=L.phase==='pre'?0:L.phase==='end'||L.phase==='pens'?90:L.min,row=(h0,a0,sc,cls)=>'<div class="'+cls+'"><span class="h"><span>'+esc(G.clubs[h0].n)+'</span>'+crest(G.clubs[h0],18)+'</span><b>'+sc[0]+' – '+sc[1]+'</b><span class="a">'+crest(G.clubs[a0],18)+'<span>'+esc(G.clubs[a0].n)+'</span></span></div>';
