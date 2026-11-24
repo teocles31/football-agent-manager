@@ -667,6 +667,7 @@ html,body{touch-action:manipulation}
 .otr-f2{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 12px}.otr-fa{grid-column:1/-1;display:flex;justify-content:flex-end}
 .wl-st{font-style:normal;color:#e0a800}.wl-b.on{border-color:var(--gold);background:color-mix(in srgb,var(--gold) 22%,var(--surface))}
 .wl-n{display:flex;flex-direction:column;align-items:flex-start;gap:1px;background:none;border:0;padding:0;color:inherit;font:inherit;text-align:left;cursor:pointer;max-width:100%;min-width:0}.wl-n b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}.wl-n small{font-size:10.5px;opacity:.75;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+.tac-rd{margin:2px 0 4px;padding:7px 9px;border-radius:9px;background:var(--surface2);font-size:12.5px}
 .rel-ks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:10px}
 .rel-k{border:1px solid var(--line);border-radius:12px;padding:9px 11px;display:flex;flex-direction:column;min-width:0;background:var(--surface)}.rel-k span{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;opacity:.7}.rel-k b{font-size:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rel-k small{font-size:12px;opacity:.8}
 .rel-f{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin-bottom:6px}.rel-f button{flex:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:12.5px;font-weight:700;cursor:pointer;white-space:nowrap}.rel-f button[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:#2b2200}
@@ -5579,11 +5580,32 @@ function lvFind(d){const o=G.own;if(!o)return null;for(const f of fixturesOf(o.c
     let tie=null,last=false,neutral=false;if(f.st&&f.c.ko){const st=f.c.ko.find(x=>x.ties&&x.ties.some(t=>t.m.includes(f.m)));if(st){const t=st.ties.find(t=>t.m.includes(f.m));tie={a:t.a,b:t.b};last=t.m.indexOf(f.m)===t.m.length-1;neutral=st.d.length===1&&st.n==='Final';
       tie.ag=0;tie.bg=0;t.m.forEach(mm=>{if(mm===f.m||mm[2]==null||mm[2]<0)return;if(mm[0]===t.a){tie.ag+=mm[2];tie.bg+=mm[3];}else{tie.ag+=mm[3];tie.bg+=mm[2];}});}}
     return{f,k,ko:!!f.st,tie,last,neutral};}return null;}
+/* ===== táticas do jogo (simples, estilo Brasfoot) =====
+   Cada escolha tem um efeito fixo e lógico; o acaso da partida continua existindo.
+   Intensidade: mais pegada rende mais, mas cansa mais rápido e dá mais cartão e lesão.
+   Por onde atacar: compara o seu setor com o setor do adversário que vai marcar ele.
+   Linha defensiva: adiantada sufoca e cria mais, mas deixa espaço nas costas (pior se o ataque deles for melhor que os seus zagueiros). */
+const TAC={int:[['lev','Leve','cansa menos, menos cartões; rende um pouco menos'],['nor','Normal','equilíbrio'],['for','Forte','rende mais, mas cansa mais rápido e dá mais cartões e lesões']],
+  atk:[['mei','Pelo meio','vale a pena se os seus meias forem melhores que os volantes deles'],['mis','Misto','metade de cada lado, sem risco'],['pon','Pelas pontas','vale a pena se os seus laterais forem melhores que os laterais deles']],
+  lin:[['rec','Recuada','sofre menos gols, mas cria menos'],['nor','Normal','equilíbrio'],['adi','Adiantada','cria mais, mas sofre mais se o ataque deles for melhor que a sua zaga']]};
+const TACN=(k,v)=>{const x=(TAC[k]||[]).find(y=>y[0]===v);return x?x[1]:'';};
+/* média de um setor em campo (nível já com a penalidade de posição) */
+function lvSec(S,roles){const ps=S.on.filter(x=>roles.includes(x.r)).map(x=>{const p=G.P[x.id];return p?p.ovr-posPen(p,x.r):null;}).filter(v=>v!=null);return ps.length?ps.reduce((a,b)=>a+b,0)/ps.length:null;}
+function lvAtkDiff(S,O){const mm=lvSec(S,['MEI'])||lvSec(S,['VOL'])||70,ov=lvSec(O,['VOL'])||lvSec(O,['MEI'])||70,ml=lvSec(S,['LAT'])||70,ol=lvSec(O,['LAT'])||70;return{mei:mm-ov,pon:ml-ol,mm,ov,ml,ol};}
+/* efeito das táticas de um lado: d (força), gf (gols a favor) e ga (gols contra) */
+function lvTac(L,i){const S=L.sd[i],O=L.sd[1-i],it=S.int||'nor',at=S.atk||'mis',ln=S.lin||'nor',x=lvAtkDiff(S,O);let d=0,gf=1,ga=1;
+  d+=it==='for'?2:it==='lev'?-1.3:0;
+  const ad=at==='mei'?x.mei:at==='pon'?x.pon:(x.mei+x.pon)/2;d+=clamp(ad*(at==='mis'?.12:.25),-2.5,2.5);
+  if(ln==='rec'){gf*=.9;ga*=.86;}else if(ln==='adi'){gf*=1.1;const za=lvSec(S,['ZAG'])||70,oa=lvSec(O,['ATA'])||70;ga*=oa>za?1.18:1.04;}
+  return{d,gf,ga};}
+const lvIntK=S=>S.int==='for'?1.35:S.int==='lev'?.75:1;
+/* adversário controlado pelo computador escolhe o lado em que é mais forte */
+function lvAITac(S,O){const x=lvAtkDiff(S,O);S.int='nor';S.lin='nor';S.atk=x.mei>2&&x.mei>=x.pon?'mei':x.pon>2?'pon':'mis';}
 function lvSide(c,mine,lu){const xi=lu.xi,on=xi.map(p=>({id:p.id,r:p._r||p.pos})),ids=new Set(xi.map(p=>p.id));
   const av=squad(c.id).filter(p=>!p.injury&&!p.lent&&!((p.suspTil||0)>G.d)&&!ids.has(p.id)).sort((a,b)=>b.ovr-a.ovr);
   const gk=av.find(p=>p.pos==='GOL'),o=mine?ownOf(c):null,bench=o&&o.bench?mgrBench(c).map(id=>G.P[id]).filter(p=>av.includes(p)):(gk?[gk]:[]).concat(av.filter(p=>p!==gk).slice(0,7)),en={};
   const rb={};xi.concat(bench).forEach(p=>{en[p.id]=Math.max(40,condOf(p));rb[p.id]=0;});
-  return{rb,c:c.id,on,bench:bench.map(p=>p.id),st0:on.map(x=>x.id),used:[],out:[],en,g:{},a:{},yc:{},rc:{},inj:[],subs:0,st:c.coach.st,fm:mine?ownOf(c).fm:null,mine};}
+  return{rb,c:c.id,on,bench:bench.map(p=>p.id),st0:on.map(x=>x.id),used:[],out:[],en,g:{},a:{},yc:{},rc:{},inj:[],subs:0,st:c.coach.st,fm:mine?ownOf(c).fm:null,int:o&&o.tint||'nor',atk:o&&o.tatk||'mis',lin:o&&o.tlin||'nor',mine};}
 function lvQuick(comp,m,neutral,ko){const H=G.clubs[m[0]],A=G.clubs[m[1]],lh=lineup(H.id),la=lineup(A.id),sf=styleFx(H,A,lh,la,ko),fh=matchFx(H,lh,la,ko,!neutral),fa=matchFx(A,la,lh,ko,false);
   const d=lh.str-la.str+(neutral?0:1.8)+tmpB(H)-tmpB(A)+sf.d+fh.d-fa.d;return[poisson(1.4*Math.exp(d/18)*sf.h),poisson(1.12*Math.exp(-d/18)*sf.a)];}
 function lvOthers(c,day,me){const out=[],add=(m,neutral,ko)=>{if(!m||m===me||(m[2]!=null&&m[2]>=0))return;const k=lvKey(c,m,day);const sc=lvQuick(c,m,neutral,ko),gm=[];
@@ -5633,11 +5655,12 @@ function lvAI(L,i){const S=L.sd[i],m=L.min;if(S.mine)return;
   if(m===80&&L.sc[i]>L.sc[1-i]&&S.st!=='ret'){S.st='ret';lvEv(L,i,'tat','📋 '+esc(G.clubs[S.c].n)+' recua para segurar o resultado.');}}
 const LV_CH=['chuta para fora','manda por cima do gol','acerta a trave','cabeceia rente à trave','obriga o goleiro a fazer grande defesa','perde chance clara cara a cara'];
 function lvStep(){const L=G.live;if(!L||L.phase==='end'||L.phase==='int')return;if(L.phase==='pens'){lvPenKick();return;}if(L.phase==='pre')L.phase='1t';L.min++;const m=L.min,[SH,SA]=L.sd,H=G.clubs[SH.c],A=G.clubs[SA.c],o=G.own;
-  L.sd.forEach(S=>{const c=G.clubs[S.c],fis=S.mine&&c.coach.sk?c.coach.sk.fis:1;S.on.forEach(x=>{const p=G.P[x.id];if(!p)return;const dr=.34+(S.st==='pre'?.1:0)+(S.st==='ret'?-.05:0)+(p.age>=31?.06:0)-(fis-1)*.02-(p.trait==='profissional'?.03:0);S.en[x.id]=Math.max(15,S.en[x.id]-dr);});});
+  L.sd.forEach(S=>{const c=G.clubs[S.c],fis=S.mine&&c.coach.sk?c.coach.sk.fis:1;S.on.forEach(x=>{const p=G.P[x.id];if(!p)return;const dr=lvIntK(S)*.34+(S.st==='pre'?.1:0)+(S.st==='ret'?-.05:0)+(p.age>=31?.06:0)-(fis-1)*.02-(p.trait==='profissional'?.03:0);S.en[x.id]=Math.max(15,S.en[x.id]-dr);});});
   const sh=lvStr(SH),sa=lvStr(SA),sv=[H.coach.st,A.coach.st],fm0=o?o.fm:null,my=L.sd[lvMy(L)];H.coach.st=SH.st;A.coach.st=SA.st;if(o&&my.fm)o.fm=my.fm;
   let sf;try{sf=styleFx(H,A,{str:sh,age:L.age[0]},{str:sa,age:L.age[1]},L.ko);}finally{H.coach.st=sv[0];A.coach.st=sv[1];if(o)o.fm=fm0;}
   const d=sh-sa+(L.neutral?0:1.8)+tmpB(H)-tmpB(A)+sf.d+L.fx[0]-L.fx[1]+lvCoachB(L,0,m)-lvCoachB(L,1,m);
-  const lam=[1.4*Math.exp(d/18)*sf.h/90,1.12*Math.exp(-d/18)*sf.a/90];L.dom=L.dom*.85+.15*(lam[0]/(lam[0]+lam[1]));lvDuels(L);
+  if(!L.aiT){L.aiT=1;L.sd.forEach((S,k)=>{if(!S.mine)lvAITac(S,L.sd[1-k]);});}const T0=lvTac(L,0),T1=lvTac(L,1),dd=d+T0.d-T1.d;
+  const lam=[1.4*Math.exp(dd/18)*sf.h*T0.gf*T1.ga/90,1.12*Math.exp(-dd/18)*sf.a*T1.gf*T0.ga/90];L.dom=L.dom*.85+.15*(lam[0]/(lam[0]+lam[1]));lvDuels(L);
   [0,1].forEach(i=>{const S=L.sd[i],cn=G.clubs[S.c].n;if(Math.random()<lam[i]){const pen=Math.random()<.08,pt=S.mine&&o&&o.pen&&S.on.some(x=>x.id===o.pen)?G.P[o.pen]:null;
       const on=id=>id&&S.on.some(x=>x.id===id)?G.P[id]:null,rr=Math.random(),fk=!pen&&S.mine&&o&&rr<.09?on(o.fk):null,ck=!pen&&!fk&&S.mine&&o&&rr<.24?on(o.ck):null;
       let sc=pen&&pt?pt:fk||lvPick(S,p=>GW[p.pos]*Math.pow(p.ovr/70,2));if(ck&&sc===ck)sc=lvPick(S,p=>p!==ck?(p.pos==='ZAG'||p.pos==='ATA'?3:1):0)||sc;if(!sc)return;S.g[sc.id]=(S.g[sc.id]||0)+1;L.sc[i]++;
@@ -5646,9 +5669,9 @@ function lvStep(){const L=G.live;if(!L||L.phase==='end'||L.phase==='int')return;
       lvConcede(L.sd[1-i],pen);(L.gl=L.gl||[]).push([m,i]);lvFxSet(L,'gol','GOOOL!',cn+' · '+shortN(sc.name));lvEv(L,i,'gol','⚽ GOL do '+esc(cn)+'! '+esc(sc.name)+(sp?sp:pen?' (pênalti)':as?' · passe de '+esc(shortN(as.name)):''));}
     else if(Math.random()<lam[i]*2.3){const p=lvPick(S,p=>GW[p.pos]+.3);if(p){const t=pick(LV_CH),O=L.sd[1-i],gk=O.on.find(y=>y.r==='GOL');lvEv(L,i,'ch',esc(shortN(p.name))+' ('+esc(cn)+') '+t+'.');const sv=/defesa/.test(t),tr=/trave/.test(t);lvAdd(S,p.id,sv||tr?.05:-.08);
       const cr=wpick(S.on.filter(y=>y.id!==p.id&&y.r!=='GOL'),y=>AW[y.r]||1);if(cr)lvAdd(S,cr.id,.06);if(sv&&gk)lvAdd(O,gk.id,.25);else{const df=wpick(O.on.filter(y=>y.r!=='GOL'),y=>y.r==='ZAG'?2:y.r==='LAT'||y.r==='VOL'?1.3:.3);if(df)lvAdd(O,df.id,.06);}}}
-    S.on.slice().forEach(x=>{const p=G.P[x.id];if(!p)return;if(Math.random()<YC[p.pos]/90){if(S.yc[p.id]){S.rc[p.id]=1;lvEv(L,i,'rc','🟥 '+esc(p.name)+' ('+esc(cn)+') leva o segundo amarelo e é expulso.');lvOff(L,i,p.id);}else{S.yc[p.id]=1;lvEv(L,i,'yc','🟨 '+esc(p.name)+' ('+esc(cn)+') leva amarelo.');}}
+    S.on.slice().forEach(x=>{const p=G.P[x.id];if(!p)return;if(Math.random()<YC[p.pos]/90*(S.int==='for'?1.4:S.int==='lev'?.7:1)){if(S.yc[p.id]){S.rc[p.id]=1;lvEv(L,i,'rc','🟥 '+esc(p.name)+' ('+esc(cn)+') leva o segundo amarelo e é expulso.');lvOff(L,i,p.id);}else{S.yc[p.id]=1;lvEv(L,i,'yc','🟨 '+esc(p.name)+' ('+esc(cn)+') leva amarelo.');}}
       else if(Math.random()<.006/90){S.rc[p.id]=1;lvEv(L,i,'rc','🟥 '+esc(p.name)+' ('+esc(cn)+') é expulso direto!');lvOff(L,i,p.id);}
-      else if(!S.inj.includes(p.id)&&Math.random()<injRisk(p,false)/90*.7){S.inj.push(p.id);S.en[p.id]=15;lvEv(L,i,'inj','✚ '+esc(p.name)+' ('+esc(cn)+') se machuca'+(S.mine?' e precisa sair.':'.'));if(S.mine){L.pause=1;ui.lvOpp=false;ui.lvOut=p.id;}}});
+      else if(!S.inj.includes(p.id)&&Math.random()<injRisk(p,false)/90*.7*(S.int==='for'?1.25:S.int==='lev'?.85:1)){S.inj.push(p.id);S.en[p.id]=15;lvEv(L,i,'inj','✚ '+esc(p.name)+' ('+esc(cn)+') se machuca'+(S.mine?' e precisa sair.':'.'));if(S.mine){L.pause=1;ui.lvOpp=false;ui.lvOut=p.id;}}});
     lvAI(L,i);});
   if(m===45){L.phase='int';L.pause=1;lvEv(L,-1,'sys','Intervalo: '+L.sc[0]+' a '+L.sc[1]);lvFxSet(L,'int','Intervalo',shortN(H.n)+' '+L.sc[0]+' – '+L.sc[1]+' '+shortN(A.n));}
   if(m>=90){lvFinalB(L);lvEv(L,-1,'sys','Fim de jogo: '+L.sc[0]+' a '+L.sc[1]);
@@ -5680,6 +5703,10 @@ function lvDraw(){const L=G&&G.live,q=id=>document.getElementById(id);if(!L)retu
   q('lv-tk').innerHTML=lvTick(L);{const tl=q('lv-tl');if(tl)tl.innerHTML=lvTlH(L);}q('lv-pitch').innerHTML=L.pk&&(L.phase==='pens'||L.phase==='end')?lvPkH(L):lvPitchH(L);{const fx=q('lv-fx');if(fx&&fx.dataset.k!==String(L.fxK||0)){fx.dataset.k=String(L.fxK||0);fx.innerHTML=lvFxH(L);}}const rd=q('lv-rod');if(rd)rd.innerHTML=lvRodH(L);const al=q('lv-all');if(al)al.innerHTML=lvAllH(L);}
 const lvClk=L=>L.phase==='pre'?'Antes do jogo':L.phase==='int'?'Intervalo':L.phase==='end'?(L.ps?'Pênaltis '+L.ps[0]+'–'+L.ps[1]:'Fim de jogo'):L.phase==='pens'?'Pênaltis':L.min+"'";
 /* linha do tempo do jogo: enche com os minutos; cada gol vira uma bolinha (em cima: mandante, embaixo: visitante) */
+/* escolhas de intensidade, ataque e linha, com a leitura do confronto de setores */
+function tacPick(S,O,act){const x=O?lvAtkDiff(S,O):null,sg=v=>v>=2?'<b class="okk">vantagem sua</b>':v<=-2?'<b class="nok">vantagem deles</b>':'equilibrado';
+  const row=(k,lbl)=>'<span class="lbl">'+lbl+'</span><div class="lv-chips">'+TAC[k].map(y=>'<button data-a="'+act+'" data-k="'+k+'" data-v="'+y[0]+'" aria-pressed="'+(S[k]===y[0])+'">'+y[1]+'</button>').join('')+'</div><p class="small muted">'+esc((TAC[k].find(y=>y[0]===S[k])||TAC[k][1])[2])+'.</p>';
+  return row('int','Intensidade')+row('atk','Por onde atacar')+(x?'<p class="small tac-rd">Meio: seus meias '+Math.round(x.mm)+' × volantes deles '+Math.round(x.ov)+' ('+sg(x.mei)+') · Pontas: seus laterais '+Math.round(x.ml)+' × laterais deles '+Math.round(x.ol)+' ('+sg(x.pon)+')</p>':'')+row('lin','Linha defensiva');}
 function lvTlH(L){const mm=L.phase==='pre'?0:L.phase==='end'||L.phase==='pens'?90:Math.min(90,L.min),w=Math.round(mm/90*1000)/10;
   return'<div class="lv-tlb"><i class="lv-tlf" style="width:'+w+'%"></i><i class="lv-tlh"></i></div>'+(L.gl||[]).map(g=>'<span class="lv-tlg '+(g[1]?'a':'h')+'" style="left:'+Math.min(97,Math.max(3,g[0]/90*100))+'%" title="Gol aos '+g[0]+'\'">⚽</span>').join('')+
    '<span class="lv-tll s">0\'</span><span class="lv-tll m">45\'</span><span class="lv-tll e">90\'</span>';}
@@ -5688,7 +5715,7 @@ function lvAllH(L){const mi=lvMy(L);return L.ev.map(e=>e.k==='sys'?'<div class="
 function lvRodH(L){const H=L.sd[0].c,A=L.sd[1].c,mm=L.phase==='pre'?0:L.phase==='end'||L.phase==='pens'?90:L.min,row=(h0,a0,sc,cls)=>'<div class="'+cls+'"><span class="h"><span>'+esc(G.clubs[h0].n)+'</span>'+crest(G.clubs[h0],18)+'</span><b>'+sc[0]+' – '+sc[1]+'</b><span class="a">'+crest(G.clubs[a0],18)+'<span>'+esc(G.clubs[a0].n)+'</span></span></div>';
   return'<div class="lv-rd">'+row(H,A,L.sc,'me')+(L.oth||[]).map(x=>row(x.h,x.a,lvOthSc(x,mm),x.gm.some(g=>g[0]<=mm&&g[0]>mm-3&&mm<90)?'hot':'')).join('')+'</div>';}
 /* campinho com notas e energia; o seu é tocável com o jogo pausado, o do rival só mostra */
-function lvPitchH(L){const mi=lvMy(L),opp=!!ui.lvOpp,i=opp?1-mi:mi,S=L.sd[i],c=G.clubs[S.c],gf=L.sc[i],ga=L.sc[1-i],inter=!opp&&L.pause&&L.phase!=='end';
+function lvPitchH(L){const mi=lvMy(L),opp=!!ui.lvOpp,i=opp?1-mi:mi,S=L.sd[i],c=G.clubs[S.c],gf=L.sc[i],ga=L.sc[1-i],inter=!opp&&L.phase!=='end'&&L.phase!=='pens';
   const slot=x=>{const p=G.P[x.id];if(!p)return'';const rt=lvRt(S,x.id,gf,ga),en=Math.round(S.en[x.id]||0),pp=posPen(p,x.r),ic=(S.yc[p.id]?'🟨':'')+(S.g[p.id]?'⚽'.repeat(Math.min(3,S.g[p.id])):'')+(S.inj.includes(p.id)?'✚':'');
     return'<button class="pt-p pt-btn lv-p'+(ui.lvOut===p.id&&!opp?' sel':'')+(pp?' imp':'')+'" data-a="lvpk" data-p="'+p.id+'"'+(inter?'':' disabled')+'>'+(S.mine?rlIcons(G.own,p.id,S.on.map(y=>y.id)):'')+avatar(p,30)+'<span class="pt-o'+(rt>=7.5?' r-hi':rt<6?' r-lo':'')+'">'+rt.toFixed(1)+'</span><b>'+esc(shortN(p.name))+'</b><span class="lv-en"><i class="'+(en<55?'lo':'')+'" style="width:'+en+'%"></i></span><span class="pt-pos">'+(pp?x.r+' ('+p.pos+')':x.r)+(ic?' '+ic:'')+'</span></button>';};
   const by=r=>S.on.filter(x=>x.r===r),lat=by('LAT'),def=[lat[0]].concat(by('ZAG'),[lat[1]]).filter(Boolean),rows=[by('ATA'),by('MEI'),by('VOL'),def,by('GOL')];
@@ -5738,7 +5765,7 @@ function mLive(){const L=G.live,H=G.clubs[L.sd[0].c],A=G.clubs[L.sd[1].c],mi=lvM
   /* janelas por cima da tela de jogo: táticas, rodada e todos os lances */
   if(pop){const fm=S.fm||'442';let b='';
     if(pop==='tac')b='<h3>Táticas</h3><span class="lbl">Estilo</span><div class="lv-chips">'+Object.keys(STYLES).map(x=>'<button data-a="lvst" data-v="'+x+'" aria-pressed="'+(S.st===x)+'">'+esc(STYLES[x][0])+'</button>').join('')+'</div><p class="small muted">'+esc(STYLES[S.st][1])+'.</p>'+
-      '<span class="lbl">Esquema</span><div class="lv-chips">'+FORM_K.map(x=>'<button data-a="lvfm" data-v="'+x+'" aria-pressed="'+(fm===x)+'">'+FORMS[x][0]+'</button>').join('')+'</div><p class="small muted">Valem só para este jogo. O jogo fica pausado enquanto você ajusta.</p>';
+      '<span class="lbl">Esquema</span><div class="lv-chips">'+FORM_K.map(x=>'<button data-a="lvfm" data-v="'+x+'" aria-pressed="'+(fm===x)+'">'+FORMS[x][0]+'</button>').join('')+'</div>'+tacPick(S,O,'lvtac')+'<p class="small muted">Valem só para este jogo. O jogo fica pausado enquanto você ajusta.</p>';
     else if(pop==='rod')b='<h3>Rodada · placar ao vivo</h3><div id="lv-rod">'+lvRodH(L)+'</div>';
     else b='<h3>Todos os lances</h3><div id="lv-all" class="lv-allw">'+lvAllH(L)+'</div>';
     h+='<div class="lv-pop" data-a="lvpop" data-v=""><div class="lv-popb" data-a="lvnop">'+b+'<button class="btn pri" data-a="lvpop" data-v="">Fechar</button></div></div>';}
@@ -5750,9 +5777,11 @@ const LVA={
     L.sd.forEach((S,i)=>{if(S.mine)S.inj.forEach(id=>{const x=S.on.find(y=>y.id===id);if(x){const b=lvBest(S,x.r);if(!(b&&lvSub(L,i,id,b.id)))lvOff(L,i,id);}});});L.pause=1;ui.lvPop=null;ui.lvOut=null;save();render();},
   lvtab(d){ui.lvTab=d.v;render();},
   lvall(){ui.lvAll=!ui.lvAll;render();},
-  lvpk(d){const L=G.live;if(!L||!L.pause||L.phase==='end'||ui.lvOpp)return;ui.lvAll=false;ui.lvOut=ui.lvOut===+d.p?null:+d.p;render();},
+  lvpk(d){const L=G.live;if(!L||L.phase==='end'||L.phase==='pens'||ui.lvOpp)return;L.pause=1;ui.lvPop=null;ui.lvAll=false;ui.lvOut=ui.lvOut===+d.p?null:+d.p;render();},
   lvopp(){ui.lvOpp=!ui.lvOpp;ui.lvOut=null;render();},
   lvnop(){},
+  lvtac(d){const L=G.live;if(!L||!TAC[d.k])return;const i=lvMy(L),S=L.sd[i];S[d.k]=d.v;lvEv(L,i,'tat','📋 '+esc(G.clubs[S.c].n)+': '+({int:'intensidade',atk:'ataque',lin:'linha'}[d.k])+' '+TACN(d.k,d.v).toLowerCase()+'.');save();render();},
+  mgtac(d){const o=G.own;if(!o||!TAC[d.k])return;o['t'+d.k]=d.v;save();render();},
   lvswap(d){const L=G.live;if(!L||ui.lvOut==null)return;const i=lvMy(L),S=L.sd[i],a=S.on.find(y=>y.id===ui.lvOut),b=S.on.find(y=>y.id===+d.p);if(!a||!b)return;const r=a.r;a.r=b.r;b.r=r;
     lvEv(L,i,'tat','🔄 '+esc(shortN(G.P[a.id].name))+' vai para '+a.r+' e '+esc(shortN(G.P[b.id].name))+' para '+b.r+'.');ui.lvOut=null;save();render();},
   lvpop(d){const L=G.live;if(!L)return;ui.lvPop=d.v||null;if(d.v==='tac'&&L.phase!=='end'){L.pause=1;ui.lvOut=null;}render();},
@@ -5856,6 +5885,7 @@ function mgrTime(o,c){if(o.fk===undefined)rlAuto(o,c);const F=FORMS[o.fm]||FORMS
    (sup.map(p=>'<div>'+avatar(p,30)+ovrB(p.ovr)+'<div class="grow"><b>'+plLink(p)+'</b> <span class="chip pchip" style="--pc:'+PC[p.pos]+'">'+p.pos+'</span> '+srI(p)+' '+st(p)+'</div>'+cond(p)+'<button class="btn sm pri" data-a="mgbi" data-p="'+p.id+'"'+(B.length>=8?' disabled':'')+'>Para o banco</button></div>').join('')||'<div class="small muted">Ninguém.</div>')+'</div></section>';
   h+='<section class="card">'+cardH('report','Esquema')+'<div class="seg mg-fm">'+FORM_K.map(x=>'<button data-a="mgfm" data-v="'+x+'" aria-pressed="'+(o.fm===x)+'">'+FORMS[x][0]+'</button>').join('')+'</div><p class="small muted">'+esc(F[3])+'</p></section>';
   h+='<section class="card">'+cardH('coach','Estilo de jogo')+'<div class="mg-st">'+Object.keys(STYLES).map(x=>'<button class="otab" data-a="mgst" data-v="'+x+'" aria-pressed="'+(k.st===x)+'"><span>'+esc(STYLES[x][0])+'</span><small>'+esc(STYLES[x][1])+'</small></button>').join('')+'</div></section>';
+  h+='<section class="card">'+cardH('report','Tática de jogo')+'<p class="small muted">Vale como padrão no começo de cada jogo. Dá para mudar durante a partida em Táticas.</p>'+tacPick({int:o.tint||'nor',atk:o.tatk||'mis',lin:o.tlin||'nor'},null,'mgtac')+'</section>';
   h+='<section class="card">'+cardH('star','Funções')+'<p class="small muted">Toque num jogador no campinho para escolher capitão e batedores de pênalti, falta e escanteio. Capitão só pode ser titular: dá para ter 1º, 2º e 3º capitão. Se nenhum estiver em campo, o jogo escolhe um na hora (C tracejado).</p><div class="acts">'+'<span class="chip">Capitães: '+(capList(o).length?capList(o).map((id,i)=>(i+1)+'º '+esc(shortN((G.P[id]||{}).name||''))).join(', '):'o jogo escolhe')+'</span>'+RL.slice(1).map(x=>{const p=G.P[o[x[0]]];return'<span class="chip">'+x[1]+': '+(p?esc(shortN(p.name)):'—')+'</span>';}).join('')+'</div></section>';
   return h;}
 function mMgSlot(){const m=ui.modal,c=ownC(),o=G.own;if(!c||!o){ui.modal=null;return'';}const S=mgrSlots(o.fm),pos=S[m.i],xi=mgrMap(c),cur=xi[m.i];
