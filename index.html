@@ -657,6 +657,9 @@ html,body{touch-action:manipulation}
 .mg-warn{background:color-mix(in srgb,#d64545 14%,var(--surface));border:1px solid color-mix(in srgb,#d64545 45%,transparent);border-radius:12px;padding:10px 12px;font-size:13.5px;font-weight:600;margin:0 0 10px}
 .pt-ph{width:34px;height:34px;border-radius:10px;border:2px dashed #ffb0b0;background:rgba(214,69,69,.35);color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;line-height:1}
 .pt-empty b{color:#ffd6d6}.pt-why{display:block;font-size:10px;line-height:1.15;color:#ffd6d6;max-width:74px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sv-in{width:100%;padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;font-size:14px;font-weight:700}.sv-new .grow{gap:3px}
+.sl-l{display:flex;flex-wrap:wrap;gap:4px;margin:3px 0 2px}.mg-pick .grow{min-width:0}.mg-pick .grow>b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sl-t,.sl-r,.sl-s{flex:none;font-size:11px;font-weight:800;padding:2px 8px;border-radius:999px;white-space:nowrap}.sl-t{background:#2e8f4f;color:#fff}.sl-r{background:#2f6fb0;color:#fff}.sl-s{background:var(--surface2);color:var(--ink)}
 .sv-l{display:flex;flex-direction:column;gap:8px}.sv-i{display:flex;align-items:center;gap:10px;padding:9px 10px;border:1px solid var(--line);border-radius:12px}
 .sv-n{flex:none;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--gold);color:#2b2200;font-weight:800}
 .sv-i .grow{display:flex;flex-direction:column;min-width:0}.sv-i small{font-size:12px;opacity:.8}.sv-b{display:flex;gap:6px;flex:none}
@@ -5832,13 +5835,13 @@ function mMgSlot(){const m=ui.modal,c=ownC(),o=G.own;if(!c||!o){ui.modal=null;re
   const L0=squad(c.id).filter(p=>!p.lent).sort((a,b)=>rk(a)-rk(b)||(b.ovr-posPen(b,pos))-(a.ovr-posPen(a,pos))),L=ui.slotAll?L0:L0.filter(p=>p.pos===pos),more=L0.length>L.length;
   return'<div class="sheet"><span class="eyebrow">Escalação · '+esc((FORMS[o.fm]||FORMS['442'])[0])+'</span><h2>'+(cur?esc(cur.name):'Escolher '+POSN[pos])+'</h2>'+(cur?'<span class="lbl">Funções</span>'+rlBtns(o,cur.id)+'<span class="lbl">Trocar por</span>':'')+'<p class="small muted">'+(ui.slotAll?'Todas as posições. Fora da posição, o número já mostra o nível na vaga.':POSPL[pos].replace(/^./,x=>x.toUpperCase())+' do elenco.')+' Se ele já é titular em outra vaga, os dois trocam de lugar.</p><div class="card list mg-pick">'+
    L.map(p=>{const ok=av.has(p),pp=posPen(p,pos),j=xi.indexOf(p),st=p.injury>0?'<span class="chip bad">'+esc(p.injT||'Lesionado')+'</span>':(p.suspTil||0)>G.d?'<span class="chip bad">Suspenso</span>':condOf(p)<50?'<span class="chip bad">Exausto</span>':(p.fat||0)>=1.5?'<span class="chip warn">Cansado</span>':'';
-     return'<div>'+avatar(p,30)+ovrB(p.ovr-pp)+'<div class="grow"><b>'+esc(p.name)+'</b> <span class="chip">'+p.pos+'</span> '+st+'<div class="small muted">'+p.age+' anos · '+srI(p)+(pp?' · fora da posição (−'+pp+')':'')+(j>=0?' · titular de '+S[j]:(o.bench||[]).includes(p.id)?' · no banco':'')+'</div></div>'+
+     return'<div>'+avatar(p,30)+ovrB(p.ovr-pp)+'<div class="grow"><b>'+esc(p.name)+'</b><div class="sl-l">'+(j>=0?'<span class="chip sl-t">Titular · '+S[j]+'</span>':(o.bench||[]).includes(p.id)?'<span class="chip sl-r">Reserva</span>':'<span class="chip sl-s">Suplente</span>')+'<span class="chip">'+p.pos+'</span>'+st+'</div><div class="small muted">'+p.age+' anos · '+srI(p)+(pp?' · fora da posição (−'+pp+')':'')+'</div></div>'+
       (p===cur?'<span class="chip good">Na vaga</span>':'<button class="btn sm pri" data-a="mgpick" data-i="'+m.i+'" data-p="'+p.id+'"'+(ok?'':' disabled')+'>Escalar</button>')+'</div>';}).join('')+(L.length?'':'<div class="small muted">Nenhum '+POSN[pos]+' no elenco.</div>')+'</div><div class="acts">'+(more||ui.slotAll?'<button class="btn" data-a="slotall">'+(ui.slotAll?'Só '+POSPL[pos]:'Ver outras posições')+'</button>':'')+'<button class="btn" data-a="close">Fechar</button></div></div>';}
 function mgrCur(c){return mgrMap(c).map(p=>p?p.id:null);}
 /* ===== escalações gravadas: 3 modelos para usar em momentos diferentes ===== */
 function mgrSavesH(o,c){const S=o.sv||[null,null,null];
   return'<section class="card">'+cardH('report','Escalações gravadas')+'<p class="small muted">Grave até 3 escalações (esquema, titulares e banco) e use quando quiser. Quem estiver lesionado, suspenso, exausto, vendido ou emprestado deixa a vaga vazia para você completar.</p><div class="sv-l">'+
-   [0,1,2].map(i=>{const x=S[i];if(!x)return'<div class="sv-i"><span class="sv-n">'+(i+1)+'</span><span class="grow"><b>Escalação '+(i+1)+'</b><small>Vazia</small></span><button class="btn sm" data-a="mgsvsave" data-i="'+i+'">Gravar atual</button></div>';
+   [0,1,2].map(i=>{const x=S[i];if(!x)return'<div class="sv-i sv-new"><span class="sv-n">'+(i+1)+'</span><span class="grow"><input type="text" id="svn'+i+'" class="sv-in" maxlength="24" placeholder="Nome (ex.: Time titular)" aria-label="Nome da escalação '+(i+1)+'"><small>Vazia · o nome é definido só nesta primeira gravação</small></span><button class="btn sm pri" data-a="mgsvsave" data-i="'+i+'">Gravar</button></div>';
      const out=x.xi.filter(id=>{const p=G.P[id];return !p||mgrWhy(p,c);}).length,F=FORMS[x.fm]||FORMS['442'];
      return'<div class="sv-i"><span class="sv-n">'+(i+1)+'</span><span class="grow"><b>'+esc(x.n||'Escalação '+(i+1))+'</b><small>'+esc(F[0])+' · gravada em '+fdate(x.d)+(out?' · <span class="nok nw">'+out+' fora</span>':'')+'</small></span><span class="sv-b"><button class="btn sm pri" data-a="mgsvuse" data-i="'+i+'">Usar</button><button class="btn sm" data-a="mgsvsave" data-i="'+i+'">Regravar</button></span></div>';}).join('')+'</div></section>';}
 const MGRA={
@@ -5864,11 +5867,12 @@ const MGRA={
   mgslot(d){ui.slotAll=false;ui.modal={type:'mgslot',i:+d.i};render();},
   slotall(){ui.slotAll=!ui.slotAll;render();},
   mgsvsave(d){const o=G.own,c=ownC(),i=+d.i;if(!o||!c||!(i>=0&&i<3))return;if(!o.xi)o.xi=mgrCur(c);const B=mgrBench(c);
-    (o.sv=o.sv||[null,null,null])[i]={n:'Escalação '+(i+1),fm:o.fm,xi:o.xi.slice(),bench:B.slice(),d:G.d};toast('Escalação '+(i+1)+' gravada.');save();render();},
+    o.sv=o.sv||[null,null,null];const old=o.sv[i],el=$('#svn'+i),nm=old?old.n:((el&&el.value||'').trim().slice(0,24)||'Escalação '+(i+1));
+    o.sv[i]={n:nm,fm:o.fm,xi:o.xi.slice(),bench:B.slice(),d:G.d};toast('“'+nm+'” '+(old?'regravada':'gravada')+'.');save();render();},
   mgsvuse(d){const o=G.own,c=ownC(),i=+d.i,x=o&&o.sv&&o.sv[i];if(!x||!c)return;const out=[];
     o.fm=FORMS[x.fm]?x.fm:'442';o.xi=x.xi.map(id=>{const p=G.P[id];if(!p)return null;const w=mgrWhy(p,c);if(w){out.push(shortN(p.name)+' ('+w+')');return id;}return id;});
     const xs=new Set(o.xi);o.bench=x.bench.filter(id=>{const p=G.P[id];return p&&!xs.has(id)&&!mgrWhy(p,c);}).slice(0,8);capPrune(o,c);
-    toast(out.length?'Escalação '+(i+1)+' em campo. Vaga vazia: '+out.join(', ')+'.':'Escalação '+(i+1)+' em campo.');save();render();},
+    toast(out.length?'“'+x.n+'” em campo. Vaga vazia: '+out.join(', ')+'.':'“'+x.n+'” em campo.');save();render();},
   mgpick(d){const o=G.own,c=ownC(),i=+d.i,p=G.P[+d.p];if(!o||!c||!p||p.club!==c.id)return;mgrBench(c);if(!o.xi)o.xi=mgrCur(c);const j=o.xi.indexOf(p.id),old=o.xi[i];o.xi[i]=p.id;if(j>=0&&j!==i)o.xi[j]=old;
     const b=o.bench.indexOf(p.id);if(b>=0){if(old!=null&&j<0)o.bench[b]=old;else o.bench.splice(b,1);}capPrune(o,c);ui.modal=null;save();render();},
   mgrole(d){const o=G.own,pid=+d.p;if(!o||!RL.some(x=>x[0]===d.k))return;
