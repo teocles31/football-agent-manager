@@ -3700,7 +3700,7 @@ function natNameFix(){if(!G||G._nnFix2)return;G._nnFix2=1;const fn={},sn={};for(
   Object.values(G.P).forEach(p=>{if(p.real||p.nf||!p.name)return;const w=p.name.split(' '),f=w[0],ls=w.slice(1),sc={};(fn[f]||[]).forEach(k=>sc[k]=(sc[k]||0)+1);ls.forEach(l=>(sn[l]||[]).forEach(k=>sc[k]=(sc[k]||0)+1));
     const best=Object.keys(sc).sort((a,b)=>sc[b]-sc[a])[0];if(!best||(sc[p.nat]||0)>=sc[best])return;p.nat=best;});}
 function nameFix(){if(G._nameFix)return;G._nameFix=1;NAMESET=null;Object.values(G.P).forEach(p=>{if(!p.real&&p.ag!==0&&/ \d+$/.test(p.name)){p.name=genName(p.nat||'XX');p.fk=null;}});DUPN=null;DUP2=null;}
-function migrate(){try{natNameFix();}catch(e){}baseSeed();dataFix();fakeFix();fakeFix2();nameFix();dupFix();ridFix();ownInstall();uniFix();ntReflow();baseNameFix();libFix();try{schAll();}catch(e){}porAdd();porReal();porAdj();porSync();fcSync();G.me=G.me||newMe();evoMigrate();G.office=G.office||newOffice();G.fc=G.fc||[];if(G.inv===undefined)G.inv=null;if(G.pol===undefined)G.pol=null;
+function migrate(){try{natNameFix();}catch(e){}baseSeed();dataFix();fakeFix();fakeFix2();nameFix();dupFix();ridFix();ownInstall();uniFix();ntReflow();baseNameFix();libFix();try{const L=G.live;if(L&&/Super Mundial/.test(L.cn||'')){const T=smLive();L.neutral=true;if(T){const H=L.sd[0].c,A=L.sd[1].c;L.std=smVenue(T,H,A,L.day||G.d,/Final$/.test(L.cn))+' · '+smHost(T);}L.hr=null;}}catch(e){}try{schAll();}catch(e){}porAdd();porReal();porAdj();porSync();fcSync();G.me=G.me||newMe();evoMigrate();G.office=G.office||newOffice();G.fc=G.fc||[];if(G.inv===undefined)G.inv=null;if(G.pol===undefined)G.pol=null;
   if(G.own){G.own.role=G.own.role||'dono';if(G.own.pct==null)G.own.pct=100;}
   G.clubs.forEach(c=>{c.cf=c.cf||newCf();c.sack=c.sack||0;});if(!G.rc)applyRealCoaches(true);
   if(!G.hfix)fixHomonyms();
@@ -4509,15 +4509,22 @@ function smPause(Y){const ws=dayOf(Y,6,14),we=dayOf(Y,7,14);let moved=0;
     if(!slots.some(x=>x.d<=we))continue;slots.sort((a,b)=>a.d-b.d);let prev=we-2,last=null,lastN=null;
     slots.forEach(x=>{let nd;if(x.d===last)nd=lastN;else{nd=Math.max(x.d,prev+3);last=x.d;lastN=nd;prev=nd;}if(nd!==x.o[x.f]){x.o[x.f]=nd;moved++;}});}
   return moved;}
+/* país-sede do Super Mundial (como os Estados Unidos em 2025): todos os jogos em campo neutro, nos estádios da sede */
+const SM_HOSTS=[['Estados Unidos',['MetLife Stadium','Rose Bowl','Hard Rock Stadium','Mercedes-Benz Stadium','Lincoln Financial Field','Lumen Field','Bank of America Stadium','Camping World Stadium','TQL Stadium','GEODIS Park','Audi Field','Inter&Co Stadium']],
+  ['Arábia Saudita',['King Fahd Sports City','Kingdom Arena','Al-Awwal Park','King Abdullah Sports City','Prince Faisal bin Fahd','Prince Mohamed bin Fahd','Prince Abdullah Al-Faisal','Aramco Stadium']],
+  ['Espanha',['Santiago Bernabéu','Metropolitano','Spotify Camp Nou','La Cartuja','San Mamés','Mestalla','Benito Villamarín','Reale Arena','RCDE Stadium','Balaídos']],
+  ['Catar',['Lusail','Al Bayt','Khalifa International','Education City','Ahmad bin Ali','Al Janoub','Al Thumama','Estádio 974']]];
+const smHost=T=>T.host||(SM_HOSTS[Math.max(0,Math.round(((T.Y||SM_FIRST)-SM_FIRST)/4))%SM_HOSTS.length][0]);
+function smVenue(T,a,b,d,fin){const h=SM_HOSTS.find(x=>x[0]===smHost(T))||SM_HOSTS[0],v=h[1];if(fin)return v[0];const k=Math.abs((+a)*31+(+b)*17+d*7);return v[k%v.length];}
 function smStart(Y){if(G.yt&&G.yt.some(T=>T.k==='SM'&&T.Y===Y))return;const q=smQualify().slice(0,16);if(q.length<8)return;
   const n=q.length>=16?16:8,use=q.slice(0,n),clubs=[];use.forEach(x=>x.clubs.forEach(c=>clubs.push(c)));
   clubs.sort((a,b)=>crkScore(b)-crkScore(a));const ids=clubs.map(c=>c.id),groups=smDraw(ids);if(!groups)return;
   const sq={};ids.forEach(id=>sq[id]=squad(id).map(p=>p.id));
-  const T=mkYT('SM',Y,ids.map(String),sq);T.groups=groups.map(g=>g.map(String));
+  const T=mkYT('SM',Y,ids.map(String),sq);T.groups=groups.map(g=>g.map(String));T.host=smHost(T);
   const rr=[[[0,1],[2,3]],[[0,2],[1,3]],[[0,3],[1,2]]];T.rounds.forEach((r,i)=>r.m=[].concat(...T.groups.map(g=>rr[i].map(([a,b])=>[g[a],g[b],-1,-1]))));
   T.q=use.map(x=>({cn:x.cn,ids:x.clubs.map(c=>c.id),pts:x.clubs.map(c=>crkScore(c))}));T.out=q.slice(n).map(x=>x.cn);
   const mv=smPause(Y);ytAdd(T);
-  news('Sorteio do Super Mundial de Clubes '+Y+': 64 clubes de '+n+' países em '+T.groups.length+' grupos. As ligas param entre 14 de junho e 14 de julho'+(mv?' e as rodadas desse período foram remarcadas':'')+'.','liga');
+  news('Sorteio do Super Mundial de Clubes '+Y+' ('+T.host+'): 64 clubes de '+n+' países em '+T.groups.length+' grupos, todos os jogos em estádios da sede. As ligas param entre 14 de junho e 14 de julho'+(mv?' e as rodadas desse período foram remarcadas':'')+'.','liga');
   G.clients.forEach(id=>{const p=G.P[id],c=club(p);if(c&&ids.includes(c.id)){p.morale=clamp(p.morale+6,0,100);p.fame=clamp(p.fame+3,0,100);}});}
 /* fila para ver os jogos um a um */
 /* depois do último jogo mostrado, saem os avisos que esperavam (campeão, prêmios) */
@@ -5673,7 +5680,7 @@ function lvStart(x){ui.lvOpp=false;const f=x.f,m=f.m,H=G.clubs[m[0]],A=G.clubs[m
   G.live={std:stadOf(H),hr:m[5],k:x.k,cn:f.c.name+' '+(f.c.lbl||'')+(f.st?' · '+f.st:''),day:f.d,ko:x.ko,tie:x.tie,last:x.last,neutral:x.neutral,min:0,sc:[0,0],ev:[],
     sd:[lvSide(H,H.id===o.cid,luH),lvSide(A,A.id===o.cid,luA)],phase:'pre',pause:1,spd:ui.lvSpd||1,dom:.5,
     fx:[matchFx(H,luH,luA,x.ko,!x.neutral).d,matchFx(A,luA,luH,x.ko,false).d],age:[luH.age,luA.age],str:[luH.str,luA.str],oth:x.sm?[]:lvOthers(f.c,f.d,m)};
-  if(x.sm){G.live.std='Sede do Super Mundial';G.live.hr=null;}
+  if(x.sm){const T=smLive();G.live.std=T?smVenue(T,m[0],m[1],f.d,f.st==='Final')+' · '+smHost(T):'Campo neutro';G.live.hr=null;G.live.neutral=true;}
   ui.lvTab='lan';ui.lvOut=null;}
 const lvMy=L=>L.sd[0].mine?0:1;
 /* nota ao vivo: resultado, gols, passes, cartões, defesa e um pouco do dia do jogador */
