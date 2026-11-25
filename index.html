@@ -2923,7 +2923,7 @@ function advance0(c,k){const st=c.ko[k];const w=st.ties.map(t=>t.w);c.pool=st.pr
     squad(cl.id).forEach(p=>{if(p.ag===0){G.stats.ctit=(G.stats.ctit||0)+1;p.fame=clamp(p.fame+6,0,100);addRep(1);news(p.name+' conquistou a '+c.name+' com o '+cl.n+'.','liga');}});
     if(!G._pre){const pi=squad(cl.id).filter(p=>p.ag===0).map(p=>p.id),t=st.ties[0];if(pi.length||isOwn(cl))titleCer({eye:'Título de copa',comp:c.name+' '+c.lbl,kind:'club',win:cl.id,fin:t?'Venceu o '+G.clubs[t.w===t.a?t.b:t.a].n+' na final'+(t.pen?', nos pênaltis':' por '+Math.max(t.ga,t.gb)+' a '+Math.min(t.ga,t.gb)):'',pids:pi,own:isOwn(cl)});}}}
 function canDraw(c,k){if(k>0)return c.ko[k-1].ties&&c.ko[k-1].ties.every(t=>t.w!=null);if(c.rounds)return c.rounds.every(r=>r.done);return true;}
-function processDay(day,pre){G._pre=pre;
+function processDay(day,pre){G._pre=pre;if(G.mgr)try{ytDay(day);}catch(e){}
   for(const key in G.comps){const c=G.comps[key];
     if(c.rounds)c.rounds.forEach(r=>{if(!r.done&&r.d<=day){r.m.forEach(m=>{if(!(m[2]>=0)&&mDay(r.d,m)<=day)play(c,m,false,true,day,pre);});if(!r.m.every(m=>m[2]>=0))return;r.done=1;if(c.t==='U'||c.t==='B')przRound(c,r);
       if(c.t==='L'&&r===c.rounds[c.rounds.length-1]){const ch=G.clubs[sortedTab(c)[0]];ch.tro.push(c.name+' '+c.lbl);c.win=ch.id;if(isOwn(ch))titleBonus(ch);if(!pre){squad(ch.id).forEach(p=>{if(p.ag===0)G.stats.ctit=(G.stats.ctit||0)+1;});const pi=squad(ch.id).filter(p=>p.ag===0).map(p=>p.id);if(pi.length||isOwn(ch))titleCer({eye:'Título de liga',comp:c.name+' '+c.lbl,kind:'club',win:ch.id,fin:'Campeão com '+((c.tab[ch.id]||[])[6]||0)+' pontos',pids:pi,own:isOwn(ch)});}news(ch.n+' é campeão '+compDe(c.name)+' '+c.name+' '+c.lbl+'.','liga');}}});
@@ -4397,15 +4397,22 @@ function ytStats(T,k,opp,xi,gf,ga,day){const ng=new Map(),sc=[];for(let i=0;i<gf
 function ytPlay(T,a,b,day){if(T.k==='SM')[a,b].forEach(k=>T.sq[k]=squad(+k).filter(p=>!(p.injury>0)).map(p=>p.id));const A=ntXI(T.sq[a],48),B=ntXI(T.sq[b],48),d=clamp(A.str-B.str,-14,14),ga=poisson(1.35*Math.exp(d/16)),gb=poisson(1.35*Math.exp(-d/16));
   const sa=ytStats(T,a,b,A.xi,ga,gb,day),sb=ytStats(T,b,a,B.xi,gb,ga,day);return[ga,gb,sa,sb];}
 function ytMsg(T,k,txt){const cs=G.clients.map(id=>G.P[id]).filter(p=>p&&T.sq[k]&&T.sq[k].includes(p.id));if(cs.length)news(T.name+': '+ytName(T,k)+' '+txt+' ('+cs.map(p=>p.name).join(', ')+').',ytCat(T));}
+/* Super Mundial no modo técnico: o jogo do seu clube é jogado ao vivo; até lá ele espera */
+const smMine=(T,a,b)=>!!(G.mgr&&G.own&&T.k==='SM'&&(String(a)===String(G.own.cid)||String(b)===String(G.own.cid)));
+function smLiveRes(T,a,b,d){const R=G.liveRes&&G.liveRes[T.id+'|'+d+'|'+(+a)+'|'+(+b)];if(!R)return null;const nm=sd=>{const o=[];for(const id in sd.g||{}){const p=G.P[id];if(p)o.push(p.name+(sd.g[id]>1?' ('+sd.g[id]+')':''));}return o;};
+  return[R.sc[0],R.sc[1],nm(R.sd[0]),nm(R.sd[1])];}
+/* confrontos de uma fase do mata-mata (sorteados no dia; o jogo ao vivo pode pedir antes) */
+function ytDraw(T,k){const s=T.ko[k];if(s.ties)return;let pool=[];if(k===0){const w=[],r=[];T.groups.forEach(g=>{const o=ntSort(T,g);w.push(o[0]);r.push(o[1]);});w.forEach((x,i)=>pool.push(x,r[(i+1)%r.length]));}else pool=T.ko[k-1].ties.map(t=>t.w);
+  s.ties=[];for(let i=0;i+1<pool.length;i+=2)s.ties.push({a:pool[i],b:pool[i+1]});if(T.k==='SM')przDraw(T,k);}
 function ytDay(d){liveYT().forEach(T=>{
-  T.rounds.forEach((r,i)=>{if(r.d!==d||r.done)return;r.m.forEach((m,mi)=>{const s=ytPlay(T,m[0],m[1],d);m[2]=s[0];m[3]=s[1];if(T.k==='SM'){m[4]=s[2];m[5]=s[3];smQueue(T,{t:T.id,g:i,i:mi});}ntTab(T,m);});r.done=1;if(T.k==='SM')przRound(T,r);
+  T.rounds.forEach((r,i)=>{if(r.d!==d||r.done)return;let wait=false;r.m.forEach((m,mi)=>{if(m[2]>=0)return;let s;if(smMine(T,m[0],m[1])){s=smLiveRes(T,m[0],m[1],d);if(!s){wait=true;return;}}else s=ytPlay(T,m[0],m[1],d);m[2]=s[0];m[3]=s[1];if(T.k==='SM'){m[4]=s[2];m[5]=s[3];smQueue(T,{t:T.id,g:i,i:mi});}ntTab(T,m);});if(wait)return;r.done=1;if(T.k==='SM')przRound(T,r);
     if(i===T.rounds.length-1)T.groups.forEach(g=>{const o=ntSort(T,g);o.slice(0,2).forEach(k=>ytMsg(T,k,'avançou ao mata-mata'));o.slice(2).forEach(k=>ytMsg(T,k,'caiu na fase de grupos'));});});
   T.ko.forEach((s,k)=>{if(s.d!==d||s.done)return;
-    if(!s.ties){let pool=[];if(k===0){const w=[],r=[];T.groups.forEach(g=>{const o=ntSort(T,g);w.push(o[0]);r.push(o[1]);});w.forEach((x,i)=>pool.push(x,r[(i+1)%r.length]));}else pool=T.ko[k-1].ties.map(t=>t.w);
-      s.ties=[];for(let i=0;i+1<pool.length;i+=2)s.ties.push({a:pool[i],b:pool[i+1]});if(T.k==='SM')przDraw(T,k);}
-    s.ties.forEach((t,ti)=>{const sc=ytPlay(T,t.a,t.b,d);t.ga=sc[0];t.gb=sc[1];t.sa=sc[2];t.sb=sc[3];if(sc[0]!==sc[1])t.w=sc[0]>sc[1]?t.a:t.b;else{t.pen=1;t.w=Math.random()<.5?t.a:t.b;}
+    ytDraw(T,k);let wait=false;
+    s.ties.forEach((t,ti)=>{if(t.w!=null)return;let sc;if(smMine(T,t.a,t.b)){sc=smLiveRes(T,t.a,t.b,d);if(!sc){wait=true;return;}}else sc=ytPlay(T,t.a,t.b,d);t.ga=sc[0];t.gb=sc[1];t.sa=sc[2];t.sb=sc[3];
+      if(sc[0]!==sc[1])t.w=sc[0]>sc[1]?t.a:t.b;else{t.pen=1;const pw=G.lvPen&&G.lvPen[(+t.a)+'|'+(+t.b)];t.w=pw!=null&&smMine(T,t.a,t.b)?String(pw):Math.random()<.5?t.a:t.b;}
       smQueue(T,{t:T.id,k,i:ti});if(k<T.ko.length-1)ytMsg(T,t.w===t.a?t.b:t.a,(T.kind==='nat'?'foi eliminada ':'foi eliminado ')+(s.n==='Semifinal'?'na ':'nas ')+s.n.toLowerCase());});
-    s.done=1;if(k===T.ko.length-1){if(T.k==='SM')przChamp(T,s.ties[0].w);ytEnd(T,s.ties[0]);}});});}
+    if(wait)return;s.done=1;if(k===T.ko.length-1){if(T.k==='SM')przChamp(T,s.ties[0].w);ytEnd(T,s.ties[0]);}});});}
 const ytAvg=x=>x.s[2]/x.s[0]/10;
 function ytScore(x){return ytAvg(x)+x.s[1]*.15+Math.min(x.s[0],7)*.03;}
 function ytEnd(T,fin){if(T.k==='SM'&&G.smq&&G.smq.length){G._popDefer=1;try{ytEnd0(T,fin);}finally{G._popDefer=0;}return;}ytEnd0(T,fin);}
@@ -5619,10 +5626,15 @@ const mgrAskP=(me,x)=>clamp(.9-(x.str-me.r)*.09,.04,.92);
 /* ================= JOGO AO VIVO (estilo Brasfoot) ================= */
 const LV_SPD=[0,650,320,110];let LVT=null;
 const lvKey=(c,m,d)=>c.id+'|'+d+'|'+m[0]+'|'+m[1];
-function lvFind(d){const o=G.own;if(!o)return null;for(const f of fixturesOf(o.cid,d,d)){if(!f.m||(f.m[2]!=null&&f.m[2]>=0))continue;const k=lvKey(f.c,f.m,d);if(G.liveRes&&G.liveRes[k])continue;
+function lvFind(d){const o=G.own;if(!o)return null;for(const f of fixturesOf(o.cid,d,d)){if(f.sm||!f.m||(f.m[2]!=null&&f.m[2]>=0))continue;const k=lvKey(f.c,f.m,d);if(G.liveRes&&G.liveRes[k])continue;
     let tie=null,last=false,neutral=false;if(f.st&&f.c.ko){const st=f.c.ko.find(x=>x.ties&&x.ties.some(t=>t.m.includes(f.m)));if(st){const t=st.ties.find(t=>t.m.includes(f.m));tie={a:t.a,b:t.b};last=t.m.indexOf(f.m)===t.m.length-1;neutral=st.d.length===1&&st.n==='Final';
       tie.ag=0;tie.bg=0;t.m.forEach(mm=>{if(mm===f.m||mm[2]==null||mm[2]<0)return;if(mm[0]===t.a){tie.ag+=mm[2];tie.bg+=mm[3];}else{tie.ag+=mm[3];tie.bg+=mm[2];}});}}
-    return{f,k,ko:!!f.st,tie,last,neutral};}return null;}
+    return{f,k,ko:!!f.st,tie,last,neutral};}
+  {const T=smLive();if(T){const me=String(o.cid),fc={id:T.id,name:T.name,lbl:T.lbl,sm:1};let x=null;
+    T.rounds.forEach((r,i)=>{if(r.d!==d||r.done||x)return;r.m.forEach(m=>{if(!x&&(m[0]===me||m[1]===me)&&!(m[2]>=0))x={f:{d,c:fc,m:[+m[0],+m[1],-1,-1],st:'Fase de grupos · '+(i+1)+'ª rodada'},ko:false,tie:null};});});
+    T.ko.forEach((s,k)=>{if(x||s.d!==d||s.done)return;ytDraw(T,k);s.ties.forEach(t=>{if(!x&&(t.a===me||t.b===me)&&t.w==null)x={f:{d,c:fc,m:[+t.a,+t.b,-1,-1],st:s.n},ko:true,tie:{a:+t.a,b:+t.b,ag:0,bg:0}};});});
+    if(x){x.k=lvKey(fc,x.f.m,d);if(!(G.liveRes&&G.liveRes[x.k]))return{f:x.f,k:x.k,ko:x.ko,tie:x.tie,last:true,neutral:true,sm:1};}}}
+  return null;}
 /* ===== táticas do jogo (simples, estilo Brasfoot) =====
    Cada escolha tem um efeito fixo e lógico; o acaso da partida continua existindo.
    Intensidade: mais pegada rende mais, mas cansa mais rápido e dá mais cartão e lesão.
@@ -5660,7 +5672,8 @@ const lvOthSc=(o,m)=>[o.gm.filter(g=>g[1]===0&&g[0]<=m).length,o.gm.filter(g=>g[
 function lvStart(x){ui.lvOpp=false;const f=x.f,m=f.m,H=G.clubs[m[0]],A=G.clubs[m[1]],o=G.own,luH=lineup(H.id),luA=lineup(A.id);
   G.live={std:stadOf(H),hr:m[5],k:x.k,cn:f.c.name+' '+(f.c.lbl||'')+(f.st?' · '+f.st:''),day:f.d,ko:x.ko,tie:x.tie,last:x.last,neutral:x.neutral,min:0,sc:[0,0],ev:[],
     sd:[lvSide(H,H.id===o.cid,luH),lvSide(A,A.id===o.cid,luA)],phase:'pre',pause:1,spd:ui.lvSpd||1,dom:.5,
-    fx:[matchFx(H,luH,luA,x.ko,!x.neutral).d,matchFx(A,luA,luH,x.ko,false).d],age:[luH.age,luA.age],str:[luH.str,luA.str],oth:lvOthers(f.c,f.d,m)};
+    fx:[matchFx(H,luH,luA,x.ko,!x.neutral).d,matchFx(A,luA,luH,x.ko,false).d],age:[luH.age,luA.age],str:[luH.str,luA.str],oth:x.sm?[]:lvOthers(f.c,f.d,m)};
+  if(x.sm){G.live.std='Sede do Super Mundial';G.live.hr=null;}
   ui.lvTab='lan';ui.lvOut=null;}
 const lvMy=L=>L.sd[0].mine?0:1;
 /* nota ao vivo: resultado, gols, passes, cartões, defesa e um pouco do dia do jogador */
@@ -8294,6 +8307,11 @@ function fixturesOf(cid,d1,d2){const out=[];for(const k in G.comps){const c=G.co
   if(c.rounds)c.rounds.forEach(r=>{if(r.d+1<d1||r.d>d2)return;r.m.forEach(m=>{const md=mDay(r.d,m);if(md>=d1&&md<=d2&&(m[0]===cid||m[1]===cid))out.push({d:md,c,m});});});
   if(c.ko)c.ko.forEach(s=>s.d.forEach((dd,leg)=>{if(dd<d1||dd>d2)return;if(s.ties)s.ties.forEach(t=>{const m=t.m[leg];if(m&&(m[0]===cid||m[1]===cid))out.push({d:dd,c,m,st:s.n});});
     else if(c.pool.includes(cid))out.push({d:dd,c,m:null,st:s.n});}));}
+  if(G.mgr&&G.own&&cid===G.own.cid){const T=smLive();if(T){const me=String(cid),fc={id:T.id,name:T.name,lbl:T.lbl,sm:1};
+    T.rounds.forEach((r,i)=>{if(r.d<d1||r.d>d2)return;r.m.forEach(m=>{if(m[0]===me||m[1]===me)out.push({d:r.d,c:fc,m:[+m[0],+m[1],m[2]>=0?m[2]:-1,m[3]>=0?m[3]:-1],st:'Fase de grupos · '+(i+1)+'ª rodada',sm:1});});});
+    const gOut=T.rounds.every(r=>r.done)&&T.ko[0]&&T.ko[0].ties&&!T.ko[0].ties.some(t=>t.a===me||t.b===me);
+    T.ko.forEach((s,k)=>{if(s.d<d1||s.d>d2||gOut)return;if(s.ties){s.ties.forEach(t=>{if(t.a===me||t.b===me)out.push({d:s.d,c:fc,m:[+t.a,+t.b,t.w!=null?t.ga:-1,t.w!=null?t.gb:-1],st:s.n,sm:1});});}
+      else if(k===0||(T.ko[k-1].ties||[]).some(t=>t.w===me)||!T.ko[k-1].done)out.push({d:s.d,c:fc,m:null,st:s.n,sm:1});});}}
   return out.sort((a,b)=>a.d-b.d);}
 function koStatus(c,cid){if(c.win===cid)return['Campeão','good'];
   for(let k=c.ko.length-1;k>=0;k--){const s=c.ko[k];if(!s.ties)continue;const t=s.ties.find(t=>t.a===cid||t.b===cid);if(!t)continue;
