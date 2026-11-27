@@ -5424,7 +5424,8 @@ const GK_CELL=99,ROLE_GRID={1:['LAT','ZAG','ZAG','ZAG','LAT'],2:['LAT','VOL','VO
 const cellRole=c=>c===GK_CELL?'GOL':((ROLE_GRID[Math.floor(c/5)]||ROLE_GRID[3])[c%5]);
 /* esquemas prontos: casas na mesma ordem das funções (goleiro, zagueiros, laterais, volantes, meias, atacantes) */
 const FM_CELLS={'442':[99,6,8,5,9,11,13,15,19,26,28],'433':[99,6,8,5,9,12,16,18,25,27,29],'4231':[99,6,8,5,9,11,13,20,22,24,27],'352':[99,6,7,8,10,14,11,13,17,26,28],'541':[99,6,7,8,5,9,11,13,15,19,27]};
-const cellsOf=o=>{if(!o.cells||o.cells.length!==11)o.cells=(FM_CELLS[o.fm]||FM_CELLS['442']).slice();return o.cells;};
+const cellsOf=o=>{if(!o.cells||o.cells.length!==11)o.cells=(FM_CELLS[o.fm]||FM_CELLS['442']).slice();
+  if(!o.cells.includes(GK_CELL)){let k=o.xi?o.xi.findIndex(id=>id!=null&&G.P[id]&&G.P[id].pos==='GOL'):-1;if(k<0)k=0;o.cells[k]=GK_CELL;}return o.cells;};
 const slotsOf=o=>cellsOf(o).map(cellRole);
 /* nome do esquema a partir das casas: defesa - meio - (armação) - ataque */
 function fmLbl(cells){const n=[0,0,0,0,0,0];cells.forEach(c=>{if(c!==GK_CELL&&c!=null)n[Math.floor(c/5)]++;});const a=[n[1],n[2]+n[3]];if(n[4])a.push(n[4]);if(n[5])a.push(n[5]);return a.filter((x,i)=>x||i===0).join('-');}
@@ -8637,10 +8638,11 @@ function renderModal(){const el=$('#modal');let h='';
   h=addX(h);const kp=G&&G.live&&el.querySelector('.sheet.live')?el.scrollTop:null;el.innerHTML=h;el.hidden=!h;if(kp!=null)el.scrollTop=kp;if(el.classList&&el.classList.toggle){el.classList.toggle("center",!G);el.classList.toggle("lvfull",!!(G&&G.live));}if(G&&G.neg){inCur(negCur(),negGain);const lg=$('#neg-log');if(lg)lg.scrollTop=lg.scrollHeight;}}
 
 /* arrastar e soltar no campinho: o ponto de soltar vira uma casa da grade; em cima de outro jogador, os dois trocam */
-function dgDrop(kind,key,cell){if(kind==='time'){const o=G.own;if(!o)return;const cl=cellsOf(o),i=+key,j=cl.indexOf(cell);if(j===i)return;if(j>=0){const t=cl[i];cl[i]=cl[j];cl[j]=t;}else cl[i]=cell;if(!o.xi){const c=ownC();o.xi=mgrCur(c);}save();
+const GK_MSG='O goleiro só joga no gol. Para trocar o goleiro, toque nele e escolha outro.';
+function dgDrop(kind,key,cell){if(kind==='time'){const o=G.own;if(!o)return;const cl=cellsOf(o),i=+key,j=cl.indexOf(cell);if(j===i)return;if(cl[i]===GK_CELL||cell===GK_CELL){toast(GK_MSG);return;}if(j>=0){const t=cl[i];cl[i]=cl[j];cl[j]=t;}else cl[i]=cell;if(!o.xi){const c=ownC();o.xi=mgrCur(c);}save();
     /* só o campinho é redesenhado: a página não pisca nem pula */
     const el=document.querySelector('[data-dgp="time"]');if(el&&el.outerHTML!==undefined){el.outerHTML=mgrPitch(ownC());const lb=document.querySelectorAll('.mg-fm [data-a="mgfm"]');lb.forEach(b=>b.setAttribute('aria-pressed',String(cl.join()===FM_CELLS[b.dataset.v].join())));}else render();return;}
-  if(kind==='live'){const L=G.live;if(!L)return;const i=lvMy(L),S=L.sd[i],a=S.on.find(x=>x.id===+key);if(!a)return;const b=S.on.find(x=>x.c===cell&&x!==a);
+  if(kind==='live'){const L=G.live;if(!L)return;const i=lvMy(L),S=L.sd[i],a=S.on.find(x=>x.id===+key);if(!a)return;if(a.c===GK_CELL||cell===GK_CELL){if(a.c!==cell)toast(GK_MSG);return;}const b=S.on.find(x=>x.c===cell&&x!==a);
     if(b){const t=a.c;a.c=b.c;b.c=t;b.r=cellRole(b.c);}else a.c=cell;a.r=cellRole(a.c);S.fm='cus';const pa=G.P[a.id];
     lvEv(L,i,'tat','📋 '+esc(shortN(pa.name))+' vai para '+a.r+(b?' e '+esc(shortN(G.P[b.id].name))+' para '+b.r:'')+' · '+fmLbl(S.on.map(x=>x.c))+'.');save();render();}}
 (function(){if(typeof document==='undefined'||!document.addEventListener)return;let st=null;
