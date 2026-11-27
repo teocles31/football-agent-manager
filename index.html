@@ -676,7 +676,7 @@ html,body{touch-action:manipulation}
 .gp-grid{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;transition:opacity .12s}.pitch.gp.dg-show .gp-grid{opacity:1}
 .gp-grid i{position:absolute;box-sizing:border-box;border:1px solid rgba(255,255,255,.22)}.gp-grid i.a{background:rgba(255,255,255,.06)}.gp-grid i.b{background:rgba(0,0,0,.05)}.gp-grid i.g{border-color:rgba(255,255,255,.35)}
 .gp-grid i.on{background:rgba(244,198,31,.38);border:2px solid #f4c61f}
-.tm-top{margin-top:-6px}.fn-g{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0}.fn-g .otab{flex:1 1 calc(50% - 6px);min-height:40px;font-size:13px}.fn-d{margin:4px 0 8px}.mg-gh{display:flex;gap:6px;align-items:baseline;margin-top:12px}.mg-gh small{color:var(--ink2);font-weight:600}.fn-l{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:8px}.fn-r{display:flex;align-items:center;gap:10px;width:100%;padding:8px 12px;min-height:52px;background:none;border:0;border-top:1px solid var(--line);text-align:left;color:inherit;font:inherit;cursor:pointer}.fn-r:first-child{border-top:0}.fn-r .chip{min-width:52px;justify-content:center}.fn-r small{display:block;color:var(--ink2);font-size:12px}.fn-go{color:var(--ink2);font-size:20px}.tm-top .pitch{margin-top:0}.tm-hint{margin:8px 2px 0}
+.tm-top{margin-top:-6px}.tac-rep{margin:6px 0 10px}.tac-n{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:4px;font-size:13px}.tac-n li{line-height:1.35}.tac-n li b{display:inline-block;width:14px}.fn-g{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0}.fn-g .otab{flex:1 1 calc(50% - 6px);min-height:40px;font-size:13px}.fn-d{margin:4px 0 8px}.mg-gh{display:flex;gap:6px;align-items:baseline;margin-top:12px}.mg-gh small{color:var(--ink2);font-weight:600}.fn-l{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:8px}.fn-r{display:flex;align-items:center;gap:10px;width:100%;padding:8px 12px;min-height:52px;background:none;border:0;border-top:1px solid var(--line);text-align:left;color:inherit;font:inherit;cursor:pointer}.fn-r:first-child{border-top:0}.fn-r .chip{min-width:52px;justify-content:center}.fn-r small{display:block;color:var(--ink2);font-size:12px}.fn-go{color:var(--ink2);font-size:20px}.tm-top .pitch{margin-top:0}.tm-hint{margin:8px 2px 0}
 #modal.lvfull .lv-pitch .pitch.gp{height:100%;min-height:0;padding:0}#modal.lvfull .pitch.gp .pt-lbl{z-index:0;opacity:.8}#modal.lvfull .pitch.gp .pt-pos{display:none}#modal.lvfull .pitch.gp .gp-p{gap:0;transform:translate(-50%,-50%) scale(.88)}
 .rel-ks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:10px}
 .rel-k{border:1px solid var(--line);border-radius:12px;padding:9px 11px;display:flex;flex-direction:column;min-width:0;background:var(--surface)}.rel-k span{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;opacity:.7}.rel-k b{font-size:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rel-k small{font-size:12px;opacity:.8}
@@ -3167,7 +3167,7 @@ function seasonSummary(region,lbl){recordPositions(region);crkSeason(region,lbl)
    Nomes reais (Transfermarkt). Cada técnico tem estilo de jogo e personalidade, que mexem no resultado em campo.
    A demissão não é sorteio: depende de três confianças (diretoria, torcida e vestiário), que sobem e descem
    conforme o resultado de cada jogo comparado com o que se esperava do elenco. */
-const STYLES={ofe:['Ofensivo','mais gols a favor e também contra'],pos:['Posse de bola','rende mais quando o elenco é superior'],con:['Contra-ataque','cresce contra adversário mais forte'],ret:['Retranca','jogos de poucos gols'],pre:['Pressão alta','rende com elenco jovem, sofre com veteranos'],equ:['Equilibrado','sem ponto forte nem fraco']};
+const STYLES={ofe:['Ofensivo','mais gols a favor e contra; fura a retranca, mas sofre com contra-ataque'],pos:['Posse de bola','cerca a retranca; sofre com a pressão de time mais jovem e com contra-ataque'],con:['Contra-ataque','castiga time aberto e pressão alta; trava contra a retranca'],ret:['Retranca','poucos gols; segura o ataque se a zaga for boa, sofre com a posse'],pre:['Pressão alta','sufoca a posse com elenco jovem; deixa espaço para contra-ataque'],equ:['Equilibrado','sem ponto forte nem fraco']};
 const PERS={mot:['Motivador','o time reage depois de uma derrota'],dis:['Disciplinador','a diretoria banca, o vestiário sente a cobrança'],pai:['Paizão','vestiário fechado com ele'],est:['Estrategista','cresce em mata-mata e contra time maior'],exp:['Explosivo','vai do céu ao inferno com a torcida'],frm:['Formador','desenvolve e escala os jovens']};
 const newCf=()=>({d:62,t:60,e:62});
 function coachUsed(){const s=new Set((G.fc||[]).map(k=>k.n));G.clubs.forEach(c=>{if(c.coach)s.add(c.coach.n);});return s;}
@@ -3202,7 +3202,9 @@ function styleFx(H,A,lh,la,ko){let d=0,h=1,a=1;
     if(k.pe==='mot'&&last==='D')x+=.9;if(k.pe==='est'&&(ko||df<0))x+=.8;if(k.pe==='exp')x+=last==='V'?.6:last==='D'?-.5:0;
     x+=((c.cf?c.cf.e:58)-58)/30;d+=sg*x;
     const m=k.st==='ofe'?[1.13,1.1]:k.st==='ret'?[.86,.82]:[1,1];if(sg>0){h*=m[0];a*=m[1];}else{a*=m[0];h*=m[1];}};
-  one(H,lh,la,1);one(A,la,lh,-1);return{d,h,a};}
+  one(H,lh,la,1);one(A,la,lh,-1);
+  if(lh&&lh.xi&&la&&la.xi){const mh=tacOf(H,lh,la),ma=tacOf(A,la,lh),tH=tacSide(mh,ma),tA=tacSide(ma,mh);d+=tH.d-tA.d;h*=tH.gf*tA.ga;a*=tA.gf*tH.ga;}
+  return{d,h,a};}
 /* depois do jogo: resultado contra a expectativa mexe nas três confianças */
 function coachAfter(c,f,a,d){const k=c.coach,cf=c.cf||(c.cf=newCf());const e=1/(1+Math.exp(-d/7)),x=(f>a?1:f<a?0:.42)-e;
   const br=regOf(c)==='sa'?1.6:1.1,ex=k.pe==='exp'?1.5:1;
@@ -5511,7 +5513,9 @@ const FN={GOL:[['gk','Goleiro','Fica no gol e comanda a defesa.',0,0,1],['gkl','
   CA:[['ca','Centroavante','Ataca o espaço e finaliza.',0,0,1],['ha','Homem de área','Fica na área esperando a bola.',.006,.004,1.4],['piv','Pivô','Segura a bola e faz o time subir.',.004,-.004,.8],['f9','Falso 9','Recua para armar e abre espaço.',.012,0,.7],['atp','Atacante de pressão','Pressiona a saída do rival.',-.004,-.01,.9]]};
 FN.MD=FN.ME;
 function fnOf(o,c){if(c==null)return null;const L=FN[cellDP(c)]||[],k=o&&o.fn&&o.fn[c];return L.find(x=>x[0]===k)||L[0]||null;}
-function fnFx(o,cells){let a=0,d=0;cells.forEach(c=>{const f=fnOf(o,c);if(f){a+=f[3];d+=f[4];}});return[clamp(a,-.08,.08),clamp(d,-.08,.08)];}
+function fnFx(o,cells){let a=0,d=0;const ks=[];cells.forEach(c=>{const f=fnOf(o,c);if(f){a+=f[3];d+=f[4];ks.push(f[0]);}});
+  const of=ks.filter(k=>k==='lto'||k==='alc').length,vr=ks.includes('vr');if(of>=2)d+=vr?-.01:.04;return[clamp(a,-.08,.08),clamp(d,-.08,.08)];}
+const fnHole=(o,cells)=>{const ks=cells.map(c=>{const f=fnOf(o,c);return f&&f[0];});return ks.filter(k=>k==='lto'||k==='alc').length>=2?(ks.includes('vr')?1:-1):0;};
 /* peso de gol da função (só no seu time) */
 function fnGW(S,p){if(!S||!S.mine)return 1;const x=S.on.find(y=>y.id===p.id),o=mgrOwn(G.clubs[S.c]),f=x&&o&&fnOf(o,x.c);return f?f[5]:1;}
 function fnGWp(p){const c=club(p),o=c&&mgrOwn(c),f=o&&p._c!=null&&fnOf(o,p._c);return f?f[5]:1;}
@@ -5605,20 +5609,54 @@ function lvFind(d){const o=G.own;if(!o)return null;for(const f of fixturesOf(o.c
 const TAC={int:[['lev','Leve','cansa menos, menos cartões; rende um pouco menos'],['nor','Normal','equilíbrio'],['for','Forte','rende mais, mas cansa mais rápido e dá mais cartões e lesões']],
   atk:[['mei','Pelo meio','vale a pena se os seus meias forem melhores que os volantes deles'],['mis','Misto','metade de cada lado, sem risco'],['pon','Pelas pontas','vale a pena se os seus laterais forem melhores que os laterais deles']],
   lin:[['rec','Recuada','sofre menos gols, mas cria menos'],['nor','Normal','equilíbrio'],['adi','Adiantada','cria mais, mas sofre mais se o ataque deles for melhor que a sua zaga']]};
+/* ===== confronto tático: a sua tática contra a do rival, junto com a força dos setores =====
+   Cada lado recebe notas [valor, texto] do ponto de vista dele. Soma limitada a ±4 de força (≈ ±20% nos gols). */
+function luSec(xi,R){const a=(xi||[]).filter(p=>R.includes(p._r||p.pos));return a.length?a.reduce((t,p)=>t+p.ovr,0)/a.length:null;}
+function secsLu(lu){const x=lu.xi,g=R=>luSec(x,R);return{zag:g(['ZAG'])||70,def:g(['ZAG','LAT'])||70,lat:g(['LAT'])||70,vol:g(['VOL'])||g(['MEI'])||70,mei:g(['MEI'])||g(['VOL'])||70,mid:g(['VOL','MEI'])||70,atk:g(['ATA'])||g(['MEI'])||70};}
+function secsLv(S){const g=R=>lvSec(S,R);return{zag:g(['ZAG'])||70,def:g(['ZAG','LAT'])||70,lat:g(['LAT'])||70,vol:g(['VOL'])||g(['MEI'])||70,mei:g(['MEI'])||g(['VOL'])||70,mid:g(['VOL','MEI'])||70,atk:g(['ATA'])||g(['MEI'])||70};}
+/* a máquina escolhe a tática: mais forte joga para cima, mais fraca se fecha; ataca pelo setor em que é melhor */
+function aiTacPick(st,age,s,os,diff){const mei=s.mei-os.vol,pon=s.lat-os.lat;
+  return{int:age<=26.5&&diff>-3?'for':'nor',lin:diff>=3?'adi':diff<=-3||st==='ret'?'rec':'nor',atk:mei>2&&mei>=pon?'mei':pon>2?'pon':'mis'};}
+function styleDuel(ms,os,me,op){const n=[],a=(v,t)=>n.push([v,t]);
+  if(ms==='pre'&&os==='pos'){if(me.age<op.age-.5)a(1,'Sua pressão alta sufoca a saída de bola deles');else a(-.75,'Eles trocam passes e escapam da sua pressão');}
+  if(ms==='pos'&&os==='pre'){if(op.age<me.age-.5)a(-1,'A pressão deles atrapalha a sua saída de bola');else a(.75,'Seu time troca passes e escapa da pressão deles');}
+  if(ms==='con'&&os==='pre')a(1,'Seu contra-ataque acha espaço nas costas da pressão deles');
+  if(ms==='pre'&&os==='con')a(-1,'O contra-ataque deles acha espaço nas costas da sua pressão');
+  if(ms==='con'&&os==='ofe')a(1,'Seu contra-ataque castiga o time aberto deles');
+  if(ms==='ofe'&&os==='con')a(-1,'O contra-ataque deles castiga o seu time aberto');
+  if(ms==='con'&&os==='pos')a(.6,'Seu contra-ataque aproveita quando eles perdem a bola');
+  if(ms==='pos'&&os==='con')a(-.6,'O contra-ataque deles aproveita quando você perde a bola');
+  if(ms==='ret'&&os==='con')a(.75,'Sua retranca não deixa espaço para o contra-ataque deles');
+  if(ms==='con'&&os==='ret')a(-.75,'A retranca deles não deixa espaço para o seu contra-ataque');
+  if(ms==='ret'&&os==='ofe'){if(me.s.def>=op.s.atk)a(1,'Sua zaga segura o ataque deles');else a(-.75,'O ataque deles fura a sua retranca');}
+  if(ms==='ofe'&&os==='ret'){if(me.s.atk>op.s.def)a(.75,'Seu ataque fura a retranca deles');else a(-1,'A zaga deles segura o seu ataque');}
+  if(ms==='pos'&&os==='ret'){if(me.s.mid>=op.s.def-2)a(1,'Seu meio cerca a retranca deles');else a(-.5,'A retranca deles neutraliza a sua posse');}
+  if(ms==='ret'&&os==='pos'){if(op.s.mid>=me.s.def-2)a(-1,'O meio deles cerca a sua retranca');else a(.5,'Sua retranca neutraliza a posse deles');}
+  return n;}
+/* me/op = {st, int, atk, lin, age, s(setores)} */
+function tacSide(me,op){const n=styleDuel(me.st,op.st,me,op);let gf=1,ga=1;
+  if(me.int==='for')n.push([1.2,'Intensidade forte: seu time chega antes na bola','Intensidade forte deles: chegam antes na bola']);else if(me.int==='lev')n.push([-.8,'Intensidade leve: seu time poupa energia e cede espaço','Intensidade leve deles: cedem espaço']);
+  const sg=v=>Math.round(v),ad=me.atk==='mei'?me.s.mei-op.s.vol:me.atk==='pon'?me.s.lat-op.s.lat:((me.s.mei-op.s.vol)+(me.s.lat-op.s.lat))/2,av=clamp(ad*(me.atk==='mis'?.12:.25),-2.5,2.5);
+  if(Math.abs(av)>=.3)n.push([av,me.atk==='mei'?'Ataque pelo meio: seus meias ('+sg(me.s.mei)+') '+(av>0?'superam':'perdem para')+' os volantes deles ('+sg(op.s.vol)+')':me.atk==='pon'?'Ataque pelas pontas: seus laterais ('+sg(me.s.lat)+') '+(av>0?'superam':'perdem para')+' os laterais deles ('+sg(op.s.lat)+')':'Ataque misto: '+(av>0?'leve vantagem nos duelos':'leve desvantagem nos duelos'),
+    me.atk==='mei'?'Eles atacam pelo meio: os meias deles ('+sg(me.s.mei)+') '+(av>0?'superam':'perdem para')+' os seus volantes ('+sg(op.s.vol)+')':me.atk==='pon'?'Eles atacam pelas pontas: os laterais deles ('+sg(me.s.lat)+') '+(av>0?'superam':'perdem para')+' os seus laterais ('+sg(op.s.lat)+')':'Ataque misto deles: '+(av>0?'levam leve vantagem nos duelos':'levam leve desvantagem nos duelos')]);
+  if(me.lin==='rec'){gf*=.9;ga*=.86;n.push([0,'Linha recuada: sofre menos, mas cria menos','Eles jogam recuados: sofrem menos, mas criam menos']);if(op.st==='pos'&&op.s.mid>me.s.mid+2){ga*=1.06;n.push([-.5,'Recuado contra a posse deles: o meio deles domina','Eles recuados contra a sua posse: seu meio domina']);}}
+  else if(me.lin==='adi'){gf*=1.1;if(op.s.atk>me.s.zag){ga*=1.18;n.push([-.8,'Linha alta: os atacantes deles ('+sg(op.s.atk)+') são melhores que a sua zaga ('+sg(me.s.zag)+')','Linha alta deles: seus atacantes ('+sg(op.s.atk)+') são melhores que a zaga deles ('+sg(me.s.zag)+')']);}else{ga*=1.04;n.push([.4,'Linha alta: seu time empurra o rival para trás','Linha alta deles empurra o seu time para trás']);}
+    if(op.st==='con'){ga*=1.1;n.push([-.7,'Linha alta contra contra-ataque: espaço nas costas','Linha alta deles contra o seu contra-ataque: espaço nas costas']);}}
+  const d=clamp(n.reduce((t,x)=>t+x[0],0),-4,4);return{d,gf,ga,notes:n.filter(x=>x[0]!==0||x[1]).sort((a,b)=>Math.abs(b[0])-Math.abs(a[0]))};}
+/* tática de um clube num jogo que não é ao vivo: a sua é a padrão da aba Time; a da máquina é escolhida na hora */
+function tacOf(c,lu,olu,oc){const s=secsLu(lu),os=secsLu(olu),o=mgrOwn(c),st=(c.coach&&c.coach.st)||'equ';
+  const t=o?{int:o.tint||'nor',atk:o.tatk||'mis',lin:o.tlin||'nor'}:aiTacPick(st,lu.age||27,s,os,(lu.str||70)-(olu.str||70));return Object.assign({st,age:lu.age||27,s},t);}
 const TACN=(k,v)=>{const x=(TAC[k]||[]).find(y=>y[0]===v);return x?x[1]:'';};
 /* média de um setor em campo (nível já com a penalidade de posição) */
 const lvPP=(S,p,x)=>posPen(p,x.r,S.mine?x.c:null);
 function lvSec(S,roles){const ps=S.on.filter(x=>roles.includes(x.r)).map(x=>{const p=G.P[x.id];return p?p.ovr-lvPP(S,p,x):null;}).filter(v=>v!=null);return ps.length?ps.reduce((a,b)=>a+b,0)/ps.length:null;}
 function lvAtkDiff(S,O){const mm=lvSec(S,['MEI'])||lvSec(S,['VOL'])||70,ov=lvSec(O,['VOL'])||lvSec(O,['MEI'])||70,ml=lvSec(S,['LAT'])||70,ol=lvSec(O,['LAT'])||70;return{mei:mm-ov,pon:ml-ol,mm,ov,ml,ol};}
 /* efeito das táticas de um lado: d (força), gf (gols a favor) e ga (gols contra) */
-function lvTac(L,i){const S=L.sd[i],O=L.sd[1-i],it=S.int||'nor',at=S.atk||'mis',ln=S.lin||'nor',x=lvAtkDiff(S,O);let d=0,gf=1,ga=1;
-  d+=it==='for'?2:it==='lev'?-1.3:0;
-  const ad=at==='mei'?x.mei:at==='pon'?x.pon:(x.mei+x.pon)/2;d+=clamp(ad*(at==='mis'?.12:.25),-2.5,2.5);
-  if(ln==='rec'){gf*=.9;ga*=.86;}else if(ln==='adi'){gf*=1.1;const za=lvSec(S,['ZAG'])||70,oa=lvSec(O,['ATA'])||70;ga*=oa>za?1.18:1.04;}
-  return{d,gf,ga};}
+const lvMe=(L,i)=>{const S=L.sd[i];return{st:S.st||'equ',int:S.int||'nor',atk:S.atk||'mis',lin:S.lin||'nor',age:L.age?L.age[i]:27,s:secsLv(S)};};
+function lvTac(L,i){return tacSide(lvMe(L,i),lvMe(L,1-i));}
 const lvIntK=S=>S.int==='for'?1.35:S.int==='lev'?.75:1;
 /* adversário controlado pelo computador escolhe o lado em que é mais forte */
-function lvAITac(S,O){const x=lvAtkDiff(S,O);S.int='nor';S.lin='nor';S.atk=x.mei>2&&x.mei>=x.pon?'mei':x.pon>2?'pon':'mis';}
+function lvAITac(S,O,age){const t=aiTacPick(S.st||'equ',age||27,secsLv(S),secsLv(O),lvStr(S)-lvStr(O));S.int=t.int;S.lin=t.lin;S.atk=t.atk;}
 function lvSide(c,mine,lu){const xi=lu.xi,on=xi.map(p=>({id:p.id,r:p._r||p.pos})),ids=new Set(xi.map(p=>p.id));
   const av=squad(c.id).filter(p=>!p.injury&&!p.lent&&!isSus(p)&&!ids.has(p.id)).sort((a,b)=>b.ovr-a.ovr);
   const gk=av.find(p=>p.pos==='GOL'),o=mine?ownOf(c):null,bench=o&&o.bench?mgrBench(c).map(id=>G.P[id]).filter(p=>av.includes(p)):(gk?[gk]:[]).concat(av.filter(p=>p!==gk).slice(0,7)),en={};
@@ -5675,15 +5713,15 @@ function lvBest(S,role){const B=S.bench.map(id=>G.P[id]).filter(Boolean);return 
 function lvAI(L,i){const S=L.sd[i],m=L.min;if(S.mine)return;
   S.inj.forEach(id=>{const x=S.on.find(y=>y.id===id);if(x){const b=lvBest(S,x.r);if(!(b&&lvSub(L,i,id,b.id)))lvOff(L,i,id);}});
   if((m===60||m===70||m===80)&&S.subs<5){const t=S.on.filter(x=>x.r!=='GOL').sort((a,b)=>S.en[a.id]-S.en[b.id]).slice(0,m===60?2:1);t.forEach(x=>{if(S.en[x.id]<78){const b=lvBest(S,x.r);if(b)lvSub(L,i,x.id,b.id);}});}
-  if(m===70&&L.sc[i]<L.sc[1-i]&&S.st!=='ofe'){S.st='ofe';lvEv(L,i,'tat','📋 '+esc(G.clubs[S.c].n)+' parte para o ataque.');}
-  if(m===80&&L.sc[i]>L.sc[1-i]&&S.st!=='ret'){S.st='ret';lvEv(L,i,'tat','📋 '+esc(G.clubs[S.c].n)+' recua para segurar o resultado.');}}
+  if(m===70&&L.sc[i]<L.sc[1-i]&&S.st!=='ofe'){S.st='ofe';S.lin='adi';lvEv(L,i,'tat','📋 '+esc(G.clubs[S.c].n)+' parte para o ataque.');}
+  if(m===80&&L.sc[i]>L.sc[1-i]&&S.st!=='ret'){S.st='ret';S.lin='rec';lvEv(L,i,'tat','📋 '+esc(G.clubs[S.c].n)+' recua para segurar o resultado.');}}
 const LV_CH=['chuta para fora','manda por cima do gol','acerta a trave','cabeceia rente à trave','obriga o goleiro a fazer grande defesa','perde chance clara cara a cara'];
 function lvStep(){const L=G.live;if(!L||L.phase==='end'||L.phase==='int')return;if(L.phase==='pens'){lvPenKick();return;}if(L.phase==='pre')L.phase='1t';L.min++;const m=L.min,[SH,SA]=L.sd,H=G.clubs[SH.c],A=G.clubs[SA.c],o=G.own;
   L.sd.forEach(S=>{const c=G.clubs[S.c],fis=S.mine&&c.coach.sk?c.coach.sk.fis:1;S.on.forEach(x=>{const p=G.P[x.id];if(!p)return;const dr=lvIntK(S)*.34+(S.st==='pre'?.1:0)+(S.st==='ret'?-.05:0)+(p.age>=31?.06:0)-(fis-1)*.02-(p.trait==='profissional'?.03:0);S.en[x.id]=Math.max(15,S.en[x.id]-dr);});});
   const sh=lvStr(SH),sa=lvStr(SA),sv=[H.coach.st,A.coach.st],fm0=o?o.fm:null,my=L.sd[lvMy(L)];H.coach.st=SH.st;A.coach.st=SA.st;if(o&&my.fm)o.fm=my.fm;
   let sf;try{sf=styleFx(H,A,{str:sh,age:L.age[0]},{str:sa,age:L.age[1]},L.ko);}finally{H.coach.st=sv[0];A.coach.st=sv[1];if(o)o.fm=fm0;}
   const d=sh-sa+(L.neutral?0:1.8)+tmpB(H)-tmpB(A)+sf.d+L.fx[0]-L.fx[1]+lvCoachB(L,0,m)-lvCoachB(L,1,m);
-  if(!L.aiT){L.aiT=1;L.sd.forEach((S,k)=>{if(!S.mine)lvAITac(S,L.sd[1-k]);});}const T0=lvTac(L,0),T1=lvTac(L,1),dd=d+T0.d-T1.d;
+  if(!L.aiT){L.aiT=1;L.sd.forEach((S,k)=>{if(!S.mine)lvAITac(S,L.sd[1-k],L.age?L.age[k]:27);});}const T0=lvTac(L,0),T1=lvTac(L,1),dd=d+T0.d-T1.d;
   const dc=clamp(dd,-12,12),lam=[1.4*Math.exp(dc/21)*sf.h*T0.gf*T1.ga/90,1.12*Math.exp(-dc/21)*sf.a*T1.gf*T0.ga/90];[0,1].forEach(k=>{const ld=L.sc[k]-L.sc[1-k];if(ld>=4)lam[k]*=.4;else if(ld>=3)lam[k]*=.6;});L.dom=L.dom*.85+.15*(lam[0]/(lam[0]+lam[1]));lvDuels(L);
   [0,1].forEach(i=>{const S=L.sd[i],cn=G.clubs[S.c].n;if(Math.random()<lam[i]){const pen=Math.random()<.08,pt=S.mine&&o&&o.pen&&S.on.some(x=>x.id===o.pen)?G.P[o.pen]:null;
       const on=id=>id&&S.on.some(x=>x.id===id)?G.P[id]:null,rr=Math.random(),fk=!pen&&S.mine&&o&&rr<.09?on(o.fk):null,ck=!pen&&!fk&&S.mine&&o&&rr<.24?on(o.ck):null;
@@ -5700,6 +5738,7 @@ function lvStep(){const L=G.live;if(!L||L.phase==='end'||L.phase==='int')return;
   if(m===45){L.phase='int';L.pause=1;lvEv(L,-1,'sys','Intervalo: '+L.sc[0]+' a '+L.sc[1]);lvFxSet(L,'int','Intervalo',shortN(H.n)+' '+L.sc[0]+' – '+L.sc[1]+' '+shortN(A.n));}
   if(m>=90){lvFinalB(L);lvEv(L,-1,'sys','Fim de jogo: '+L.sc[0]+' a '+L.sc[1]);
     const T=L.tie;if(L.ko&&T&&L.last){const H0=L.sd[0].c,ag=T.ag+(H0===T.a?L.sc[0]:L.sc[1]),bg=T.bg+(H0===T.a?L.sc[1]:L.sc[0]);if(ag===bg){L.phase='pens';L.pause=1;lvEv(L,-1,'sys','Empate: disputa de pênaltis!');lvPens();lvFxSet(L,'int','Pênaltis!','Empate: decisão nas cobranças');return;}}
+    {const i=lvMy(L),T=tacMix(lvTac(L,i),lvTac(L,1-i)),N=T.notes.filter(x=>x[0]!==0).slice(0,2);if(N.length)lvEv(L,i,'tat','📋 Resumo tático: '+N.map(x=>(x[0]>0?'a favor: ':'contra: ')+x[1].charAt(0).toLowerCase()+x[1].slice(1)).join(' · ')+'.');}
     L.phase='end';L.pause=1;lvFxSet(L,'fim','Fim de jogo',shortN(H.n)+' '+L.sc[0]+' – '+L.sc[1]+' '+shortN(A.n));}}
 function lvPens(){const L=G.live,o=G.own,ks=L.sd.map(S=>{let ps=S.on.map(x=>G.P[x.id]).filter(Boolean).sort((a,b)=>b.ovr-a.ovr);if(S.mine&&o&&o.pen){const t=ps.find(p=>p.id===o.pen);if(t)ps=[t].concat(ps.filter(p=>p!==t));}return ps.map(p=>p.id);}),
   gk=L.sd.map(S=>{const x=S.on.find(y=>y.r==='GOL');return x?x.id:null;});L.pk={ks,gk,sc:[0,0],n:0,log:[[],[]],last:''};}
@@ -5728,13 +5767,25 @@ function lvDraw(){const L=G&&G.live,q=id=>document.getElementById(id);if(!L)retu
 const lvClk=L=>L.phase==='pre'?'Antes do jogo':L.phase==='int'?'Intervalo':L.phase==='end'?(L.ps?'Pênaltis '+L.ps[0]+'–'+L.ps[1]:'Fim de jogo'):L.phase==='pens'?'Pênaltis':L.min+"'";
 /* linha do tempo do jogo: enche com os minutos; cada gol vira uma bolinha (em cima: mandante, embaixo: visitante) */
 /* escolhas de intensidade, ataque e linha, com a leitura do confronto de setores */
+/* prévia do próximo jogo na aba Time (tática provável do rival) */
+function tacPrevH(c){let f=null;try{f=fixturesOf(c.id,G.d,G.d+60).find(x=>x.m&&!(x.m[2]>=0));}catch(e){}if(!f)return'';const oc=G.clubs[f.m[0]===c.id?f.m[1]:f.m[0]];if(!oc)return'';
+  const lu=lineup(c.id),olu=lineup(oc.id),me=tacOf(c,lu,olu),op=tacOf(oc,olu,lu),T=tacSide(me,op),U=tacSide(op,me),v=T.d-U.d,o=mgrOwn(c),h=o&&fnHole(o,cellsOf(o));
+  const M=tacMix(T,U);if(h)M.notes.push(h<0?[-.5,'Dois laterais/alas ofensivos sem volante recuado: buraco atrás']:[.3,'Volante recuado cobre os laterais ofensivos']);
+  return'<div class="tac-rep"><span class="lbl">Próximo jogo · '+esc(oc.n)+' · '+tacSum(v)+'</span><p class="small muted">Provável: '+esc(STYLES[op.st][0])+' · linha '+esc(TACN('lin',op.lin).toLowerCase())+' · ataca '+esc(TACN('atk',op.atk).toLowerCase())+'</p>'+tacNotesH(M,5)+'</div>';}
 function tacPick(S,O,act){const x=O?lvAtkDiff(S,O):null,sg=v=>v>=2?'<b class="okk">vantagem sua</b>':v<=-2?'<b class="nok">vantagem deles</b>':'equilibrado';
   const row=(k,lbl)=>'<span class="lbl">'+lbl+'</span><div class="lv-chips">'+TAC[k].map(y=>'<button data-a="'+act+'" data-k="'+k+'" data-v="'+y[0]+'" aria-pressed="'+(S[k]===y[0])+'">'+y[1]+'</button>').join('')+'</div><p class="small muted">'+esc((TAC[k].find(y=>y[0]===S[k])||TAC[k][1])[2])+'.</p>';
   return row('int','Intensidade')+row('atk','Por onde atacar')+(x?'<p class="small tac-rd">Meio: seus meias '+Math.round(x.mm)+' × volantes deles '+Math.round(x.ov)+' ('+sg(x.mei)+') · Pontas: seus laterais '+Math.round(x.ml)+' × laterais deles '+Math.round(x.ol)+' ('+sg(x.pon)+')</p>':'')+row('lin','Linha defensiva');}
+/* relatório do confronto (lado do usuário) */
+const tacMix=(T,U)=>({notes:T.notes.concat(U.notes.filter(x=>x[2]).map(x=>[-x[0],x[2]])).sort((a,b)=>Math.abs(b[0])-Math.abs(a[0]))});
+function tacNotesH(T,lim){const N=T.notes.filter(x=>x[0]!==0).slice(0,lim||6),z=T.notes.filter(x=>x[0]===0);
+  return'<ul class="tac-n">'+N.concat(z.slice(0,1)).map(x=>'<li class="'+(x[0]>0?'okk':x[0]<0?'nok':'')+'"><b>'+(x[0]>0?'+':x[0]<0?'−':'·')+'</b> '+esc(x[1])+'</li>').join('')+'</ul>';}
+const tacSum=v=>v>=1.5?'<b class="okk">vantagem sua</b>':v<=-1.5?'<b class="nok">vantagem deles</b>':v>=.5?'<b class="okk">leve vantagem sua</b>':v<=-.5?'<b class="nok">leve vantagem deles</b>':'equilibrado';
+function tacRepH(L){const i=lvMy(L),O=L.sd[1-i],c=G.clubs[O.c],T=lvTac(L,i),U=lvTac(L,1-i),v=T.d-U.d;
+  return'<div class="tac-rep"><span class="lbl">Confronto tático · '+tacSum(v)+'</span><p class="small muted">'+esc(c.n)+': '+esc(STYLES[O.st||'equ'][0])+' · linha '+esc(TACN('lin',O.lin||'nor').toLowerCase())+' · ataca '+esc(TACN('atk',O.atk||'mis').toLowerCase())+'</p>'+tacNotesH(tacMix(T,U))+'</div>';}
 function lvTlH(L){const mm=L.phase==='pre'?0:L.phase==='end'||L.phase==='pens'?90:Math.min(90,L.min),w=Math.round(mm/90*1000)/10;
   return'<div class="lv-tlb"><i class="lv-tlf" style="width:'+w+'%"></i><i class="lv-tlh"></i></div>'+(L.gl||[]).map(g=>'<span class="lv-tlg '+(g[1]?'a':'h')+'" style="left:'+Math.min(97,Math.max(3,g[0]/90*100))+'%" title="Gol aos '+g[0]+'\'">⚽</span>').join('')+
    '<span class="lv-tll s">0\'</span><span class="lv-tll m">45\'</span><span class="lv-tll e">90\'</span>';}
-function lvTick(L){const E=L.ev.slice(0,1);return E.length?E.map(e=>'<div>'+(e.k==='sys'?'':'<b>'+e.m+"'</b> ")+e.t+'</div>').join(''):'<div>A bola vai rolar. Confira o time e a tática.</div>';}
+function lvTick(L){const E=L.ev.slice(0,1);return E.length?E.map(e=>'<div>'+(e.k==='sys'?'':'<b>'+e.m+"'</b> ")+e.t+'</div>').join(''):'<div>'+(()=>{const L2=G.live;if(!L2||!L2.sd)return'A bola vai rolar. Confira o time e a tática.';const i=lvMy(L2),O=L2.sd[1-i],v=lvTac(L2,i).d-lvTac(L2,1-i).d;return'Rival joga no '+esc(STYLES[O.st||'equ'][0].toLowerCase())+'. Confronto tático: '+tacSum(v)+'. Veja em Táticas.';})()+'</div>';}
 function lvAllH(L){const mi=lvMy(L);return L.ev.map(e=>e.k==='sys'?'<div class="lv-e sys">'+e.t+'</div>':'<div class="lv-e '+e.k+(e.i===mi?' me':'')+'"><b>'+e.m+"'</b><span>"+e.t+'</span></div>').join('')||'<p class="small muted">Nenhum lance ainda.</p>';}
 function lvRodH(L){const H=L.sd[0].c,A=L.sd[1].c,mm=L.phase==='pre'?0:L.phase==='end'||L.phase==='pens'?90:L.min,row=(h0,a0,sc,cls)=>'<div class="'+cls+'"><span class="h"><span>'+esc(G.clubs[h0].n)+'</span>'+crest(G.clubs[h0],18)+'</span><b>'+sc[0]+' – '+sc[1]+'</b><span class="a">'+crest(G.clubs[a0],18)+'<span>'+esc(G.clubs[a0].n)+'</span></span></div>';
   return'<div class="lv-rd">'+row(H,A,L.sc,'me')+(L.oth||[]).map(x=>row(x.h,x.a,lvOthSc(x,mm),x.gm.some(g=>g[0]<=mm&&g[0]>mm-3&&mm<90)?'hot':'')).join('')+'</div>';}
@@ -5788,7 +5839,7 @@ function mLive(){const L=G.live,H=G.clubs[L.sd[0].c],A=G.clubs[L.sd[1].c],mi=lvM
     ((L.oth||[]).length?'<button class="lv-lk" data-a="lvpop" data-v="rod">Rodada</button>':'')+'<button class="lv-lk" data-a="lvpop" data-v="lan">Lances</button>'+(end?'':'<button class="lv-lk" data-a="lvskip">Pular</button>')+'</div></div>';
   /* janelas por cima da tela de jogo: táticas, rodada e todos os lances */
   if(pop){const fm=S.fm||'442';let b='';
-    if(pop==='tac')b='<h3>Táticas</h3><span class="lbl">Estilo</span><div class="lv-chips">'+Object.keys(STYLES).map(x=>'<button data-a="lvst" data-v="'+x+'" aria-pressed="'+(S.st===x)+'">'+esc(STYLES[x][0])+'</button>').join('')+'</div><p class="small muted">'+esc(STYLES[S.st][1])+'.</p>'+
+    if(pop==='tac')b='<h3>Táticas</h3>'+tacRepH(L)+'<span class="lbl">Estilo</span><div class="lv-chips">'+Object.keys(STYLES).map(x=>'<button data-a="lvst" data-v="'+x+'" aria-pressed="'+(S.st===x)+'">'+esc(STYLES[x][0])+'</button>').join('')+'</div><p class="small muted">'+esc(STYLES[S.st][1])+'.</p>'+
       '<span class="lbl">Esquema</span><div class="lv-chips">'+FORM_K.map(x=>'<button data-a="lvfm" data-v="'+x+'" aria-pressed="'+(fm===x)+'">'+FORMS[x][0]+'</button>').join('')+'</div>'+tacPick(S,O,'lvtac')+'<p class="small muted">Valem só para este jogo. O jogo fica pausado enquanto você ajusta.</p>';
     else if(pop==='rod')b='<h3>Rodada · placar ao vivo</h3><div id="lv-rod">'+lvRodH(L)+'</div>';
     else b='<h3>Todos os lances</h3><div id="lv-all" class="lv-allw">'+lvAllH(L)+'</div>';
@@ -5915,7 +5966,7 @@ function mgrTime(o,c){if(o.fk===undefined)rlAuto(o,c);const F=[fmLbl(cellsOf(o))
    (sup.map(p=>'<div>'+avatar(p,30)+ovrB(p.ovr)+'<div class="grow"><b>'+plLink(p)+'</b> <span class="chip pchip" style="--pc:'+PC[p.pos]+'">'+posL(p)+'</span> '+srI(p)+' '+st(p)+'</div>'+cond(p)+'<button class="btn sm pri" data-a="mgbi" data-p="'+p.id+'"'+(B.length>=8?' disabled':'')+'>Para o banco</button></div>').join('')||'<div class="small muted">Ninguém.</div>')+'</div></section>';
   h+='<section class="card">'+cardH('report','Esquema')+'<div class="seg mg-fm">'+FORM_K.map(x=>'<button data-a="mgfm" data-v="'+x+'" aria-pressed="'+(cellsOf(o).join()===FM_CELLS[x].join())+'">'+FORMS[x][0]+'</button>').join('')+'</div><p class="small muted">'+(FORMS[o.fm]&&fmLbl(FM_CELLS[o.fm])===F[0]?esc(FORMS[o.fm][3]):'Esquema próprio: '+esc(F[0])+'. Toque num esquema pronto para reorganizar o time.')+' Arraste os jogadores no campinho para mudar as posições; solte um em cima do outro para trocar os dois.</p></section>';
   h+='<section class="card">'+cardH('coach','Estilo de jogo')+'<div class="mg-st">'+Object.keys(STYLES).map(x=>'<button class="otab" data-a="mgst" data-v="'+x+'" aria-pressed="'+(k.st===x)+'"><span>'+esc(STYLES[x][0])+'</span><small>'+esc(STYLES[x][1])+'</small></button>').join('')+'</div></section>';
-  h+='<section class="card">'+cardH('report','Tática de jogo')+'<p class="small muted">Vale como padrão no começo de cada jogo. Dá para mudar durante a partida em Táticas.</p>'+tacPick({int:o.tint||'nor',atk:o.tatk||'mis',lin:o.tlin||'nor'},null,'mgtac')+'</section>';
+  h+='<section class="card">'+cardH('report','Tática de jogo')+'<p class="small muted">Vale como padrão no começo de cada jogo e também nos jogos que não são ao vivo. Dá para mudar durante a partida em Táticas.</p>'+tacPrevH(c)+tacPick({int:o.tint||'nor',atk:o.tatk||'mis',lin:o.tlin||'nor'},null,'mgtac')+'</section>';
   {const op=!!(ui.fold&&ui.fold.mgfn),CL=cellsOf(o),XI=mgrMap(c);
    h+='<section class="card">'+cardH('coach','Funções táticas',tglB('fold',op,'funções','mgfn'))+'<p class="small muted">Cada posição do campinho tem uma função, como no Football Manager. Ela muda o jeito de jogar (mais ataque ou mais defesa) e quem faz os gols. Toque no jogador para mudar.</p>'+
     (op?'<div class="fn-l">'+CL.map((cl,i)=>{const p=XI[i],f=fnOf(o,cl);return'<button class="fn-r" data-a="mgslot" data-i="'+i+'"><span class="chip pchip" style="--pc:'+PC[cellRole(cl)]+'">'+cellDP(cl)+'</span><span class="grow"><b>'+(p?esc(shortN(p.name)):'Vazia')+'</b><small>'+(f?esc(f[1]):'')+'</small></span><span class="fn-go">›</span></button>';}).join('')+'</div>':'')+'</section>';}
