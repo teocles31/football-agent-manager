@@ -671,7 +671,7 @@ html,body{touch-action:manipulation}
 .wc-c p{margin:4px 0}
 .lig-sw{margin-bottom:12px}
 .pitch.gp.gp-ro{height:min(120vw,520px)}.pitch.gp.gp-ro .gp-p{touch-action:auto}
-.pitch.gp{display:block;height:min(112vw,clamp(380px,calc(100vh - 300px),480px));height:min(112vw,clamp(380px,calc(100dvh - 300px),480px));padding:0;touch-action:pan-y}.pitch.gp .gp-p{position:absolute;transform:translate(-50%,-50%);touch-action:none;z-index:2;width:72px}
+.pitch.gp{display:block;height:min(124vw,clamp(440px,calc(100vh - 260px),540px));height:min(124vw,clamp(440px,calc(100dvh - 260px),540px));padding:0;touch-action:pan-y}.pitch.gp .gp-p{position:absolute;transform:translate(-50%,-50%);touch-action:none;z-index:2;width:72px}
 .pitch.gp .gp-p{transition:none;will-change:transform;transform:translate(-50%,-50%) scale(.88)}.pitch.gp .pt-pos{display:none}.pitch.gp .gp-p.imp .pt-pos{display:block;font-size:9.5px}.pitch.gp .gp-p.dg-on{z-index:20;opacity:.92;transition:none}
 .gp-grid{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;transition:opacity .12s}.pitch.gp.dg-show .gp-grid{opacity:1}
 .gp-grid i{position:absolute;box-sizing:border-box;border:1px solid rgba(255,255,255,.22)}.gp-grid i.a{background:rgba(255,255,255,.06)}.gp-grid i.b{background:rgba(0,0,0,.05)}.gp-grid i.g{border-color:rgba(255,255,255,.35)}
@@ -1042,6 +1042,8 @@ html:has(#modal:not([hidden])),html:has(#modal:not([hidden])) body{overflow:hidd
 .lv-fxb b{font-family:var(--f-d);font-size:38px;letter-spacing:.04em;line-height:1;text-transform:uppercase}.lv-fxb small{font-size:14px;font-weight:700;opacity:.9}
 .lv-fxb.gol b{color:#f4c61f;font-size:46px}.lv-fxb.fim{border-color:#fff}
 .lv-tl{position:relative;height:30px;flex:none;margin:0 2px}
+/* ao vivo: blocos mais juntos para o campinho (malha 6 × 5) ganhar altura */
+#modal.lvfull .sheet.live{gap:4px;padding-top:calc(12px + env(safe-area-inset-top,0px))}#modal.lvfull .lv-tl{height:24px}
 .lv-tlb{position:absolute;left:0;right:0;top:13px;height:5px;border-radius:3px;background:var(--line);overflow:hidden}.lv-tlf{position:absolute;left:0;top:0;bottom:0;background:var(--ink);opacity:.55;border-radius:3px;transition:width .3s linear}
 .lv-tlh{position:absolute;left:50%;top:0;bottom:0;width:2px;margin-left:-1px;background:var(--surface)}
 .lv-tlg{position:absolute;font-size:12px;line-height:1;transform:translateX(-50%);filter:drop-shadow(0 1px 1px rgba(0,0,0,.35))}.lv-tlg.h{top:0}.lv-tlg.a{top:18px}
@@ -5433,35 +5435,37 @@ function mgrSeasonEnd(y){const lbl=String(y),n0=G.summ.length;seasonSummary('eu'
 /* ===== campinho em grade (invisível): 5 colunas × 5 linhas + o gol =====
    Linha 1 defesa, 2 volância, 3 meio, 4 meia-armação, 5 ataque. A casa define a função de quem está nela.
    Qualquer jogador vai em qualquer casa: na posição dele rende normal, na vizinha perde 1, fora disso perde 3 (goleiro só no gol). */
-const GK_CELL=99,ROLE_GRID={1:['LAT','ZAG','ZAG','ZAG','LAT'],2:['LAT','VOL','VOL','VOL','LAT'],3:['MEI','MEI','MEI','MEI','MEI'],4:['MEI','MEI','MEI','MEI','MEI'],5:['ATA','ATA','ATA','ATA','ATA']};
+/* malha 6 × 5: 1 defesa, 2 volância, 3 meio, 4 meia ofensivo, 5 segundo atacante / meia avançado, 6 ataque (+ o gol) */
+const GK_CELL=99,ROLE_GRID={1:['LAT','ZAG','ZAG','ZAG','LAT'],2:['LAT','VOL','VOL','VOL','LAT'],3:['MEI','MEI','MEI','MEI','MEI'],4:['MEI','MEI','MEI','MEI','MEI'],5:['MEI','ATA','ATA','ATA','MEI'],6:['ATA','ATA','ATA','ATA','ATA']};
 const cellRole=c=>c===GK_CELL?'GOL':((ROLE_GRID[Math.floor(c/5)]||ROLE_GRID[3])[c%5]);
 /* esquemas prontos: casas na mesma ordem das funções (goleiro, zagueiros, laterais, volantes, meias, atacantes) */
-const FM_CELLS={'442':[99,6,8,5,9,11,13,15,19,26,28],'433':[99,6,8,5,9,12,16,18,25,27,29],'4231':[99,6,8,5,9,11,13,20,22,24,27],'352':[99,6,7,8,10,14,11,13,17,26,28],'541':[99,6,7,8,5,9,11,13,15,19,27]};
-const cellsOf=o=>{if(!o.cells||o.cells.length!==11)o.cells=(FM_CELLS[o.fm]||FM_CELLS['442']).slice();
+const FM_CELLS={'442':[99,6,8,5,9,11,13,15,19,31,33],'433':[99,6,8,5,9,12,16,18,30,32,34],'4231':[99,6,8,5,9,11,13,20,22,24,32],'352':[99,6,7,8,10,14,11,13,17,31,33],'541':[99,6,7,8,5,9,11,13,15,19,32]};
+const cgMv=c=>c!=null&&c!==GK_CELL&&c>=25&&c<30?c+5:c,cgFn=f=>{const n={};for(const k in f)n[cgMv(+k)]=f[k];return n;};
+const cellsOf=o=>{if(o.cg!==6){if(o.cells)o.cells=o.cells.map(cgMv);if(o.fn)o.fn=cgFn(o.fn);(o.sv||[]).forEach(x=>{if(x&&x.cells)x.cells=x.cells.map(cgMv);if(x&&x.fn)x.fn=cgFn(x.fn);});o.cg=6;}
+  if(!o.cells||o.cells.length!==11)o.cells=(FM_CELLS[o.fm]||FM_CELLS['442']).slice();
   if(!o.cells.includes(GK_CELL)){let k=o.xi?o.xi.findIndex(id=>id!=null&&G.P[id]&&G.P[id].pos==='GOL'):-1;if(k<0)k=0;o.cells[k]=GK_CELL;}return o.cells;};
 const slotsOf=o=>cellsOf(o).map(cellRole);
 /* nome do esquema a partir das casas: defesa - meio - (armação) - ataque */
-function fmLbl(cells){const n=[0,0,0,0,0,0];cells.forEach(c=>{if(c!==GK_CELL&&c!=null)n[Math.floor(c/5)]++;});const a=[n[1],n[2]+n[3]];if(n[4])a.push(n[4]);if(n[5])a.push(n[5]);return a.filter((x,i)=>x||i===0).join('-');}
+function fmLbl(cells){const n=[0,0,0,0,0,0,0];cells.forEach(c=>{if(c!==GK_CELL&&c!=null)n[Math.floor(c/5)]++;});const a=[n[1],n[2]+n[3]];if(n[4])a.push(n[4]);if(n[5])a.push(n[5]);if(n[6])a.push(n[6]);return a.filter((x,i)=>x||i===0).join('-');}
 /* efeito do desenho do time: mais gente na frente faz e sofre mais; linha de 5 e volância cheia fecham o time */
-function shapeFx(cells){let n5=0,n4=0,n1=0,lw=0,vc=0;cells.forEach(c=>{if(c==null||c===GK_CELL)return;const rw=Math.floor(c/5),cl=c%5;if(rw===5)n5++;if(rw===4)n4++;if(rw===1)n1++;if(rw===2&&(cl===0||cl===4))lw++;if(rw===2&&cl>0&&cl<4)vc++;});
-  const atk=n5+.5*n4,def=n1+.3*lw;return[clamp(1+.06*(atk-2),.85,1.15),clamp(1-.06*(def-4)-.03*(vc-2),.85,1.15)];}
+function shapeFx(cells){let n6=0,n5=0,n4=0,n1=0,lw=0,vc=0;cells.forEach(c=>{if(c==null||c===GK_CELL)return;const rw=Math.floor(c/5),cl=c%5;if(rw===6)n6++;if(rw===5)n5++;if(rw===4)n4++;if(rw===1)n1++;if(rw===2&&(cl===0||cl===4))lw++;if(rw===2&&cl>0&&cl<4)vc++;});
+  const atk=n6+.75*n5+.5*n4,def=n1+.3*lw;return[clamp(1+.06*(atk-2),.85,1.15),clamp(1-.06*(def-4)-.03*(vc-2),.85,1.15)];}
 /* casas para quem não tem (adversário, saves antigos): pelo número de cada função */
-const CELL_PAT={GOL:{1:[99]},ZAG:{1:[7],2:[6,8],3:[6,7,8],4:[5,6,8,9]},LAT:{1:[5],2:[5,9],3:[5,9,10]},VOL:{1:[12],2:[11,13],3:[11,12,13]},MEI:{1:[17],2:[16,18],3:[20,22,24],4:[15,16,18,19]},ATA:{1:[27],2:[26,28],3:[25,27,29]}};
+const CELL_PAT={GOL:{1:[99]},ZAG:{1:[7],2:[6,8],3:[6,7,8],4:[5,6,8,9]},LAT:{1:[5],2:[5,9],3:[5,9,10]},VOL:{1:[12],2:[11,13],3:[11,12,13]},MEI:{1:[17],2:[16,18],3:[20,22,24],4:[15,16,18,19]},ATA:{1:[32],2:[31,33],3:[30,32,34]}};
 function autoCells(roles){const used=new Set(),cnt={},seen={};roles.forEach(r=>cnt[r]=(cnt[r]||0)+1);
   return roles.map(r=>{const k=seen[r]=(seen[r]||0)+1,pat=(CELL_PAT[r]||{})[cnt[r]];let c=pat&&pat[k-1];
-    if(c==null||used.has(c)){const row={GOL:0,ZAG:1,LAT:1,VOL:2,MEI:3,ATA:5}[r]||3;c=null;for(let x=0;x<5&&c==null;x++){const z=row*5+[2,1,3,0,4][x];if(!used.has(z))c=z;}if(c==null)for(let z=5;z<30;z++)if(!used.has(z)){c=z;break;}}
+    if(c==null||used.has(c)){const row={GOL:0,ZAG:1,LAT:1,VOL:2,MEI:3,ATA:6}[r]||3;c=null;for(let x=0;x<5&&c==null;x++){const z=row*5+[2,1,3,0,4][x];if(!used.has(z))c=z;}if(c==null)for(let z=5;z<35;z++)if(!used.has(z)){c=z;break;}}
     used.add(c);return c;});}
 /* grade das casas: escondida; aparece enquanto você arrasta, com a casa de destino em destaque */
 /* Jogadores, quadrados do arrasto e a casa onde você solta usam a MESMA malha. */
-/* malha fixa: 5 linhas de campo + o gol, todas do mesmo tamanho; nunca muda, seja qual for o esquema */
-const ROW_B=[5,20,35,50,65,80,95];
+/* malha fixa: 6 linhas de campo do mesmo tamanho + o gol; nunca muda, seja qual for o esquema */
+const ROW_B=[6,19,32,45,58,71,84,97];
 function rowGeo(){return ROW_B;}
-const bandOf=c=>c===GK_CELL?5:5-Math.floor(c/5);
-const gpGrid=B=>{let h='<div class="gp-grid" aria-hidden="true">';for(let rw=5;rw>=1;rw--)for(let cl=0;cl<5;cl++){const c=rw*5+cl,b=5-rw;h+='<i data-c="'+c+'" class="'+((rw+cl)%2?'a':'b')+'" style="left:'+cl*20+'%;top:'+B[b]+'%;width:20%;height:'+(B[b+1]-B[b]).toFixed(2)+'%"></i>';}
-  return h+'<i data-c="99" class="g" style="left:30%;top:'+B[5]+'%;width:40%;height:'+(B[6]-B[5]).toFixed(2)+'%"></i></div>';};
-const cellAt=(fx,fy,B)=>{const col=Math.min(4,Math.max(0,Math.floor(fx*5))),y=fy*100;let band=0;while(band<5&&y>=B[band+1])band++;return band===5?GK_CELL:(5-band)*5+col;};
+const bandOf=c=>c===GK_CELL?6:6-Math.floor(c/5);
+const gpGrid=B=>{let h='<div class="gp-grid" aria-hidden="true">';for(let rw=6;rw>=1;rw--)for(let cl=0;cl<5;cl++){const c=rw*5+cl,b=6-rw;h+='<i data-c="'+c+'" class="'+((rw+cl)%2?'a':'b')+'" style="left:'+cl*20+'%;top:'+B[b]+'%;width:20%;height:'+(B[b+1]-B[b]).toFixed(2)+'%"></i>';}
+  return h+'<i data-c="99" class="g" style="left:30%;top:'+B[6]+'%;width:40%;height:'+(B[7]-B[6]).toFixed(2)+'%"></i></div>';};
+const cellAt=(fx,fy,B)=>{const col=Math.min(4,Math.max(0,Math.floor(fx*5))),y=fy*100;let band=0;while(band<6&&y>=B[band+1])band++;return band===6?GK_CELL:(6-band)*5+col;};
 function cellXYL(c,B){const b=bandOf(c),col=c===GK_CELL?2:c%5;return'left:'+(col*20+10)+'%;top:'+((B[b]+B[b+1])/2).toFixed(2)+'%';}
-const cellXY=c=>{const band=c===GK_CELL?5:5-Math.floor(c/5),col=c===GK_CELL?2:c%5;return'left:'+(col*20+10)+'%;top:'+(5+(band+.5)*90/6).toFixed(2)+'%';};
 const mgrSlots=fm=>{const F=(FORMS[fm]||FORMS['442'])[1],S=[];POS.forEach(p=>{for(let i=0;i<(F[p]||0);i++)S.push(p);});return S;};
 const mgrOwn=c=>G&&G.mgr&&c?ownOf(c):null;
 /* funções no campinho: capitão (C), pênalti, falta e escanteio */
@@ -5489,11 +5493,14 @@ const SEC_POS={GOL:[],ZAG:['LAT'],LAT:['ZAG'],VOL:['MEI'],MEI:['VOL','ATA'],ATA:
 const isSec=(p,r)=>!!(p&&SEC_POS[p.pos]&&SEC_POS[p.pos].includes(r));
 /* ===== posições detalhadas (referência: Football Manager) =====
    A casa do campinho diz a posição. Cada jogador tem uma posição principal e secundárias, sorteadas uma vez a partir do nome (não mudam). */
-const DP={GOL:'Goleiro',ZAG:'Zagueiro',LAT:'Lateral',ALA:'Ala',VOL:'Volante',MC:'Meio-campista',ME:'Meia esquerda',MD:'Meia direita',MEI:'Meia ofensivo',PONTA:'Ponta',CA:'Centroavante'};
-const DP_GRID={1:['LAT','ZAG','ZAG','ZAG','LAT'],2:['ALA','VOL','VOL','VOL','ALA'],3:['ME','MC','MC','MC','MD'],4:['PONTA','MEI','MEI','MEI','PONTA'],5:['PONTA','CA','CA','CA','PONTA']};
+const DP={GOL:'Goleiro',ZAG:'Zagueiro',LAT:'Lateral',ALA:'Ala',VOL:'Volante',MC:'Meio-campista',ME:'Meia esquerda',MD:'Meia direita',MEI:'Meia ofensivo',PONTA:'Ponta',SA:'Segundo atacante',CA:'Centroavante'};
+const DP_GRID={1:['LAT','ZAG','ZAG','ZAG','LAT'],2:['ALA','VOL','VOL','VOL','ALA'],3:['ME','MC','MC','MC','MD'],4:['PONTA','MEI','MEI','MEI','PONTA'],5:['PONTA','SA','SA','SA','PONTA'],6:['PONTA','CA','CA','CA','PONTA']};
+/* família de cada posição (para o 'adaptado' e o treino); vizinhança completa para medir distância (o sorteio usa DP_NEAR, que não muda) */
+const DPF={GOL:['GOL'],ZAG:['ZAG'],LAT:['LAT'],ALA:['LAT'],VOL:['VOL'],MC:['MEI'],ME:['MEI'],MD:['MEI'],MEI:['MEI'],PONTA:['MEI','ATA'],SA:['ATA','MEI'],CA:['ATA']};
 const cellDP=c=>c===GK_CELL?'GOL':((DP_GRID[Math.floor(c/5)]||DP_GRID[3])[c%5]);
 const DP_NEAR={ZAG:['LAT','VOL'],LAT:['ALA','ZAG','ME','MD'],ALA:['LAT','ME','MD','PONTA'],VOL:['MC','ZAG'],MC:['VOL','MEI','ME','MD'],ME:['MD','MC','PONTA','ALA'],MD:['ME','MC','PONTA','ALA'],MEI:['MC','PONTA','CA'],PONTA:['ME','MD','MEI','CA'],CA:['PONTA','MEI']};
 const DP_MAIN={GOL:[['GOL',1]],ZAG:[['ZAG',1]],LAT:[['LAT',70],['ALA',30]],VOL:[['VOL',1]],MEI:[['MC',35],['MEI',30],['ME',10],['MD',10],['PONTA',15]],ATA:[['CA',65],['PONTA',35]]};
+const DP_ADJ=(()=>{const a={};const add=(x,y)=>{(a[x]||(a[x]=new Set())).add(y);(a[y]||(a[y]=new Set())).add(x);};for(const k in DP_NEAR)DP_NEAR[k].forEach(y=>add(k,y));[['SA','MEI'],['SA','CA'],['SA','PONTA']].forEach(([x,y])=>add(x,y));const o={};for(const k in a)o[k]=[...a[k]];return o;})();
 const DPM=new Map();
 function dpOf(p){const k=p.id+':'+p.pos+':'+(p.dx?p.dx.join(','):'');let R=DPM.get(k);if(R)return R;let h=hash(p.name+'#'+p.id)||1;const nx=n=>{h=(h*1103515245+12345)&0x7fffffff;return(h>>>8)%n;};
   const W=DP_MAIN[p.pos]||DP_MAIN.MEI,tw=W.reduce((a,x)=>a+x[1],0);let v=nx(tw),m=W[0][0];for(const x of W){if(v<x[1]){m=x[0];break;}v-=x[1];}
@@ -5502,9 +5509,9 @@ function dpOf(p){const k=p.id+':'+p.pos+':'+(p.dx?p.dx.join(','):'');let R=DPM.g
   (p.dx||[]).forEach(d=>{if(d!==m&&!sc.includes(d))sc.push(d);});
   R={m,s:sc};DPM.set(k,R);return R;}
 /* ===== treinar posição nova: quanto mais longe da principal, mais semanas ===== */
-function dpDist(a,b){if(a===b)return 0;const seen=new Set([a]);let fr=[a],k=0;while(fr.length&&k<8){k++;const nx=[];for(const x of fr)for(const y of (DP_NEAR[x]||[])){if(y===b)return k;if(!seen.has(y)){seen.add(y);nx.push(y);}}fr=nx;}return 9;}
+function dpDist(a,b){if(a===b)return 0;const seen=new Set([a]);let fr=[a],k=0;while(fr.length&&k<8){k++;const nx=[];for(const x of fr)for(const y of (DP_ADJ[x]||[])){if(y===b)return k;if(!seen.has(y)){seen.add(y);nx.push(y);}}fr=nx;}return 9;}
 const PTR_MAX=4;
-function ptrWeeks(p,d){const k=dpDist(posL(p),d),base=k<=1?6:k===2?12:k===3?20:30,ag=p.age<=21?.75:p.age<=25?.9:p.age>=33?1.6:p.age>=30?1.3:1;return Math.max(3,Math.round(base*ag*(p.trait==='profissional'?.85:1)));}
+function ptrWeeks(p,d){const F=DPF[d]||[],near=F.includes(p.pos)||F.some(x=>(SEC_POS[p.pos]||[]).includes(x)),k=near?1:dpDist(posL(p),d),base=k<=1?4:k===2?12:k===3?20:30,ag=p.age<=21?.75:p.age<=25?.9:p.age>=33?1.6:p.age>=30?1.3:1;return Math.max(3,Math.round(base*ag*(p.trait==='profissional'?.85:1)));}
 function ptrOpts(p){const f=dpOf(p);return Object.keys(DP).filter(d=>d!=='GOL'&&d!==f.m&&!f.s.includes(d));}
 function ptrWeek(){if(!G.mgr||!G.own)return;const c=ownC();if(!c)return;squad(c.id).forEach(p=>{const t=p.ptr;if(!t)return;t.n++;if(t.n>=t.w){p.dx=(p.dx||[]).concat(t.d);delete p.ptr;news(p.name+' terminou o treino e agora também joga de '+DP[t.d].toLowerCase()+' ('+t.d+').');}});}
 function ptrH(p){const c=club(p);if(!G.mgr||!G.own||!c||c.id!==G.own.cid||p.pos==='GOL')return'';const op=!!(ui.fold&&ui.fold.ptr),t=p.ptr,f=dpOf(p);
@@ -5518,7 +5525,7 @@ const posL=p=>dpOf(p).m;
    c = casa do campinho (só para o seu time); sem casa vale a regra antiga por função. */
 function posPen(p,r,c){if(!r){r=p._r;c=p._c;}if(!r)return 0;if(r==='GOL'||p.pos==='GOL')return r===p.pos?0:25;
   if(c==null||c===GK_CELL)return r===p.pos?0:isSec(p,r)?1:3;
-  const d=cellDP(c),f=dpOf(p);return d===f.m?0:f.s.includes(d)?1:r===p.pos?2:3;}
+  const d=cellDP(c),f=dpOf(p);return d===f.m?0:f.s.includes(d)?1:(DPF[d]||[]).includes(p.pos)?2:3;}
 const secTxt=p=>dpOf(p).s.join(', ');
 /* rótulo curto de como o jogador fica na vaga */
 const fitTxt=(p,r,c)=>{const v=posPen(p,r,c);return!v?'':v===1?'secundária (−1)':v===2?'adaptado (−2)':v===25?'fora de posição (−25)':'fora de posição (−3)';};
@@ -5535,7 +5542,7 @@ const FN={GOL:[['gk','Goleiro','Fica no gol e comanda a defesa.',0,0,1],['gkl','
   MEI:[['mo','Meia ofensivo','Chega na área e finaliza.',0,0,1.2],['mar','Meia armador','Cria as jogadas entre as linhas.',.008,.004,.9],['eng','Enganche','Só arma o jogo, quase não marca.',.02,.016,1],['ats','Atacante sombra','Entra na área como segundo atacante.',.016,.01,1.8]],
   PONTA:[['pt','Ponta','Vai à linha de fundo e cruza.',0,0,1],['pti','Ponta invertido','Corta para dentro e chuta.',.01,.004,1.4],['atl','Atacante de lado','Ataca a área pelo lado, como centroavante.',.014,.01,1.8],['ptd','Ponta defensivo','Volta para marcar o lateral.',-.008,-.012,.7]],
   CA:[['ca','Centroavante','Ataca o espaço e finaliza.',0,0,1],['ha','Homem de área','Fica na área esperando a bola.',.006,.004,1.4],['piv','Pivô','Segura a bola e faz o time subir.',.004,-.004,.8],['f9','Falso 9','Recua para armar e abre espaço.',.012,0,.7],['atp','Atacante de pressão','Pressiona a saída do rival.',-.004,-.01,.9]]};
-FN.MD=FN.ME;
+FN.MD=FN.ME;FN.SA=[['sa','Segundo atacante','Joga atrás do centroavante e chega na área.',0,0,1.6],['mav','Meia avançado','Arma de perto da área.',.004,.004,1.1],['ar','Atacante recuado','Volta para ajudar o meio.',-.006,-.008,.9]];
 function fnOf(o,c){if(c==null)return null;const L=FN[cellDP(c)]||[],k=o&&o.fn&&o.fn[c];return L.find(x=>x[0]===k)||L[0]||null;}
 function fnFx(o,cells){let a=0,d=0;const ks=[];cells.forEach(c=>{const f=fnOf(o,c);if(f){a+=f[3];d+=f[4];ks.push(f[0]);}});
   const of=ks.filter(k=>k==='lto'||k==='alc').length,vr=ks.includes('vr');if(of>=2)d+=vr?-.01:.04;return[clamp(a,-.08,.08),clamp(d,-.08,.08)];}
