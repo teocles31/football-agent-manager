@@ -708,7 +708,18 @@ html,body{touch-action:manipulation}
 .nx-card .nx-x{font-size:20px;font-weight:800;opacity:.6}.nx-card .acts{justify-content:center}.nx-card .btn{min-width:60%}
 .pt-cond{display:block;width:44px;height:4px;border-radius:2px;background:rgba(255,255,255,.25);overflow:hidden;margin:1px auto}.pt-cond i{display:block;height:100%;background:#7be3a6}.pt-cond i.mid{background:#f4c61f}.pt-cond i.lo{background:#f08a5d}
 .card.list.bn-l>div{display:flex;align-items:center;gap:7px;flex-wrap:nowrap!important}.bn-l .grow{min-width:0;flex:1 1 auto}.bn-l .grow b{display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:bottom}.bn-l .grow .small{display:block}.bn-l .av,.bn-l svg,.bn-l .ovr,.bn-l .cond{flex:none}.bn-l .acts2{display:flex;flex-direction:column;gap:4px;flex:none}.bn-l .btn{flex:none}.bn-l .cond{width:46px;height:5px;border-radius:3px;background:var(--line);overflow:hidden;flex:none}.bn-l .cond i{display:block;height:100%;background:var(--teal)}.bn-l .cond i.lo{background:#e0703a}
-.lg-my{margin:6px 0 2px}.lg-my button{display:flex;align-items:center;gap:6px;justify-content:center}
+.lg-my{margin:6px 0 2px}
+.lg-top{display:grid;gap:8px}.lg-top>.lbl{margin:0}
+.lg-chips{display:flex;flex-wrap:wrap;gap:6px}.lg-chips button{flex:0 1 auto;min-height:36px;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:inherit;font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+.lg-chips button[aria-pressed=true]{background:var(--gold);border-color:var(--gold);color:#1b1b1b}
+.lg-tools{display:flex;gap:8px;flex-wrap:wrap}.lg-tb{display:inline-flex;align-items:center;gap:6px;min-height:34px;padding:4px 12px;border-radius:10px;border:1px dashed var(--line);background:none;color:var(--ink2);font:inherit;font-size:13px;cursor:pointer}
+.lg-tb[aria-pressed=true]{border-style:solid;color:inherit;background:var(--surface)}.lg-tb svg{width:16px;height:16px}
+.lg-comp{margin-top:0}.lg-h{font-size:20px;margin:0 0 8px}
+.lg-sub{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid var(--line);margin-bottom:10px}.lg-sub::-webkit-scrollbar{display:none}
+.lg-sub button{flex:1 0 auto;padding:8px 6px;font-size:13px!important;border:0;border-bottom:3px solid transparent;background:none;color:var(--ink2);font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+.lg-sub button[aria-pressed=true]{color:inherit;border-bottom-color:var(--gold)}
+table.lgt th,table.lgt td{padding:5px 5px;vertical-align:middle}table.lgt .lnk{min-height:0;padding:2px 0;line-height:1.2;display:inline-flex;align-items:center;gap:6px}table.lgt .lg-cl{max-width:46vw;overflow:hidden;text-overflow:ellipsis}
+@media(max-width:600px){table.lgt .c-x{display:none}table.lgt{font-size:14px}}.lg-my button{display:flex;align-items:center;gap:6px;justify-content:center}
 .ar-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:10px}
 .pt-sr{position:absolute;top:-1px;left:7px;z-index:2;padding:0 3px;line-height:13px;border-radius:5px;font-size:8.5px;font-weight:700;background:rgba(0,0,0,.38);color:rgba(255,255,255,.82);border:0}
 .sr-i{font-size:11.5px;font-weight:600;opacity:.75;white-space:nowrap}.sr-i.hi{color:var(--good,#2e8f4f);opacity:.95}.sr-i.lo{color:#c0563a;opacity:.9}
@@ -8392,8 +8403,8 @@ function zoneLeg(c){const z=lgZones(c),t=[];if(z.cont)t.push('<span class="zl zc
   if(LG[c.li]&&LG[c.li].id==='bra')t.push('6ª vaga: campeão da Copa do Brasil (se já estiver no G5, vai para o vice; se os dois estiverem, para o 6º)');
   if(z.down)t.push('<span class="zl zr"></span>'+z.down+' últimos: rebaixados');return t.length?'<p class="small muted zleg">'+t.join(' · ')+'</p>':'';}
 function tableView(c,ids,zones){const o=sortedTab(c,ids),mine=new Set(G.clients.map(id=>G.P[id].club));(G.owns||[]).forEach(o=>mine.add(o.cid));
-  return'<div class="tbw"><table><thead><tr><th>#</th><th>Clube</th><th class="r">J</th><th class="r">V</th><th class="r">E</th><th class="r">D</th><th class="r">GP</th><th class="r">GC</th><th class="r">SG</th><th class="r">Pts</th><th>Forma</th></tr></thead><tbody>'+
-   o.map((cid,i)=>{const r=c.tab[cid],cl=G.clubs[cid];const z=zones?zones(i,o.length):'';return'<tr class="'+(mine.has(cid)?'mine ':'')+z+'"><td>'+(i+1)+'</td><td>'+clubLink(cl)+'</td><td class="r">'+r[0]+'</td><td class="r">'+r[1]+'</td><td class="r">'+r[2]+'</td><td class="r">'+r[3]+'</td><td class="r">'+r[4]+'</td><td class="r">'+r[5]+'</td><td class="r">'+(r[4]-r[5])+'</td><td class="r"><b>'+r[6]+'</b></td><td><span class="form">'+cl.fm.split('').map(x=>'<i class="'+x+'">'+x+'</i>').join('')+'</span></td></tr>';}).join('')+'</tbody></table></div>';}
+  return'<div class="tbw"><table class="lgt"><thead><tr><th>#</th><th>Clube</th><th class="r">Pts</th><th class="r">J</th><th class="r">V</th><th class="r">E</th><th class="r">D</th><th class="r c-x">GP</th><th class="r c-x">GC</th><th class="r">SG</th><th class="c-x">Forma</th></tr></thead><tbody>'+
+   o.map((cid,i)=>{const r=c.tab[cid],cl=G.clubs[cid];const z=zones?zones(i,o.length):'';return'<tr class="'+(mine.has(cid)?'mine ':'')+z+'"><td>'+(i+1)+'</td><td class="lg-cl">'+clubLink(cl,18)+'</td><td class="r"><b>'+r[6]+'</b></td><td class="r">'+r[0]+'</td><td class="r">'+r[1]+'</td><td class="r">'+r[2]+'</td><td class="r">'+r[3]+'</td><td class="r c-x">'+r[4]+'</td><td class="r c-x">'+r[5]+'</td><td class="r">'+(r[4]-r[5])+'</td><td class="c-x"><span class="form">'+cl.fm.split('').map(x=>'<i class="'+x+'">'+x+'</i>').join('')+'</span></td></tr>';}).join('')+'</tbody></table></div>';}
 function matchRow(m,d){const un=m[2]==null||m[2]<0;return vsBox(m[0],m[1],un?'x':vsSc(m[2],m[3]),(un&&d!=null?whenTxt(mDay(d,m),m)+' · ':'')+esc(stadOf(G.clubs[m[0]])));}
 /* mata-mata: fase mais recente em cima, as anteriores embaixo; as que ainda não têm confrontos ficam no fim */
 const koOrd=ko=>{const a=(ko||[]).filter(s=>s.ties),b=(ko||[]).filter(s=>!s.ties);return a.slice().reverse().concat(b);};
@@ -8408,19 +8419,23 @@ function ntMeH(){const me=mgrMe();if(!me)return'';const n=G.mgrNT,nac=mgrNac(me)
   const req=G.nt.sq[nac]?ntReq(nac):null;
   return'<section class="card">'+cardH('flag','Seleção')+'<p class="small">Você é '+flagS(nac)+esc(nac)+'. '+(req?'Para a sua seleção chamar você, o seu nível de técnico precisa estar perto de <b>'+req+'</b> (hoje: '+me.r+') e ela precisa trocar de técnico.':'A seleção do seu país não está no jogo.')+' Seleções mais fracas de fora também podem chamar quem está em ótima fase.</p></section>';}
 function vLigas(){if(G.mgr&&!ui.ligNoSw){ui.ligNoSw=1;const h=vLigas();ui.ligNoSw=0;return ligSw('lig')+h;}const keys=COMPKEYS(),YT=ui.comp&&ui.comp[0]==='Y'&&G.yt?G.yt[+ui.comp.slice(1)]:null;if(!ui.comp||'NAT'.includes(ui.comp[0])||(ui.comp[0]==='Y'&&!YT))ui.comp='L'+(ui.dlg||0);const sp='NAT'.includes(ui.comp[0]),c=sp?null:compByKey(ui.comp);
-  let h='<section><div class="sec-h"><h2>Competições</h2><p>Toque em um clube para ver elenco e informações. Toque em um jogador para ver as estatísticas.</p></div>'+
-   '<div class="search"><input type="search" id="q" placeholder="Buscar jogador ou clube" value="'+esc(ui.q)+'" autocomplete="off"><div id="qres">'+searchRes()+'</div></div>';
-  const groups={};keys.forEach(k=>(groups[k[2]]||(groups[k[2]]=[])).push(k));
-  if(G.own){const oc=ownC(),my=clubComps(oc.id).map(c=>[c.t==='L'?'L'+c.li:c.t==='K'?'K'+c.li:c.t,c]).filter(x=>keys.some(k=>k[0]===x[0]));
-    if(my.length)h+='<span class="lbl">Competições do '+esc(oc.n)+'</span><div class="seg lg-my">'+my.map(x=>'<button data-a="comp" data-k="'+x[0]+'" aria-pressed="'+(ui.comp===x[0])+'">'+esc(x[1].t==='L'?LG[x[1].li].s:x[1].name)+'</button>').join('')+'</div>';}
-  h+=ligaSel(keys)+'</section>';
+  /* topo: competições do seu clube; busca e outras ligas ficam recolhidas */
+  const F=ui.fold||(ui.fold={});let my=[];
+  if(G.own){const oc=ownC();my=clubComps(oc.id).map(c=>[c.t==='L'?'L'+c.li:c.t==='K'?'K'+c.li:c.t,c]).filter(x=>keys.some(k=>k[0]===x[0]));}
+  const inMy=my.some(x=>x[0]===ui.comp),qO=!my.length||!!F.lgq||!!(ui.q&&ui.q.trim()),xO=!my.length||!!F.lgx||!inMy;
+  let h='<section class="lg-top">';
+  if(my.length)h+='<span class="lbl">Seu clube</span><div class="lg-chips">'+my.map(x=>'<button data-a="comp" data-k="'+x[0]+'" aria-pressed="'+(ui.comp===x[0])+'">'+esc(x[1].t==='L'?LG[x[1].li].s:x[1].name)+'</button>').join('')+'</div>'+
+    '<div class="lg-tools"><button class="lg-tb" data-a="fold" data-p="lgx" aria-pressed="'+xO+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg>Outras ligas e copas</button><button class="lg-tb" data-a="fold" data-p="lgq" aria-pressed="'+qO+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>Buscar</button></div>';
+  if(xO)h+=ligaSel(keys);
+  if(qO)h+='<div class="search"><input type="search" id="q" placeholder="Buscar jogador ou clube" value="'+esc(ui.q)+'" autocomplete="off"><div id="qres">'+searchRes()+'</div></div>';
+  h+='</section>';
   if(ui.comp==='RK')return h+vCRK();
   if(YT)return h+vYT(YT);
   if(sp){const T=ui.comp[0]==='T'?(G.nt.tours||[])[+ui.comp.slice(1)]:null;return h+(ui.comp==='A'?vAwards():T?vTour(T):vNations2());}
   if(!c)return h+'<div class="card">Competição ainda não começou.</div>';
   const subs=(c.t==='L'?[['tab','Tabela'],['rod','Rodadas'],['stats','Estatísticas'],['clubs','Clubes']]:c.t==='K'?[['ko','Chaveamento'],['rod','Rodadas'],['stats','Estatísticas']]:[['tab',c.t==='U'?'Fase de liga':'Grupos'],['rod','Rodadas'],['ko','Mata-mata'],['stats','Estatísticas']]).concat(c.t!=='L'||PRZ_LG[LG[c.li].id]?[['prz','Premiação']]:[]);
   if(c.t==='B'&&!c.groups)subs.shift();let sub=ui.sub;if(!subs.some(s=>s[0]===sub))sub=subs[0][0];
-  h+='<section><div class="sec-h"><h2>'+esc(compLabel(c))+'</h2></div><div class="seg">'+subs.map(s=>'<button data-a="sub" data-s="'+s[0]+'" aria-pressed="'+(sub===s[0])+'">'+s[1]+'</button>').join('')+'</div>';
+  h+='<section class="lg-comp"><h2 class="lg-h">'+esc(compLabel(c))+'</h2><div class="lg-sub">'+subs.map(s=>'<button data-a="sub" data-s="'+s[0]+'" aria-pressed="'+(sub===s[0])+'">'+s[1]+'</button>').join('')+'</div>';
   if(sub==='tab'){if(c.t==='L')h+='<div class="card">'+tableView(c,null,zoneCls(c))+zoneLeg(c)+'</div>';
     else if(c.t==='U')h+='<div class="card">'+tableView(c,null,i=>i<8?'z1':i<24?'z3':'z2')+'<p class="small muted">1º a 8º: oitavas. 9º a 24º: playoff. 25º em diante: eliminados.</p></div>';
     else h+='<div class="groups">'+c.groups.map((g,i)=>'<div class="card"><h3>Grupo '+'ABCDEFGH'[i]+'</h3>'+tableView(c,g,j=>j<2?'z1':'')+'</div>').join('')+'</div>';}
