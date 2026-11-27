@@ -5173,7 +5173,8 @@ const spBrand=c=>1+.04*(c.gl||0);
 function spForm(c){const L=curLeague(c.lg);if(!L||!L.tab||!L.tab[c.id])return{f:1,t:''};const tb=sortedTab(L),n=tb.length,pos=tb.indexOf(c.id),j=L.tab[c.id][0],dn=PROMO[LG[c.lg].id]||0;
   if(j<6)return{f:1,t:''};if(dn&&pos>=n-dn)return{f:.6,t:'zona de rebaixamento: -40%'};if(pos>=n/2)return{f:.85,t:'metade de baixo da tabela: -15%'};if(pos<4)return{f:1.1,t:'entre os 4 primeiros: +10%'};return{f:1,t:''};}
 /* acima do topo da liga cresce pouco e tem teto: no máximo 15% a mais que o maior patrocínio da liga, mais títulos e momento */
-function spYear(c){const top=SP_TOP[LG[c.lg].id]||10e6,d=prest(c)-spRef(c);return Math.max(3e5,top*(d<0?Math.exp(.5*d):Math.min(1.15,Math.exp(.03*d)))*spBrand(c)*spForm(c).f);}
+/* jogo mais equilibrado: patrocínios a ~65% dos valores de mercado, para clube grande não começar já muito à frente */
+function spYear(c){const top=(SP_TOP[LG[c.lg].id]||10e6)*.65,d=prest(c)-spRef(c);return Math.max(3e5,top*(d<0?Math.exp(.5*d):Math.min(1.15,Math.exp(.03*d)))*spBrand(c)*spForm(c).f);}
 /* cláusula de rebaixamento: as parcelas que faltam de todo patrocínio caem pela metade */
 /* proposta sem valor total (formato antigo, semanal) é descartada e refeita */
 function spFix(o){const bad=L=>!L||!L.length||L.some(x=>!(x&&x.tot>0));if(o.spmOff&&bad(o.spmOff))o.spmOff=null;if(o.spOffs)for(const k in o.spOffs)if(o.spOffs[k]&&bad(o.spOffs[k]))o.spOffs[k]=null;}
