@@ -8795,7 +8795,7 @@ const A={
   dlg(d){ui.dlg=+d.i;render();},comp(d){ui.comp=d.k;ui.rd=null;render();},sub(d){ui.sub=d.s;render();},rd(d){ui.rd=(ui.rd||0)+(+d.v);render();},
   mc(d){ui.mc=d.v;render();},mcsel(d){ui.mc=d.i;render();},clg(d){ui.clg=+d.i;render();},picklg(d){ui.pickLg=+d.i;render();},
   nw(d){const c=$('#carousel');if(c&&c.scrollBy)c.scrollBy({left:(+d.v)*c.clientWidth,behavior:'smooth'});},
-  club(d){ui.stack.push({t:'c',id:+d.c});render();},player(d){ui.stack.push({t:'p',id:+d.p});render();},
+  club(d){if(ui.modal&&!(G&&G.live))ui.modal=null;ui.stack.push({t:'c',id:+d.c});render();},player(d){if(ui.modal&&!(G&&G.live))ui.modal=null;ui.stack.push({t:'p',id:+d.p});render();},
   back(){ui.stack.pop();render();},closeall(){ui.stack=[];render();},
   close(){ui.modal=null;render();},
   talk(d){const p=G.P[d.p];if(!useAP())return;const tg=7+G.me.car+(mind('fam')?3:mind('neg')?-1:0);p.trust=clamp(p.trust+tg,0,100);p.morale=clamp(p.morale+5,0,100);pop({k:'good',ic:'talk',ti:'Conversa boa',tx:'Você almoçou com '+p.name+'. Ele saiu mais confiante.',ch:[['Confiança +'+tg,'good'],['Moral +5','good']]});save();render();},
