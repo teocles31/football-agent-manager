@@ -5500,7 +5500,17 @@ function capPrune(o,c){const xi=new Set(mgrMap(c).filter(Boolean).map(p=>p.id));
 function rlAuto(o,c){const xi=mgrMap(c).filter(Boolean);if(!xi.length)return;const has=k=>o[k]&&xi.some(p=>p.id===o[k]);
   const att=xi.filter(p=>p.pos==='ATA'||p.pos==='MEI').sort((a,b)=>b.ovr-a.ovr),mid=xi.filter(p=>p.pos==='MEI'||p.pos==='LAT'||p.pos==='VOL').sort((a,b)=>b.ovr-a.ovr);
   if(!has('pen'))o.pen=(att[0]||xi[0]).id;if(!has('fk'))o.fk=(mid[0]||att[0]||xi[0]).id;if(!has('ck'))o.ck=(mid.find(p=>p.id!==o.fk)||mid[0]||xi[0]).id;}
-const mgrFmOf=c=>{const o=mgrOwn(c);if(!o)return null;const L=G.live,S=L&&L.sd.find(x=>x.mine&&x.c===c.id),cl=S&&S.on.every(x=>x.c!=null)?S.on.map(x=>x.c):cellsOf(o),sf=shapeFx(cl),ff=fnFx(o,cl);return[fmLbl(cl),null,[clamp(sf[0]*(1+ff[0]),.8,1.2),clamp(sf[1]*(1+ff[1]),.8,1.2)]];};
+/* faixa alta/baixa pesa: [ataque, gols sofridos] por jogador fora da faixa padrão da linha */
+const SUB_FX={def:{up:[.006,.009],dn:[-.004,-.008]},mid:{up:[.006,.006],dn:[-.004,-.007]},atk:{up:[.006,.002],dn:[-.004,-.004]}};
+const subGrp=c=>{const rw=Math.floor(c/5);return rw===1?'def':rw<=3?'mid':'atk';};
+function subFx(o,cells){let a=0,d=0;const n={def:0,mid:0,atk:0};cells.forEach(c=>{if(c==null||c===GK_CELL)return;const dv=subOf(o,c)-subDef(c);if(!dv)return;const g=subGrp(c),v=SUB_FX[g][dv>0?'up':'dn'];a+=v[0];d+=v[1];n[g]+=dv;});
+  return{a:clamp(a,-.05,.05),d:clamp(d,-.05,.05),n};}
+function subNotes(o,cells){const x=subFx(o,cells).n,N=[];
+  if(x.def>=2)N.push([-.4,'Zaga adiantada (faixa alta): o time sobe junto, mas deixa espaço nas costas']);else if(x.def===1)N.push([0,'Um zagueiro adiantado: um pouco mais de espaço atrás']);
+  if(x.mid<=-2)N.push([.4,'Meio recuado (faixa baixa): protege a zaga, cria menos']);
+  if(x.atk>=2)N.push([.3,'Ataque adiantado: pressiona mais perto da área, volta menos para marcar']);else if(x.atk<=-2)N.push([0,'Ataque recuado: ajuda o meio, chega menos na área']);
+  return N;}
+const mgrFmOf=c=>{const o=mgrOwn(c);if(!o)return null;const L=G.live,S=L&&L.sd.find(x=>x.mine&&x.c===c.id),cl=S&&S.on.every(x=>x.c!=null)?S.on.map(x=>x.c):cellsOf(o),sf=shapeFx(cl),ff=fnFx(o,cl),sx=subFx(o,cl);return[fmLbl(cl),null,[clamp(sf[0]*(1+ff[0]+sx.a),.8,1.2),clamp(sf[1]*(1+ff[1]+sx.d),.8,1.2)]];};
 /* jogador fora da posição rende menos */
 /* posições secundárias: o jogador atua nelas perdendo um pouco (−3); em qualquer outra é improviso (−7); goleiro só no gol */
 const SEC_POS={GOL:[],ZAG:['LAT'],LAT:['ZAG'],VOL:['MEI'],MEI:['VOL','ATA'],ATA:['MEI']};
@@ -5827,7 +5837,7 @@ const lvClk=L=>L.phase==='pre'?'Antes do jogo':L.phase==='int'?'Intervalo':L.pha
 /* prévia do próximo jogo na aba Time (tática provável do rival) */
 function tacPrevH(c){let f=null;try{f=fixturesOf(c.id,G.d,G.d+60).find(x=>x.m&&!(x.m[2]>=0));}catch(e){}if(!f)return'';const oc=G.clubs[f.m[0]===c.id?f.m[1]:f.m[0]];if(!oc)return'';
   const lu=lineup(c.id),olu=lineup(oc.id),me=tacOf(c,lu,olu),op=tacOf(oc,olu,lu),T=tacSide(me,op),U=tacSide(op,me),v=T.d-U.d,o=mgrOwn(c),h=o&&fnHole(o,cellsOf(o));
-  const M=tacMix(T,U);if(h)M.notes.push(h<0?[-.5,'Dois laterais/alas ofensivos sem volante recuado: buraco atrás']:[.3,'Volante recuado cobre os laterais ofensivos']);
+  const M=tacMix(T,U);if(o)subNotes(o,cellsOf(o)).forEach(x=>M.notes.push(x));if(h)M.notes.push(h<0?[-.5,'Dois laterais/alas ofensivos sem volante recuado: buraco atrás']:[.3,'Volante recuado cobre os laterais ofensivos']);
   return'<div class="tac-rep"><span class="lbl">Próximo jogo · '+esc(oc.n)+' · '+tacSum(v)+'</span><p class="small muted">Provável: '+esc(STYLES[op.st][0])+' · linha '+esc(TACN('lin',op.lin).toLowerCase())+' · ataca '+esc(TACN('atk',op.atk).toLowerCase())+'</p>'+tacNotesH(M,5)+'</div>';}
 function tacPick(S,O,act){const x=O?lvAtkDiff(S,O):null,sg=v=>v>=2?'<b class="okk">vantagem sua</b>':v<=-2?'<b class="nok">vantagem deles</b>':'equilibrado';
   const row=(k,lbl)=>'<span class="lbl">'+lbl+'</span><div class="lv-chips">'+TAC[k].map(y=>'<button data-a="'+act+'" data-k="'+k+'" data-v="'+y[0]+'" aria-pressed="'+(S[k]===y[0])+'">'+y[1]+'</button>').join('')+'</div><p class="small muted">'+esc((TAC[k].find(y=>y[0]===S[k])||TAC[k][1])[2])+'.</p>';
@@ -6015,7 +6025,7 @@ function mgrTime(o,c){if(o.fk===undefined)rlAuto(o,c);const F=[fmLbl(cellsOf(o))
   const sel=(key,lbl)=>'<div class="mg-row"><label for="mg-'+key+'">'+lbl+'</label><select class="mg-sel" id="mg-'+key+'" data-k="'+key+'"><option value="">Ninguém</option>'+xi.map(p=>'<option value="'+p.id+'"'+(o[key]===p.id?' selected':'')+'>'+esc(p.name)+' · '+p.pos+' '+p.ovr+'</option>').join('')+'</select></div>';
   let h='<section class="tm-top">'+
    (()=>{const g=mgrGaps(c);return g.length?'<div class="mg-warn">⚠ Escalação incompleta</div>':'';})()+
-   mgrPitch(c)+'<p class="small muted tm-hint">Toque no jogador para trocar por outro ou mudar a função dele. Arraste para mudar a posição (solte em cima de outro e os dois trocam): o selo na camisa mostra a posição da casa e a cor mostra o encaixe: verde principal, amarelo secundária (−1), laranja adaptado (−2), vermelho fora (−3).</p><div class="acts"><button class="btn" data-a="mgauto">Escalação automática</button></div></section>'+mgrSavesH(o,c);
+   mgrPitch(c)+'<p class="small muted tm-hint">Toque no jogador para trocar por outro ou mudar a função dele. A faixa alta ou baixa da casa também pesa: adiantar cria mais e deixa espaço atrás; recuar protege e cria menos. Arraste para mudar a posição (solte em cima de outro e os dois trocam): o selo na camisa mostra a posição da casa e a cor mostra o encaixe: verde principal, amarelo secundária (−1), laranja adaptado (−2), vermelho fora (−3).</p><div class="acts"><button class="btn" data-a="mgauto">Escalação automática</button></div></section>'+mgrSavesH(o,c);
   h+='<section><div class="sec-h"><h2>Banco de reservas <span class="small muted">'+B.length+'/8</span></h2><p>Só quem está no banco pode entrar durante o jogo.</p></div><div class="card list bn-l">'+
    (B.map(id=>{const p=G.P[id];return'<div>'+avatar(p,30)+ovrB(p.ovr)+'<div class="grow"><b>'+plLink(p)+'</b> <span class="chip pchip" style="--pc:'+PC[p.pos]+'">'+posL(p)+'</span> '+srI(p)+' '+st(p)+'</div>'+cond(p)+'<button class="btn sm" data-a="mgbo" data-p="'+id+'">Tirar</button></div>';}).join('')||'<div class="small muted">Ninguém no banco. Leve jogadores da lista de suplentes.</div>')+'</div></section>';
   const sup=squad(c.id).filter(p=>!p.lent&&!xs.has(p.id)&&!bs.has(p.id)).sort((a,b)=>POS.indexOf(a.pos)-POS.indexOf(b.pos)||b.ovr-a.ovr);
