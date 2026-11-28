@@ -7141,7 +7141,7 @@ function preAI(p,mi){const own=club(p);if(!own||!isOwn(own)||p.pre||p.loan||p.le
   if(Math.random()>.12)return;const ds=G.clubs.filter(d=>d.id!==own.id&&!isOwn(d)&&prest(d)>=prest(own)+1&&squad(d.id).length<34&&p.ovr>=starterOvr(d.id,p.pos)-4&&!LG[d.lg].ext);
   const d=wpick(ds,d=>1/(1+Math.abs(prest(d)-prest(own)-4)));if(!d)return;p.pre={c:d.id,from:own.id,w:nice((p.wage||wageRef(p.ovr,d.lg))*1.2),y:p.age<=27?4:2,d:G.d,ai:1};
   news(p.name+' assinou pré-contrato com o '+d.n+' e deixa o '+own.n+' quando o contrato acabar, em '+fmonth(p.ce)+'.','clube');
-  pop({k:'bad',ic:'deal',ti:'Pré-contrato assinado',tx:p.name+' vai para o '+d.n+' de graça no fim do contrato ('+fmonth(p.ce)+'). Se quiser algum dinheiro, venda antes.'});}
+  pop({k:'bad',ic:'deal',ti:'Pré-contrato assinado',tx:p.name+' vai para o '+d.n+' de graça no fim do contrato ('+fmonth(p.ce)+'). Dá para fazer uma contraproposta (Elenco → jogador → Cobrir proposta) ou vender antes.'});}
 /* no fim do contrato o pré-contrato vale; se o jogador mudou de clube antes, cai */
 function preMonth(p,mi){if(!p.pre)return;const nc=G.clubs[p.pre.c];
   if(!nc||p.club!==p.pre.from){if(nc&&(isOwn(nc)||!p.pre.ai))news('O pré-contrato de '+p.name+' com o '+nc.n+' foi cancelado: ele mudou de clube antes.','clube');delete p.pre;return;}
@@ -7263,8 +7263,8 @@ function ctrReply(e,o,a){const miss=[];if(!e.w)miss.push('salário');if(!e.l)mis
 function mCtr(){const m=ui.modal,p=G.P[m.pid],c=ownC(),o=m.off,a=m.ask;
   const e=ctrEval(o,a),st=ok=>ok?' <b class="okk">✓ atende</b>':' <b class="warnk">abaixo do pedido</b>';
   const row=(k,lbl,val,sub)=>'<div class="ctr-r"><span class="lbl">'+lbl+'</span><div class="ctr-c"><button class="btn sm" data-a="ctrstep" data-k="'+k+'" data-v="-1" aria-label="Diminuir">−</button><b>'+val+'</b><button class="btn sm" data-a="ctrstep" data-k="'+k+'" data-v="1" aria-label="Aumentar">+</button></div><small class="muted">'+sub+'</small></div>';
-  return'<div class="sheet"><span class="eyebrow">Contrato · '+(m.kind==='renew'?'negociação':m.kind==='pre'?'pré-contrato, chega em '+fmonth(p.ce+1):m.kind==='free'?'jogador livre':'2ª etapa: negociar com o jogador · clube fechou em '+fmt(m.fee))+'</span><div class="neg-h">'+avatar(p,48)+'<h2>'+esc(p.name)+' × '+esc(c.n)+'</h2></div>'+
-   '<p class="small muted">'+p.pos+' · '+p.age+' anos · nível '+p.ovr+' · paciência: <span class="pat">'+'●'.repeat(Math.max(0,m.pat))+'</span></p>'+
+  return'<div class="sheet"><span class="eyebrow">Contrato · '+(m.kind==='renew'?(m.pre?'contraproposta ao pré-contrato':'negociação'):m.kind==='pre'?'pré-contrato, chega em '+fmonth(p.ce+1):m.kind==='free'?'jogador livre':'2ª etapa: negociar com o jogador · clube fechou em '+fmt(m.fee))+'</span><div class="neg-h">'+avatar(p,48)+'<h2>'+esc(p.name)+' × '+esc(c.n)+'</h2></div>'+
+   '<p class="small muted">'+posL(p)+' · '+p.age+' anos · nível '+p.ovr+' · paciência: <span class="pat">'+'●'.repeat(Math.max(0,m.pat))+'</span></p>'+
    '<div class="log">'+m.log.map((l,i)=>'<p class="'+(i%2?'me':'')+'">'+esc(l)+'</p>').join('')+'</div>'+
    row('w','Salário por semana',fmt(o.w),(m.kind==='renew'?'Hoje ganha '+fmt(m.cur||0)+'. Ele pede ':'Ele pede ')+fmt(a.w)+'.'+st(e.w))+row('l','Luvas',fmt(o.l),'Pedido: '+fmt(a.l)+'. Sai do caixa do clube.'+st(e.l))+row('y','Duração',durTxt(o.y*12),'Ele prefere '+durTxt(a.y*12)+'.'+(e.y?' <b class="okk">✓ atende</b>':' <b class="warnk">diferente</b>'))+
    '<p class="small muted">Pagar acima num item compensa só um pouco o que falta em outro. Com tudo atendido, ele assina.</p>'+
@@ -7272,12 +7272,12 @@ function mCtr(){const m=ui.modal,p=G.P[m.pid],c=ownC(),o=m.off,a=m.ask;
    '<div class="acts"><button class="btn pri" data-a="ctrsend"'+(c.bud<m.fee+o.l?' disabled':'')+'>Enviar proposta</button><button class="btn" data-a="ctrquit">Desistir</button></div></div>';}
 function ctrSend(){const m=ui.modal,p=G.P[m.pid],c=ownC(),o=m.off,a=m.ask;if(c.bud<m.fee+o.l){toast('Caixa do clube insuficiente.');return;}
   if(m.kind==='renew'){const e=ctrEval(o,a);
-    if(e.ok){const w0=m.cur||p.wage||0,cut=w0>0&&o.w<w0;c.bud-=o.l;p.wage=o.w;p.ce=contractEnd(c,o.y);p.warned=0;
+    if(e.ok){const w0=m.cur||p.wage||0,cut=w0>0&&o.w<w0;c.bud-=o.l;p.wage=o.w;p.ce=contractEnd(c,o.y);p.warned=0;if(m.pre&&p.pre){const d=G.clubs[p.pre.c];delete p.pre;delete p.preW;news(p.name+' desistiu do pré-contrato com o '+(d?d.n:'outro clube')+' e renovou com o '+c.n+'.','clube');}
       /* corte de salário aceito ainda incomoda um pouco; aumento anima */p.morale=clamp((p.morale||60)+(cut?-Math.min(10,Math.round((w0-o.w)/w0*40)):5),0,100);ui.modal=null;
       news(p.name+' acertou novo contrato com o '+c.n+' até '+fmonth(p.ce)+(cut?', com redução de salário':'')+'.','clube');
       pop({k:'good',ic:'deal',ti:'Contrato acertado!',tx:p.name+' assinou até '+fmonth(p.ce)+'.',ch:[['Salário '+fmt(w0)+' → '+fmt(o.w)+'/sem',cut?'good':'warn'],...(o.l?[['-'+fmt(o.l)+' de luvas','bad']]:[])]});save();render();return;}
     m.pat--;m.log.push('Ofereci '+fmt(o.w)+'/sem, luvas de '+fmt(o.l)+' e '+o.y+' ano(s).');
-    if(m.pat<=0){p.renCool=G.d+42;ui.modal=null;news(p.name+' não aceitou o novo contrato do '+c.n+'. O contrato atual continua valendo.','clube');pop({k:'bad',ic:'no',ti:'Sem acordo',tx:p.name+' recusou. O contrato atual continua valendo. Dá para tentar de novo em 6 semanas.'});save();render();return;}
+    if(m.pat<=0){p.renCool=G.d+42;ui.modal=null;news(p.name+' não aceitou '+(m.pre?'a contraproposta':'o novo contrato')+' do '+c.n+'.'+(m.pre?' O pré-contrato continua valendo.':' O contrato atual continua valendo.'),'clube');pop({k:'bad',ic:'no',ti:'Sem acordo',tx:p.name+' recusou. '+(m.pre?'Ele segue com o pré-contrato. Dá para tentar de novo em 6 semanas ou vendê-lo antes do fim do contrato.':'O contrato atual continua valendo. Dá para tentar de novo em 6 semanas.')});save();render();return;}
     m.log.push(ctrReply(e,o,a));render();return;}
   if(m.kind==='pre'){const e=ctrEval(o,a,prest(c)>=prest(club(p)||c)?.03:0);
     if(e.ok){const cur=club(p);c.bud-=o.l;p.pre={c:c.id,from:cur.id,w:o.w,y:o.y,d:G.d};G.own.mood=clamp(G.own.mood+clamp(p.fame/20,0,4),0,100);ui.modal=null;
@@ -7296,11 +7296,19 @@ function ctrSend(){const m=ui.modal,p=G.P[m.pid],c=ownC(),o=m.off,a=m.ask;if(c.b
   m.log.push(ctrReply(e,o,a));render();}
 /* ---------- botões de cada jogador no Elenco do seu clube ---------- */
 function elActs(p,o){if(isClient(p)||p.loan||p.lent)return'';const x=o&&o.sale&&o.sale[p.id],fresh=p.movedW&&G.d-p.movedW<180,rc=(p.renCool||0)>G.d;
-  return'<div class="el-acts"><button class="btn sm" data-a="oren" data-p="'+p.id+'"'+(rc?' disabled title="Ele pediu um tempo"':'')+'>'+(rc?'Negociar · aguarde':'Negociar contrato')+'</button>'+
+  const pc=p.pre&&p.pre.from===p.club;return'<div class="el-acts">'+(pc?'<span class="chip bad">Pré-contrato com o '+esc((G.clubs[p.pre.c]||{}).n||'')+' · '+fmt(p.pre.w)+'/sem</span>':'')+'<button class="btn sm'+(pc?' pri':'')+'" data-a="oren" data-p="'+p.id+'"'+(rc?' disabled title="Ele pediu um tempo"':'')+'>'+(rc?'Negociar · aguarde':pc?'Cobrir proposta':'Negociar contrato')+'</button>'+
    (o&&o.lend&&o.lend[p.id]?'<span class="chip info">Na lista de empréstimo</span>':'<button class="btn sm" data-a="olend" data-p="'+p.id+'">Emprestar</button>')+'<button class="btn sm danger" data-a="orsc" data-p="'+p.id+'">Rescindir</button>'+(x?'<span class="chip good">À venda · '+fmt(x.price)+'</span><button class="btn sm" data-a="saleoff" data-p="'+p.id+'">Retirar</button>':fresh?'<span class="small muted">Chegou há pouco, não pode ser vendido</span>':'<button class="btn sm" data-a="osell" data-p="'+p.id+'">Vender</button>')+'</div>';}
 /* negociar contrato com jogador do próprio clube: mesma mesa da contratação, sem taxa de transferência.
    Dá para aumentar ou reduzir o salário; quem ganha acima do mercado aceita corte se receber luvas ou um contrato mais longo. */
-function ownRenew(p){const c=ownC();if(!c||p.club!==c.id||isClient(p)||p.loan)return;if(p.pre){toast(p.name+' já assinou pré-contrato com o '+((G.clubs[p.pre.c]||{}).n||'outro clube')+'.');return;}if((p.renCool||0)>G.d){toast(p.name+' pediu um tempo antes de falar de contrato.');return;}if(!useAP())return;
+/* contraproposta: o jogador assinou pré-contrato com outro clube, mas ainda é seu até o fim do contrato.
+   Dá para cobrir: salário acima do que o outro clube ofereceu, luvas e duração. Ele pesa o clube rival (tamanho, liga) e a confiança no técnico.
+   Se aceitar, o pré-contrato cai e o outro clube fica sem ele (multa simbólica de rescisão do pré-contrato sai das luvas). */
+function preCounter(p){const c=ownC(),x=p.pre,d=G.clubs[x.c];if(!d)return;if((p.renCool||0)>G.d){toast(p.name+' pediu um tempo. Tente de novo em algumas semanas.');return;}if(!useAP())return;
+  const dp=prest(d)-prest(c),dl=LG[d.lg].rep-LG[c.lg].rep,tr=typeof cTrust==='function'?cTrust(p):60,k=1.12+Math.max(0,dp)*.04+Math.max(0,dl)*.04-(tr-60)*.002;
+  const a=ctrAsk(p,c,false);a.w=nice(Math.max(a.w,x.w*clamp(k,1.05,1.6)));a.l=nice(Math.max(a.l,a.w*6));a.y=Math.max(a.y,x.y||2);
+  ui.stack=[];ui.modal={type:'ctr',pid:p.id,fee:0,kind:'renew',pre:1,ask:a,cur:p.wage||0,off:{w:nice(x.w*1.05),l:nice(a.l*.6),y:a.y},pat:3,
+    log:[p.name+' assinou pré-contrato com o '+d.n+': '+fmt(x.w)+'/sem por '+(x.y||2)+' anos. Ele topa ouvir uma contraproposta, mas só fica se for claramente melhor'+(dp>=2?' (o '+d.n+' é um clube maior)':'')+'.']};save();render();}
+function ownRenew(p){const c=ownC();if(!c||p.club!==c.id||isClient(p)||p.loan)return;if(p.pre&&p.pre.from===c.id){preCounter(p);return;}if(p.pre){toast(p.name+' já assinou pré-contrato com o '+((G.clubs[p.pre.c]||{}).n||'outro clube')+'.');return;}if((p.renCool||0)>G.d){toast(p.name+' pediu um tempo antes de falar de contrato.');return;}if(!useAP())return;
   const a=ctrAsk(p,c,false),cur=p.wage||0,over=cur>a.w;a.w=over?nice(Math.max(a.w,cur*.85)):nice(Math.max(a.w,cur*1.08));a.l=nice(a.l*.5);
   ui.stack=[];ui.modal={type:'ctr',pid:p.id,fee:0,kind:'renew',ask:a,cur,off:{w:cur||a.w,l:nice(a.l*.8),y:a.y},pat:3,
     log:['Contrato atual: '+fmt(cur)+'/sem até '+fmonth(p.ce)+'. '+(over?p.name+' ganha acima do mercado e aceita conversar sobre um salário menor, se vier com luvas ou um contrato mais longo.':p.name+' quer um aumento para continuar.')]};save();render();}
