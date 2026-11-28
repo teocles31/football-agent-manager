@@ -667,6 +667,21 @@ html,body{touch-action:manipulation}
 .otr-f2{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 12px}.otr-fa{grid-column:1/-1;display:flex;justify-content:flex-end}
 .wl-st{font-style:normal;color:#e0a800}.wl-b.on{border-color:var(--gold);background:color-mix(in srgb,var(--gold) 22%,var(--surface))}
 .wl-n{display:flex;flex-direction:column;align-items:flex-start;gap:1px;background:none;border:0;padding:0;color:inherit;font:inherit;text-align:left;cursor:pointer;max-width:100%;min-width:0}.wl-n b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}.wl-n small{font-size:10.5px;opacity:.75;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+.pk-ov{position:absolute;inset:0;z-index:9;display:flex;align-items:center;justify-content:center;background:rgba(4,16,10,.55)}
+.pk-box{width:min(92%,340px);background:#0f3d2a;border:2px solid #f4c61f;border-radius:16px;padding:12px;color:#fff;display:grid;gap:10px}
+.pk-top{display:flex;align-items:center;justify-content:center;gap:6px;font-size:14px}
+.pk-g{position:relative;height:120px;border-radius:8px;background:linear-gradient(#2e8a52,#256f42);overflow:hidden}
+.pk-net{position:absolute;left:8%;right:8%;top:8%;height:62%;border:4px solid #fff;border-bottom:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.18) 0 1px,transparent 1px 10px),repeating-linear-gradient(0deg,rgba(255,255,255,.18) 0 1px,transparent 1px 10px)}
+.pk-gk{position:absolute;left:50%;top:34%;width:26px;height:44px;margin-left:-13px;border-radius:12px 12px 6px 6px;background:#f4c61f;box-shadow:0 0 0 2px #1b1b1b inset;animation:pkgk 3.6s both}
+.pk-gk.kd0{--kx:-70px;--kr:-70deg}.pk-gk.kd1{--kx:0px;--kr:0deg}.pk-gk.kd2{--kx:70px;--kr:70deg}
+.pk-ball{position:absolute;left:50%;top:86%;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:#fff;box-shadow:0 0 0 2px #222 inset;animation:pkb 3.6s both}
+@keyframes pkgk{0%,52%{transform:translateX(0) rotate(0)}66%,100%{transform:translateX(var(--kx)) rotate(var(--kr))}}
+@keyframes pkb{0%,48%{left:50%;top:86%;transform:scale(1)}66%,100%{left:var(--bx);top:var(--by);transform:scale(.7)}}
+.pk-t{position:relative;height:40px;text-align:center}.pk-t span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;font-weight:800;font-size:17px}
+.pk-t .s1{animation:pks 3.6s both;--a:0%;--b:22%}.pk-t .s2{animation:pks2 3.6s both}.pk-t .s3{animation:pks3 3.6s both}.pk-t .s4{animation:pks4 3.6s both;font-family:var(--f-d);font-size:30px;letter-spacing:.04em}
+.pk-t .s4.gol{color:#f4c61f}.pk-t .s4.sv,.pk-t .s4.fo{color:#ff8f80}
+@keyframes pks{0%,24%{opacity:1}28%,100%{opacity:0}}@keyframes pks2{0%,26%{opacity:0}30%,44%{opacity:1}48%,100%{opacity:0}}@keyframes pks3{0%,46%{opacity:0}50%,62%{opacity:1}66%,100%{opacity:0}}@keyframes pks4{0%,66%{opacity:0;transform:scale(.6)}72%{opacity:1;transform:scale(1.15)}78%,100%{opacity:1;transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.pk-gk,.pk-ball,.pk-t span{animation-duration:.01s}.pk-t span{opacity:0}.pk-t .s4{opacity:1}}
 .tc-h{display:flex;align-items:baseline;justify-content:space-between;gap:8px}.tc-h h3{margin:0}.tc-o{margin:0}.tc-r{display:grid;grid-template-columns:74px 1fr;gap:6px;align-items:center}.tc-l{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}.tc-c{gap:4px}.tc-c button{padding:4px 8px;font-size:11.5px}.tc-d{margin:2px 0 0;font-size:11.5px}.lv-popb .tac-n{font-size:12px;gap:2px;margin:0}
 .tac-rd{margin:2px 0 4px;padding:7px 9px;border-radius:9px;background:var(--surface2);font-size:12.5px}
 .wc-c p{margin:4px 0}
@@ -5774,15 +5789,27 @@ function lvDuels(L){const av=S=>{const ps=S.on.map(x=>G.P[x.id]).filter(Boolean)
 /* gol sofrido: quem defende perde nota */
 /* pênalti a favor: no seu time o jogo para e você escolhe quem bate */
 function lvPenAward(L,i){const S=L.sd[i],cn=G.clubs[S.c].n;lvEv(L,i,'ch','⚠️ Pênalti para o '+esc(cn)+'!');
-  if(S.mine&&!L.skipping){L.pendPen={i};L.pause=1;ui.lvOut=null;ui.lvPop=null;L.ani=null;return;}lvPenGo(L,i,null);}
+  if(S.mine&&!L.skipping){L.pendPen={i};L.pause=1;ui.lvOut=null;ui.lvPop=null;L.ani=null;return;}lvPenGo(L,i,null,!L.skipping);}
 function lvPenOdds(L,i,p){const O=L.sd[1-i],gx=O.on.find(y=>y.r==='GOL'),gk=gx&&G.P[gx.id];return clamp(.76+(p.ovr-(gk?gk.ovr:70))*.008+(p.trait==='lider'?.03:0)-(S_en(L.sd[i],p.id)<45?.05:0),.55,.93);}
 const S_en=(S,id)=>S.en&&S.en[id]!=null?S.en[id]:100;
 function lvPenTaker(L,i){const S=L.sd[i],o=S.mine?G.own:null,ids=S.on.filter(x=>x.r!=='GOL').map(x=>x.id);if(o&&o.pen&&ids.includes(o.pen))return G.P[o.pen];
   return ids.map(id=>G.P[id]).filter(Boolean).sort((a,b)=>(b.ovr+(b.pos==='ATA'?3:b.pos==='MEI'?2:0))-(a.ovr+(a.pos==='ATA'?3:a.pos==='MEI'?2:0)))[0];}
-function lvPenGo(L,i,pid){const S=L.sd[i],O=L.sd[1-i],cn=G.clubs[S.c].n,p=(pid!=null&&S.on.some(x=>x.id===pid)?G.P[pid]:null)||lvPenTaker(L,i);delete L.pendPen;if(!p)return;
-  const gx=O.on.find(y=>y.r==='GOL'),ok=Math.random()<lvPenOdds(L,i,p);
+/* cobrança com suspense (como no Brasfoot): ajeita a bola, partiu, bateu… gol ou defesa */
+const PEN_MS=3600;
+function lvPenGo(L,i,pid,anim){const S=L.sd[i],p=(pid!=null&&S.on.some(x=>x.id===pid)?G.P[pid]:null)||lvPenTaker(L,i);delete L.pendPen;if(!p)return;
+  const ok=Math.random()<lvPenOdds(L,i,p),sv=!ok&&Math.random()<.62,dir=ri(0,2),kd=ok?(dir===1?pick([0,2]):pick([0,1,2].filter(x=>x!==dir))):sv?dir:pick([0,1,2]);
+  if(anim){L.penAni={i,pid:p.id,ok,sv,dir,kd,T:Date.now(),run:!L.pause||L.penRun};L.pause=1;L.ani=null;if(typeof setTimeout==='function')setTimeout(()=>{const L2=G&&G.live;if(L2&&L2.penAni&&L2.penAni.T===L.penAni.T){lvPenEnd(L2);save();render();}},PEN_MS);return;}
+  lvPenApply(L,i,p,ok,sv);}
+function lvPenEnd(L){const a=L.penAni;if(!a)return;delete L.penAni;const p=G.P[a.pid];if(p)lvPenApply(L,a.i,p,a.ok,a.sv);if(L.phase!=='end'&&L.phase!=='int'&&L.phase!=='pens')L.pause=0;}
+function lvPenApply(L,i,p,ok,sv){const S=L.sd[i],O=L.sd[1-i],cn=G.clubs[S.c].n;
+  const gx=O.on.find(y=>y.r==='GOL');
   if(ok){S.g[p.id]=(S.g[p.id]||0)+1;L.sc[i]++;lvAdd(S,p.id,.15);lvConcede(O,true);(L.gl=L.gl||[]).push([L.min,i]);lvFxSet(L,'gol','GOOOL!',cn+' · '+shortN(p.name)+' (pên.)');lvEv(L,i,'gol','⚽ GOL do '+esc(cn)+'! '+esc(p.name)+' (pênalti)');}
-  else{const sv=Math.random()<.62;lvAdd(S,p.id,-.3);if(sv&&gx)lvAdd(O,gx.id,.4);lvFxSet(L,'int','Perdeu!',shortN(p.name)+(sv?' para no goleiro':' manda para fora'));lvEv(L,i,'ch','❌ '+esc(p.name)+' ('+esc(cn)+') perde o pênalti'+(sv&&gx&&G.P[gx.id]?': '+esc(shortN(G.P[gx.id].name))+' defende':', a bola sai')+'.');}}
+  else{lvAdd(S,p.id,-.3);if(sv&&gx)lvAdd(O,gx.id,.4);lvFxSet(L,'int','Perdeu!',shortN(p.name)+(sv?' para no goleiro':' manda para fora'));lvEv(L,i,'ch','❌ '+esc(p.name)+' ('+esc(cn)+') perde o pênalti'+(sv&&gx&&G.P[gx.id]?': '+esc(shortN(G.P[gx.id].name))+' defende':', a bola sai')+'.');}}
+function lvPenAniH(L){const a=L.penAni;if(!a)return'';const el=Date.now()-a.T;if(el>PEN_MS+600){lvPenEnd(L);return'';}const S=L.sd[a.i],O=L.sd[1-a.i],p=G.P[a.pid],gx=O.on.find(y=>y.r==='GOL'),gk=gx&&G.P[gx.id],d='animation-delay:-'+el+'ms';
+  const res=a.ok?['GOOOL!','gol']:a.sv?['DEFENDEU!','sv']:['PRA FORA!','fo'],X=['18%','50%','82%'][a.dir],Y=a.ok||a.sv?'30%':'-8%';
+  return'<div class="pk-ov"><div class="pk-box"><div class="pk-top">'+crest(G.clubs[S.c],22)+'<b>'+esc(shortN(p?p.name:''))+'</b><span class="small muted">x</span><b>'+esc(gk?shortN(gk.name):'goleiro')+'</b>'+crest(G.clubs[O.c],22)+'</div>'+
+   '<div class="pk-g"><i class="pk-net"></i><i class="pk-gk kd'+a.kd+'" style="'+d+'"></i><i class="pk-ball" style="'+d+';--bx:'+X+';--by:'+Y+'"></i></div>'+
+   '<div class="pk-t"><span class="s1" style="'+d+'">'+esc(shortN(p?p.name:''))+' ajeita a bola…</span><span class="s2" style="'+d+'">Partiu…</span><span class="s3" style="'+d+'">Bateu!</span><span class="s4 '+res[1]+'" style="'+d+'">'+res[0]+'</span></div></div></div>';}
 function lvPenH(L){const P=L.pendPen;if(!P)return'';const S=L.sd[P.i];if(!S.mine)return'';const o=G.own,tk=lvPenTaker(L,P.i);
   const L2=S.on.filter(x=>x.r!=='GOL').map(x=>G.P[x.id]).filter(Boolean).sort((a,b)=>(b.id===(tk&&tk.id))-(a.id===(tk&&tk.id))||lvPenOdds(L,P.i,b)-lvPenOdds(L,P.i,a));
   return'<div class="lv-ov"><section class="lv-subs" data-a="lvnop"><div class="lv-in-h"><span class="lv-tag in">PÊNALTI</span><span class="small muted">Quem vai bater?</span></div><div class="lv-bn">'+
@@ -5810,7 +5837,7 @@ function lvAI(L,i){const S=L.sd[i],m=L.min;if(S.mine)return;
   if(m===70&&L.sc[i]<L.sc[1-i]&&S.st!=='ofe'){S.st='ofe';S.lin='adi';lvEv(L,i,'tat','📋 '+esc(G.clubs[S.c].n)+' parte para o ataque.');}
   if(m===80&&L.sc[i]>L.sc[1-i]&&S.st!=='ret'){S.st='ret';S.lin='rec';lvEv(L,i,'tat','📋 '+esc(G.clubs[S.c].n)+' recua para segurar o resultado.');}}
 const LV_CH=['chuta para fora','manda por cima do gol','acerta a trave','cabeceia rente à trave','obriga o goleiro a fazer grande defesa','perde chance clara cara a cara'];
-function lvStep(){const L=G.live;if(!L||L.phase==='end'||L.phase==='int'||L.pendPen)return;if(L.phase==='pens'){lvPenKick();return;}if(L.phase==='pre')L.phase='1t';L.min++;const m=L.min,[SH,SA]=L.sd,H=G.clubs[SH.c],A=G.clubs[SA.c],o=G.own;
+function lvStep(){const L=G.live;if(!L||L.phase==='end'||L.phase==='int'||L.pendPen||L.penAni)return;if(L.phase==='pens'){lvPenKick();return;}if(L.phase==='pre')L.phase='1t';L.min++;const m=L.min,[SH,SA]=L.sd,H=G.clubs[SH.c],A=G.clubs[SA.c],o=G.own;
   L.sd.forEach(S=>{const c=G.clubs[S.c],fis=S.mine&&c.coach.sk?c.coach.sk.fis:1;S.on.forEach(x=>{const p=G.P[x.id];if(!p)return;const dr=lvIntK(S)*.34+(S.st==='pre'?.1:0)+(S.st==='ret'?-.05:0)+(p.age>=31?.06:0)-(fis-1)*.02-(p.trait==='profissional'?.03:0);S.en[x.id]=Math.max(15,S.en[x.id]-dr);});});
   const sh=lvStr(SH),sa=lvStr(SA),sv=[H.coach.st,A.coach.st],fm0=o?o.fm:null,my=L.sd[lvMy(L)];H.coach.st=SH.st;A.coach.st=SA.st;if(o&&my.fm)o.fm=my.fm;
   let sf;try{sf=styleFx(H,A,{str:sh,age:L.age[0]},{str:sa,age:L.age[1]},L.ko);}finally{H.coach.st=sv[0];A.coach.st=sv[1];if(o)o.fm=fm0;}
@@ -5909,7 +5936,7 @@ function mLive(){const L=G.live,H=G.clubs[L.sd[0].c],A=G.clubs[L.sd[1].c],mi=lvM
    '<div class="lv-tl" id="lv-tl">'+lvTlH(L)+'</div>'+
    '<div class="lv-tk" id="lv-tk">'+lvTick(L)+'</div>';
   /* campinho: ocupa o espaço que sobra; cartão de troca, pênaltis e animações ficam por cima dele */
-  let ov=L.pendPen?lvPenH(L):'';const sel=!L.pendPen&&!end&&!ui.lvOpp&&L.pause&&ui.lvOut&&S.on.some(y=>y.id===ui.lvOut)?ui.lvOut:null;
+  let ov=L.penAni?lvPenAniH(L):L.pendPen?lvPenH(L):'';const sel=!L.pendPen&&!end&&!ui.lvOpp&&L.pause&&ui.lvOut&&S.on.some(y=>y.id===ui.lvOut)?ui.lvOut:null;
   if(sel){const xo=S.on.find(y=>y.id===sel),q=G.P[sel],pp0=lvPP(S,q,xo);
     const enb=id=>{const v=Math.round(S.en[id]==null?100:S.en[id]);return'<span class="lv-en"><i class="'+(v<55?'lo':'')+'" style="width:'+v+'%"></i></span>';};
     let sb='<section class="lv-subs" data-a="lvnop"><div class="lv-out"><span class="lv-tag out">SAI</span>'+avatar(q,32)+'<div class="grow"><b>'+esc(q.name)+'</b><small><span class="chip pchip" style="--pc:'+PC[q.pos]+'">'+cellDP(xo.c)+'</span> nível '+(q.ovr-pp0)+' · nota '+lvRt(S,q.id,L.sc[mi],L.sc[1-mi]).toFixed(1)+'</small></div>'+enb(q.id)+'<button class="mn-x" data-a="lvout" data-p="'+sel+'" aria-label="Fechar">✕</button></div>'+
@@ -5927,7 +5954,7 @@ function mLive(){const L=G.live,H=G.clubs[L.sd[0].c],A=G.clubs[L.sd[1].c],mi=lvM
   const pop=ui.lvPop;
   h+='<div class="lv-ctl">';
   if(end)h+='<div class="lv-r1"><button class="btn pri big lv-go" data-a="lvdone">Continuar</button></div>';
-  else h+='<div class="lv-r1"><button class="btn big lv-go'+(L.pause?' pri':' run')+'" data-a="lvplay"'+(L.pendPen?' disabled':'')+'>'+(L.pendPen?'Escolha o batedor':L.pause?'▶ '+(L.phase==='pre'?'Começar o jogo':L.phase==='int'?'2º tempo':'Seguir'):'⏸ Pausar')+'</button>'+
+  else h+='<div class="lv-r1"><button class="btn big lv-go'+(L.pause?' pri':' run')+'" data-a="lvplay"'+(L.pendPen||L.penAni?' disabled':'')+'>'+(L.penAni?'Pênalti…':L.pendPen?'Escolha o batedor':L.pause?'▶ '+(L.phase==='pre'?'Começar o jogo':L.phase==='int'?'2º tempo':'Seguir'):'⏸ Pausar')+'</button>'+
     (L.phase==='pens'?'':'<button class="btn big lv-tac" data-a="lvpop" data-v="tac">Táticas</button>')+'</div>';
   h+='<div class="lv-r2">'+(end?'':'<div class="lv-spd">'+[[1,'1x'],[2,'2x'],[3,'4x']].map(x=>'<button data-a="lvspd" data-v="'+x[0]+'" aria-pressed="'+((L.spd||1)===x[0])+'">'+x[1]+'</button>').join('')+'</div>')+
     ((L.oth||[]).length?'<button class="lv-lk" data-a="lvpop" data-v="rod">Rodada</button>':'')+'<button class="lv-lk" data-a="lvpop" data-v="lan">Lances</button>'+(end?'':'<button class="lv-lk" data-a="lvskip">Pular</button>')+'</div></div>';
@@ -5945,10 +5972,10 @@ function mLive(){const L=G.live,H=G.clubs[L.sd[0].c],A=G.clubs[L.sd[1].c],mi=lvM
     h+='<div class="lv-pop" data-a="lvpop" data-v=""><div class="lv-popb" data-a="lvnop">'+b+'<button class="btn pri" data-a="lvpop" data-v="">Fechar</button></div></div>';}
   return h+'</div>';}
 const LVA={
-  lvplay(){const L=G.live;if(!L||L.pendPen)return;ui.lvPop=null;if(L.phase==='int'){L.phase='2t';}L.pause=L.pause?0:1;if(!L.pause)ui.lvOut=null;render();},
+  lvplay(){const L=G.live;if(!L||L.pendPen||L.penAni)return;ui.lvPop=null;if(L.phase==='int'){L.phase='2t';}L.pause=L.pause?0:1;if(!L.pause)ui.lvOut=null;render();},
   lvspd(d){const L=G.live;if(!L)return;L.spd=ui.lvSpd=+d.v;render();},
-  lvpen(d){const L=G.live;if(!L||!L.pendPen)return;lvPenGo(L,L.pendPen.i,+d.p);L.pause=0;save();render();},
-  lvskip(){const L=G.live;if(!L)return;let g=0;L.skipping=1;if(L.pendPen)lvPenGo(L,L.pendPen.i,null);while(L.phase!=='end'&&g++<400){if(L.phase==='int'||L.phase==='pre'){L.phase=L.phase==='pre'?'1t':'2t';}lvStep();}L.ani=null;if(L.ps)lvFxSet(L,'fim',G.clubs[L.pw].n+' passa!','Pênaltis '+L.ps[0]+' – '+L.ps[1]);else lvFxSet(L,'fim','Fim de jogo',shortN(G.clubs[L.sd[0].c].n)+' '+L.sc[0]+' – '+L.sc[1]+' '+shortN(G.clubs[L.sd[1].c].n));
+  lvpen(d){const L=G.live;if(!L||!L.pendPen)return;L.penRun=1;lvPenGo(L,L.pendPen.i,+d.p,true);delete L.penRun;save();render();},
+  lvskip(){const L=G.live;if(!L)return;let g=0;L.skipping=1;if(L.penAni)lvPenEnd(L);if(L.pendPen)lvPenGo(L,L.pendPen.i,null);while(L.phase!=='end'&&g++<400){if(L.phase==='int'||L.phase==='pre'){L.phase=L.phase==='pre'?'1t':'2t';}lvStep();}L.ani=null;if(L.ps)lvFxSet(L,'fim',G.clubs[L.pw].n+' passa!','Pênaltis '+L.ps[0]+' – '+L.ps[1]);else lvFxSet(L,'fim','Fim de jogo',shortN(G.clubs[L.sd[0].c].n)+' '+L.sc[0]+' – '+L.sc[1]+' '+shortN(G.clubs[L.sd[1].c].n));
     L.sd.forEach((S,i)=>{if(S.mine)S.inj.forEach(id=>{const x=S.on.find(y=>y.id===id);if(x){const b=lvBest(S,x.r);if(!(b&&lvSub(L,i,id,b.id)))lvOff(L,i,id);}});});L.pause=1;ui.lvPop=null;ui.lvOut=null;save();render();},
   lvtab(d){ui.lvTab=d.v;render();},
   lvall(){ui.lvAll=!ui.lvAll;render();},
